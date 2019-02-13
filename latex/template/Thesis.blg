@@ -1,0 +1,17 @@
+[1] Config.pm:302> INFO - This is Biber 2.11
+[1] Config.pm:305> INFO - Logfile is 'Thesis.blg'
+[72] biber-darwin:313> INFO - === Ons Feb 13, 2019, 13:18:22
+[110] Biber.pm:371> INFO - Reading 'Thesis.bcf'
+[241] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
+[258] Biber.pm:3976> INFO - Processing section 0
+[273] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography/Bibliography.bib' for section 0
+[277] bibtex.pm:1500> INFO - LaTeX decoding ...
+[286] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography/Bibliography.bib'
+[321] Utils.pm:193> WARN - Entry 'rfc2549' (bibliography/Bibliography.bib): Invalid format '2014-09-31' of date field 'urldate' - ignoring
+[337] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[337] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[337] Biber.pm:3804> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[337] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[346] bbl.pm:617> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
+[347] bbl.pm:720> INFO - Output to Thesis.bbl
+[347] Biber.pm:110> INFO - WARNINGS: 1
