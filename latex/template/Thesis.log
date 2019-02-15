@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 FEB 2019 10:26
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 FEB 2019 13:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1673,13 +1673,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (./Thesis.bbl
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'rfc2549':
-(biblatex)                - Entry 'rfc2549' (bibliography/Bibliography.bib): Invalid format '2014-09-31' of date field 'urldate' - ignoring.
-
-)
+ (./Thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 10.
 Package biblatex Info: Reference segment=0 on input line 10.
 Package nag Info: Command \caption@xlabel not defined, skipping amendment on input line 10.
@@ -1849,17 +1843,17 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 496FF537122B29AC0421BA4C98DA61C1.
+(rerunfilecheck)             Checksum: F4EF25ACA0133894455CF4D23351DB46.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46559 strings out of 492970
- 880715 string characters out of 6133939
- 1478989 words of memory out of 5000000
- 49948 multiletter control sequences out of 15000+600000
+ 46531 strings out of 492970
+ 880067 string characters out of 6133939
+ 1480076 words of memory out of 5000000
+ 49920 multiletter control sequences out of 15000+600000
  550773 words of font info for 55 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1799s stack positions out of 5000i,500n,10000p,200000b,80000s

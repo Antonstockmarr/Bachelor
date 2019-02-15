@@ -4,7 +4,7 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 library("data.table")
 
-## Loading all data
+# Loading all data
 data.path = "../Watts_DistrictHeatingData_2018/"
 file.names <- dir(data.path, pattern =".csv")
 n <- length(file.names)
@@ -32,6 +32,10 @@ for(i in 1:n){
    
 }
 
+# Reading weather data  
+weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
+str(weather)
+weather$IsHistoricalEstimated <- type.convert(weather$IsHistoricalEstimated, as.is = TRUE)
 
 Weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
 Weather$StartDateTime = strptime(Weather$StartDateTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
