@@ -8,3 +8,6 @@ dat <- read.csv('../DistrictHeatingTestSample.csv', header=TRUE, sep = "\t")
 head(dat)
 str(dat)
 
+## Loading all data
+data.path = "../meterdata/"
+
