@@ -18,16 +18,22 @@ cons <- vector(mode="list", length = n)
 for(i in 1:n){
   if (i == 5){
     df.temp <- read.table(paste(data.path,file.names[i], sep = ""), sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
+    names(df.temp)[1] = 'StartDateTime'
+    df.temp$StartDateTime <- strptime(df.temp$StartDateTime, format = "%d/%m/%Y %H:%M:%S", tz = "GMT")
+    df.temp$EndDateTime <- strptime(df.temp$EndDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
  }
   else
   {
     df.temp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
     df.temp$X <- NULL
+    names(df.temp)[1] = 'StartDateTime'
+    df.temp$StartDateTime <- strptime(df.temp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+    df.temp$EndDateTime <- strptime(df.temp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   }
-    names(df.temp[[i]])[1] = 'StartDateTime'
     Datalengths[i] = length(df.temp)
     cons[[i]] <- df.temp
     
+   
 }
 
 # Changing time 
