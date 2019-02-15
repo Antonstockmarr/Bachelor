@@ -10,13 +10,22 @@ str(dat)
 
 ## Loading all data
 data.path = "../Watts_DistrictHeatingData_2018/"
-cons <- data.table()
 file.names <- dir(data.path, pattern =".csv")
+n <- length(file.names)
+Datalengths = matrix(c(1,n),nrow=n)
+cons <- vector(mode="list", length = n)
 
-for(i in 1:length(file.names)){
-  
-  df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE)
-  cons <- rbind(cons, df.temp)
-  
+for(i in 1:n){
+  if (i == 5){
+    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep="\t", stringsAsFactors=FALSE, header = TRUE)
+ }
+  else
+  {
+    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE)
+    df.temp$X <- NULL
+  }
+    cons[[i]] <- df.temp
+    names(cons[[i]])[1] = 'StartDateTime'
+    Datalengths[i] = length(df.temp)
+    
 }
-
