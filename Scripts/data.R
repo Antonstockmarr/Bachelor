@@ -17,11 +17,11 @@ cons <- vector(mode="list", length = n)
 
 for(i in 1:n){
   if (i == 5){
-    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep="\t", stringsAsFactors=FALSE, header = TRUE)
+    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep="\t", stringsAsFactors=FALSE, header = TRUE,dec=',')
  }
   else
   {
-    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE)
+    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE,dec=',')
     df.temp$X <- NULL
   }
     cons[[i]] <- df.temp
