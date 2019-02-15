@@ -24,8 +24,8 @@ for(i in 1:n){
     df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE)
     df.temp$X <- NULL
   }
-    cons[[i]] <- df.temp
-    names(cons[[i]])[1] = 'StartDateTime'
+    names(df.temp[[i]])[1] = 'StartDateTime'
     Datalengths[i] = length(df.temp)
+    cons[[i]] <- df.temp
     
 }
