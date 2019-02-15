@@ -3,10 +3,6 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 library("data.table")
-## Loading data
-dat <- read.csv('../DistrictHeatingTestSample.csv', header=TRUE, sep = "\t")
-head(dat)
-str(dat)
 
 ## Loading all data
 data.path = "../Watts_DistrictHeatingData_2018/"
@@ -34,12 +30,6 @@ for(i in 1:n){
     cons[[i]] <- df.temp
     
    
-}
-
-# Changing time 
-for (i in 1:n){
-  cons[[i]]$StartDateTime <- strptime(cons[[i]]$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
-  cons[[i]]$EndDateTime <- strptime(cons[[i]]$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
 }
 
 
