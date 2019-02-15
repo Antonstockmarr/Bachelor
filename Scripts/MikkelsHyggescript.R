@@ -8,22 +8,34 @@ library("data.table")
 data.path = "../Watts_DistrictHeatingData_2018/"
 file.names <- dir(data.path, pattern =".csv")
 n <- length(file.names)
-Datalengths = c(1,n)
-DATA <- vector(mode="list",length=n)
+Datalengths = rep(c(1,n),nrow=n)
+data <- vector(mode="list", length = n)
 
 for(i in 1:n){
-  df.temp <- read.csv(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE,dec=',')
-  if(dim(df.temp)[2]==1){
-    df.temp <- read.csv(paste(data.path,file.names[i], sep = ""),sep="\t", stringsAsFactors=FALSE, header = TRUE,dec=',')
-    df.temp$StartDateTime <- strptime(df.temp$StartDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
-    df.temp$EndDateTime <- strptime(df.temp$EndDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
-  }else{
-    names(df.temp)[1] = 'StartDateTime'
-    df.temp$X <- NULL
-    df.temp$StartDateTime <- strptime(df.temp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
-    df.temp$EndDateTime <- strptime(df.temp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+  if (i == 5){
+    dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
+    names(dt.tmp)[1] = 'StartDateTime'
+    dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d/%m/%Y %H:%M:%S", tz = "GMT")
+    dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
   }
+  else
+  {
+    dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
+    dt.tmp$X <- NULL
+    names(dt.tmp)[1] = 'StartDateTime'
+    dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+    dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+  }
+  Datalengths[i] = length(dt.tmp)
+  data[[i]] <- dt.tmp
   
-  DATA[[i]] <- df.temp
-  Datalengths[i] = length(df.temp)
+  
 }
+
+
+Weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
+Weather$IsHistoricalEstimated=Weather$IsHistoricalEstimated=="True"
+
+pairs(data[1])
+
+rm(i,n,file.names,data.path,dt.tmp,Datalengths)
