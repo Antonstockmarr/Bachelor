@@ -12,16 +12,16 @@ str(dat)
 data.path = "../Watts_DistrictHeatingData_2018/"
 file.names <- dir(data.path, pattern =".csv")
 n <- length(file.names)
-Datalengths = matrix(c(1,n),nrow=n)
+Datalengths = rep(c(1,n),nrow=n)
 cons <- vector(mode="list", length = n)
 
 for(i in 1:n){
   if (i == 5){
-    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep="\t", stringsAsFactors=FALSE, header = TRUE,dec=',')
+    df.temp <- read.table(paste(data.path,file.names[i], sep = ""), sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
  }
   else
   {
-    df.temp <- read.table(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE,dec=',')
+    df.temp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
     df.temp$X <- NULL
   }
     cons[[i]] <- df.temp
@@ -29,3 +29,11 @@ for(i in 1:n){
     Datalengths[i] = length(df.temp)
     
 }
+
+# Changing time 
+for (i in 1:n){
+  cons[[i]]$StartDateTime <- strptime(cons[[i]]$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+  cons[[i]]$EndDateTime <- strptime(cons[[i]]$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+}
+
+
