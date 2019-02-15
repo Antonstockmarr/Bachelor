@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 FEB 2019 13:01
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 FEB 2019 14:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1672,8 +1672,9 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `Thesis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Thesis.bbl' found.
- (./Thesis.bbl)
+Package biblatex Info: ... file 'Thesis.bbl' not found.
+
+No file Thesis.bbl.
 Package biblatex Info: Reference section=0 on input line 10.
 Package biblatex Info: Reference segment=0 on input line 10.
 Package nag Info: Command \caption@xlabel not defined, skipping amendment on input line 10.
@@ -1683,7 +1684,7 @@ Package nag Info: Command \hc@caption not defined, skipping amendment on input l
 Package nag Info: Command \topcaption not defined, skipping amendment on input line 10.
 \openout2 = `prefrontmatter/titlepage.aux'.
 
- (./prefrontmatter/titlepage.tex
+(./prefrontmatter/titlepage.tex
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 8.00003pt on input line 6.
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1844,14 +1845,18 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: F4EF25ACA0133894455CF4D23351DB46.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46531 strings out of 492970
- 880067 string characters out of 6133939
+ 46529 strings out of 492970
+ 880054 string characters out of 6133939
  1480076 words of memory out of 5000000
  49920 multiletter control sequences out of 15000+600000
  550773 words of font info for 55 fonts, out of 8000000 for 9000
