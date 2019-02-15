@@ -14,9 +14,9 @@ file.names <- dir(data.path, pattern =".csv")
 DATA <- vector(mode="list",length=length(file.names))
 
 for(i in 1:length(file.names)){
-  df.temp <- read.csv(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE)
+  df.temp <- read.csv(paste(data.path,file.names[i], sep = ""),sep=";", stringsAsFactors=FALSE, header = TRUE,dec=',')
   if(dim(df.temp)[2]==1){
-    df.temp <- read.csv(paste(data.path,file.names[i], sep = ""),sep="\t", stringsAsFactors=FALSE, header = TRUE)
+    df.temp <- read.csv(paste(data.path,file.names[i], sep = ""),sep="\t", stringsAsFactors=FALSE, header = TRUE,dec=',')
   }
   DATA[[i]] <- df.temp
 }
