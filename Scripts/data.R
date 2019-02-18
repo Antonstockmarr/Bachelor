@@ -40,15 +40,17 @@ for(i in 1:n){
 
 # Reading weather data  
 weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
-str(weather)
 
 weather$StartDateTime = strptime(weather$StartDateTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 
+<<<<<<< HEAD
 # Dates of house data
 
 
 
+=======
+>>>>>>> 75f4a5a2f8525bcb43c54f0d6237282ecfefe43b
 
 rm(i,n,file.names,data.path,dt.tmp,Datalengths)
 
