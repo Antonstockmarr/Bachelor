@@ -3,12 +3,36 @@
 \section{19. februar}
 
 \todo[inline]{Læse artikler fra Peder}
-\todo[inline]{Download offline latex}
+\todo[inline]{Download offline latex} 
 
 \subsection{Spørgsmål}
 \begin{enumerate}
-    \item Hvorfor er der nogle af husene, som kun har omkring 3600 observationer, mens andre har 9400? Hvad vil det betyde for os? Hvad kan vi gøre?
-    \item Må vi fjerne hus 5? Den giver os problemer... 
+    \item Hvorfor er der nogle af husene, som kun har omkring 3600 observationer, mens andre har 9400? Hvad vil det betyde for os? Hvad kan vi gøre? \textcolor{red}{Vi skal i sidste ende lave noget der virker på tilgængeligt data. Realistisk problem hæhæ. Vi må godt sige, at vi skal have nok data. En delopgave: hvor mange data skal der til for at kunne sige noget konstruktivt. Ændrer det på konklusionerne?Få denne perspektivering ind på et eller andet tidspunkt.}
+    \item Må vi fjerne hus 5? Den giver os problemer... \textcolor{red}{Vi skal bare ændre på datoerne for hus 5 inde i en text editor.}
 \end{enumerate}
 
 \subsection{Noter}
+\begin{itemize}
+    \item Hvornår er der informationer nok, hvornår er der ikke?
+    \item Når vi laver vores modeller, skal vi lave dem således at mængden at data kan variere. Man laver noget for hvert hus, så man så kan sammenligne et eller andet. Hvad er ens, og hvad er forskelligt for hvert hus? 
+    \item Lasse forventer ikke, at vi ender med perfekte modeller. Thank God! 
+    \item Brug \texttt{as.POSIX} til at lave tiden. Kig på input- og outputtype. 
+    \item Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevandsbeholder. Beholder: hvis temp. i bunden bliver for lav - opvarmningen bliver dermed mere jævn. Pladevarmeveksler: ligesom radiator, fjernvarme igennem radiatoren og brugsvarme i midten eller sådan noget. 
+    \item Vi har også sommerdata - kig på varmeforbruget der til at få en idé om hvordan huset opfører sig. Er der et hårdt forbrug mellem kl. 7-8? Maj eller september måned kan vise hvordan deres varmevandsforbrug er. Er der peaks, eller er det jævnt fordelt? 
+    \item Man skal ikke kaste for meget væk.
+    \item Brugsvand er støj, men det ikke tilfældig støj. Det er positivt, så det påvirker estimaterne. Noget af det kan vi fjerne, men vi skal se på data hvor der ikke er varme - er der nogle mønstre? 
+    \item Hvilken ugedag er bedst til at repræsentere en weekend? Måske lørdage? 
+    \item Skal vi kigge på hvordan huset performer, eller skal vi kigge på hvordan huset performer her og nu? 
+    \item Hvor stopper vi? Det vigtigste er, at vi laver nogle ting, som vi ved kommer til at virke.
+    \item Teoridelen: det er vigtigere at vi får tydeliggjort hvad den her metode kan.  
+\end{itemize}
+
+\subsection{Hvad skal vi?}
+\begin{itemize}
+    \item Tjek forskel på ugedage, weekender, helligdage, ferier - hvad gør vi med disse forskelle? 
+    \item Få lavet plots. 
+    \item Markér underlig opførsel i data i plots.
+    \item Find de normale perioder og så gør noget dér. Alt det andet kigger vi på senere. 
+\end{itemize}
+ 
+\todo[inline]{Brug farverne fra WATTS appen til plots!!!!}

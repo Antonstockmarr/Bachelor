@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 FEB 2019 14:36
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  19 FEB 2019 13:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1811,14 +1811,23 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 13.82405pt on input line 3.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 5.
-) [3]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (12.08003pt too wide) in paragraph at lines 20--21
+[]\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
+ []
+
+[3]) [4]
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex [4
+ (./Andet/Noter.tex) [5
 
 
 
-]) [5] [6
+] [6
 
 
 ] [7
@@ -1845,22 +1854,18 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: F4EF25ACA0133894455CF4D23351DB46.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46529 strings out of 492970
- 880054 string characters out of 6133939
- 1480076 words of memory out of 5000000
- 49920 multiletter control sequences out of 15000+600000
- 550773 words of font info for 55 fonts, out of 8000000 for 9000
+ 46537 strings out of 492970
+ 880193 string characters out of 6133939
+ 1483174 words of memory out of 5000000
+ 49925 multiletter control sequences out of 15000+600000
+ 550781 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,82p,10567b,1799s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Thesis.pdf (20 pages).

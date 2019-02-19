@@ -22,6 +22,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1.2}Noter}{3}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}Hvad skal vi?}{4}{subsection.2.1.3}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}Noter}{5}{chapter.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Data}{5}{section.3.1}
