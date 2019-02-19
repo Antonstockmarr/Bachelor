@@ -53,9 +53,9 @@ if(1==1){
   
   weatherStart = weather$StartDateTime[1]
   weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistoricalEstimated==FALSE])]
+  weather<-weather[dim(weather)[1]:1,]
   
-  
-  rm(i,n,file.names,data.path,dt.tmp,Datalengths)
+  rm(i,file.names,data.path,dt.tmp,Datalengths)
 }
 #exploratory.R
 if(2==3){
@@ -67,9 +67,11 @@ if(2==3){
   
 }
 
-starttimes=weather$StartDateTime[1:n]
-endtimes=weather$StartDateTime[1:n]
-for(i in 1:n){
-  starttimes[i]=data[[i]]$StartDateTime[length(data[[i]]$StartDateTime)]
-  endtimes[i]=data[[i]]$StartDateTime[1]
-}
+str(data[[1]])
+
+tmp<-weather[weather$StartDateTime<=EndDays[1],]
+tmp<-tmp[tmp$StartDateTime>=StartDays[1],]
+
+str(tmp)
+str(data[[1]])
+str(weather)
