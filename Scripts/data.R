@@ -11,13 +11,20 @@ n <- length(file.names)
 Datalengths = rep(c(1,n),nrow=n)
 data <- vector(mode="list", length = n)
 
+
+# Loading a single table to initialize dates
+dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
+names(dt.tmp)[1] = 'StartDateTime'
+StartDays <- strptime(dt.tmp$StartDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+EndDays <- strptime(dt.tmp$StartDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+
 for(i in 1:n){
   if (i == 5){
     dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
     names(dt.tmp)[1] = 'StartDateTime'
-    dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d/%m/%Y %H:%M:%S", tz = "GMT")
+    dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
     dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
- }
+  }
   else
   {
     dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
@@ -26,10 +33,13 @@ for(i in 1:n){
     dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
     dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   }
-    Datalengths[i] = length(dt.tmp)
-    data[[i]] <- dt.tmp
-    
-   
+  Datalengths[i] = length(dt.tmp)
+  data[[i]] <- dt.tmp
+  
+  # Setting start and end times for each table.
+  EndDays[i]= dt.tmp$StartDateTime[1]
+  StartDays[i]=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]
+  
 }
 
 # Reading weather data  
@@ -37,6 +47,13 @@ weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stri
 
 weather$StartDateTime = strptime(weather$StartDateTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
+
+# Sorting dates
+sStartDays <- StartDays[order(StartDays)]
+sEndDays <- EndDays[order(EndDays)]
+
+weatherStart = weather$StartDateTime[1]
+weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistoricalEstimated==FALSE])]
 
 
 rm(i,n,file.names,data.path,dt.tmp,Datalengths)
