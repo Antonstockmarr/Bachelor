@@ -32,6 +32,9 @@ if(1==1){
     names(dt.tmp)[1] = 'StartDateTime'
     dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
     dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+    while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")<=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
+      dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
+    }
     Datalengths[i] = length(dt.tmp)
     data[[i]] <- dt.tmp
     
