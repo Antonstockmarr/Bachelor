@@ -21,19 +21,16 @@ EndDays <- strptime(dt.tmp$StartDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz 
 for(i in 1:n){
   if (i == 5){
     dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
-    names(dt.tmp)[1] = 'StartDateTime'
-    dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
-    dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d/%m/%Y %H.%M", tz = "GMT")
   }
   else
   {
     dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
     dt.tmp$X <- NULL
-    names(dt.tmp)[1] = 'StartDateTime'
-    dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
-    dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   }
-  Datalengths[i] = length(dt.tmp)
+  names(dt.tmp)[1] = 'StartDateTime'
+  dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+  dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+    Datalengths[i] = length(dt.tmp)
   data[[i]] <- dt.tmp
   
   # Setting start and end times for each table.
@@ -57,3 +54,4 @@ weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistor
 
 
 rm(i,n,file.names,data.path,dt.tmp,Datalengths)
+
