@@ -11,6 +11,10 @@ n <- length(file.names)
 Datalengths = rep(c(1,n),nrow=n)
 data <- vector(mode="list", length = n)
 
+# Looking at bounds of dates for data
+StartDays <- list(rep(NA,n))
+EndDays <- list(rep(NA,n))
+
 for(i in 1:n){
   if (i == 5){
     dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
@@ -28,7 +32,9 @@ for(i in 1:n){
   }
     Datalengths[i] = length(dt.tmp)
     data[[i]] <- dt.tmp
-    
+   
+    StartDays[i]= dt.tmp$StartDateTime[1]
+    EndDays[i]=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]
    
 }
 
@@ -37,4 +43,10 @@ weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stri
 weather$StartDateTime = strptime(weather$StartDateTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 
+# Dates of house data
+
+
+
+
 rm(i,n,file.names,data.path,dt.tmp,Datalengths)
+
