@@ -45,8 +45,5 @@ weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 
 # Dates of house data
 
-
-
-
 rm(i,n,file.names,data.path,dt.tmp,Datalengths)
 
