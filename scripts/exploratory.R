@@ -3,6 +3,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 source("data.R")
+library(ggplot2) 
 
 # Farveeksempel
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
@@ -67,6 +68,7 @@ plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)))
 
 # Investigating weather data
 pairs(weather)
+plot(weather$StartDateTime,weather$WindSpeed, type = "l")
 str(weather)
 plot(weather$SunHour[weather$IsHistoricalEstimated==FALSE], weather$UltravioletIndex[weather$IsHistoricalEstimated==FALSE])
 # No correlation
@@ -75,4 +77,7 @@ plot(weather$SunHour[weather$IsHistoricalEstimated==FALSE], weather$UltravioletI
 plot(tmp$WindSpeed,data[[1]]$CoolingDegree*data[[1]]$Flow)
 plot(tmp$WindDirection,data[[1]]$CoolingDegree*data[[1]]$Flow)
 
+# 
+ggplot(tmp, aes(x = Temperature, y= data[[1]]$CoolingDegree*data[[1]]$Flow)) +
+  geom_point() + geom_smooth(colour=2) + ylab("Consumption")
 

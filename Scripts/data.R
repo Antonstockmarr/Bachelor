@@ -62,6 +62,10 @@ weather <- weather[dim(weather)[1]:1,]
 tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
 tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
 
+# Adding weekday factor to house data
+for (i in 1:n){ 
+  data[[i]]$weekday <- as.factor(weekdays(data[[i]]$StartDateTime))
+}
 
 rm(i,n,file.names,data.path,dt.tmp,Datalengths)
 
