@@ -35,6 +35,29 @@ tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
 plot(tmp$Temperature,data[[1]]$CoolingDegree*data[[1]]$Flow)
 abline(v = 11.5, lty = 2, col = 2)
 
+tempdivide = 13.5
+
+lowtemp <- tmp$Temperature[tmp$Temperature<tempdivide]
+lowtempq <- (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature<tempdivide]
+hightemp <- tmp$Temperature[tmp$Temperature>=tempdivide]
+hightempq <- (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature>=tempdivide]
+plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)),col=Wcol[3],xlab='Temperature',ylab='Q-values')
+points(hightemp,hightempq, xlim=c(min(lowtemp),max(hightemp)),col=Wcol[2])
+abline(v=tempdivide)
+fit = lm(lowtempq~lowtemp)
+segments(min(lowtemp),fit$coefficients[1]+min(lowtemp)*fit$coefficients[2],tempdivide,tempdivide*fit$coefficients[2]+fit$coefficients[1])
+segments(tempdivide,tempdivide*fit$coefficients[2]+fit$coefficients[1],max(hightemp),tempdivide*fit$coefficients[2]+fit$coefficients[1])
+
+
+opticut <- function(tempdivide)
+{
+  lowtemp <- tmp$Temperature[tmp$Temperature<tempdivide]
+  lowtempq <- (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature<tempdivide]
+  hightemp <- tmp$Temperature[tmp$Temperature>=tempdivide]
+  hightempq <- (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature>=tempdivide]
+  fit <- lm(lowtempq~lowtemp)
+  result <- sum((fit$residuals)^2)+sum((hightempq-tempdivide*fit$coefficients[2]+fit$coefficients[1])^2)
+}
 
 lowtemp = tmp$Temperature[tmp$Temperature<15]
 lowtempq = (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature<15]
