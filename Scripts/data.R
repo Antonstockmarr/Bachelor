@@ -2,8 +2,6 @@ rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
-library("data.table")
-
 # Loading all data
 data.path = "../Watts_DistrictHeatingData_2018/"
 file.names <- dir(data.path, pattern =".csv")
@@ -59,8 +57,8 @@ weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistor
 
 # Making temporary weather data in order to merge it with the house data
 weather <- weather[dim(weather)[1]:1,]
-tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
-tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
+tmp <- weather[(weather$StartDateTime <= EndDays[42]),]
+tmp <- tmp[tmp$StartDateTime >= StartDays[42],]
 
 # Adding weekday factor to house data
 for (i in 1:n){ 

@@ -65,7 +65,7 @@ if(1==1){
   tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
   
   
-  rm(i,n,file.names,data.path,dt.tmp,Datalengths)
+  rm(i,file.names,data.path,dt.tmp,Datalengths)
   
 }
 #exploratory.R
@@ -76,19 +76,23 @@ if(2==3){
   
   source("data.R")
   
+  # Farveeksempel
+  Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
+  plot(data[[1]]$Flow,col=Wcol[2])
+  
   pairs(data[[1]])
   
   plot(data[[1]]$Flow)
-  plot.months <- c("January", "February", "March", "April", "May", "June", "July", "August", 
+  plot.months <- c("January", "February", "March", "April", "May", "June", "July", "August",
                    "September", "November", "December")
   
   par(mfrow = c(1,1))
   time <- seq(as.Date(StartDays[1]),as.Date(EndDays[1]), by = "1 mon")
   plot(data[[1]]$StartDateTime, data[[1]]$Flow, "l", xaxt = 'n')
-  drawxaxis(data[[1]]$StartDateTime, tick.tstep="months") 
+  drawxaxis(data[[1]]$StartDateTime, tick.tstep="months")
   axis.Date(1, at = seq(min(time), max(time), by = "12 mon"), format = "%m")
   
-  # Investigating each house's flow behaviour 
+  # Investigating each house's flow behaviour
   for (i in 1:1){
     #data[[i]]$StartDateTime.new <- as.POSIXlt(data[[i]]$StartDateTime)
     #data[[i]]$StartDateTime <- as.Date(data[[i]]$StartDateTime, "%Y-%m-%d")
@@ -96,17 +100,71 @@ if(2==3){
     plot(data[[i]]$StartDateTime, data[[i]]$Flow, type = "l", xlab ="Time", ylab = "Flow")
     axis(1, at = unique(months(data[[i]]$StartDateTime)), las = 2)
   }
+  
+  tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
+  tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
+  
+  plot(tmp$Temperature,data[[1]]$CoolingDegree*data[[1]]$Flow)
+  
+  
+  lowtemp = tmp$Temperature[tmp$Temperature<15]
+  lowtempq = (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature<15]
+  hightemp = tmp$Temperature[tmp$Temperature>=15]
+  hightempq = (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature>=15]
+  plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)))
+  
 }
 
-str(data[[1]])
+avgcons <- vector(mode="list", length = 3)
+avgcons[[1]]<-seq(from=min(StartDays), to=max(EndDays), by="hour")
+avgcons[[2]]<-rep(0,length(avgcons[[1]]))
+avgcons[[3]]<-rep(0,length(avgcons[[1]]))
 
-tmp<-weather[weather$StartDateTime<=EndDays[1],]
-tmp<-tmp[tmp$StartDateTime>=StartDays[1],]
+for (i in 1:n) {
+  for(j in 1:length(data[[i]]$StartDateTime)){
+    for (k in length(avgcons[[1]])) {
+      if(data[[i]]$StartDateTime[j]==avgcons[[1]][k]){
+        avgcons[[2]][k]=avgcons[[2]][k]+data[[i]]$Flow[j]*data[[i]]$CoolingDegree[j]
+        avgcons[[3]][k]=avgcons[[3]][k]+1
+      }
+    }
+  }
+}
 
-str(tmp)
-str(data[[1]])
-str(weather)
+#FÅK!
+if('F'=='U'){
+avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
+weightavg<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
 
-Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
 
-plot(data[[1]]$Flow,col=Wcol[2])
+difftime(max(EndDays),min(StartDays), units ="hours")
+avgconsumption[difftime(max(EndDays),min(StartDays), units ="hours")]
+
+difftime(StartDays[1],min(StartDays), units ="hours")
+difftime(EndDays[1],min(StartDays), units ="hours")
+
+for (i in 1:n) {
+  avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]<-
+    avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]+
+    data[[i]]$Flow*data[[i]]$CoolingDegree
+  weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]<-
+    weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]+
+    rep(1,length(data[[1]]$Flow))
+}
+
+length(difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours"))
+length(data[[i]]$Flow*data[[i]]$CoolingDegree)
+
+
+#FÅCK!
+maxskip<-rep(0,n)
+sumskip<-rep(0,n)
+for (i in 1:n) {
+  ntmp=length(data[[i]]$StartDateTime)
+  tmpdiftest=difftime(data[[i]]$StartDateTime[1:ntmp-1],data[[i]]$StartDateTime[2:ntmp], units ="hours")
+  maxskip[i]=max(tmpdiftest)
+  if(max(tmpdiftest)>1){
+    print(match(2:max(tmpdiftest),tmpdiftest))
+  }
+}
+}
