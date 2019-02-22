@@ -28,4 +28,11 @@ for (i in 1:1){
 tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
 tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
 
-plot(data[[1]]$CoolingDegree*data[[1]]$Flow, tmp$Temperature[-1])
+plot(tmp$Temperature,data[[1]]$CoolingDegree*data[[1]]$Flow)
+
+
+lowtemp = tmp$Temperature[tmp$Temperature<15]
+lowtempq = (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature<15]
+hightemp = tmp$Temperature[tmp$Temperature>=15]
+hightempq = (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature>=15]
+plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)))
