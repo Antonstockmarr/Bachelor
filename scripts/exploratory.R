@@ -7,11 +7,22 @@ source("data.R")
 pairs(data[[1]])
 
 plot(data[[1]]$Flow)
+plot.months <- c("January", "February", "March", "April", "May", "June", "July", "August", 
+                 "September", "November", "December")
+
+par(mfrow = c(1,1))
+time <- seq(as.Date(StartDays[1]),as.Date(EndDays[1]), by = "1 mon")
+plot(data[[1]]$StartDateTime, data[[1]]$Flow, "l", xaxt = 'n')
+drawxaxis(data[[1]]$StartDateTime, tick.tstep="months") 
+axis.Date(1, at = seq(min(time), max(time), by = "12 mon"), format = "%m")
 
 # Investigating each house's flow behaviour 
-plot.times = c(df.temp$StartDateTime)
-plot.months = c("January", "February", "March", "April", "May", "June", "July", "August", 
-                "September", "November", "December")
+for (i in 1:1){
+  #data[[i]]$StartDateTime.new <- as.POSIXlt(data[[i]]$StartDateTime)
+  #data[[i]]$StartDateTime <- as.Date(data[[i]]$StartDateTime, "%Y-%m-%d")
+  #data[[i]]$StartDateTime2 <- as.Date(cut(data[[i]]$StartDateTime, breaks = "month"))
+  plot(data[[i]]$StartDateTime, data[[i]]$Flow, type = "l", xlab ="Time", ylab = "Flow")
+  axis(1, at = unique(months(data[[i]]$StartDateTime)), las = 2)
+}
 
-plot(data[[1]]$StartDateTime, data[[1]]$Flow, type = "l", xlab ="Time", ylab = "Flow of house 1")
-axis(1, labels = plot.months, las = 2)
+
