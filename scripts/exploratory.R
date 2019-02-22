@@ -33,6 +33,7 @@ tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
 tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
 
 plot(tmp$Temperature,data[[1]]$CoolingDegree*data[[1]]$Flow)
+abline(v = 11.5, lty = 2, col = 2)
 
 
 lowtemp = tmp$Temperature[tmp$Temperature<15]
@@ -40,3 +41,13 @@ lowtempq = (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature<15]
 hightemp = tmp$Temperature[tmp$Temperature>=15]
 hightempq = (data[[1]]$CoolingDegree*data[[1]]$Flow)[tmp$Temperature>=15]
 plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)))
+
+# Investigating weather data
+pairs(weather)
+str(weather)
+plot(weather$SunHour[weather$IsHistoricalEstimated==FALSE], weather$UltravioletIndex[weather$IsHistoricalEstimated==FALSE])
+# No correlation
+
+# Correlation between consumption and wind
+plot(tmp$WindSpeed,data[[1]]$CoolingDegree*data[[1]]$Flow)
+plot(tmp$WindDirection,data[[42]]$CoolingDegree*data[[42]]$Flow)
