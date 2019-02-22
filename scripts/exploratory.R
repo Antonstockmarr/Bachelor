@@ -25,4 +25,5 @@ for (i in 1:1){
   axis(1, at = unique(months(data[[i]]$StartDateTime)), las = 2)
 }
 
+acf(data[[1]]$TemperatureOut, lag.max = 200)
 
