@@ -73,4 +73,6 @@ plot(weather$SunHour[weather$IsHistoricalEstimated==FALSE], weather$UltravioletI
 
 # Correlation between consumption and wind
 plot(tmp$WindSpeed,data[[1]]$CoolingDegree*data[[1]]$Flow)
-plot(tmp$WindDirection,data[[42]]$CoolingDegree*data[[42]]$Flow)
+plot(tmp$WindDirection,data[[1]]$CoolingDegree*data[[1]]$Flow)
+
+

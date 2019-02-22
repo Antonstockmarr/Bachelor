@@ -59,8 +59,8 @@ weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistor
 
 # Making temporary weather data in order to merge it with the house data
 weather <- weather[dim(weather)[1]:1,]
-tmp <- weather[(weather$StartDateTime <= EndDays[42]),]
-tmp <- tmp[tmp$StartDateTime >= StartDays[42],]
+tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
+tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
 
 
 rm(i,n,file.names,data.path,dt.tmp,Datalengths)
