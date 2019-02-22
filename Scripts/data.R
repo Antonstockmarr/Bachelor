@@ -31,8 +31,8 @@ for(i in 1:n){
   dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   
-  # Removing data before startate of weather data
-  while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")<=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
+  # Removing data before startdate of weather data
+  while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
     dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
   }
   Datalengths[i] = length(dt.tmp)
