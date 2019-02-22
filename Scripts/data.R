@@ -30,6 +30,8 @@ for(i in 1:n){
   names(dt.tmp)[1] = 'StartDateTime'
   dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+  
+  # Removing data before startate of weather data
   while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")<=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
     dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
   }
@@ -55,6 +57,7 @@ sEndDays <- EndDays[order(EndDays)]
 weatherStart = weather$StartDateTime[1]
 weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistoricalEstimated==FALSE])]
 
+# Making temporary weather data in order to merge it with the house data
 weather <- weather[dim(weather)[1]:1,]
 tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
 tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
