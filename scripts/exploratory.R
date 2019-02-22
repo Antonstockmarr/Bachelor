@@ -4,6 +4,10 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 source("data.R")
 
+# Farveeksempel
+Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
+plot(data[[1]]$Flow,col=Wcol[2])
+
 pairs(data[[1]])
 
 plot(data[[1]]$Flow)

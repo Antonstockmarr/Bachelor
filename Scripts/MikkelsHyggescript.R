@@ -32,7 +32,9 @@ if(1==1){
     names(dt.tmp)[1] = 'StartDateTime'
     dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
     dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
-    while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")<=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
+    
+    # Removing data before startdate of weather data
+    while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
       dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
     }
     Datalengths[i] = length(dt.tmp)
@@ -56,9 +58,15 @@ if(1==1){
   
   weatherStart = weather$StartDateTime[1]
   weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistoricalEstimated==FALSE])]
-  weather<-weather[dim(weather)[1]:1,]
   
-  rm(i,file.names,data.path,dt.tmp,Datalengths)
+  # Making temporary weather data in order to merge it with the house data
+  weather <- weather[dim(weather)[1]:1,]
+  tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
+  tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
+  
+  
+  rm(i,n,file.names,data.path,dt.tmp,Datalengths)
+  
 }
 #exploratory.R
 if(2==3){
@@ -99,6 +107,6 @@ str(tmp)
 str(data[[1]])
 str(weather)
 
-colsc=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
+Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
 
-plot(data[[1]]$Flow,col=colsc[1])
+plot(data[[1]]$Flow,col=Wcol[2])
