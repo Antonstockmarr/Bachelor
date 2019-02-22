@@ -122,7 +122,7 @@ avgcons[[3]]<-rep(0,length(avgcons[[1]]))
 
 for (i in 1:n) {
   for(j in 1:length(data[[i]]$StartDateTime)){
-    for (k in length(avgcons[[1]])) {
+    for (k in 1:length(avgcons[[1]])) {
       if(data[[i]]$StartDateTime[j]==avgcons[[1]][k]){
         avgcons[[2]][k]=avgcons[[2]][k]+data[[i]]$Flow[j]*data[[i]]$CoolingDegree[j]
         avgcons[[3]][k]=avgcons[[3]][k]+1
