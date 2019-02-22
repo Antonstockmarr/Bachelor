@@ -65,7 +65,7 @@ if(1==1){
   tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
   
   
-  rm(i,n,file.names,data.path,dt.tmp,Datalengths)
+  rm(i,file.names,data.path,dt.tmp,Datalengths)
   
 }
 #exploratory.R
@@ -116,7 +116,20 @@ if(2==3){
 }
 
 avgcons <- vector(mode="list", length = 3)
-seq(from=StartDays[1], to=EndDays[1], by, length.out = NULL, along.with = NULL, ...)
+avgcons[[1]]<-seq(from=min(StartDays), to=max(EndDays), by="hour")
+avgcons[[2]]<-rep(0,length(avgcons[[1]]))
+avgcons[[3]]<-rep(0,length(avgcons[[1]]))
+
+for (i in 1:n) {
+  for(j in 1:length(data[[i]]$StartDateTime)){
+    for (k in length(avgcons[[1]])) {
+      if(data[[i]]$StartDateTime[j]==avgcons[[1]][k]){
+        avgcons[[2]][k]=avgcons[[2]][k]+data[[i]]$Flow[j]*data[[i]]$CoolingDegree[j]
+        avgcons[[3]][k]=avgcons[[3]][k]+1
+      }
+    }
+  }
+}
 
 #FÅK!
 if('F'=='U'){
