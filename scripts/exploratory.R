@@ -25,4 +25,8 @@ for (i in 1:1){
   axis(1, at = unique(months(data[[i]]$StartDateTime)), las = 2)
 }
 
+tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
+tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
+
+plot(data[[1]]$CoolingDegree*data[[1]]$Flow, tmp$Temperature[-1])
 
