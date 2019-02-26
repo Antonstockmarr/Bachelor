@@ -42,13 +42,21 @@
 
 \subsection{Spørgsmål}
 \begin{enumerate}
-    \item abline på Q-plot - kan vi optimere den på nogen måde, eller er det okay vi bare vælger en temperatur? Det er meget realistisk, at folk tænder for varmen, når der er under 13 grader udenfor. Vi har brug for en smart måde at optimere på. 
-    \item Hvordan sorterer man rækkerne i et data.frame ud fra en bestemt søjle? 
-    \item Idéen var at udfylde de punkter vi mangler og så fylde dem ud med NA værdier. Så rækkerne mangler ikke, men de er tomme. Er det en korrekt måde at håndtere dette problem på? 
+    \item abline på Q-plot - kan vi optimere den på nogen måde, eller er det okay vi bare vælger en temperatur? Det er meget realistisk, at folk tænder for varmen, når der er under 13 grader udenfor. Vi har brug for en smart måde at optimere på. \textcolor{red}{}
+    \item Hvordan sorterer man rækkerne i et data.frame ud fra en bestemt søjle? \textcolor{red}{Den her er vist fikset.}
+    \item Idéen var at udfylde de punkter vi mangler og så fylde dem ud med NA værdier. Så rækkerne mangler ikke, men de er tomme. Er det en korrekt måde at håndtere dette problem på? \textcolor{red}{Peder siger det giver mening og så tage højde for det derfra. Det giver mening fordi det er samplet meget skarpt. Lav en vektor med de tidspunkter vi gerne vil have og så merge data.frame med vektoren og så keep left, så fylder den ind. Husk én detalje: sommertid og vintertid.}
     \item Vise plots - er det godt eller skidt? 
 \end{enumerate} 
 
 \subsection{Noter}
+\begin{itemize}
+    \item Al data er højst sandsynligt målt i samme tidszone. 
+    \item Peders strategi: fortæl den at det er "GMT" eller "UTC" tid.
+    \item Vi laver en model for hvert hus, fordi det skalerer til mange huse. 69 forskellige sæt parametre men det kan godt være samme model. Det er en af de diskussioner vi kommer til at skulle lave.  
+    \item Hvad effekten af at bruge forskellige modeller? Der kommer forskellige ting ind, vi kan sammenligne huse, hvor mange data har man? Hvilken betydning har det? 
+    \item Vi tager ét hus - hvad kan vi gøre med en månedsdata og så laver vi et rullende vindue. Hvilke estimater et eller andet. Er det faktisk robust det vi har gang i? Plot parameter estimaterne gør nok noget henover året. Hvad gør konfidensintervallerne? 
+    \item Brug subset af data til at estimere med, forskellige længder, overlap osv. Det er en god måde at lave robuste modeller på. Kan man fx overhovedet se at folks juleferier har betydning? 
+\end{itemize}
 
 \subsection{Hvad skal vi lave?}
 

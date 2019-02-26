@@ -32,7 +32,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Noter}{7}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Hvad skal vi lave?}{7}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Hvad skal vi lave?}{8}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Noter}{9}{chapter.4}
 \defcounter {refsection}{0}\relax 

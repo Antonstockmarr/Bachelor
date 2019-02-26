@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  22 FEB 2019 14:39
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  26 FEB 2019 13:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1834,14 +1834,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
-) [7]
+) [7] [8]
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex [8
+ (./Andet/Noter.tex) [9
 
 
 
-]) [9] [10
+] [10
 
 
 ] [11
@@ -1874,10 +1874,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46563 strings out of 492970
- 880715 string characters out of 6133939
- 1486946 words of memory out of 5000000
- 49940 multiletter control sequences out of 15000+600000
+ 46564 strings out of 492970
+ 880730 string characters out of 6133939
+ 1487946 words of memory out of 5000000
+ 49941 multiletter control sequences out of 15000+600000
  550781 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
