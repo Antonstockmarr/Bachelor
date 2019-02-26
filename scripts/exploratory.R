@@ -83,3 +83,40 @@ plot(tmp$WindDirection,data[[42]]$CoolingDegree*data[[42]]$Flow)
 ggplot(tmp, aes(x = Temperature, y= data[[1]]$CoolingDegree*data[[1]]$Flow)) +
   geom_point() + geom_smooth(colour=2) + ylab("Consumption")
 
+
+
+avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
+weightavg<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
+
+
+difftime(max(EndDays),min(StartDays), units ="hours")
+avgconsumption[difftime(max(EndDays),min(StartDays), units ="hours")]
+
+difftime(StartDays[1],min(StartDays), units ="hours")
+difftime(EndDays[1],min(StartDays), units ="hours")
+
+for (i in 1:n) {
+  avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]<-
+    avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]+
+    data[[i]]$Flow*data[[i]]$CoolingDegree
+  weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]<-
+    weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]+
+    rep(1,length(data[[1]]$Flow))
+}
+
+length(difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours"))
+length(data[[i]]$Flow*data[[i]]$CoolingDegree)
+
+maxskip<-rep(0,n)
+sumskip<-rep(0,n)
+for (i in 1:n) {
+  ntmp=length(data[[i]]$StartDateTime)
+  tmpdiftest=difftime(data[[i]]$StartDateTime[1:ntmp-1],data[[i]]$StartDateTime[2:ntmp], units ="hours")
+  maxskip[i]=max(tmpdiftest)
+  if(max(tmpdiftest)>1){
+    print(match(2:max(tmpdiftest),tmpdiftest))
+  }
+}
+
+n69=length(data[[69]]$StartDateTime)
+tmpdiftest=difftime(data[[69]]$StartDateTime[1:n69-1],data[[69]]$StartDateTime[2:n69], units ="hours")

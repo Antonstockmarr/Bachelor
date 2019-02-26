@@ -40,6 +40,23 @@ for(i in 1:n){
   EndDays[i]= dt.tmp$StartDateTime[1]
   StartDays[i]=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]
   
+  # Filling out missing data rows
+    ntmp=length(data[[i]]$StartDateTime)
+    tmpdiftest=difftime(data[[i]]$StartDateTime[1:ntmp-1],data[[i]]$StartDateTime[2:ntmp], units ="hours")
+    
+    if(max(tmpdiftest)!=1)
+      {
+      for (j in which(tmpdiftest>1))
+        {
+        for (k in 1:j-1)
+          {
+            newrow <- c(data[[i]]$StartDateTime[j]+3600*k,data[[i]]$EndDateTime[j]+3600*k,rep(NA,6))
+            rbind(data[[i]],newrow)
+          }  
+        }
+      data[[i]] <- data[[i]][order(data[[i]]$StartDateTime)]
+      }
+ 
 }
 
 # Reading weather data  
