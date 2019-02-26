@@ -115,11 +115,43 @@ if(2==3){
   
 }
 
-avgcons <- vector(mode="list", length = 3)
+for(i in 1:n){
+  tmp=seq(from=tail(data[[i]]$StartDateTime,n=1), to=data[[i]]$StartDateTime[1], by="hour")
+  
+}
+tmp=rev(seq(from=tail(data[[2]]$StartDateTime,n=1), to=data[[2]]$StartDateTime[1], by="hour"))
+
+tmp2=merge(tmp,data[[2]])
+
+head(data[[2]])
+head(rev(tmp))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if('F'=="UCK"){
+  avgcons <- vector(mode="list", length = 3)
 avgcons[[1]]<-seq(from=min(StartDays), to=max(EndDays), by="hour")
 avgcons[[2]]<-rep(0,length(avgcons[[1]]))
 avgcons[[3]]<-rep(0,length(avgcons[[1]]))
-
 for (i in 1:n) {
   for(j in 1:length(data[[i]]$StartDateTime)){
     for (k in 1:length(avgcons[[1]])) {
@@ -130,7 +162,7 @@ for (i in 1:n) {
     }
   }
 }
-
+}
 #FÅK!
 if('F'=='U'){
 avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
