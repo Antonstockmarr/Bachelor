@@ -42,7 +42,7 @@
 
 \subsection{Spørgsmål}
 \begin{enumerate}
-    \item abline på Q-plot - kan vi optimere den på nogen måde, eller er det okay vi bare vælger en temperatur? Det er meget realistisk, at folk tænder for varmen, når der er under 13 grader udenfor. Vi har brug for en smart måde at optimere på. \textcolor{red}{}
+    \item abline på Q-plot - kan vi optimere den på nogen måde, eller er det okay vi bare vælger en temperatur? Det er meget realistisk, at folk tænder for varmen, når der er under 13 grader udenfor. Vi har brug for en smart måde at optimere på. \textcolor{red}{Vi kan sagtens optimere denne. Vi skal dog lave plottet på døgnværdier i stedet.}
     \item Hvordan sorterer man rækkerne i et data.frame ud fra en bestemt søjle? \textcolor{red}{Den her er vist fikset.}
     \item Idéen var at udfylde de punkter vi mangler og så fylde dem ud med NA værdier. Så rækkerne mangler ikke, men de er tomme. Er det en korrekt måde at håndtere dette problem på? \textcolor{red}{Peder siger det giver mening og så tage højde for det derfra. Det giver mening fordi det er samplet meget skarpt. Lav en vektor med de tidspunkter vi gerne vil have og så merge data.frame med vektoren og så keep left, så fylder den ind. Husk én detalje: sommertid og vintertid.}
     \item Vise plots - er det godt eller skidt? 
@@ -56,7 +56,27 @@
     \item Hvad effekten af at bruge forskellige modeller? Der kommer forskellige ting ind, vi kan sammenligne huse, hvor mange data har man? Hvilken betydning har det? 
     \item Vi tager ét hus - hvad kan vi gøre med en månedsdata og så laver vi et rullende vindue. Hvilke estimater et eller andet. Er det faktisk robust det vi har gang i? Plot parameter estimaterne gør nok noget henover året. Hvad gør konfidensintervallerne? 
     \item Brug subset af data til at estimere med, forskellige længder, overlap osv. Det er en god måde at lave robuste modeller på. Kan man fx overhovedet se at folks juleferier har betydning? 
+    \item I første omgang er det at kigge på hvordan husene opfører sig. Vi starter med at bygge ting op, som vi ved virker. Forudsigelse og undersøgelse af robusthed. 
+    \item Tag en eller to dages gennemsnit på varmesæsonen og så tage parametrene og plot dem for den model eller så noget. 
+    \item Normaliseret pr. kvadratmeter i huset. 
+    \item Når vi ikke har indetemperaturen, er vi nødt til at have mu med. Hvis man bruger en masse el, så påvirker det også estimatet af indetemperaturen. 
+    \item Plot af hele data, pairs plot, vinterperioder - plot for alle sammen. Fx et hus der opfører sig helt gakket. 
+    \item Det plot med knækket vi har - vi skal tage det over hele dagen og ikke baseret på timerne. Man kan også lave en model, hvor man tager autokorrelationen med og så bruger weighted least squares. 
+    \item \texttt{aggregate} fra Peder.
+    \item Hvis man laver modelreduktion - hvad er altid med? Brug \texttt{step}-funktionen til at reducere. Er weekdays signifikant? 
+    \item Helsingørdata: Nogenlunde samme modeller som for Aalborg. Vi har el og vand og vil lave dagsværdier, hvad kan vi bruge det til? Hvad hvis vi ikke bruger el og vand, hvad hvis vi gør? Får vi merværdi. 
 \end{itemize}
 
 \subsection{Hvad skal vi lave?}
+\begin{itemize} 
+    \item Lave vektor og merge med data.frame
+    \item Lave projektplan: kursusbeskrivelse og læringsmål ligesom for et kursus. Brug teksten fra mda'en eller sådan noget. 10 linjer eller noget. Hvad er læringsmål, som vi skal måles på? 
+    \item Hvad er egentlig det nye vi laver/undersøger?
+\end{itemize}
+
+\pagebreak
+
+\section{5. marts}
+
+\subsection{Hvad skal vi have lavet?}
 

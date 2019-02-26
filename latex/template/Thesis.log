@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  26 FEB 2019 13:17
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  26 FEB 2019 14:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1834,23 +1834,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
-) [7] [8]
+ [7] [8]) [9]
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex) [9
+ (./Andet/Noter.tex [10
 
 
 
-] [10
+]) [11] [12
 
 
-] [11
+] [13
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[12
+[14
 
 ]
 \tf@toc=\write8
@@ -1866,8 +1866,15 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
  (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./Andet/Vejledningsmøder.aux) (./Andet/Noter.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AC15863ED188F268566DDD7D41F546CF.
+
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: AC15863ED188F268566DDD7D41F546CF
+(rerunfilecheck)             After:  CD432666DB6F69189DB73209AA6646F2.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
@@ -1882,4 +1889,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (24 pages).
+Output written on Thesis.pdf (26 pages).
