@@ -114,25 +114,32 @@ if(2==3){
   plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)))
   
 }
-
+library(xts)
 for(i in 1:n){
   tmp=seq(from=tail(data[[i]]$StartDateTime,n=1), to=data[[i]]$StartDateTime[1], by="hour")
   
 }
+#
 tmp=rev(seq(from=tail(data[[2]]$StartDateTime,n=1), to=data[[2]]$StartDateTime[1], by="hour"))
+df <- data.frame(StartDateTime=tmp,n=1:length(tmp))
+tmp2=merge(data[[2]],df,all=TRUE,sort=TRUE)
 
-tmp2=merge(tmp,data[[2]])
-
+head(df)
 head(data[[2]])
-head(rev(tmp))
+head(tmp2)
+tail(tmp2)
+#
 
+data2xts <- xts(data[[2]][,-2:-1], order.by=data[[2]][,1])
+t1<-rev(seq(from=tail(data[[2]]$StartDateTime,n=1), to=data[[2]]$StartDateTime[1], by="hour"))
+d1 <- xts(rep(1,length(t1)), order.by=t1)
+x <- merge(d1,data2xts,all=TRUE)
+data.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
+head(x)
 
+y<-
 
-
-
-
-
-
+head(y)
 
 
 
