@@ -114,12 +114,58 @@ if(2==3){
   plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)))
   
 }
+library(xts)
+# Fill missing null values.
+tmp.xts <- xts(dt.tmp[,-2:-1], order.by=dt.tmp[,1])
+t1<-rev(seq(from=tail(dt.tmp$StartDateTime,n=1), to=dt.tmp$StartDateTime[1], by="hour"))
+d1 <- xts(rep(1,length(t1)), order.by=t1)
+x <- merge(d1,tmp.xts,all=TRUE)
+data.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
 
-avgcons <- vector(mode="list", length = 3)
+for(i in 1:n){
+  tmp=seq(from=tail(data[[i]]$StartDateTime,n=1), to=data[[i]]$StartDateTime[1], by="hour")
+  
+}
+#
+tmp=rev(seq(from=tail(data[[2]]$StartDateTime,n=1), to=data[[2]]$StartDateTime[1], by="hour"))
+df <- data.frame(StartDateTime=tmp,n=1:length(tmp))
+tmp2=merge(data[[2]],df,all=TRUE,sort=TRUE)
+
+head(df)
+head(data[[2]])
+head(tmp2)
+tail(tmp2)
+#
+
+data2xts <- xts(data[[2]][,-2:-1], order.by=data[[2]][,1])
+t1<-rev(seq(from=tail(data[[2]]$StartDateTime,n=1), to=data[[2]]$StartDateTime[1], by="hour"))
+d1 <- xts(rep(1,length(t1)), order.by=t1)
+x <- merge(d1,data2xts,all=TRUE)
+data.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
+head(x)
+
+y<-
+
+head(y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if('F'=="UCK"){
+  avgcons <- vector(mode="list", length = 3)
 avgcons[[1]]<-seq(from=min(StartDays), to=max(EndDays), by="hour")
 avgcons[[2]]<-rep(0,length(avgcons[[1]]))
 avgcons[[3]]<-rep(0,length(avgcons[[1]]))
-
 for (i in 1:n) {
   for(j in 1:length(data[[i]]$StartDateTime)){
     for (k in 1:length(avgcons[[1]])) {
@@ -130,7 +176,7 @@ for (i in 1:n) {
     }
   }
 }
-
+}
 #FÅK!
 if('F'=='U'){
 avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
