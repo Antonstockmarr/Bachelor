@@ -1,4 +1,5 @@
 rm(list = ls())
+library(xts)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
@@ -33,6 +34,13 @@ for(i in 1:n){
   while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
     dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
   }
+  # Fill missing null values.
+  tmp.xts <- xts(dt.tmp[,-2:-1], order.by=dt.tmp[,1])
+  t1<-rev(seq(from=tail(dt.tmp$StartDateTime,n=1), to=dt.tmp$StartDateTime[1], by="hour"))
+  d1 <- xts(rep(1,length(t1)), order.by=t1)
+  x <- merge(d1,tmp.xts,all=TRUE)
+  data.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
+  
   Datalengths[i] = length(dt.tmp)
   data[[i]] <- dt.tmp
   
