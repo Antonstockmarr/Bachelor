@@ -34,8 +34,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.3}Hvad skal vi lave?}{8}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Noter}{9}{chapter.4}
+\contentsline {section}{\numberline {3.3}5. marts}{9}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Data}{9}{section.4.1}
+\contentsline {subsection}{\numberline {3.3.1}Hvad skal vi have lavet?}{9}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Exploratory Analysis}{9}{section.4.2}
+\contentsline {chapter}{\chapternumberline {4}Noter}{11}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Data}{11}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Exploratory Analysis}{11}{section.4.2}
