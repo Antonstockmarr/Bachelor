@@ -1,6 +1,8 @@
 source("data.R")
-n <- 69
 
+library("ggplot2")
+
+if("Til"=="Ida"){
 tot.time.pts <-seq(from=min(StartDays), to=max(EndDays), by="hour")
 avgconsumption<-rep(0,length(tot.time.pts))
 weightavg<-rep(0,length(tot.time.pts))
@@ -16,13 +18,24 @@ for (i in 1:n) {
 avgconsumption<-avgconsumption/weightavg
 head(avgconsumption)
 
-plot(avgconsumption)
+m=7
 
-head(weather$WindDirection)
-min(weather$WindDirection)
-max(weather$WindDirection)
+avgdata <- data[[2]]
+avgdata[,1]<-seq(from=min(StartDays), to=max(EndDays), by="hour")
+for(j in 2:m){
+  avgdata[,j] <- rep(0,length(avgdata[[1]]))
+  for (i in 1:n){
+    tmp.index<-1+difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")
+    tmp.data=data[[i]][,j]
+    tmp.data[is.na(data[[i]])] <- 0
+    avgdata[[j]][tmp.index] <- avgdata[[j]][tmp.index] + tmp.data
+  }
+  avgdata[[j]] <- avgdata[[j]]/weightavg
+}
+avgdata[,8]<-avgconsumption
 
-plot(weather$WindDirection)
-plot(weather$WindSpeed~weather$WindDirection)
-max(weather$Temperature)
-min(weather$Temperature)
+ggplot(avgdata[,c(2,7)])
+
+}
+
+
