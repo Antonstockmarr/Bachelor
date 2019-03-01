@@ -39,7 +39,8 @@ for(i in 1:n){
   t1<-rev(seq(from=tail(dt.tmp$StartDateTime,n=1), to=dt.tmp$StartDateTime[1], by="hour"))
   d1 <- xts(rep(1,length(t1)), order.by=t1)
   x <- merge(d1,tmp.xts,all=TRUE)
-  dt.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
+  tmp.df <- data.frame(StartDateTime=index(x),coredata(x[,-1]))
+  dt.tmp <- tmp.df[dim(tmp.df)[1]:1,]
   
   Datalengths[i] = length(dt.tmp)
   data[[i]] <- dt.tmp
