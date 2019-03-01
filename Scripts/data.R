@@ -74,5 +74,5 @@ for (i in 1:n){
   data[[i]]$weekday <- as.factor(weekdays(data[[i]]$StartDateTime))
 }
 
-rm(i,n,file.names,data.path,dt.tmp,Datalengths)
-
+rm(i,n,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts)
+ 
