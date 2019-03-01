@@ -124,22 +124,30 @@ if(2==3){
   
 }
 
+avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
+weightavg<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
+
+for (i in 2:2) {
+  
+  tmp.index<-(1+difftime(StartDays[i],min(StartDays), units ="hours")):(1+difftime(EndDays[i],min(StartDays), units ="hours"))
+  tmp.data=data[[i]]
+  tmp.data[is.na(data[[i]])] <- 0
+  avgconsumption[tmp.index] <- avgconsumption[tmp.index] + tmp.data$Flow*tmp.data$CoolingDegree
+  weightavg[tmp.index] <- weightavg[tmp.index] + rep(1,length(data[[1]]$Flow))
+}
+
+
+
+
+
 if('F'=="UCK"){
   avgcons <- vector(mode="list", length = 3)
-avgcons[[1]]<-seq(from=min(StartDays), to=max(EndDays), by="hour")
-avgcons[[2]]<-rep(0,length(avgcons[[1]]))
-avgcons[[3]]<-rep(0,length(avgcons[[1]]))
-for (i in 1:n) {
-  for(j in 1:length(data[[i]]$StartDateTime)){
-    for (k in 1:length(avgcons[[1]])) {
-      if(data[[i]]$StartDateTime[j]==avgcons[[1]][k]){
-        avgcons[[2]][k]=avgcons[[2]][k]+data[[i]]$Flow[j]*data[[i]]$CoolingDegree[j]
-        avgcons[[3]][k]=avgcons[[3]][k]+1
-      }
-    }
-  }
+  avgcons[[1]]<-seq(from=min(StartDays), to=max(EndDays), by="hour")
+  avgcons[[2]]<-rep(0,length(avgcons[[1]]))
+  avgcons[[3]]<-rep(0,length(avgcons[[1]]))
+
 }
-}
+
 #FÅK!
 if('F'=='U'){
 avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
@@ -153,12 +161,11 @@ difftime(StartDays[1],min(StartDays), units ="hours")
 difftime(EndDays[1],min(StartDays), units ="hours")
 
 for (i in 1:n) {
-  avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]<-
-    avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]+
-    data[[i]]$Flow*data[[i]]$CoolingDegree
-  weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]<-
-    weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]+
-    rep(1,length(data[[1]]$Flow))
+  tmp.index<-difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")
+  tmp.data=data[[i]]
+  tmp.data[is.na(data[[i]])] <- 0
+  avgconsumption[tmp.index] <- avgconsumption[tmp.index] + tmp.data$Flow*tmp.data$CoolingDegree
+  weightavg[tmp.index] <- weightavg[tmp.index] + rep(1,length(data[[1]]$Flow))
 }
 
 length(difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours"))
