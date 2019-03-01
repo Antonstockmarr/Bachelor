@@ -1,3 +1,4 @@
+library(optimx)
 # Computing estimates 
 fun <- function(par,x)
 {
@@ -17,23 +18,21 @@ SSR <- function(par) {
 
 
 # Given the temperature and consumption, make the piecewise optimization, plot it and return the breakpoint.
-consumption_plot <- function(temp,tempq,plot=TRUE)
-{
+consumption_plot <- function(temp,tempq,makeplot=TRUE){
 
 # Setting the lines based on intercept and breakpoint
 
-library(optimx)
 bestpar <- optimx(par = c(x1 = 13.5, i1 = 6.5, i2 = 3), 
          fn = SSR, 
          method = "Nelder-Mead")
   
-
-if (plot=TRUE)
+if (makeplot==TRUE)
 {
   plot(temp,tempq)
   lines(seq(ceiling(min(temp)),floor(max(temp)),by=0.01), 
         fun(c(x1 = bestpar$x1, i1 = bestpar$i1, i2 = bestpar$i2), seq(ceiling(min(temp)),floor(max(temp)),by=0.01)),col='red')
 }
+
 
 result = c(breakpoint = bestpar$x1,minTempQ = bestpar$i1, highTempQ = bestpar$i2)
 }

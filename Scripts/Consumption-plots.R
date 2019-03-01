@@ -9,6 +9,7 @@ tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
 # Defining subsets
 temp <- tmp$Temperature
 tempq <- data[[1]]$CoolingDegree*data[[1]]$Flow
+tmp$Temperature[200] <- NA
 result <- consumption_plot(temp,tempq)
 
 
@@ -19,5 +20,6 @@ for (i in 1:n)
   tmp <- tmp[tmp$StartDateTime >= StartDays[i],]
   temp <- tmp$Temperature
   tempq <- data[[i]]$CoolingDegree*data[[i]]$Flow
-  result <- consumption_plot(temp,tempq,plot=FALSE)
+  result <- consumption_plot(temp,tempq,makeplot=FALSE)
+  InactiveQ[i]=result[1]
 }
