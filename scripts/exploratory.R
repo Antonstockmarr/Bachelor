@@ -84,7 +84,6 @@ ggplot(tmp, aes(x = Temperature, y= data[[1]]$CoolingDegree*data[[1]]$Flow)) +
   geom_point() + geom_smooth(colour=2) + ylab("Consumption")
 
 
-
 avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
 weightavg<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
 

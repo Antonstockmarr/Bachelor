@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  26 FEB 2019 14:22
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  1 MAR 2019 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1797,20 +1797,30 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 \openout2 = `chapters/Data.aux'.
 
- (./chapters/Data.tex) [1
+ (./chapters/Data.tex
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 13.82405pt on input line 5.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
-]
+]) [2]
 \openout2 = `chapters/Exploratory.aux'.
 
- (./chapters/Exploratory.tex [2
+ (./chapters/Exploratory.tex
+File: graphics/../../../figures/Consumption_H1.eps Graphic file (type eps)
+<graphics/../../../figures/Consumption_H1.eps>
+) [3
 
 
 
 ]
-File: graphics/../../../figures/Consumption_H1.eps Graphic file (type eps)
-<graphics/../../../figures/Consumption_H1.eps>
-) [3]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
  (./Andet/Vejledningsmøder.tex [4
@@ -1818,13 +1828,6 @@ File: graphics/../../../figures/Consumption_H1.eps Graphic file (type eps)
 
 
 ]
-LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
-(Font)              scaled to size 13.82405pt on input line 3.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
 Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
 []\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
  []
@@ -1866,25 +1869,18 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
  (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./Andet/Vejledningsmøder.aux) (./Andet/Noter.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
-
-
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: AC15863ED188F268566DDD7D41F546CF
-(rerunfilecheck)             After:  CD432666DB6F69189DB73209AA6646F2.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 8D345870CF6B33D9D70B510097C3995A.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46564 strings out of 492970
- 880730 string characters out of 6133939
- 1487946 words of memory out of 5000000
- 49941 multiletter control sequences out of 15000+600000
+ 46575 strings out of 492970
+ 880921 string characters out of 6133939
+ 1488597 words of memory out of 5000000
+ 49952 multiletter control sequences out of 15000+600000
  550781 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s

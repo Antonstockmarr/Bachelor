@@ -14,6 +14,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Data}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Original data}{1}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Cleaning and preparation}{2}{section.1.2}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Exploratory Analysis}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}Vejledningsmøder}{5}{chapter.3}
@@ -36,7 +40,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}5. marts}{9}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Hvad skal vi have lavet?}{9}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}Spørgsmål}{9}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4.1}Hvad skal vi have lavet?}{9}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Noter}{11}{chapter.4}
 \defcounter {refsection}{0}\relax 
