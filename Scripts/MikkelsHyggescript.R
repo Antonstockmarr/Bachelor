@@ -17,3 +17,12 @@ avgconsumption<-avgconsumption/weightavg
 head(avgconsumption)
 
 plot(avgconsumption)
+
+head(weather$WindDirection)
+min(weather$WindDirection)
+max(weather$WindDirection)
+
+plot(weather$WindDirection)
+plot(weather$WindSpeed~weather$WindDirection)
+max(weather$Temperature)
+min(weather$Temperature)
