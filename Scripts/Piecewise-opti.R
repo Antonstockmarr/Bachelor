@@ -3,12 +3,12 @@ library(optimx)
 fun <- function(par,x)
 {
   # The first intercept
-  y1 <- x^0 * par['i1']
+  y1 <- x^0 * par["i1"]
   # After breakpoint should be constant
   y1[x >= par["x1"]] <- par["i2"]
   # Should interpolate between intercept and breakpoint.
   r <- x < par["x1"]
-  y1[r] <- par["i1"] - (par['i1'] - par['i2'])/(par['x1'] - x[1]) * (x[r] - x[1])
+  y1[r] <- par["i1"] - (par["i1"] - par["i2"])/(par["x1"] - x[1]) * (x[r] - x[1])
   y1
 }
 
