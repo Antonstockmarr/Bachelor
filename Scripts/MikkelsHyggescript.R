@@ -17,4 +17,3 @@ avgconsumption<-avgconsumption/weightavg
 head(avgconsumption)
 
 plot(avgconsumption)
-
