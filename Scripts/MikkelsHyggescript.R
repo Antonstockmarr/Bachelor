@@ -1,10 +1,9 @@
 #data.R
 if(1==1){
   rm(list = ls())
+  library(xts)
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
   par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
-  
-  #library("data.table")
   
   # Loading all data
   data.path = "../Watts_DistrictHeatingData_2018/"
@@ -37,6 +36,13 @@ if(1==1){
     while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
       dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
     }
+    # Fill missing null values.
+    tmp.xts <- xts(dt.tmp[,-2:-1], order.by=dt.tmp[,1])
+    t1<-rev(seq(from=tail(dt.tmp$StartDateTime,n=1), to=dt.tmp$StartDateTime[1], by="hour"))
+    d1 <- xts(rep(1,length(t1)), order.by=t1)
+    x <- merge(d1,tmp.xts,all=TRUE)
+    data.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
+    
     Datalengths[i] = length(dt.tmp)
     data[[i]] <- dt.tmp
     
@@ -61,12 +67,15 @@ if(1==1){
   
   # Making temporary weather data in order to merge it with the house data
   weather <- weather[dim(weather)[1]:1,]
-  tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
-  tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
+  tmp <- weather[(weather$StartDateTime <= EndDays[42]),]
+  tmp <- tmp[tmp$StartDateTime >= StartDays[42],]
   
+  # Adding weekday factor to house data
+  for (i in 1:n){ 
+    data[[i]]$weekday <- as.factor(weekdays(data[[i]]$StartDateTime))
+  }
   
-  rm(i,file.names,data.path,dt.tmp,Datalengths)
-  
+  rm(i,n,file.names,data.path,dt.tmp,Datalengths)
 }
 #exploratory.R
 if(2==3){
@@ -114,52 +123,6 @@ if(2==3){
   plot(lowtemp,lowtempq, xlim=c(min(lowtemp),max(hightemp)))
   
 }
-library(xts)
-# Fill missing null values.
-tmp.xts <- xts(dt.tmp[,-2:-1], order.by=dt.tmp[,1])
-t1<-rev(seq(from=tail(dt.tmp$StartDateTime,n=1), to=dt.tmp$StartDateTime[1], by="hour"))
-d1 <- xts(rep(1,length(t1)), order.by=t1)
-x <- merge(d1,tmp.xts,all=TRUE)
-data.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
-
-for(i in 1:n){
-  tmp=seq(from=tail(data[[i]]$StartDateTime,n=1), to=data[[i]]$StartDateTime[1], by="hour")
-  
-}
-#
-tmp=rev(seq(from=tail(data[[2]]$StartDateTime,n=1), to=data[[2]]$StartDateTime[1], by="hour"))
-df <- data.frame(StartDateTime=tmp,n=1:length(tmp))
-tmp2=merge(data[[2]],df,all=TRUE,sort=TRUE)
-
-head(df)
-head(data[[2]])
-head(tmp2)
-tail(tmp2)
-#
-
-data2xts <- xts(data[[2]][,-2:-1], order.by=data[[2]][,1])
-t1<-rev(seq(from=tail(data[[2]]$StartDateTime,n=1), to=data[[2]]$StartDateTime[1], by="hour"))
-d1 <- xts(rep(1,length(t1)), order.by=t1)
-x <- merge(d1,data2xts,all=TRUE)
-data.tmp <-data.frame(StartDateTime=index(x),coredata(x[,-1]))
-head(x)
-
-y<-
-
-head(y)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if('F'=="UCK"){
   avgcons <- vector(mode="list", length = 3)
