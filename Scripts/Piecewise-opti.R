@@ -38,7 +38,7 @@ result = c(breakpoint = bestpar$x1,minTempQ = bestpar$i1, highTempQ = bestpar$i2
 
 
 
-AnalyzeConsumption <- function(data,houselist,onlyDay=FALSE,onlyWinter=FALSE,makeplot=FALSE)
+AnalyzeConsumption <- function(houselist,onlyDay=FALSE,onlyWinter=FALSE,makeplot=FALSE)
 {
   n = length(houselist)
   InactiveQ = c(rep(NA,n))
