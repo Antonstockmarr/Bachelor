@@ -1,1 +1,73 @@
 \chapter{Data}
+The data is provided by SEAS-NVE in two data sets. The house data consists of 69 \texttt{.csv}-files containing 8 attributes for each house which is 499,499 data points in all. The second data set includes weather data containing 11,845 observations with 11 attributes. \textcolor{red}{Noget med hvordan data er blevet målt - hvilket udstyr, af hvilken virksomhed osv.} 
+The main focus of this section will be how data is prepared for the further analysis.
+
+\section{Original data}
+The original house and weather data include hourly observations from the period 31-12-2017 to 29-01-2019. The time period varies in the house data which will be taken into account when cleaning the data. 
+
+Table \ref{tab: housedata} below shows the attributes from the house data set. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+     \hline
+     \textbf{Variable} & \textbf{Description} \\
+    \hline
+    \hline
+    StartDateTime  &  Start time and date for measurements. Hourly values.\\
+    EndDateTime  &  End time and date for measurements.\\
+    Energy  &  Electricity consumption in \textit{kWh}.\\
+    Flow  &  Amount of water passed through meter in \textit{$m^3/$hour}.\\
+    Volume in $m^3$.\\
+    TemperatureIn  &  Temp. of the water flowing into a house in Degrees/C. \\
+    TemperatureOut  & Temp. of the water flowing out of a house in Degrees/C.\\
+    CoolingDegree  &  Difference between Temp.In and Temp.Out in Degrees/C. \\
+    \hline
+    \end{tabular}
+    \caption{Attributes from the original house data.}
+    \label{tab: housedata}
+\end{table}
+
+The weather data set consists of the attributes seen in Table \ref{tab: weatherdata}.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+     \hline
+     \textbf{Variable} & \textbf{Description} \\
+    \hline
+    \hline
+    StartDateTime  &  Start time and date for measurements. Hourly values.\\
+    Temperature  &  Temperature outside in Degrees/C. \\
+    WindSpeed  &  \\
+    WindDirection  &  \\
+    SunHour  &  \\
+    Condition  & \\
+    UltravioletIndex  &   \\
+    MeanSeaLevelPressure  & \\
+    DewPoint  &  \\
+    Humidity  &  \\
+    PrecipitationProbability & \\
+    IsHistoricalEstimated & \\
+    \hline
+    \end{tabular}
+    \caption{Attributes from the original weather data.}
+    \label{tab: weatherdata}
+\end{table}   
+
+
+\section{Cleaning and preparation}
+
+Loader en temperary data ind, som vi modificerer indtil vi putter den ind i vores endelige data. 
+Vi sætter navnet på den første attribute til StartDateTime. Vi ændrer formatet på de to første attributes til posix, som er $\%d-\%m-\%Y \%H:\%M:\%S$.
+
+Så fjerner vi data fra 2017, fordi vi ikke har noget weather data der. 21 observationer. 
+
+For nogle huse er der nogle hourly measurements der ikke er der. Der er huller i målingerne. Disse udfyldes med null, hvilket er bedre/lettere at arbejde med. 
+
+enddays og startdays sættes for hvert hus - hvornår starter målingerne og hvornår slutter målinger. Tidspunkterne for aller første og aller sidste måling. 
+
+StartDateTime i weather formateres til rette format, så det passer med house data. 
+
+Attributen IsHistoricalEstimated ændres til logical, så vi kan compute med den. 
+
+Vi laver så temp. weather data så vi kan merge det med house data. 
+Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weather data på house data i model processen. 
