@@ -13,14 +13,13 @@ fun <- function(par,x)
 }
 
 SSR <- function(par) {
-  sum((tempq - fun(par, temp))^2)
+  sum((tempq2 - fun(par,temp2))^2)
 }
 
 
 # Given the temperature and consumption, make the piecewise optimization, plot it and return the breakpoint.
-consumption_plot <- function(temp,tempq,makeplot=TRUE){
+consumption_plot <- function(temp,tempq,makeplot=FALSE){
 
-# Setting the lines based on intercept and breakpoint
 
 bestpar <- optimx(par = c(x1 = 13.5, i1 = 6.5, i2 = 3), 
          fn = SSR, 
@@ -28,11 +27,12 @@ bestpar <- optimx(par = c(x1 = 13.5, i1 = 6.5, i2 = 3),
   
 if (makeplot==TRUE)
 {
-  plot(temp,tempq)
-  lines(seq(ceiling(min(temp)),floor(max(temp)),by=0.01), 
-        fun(c(x1 = bestpar$x1, i1 = bestpar$i1, i2 = bestpar$i2), seq(ceiling(min(temp)),floor(max(temp)),by=0.01)),col='red')
+  plot(temp2,tempq2)
+  lines(seq(ceiling(min(temp2)),floor(max(temp2)),by=0.01), 
+        fun(c(x1 = bestpar$x1, i1 = bestpar$i1, i2 = bestpar$i2), seq(ceiling(min(temp2)),floor(max(temp2)),by=0.01)),col='red')
 }
 
 
 result = c(breakpoint = bestpar$x1,minTempQ = bestpar$i1, highTempQ = bestpar$i2)
 }
+
