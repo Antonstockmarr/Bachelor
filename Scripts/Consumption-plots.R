@@ -1,25 +1,37 @@
+rm(list=ls())
 source("data.R")
 source("Piecewise-opti.R")
 
-# Getting the weather and data for 1st house
-tmp <- weather[(weather$StartDateTime <= EndDays[1]),]
-tmp <- tmp[tmp$StartDateTime >= StartDays[1],]
+# Plotting the first house
+AnalyzeConsumption(houselist=1,makeplot=TRUE)
+
+# Plotting ALL houses
+AnalyzeConsumption(houselist=1:n,makeplot=TRUE)
+
+# Getting data from all houses without plotting
+result <- AnalyzeConsumption(data,houselist=1:n,makeplot=FALSE)
 
 
-# Defining subsets
-temp <- tmp$Temperature
-tempq <- data[[1]]$CoolingDegree*data[[1]]$Flow
-tmp$Temperature[200] <- NA
-result <- consumption_plot(temp,tempq)
+# Plotting min inactive consumption
+minQ = which(result[,1]==min(result[,1]))
+AnalyzeConsumption(houselist = minQ,makeplot = TRUE)
+
+# Plotting max inactive consumption
+maxQ = which(result[,1]==max(result[,1]))
+AnalyzeConsumption(houselist = maxQ,makeplot = TRUE)
 
 
-InactiveQ = c(rep(NA,n))
-for (i in 1:n)
-{
-  tmp <- weather[(weather$StartDateTime <= EndDays[i]),]
-  tmp <- tmp[tmp$StartDateTime >= StartDays[i],]
-  temp <- tmp$Temperature
-  tempq <- data[[i]]$CoolingDegree*data[[i]]$Flow
-  result <- consumption_plot(temp,tempq,makeplot=FALSE)
-  InactiveQ[i]=result[1]
-}
+# Plotting flow for the minQ house
+plot(data[[minQ]]$Flow)
+
+
+plot(data[[1]]$Flow, data[[1]]$Volume)
+
+k=20
+plot((4.186/3.6)*data[[k]]$Volume*(data[[k]]$TemperatureIn-data[[k]]$TemperatureOut)~data[[k]]$Energy)
+plot((4.186/3.6)*data[[k]]$Flow*(data[[k]]$TemperatureIn-data[[k]]$TemperatureOut)~data[[k]]$Energy)
+
+
+plot(TemperatureIn-TemperatureOut~CoolingDegree,data[[1]])
+
+sum(abs(((data[[1]]$TemperatureIn-data[[1]]$TemperatureOut)-data[[1]]$CoolingDegree)))
