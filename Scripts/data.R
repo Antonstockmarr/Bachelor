@@ -9,6 +9,7 @@ file.names <- dir(data.path, pattern =".csv")
 n <- length(file.names)
 Datalengths = rep(c(1,n),nrow=n)
 data <- vector(mode="list", length = n)
+day.data <- vector(mode="list", length = n)
 
 
 # Loading a single table to initialize dates
@@ -34,6 +35,21 @@ for(i in 1:n){
   while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
     dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
   }
+  
+  # Add logical vairable for weekends
+  tmp.wd <- as.Date(dt.tmp$StartDateTime,tz="GMT")
+  tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
+  dt.tmp$Weekend <- grepl("ø",tmp.wd)
+  
+  #Making daily data
+  tmp.dat <- dt.tmp
+  tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
+  tmp.dat$Obs <- rep(1,length(tmp.dat$StartDateTime))
+  tmp.d1 <-aggregate(x=tmp.dat[,-c(1,2)],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
+  tmp.d2 <-aggregate(x=tmp.dat[,10],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
+  tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
+  day.data[[i]] <-tmp.dat
+  
   # Fill missing null values.
   tmp.xts <- xts(dt.tmp[,-2:-1], order.by=dt.tmp[,1])
   t1<-rev(seq(from=tail(dt.tmp$StartDateTime,n=1), to=dt.tmp$StartDateTime[1], by="hour"))
@@ -73,7 +89,7 @@ tmp <- tmp[tmp$StartDateTime >= StartDays[42],]
 for (i in 1:n){ 
   tmp.wd <- as.Date(data[[i]]$StartDateTime,tz="GMT")
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
-  data[[i]]$weekday <- grepl("ø",tmp.wd)
+  data[[i]]$Weekend <- grepl("ø",tmp.wd)
 }
 
-rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd)
+rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat)

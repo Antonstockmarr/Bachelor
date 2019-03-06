@@ -1,5 +1,17 @@
 source("data.R")
 
+head(day.data[[1]])
+
+unique(day.data[[3]]$Obs)
+
+tmp.dat <- data[[1]]
+tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
+tmp.dat$Obs <- rep(1,length(tmp.dat$StartDateTime))
+tmp.dat <-cbind(aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean),
+                      aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum))
+
+head(tmp.dat)
+
 #library("ggplot2")
 
 if("Til"=="Ida"){
@@ -38,12 +50,11 @@ ggplot(avgdata[,c(2,7)])
 
 }
 
-head(data[[1]])
-head(as.Date(data[[1]]$StartDateTime,tz="GMT"))
-
 tmp.dat <- data[[1]]
 tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
-aggregate(x=data.frame(y=tmp.dat[,2]),by=as.list(tmp.dat[,1]),FUN = mean)
+tmp.dat$Obs <- rep(1,length(tmp.dat$StartDateTime))
+cbind(aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean),
+  aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum))
 length(as.list(tmp.dat[,1]))
 head(tmp.dat[,2:5])
 
