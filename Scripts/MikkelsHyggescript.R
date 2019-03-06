@@ -43,5 +43,33 @@ head(as.Date(data[[1]]$StartDateTime,tz="GMT"))
 
 tmp.dat <- data[[1]]
 tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
-tmp.dateseq <- as.list(seq(from=tail(tmp.dat$StartDateTime,n=1), to=tmp.dat$StartDateTime[1], by="day"))
-aggregate(tmp.dat,by=as.list(tmp.dat$StartDateTime),FUN = mean)
+aggregate(x=data.frame(y=tmp.dat[,2]),by=as.list(tmp.dat[,1]),FUN = mean)
+length(as.list(tmp.dat[,1]))
+head(tmp.dat[,2:5])
+
+categories <- data.frame(category = c("a", "a", "a", "a", "a","b", "b", "b", "b", "b","c", "c", "c", "c"))
+observations <- data.frame(observation = c(rnorm(5, mean = 3, sd = 0.2),rnorm(5, mean = -2, sd = 0.4),rnorm(4, mean = 0, sd = 1)))
+
+distr.estimate <- aggregate(x = observations,by = categories,FUN = mean)
+distr.estimate
+
+
+categories <- data.frame(StartDateTime = tmp.dat[,1])
+observations <- tmp.dat[,2:7]
+
+distr.estimate <- aggregate(x = observations,by = categories,FUN = mean)
+head(distr.estimate)
+
+tmp.wd <-weekdays(tmp.dat$StartDateTime,abbreviate = TRUE)
+tmp.wd <-grepl("ø",tmp.wd)
+
+x=1:4
+x=x<=2
+y=1:4
+y=y>=4
+
+(x&&y)
+
+tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
+tmp.wd <-weekdays(tmp.dat$StartDateTime,abbreviate = TRUE)
+grepl("ø",z)

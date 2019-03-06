@@ -71,7 +71,9 @@ tmp <- tmp[tmp$StartDateTime >= StartDays[42],]
 
 # Adding weekday factor to house data
 for (i in 1:n){ 
-  data[[i]]$weekday <- as.factor(weekdays(data[[i]]$StartDateTime))
+  tmp.wd <- as.Date(data[[i]]$StartDateTime,tz="GMT")
+  tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
+  data[[i]]$weekday <- grepl("ø",tmp.wd)
 }
 
-rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart)
+rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd)
