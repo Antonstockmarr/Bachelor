@@ -78,9 +78,9 @@
 
 \section{5. marts}
 \lesstodo[inline]{få styr på lorte parskip-pakken}
-\todo[inline]{Få aksefis af Grønning}
+\todo[inline]{Få aksefis af Grønning eller Maika}
 
-\section{Spørgsmål}
+\subsection{Spørgsmål}
 \begin{itemize}
     \item Vi vil gerne aflevere den 20. juni, så vi kan fremlægge senest den 27. juni. 
     \item Hvad er det helt præcist volume er? Umiddelbart ville vi mene det var det samme som flow, men værdierne er forskellige og flow er pr. time mens volume ikke er.
@@ -95,4 +95,38 @@
     \item Få styr på ggplot. 
 \end{itemize}
 
-\section{Noter}
+\subsection{Noter}
+\subsubsection{Til projektplan:}
+\begin{itemize}
+    \item SEAS-NVE vil gerne vide hvad for nogle forskellige ting man kan lave med de data. 
+    \item Sammenligne huse - hvad kan vi sammenligne, hvad kan vi ikke sammenligne? 
+    \item Hvad er det de godt vil kommunikere til beboerne på den lange bane? Hvor godt performer beboerens hus. 
+    \item Relativt sammenlignelige huse - hvordan er deres temperaturafhængighed? 
+    \item Hvad der er signifikant ligger bagved.
+    \item Forecasts: hvad er der af døgnvariationer? Er der specifikke mønstre? Der er nogen der har en brændeovn - kan vi se om den er tændt? varmevandsforbrug - hvordan er det fordelt på døgnet? Har man natsænkning/dagssænkning? 
+    \item Til tidsrækkedelen: det skal være en dynamisk model. Der er en overførselsfunktion, der kan være svær at identificere. 
+    \item Døgnvariation som ikke kobler til dynamikken og heller ikke temperaturen, DET er det spændende, siger Lasse!
+    \item Kør to ting parallelt, når vi er tre. 
+    \item IKKE START MED ET HUS MED BRÆNDEOVN!
+    \item Vi skal nok lege manuelt med et par forskellige huse og så tage den derfra. 
+    \item Fix punkt 2 og så kommentarer omkring hvordan det skal kommunikeres.
+\end{itemize}
+
+\subsubsection{Andet:}
+\begin{itemize}
+    \item Optimeringen af $\alpha$ ligger udenfor - i optim.
+    \item Se Lasses tegning - lav en funktion som hedder piecewise
+    \item Hvis der er huller i data: lave rå-gennemsnit og så bagefter se hvornår et eller andet.
+    \item Kig på residualer fra en model. Lav plot på dagsværdier og håb på ting ser mere robust ud. 
+    \item Varians inhomogenitet????? Plot residualerne mod de forskellige variable. 
+    \item Variablen flow er det flow der er her og nu, når målingen laves. Volumen er det flow der er løbet igennem siden sidste måling. Lasse forventer, at volumen er det robuste tal. 
+    \item Flow og temperature kommer fra EndDateTime, så det er det vi skal bruge. 
+    \item Til Anders: Noget med volumen og de temperaturer vi har her er de fra øjeblikket eller er de for den forgående time. 
+    \item Energidata: kan vi gange volumen og temp.forskellen sammen og få noget der ligner energidata. FØR VI SKRIVER TIL ANDERS. 
+    \item Energi er vist ikke electricity consumption. 
+    \item Vi skal sige til Anders, at alle huses data ser sådan her ud. Men inden skal vi lige tjekke forholdet mellem volumen og coolingdegree. 
+    \item Energi burde være 4.186 blabla * temp forskel * flow
+    \item Kig på dagsværdier nu. 
+\end{itemize}
+
+

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  1 MAR 2019 15:44
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  5 MAR 2019 14:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1837,14 +1837,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [7] [8]) [9]
+ [7] [8] [9]) [10]
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex [10
+ (./Andet/Noter.tex) [11
 
 
 
-]) [11] [12
+] [12
 
 
 ] [13
@@ -1869,26 +1869,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
  (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./Andet/Vejledningsmøder.aux) (./Andet/Noter.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
-
-
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: 8D345870CF6B33D9D70B510097C3995A
-(rerunfilecheck)             After:  F0019172BC625F4D738DAD59F68B8336.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: FD6616B3A19EC898AD2A259B282D7433.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46577 strings out of 492970
- 880962 string characters out of 6133939
- 1488646 words of memory out of 5000000
- 49954 multiletter control sequences out of 15000+600000
- 550781 words of font info for 56 fonts, out of 8000000 for 9000
+ 46581 strings out of 492970
+ 881052 string characters out of 6133939
+ 1488576 words of memory out of 5000000
+ 49957 multiletter control sequences out of 15000+600000
+ 550789 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
 

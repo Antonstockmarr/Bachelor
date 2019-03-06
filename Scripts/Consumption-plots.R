@@ -23,3 +23,15 @@ AnalyzeConsumption(houselist = maxQ,makeplot = TRUE)
 
 # Plotting flow for the minQ house
 plot(data[[minQ]]$Flow)
+
+
+plot(data[[1]]$Flow, data[[1]]$Volume)
+
+k=20
+plot((4.186/3.6)*data[[k]]$Volume*(data[[k]]$TemperatureIn-data[[k]]$TemperatureOut)~data[[k]]$Energy)
+plot((4.186/3.6)*data[[k]]$Flow*(data[[k]]$TemperatureIn-data[[k]]$TemperatureOut)~data[[k]]$Energy)
+
+
+plot(TemperatureIn-TemperatureOut~CoolingDegree,data[[1]])
+
+sum(abs(((data[[1]]$TemperatureIn-data[[1]]$TemperatureOut)-data[[1]]$CoolingDegree)))
