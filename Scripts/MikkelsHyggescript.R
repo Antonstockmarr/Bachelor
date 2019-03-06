@@ -1,6 +1,6 @@
 source("data.R")
 
-library("ggplot2")
+#library("ggplot2")
 
 if("Til"=="Ida"){
 tot.time.pts <-seq(from=min(StartDays), to=max(EndDays), by="hour")
@@ -38,4 +38,10 @@ ggplot(avgdata[,c(2,7)])
 
 }
 
+head(data[[1]])
+head(as.Date(data[[1]]$StartDateTime,tz="GMT"))
 
+tmp.dat <- data[[1]]
+tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
+tmp.dateseq <- as.list(seq(from=tail(tmp.dat$StartDateTime,n=1), to=tmp.dat$StartDateTime[1], by="day"))
+aggregate(tmp.dat,by=as.list(tmp.dat$StartDateTime),FUN = mean)
