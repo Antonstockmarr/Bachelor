@@ -2,6 +2,7 @@ rm(list = ls())
 library(xts)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
+source("DataChecking.R")
 
 # Loading all data
 data.path = "../Watts_DistrictHeatingData_2018/"
@@ -16,6 +17,7 @@ dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsA
 names(dt.tmp)[1] = 'StartDateTime'
 StartDays <- strptime(dt.tmp$StartDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
 EndDays <- strptime(dt.tmp$StartDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+k <- 0;
 
 for(i in 1:n){
   if (i == 5){
@@ -43,12 +45,23 @@ for(i in 1:n){
   dt.tmp <- tmp.df[dim(tmp.df)[1]:1,]
   
   Datalengths[i] = length(dt.tmp)
-  data[[i]] <- dt.tmp
   
-  # Setting start and end times for each table.
-  EndDays[i]= dt.tmp$StartDateTime[1]
-  StartDays[i]=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]
   
+  # Setting parameters for data checking
+  par = c('min_obs'=1000, 'miss_fraction'=1/20)
+  
+  # If the data check is ok, store that data set
+  if (DataChecking(dt.tmp,par)==TRUE)
+  {
+    k=k+1
+    data[[k]] <- dt.tmp
+    # Setting start and end times for each table.
+    EndDays[k]= data[[k]]$StartDateTime[1]
+    StartDays[k]=data[[k]]$StartDateTime[length(dt.tmp$StartDateTime)]
+  }
+  
+  
+    
 }
 
 # Reading weather data  
