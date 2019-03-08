@@ -1,6 +1,18 @@
 source("data.R")
 
-library("ggplot2")
+head(day.data[[1]])
+
+unique(day.data[[3]]$Obs)
+
+tmp.dat <- data[[1]]
+tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
+tmp.dat$Obs <- rep(1,length(tmp.dat$StartDateTime))
+tmp.dat <-cbind(aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean),
+                      aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum))
+
+head(tmp.dat)
+
+#library("ggplot2")
 
 if("Til"=="Ida"){
 tot.time.pts <-seq(from=min(StartDays), to=max(EndDays), by="hour")
@@ -38,4 +50,37 @@ ggplot(avgdata[,c(2,7)])
 
 }
 
+tmp.dat <- data[[1]]
+tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
+tmp.dat$Obs <- rep(1,length(tmp.dat$StartDateTime))
+cbind(aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean),
+  aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum))
+length(as.list(tmp.dat[,1]))
+head(tmp.dat[,2:5])
 
+categories <- data.frame(category = c("a", "a", "a", "a", "a","b", "b", "b", "b", "b","c", "c", "c", "c"))
+observations <- data.frame(observation = c(rnorm(5, mean = 3, sd = 0.2),rnorm(5, mean = -2, sd = 0.4),rnorm(4, mean = 0, sd = 1)))
+
+distr.estimate <- aggregate(x = observations,by = categories,FUN = mean)
+distr.estimate
+
+
+categories <- data.frame(StartDateTime = tmp.dat[,1])
+observations <- tmp.dat[,2:7]
+
+distr.estimate <- aggregate(x = observations,by = categories,FUN = mean)
+head(distr.estimate)
+
+tmp.wd <-weekdays(tmp.dat$StartDateTime,abbreviate = TRUE)
+tmp.wd <-grepl("ø",tmp.wd)
+
+x=1:4
+x=x<=2
+y=1:4
+y=y>=4
+
+(x&&y)
+
+tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
+tmp.wd <-weekdays(tmp.dat$StartDateTime,abbreviate = TRUE)
+grepl("ø",z)
