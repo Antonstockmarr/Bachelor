@@ -92,9 +92,9 @@ sEndDays <- EndDays[order(EndDays)]
 
 weatherStart = weather$ObsTime[1]
 weatherEnd = weather$ObsTime[length(weather$ObsTime[weather$IsHistoricalEstimated==FALSE])]
+weather <- weather[dim(weather)[1]:1,]
 
 # Making temporary weather data in order to merge it with the house data
-weather <- weather[dim(weather)[1]:1,]
 tmp <- weather[(weather$ObsTime <= EndDays[42]),]
 tmp <- tmp[tmp$ObsTime >= StartDays[42],]
 
@@ -106,6 +106,13 @@ tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
 tmp.d2 <-aggregate(x=tmp.dat[,13],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
 tmp.dat <-data.frame(tmp.d1[,-13],Obs=tmp.d2[,2])
 day.weather <-tmp.dat
+day.weather <- day.weather[dim(day.weather)[1]:1,]
+
+
+# Making temporary weather data in order to merge it with the house data
+day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[42],tz="GMT")),]
+day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
+
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par)
