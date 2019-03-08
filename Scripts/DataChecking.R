@@ -15,8 +15,11 @@ DataChecking <- function(df,par)
     S = FALSE
   
   
-  
-  
+  vr <- rle(df$Flow)
+  if (vr$lengths[1] > 1000)
+      df <- df[-(1:vr$lengths[1]),]
+  if (vr$lengths[length(vr$lengths)]>1000)
+      df <- df[-(n-vr$lengths[1]:n),]
   
   
   
