@@ -9,15 +9,15 @@ AnalyzeConsumption(houselist=1,makeplot=TRUE)
 AnalyzeConsumption(houselist=1:n,makeplot=TRUE)
 
 # Getting data from all houses without plotting
-result <- AnalyzeConsumption(data,houselist=1:n,makeplot=FALSE)
+result <- AnalyzeConsumption(houselist=1:n,makeplot=FALSE)
 
 
 # Plotting min inactive consumption
-minQ = which(result[,1]==min(result[,1]))
+minQ = which(result[,3]==min(result[,3]))
 AnalyzeConsumption(houselist = minQ,makeplot = TRUE)
 
 # Plotting max inactive consumption
-maxQ = which(result[,1]==max(result[,1]))
+maxQ = which(result[,3]==max(result[,3]))
 AnalyzeConsumption(houselist = maxQ,makeplot = TRUE)
 
 
