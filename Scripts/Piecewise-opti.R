@@ -1,5 +1,3 @@
-library(optimx)
-library(segmented)
 # Computing estimates 
 fun <- function(par,x)
 {
@@ -13,14 +11,13 @@ fun <- function(par,x)
   y1
 }
 
-newopti <- function(par)
+newopti <- function(a)
 {
-  x <-(temp<par['a'])*(temp-par['a'])
-  fit <- lm(tempq ~ 1+x)
+  x <-(temp2<a)*(temp2-a)
+  fit <- lm(tempq2 ~ 1+x)
   res <- sum(fit$residuals^2)
   res
-  }
-o <- segmented(fit,seg.Z = ~x, psi = NA,control = seg.control(display = FALSE))
+}
 
 SSR <- function(par) {
   sum((tempq2 - fun(par,temp2))^2)
@@ -31,10 +28,11 @@ SSR <- function(par) {
 PiecewiseOpti <- function(i,temp,tempq,makeplot=FALSE){
 
 
-bestpar <- optimx(par=c(a=13.5), 
-         fn = newopti, 
-         method = "Nelder-Mead")
-  
+bestpar <- optimize(f=newopti,c(5,20))
+
+x <-(temp2<bestpar$minimum)*(temp2-bestpar$minimum)
+fit <- lm(tempq2 ~ 1+x)
+
 
 #bestpar <- optimx(par = c(x1 = 13.5, i1 = 6.5, i2 = 3), 
 #         fn = SSR, 
@@ -42,13 +40,16 @@ bestpar <- optimx(par=c(a=13.5),
   
 if (makeplot==TRUE)
 {
-  plot(temp2,tempq2,ylab='Consumption',xlab='Temperature',main = paste('House number', i))
-  lines(seq(ceiling(min(temp2)),floor(max(temp2)),by=0.01), 
-        fun(c(x1 = bestpar$x1, i1 = bestpar$i1, i2 = bestpar$i2), seq(ceiling(min(temp2)),floor(max(temp2)),by=0.01)),col='red')
+  plot((fit$coefficients[1]+fit$coefficients[2]*x)~temp2,ylab='Consumption',xlab='Temperature',main = paste('House number', i),col='red',type='l',ylim=c(0,max(tempq2)))
+  points(tempq2~temp2)
+  
+#  plot(temp2,tempq2,ylab='Consumption',xlab='Temperature',main = paste('House number', i))
+#  lines(seq(ceiling(min(temp2)),floor(max(temp2)),by=0.01), 
+#        fun(c(x1 = bestpar$x1, i1 = bestpar$i1, i2 = bestpar$i2), seq(ceiling(min(temp2)),floor(max(temp2)),by=0.01)),col='red')
 }
 
 
-result = c(breakpoint = bestpar$x1,minTempQ = bestpar$i1, highTempQ = bestpar$i2)
+result = c(breakpoint = bestpar$minimum,ConsumptionSlope = fit$coefficients[2], highTempQ = fit$coefficients[1])
 }
 
 
@@ -60,8 +61,8 @@ AnalyzeConsumption <- function(houselist,onlyDay=FALSE,onlyWinter=FALSE,makeplot
   InactiveTemp = c(rep(NA,n))
   for (i in houselist)
   {
-    tmp <- weather[(weather$StartDateTime <= EndDays[i]),]
-    tmp <- tmp[tmp$StartDateTime >= StartDays[i],]
+    tmp <- weather[(weather$ObsTime <= EndDays[i]),]
+    tmp <- tmp[tmp$ObsTime >= StartDays[i],]
     temp <- tmp$Temperature
     tempq <- data[[i]]$CoolingDegree*data[[i]]$Flow
     # Removing NA's
