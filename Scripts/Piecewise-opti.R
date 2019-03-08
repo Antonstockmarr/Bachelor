@@ -1,4 +1,5 @@
 library(optimx)
+library(segmented)
 # Computing estimates 
 fun <- function(par,x)
 {
@@ -12,6 +13,15 @@ fun <- function(par,x)
   y1
 }
 
+newopti <- function(par)
+{
+  x <-(temp<par['a'])*(temp-par['a'])
+  fit <- lm(tempq ~ 1+x)
+  res <- sum(fit$residuals^2)
+  res
+  }
+o <- segmented(fit,seg.Z = ~x, psi = NA,control = seg.control(display = FALSE))
+
 SSR <- function(par) {
   sum((tempq2 - fun(par,temp2))^2)
 }
@@ -21,9 +31,14 @@ SSR <- function(par) {
 PiecewiseOpti <- function(i,temp,tempq,makeplot=FALSE){
 
 
-bestpar <- optimx(par = c(x1 = 13.5, i1 = 6.5, i2 = 3), 
-         fn = SSR, 
+bestpar <- optimx(par=c(a=13.5), 
+         fn = newopti, 
          method = "Nelder-Mead")
+  
+
+#bestpar <- optimx(par = c(x1 = 13.5, i1 = 6.5, i2 = 3), 
+#         fn = SSR, 
+#         method = "Nelder-Mead")
   
 if (makeplot==TRUE)
 {
