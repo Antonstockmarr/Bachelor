@@ -16,8 +16,8 @@ day.data <- vector(mode="list", length = n)
 # Loading a single table to initialize dates
 dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 names(dt.tmp)[1] = 'StartDateTime'
-StartDays <- strptime(dt.tmp$StartDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
-EndDays <- strptime(dt.tmp$StartDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+StartDays <- strptime(dt.tmp$EndDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+EndDays <- strptime(dt.tmp$EndDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
 k <- 0;
 
 for(i in 1:n){
@@ -29,38 +29,38 @@ for(i in 1:n){
     dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
     dt.tmp$X <- NULL
   }
-  names(dt.tmp)[1] = 'StartDateTime'
-  dt.tmp$StartDateTime <- strptime(dt.tmp$StartDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
-  dt.tmp$EndDateTime <- strptime(dt.tmp$EndDateTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+  dt.tmp <- dt.tmp[,-1]
+  names(dt.tmp)[1]="ObsTime"
+  dt.tmp$ObsTime <- strptime(dt.tmp$ObsTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   
   # Removing data before startdate of weather data
-  while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$StartDateTime[length(dt.tmp$StartDateTime)]){
-    dt.tmp<-dt.tmp[1:(length(dt.tmp$StartDateTime)-1),]
-  }
+  #while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$ObsTime[length(dt.tmp$ObsTime)]){
+  #  dt.tmp<-dt.tmp[1:(length(dt.tmp$ObsTime)-1),]
+  #}
   
   # Add logical vairable for weekends
-  tmp.wd <- as.Date(dt.tmp$StartDateTime,tz="GMT")
+  tmp.wd <- as.Date(dt.tmp$ObsTime,tz="GMT")
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
   dt.tmp$Weekend <- grepl("ø",tmp.wd)
   
   #Making daily data
   tmp.dat <- dt.tmp
-  tmp.dat$StartDateTime <- as.Date(tmp.dat$StartDateTime,tz="GMT")
-  tmp.dat$Obs <- rep(1,length(tmp.dat$StartDateTime))
-  tmp.d1 <-aggregate(x=tmp.dat[,-c(1,2)],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
-  tmp.d2 <-aggregate(x=tmp.dat[,10],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
+  tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
+  tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
+  tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
+  tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
   tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
   day.data[[i]] <-tmp.dat
   
   # Fill missing null values.
-  tmp.xts <- xts(dt.tmp[,-2:-1], order.by=dt.tmp[,1])
-  t1<-rev(seq(from=tail(dt.tmp$StartDateTime,n=1), to=dt.tmp$StartDateTime[1], by="hour"))
+  tmp.xts <- xts(dt.tmp[,-1], order.by=dt.tmp[,1])
+  t1<-rev(seq(from=tail(dt.tmp$ObsTime,n=1), to=dt.tmp$ObsTime[1], by="hour"))
   d1 <- xts(rep(1,length(t1)), order.by=t1)
   x <- merge(d1,tmp.xts,all=TRUE)
-  tmp.df <- data.frame(StartDateTime=index(x),coredata(x[,-1]))
+  tmp.df <- data.frame(ObsTime=index(x),coredata(x[,-1]))
   dt.tmp <- tmp.df[dim(tmp.df)[1]:1,]
   
-  Datalengths[i] = length(dt.tmp)
+  #Datalengths[i] = length(dt.tmp)
   
   
   # Setting parameters for data checking
@@ -72,37 +72,40 @@ for(i in 1:n){
     k=k+1
     data[[k]] <- dt.tmp
     # Setting start and end times for each table.
-    EndDays[k]= data[[k]]$StartDateTime[1]
-    StartDays[k]=data[[k]]$StartDateTime[length(dt.tmp$StartDateTime)]
+    EndDays[k]= data[[k]]$ObsTime[1]
+    StartDays[k]=data[[k]]$ObsTime[length(dt.tmp$ObsTime)]
   }
   
   
-    
+  
 }
 
 # Reading weather data  
 weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
-
-weather$StartDateTime = strptime(weather$StartDateTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
+names(weather)[1]="ObsTime"
+weather$ObsTime = strptime(weather$ObsTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]
 sEndDays <- EndDays[order(EndDays)]
 
-weatherStart = weather$StartDateTime[1]
-weatherEnd = weather$StartDateTime[length(weather$StartDateTime[weather$IsHistoricalEstimated==FALSE])]
+weatherStart = weather$ObsTime[1]
+weatherEnd = weather$ObsTime[length(weather$ObsTime[weather$IsHistoricalEstimated==FALSE])]
 
 # Making temporary weather data in order to merge it with the house data
 weather <- weather[dim(weather)[1]:1,]
-tmp <- weather[(weather$StartDateTime <= EndDays[42]),]
-tmp <- tmp[tmp$StartDateTime >= StartDays[42],]
+tmp <- weather[(weather$ObsTime <= EndDays[42]),]
+tmp <- tmp[tmp$ObsTime >= StartDays[42],]
 
-# Adding weekday factor to house data
-for (i in 1:n){ 
-  tmp.wd <- as.Date(data[[i]]$StartDateTime,tz="GMT")
-  tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
-  data[[i]]$Weekend <- grepl("ø",tmp.wd)
-}
+#Making daily weather data
+tmp.dat <- weather
+tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
+tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
+tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
+tmp.d2 <-aggregate(x=tmp.dat[,13],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
+tmp.dat <-data.frame(tmp.d1[,-13],Obs=tmp.d2[,2])
+day.weather <-tmp.dat
 
-rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat)
+
+rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par)

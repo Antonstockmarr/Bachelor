@@ -1,7 +1,7 @@
 # Function that determines if the data set is lacking too much, if it is suitable to be included in the model or not
 DataChecking <- function(df,par)
 {
-  n <- length(df$StartDateTime)
+  n <- length(df[,1])
   S <- TRUE
   
   # It should have a certain number of observations
