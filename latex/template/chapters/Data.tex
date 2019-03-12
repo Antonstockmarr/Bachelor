@@ -55,6 +55,9 @@ The weather data set consists of the attributes seen in Table \ref{tab: weatherd
 
 
 \section{Cleaning and preparation}
+In this section, it is described how the raw data is cleaned and prepared for the statistical analysis. 
+
+Data er aggregated for at lave timeværdierne om til dagsværdier
 
 Loader en temperary data ind, som vi modificerer indtil vi putter den ind i vores endelige data. 
 Vi sætter navnet på den første attribute til StartDateTime. Vi ændrer formatet på de to første attributes til posix, som er $\%d-\%m-\%Y \%H:\%M:\%S$.
@@ -71,3 +74,9 @@ Attributen IsHistoricalEstimated ændres til logical, så vi kan compute med den
 
 Vi laver så temp. weather data så vi kan merge det med house data. 
 Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weather data på house data i model processen. 
+
+% plot1 <- ggplot(data = dt.full, mapping = aes(day, EnergyPurchase)) + geom_point() +
+%ggtitle("Average consumption for all houses during a year ") + xlab("Time")
+%+ ylab("Average consumption (kwh)")
+%+ geom_smooth(col=col.plot, se = T)
+
