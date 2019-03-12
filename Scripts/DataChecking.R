@@ -22,6 +22,5 @@ DataChecking <- function(df,par)
       df <- df[-(n-vr$lengths[1]:n),]
   
   
-  
  S 
 }
