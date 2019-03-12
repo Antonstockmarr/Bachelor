@@ -128,10 +128,11 @@ rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tm
 
 
 
+rm(list=ls())
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+source("data.R")
 
-
-
-if("Til"=="Ida"){
+if("Til"=="Til"){
 tot.time.pts <-seq(from=min(StartDays), to=max(EndDays), by="hour")
 avgconsumption<-rep(0,length(tot.time.pts))
 weightavg<-rep(0,length(tot.time.pts))
@@ -161,8 +162,8 @@ for(j in 2:m){
   }
   avgdata[[j]] <- avgdata[[j]]/weightavg
 }
-avgdata[,8]<-avgconsumption
+avgdata[,9]<-avgconsumption
 
-ggplot(avgdata[,c(2,7)])
+pairs(avgdata[,2:9])
 
 }

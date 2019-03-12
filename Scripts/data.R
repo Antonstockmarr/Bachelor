@@ -50,7 +50,7 @@ for(i in 1:n){
   tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
   tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
   tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
-  day.data[[i]] <-tmp.dat
+  day.data[[i]] <-tmp.dat[dim(tmp.dat)[1]:1,]
   
   # Fill missing null values.
   tmp.xts <- xts(dt.tmp[,-1], order.by=dt.tmp[,1])
@@ -112,6 +112,26 @@ day.weather <- day.weather[dim(day.weather)[1]:1,]
 # Making temporary weather data in order to merge it with the house data
 day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[42],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
+
+
+# Making average daily data:
+
+day.avg <- day.data[[2]]
+day.avg[,1]<-seq(from=as.Date(min(StartDays),tz="GMT"), to=as.Date(max(EndDays),tz="GMT"), by="day")
+
+m=dim(day.avg)[2]
+
+for(j in 2:m){
+  avgdata[,j] <- rep(0,length(day.avg[,1]))
+  weightavg<-rep(0,length(day.avg[,1]))
+  for (i in 1:n){
+    tmp.index<-1+difftime(as.Date(StartDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day"):difftime(as.Date(EndDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day")
+    tmp.data=data[[i]][,j]
+    tmp.data[is.na(data[[i]])] <- 0
+    avgdata[[j]][tmp.index] <- avgdata[[j]][tmp.index] + tmp.data
+  }
+  avgdata[[j]] <- avgdata[[j]]/weightavg
+}
 
 
 
