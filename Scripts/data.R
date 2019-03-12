@@ -50,7 +50,7 @@ for(i in 1:n){
   tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
   tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
   tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
-  day.data[[i]] <-tmp.dat
+  day.data[[i]] <-tmp.dat[dim(tmp.dat)[1]:1,]
   
   # Fill missing null values.
   tmp.xts <- xts(dt.tmp[,-1], order.by=dt.tmp[,1])
@@ -114,5 +114,24 @@ day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[42],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
 
 
+# Making average daily data:
 
-rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par)
+day.avg <- day.data[[2]]
+#day.avg[,1]<-seq(from=as.Date(min(StartDays),tz="GMT"), to=as.Date(max(EndDays),tz="GMT"), by="day")
+
+m=dim(day.avg)[2]
+
+for(j in 2:m){
+  day.avg[,j] <- rep(0,length(day.avg[,1]))
+  weightavg<-rep(0,length(day.avg[,1]))
+  for (i in 1:n){
+    tmp.index<-1+difftime(as.Date(StartDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day"):difftime(as.Date(EndDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day")
+    tmp.data=day.data[[i]][,j]
+    day.avg[tmp.index,j] <- day.avg[tmp.index,j] + tmp.data
+    weightavg[tmp.index] <- weightavg[tmp.index] + rep(1,length(tmp.data)) - is.na(day.data[[i]]$Flow)
+  }
+  day.avg[[j]] <- day.avg[[j]]/weightavg
+}
+
+
+rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j)
