@@ -9,21 +9,23 @@ newopti <- function(a)
 
 
 # Given the temperature and consumption, make the piecewise optimization, plot it and return the breakpoint.
-PiecewiseOpti <- function(i,temp,tempq,makeplot=FALSE)
+PiecewiseOpti <- function(i,t,q,makeplot=FALSE)
   {
   bestpar <- optimize(f=newopti,c(5,20))
-  x <-(temp<bestpar$minimum)*(temp-bestpar$minimum)
-  fit <- lm(tempq ~ 1+x)
-#  newx = seq(min(temp),max(temp),by = 0.05)
-#  conf_interval <- predict(fit, newdata=data.frame(x=newx), interval="confidence",
-#                           level = 0.95)
+  a <- bestpar$minimum
+  fit <- lm(q ~ 1+I((t<a)*(t-a)))
+  newdata <- seq(min(t),max(t),length=30)
+  conf_interval <- predict(fit, newdata=data.frame(t=newdata), interval='confidence')
+  
   if (makeplot==TRUE)
     {
-      plot((fit$coefficients[1]+fit$coefficients[2]*x)~temp,ylab='Consumption',xlab='Temperature',main = paste('House number', i),col='red',type='l',ylim=c(0,max(tempq)))
-      points(tempq~temp)
-#      matlines(newx, conf_interval[,2:3], col = "blue", lty=2)
+      plot(newdata,conf_interval[,1],ylab='Consumption',xlab='Temperature',
+           main = paste('House number', i),col='red',type='l',ylim=c(0,max(q)))
+      points(q~t)
+      matlines(newdata,conf_interval[,2],col="green",lwd=1,lty='dashed')
+      matlines(newdata,conf_interval[,3],col="green",lwd=1,lty='dashed')
     }
-  result = c(breakpoint = bestpar$minimum,CSlope = fit$coefficients[2], highTempC = fit$coefficients[1],dimnames=NULL)
+  result = c(breakpoint = a,CSlope = fit$coefficients[2], highTempC = fit$coefficients[1],dimnames=NULL)
   }
 
 
