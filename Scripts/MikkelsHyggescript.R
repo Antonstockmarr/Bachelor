@@ -132,7 +132,7 @@ rm(list=ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("data.R")
 
-if("Til"=="Til"){
+if("Til"=="Ida"){
 tot.time.pts <-seq(from=min(StartDays), to=max(EndDays), by="hour")
 avgconsumption<-rep(0,length(tot.time.pts))
 weightavg<-rep(0,length(tot.time.pts))
