@@ -50,8 +50,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.3.2}Andet:}{10}{subsubsection.3.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Noter}{11}{chapter.4}
+\contentsline {section}{\numberline {3.4}19. marts}{11}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Data}{11}{section.4.1}
+\contentsline {subsection}{\numberline {3.4.1}Spørgsmål}{11}{subsection.3.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Exploratory Analysis}{11}{section.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Noter}{11}{subsection.3.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {4}Noter}{13}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Data}{13}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Exploratory Analysis}{13}{section.4.2}

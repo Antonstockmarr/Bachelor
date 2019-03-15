@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  12 MAR 2019 15:46
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 MAR 2019 11:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1834,23 +1834,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [7] [8] [9]) [10]
+ [7] [8] [9] [10]) [11]
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex) [11
+ (./Andet/Noter.tex [12
 
 
 
-] [12
+]) [13] [14
 
 
-] [13
+] [15
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[14
+[16
 
 ]
 \tf@toc=\write8
@@ -1867,7 +1867,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FD6616B3A19EC898AD2A259B282D7433.
+(rerunfilecheck)             Checksum: A7CF890807BF660E24D16063822D6575.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
@@ -1876,10 +1876,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
 Here is how much of TeX's memory you used:
  46570 strings out of 492970
  880820 string characters out of 6133939
- 1488531 words of memory out of 5000000
+ 1488607 words of memory out of 5000000
  49950 multiletter control sequences out of 15000+600000
  550789 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (26 pages).
+Output written on Thesis.pdf (28 pages).

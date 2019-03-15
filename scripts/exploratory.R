@@ -44,10 +44,11 @@ plot(tmp$WindSpeed,data[[1]]$CoolingDegree*data[[1]]$Flow)
 plot(tmp$WindDirection,data[[42]]$CoolingDegree*data[[42]]$Flow)
 
 
-
 # 
-ggplot(tmp, aes(x = Temperature, y= data[[1]]$CoolingDegree*data[[1]]$Flow)) +
-  geom_point() + geom_smooth(colour=2) + ylab("Consumption")
+plot1 <- ggplot(data = dt.full, mapping = aes(day, EnergyPurchase)) + geom_point() +
+  ggtitle("Average consumption for all houses during a year ") + xlab("Time")
++ ylab("Average consumption (kwh)")
++ geom_smooth(col=col.plot, se = T)
 
 
 avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
@@ -85,3 +86,15 @@ for (i in 1:n) {
 
 n69=length(data[[69]]$StartDateTime)
 tmpdiftest=difftime(data[[69]]$StartDateTime[1:n69-1],data[[69]]$StartDateTime[2:n69], units ="hours")
+
+# Investigating pairs plots 
+day.tmp <- day.weather[(day.weather$Date <= as.Date(day.avg$Date[1],tz="GMT")),]
+day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
+
+pairs(day.avg[c(1:7,10)])
+# Weather pairs
+pairs(c(day.avg[10], day.tmp[c(1:9,11)]))
+
+# Focus on attributes from weather data 
+pairs(c(day.avg[10], day.tmp[c(1:2,5,7,9)]))
+
