@@ -52,6 +52,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.4}12. marts}{11}{section.3.4}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}19. marts}{12}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5.1}Spørgsmål}{12}{subsection.3.5.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Noter}{13}{chapter.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Data}{13}{section.4.1}
