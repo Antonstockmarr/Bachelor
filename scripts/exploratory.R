@@ -98,3 +98,32 @@ pairs(c(day.avg[10], day.tmp[c(1:9,11)]))
 # Focus on attributes from weather data 
 pairs(c(day.avg[10], day.tmp[c(1:2,5,7,9)]))
 
+# Average consumption for all houses during a year
+require(gridExtra)
+avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
+  ggtitle("Average consumption for all houses during a year ") + xlab("Time") + 
+  ylab("Average consumption (kwh)") +
+  geom_smooth(col=Wcol[2], se = T)
+
+day.plot.flot <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+        ggtitle(paste("Daily consumption for house 18")) + xlab("Time") + 
+        ylab("Daily consumption (kwh)") +
+        geom_smooth(col=Wcol[2], se = T)
+
+day.plot.gak <- ggplot(data = day.data[[42]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+        ggtitle(paste("Daily consumption for house 42")) + xlab("Time") + 
+        ylab("Daily consumption (kwh)") +
+        geom_smooth(col=Wcol[2], se = T)
+grid.arrange(avg.plot1, day.plot.flot, day.plot.gak, nrow = 3)
+
+# Daily consumption for the 69 houses
+for (i in 1:n) {
+  if (length(day.data[[i]]$Flow) > 365) {
+    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+      ggtitle(paste("Daily consumption for house ", i)) + xlab("Time") + 
+      ylab("Average consumption (kwh)") +
+      geom_smooth(col=Wcol[2], se = T))
+  }
+}
+
+
