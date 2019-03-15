@@ -3,8 +3,8 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 source("data.R")
-source("Piecewise-opti.R")
 library(ggplot2) 
+library(gridExtra)
 
 # Farveeksempel
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
@@ -99,7 +99,6 @@ pairs(c(day.avg[10], day.tmp[c(1:9,11)]))
 pairs(c(day.avg[10], day.tmp[c(1:2,5,7,9)]))
 
 # Average consumption for all houses during a year
-require(gridExtra)
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
   ggtitle("Average consumption for all houses during a year ") + xlab("Time") + 
   ylab("Average consumption (kwh)") +
