@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.5.13)  15 MAR 2019 14:06
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.5.13)  15 MAR 2019 14:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1811,80 +1811,67 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]) [2]
 \openout2 = `chapters/Exploratory.aux'.
 
- (./chapters/Exploratory.tex) [3
+ (./chapters/Exploratory.tex
+./chapters/Exploratory.tex:9: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   .
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
+./chapters/Exploratory.tex:9: Package calc Error: `.' invalid at this point.
 
-]
-\openout2 = `Andet/Vejledningsmøder.aux'.
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+I expected to see one of: + - * / )
 
- (./Andet/Vejledningsmøder.tex [4
+./chapters/Exploratory.tex:9: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
+./chapters/Exploratory.tex:9: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-
-]
-Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
-[]\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
- []
-
-[5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [7] [8] [9] [10]) [11]
-\openout2 = `Andet/Noter.aux'.
-
- (./Andet/Noter.tex [12
-
-
-
-]) [13] [14
-
-
-] [15
-
-]
-No complaints by nag.
-File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
-<use graphics/DTU-frise-SH-15.pdf>
-[16
-
-]
-\tf@toc=\write8
-\openout8 = `Thesis.toc'.
-
-\tf@tdo=\write9
-\openout9 = `Thesis.tdo'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
- (./Thesis.aux (./prefrontmatter/titlepage.aux)
-Package cleveref Info: loaded `english' language definitions on input line 25.
- (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./Andet/Vejledningsmøder.aux) (./Andet/Noter.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
+./chapters/Exploratory.tex:9: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   .
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+./chapters/Exploratory.tex:9: Package calc Error: `.' invalid at this point.
 
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: A7CF890807BF660E24D16063822D6575
-(rerunfilecheck)             After:  5E16E106EAFF41B53382C66BDF18E06A.
-Package logreq Info: Writing requests to 'Thesis.run.xml'.
-\openout1 = `Thesis.run.xml'.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
- ) 
-Here is how much of TeX's memory you used:
- 46833 strings out of 492970
- 888923 string characters out of 6133938
- 1493498 words of memory out of 5000000
- 50213 multiletter control sequences out of 15000+600000
- 550789 words of font info for 57 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 62i,13n,82p,10574b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on Thesis.pdf (28 pages).
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                       
