@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 MAR 2019 14:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 MAR 2019 14:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1607,7 +1607,8 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
-) (./Thesis.aux (./prefrontmatter/titlepage.aux) (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./Andet/Vejledningsmøder.aux) (./Andet/Noter.aux))
+)
+No file Thesis.aux.
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1637,7 +1638,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1661,9 +1662,11 @@ LaTeX Info: Redefining \nameref on input line 10.
 LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
-(./Thesis.out) (./Thesis.out)
 \@outlinefile=\write7
 \openout7 = `Thesis.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
@@ -1673,7 +1676,6 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' not found.
-
 No file Thesis.bbl.
 Package biblatex Info: Reference section=0 on input line 10.
 Package biblatex Info: Reference segment=0 on input line 10.
@@ -1764,35 +1766,7 @@ File: graphics/Signature.pdf Graphic file (type pdf)
 ]) [5] [6
 
 
-] (./Thesis.toc
-Package cleveref Info: loaded `english' language definitions on input line 3.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5.
-) [7] [8
-
-] (./Thesis.tdo) [9
-
-] [10
+] [7] [8
 
 ]
 \openout2 = `chapters/Data.aux'.
@@ -1805,84 +1779,187 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 13.82405pt on input line 5.
 
+
+LaTeX Warning: Reference `tab: housedata' on page 1 undefined on input line 8.
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 11.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 11.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 11.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 11.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 11.
+
+
+LaTeX Warning: Reference `tab: weatherdata' on page 1 undefined on input line 30.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
 
+
 ]) [2]
 \openout2 = `chapters/Exploratory.aux'.
 
- (./chapters/Exploratory.tex) [3
+ (./chapters/Exploratory.tex
+./chapters/Exploratory.tex:9: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   .
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
+./chapters/Exploratory.tex:9: Package calc Error: `.' invalid at this point.
 
-]
-\openout2 = `Andet/Vejledningsmøder.aux'.
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+I expected to see one of: + - * / )
 
- (./Andet/Vejledningsmøder.tex [4
+./chapters/Exploratory.tex:9: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./chapters/Exploratory.tex:9: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./chapters/Exploratory.tex:9: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   .
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
+./chapters/Exploratory.tex:9: Package calc Error: `.' invalid at this point.
 
-]
-Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
-[]\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
+See the calc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+I expected to see one of: + - * / )
+
+./chapters/Exploratory.tex:9: Missing number, treated as zero.
+<to be read again> 
+                   !
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./chapters/Exploratory.tex:9: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   !
+l.9 ...textwidth]{../../../figures/daily_cons.pdf}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+File: graphics/../../../figures/daily_cons.pdf Graphic file (type pdf)
+<use graphics/../../../figures/daily_cons.pdf>
+
+Overfull \hbox (250.85347pt too wide) in paragraph at lines 9--10
+ []\TU/lmr/m/n/10 !![] 
  []
 
-[5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+./chapters/Exploratory.tex:12: Extra }, or forgotten \endgroup.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.12 \end{figure}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
- [6]
+./chapters/Exploratory.tex:12: Extra }, or forgotten \endgroup.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.12 \end{figure}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+)
+\openout2 = `Andet/Vejledningsmøder.aux'.
+
+ (./Andet/Vejledningsmøder.tex
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [7] [8] [9] [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]) [12]
+)
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex) [13
+ (./Andet/Noter.tex)
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:43: TeX capacity exceeded, sorry [main memory size=5000000].
+<to be read again> 
+                   \unhbox 
+l.43 \end{document}
+                   
+If you really absolutely need more capacity,
+you can ask a wizard to enlarge me.
 
-
-
-] [14
-
-
-] [15
-
-]
-No complaints by nag.
-File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
-<use graphics/DTU-frise-SH-15.pdf>
-[16
-
-]
-\tf@toc=\write8
-\openout8 = `Thesis.toc'.
-
-\tf@tdo=\write9
-\openout9 = `Thesis.tdo'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
- (./Thesis.aux (./prefrontmatter/titlepage.aux)
-Package cleveref Info: loaded `english' language definitions on input line 25.
- (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./Andet/Vejledningsmøder.aux) (./Andet/Noter.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6FC652469CDBC8C2DCD95A68E810123A.
-Package logreq Info: Writing requests to 'Thesis.run.xml'.
-\openout1 = `Thesis.run.xml'.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 46570 strings out of 492970
- 880820 string characters out of 6133939
- 1488683 words of memory out of 5000000
- 49950 multiletter control sequences out of 15000+600000
+ 46494 strings out of 492970
+ 879365 string characters out of 6133939
+ 5000000 words of memory out of 5000000
+ 49921 multiletter control sequences out of 15000+600000
  550789 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on Thesis.pdf (28 pages).
+ 62i,13n,82p,10567b,2114s stack positions out of 5000i,500n,10000p,200000b,80000s
+Output written on Thesis.pdf (12 pages).
