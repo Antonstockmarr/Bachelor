@@ -3,51 +3,17 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 source("data.R")
-source("Piecewise-opti.R")
 library(ggplot2) 
+library(gridExtra)
 
-# Farveeksempel
+# Watts colors
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
+# Example using Watts colors
 plot(data[[1]]$Flow,col=Wcol[2])
-
-pairs(data[[1]])
-
-plot(data[[1]]$Flow)
-plot.months <- c("January", "February", "March", "April", "May", "June", "July", "August",
-                 "September", "November", "December")
-
-par(mfrow = c(1,1))
-time <- seq(as.Date(StartDays[1]),as.Date(EndDays[1]), by = "1 mon")
-plot(data[[1]]$StartDateTime, data[[1]]$Flow, "l", xaxt = 'n')
-drawxaxis(data[[1]]$StartDateTime, tick.tstep="months")
-axis.Date(1, at = seq(min(time), max(time), by = "12 mon"), format = "%m")
-
-# Investigating each house's flow behaviour
-for (i in 1:1){
-  #data[[i]]$StartDateTime.new <- as.POSIXlt(data[[i]]$StartDateTime)
-  #data[[i]]$StartDateTime <- as.Date(data[[i]]$StartDateTime, "%Y-%m-%d")
-  #data[[i]]$StartDateTime2 <- as.Date(cut(data[[i]]$StartDateTime, breaks = "month"))
-  plot(data[[i]]$StartDateTime, data[[i]]$Flow, type = "l", xlab ="Time", ylab = "Flow")
-  axis(1, at = unique(months(data[[i]]$StartDateTime)), las = 2)
-}
-
-
-# Investigating weather data
-pairs(weather)
-plot(weather$StartDateTime,weather$WindSpeed, type = "l")
-str(weather)
-plot(weather$SunHour[weather$IsHistoricalEstimated==FALSE], weather$UltravioletIndex[weather$IsHistoricalEstimated==FALSE])
-# No correlation
 
 # Correlation between consumption and wind
 plot(tmp$WindSpeed,data[[1]]$CoolingDegree*data[[1]]$Flow)
 plot(tmp$WindDirection,data[[42]]$CoolingDegree*data[[42]]$Flow)
-
-
-
-# 
-ggplot(tmp, aes(x = Temperature, y= data[[1]]$CoolingDegree*data[[1]]$Flow)) +
-  geom_point() + geom_smooth(colour=2) + ylab("Consumption")
 
 
 avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
@@ -85,3 +51,46 @@ for (i in 1:n) {
 
 n69=length(data[[69]]$StartDateTime)
 tmpdiftest=difftime(data[[69]]$StartDateTime[1:n69-1],data[[69]]$StartDateTime[2:n69], units ="hours")
+
+# Investigating pairs plots 
+day.tmp <- day.weather[(day.weather$Date <= as.Date(day.avg$Date[1],tz="GMT")),]
+day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
+
+# House pairs
+pairs(day.avg[c(1:7,10)])
+
+# Weather pairs
+pairs(c(day.avg[10], day.tmp[c(1:9,11)]))
+
+# Focus on attributes from weather data 
+pairs(c(day.avg[10], day.tmp[c(1:2,5,7,9)]))
+
+# Average consumption for all houses during a year
+avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
+  ggtitle("Average consumption for all houses during a year ") + xlab("Time") + 
+  ylab("Average consumption (kwh)") +
+  geom_smooth(col=Wcol[2], se = T)
+
+# Selected houses based on wether they follow the trend
+day.plot.flot <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+        ggtitle(paste("Daily consumption for house 18")) + xlab("Time") + 
+        ylab("Daily consumption (kwh)") +
+        geom_smooth(col=Wcol[2], se = T)
+
+day.plot.gak <- ggplot(data = day.data[[42]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+        ggtitle(paste("Daily consumption for house 42")) + xlab("Time") + 
+        ylab("Daily consumption (kwh)") +
+        geom_smooth(col=Wcol[2], se = T)
+grid.arrange(avg.plot1, day.plot.flot, day.plot.gak, nrow = 3)
+
+# Daily consumption for the 69 houses
+for (i in 1:n) {
+  if (length(day.data[[i]]$Flow) > 365) {
+    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+      ggtitle(paste("Daily consumption for house ", i)) + xlab("Time") + 
+      ylab("Average consumption (kwh)") +
+      geom_smooth(col=Wcol[2], se = T))
+  }
+}
+
+

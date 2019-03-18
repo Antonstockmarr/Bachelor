@@ -41,7 +41,7 @@ for(i in 1:n){
   # Add logical vairable for weekends
   tmp.wd <- as.Date(dt.tmp$ObsTime,tz="GMT")
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
-  dt.tmp$Weekend <- grepl("ø",tmp.wd)
+  dt.tmp$Weekend <- grepl("?",tmp.wd)
   
   #Making daily data
   tmp.dat <- dt.tmp
@@ -132,6 +132,9 @@ for(j in 2:m){
   }
   day.avg[[j]] <- day.avg[[j]]/weightavg
 }
+
+# Adding consumption attribute to daily avg. house data
+day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j)

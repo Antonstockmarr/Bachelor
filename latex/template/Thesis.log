@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  12 MAR 2019 15:46
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  16 MAR 2019 13:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1813,14 +1813,40 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]) [2]
 \openout2 = `chapters/Exploratory.aux'.
 
- (./chapters/Exploratory.tex) [3
+ (./chapters/Exploratory.tex
+File: graphics/../../../figures/daily_cons.pdf Graphic file (type pdf)
+<use graphics/../../../figures/daily_cons.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3
 
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
+<use graphics/../../../figures/house_attri.pdf>
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+ []
+
+File: graphics/../../../figures/weather_cons_focus.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weather_cons_focus.pdf>
+
+Underfull \vbox (badness 7291) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 3525) has occurred while \output is active []
+
+ [6]) [7]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
- (./Andet/Vejledningsmøder.tex [4
+ (./Andet/Vejledningsmøder.tex [8
 
 
 
@@ -1829,28 +1855,31 @@ Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
 []\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
  []
 
-[5]
+[9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
+ [10]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [7] [8] [9]) [10]
+ [11] [12] [13] [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]) [16]
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex) [11
+ (./Andet/Noter.tex) [17
 
 
 
-] [12
+] [18
 
 
-] [13
+] [19
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[14
+[20
 
 ]
 \tf@toc=\write8
@@ -1867,19 +1896,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: FD6616B3A19EC898AD2A259B282D7433.
+(rerunfilecheck)             Checksum: 6FC652469CDBC8C2DCD95A68E810123A.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46570 strings out of 492970
- 880820 string characters out of 6133939
- 1488531 words of memory out of 5000000
- 49950 multiletter control sequences out of 15000+600000
+ 46594 strings out of 492970
+ 881599 string characters out of 6133939
+ 1489341 words of memory out of 5000000
+ 49968 multiletter control sequences out of 15000+600000
  550789 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (26 pages).
+Output written on Thesis.pdf (32 pages).
