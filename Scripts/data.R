@@ -62,7 +62,6 @@ for(i in 1:n){
   
   #Datalengths[i] = length(dt.tmp)
   
-  
   # Setting parameters for data checking
   par = c('min_obs'=1000, 'miss_fraction'=1/20)
   
@@ -79,6 +78,9 @@ for(i in 1:n){
   
   
 }
+
+# Adding vacation periods as attributes in day.data
+day.data$WinterBreak <- 
 
 # Reading weather data  
 weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')

@@ -151,5 +151,30 @@ Når vi snakker tidsrække modeller skal vi se på ACF.
 \subsection{Spørgsmål}
 \begin{itemize}
     \item Fortælle om vores bud på at bestemme overgangsperioden for fjernvarme.
-    \item 
+\end{itemize}
+
+\subsection{Noter}
+\begin{itemize}
+    \item Lav heat maps til exploratory
+    \item I forhold til at bestemme $\alpha$, så se billede af Mikkels figur. Når den går over for good i standard afvigelser, så er det det punkt et eller andet. De har valgt 3. Lav noget qsum eller sådan noget. Når standard afvigelserne skal plottes skal de transformeres med log +1. Bruger +20 grader som træningsdata. Vælger et robust estimat af middelværdi og standard afvigelse. 
+    \item Denne måde går oftest rigtig godt, men det kan gå dårligt, hvis det er 5 grader, og de så skruer ned for varmen. Også offentlige bygninger med weekendsænkning. 
+    \item Vælge et andet sigma niveau og så gøre det i 1-grads intervaller og se gvor mange der ligger under. Finn og Anton har styr på det. 
+    \item Der er en prior på 13 grader (det er for at være robuste), og hvis vi så har mere information, så gør vi noget andet. 
+    \item Det en fordeling fra 10 til 16 grader, hvor de fleste ligger på 13-14 grader. 
+    \item Lave et kriterie (threshold) for hvor mange observationer der skal ligge i 20+.  
+    \item Man burde måske bruge første kvartil for de huse hvor vi ikke har nok data, da man begår færre fejl ved at vælge en for lav værdi. 
+    \item Hvornår ved man at man kan stole på metoden? Lasse plejer at sige 12 grader. 
+    \item Lave et afsnit om hvordan man finder breakpointet - hvilket kapitel? 
+    \item Man får et større estimat af variansen, når der er ferier, weekend osv. Det gode ville være at lave en multiple linear model og tilføje parametre som påvirker forbruget et eller andet. Hvor mange af husene har sådanne effekter, og hvornår har de ikke de effekter. 
+    \item http://skoleferie-dk.dk/skoleferie-aalborg/
+    \item Dag til dag variationen er mindre, fordi en af energikilderne forsvinder. 
+    \item Vi laver en lineær regressionsmodel, og vi kigger på variansen som funktion af periode. Hvis modellen er stort set perfekt til at forudsige, når der ikke bliver brugt varmt vand, så bør man pille disse perioder ud af modellen. De skal ikke smides ud i første omgang, men farv dem og se om de ligger anderledes end de andre. Tjek perioderne signifikans først. 
+    \item Kig på autokorrelationen i lag 1 for nogle huse. Er der væsentlige korrelation - ja eller nej? Sikre sig at man kigger på de rigtige lags. Det er stadig dagsværdier. Skal vi korregere for det? Lave weighted least squares i stedet for bare least squares.
+    \item cuesum senere hen. 
+\end{itemize}
+
+\subsection{Hvad skal vi lave?}
+\begin{itemize}
+    \item Lav et plot for alle autokorrelationer for husene. 
+    \item Få lavet en standard måde vi plotter data for alle husene på. Split husene op alt efter hvor mange observationer der er. 
 \end{itemize}

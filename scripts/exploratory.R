@@ -93,4 +93,5 @@ for (i in 1:n) {
   }
 }
 
-
+# Heat map
+heatmap(day.data[[1]]$Volume*day.data[[1]]$CoolingDegree)
