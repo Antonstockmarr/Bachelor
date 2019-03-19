@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.5.13)  16 MAR 2019 12:31
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.5.13)  19 MAR 2019 13:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1822,12 +1822,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
- [4]) [5]
+ []
+
+File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
+<use graphics/../../../figures/house_attri.pdf>
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+ []
+
+File: graphics/../../../figures/weather_cons_focus.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weather_cons_focus.pdf>
+
+Underfull \vbox (badness 7291) has occurred while \output is active []
+
+ [5]
+Underfull \vbox (badness 3525) has occurred while \output is active []
+
+ [6]) [7]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
- (./Andet/Vejledningsmøder.tex [6
+ (./Andet/Vejledningsmøder.tex [8
 
 
 
@@ -1836,28 +1853,31 @@ Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
 []\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
  []
 
-[7]
+[9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
+ [10]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [9] [10] [11] [12]) [13]
+ [11] [12] [13] [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]) [16]
 \openout2 = `Andet/Noter.aux'.
 
- (./Andet/Noter.tex [14
+ (./Andet/Noter.tex) [17
 
 
 
-]) [15] [16
+] [18
 
 
-] [17
+] [19
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[18
+[20
 
 ]
 \tf@toc=\write8
@@ -1874,19 +1894,23 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5E16E106EAFF41B53382C66BDF18E06A.
+(rerunfilecheck)             Checksum: 6FC652469CDBC8C2DCD95A68E810123A.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 46845 strings out of 492970
- 889222 string characters out of 6133938
- 1493561 words of memory out of 5000000
- 50221 multiletter control sequences out of 15000+600000
+ 46857 strings out of 492970
+ 889702 string characters out of 6133938
+ 1494716 words of memory out of 5000000
+ 50231 multiletter control sequences out of 15000+600000
  550789 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10574b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (30 pages).
+Output written on Thesis.pdf (32 pages).

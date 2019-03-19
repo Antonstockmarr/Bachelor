@@ -1,6 +1,6 @@
 \chapter{Data}
 The data is provided by SEAS-NVE in two data sets. The house data consists of 69 \texttt{.csv}-files containing 8 attributes for each house which is 499,499 data points in all. The second data set includes weather data containing 11,845 observations with 11 attributes. \textcolor{red}{Noget med hvordan data er blevet målt - hvilket udstyr, af hvilken virksomhed osv.} 
-The main focus of this section will be how data is prepared for the further analysis.
+The main focus of this section will be how data is prepared for the further analysis. 
 
 \section{Original data}
 The original house and weather data include hourly observations from the period 31-12-2017 to 29-01-2019. The time period varies in the house data which will be taken into account when cleaning the data. 
@@ -17,7 +17,7 @@ Table \ref{tab: housedata} below shows the attributes from the house data set.
     EndDateTime  &  End time and date for measurements.\\
     Energy  &  Electricity consumption in \textit{kWh}.\\
     Flow  &  Amount of water passed through meter in \textit{$m^3/$hour}.\\
-    Volume in $m^3$.\\
+    Volume & in $m^3$.\\
     TemperatureIn  &  Temp. of the water flowing into a house in Degrees/C. \\
     TemperatureOut  & Temp. of the water flowing out of a house in Degrees/C.\\
     CoolingDegree  &  Difference between Temp.In and Temp.Out in Degrees/C. \\
@@ -75,8 +75,4 @@ Attributen IsHistoricalEstimated ændres til logical, så vi kan compute med den
 Vi laver så temp. weather data så vi kan merge det med house data. 
 Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weather data på house data i model processen. 
 
-% plot1 <- ggplot(data = dt.full, mapping = aes(day, EnergyPurchase)) + geom_point() +
-%ggtitle("Average consumption for all houses during a year ") + xlab("Time")
-%+ ylab("Average consumption (kwh)")
-%+ geom_smooth(col=col.plot, se = T)
 
