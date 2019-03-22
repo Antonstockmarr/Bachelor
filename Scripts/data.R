@@ -80,7 +80,21 @@ for(i in 1:n){
 }
 
 # Adding vacation periods as attributes in day.data
-day.data$WinterBreak <- 
+WinterBreakDates2018 <- as.POSIXlt(seq(as.Date('2018-02-10'),as.Date('2018-02-18'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+SpringBreakDates <- as.POSIXlt(seq(as.Date('2018-03-24'),as.Date('2018-04-02'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+AutumnBreakDates <- as.POSIXlt(seq(as.Date('2018-10-13'),as.Date('2018-10-21'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+ChristmasBreakDates <- as.POSIXlt(seq(as.Date('2018-12-22'),as.Date('2019-01-02'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+WinterBreakDates2019 <- as.POSIXlt(seq(as.Date('2019-02-09'),as.Date('2019-02-17'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+
+for (i in 1:n)
+{
+    day.data[[i]]$WinterBreak2018 <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates2018)[1,])
+    day.data[[i]]$SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
+    day.data[[i]]$AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
+    day.data[[i]]$ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
+    day.data[[i]]$WinterBreak2019 <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates2019)[1,])
+}
+
 
 # Reading weather data  
 weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
