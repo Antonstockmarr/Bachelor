@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  19 MAR 2019 14:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  25 MAR 2019 11:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1607,7 +1607,7 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
-) (./Thesis.aux (./prefrontmatter/titlepage.aux) (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Regression.aux) (./Andet/Vejledningsmøder.aux))
+) (./Thesis.aux (./prefrontmatter/titlepage.aux) (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./Andet/Vejledningsmøder.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1844,9 +1844,9 @@ Underfull \vbox (badness 7291) has occurred while \output is active []
 Underfull \vbox (badness 3525) has occurred while \output is active []
 
  [6]) [7]
-\openout2 = `chapters/Regression.aux'.
+\openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Regression.tex [8
+ (./chapters/Statistical.tex [8
 
 
 
@@ -1888,32 +1888,25 @@ File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 \tf@tdo=\write9
 \openout9 = `Thesis.tdo'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
  (./Thesis.aux (./prefrontmatter/titlepage.aux)
 Package cleveref Info: loaded `english' language definitions on input line 25.
- (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Regression.aux) (./Andet/Vejledningsmøder.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 44.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
-
-
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: 075F50A0B82E860BB0AA06439E97DD65
-(rerunfilecheck)             After:  52516CE02188B5544AA31E1E9BB726CE.
+ (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./Andet/Vejledningsmøder.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 44E916DDCE8E87D12FDE077B579799DD.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 46591 strings out of 492970
- 881624 string characters out of 6133939
- 1489140 words of memory out of 5000000
- 49965 multiletter control sequences out of 15000+600000
+ 46592 strings out of 492970
+ 881645 string characters out of 6133939
+ 1489528 words of memory out of 5000000
+ 49966 multiletter control sequences out of 15000+600000
  550789 words of font info for 57 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s

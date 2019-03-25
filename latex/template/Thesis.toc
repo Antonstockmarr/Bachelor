@@ -20,13 +20,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Exploratory Analysis}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Regression}{9}{chapter.3}
+\contentsline {chapter}{\chapternumberline {3}Statistical models}{9}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Linear regression}{9}{section.3.1}
+\contentsline {section}{\numberline {3.1}Data segmentation}{9}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Simple linear regression model}{9}{section.3.2}
+\contentsline {section}{\numberline {3.2}Linear regression}{9}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Multiple linear regression model}{9}{section.3.3}
+\contentsline {section}{\numberline {3.3}Simple linear regression model}{9}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Multiple linear regression model}{9}{section.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Vejledningsmøder}{11}{chapter.4}
 \defcounter {refsection}{0}\relax 
