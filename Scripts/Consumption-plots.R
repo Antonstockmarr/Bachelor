@@ -3,7 +3,7 @@ source("data.R")
 source("Piecewise-opti.R")
 
 # Plotting the first house
-AnalyzeConsumption(houselist=15,makeplot=TRUE)
+AnalyzeConsumption(houselist=64,makeplot=TRUE)
 
 # Plotting ALL houses
 AnalyzeConsumption(houselist=1:n,makeplot=TRUE)
@@ -31,7 +31,7 @@ plot(data[[1]]$Flow, data[[1]]$Volume)
 # 15 and 36  have periods with 0 volume
 plot(data[[15]]$Volume)
 plot(data[[36]]$Volume)
-
+plot(data[[42]]$Volume)
 
 
 k=20
