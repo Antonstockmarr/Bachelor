@@ -3,7 +3,7 @@ source("data.R")
 source("Piecewise-opti.R")
 
 # Plotting the first house
-AnalyzeConsumption(houselist=64,makeplot=TRUE)
+AnalyzeConsumption(houselist=42,makeplot=TRUE)
 
 # Plotting ALL houses
 AnalyzeConsumption(houselist=1:n,makeplot=TRUE)
@@ -35,10 +35,16 @@ plot(data[[42]]$Volume)
 
 
 k=20
-plot((4.186/3.6)*data[[k]]$Volume*(data[[k]]$TemperatureIn-data[[k]]$TemperatureOut)~data[[k]]$Energy)
+plot(data[[k]]$Energy-(4.186/3.6)*data[[k]]$Volume*(data[[k]]$CoolingDegree))
+
+# Consumption and energy are equal when doing cumulative sums.
+plot(cumsum(data[[k]]$Energy))
+points(cumsum((4.186/3.6)*data[[k]]$Volume*(data[[k]]$CoolingDegree)),col=2)
+
 plot((4.186/3.6)*data[[k]]$Flow*(data[[k]]$TemperatureIn-data[[k]]$TemperatureOut)~data[[k]]$Energy)
 
 
+plot(weather$SunHour~weather$UltravioletIndex)
 plot(TemperatureIn-TemperatureOut~CoolingDegree,data[[1]])
 
 sum(abs(((data[[1]]$TemperatureIn-data[[1]]$TemperatureOut)-data[[1]]$CoolingDegree)))
