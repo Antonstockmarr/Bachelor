@@ -69,3 +69,9 @@
 \contentsline {subsection}{\numberline {4.5.2}Noter}{18}{subsection.4.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.5.3}Hvad skal vi lave?}{19}{subsection.4.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}26. marts}{20}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.1}Noter}{20}{subsection.4.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.2}Hvad skal vi lave?}{20}{subsection.4.6.2}
