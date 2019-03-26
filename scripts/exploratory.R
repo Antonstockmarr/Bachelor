@@ -86,11 +86,12 @@ grid.arrange(avg.plot1, day.plot.flot, day.plot.gak, nrow = 3)
 # Daily consumption for the 69 houses
 for (i in 1:n) {
   if (length(day.data[[i]]$Flow) > 365) {
-    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
       ggtitle(paste("Daily consumption for house ", i)) + xlab("Time") + 
       ylab("Average consumption (kwh)") +
       geom_smooth(col=Wcol[2], se = T))
   }
 }
 
-
+# Heat map
+heatmap(day.data[[1]]$Volume*day.data[[1]]$CoolingDegree)

@@ -55,24 +55,21 @@ The weather data set consists of the attributes seen in Table \ref{tab: weatherd
 
 
 \section{Cleaning and preparation}
-In this section, it is described how the raw data is cleaned and prepared for the statistical analysis. 
+In this section, it is described how the raw data is cleaned and prepared for the statistical analysis. \textcolor{red}{Synes der mangler et eller andet her.}
 
-Data er aggregated for at lave timeværdierne om til dagsværdier
-
-Loader en temperary data ind, som vi modificerer indtil vi putter den ind i vores endelige data. 
-Vi sætter navnet på den første attribute til StartDateTime. Vi ændrer formatet på de to første attributes til posix, som er $\%d-\%m-\%Y \%H:\%M:\%S$.
-
-Så fjerner vi data fra 2017, fordi vi ikke har noget weather data der. 21 observationer. 
+Both weather data and the house data are aggregated in order to convert hourly values into daily values since there are of interest when modelling i chapter 3. 
+\textcolor{red}{Loader en temporary data ind, som vi modificerer indtil vi putter den ind i vores endelige data.} Data from 2017 in the house data are removed since data for the same period is missing in the weather data. 
+The format for the attributes \texttt{StartDateTime} and \texttt{EndDateTime} is changed to d-m-Y H:min:sec.
+%Vi sætter navnet på den første attribute til StartDateTime. Vi ændrer formatet på de to første attributes til posix, som er $\%d-\%m-\%Y \%H:\%M:\%S$.
+Likewise, the attribute \texttt{StartDateTime} in the weather data is converted to the same format as in the house data in order to merge the two data sets. 
 
 For nogle huse er der nogle hourly measurements der ikke er der. Der er huller i målingerne. Disse udfyldes med null, hvilket er bedre/lettere at arbejde med. 
 
-enddays og startdays sættes for hvert hus - hvornår starter målingerne og hvornår slutter målinger. Tidspunkterne for aller første og aller sidste måling. 
-
-StartDateTime i weather formateres til rette format, så det passer med house data. 
+%enddays og startdays sættes for hvert hus - hvornår starter målingerne og hvornår slutter målinger. Tidspunkterne for aller første og aller sidste måling. 
 
 Attributen IsHistoricalEstimated ændres til logical, så vi kan compute med den. 
 
 Vi laver så temp. weather data så vi kan merge det med house data. 
 Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weather data på house data i model processen. 
 
-
+In the house data there are some measurements missing and it can therefore be difficult to do modelling for the houses in question. To avoid these difficulties, a so called "Data Checking" function has been made in order to check whether several constraints for the data are fulfilled. There most be a certain number of observations and the amount of missing data should not exceed a certain fraction of the data. 
