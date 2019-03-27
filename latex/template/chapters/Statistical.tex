@@ -2,6 +2,16 @@
 Now that data is cleaned and prepared a statistical analysis consisting of data segmentation and linear regression models can be made. The purpose/object of the analysis is to detect which attributes affects the performance of a specific house. 
 
 \section{Data segmentation}
+
+\subsection*{Bestemmelse af temperatur breakpoint:}
+\begin{itemize}
+    \item Vi kigger på de huse der har mindst et års data (så vi er sikker på at hele sommeren er med)
+    \item Vi antager at dagene med over 20 grader udenfor, der er der slukket for varmen, og der er dermed kun varmvandsforbruget med, som vi antager er hvid støj.
+    \item For hver grad under 20 ser vi hvor mange procent af consumptionen der ligger indenfor +-2 standardafvigelser fra 20+ sættet.
+    \item Den første grad hvor mere end 20\% af datapunkterne ligger indenfor intervallet gemmes som det hus' alpha.
+    \item vi tager til sidst 15\% "percentile" af alphaerne, og skærer alt data fra vores datasæt som er over 12 grader.
+\end{itemize}
+
 \textcolor{red}{Mangler noter fra Finn og bro}
 
 \section{Linear regression}
