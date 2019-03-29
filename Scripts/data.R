@@ -164,6 +164,7 @@ for (i in 1:n)
   day.tmp$DewPoint<-NULL
   tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
   weatherCons[[i]]<-cbind(tmpcons,day.tmp)
+  names(weatherCons[[i]])[1]<-"Consumption"
 }
 
 
