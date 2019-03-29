@@ -57,10 +57,20 @@ day.tmp <- day.weather[(day.weather$Date <= as.Date(day.avg$Date[1],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
 
 # House pairs
-pairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
+{	
+  pdf(file = "../figures/house_attri.pdf",width = 4.5,height = 2.8,pointsize = 9)
+  par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
+  pairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
+  dev.off()
+}
 
 # Weather pairs
-pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','UltravioletIndex','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
+{
+  pdf(file = "../figures/weather_cons_focus.pdf",width = 4.5,height = 2.8,pointsize = 9)
+  par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
+  pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','UltravioletIndex','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
+  dev.off()
+}
 
 # Possible multicolinarity between Temperature and DewPoint
 cor(day.tmp['Temperature'],day.tmp['DewPoint'])
@@ -78,9 +88,6 @@ cor(day.tmp['PrecipitationProbability'],day.tmp['Condition'])
 cor(day.tmp['Temperature'],day.tmp['UltravioletIndex'])
 # 0.823 - close, but not enough
 
-# Focus on attributes from weather data 
-pairs(c(day.avg[10], day.tmp[c(1:2,5,7,9)]))
-
 # Average consumption for all houses during a year
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
   ggtitle("Average consumption for all houses during a year ") + xlab("Time") + 
@@ -97,7 +104,12 @@ day.plot.gak <- ggplot(data = day.data[[42]], mapping = aes(Date, (CoolingDegree
         ggtitle(paste("Daily consumption for house 42")) + xlab("Time") + 
         ylab("Daily consumption (kwh)") +
         geom_smooth(col=Wcol[2], se = T)
-grid.arrange(avg.plot1, day.plot.flot, day.plot.gak, nrow = 3)
+{
+  pdf(file = "../figures/daily_cons.pdf",width = 4.5,height = 2.8,pointsize = 9)
+  par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
+  grid.arrange(avg.plot1, day.plot.flot, day.plot.gak, nrow = 3)
+  dev.off()
+}
 
 # Daily consumption for the 69 houses
 for (i in 1:n) {

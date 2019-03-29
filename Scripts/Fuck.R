@@ -1,7 +1,7 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("data.R")
 
-#breakpoint forsøg
+#breakpoint forsï¿½g
 for(k in 1:n){
   day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[k],tz="GMT")),]
   day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[k],tz="GMT"),] 
@@ -42,4 +42,6 @@ for(k in 1:n){
   plot(fitted.temp,plot.points,main=k)#,ylim=c(-1,.7))
 }
 
-###########################################################
+
+# Focus on attributes from weather data 
+pairs(c(day.avg['Consumption'], day.tmp[c(1:2,5,7,9)]))

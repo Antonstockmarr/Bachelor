@@ -15,7 +15,13 @@ Now that data is cleaned and prepared a statistical analysis consisting of data 
 \textcolor{red}{Mangler noter fra Finn og bro}
 
 \section{Linear regression}
-Linear regression is a method to model the relationship between a dependent variable and one or more independent variables.
+Linear regression is a method to model the relationship between a dependent variable and one or more independent variables where the unknown model parameters are estimated from the data.  
+
+With the dependent variable $Y$ and the independent variables $x_1, \dots, x_n$, the linear regression model is formulated as 
+\begin{equation}
+    Y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \cdots + \beta_p x_{i,p} + \varepsilon_i, \quad \varepsilon_i ~ \mathcal{N}(0,\sigma^2), \quad i = 1,\dots, n. \label{lm}
+\end{equation}
+The variables $\varepsilon_i$ are errors which are assumed to be white noise while also being i.i.d (independent and identically distributed). Equation \eqref{lm} shows a multiple linear regression model 
 
 \section{Simple linear regression model}
 
