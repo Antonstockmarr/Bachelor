@@ -5,13 +5,13 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 source("DataChecking.R")
 
 # Loading all data
-data.path = "../Watts_DistrictHeatingData_2018/"
+data.path = "../Consumption data/"
 file.names <- dir(data.path, pattern =".csv")
 n <- length(file.names)
 Datalengths = rep(c(1,n),nrow=n)
 data <- vector(mode="list", length = n)
 day.data <- vector(mode="list", length = n)
-
+data.key <- rep("",n)
 
 # Loading a single table to initialize dates
 dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
@@ -21,14 +21,9 @@ EndDays <- strptime(dt.tmp$EndDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = 
 k <- 0;
 
 for(i in 1:n){
-  if (i == 5){
-    dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
-  }
-  else
-  {
-    dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
-    dt.tmp$X <- NULL
-  }
+  dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
+  dt.tmp$X <- NULL
+  
   dt.tmp <- dt.tmp[,-1]
   names(dt.tmp)[1]="ObsTime"
   dt.tmp$ObsTime <- strptime(dt.tmp$ObsTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
@@ -43,14 +38,8 @@ for(i in 1:n){
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
   dt.tmp$Weekend <- grepl("?",tmp.wd)
   
-  #Making daily data
-  tmp.dat <- dt.tmp
-  tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
-  tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
-  tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
-  tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
-  tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
-  day.data[[i]] <-tmp.dat[dim(tmp.dat)[1]:1,]
+  
+  dt.tmp.noNA<- dt.tmp
   
   # Fill missing null values.
   tmp.xts <- xts(dt.tmp[,-1], order.by=dt.tmp[,1])
@@ -73,11 +62,37 @@ for(i in 1:n){
     # Setting start and end times for each table.
     EndDays[k]= data[[k]]$ObsTime[1]
     StartDays[k]=data[[k]]$ObsTime[length(dt.tmp$ObsTime)]
+    
+    #Making daily data
+    tmp.dat <- dt.tmp.noNA
+    tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
+    tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
+    tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
+    tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
+    tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
+    day.data[[k]] <-tmp.dat[dim(tmp.dat)[1]:1,]
+    data.key[k]<-substr(file.names[i],1,36)
+    
   }
   
   
   
 }
+
+if (k<n){
+  data<-data[-(k+1:n)]
+  day.data<-day.data[-(k+1:n)]
+  data.key<-data.key[-(k+1:n)]
+}
+
+# k is new n
+n <- k
+
+tmp.df<-data.frame(Key=data.key)
+
+BBR.tmp <- read.table('../InstallationData.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
+BBR <- merge(tmp.df,BBR.tmp)
+
 
 # Adding vacation periods as attributes in day.data. Dates are taken from
 # http://skoleferie-dk.dk/skoleferie-aalborg/?fbclid=IwAR1l2J2t9mHz8JC3qho9stqOj7k7e8MrJQ461a7Iy6_Ekf5AaL8HNzZY9WM
@@ -88,21 +103,20 @@ ChristmasBreakDates <- as.POSIXlt(seq(as.Date('2018-12-22'),as.Date('2019-01-02'
 
 for (i in 1:n)
 {
-    tmp_WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
-    tmp_SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
-    tmp_AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
-    tmp_ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
-    day.data[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
-    levels(day.data[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
+  tmp_WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
+  tmp_SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
+  tmp_AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
+  tmp_ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
+  day.data[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
+  levels(day.data[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 }
 
 # Reading weather data  
-weather <- read.table('../WeatherData_01-01-2018_09-05-2019.csv', sep="\t", stringsAsFactors=FALSE, header = TRUE, dec=',')
+weather <- read.table('../WeatherData_01-01-2018_02-06-2019.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 names(weather)[1]="ObsTime"
-weather$ObsTime = strptime(weather$ObsTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
+weather$ObsTime = strptime(weather$ObsTime,format='%d-%m-%Y %H:%M:%S',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
-
-
+weather$X <- NULL
 
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]
@@ -134,7 +148,7 @@ day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
 
 # Making average daily data:
 
-day.avg <- day.data[[2]]
+day.avg <- day.data[[match(max(Datalengths),Datalengths)]]
 #day.avg[,1]<-seq(from=as.Date(min(StartDays),tz="GMT"), to=as.Date(max(EndDays),tz="GMT"), by="day")
 
 m=dim(day.avg)[2]
@@ -169,6 +183,5 @@ for (i in 1:n)
 }
 
 
+rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
 
-
-rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j)

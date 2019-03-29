@@ -103,11 +103,11 @@ ChristmasBreakDates <- as.POSIXlt(seq(as.Date('2018-12-22'),as.Date('2019-01-02'
 
 for (i in 1:n)
 {
-  day.data[[i]]$WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
-  day.data[[i]]$SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
-  day.data[[i]]$AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
-  day.data[[i]]$ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
-  day.data[[i]]$Holiday <- as.factor(1*day.data[[i]]$WinterBreak+2*day.data[[i]]$SpringBreak+3*day.data[[i]]$AutumnBreak+4*day.data[[i]]$ChristmasBreak)
+  tmp_WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
+  tmp_SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
+  tmp_AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
+  tmp_ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
+  day.data[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
   levels(day.data[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 }
 
@@ -167,6 +167,20 @@ for(j in 2:m){
 
 # Adding consumption attribute to daily avg. house data
 day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree
+
+
+weatherCons <- vector(mode="list", length = n)
+for (i in 1:n)
+{
+  day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[i],tz="GMT")),]
+  day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[i],tz="GMT"),]
+  day.tmp$IsHistoricalEstimated<-NULL
+  day.tmp$DewPoint<-NULL
+  day.tmp$Humidity<-NULL
+  tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
+  weatherCons[[i]]<-cbind(tmpcons,day.tmp)
+  names(weatherCons[[i]])[1]<-"Consumption"
+}
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
