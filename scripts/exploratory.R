@@ -57,10 +57,26 @@ day.tmp <- day.weather[(day.weather$Date <= as.Date(day.avg$Date[1],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
 
 # House pairs
-pairs(day.avg[c(1:7,10)])
+pairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
 
 # Weather pairs
-pairs(c(day.avg[10], day.tmp[c(1:9,11)]))
+pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','UltravioletIndex','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
+
+# Possible multicolinarity between Temperature and DewPoint
+cor(day.tmp['Temperature'],day.tmp['DewPoint'])
+# = 0.936
+
+# Removing DewPoint
+weather$DewPoint <- NULL
+day.weather$DewPoint <- NULL
+
+# Possible multicolinarity between Condition and PrecipitationProbability
+cor(day.tmp['PrecipitationProbability'],day.tmp['Condition'])
+# Not enough
+
+# Possible multicolinarity between UltravioletIndex and Temperature
+cor(day.tmp['Temperature'],day.tmp['UltravioletIndex'])
+# 0.823 - close, but not enough
 
 # Focus on attributes from weather data 
 pairs(c(day.avg[10], day.tmp[c(1:2,5,7,9)]))
