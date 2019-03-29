@@ -40,3 +40,7 @@ for(k in 1:n){
   }
   plot(fitted.temp,plot.points,main=k)#,ylim=c(-1,.7))
 }
+
+
+# Focus on attributes from weather data 
+pairs(c(day.avg['Consumption'], day.tmp[c(1:2,5,7,9)]))
