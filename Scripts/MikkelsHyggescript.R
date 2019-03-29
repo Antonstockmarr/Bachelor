@@ -11,7 +11,7 @@ n <- length(file.names)
 Datalengths = rep(c(1,n),nrow=n)
 data <- vector(mode="list", length = n)
 day.data <- vector(mode="list", length = n)
-
+data.key <- rep("",n)
 
 # Loading a single table to initialize dates
 dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
@@ -38,14 +38,8 @@ for(i in 1:n){
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
   dt.tmp$Weekend <- grepl("?",tmp.wd)
   
-  #Making daily data
-  tmp.dat <- dt.tmp
-  tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
-  tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
-  tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
-  tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
-  tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
-  day.data[[i]] <-tmp.dat[dim(tmp.dat)[1]:1,]
+
+  dt.tmp.noNA<- dt.tmp
   
   # Fill missing null values.
   tmp.xts <- xts(dt.tmp[,-1], order.by=dt.tmp[,1])
@@ -58,7 +52,7 @@ for(i in 1:n){
   #Datalengths[i] = length(dt.tmp)
   
   # Setting parameters for data checking
-  par = c('min_obs'=1000, 'miss_fraction'=1/20)
+  par = c('min_obs'=1000, 'miss_fraction'=1/2)
   
   # If the data check is ok, store that data set
   if (DataChecking(dt.tmp,par)==TRUE)
@@ -68,11 +62,24 @@ for(i in 1:n){
     # Setting start and end times for each table.
     EndDays[k]= data[[k]]$ObsTime[1]
     StartDays[k]=data[[k]]$ObsTime[length(dt.tmp$ObsTime)]
+    
+    #Making daily data
+    tmp.dat <- dt.tmp.noNA
+    tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
+    tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
+    tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
+    tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
+    tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
+    day.data[[k]] <-tmp.dat[dim(tmp.dat)[1]:1,]
+    data.key[k]<-substr(file.names[i],1,36)
+    
   }
   
   
   
 }
+
+
 
 # Adding vacation periods as attributes in day.data. Dates are taken from
 # http://skoleferie-dk.dk/skoleferie-aalborg/?fbclid=IwAR1l2J2t9mHz8JC3qho9stqOj7k7e8MrJQ461a7Iy6_Ekf5AaL8HNzZY9WM
@@ -97,6 +104,7 @@ names(weather)[1]="ObsTime"
 weather$ObsTime = strptime(weather$ObsTime,format='%d-%m-%Y %H:%M:%S',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 weather$X <- NULL
+
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]
 sEndDays <- EndDays[order(EndDays)]
@@ -126,8 +134,32 @@ day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
 
 
 # Making average daily data:
+Datalengths<-rep(0,n)
+for (i in 1:n) {
+  Datalengths[i]<-length(day.data[[i]]$Flow)
+}
 
-day.avg <- day.data[[48]]
+str(day.data[[48]])
+day.data[[48]]$Date
+day.data[[48]]$Obs
+
+
+wtf<- rep(0,length(data[[48]]$ObsTime))
+
+for( i in 2:length(data[[48]]$ObsTime)){
+  wtf[i-1]<-difftime(data[[48]]$ObsTime[i-1],data[[48]]$ObsTime[i], units ="hour")
+}
+
+wtf2<- rep(0,length(day.data[[48]]$Date)-1)
+
+for( i in 2:length(day.data[[48]]$Date)-1){
+  wtf2[i-1]<-difftime(day.data[[48]]$Date[i-1],day.data[[48]]$Date[i], units ="day")
+}
+
+
+
+
+day.avg <- day.data[[match(max(Datalengths),Datalengths)]]
 #day.avg[,1]<-seq(from=as.Date(min(StartDays),tz="GMT"), to=as.Date(max(EndDays),tz="GMT"), by="day")
 
 m=dim(day.avg)[2]
