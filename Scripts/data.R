@@ -158,12 +158,13 @@ day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree
 weatherCons <- vector(mode="list", length = n)
 for (i in 1:n)
 {
-  day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[i],tz="GMT"),]
   day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[i],tz="GMT")),]
+  day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[i],tz="GMT"),]
   day.tmp$IsHistoricalEstimated<-NULL
   day.tmp$DewPoint<-NULL
   tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
   weatherCons[[i]]<-cbind(tmpcons,day.tmp)
+  names(weatherCons[[i]])[1]<-"Consumption"
 }
 
 
