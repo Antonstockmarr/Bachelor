@@ -11,6 +11,7 @@ n <- length(file.names)
 Datalengths = rep(c(1,n),nrow=n)
 data <- vector(mode="list", length = n)
 day.data <- vector(mode="list", length = n)
+weatherCons.data <- vector(mode="list", length = n)
 
 
 # Loading a single table to initialize dates
