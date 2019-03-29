@@ -88,11 +88,11 @@ ChristmasBreakDates <- as.POSIXlt(seq(as.Date('2018-12-22'),as.Date('2019-01-02'
 
 for (i in 1:n)
 {
-    day.data[[i]]$WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
-    day.data[[i]]$SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
-    day.data[[i]]$AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
-    day.data[[i]]$ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
-    day.data[[i]]$Holiday <- as.factor(1*day.data[[i]]$WinterBreak+2*day.data[[i]]$SpringBreak+3*day.data[[i]]$AutumnBreak+4*day.data[[i]]$ChristmasBreak)
+    tmp_WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
+    tmp_SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
+    tmp_AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
+    tmp_ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
+    day.data[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
     levels(day.data[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 }
 
