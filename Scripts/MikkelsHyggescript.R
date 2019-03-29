@@ -96,7 +96,7 @@ weather <- read.table('../WeatherData_01-01-2018_02-06-2019.csv', sep=";", strin
 names(weather)[1]="ObsTime"
 weather$ObsTime = strptime(weather$ObsTime,format='%d-%m-%Y %H:%M:%S',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
-
+weather$X <- NULL
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]
 sEndDays <- EndDays[order(EndDays)]
@@ -127,7 +127,7 @@ day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
 
 # Making average daily data:
 
-day.avg <- day.data[[2]]
+day.avg <- day.data[[48]]
 #day.avg[,1]<-seq(from=as.Date(min(StartDays),tz="GMT"), to=as.Date(max(EndDays),tz="GMT"), by="day")
 
 m=dim(day.avg)[2]

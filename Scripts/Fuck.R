@@ -1,6 +1,7 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("data.R")
 
+#breakpoint forsøg
 for(k in 1:n){
   day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[k],tz="GMT")),]
   day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[k],tz="GMT"),] 
@@ -40,3 +41,5 @@ for(k in 1:n){
   }
   plot(fitted.temp,plot.points,main=k)#,ylim=c(-1,.7))
 }
+
+###########################################################
