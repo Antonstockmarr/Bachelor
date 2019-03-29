@@ -52,7 +52,7 @@ for(i in 1:n){
   #Datalengths[i] = length(dt.tmp)
   
   # Setting parameters for data checking
-  par = c('min_obs'=1000, 'miss_fraction'=1/2)
+  par = c('min_obs'=1000, 'miss_fraction'=1/20)
   
   # If the data check is ok, store that data set
   if (DataChecking(dt.tmp,par)==TRUE)
@@ -79,6 +79,19 @@ for(i in 1:n){
   
 }
 
+if (k<n){
+  data<-data[-(k+1:n)]
+  day.data<-day.data[-(k+1:n)]
+  data.key<-data.key[-(k+1:n)]
+}
+
+# k is new n
+n <- k
+
+tmp.df<-data.frame(Key=data.key)
+
+BBR.tmp <- read.table('../InstallationData.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
+BBR <- merge(tmp.df,BBR.tmp)
 
 
 # Adding vacation periods as attributes in day.data. Dates are taken from
@@ -134,30 +147,6 @@ day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
 
 
 # Making average daily data:
-Datalengths<-rep(0,n)
-for (i in 1:n) {
-  Datalengths[i]<-length(day.data[[i]]$Flow)
-}
-
-str(day.data[[48]])
-day.data[[48]]$Date
-day.data[[48]]$Obs
-
-
-wtf<- rep(0,length(data[[48]]$ObsTime))
-
-for( i in 2:length(data[[48]]$ObsTime)){
-  wtf[i-1]<-difftime(data[[48]]$ObsTime[i-1],data[[48]]$ObsTime[i], units ="hour")
-}
-
-wtf2<- rep(0,length(day.data[[48]]$Date)-1)
-
-for( i in 2:length(day.data[[48]]$Date)-1){
-  wtf2[i-1]<-difftime(day.data[[48]]$Date[i-1],day.data[[48]]$Date[i], units ="day")
-}
-
-
-
 
 day.avg <- day.data[[match(max(Datalengths),Datalengths)]]
 #day.avg[,1]<-seq(from=as.Date(min(StartDays),tz="GMT"), to=as.Date(max(EndDays),tz="GMT"), by="day")
@@ -180,4 +169,5 @@ for(j in 2:m){
 day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree
 
 
-rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j)
+rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
+
