@@ -102,6 +102,8 @@ names(weather)[1]="ObsTime"
 weather$ObsTime = strptime(weather$ObsTime,format='%d/%m/%Y %H.%M',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 
+
+
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]
 sEndDays <- EndDays[order(EndDays)]
@@ -151,6 +153,20 @@ for(j in 2:m){
 
 # Adding consumption attribute to daily avg. house data
 day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree
+
+
+weatherCons <- vector(mode="list", length = n)
+for (i in 1:n)
+{
+  day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[i],tz="GMT"),]
+  day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[i],tz="GMT")),]
+  day.tmp$IsHistoricalEstimated<-NULL
+  day.tmp$DewPoint<-NULL
+  tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
+  weatherCons[[i]]<-cbind(tmpcons,day.tmp)
+}
+
+
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j)

@@ -1,6 +1,7 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("data.R")
 
+#breakpoint fors�g
 for(k in 1:n){
   day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[k],tz="GMT")),]
   day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[k],tz="GMT"),] 
