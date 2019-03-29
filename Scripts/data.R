@@ -162,6 +162,7 @@ for (i in 1:n)
   day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[i],tz="GMT"),]
   day.tmp$IsHistoricalEstimated<-NULL
   day.tmp$DewPoint<-NULL
+  day.tmp$Humidity<-NULL
   tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
   weatherCons[[i]]<-cbind(tmpcons,day.tmp)
   names(weatherCons[[i]])[1]<-"Consumption"
