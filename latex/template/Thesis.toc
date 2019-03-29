@@ -20,6 +20,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Exploratory Analysis}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Multicollinearity}{9}{section.2.1}
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {3}Statistical models}{11}{chapter.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Data segmentation}{11}{section.3.1}
