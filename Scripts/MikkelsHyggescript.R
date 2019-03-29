@@ -46,6 +46,8 @@ for(k in 1:n){
   plot(fitted.temp,plot.points,main=k)#,ylim=c(-1,.7))
 }
 
+
+
 alpha <- rep(0,n)
 j=1
 
