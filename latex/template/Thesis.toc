@@ -77,3 +77,9 @@
 \contentsline {subsection}{\numberline {4.6.1}Noter}{20}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.6.2}Hvad skal vi lave?}{20}{subsection.4.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}2. april}{21}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.1}Spørgsmål}{21}{subsection.4.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.2}Noter}{21}{subsection.4.7.2}
