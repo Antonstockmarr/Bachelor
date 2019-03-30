@@ -16,5 +16,5 @@ for (i in 1:n) {
   title(paste("Daily consumption for house ", i), outer=TRUE)
 }
 plot(Consumption ~ Temperature, data = model.tmp)
-abline(lm.simple)11
+abline(lm.simple)
 

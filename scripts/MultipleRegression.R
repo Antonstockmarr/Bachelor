@@ -40,7 +40,7 @@ plot(lmMultiple)
 c <- makeCluster(cores[1]-1)
 registerDoParallel(c)
 
-lmMultiple <- foreach(i=1:1) %dopar% {
+lmMultiple <- foreach(i=1:n) %dopar% {
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   MultiModel <- stepP(lm(Consumption ~ Temperature*WindSpeed*WindDirection*SunHour*Condition*
