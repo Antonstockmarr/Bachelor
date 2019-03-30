@@ -188,7 +188,7 @@ for (i in 1:n)
   day.tmp$Humidity<-NULL
   tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
   weatherCons[[i]]<-cbind(day.tmp,tmpcons)
-  names(weatherCons[[i]])[1]<-"Consumption"
+  names(weatherCons[[i]])[names(weatherCons[[i]])=='tmpcons']<-"Consumption"
 }
 
 
