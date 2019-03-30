@@ -70,9 +70,18 @@ for(i in 1:n){
     tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
     tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
     tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
-    day.data[[k]] <-tmp.dat[dim(tmp.dat)[1]:1,]
-    data.key[k]<-substr(file.names[i],1,36)
     
+    
+    # Fill missing null values.
+    tmp.xts <- xts(tmp.dat[,-1], order.by=tmp.dat[,1])
+    t1<-rev(seq(from=tail(tmp.dat$Date,n=1), to=tmp.dat$Date[1], by="day"))
+    d1 <- xts(rep(1,length(t1)), order.by=t1)
+    x <- merge(d1,tmp.xts,all=TRUE)
+    tmp.df <- data.frame(Date=index(x),coredata(x[,-1]))
+    tmp.dat <- tmp.df[dim(tmp.df)[1]:1,]
+    
+    day.data[[k]] <-tmp.dat
+    data.key[k]<-substr(file.names[i],1,36)
   }
   
   
