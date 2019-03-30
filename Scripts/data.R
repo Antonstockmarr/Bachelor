@@ -103,23 +103,6 @@ BBR.tmp <- read.table('../InstallationData.csv', sep=";", stringsAsFactors=FALSE
 BBR <- merge(tmp.df,BBR.tmp)
 
 
-# Adding vacation periods as attributes in day.data. Dates are taken from
-# http://skoleferie-dk.dk/skoleferie-aalborg/?fbclid=IwAR1l2J2t9mHz8JC3qho9stqOj7k7e8MrJQ461a7Iy6_Ekf5AaL8HNzZY9WM
-WinterBreakDates <- as.POSIXlt(seq(as.Date('2018-02-10'),as.Date('2018-02-18'), by="days"),format = "%Y-%m-%d", tz = "GMT")
-SpringBreakDates <- as.POSIXlt(seq(as.Date('2018-03-24'),as.Date('2018-04-02'), by="days"),format = "%Y-%m-%d", tz = "GMT")
-AutumnBreakDates <- as.POSIXlt(seq(as.Date('2018-10-13'),as.Date('2018-10-21'), by="days"),format = "%Y-%m-%d", tz = "GMT")
-ChristmasBreakDates <- as.POSIXlt(seq(as.Date('2018-12-22'),as.Date('2019-01-02'), by="days"),format = "%Y-%m-%d", tz = "GMT")
-
-for (i in 1:n)
-{
-  tmp_WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
-  tmp_SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
-  tmp_AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
-  tmp_ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
-  day.data[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
-  levels(day.data[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
-}
-
 # Reading weather data  
 weather <- read.table('../WeatherData_01-01-2018_02-06-2019.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 names(weather)[1]="ObsTime"
@@ -192,15 +175,36 @@ for (i in 1:n)
 }
 
 
+# Adding vacation periods as attributes in day.data. Dates are taken from
+# http://skoleferie-dk.dk/skoleferie-aalborg/?fbclid=IwAR1l2J2t9mHz8JC3qho9stqOj7k7e8MrJQ461a7Iy6_Ekf5AaL8HNzZY9WM
+WinterBreakDates <- as.POSIXlt(seq(as.Date('2018-02-10'),as.Date('2018-02-18'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+SpringBreakDates <- as.POSIXlt(seq(as.Date('2018-03-24'),as.Date('2018-04-02'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+AutumnBreakDates <- as.POSIXlt(seq(as.Date('2018-10-13'),as.Date('2018-10-21'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+ChristmasBreakDates <- as.POSIXlt(seq(as.Date('2018-12-22'),as.Date('2019-01-02'), by="days"),format = "%Y-%m-%d", tz = "GMT")
+
 for (i in 1:n)
 {
-tmp_WinterBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% WinterBreakDates)[1,])
-tmp_SpringBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% SpringBreakDates)[1,])
-tmp_AutumnBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
-tmp_ChristmasBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
-weatherCons[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
-levels(weatherCons[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
+  tmp_WinterBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% WinterBreakDates)[1,])
+  tmp_SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
+  tmp_AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
+  tmp_ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
+  day.data[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
+  levels(day.data[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
+  
+  tmp_WinterBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% WinterBreakDates)[1,])
+  tmp_SpringBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% SpringBreakDates)[1,])
+  tmp_AutumnBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
+  tmp_ChristmasBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
+  weatherCons[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
+  levels(weatherCons[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 }
 
-rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
+tmp_WinterBreak <-as.integer(apply(day.avg,1,function(x) x %in% WinterBreakDates)[1,])
+tmp_SpringBreak <-as.integer(apply(day.avg,1,function(x) x %in% SpringBreakDates)[1,])
+tmp_AutumnBreak <-as.integer(apply(day.avg,1,function(x) x %in% AutumnBreakDates)[1,])
+tmp_ChristmasBreak <-as.integer(apply(day.avg,1,function(x) x %in% ChristmasBreakDates)[1,])
+day.avg$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
+levels(day.avg$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 
+
+rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
