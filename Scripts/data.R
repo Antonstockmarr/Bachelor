@@ -187,10 +187,20 @@ for (i in 1:n)
   day.tmp$DewPoint<-NULL
   day.tmp$Humidity<-NULL
   tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
-  weatherCons[[i]]<-cbind(tmpcons,day.tmp)
+  weatherCons[[i]]<-cbind(day.tmp,tmpcons)
   names(weatherCons[[i]])[1]<-"Consumption"
 }
 
+
+for (i in 1:n)
+{
+tmp_WinterBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% WinterBreakDates)[1,])
+tmp_SpringBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% SpringBreakDates)[1,])
+tmp_AutumnBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
+tmp_ChristmasBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
+weatherCons[[i]]$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
+levels(weatherCons[[i]]$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
+}
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
 
