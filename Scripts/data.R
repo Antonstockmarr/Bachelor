@@ -74,7 +74,7 @@ for(i in 1:n){
     
     # Fill missing null values.
     tmp.xts <- xts(tmp.dat[,-1], order.by=tmp.dat[,1])
-    t1<-rev(seq(from=tail(tmp.dat$Date,n=1), to=tmp.dat$Date[1], by="day"))
+    t1<-rev(seq(from=tmp.dat$Date[1], to=tail(tmp.dat$Date,n=1), by="day"))
     d1 <- xts(rep(1,length(t1)), order.by=t1)
     x <- merge(d1,tmp.xts,all=TRUE)
     tmp.df <- data.frame(Date=index(x),coredata(x[,-1]))
