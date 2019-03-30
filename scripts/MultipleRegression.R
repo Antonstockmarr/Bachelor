@@ -23,8 +23,8 @@ for (i in 1:2) {
                      UltravioletIndex*MeanSeaLevelPressure+Holiday, data = model.tmp))
 }
 
-summary(lmMultiple$object)
-plot(lmMultiple$object)
+summary(lmMultiple[[1]]$object)
+plot(lmMultiple[[2]]$object)
 
 plot(Consumption~Temperature,data=model.tmp)
 lines(lmMultiple$object)
@@ -37,18 +37,9 @@ c <- makeCluster(cores[1]-1)
 registerDoParallel(c)
 
 lmMultiple <- foreach(i=1:n) %dopar% {
-  day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[i],tz="GMT")),]
-  day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[i],tz="GMT"),]
-  
-  model.tmp <- day.data[[i]]
-  
-  model.tmp <- model.tmp[day.tmp$Temperature <= 12,]
-  model.data[[i]] <- model.tmp
-  day.tmp <- day.tmp[day.tmp$Temperature <= 12,]
-  
-  lmMultiple[[i]] <- lm((model.data[[i]]$CoolingDegree*model.data[[i]]$Volume) ~ day.tmp$Temperature*day.tmp$WindSpeed*day.tmp$WindDirection*day.tmp$SunHour*day.tmp$Condition*day.tmp$UltravioletIndex)
-  step(lmMultiple[[i]])
-  drop1(lmMultiple[[i]], test  = "F")
+  MultiModel <- stepP(lm(Consumption ~ Temperature*WindSpeed*WindDirection*SunHour*Condition*
+                                UltravioletIndex*MeanSeaLevelPressure+Holiday, data = model.tmp))
+  MultiModel
 }
 #stop cluster
 stopCluster(c)
