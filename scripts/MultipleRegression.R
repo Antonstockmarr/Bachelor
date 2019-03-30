@@ -26,7 +26,6 @@ lmMultiple <- vector(mode="list", length = n)
 summary(lmMultiple[[5]]$object)
 plot(lmMultiple[[2]]$object)
 # 
-<<<<<<< HEAD
 # plot(Consumption~Temperature,data=model.tmp)
 # lines(lmMultiple$object)
 # # 
@@ -34,12 +33,10 @@ plot(lmMultiple[[2]]$object)
 # par(mfrow = c(2,2))
 # plot(lm.multiple)
 # 
-=======
 # plot(lmMultiple[[1]])
 par(mfrow = c(2,2))
 plot(lmMultiple)
 
->>>>>>> f466df590107ae6baa757c5bb97b18028331874b
 c <- makeCluster(cores[1]-1)
 registerDoParallel(c)
 
