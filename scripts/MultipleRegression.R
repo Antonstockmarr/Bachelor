@@ -31,7 +31,7 @@ lines(lmMultiple$object)
 # 
 # plot(lmMultiple[[1]])
 par(mfrow = c(2,2))
-plot(lm.multiple)
+plot(lmMultiple)
 
 c <- makeCluster(cores[1]-1)
 registerDoParallel(c)
@@ -43,3 +43,4 @@ lmMultiple <- foreach(i=1:n) %dopar% {
 }
 #stop cluster
 stopCluster(c)
+summary(lmMultiple[[5]]$object)
