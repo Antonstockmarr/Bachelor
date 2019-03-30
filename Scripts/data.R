@@ -151,7 +151,8 @@ for(j in 2:m){
   for (i in 1:n){
     tmp.index<-1+difftime(as.Date(StartDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day"):difftime(as.Date(EndDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day")
     tmp.data=day.data[[i]][,j]
-    day.avg[tmp.index,j] <- day.avg[tmp.index,j] + tmp.data
+    tmp.index<- tmp.index[!is.na(tmp.data)]
+    day.avg[tmp.index,j] <- day.avg[tmp.index,j] + tmp.data[tmp.index]
     weightavg[tmp.index] <- weightavg[tmp.index] + rep(1,length(tmp.data)) - is.na(day.data[[i]]$Flow)
   }
   day.avg[[j]] <- day.avg[[j]]/weightavg
