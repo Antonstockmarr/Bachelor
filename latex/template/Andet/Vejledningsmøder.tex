@@ -207,10 +207,12 @@ Når vi snakker tidsrække modeller skal vi se på ACF.
 \begin{itemize}
     \item Hvordan skal vi tolke det, når temperaturen ikke er signifikant?
     \item Skal vi forsøge at trække vores parametre ud af vores modeller?
-    \item Vise vores model - er det rigtigt?
+    \item Vise vores model - er det rigtigt? HJÆLP TIL MODEL! \textcolor{red}{Lasse fikser}
     \item Skal vi overveje at transformere vores data, når nu vi har vores QQ plots? 
+    \item Anders' mail. Hvad synes du?
 \end{itemize}
 
+<<<<<<< HEAD
 
 Vindhastighed. Plot punkterne med vinkel * hastighed. Lav et gennemsnit i et rektangulært koordinatsystem.
 Tag gennemsnittet. Brug den retning og den vinkel som den nye vindhastighed og retning (i dagsdata).
@@ -219,3 +221,20 @@ Splines: pbs(rad). En spline som function af vinklen. Hvis man brug deg 2 spline
 For 4 punkter er der 6 degrees of freedom.
 
 \subsection{Noter}
+=======
+\subsection{Noter}
+\begin{itemize}
+    \item Parametre i LM: sol, wind, temperatur, wind direction.
+    \item Wind direction regnes om til rektangulært form og se hvordan de ligger polært. 
+    \item Man kan bruge splines til at gøre wind direction lineært - cyklusspline. 
+    \item Lav parentes og plus attributer og så i anden eller tredje i multiple.
+    \item Vind: Den energi der skal bruges bliver højere jo mere udskiftning der er. $WindSpeed*Temperaturforskellen*alpha$. Meget naturligt at der er interaction mellem WindSpeed og temp. forskel. Der kan være et lineært led på vindhastigheden. 
+    \item Når vinden kommer fra en bestemt retning, så er der mere varme-/energitab, hvis der er vinduer der. 
+    \item Transformering af WindDirection: plot punkterne i et rektangulært koordinatssystem, hvor der er ganget med vindhastigheden. Man skal måske lave gennemsnittet af vindhastigheden for sig. Man skal vægte med vindretningen - det er mere robust. Find retningen vægtet med hastighed. 
+    \item Splines: periodiske splines (pbs) i R. Hvilken orden skal splinen have? Lave dem som et antal veldefinerede knudepunkter. Koster det mere energi, når det blæser for en bestemt retning? 
+    \item Definere basisfunktioner rundt. Det største bidrag er, når vinden kommer fra den her retning. 
+    \item Kigge på om der er nogle huse der har nogle sider hvor de er meget følsomme. 
+    \item Andenordens spline med 4 knudepunkter, tænker Lasse. 6 frihedsgrader og 6 parametre. 
+    \item \textcolor{blue}{Citat Lasse: "Prøv at lave et matplot af Lasse"}
+\end{itemize}
+>>>>>>> aec5222c8f0cb60a71e8bd747af3e707673aef9b

@@ -20,68 +20,68 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Exploratory Analysis}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Multicollinearity}{8}{section.2.1}
+\contentsline {section}{\numberline {2.1}Data segmentation}{7}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Statistical models}{9}{chapter.3}
+\contentsline {section}{\numberline {2.2}Multicollinearity}{9}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Data segmentation}{9}{section.3.1}
+\contentsline {chapter}{\chapternumberline {3}Statistical models}{11}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Linear regression}{9}{section.3.2}
+\contentsline {section}{\numberline {3.1}Linear regression}{11}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Model assumptions}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.1.1}Model assumptions}{11}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Simple linear regression model}{10}{section.3.3}
+\contentsline {section}{\numberline {3.2}Simple linear regression model}{12}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Multiple linear regression model}{10}{section.3.4}
+\contentsline {section}{\numberline {3.3}Multiple linear regression model}{12}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Vejledningsmøder}{11}{chapter.4}
+\contentsline {chapter}{\chapternumberline {4}Vejledningsmøder}{13}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}19. februar}{11}{section.4.1}
+\contentsline {section}{\numberline {4.1}19. februar}{13}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Spørgsmål}{11}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}Spørgsmål}{13}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Noter}{11}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.2}Noter}{13}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Hvad skal vi?}{12}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.3}Hvad skal vi?}{14}{subsection.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}26. februar}{13}{section.4.2}
+\contentsline {section}{\numberline {4.2}26. februar}{15}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Spørgsmål}{13}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Spørgsmål}{15}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Noter}{13}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Noter}{15}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Hvad skal vi lave?}{14}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Hvad skal vi lave?}{16}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}5. marts}{15}{section.4.3}
+\contentsline {section}{\numberline {4.3}5. marts}{17}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Spørgsmål}{15}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Spørgsmål}{17}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Hvad skal vi have lavet?}{15}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Hvad skal vi have lavet?}{17}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Noter}{15}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.3}Noter}{17}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.3.1}Til projektplan:}{15}{subsubsection.4.3.3.1}
+\contentsline {subsubsection}{\numberline {4.3.3.1}Til projektplan:}{17}{subsubsection.4.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.3.2}Andet:}{16}{subsubsection.4.3.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3.2}Andet:}{18}{subsubsection.4.3.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}12. marts}{17}{section.4.4}
+\contentsline {section}{\numberline {4.4}12. marts}{19}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}19. marts}{18}{section.4.5}
+\contentsline {section}{\numberline {4.5}19. marts}{20}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Spørgsmål}{18}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.1}Spørgsmål}{20}{subsection.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.2}Noter}{18}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.2}Noter}{20}{subsection.4.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.3}Hvad skal vi lave?}{19}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.3}Hvad skal vi lave?}{21}{subsection.4.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}26. marts}{20}{section.4.6}
+\contentsline {section}{\numberline {4.6}26. marts}{22}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}Noter}{20}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.1}Noter}{22}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.2}Hvad skal vi lave?}{20}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.2}Hvad skal vi lave?}{22}{subsection.4.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}5. april}{21}{section.4.7}
+\contentsline {section}{\numberline {4.7}5. april}{23}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.1}Spørgsmål}{21}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.1}Spørgsmål}{23}{subsection.4.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.2}Noter}{21}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.2}Noter}{23}{subsection.4.7.2}
