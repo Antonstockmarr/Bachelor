@@ -18,3 +18,4 @@ for (i in 1:n) {
 plot(Consumption ~ Temperature, data = model.tmp)
 abline(lm.simple)
 
+acf(lm.simple$residuals)
