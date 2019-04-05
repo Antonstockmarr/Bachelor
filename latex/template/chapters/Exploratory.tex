@@ -49,9 +49,15 @@ The goal is to find some temperature, where it can be assumed that all data poin
 belongs to the distribution with heating turned on. Three approaches will be described below, together with their pros and cons.
 
 \subsection*{Segmentation by piece-wise optimization}
-The first approach is to make a linear regression on the data with two segments. A breakpoint $\alpha$ is found, such that the SSE is as 
+The first approach is to make a linear regression on the data with two segments.
+A breakpoint $\alpha$ is found, such that the SSE is as small as possible.
+The second segment is restricted to being constant. This way the breakpoint
+illustrates when the consumption goes from being linearly dependent on the temperature,
+to having a constant value. If that assumption holds, all data points below the breakpoint
+can be used in the statistical model for analysing heat consumption, and the rest can be discarded
+as tap water consumption.
 
-
+Figure \ref{fig: Consumption-PW} shows the regression for two different houses.
 
 \begin{figure}[H]
     \centering
