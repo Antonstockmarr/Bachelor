@@ -82,8 +82,31 @@ Figure \ref{fig: Consumption-PW} shows the regression for two different houses.
 
 
 \section{Multicollinearity}
-From weather
-
+Multicollinearity occurs when two or more explanatory variables are highly correlated. 
 
 
 \textcolor{red}{Og det er så dette datasæt der bruges til modellering i næste sektion.}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+     \hline
+     \textbf{Variable} & \textbf{Description} \\
+    \hline
+    \hline
+    Date  &  End time and date for measurements. Hourly values.\\
+    Temperature  &  Temperature outside in Degrees/C. \\
+    WindSpeed  &  \\
+    WindDirection  &  \\
+    SunHour  &  \\
+    Condition  & \\
+    UltravioletIndex  &   \\
+    MeanSeaLevelPressure  & \\
+    PrecipitationProbability & \\
+    Observation & \\
+    Consumption & CoolingDegree times Volume from House data \\
+    Holiday & \\
+    \hline
+    \end{tabular}
+    \caption{Attributes used for modelling.}
+    \label{tab: modeldata}
+\end{table}   
