@@ -208,4 +208,18 @@ day.avg$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBre
 levels(day.avg$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 
 
+#Removing Feb data to get rid of NA
+
+jan1<-day.data[[1]]$Date[1]
+
+day.data[[2]]$Date[1]>jan1
+
+for(i in 1:n){
+  while(day.data[[i]]$Date[1]>jan1){
+    day.data[[i]]<-day.data[[i]][-1,]
+  }
+}
+
+
+
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
