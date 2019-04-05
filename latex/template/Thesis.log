@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  30 MAR 2019 15:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  5 APR 2019 11:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1596,6 +1596,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip289
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip290
+\enit@outerparindent=\dimen317
+\enit@toks=\toks48
+\enit@inbox=\box62
+\enitdp@description=\count525
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ))
@@ -1644,16 +1651,16 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\c@lstlisting=\count525
+\c@lstlisting=\count526
  ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box62
+\AtBeginShipoutBox=\box63
 Package hyperref Info: Link coloring OFF on input line 10.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count526
+\c@section@level=\count527
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -1844,7 +1851,11 @@ Underfull \vbox (badness 3525) has occurred while \output is active []
  [7]) [8]
 \openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Statistical.tex [9
+ (./chapters/Statistical.tex
+
+LaTeX Warning: Reference `' on page 9 undefined on input line 22.
+
+[9
 
 
 
@@ -1900,19 +1911,23 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 745838CD747D2C8C6FEF05A989EA9AA8.
+(rerunfilecheck)             Checksum: 062C48ADFF30953CF6FF8C63EDD7A51E.
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 46595 strings out of 492970
- 881669 string characters out of 6133939
- 1489866 words of memory out of 5000000
- 49969 multiletter control sequences out of 15000+600000
- 550789 words of font info for 57 fonts, out of 8000000 for 9000
+ 46877 strings out of 492970
+ 886582 string characters out of 6133939
+ 1496209 words of memory out of 5000000
+ 50243 multiletter control sequences out of 15000+600000
+ 550805 words of font info for 59 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,82p,10567b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,82p,10567b,1895s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Thesis.pdf (36 pages).

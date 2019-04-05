@@ -3,13 +3,26 @@ Now that data is cleaned and prepared a statistical analysis consisting of data 
 
 
 \section{Linear regression}
-Linear regression is a method to model the relationship between a dependent variable and one or more independent variables where the unknown model parameters are estimated from the data.  
-
-With the dependent variable $Y$ and the independent variables $x_1, \dots, x_n$, the linear regression model is formulated as 
+Linear regression is a method to model the relationship between a dependent variable and one or more independent variables where the unknown model parameters are estimated from the data. \textcolor{red}{Mangler nok lidt her.} With the dependent variable $Y$ and the independent variables $x_1, \dots, x_n$, the linear regression model is formulated as 
 \begin{equation}
     Y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \cdots + \beta_p x_{i,p} + \varepsilon_i, \quad \varepsilon_i ~ \mathcal{N}(0,\sigma^2), \quad i = 1,\dots, n. \label{lm}
 \end{equation}
-The variables $\varepsilon_i$ are errors which are assumed to be white noise while also being i.i.d (independent and identically distributed). Equation \eqref{lm} shows a multiple linear regression model 
+The variables $\varepsilon_i$ are errors which are assumed to be white noise while also being i.i.d (independent and identically distributed). Equation \eqref{lm} shows a multiple linear regression model as it contains more than one explanatory variable. In this section both a simple linear model and a multiple linear model has been fitted to data given in table \ref{}. 
+
+\noindent As the best linear model $Y_i$ is desired, the total deviation from the data has to be as small as possible. The least squares method given as 
+\begin{equation}
+    \text{SSE} = \sum_{i=1}^n (Y_i - (\beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \cdots  \beta_p x_{i,p}))^2 = \sum_{i=1}^n (Y_i - \Hat{Y}_i)^2 
+\end{equation} 
+is chosen for estimating the model. The parameters $\beta_j$ are optimized to minimize the sum of squared errors of prediction (SSE).
+
+\subsection{Model assumptions}
+When SSE is minimized the model needs to be validated by checking wether the underlying model assumptions are fulfilled. 
+\begin{enumerate} [label=\textbf{\arabic*}]
+    \item Normality of residuals 
+    \item Variance homogenity
+    \item Variance should be independent of location
+    \item Linear relationship between $x_j$ and $Y$
+\end{enumerate}
 
 \section{Simple linear regression model}
 
