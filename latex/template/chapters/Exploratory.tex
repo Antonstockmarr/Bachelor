@@ -11,12 +11,12 @@ To get an overview of the heat consumption for each house, the daily average con
 Figure \ref{fig: daily_cons} shows the daily average consumption for all the house and the daily consumption of two houses - one that follows the trend at one that deviates. It can be seen that the slopes around the summer months are close to 0. \textcolor{red}{Noget med at vi kun er interesserede i perioden, hvor der er tændt for varmen, så derfor fjerner vi perioden hvor consumption er tæt på 0.} All three plots show some unusual high data points around April 2018. This can be due to the fact that is was snowing \textcolor{red}{blabla}. \\
 
 The average of the attributes from the house data is examined through a scatterplot in order to find possible correlations.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.75\textwidth]{../../../figures/house_attri.pdf}
-    \caption{}
-    \label{fig: house_attri}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=.75\textwidth]{../../../figures/house_attri.pdf}
+%    \caption{}
+%    \label{fig: house_attri}
+%\end{figure}
 Figure \ref{fig: house_attri} clearly shows that the consumption is close to 0 in the summer period.  
 \textcolor{red}{Pairs af gennemsnitlig house data - vi ser en masse sammenhænge mellem de forskellige attributer. Vi kan se at CoolingDegree skal være over 25, før at varmeforbruget stiger.}
 \textcolor{red}{CoolingDegree begynder at stige et stykke tid før flowet stiger, hvilket hænger godt sammen med at når man fx tænder en radiator så stiger CoolingDegree. De efterfølgende radiatorer man tænder øger volumnet.} \\
@@ -36,6 +36,44 @@ depends so clearly on the time of year can be assumed to that certain periods ha
 It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature. \textcolor{red}{Anton nævnte noget med SunHour og Ultravioletindex.}
 
 Figures \ref{fig: house_attri} and \ref{fig: weather_cons_focus} are used to investigate linear relationships which is desired when modelling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable.  
+
+\section{Data segmentation}
+When looking at the consumption data, it is useful to distinguish between
+periods where the heat is turned off and periods where it is turned on.
+The models that will be applied in the following sections should only consider periods with heating turned on, if possible.
+Because of the tap-water consumption, this difference is not always clear cut.
+The data can be seen as part of two different distributions. One where the
+heating is turned off, and one where it is turned on. In this section different 
+approaches will be examined on how to distinguish between the two distributions.
+The goal is to find some temperature, where it can be assumed that all data points below it
+belongs to the distribution with heating turned on. Three approaches will be described below, together with their pros and cons.
+
+\subsection*{Segmentation by piece-wise optimization}
+The first approach is to make a linear regression on the data with two segments. A breakpoint $\alpha$ is found, such that the SSE is as 
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../../../figures/Consumption-PW.eps}
+    \caption{Piece wise optimization of the consumption. The red line is the regression line and the green line is the confidence interval.}
+    \label{fig: Consumption-PW}
+\end{figure}
+\subsection*{Segmentation by investigation slopes}
+
+\subsection*{Segmentation by significant deviations}
+
+\subsection*{Bestemmelse af temperatur breakpoint:}
+\begin{itemize}
+    \item Vi kigger på de huse der har mindst et års data (så vi er sikker på at hele sommeren er med)
+    \item Vi antager at dagene med over 20 grader udenfor, der er der slukket for varmen, og der er dermed kun varmvandsforbruget med, som vi antager er hvid støj.
+    \item For hver grad under 20 ser vi hvor mange procent af consumptionen der ligger indenfor +-2 standardafvigelser fra 20+ sættet.
+    \item Den første grad hvor mere end 20\% af datapunkterne ligger indenfor intervallet gemmes som det hus' alpha.
+    \item vi tager til sidst 15\% "percentile" af alphaerne, og skærer alt data fra vores datasæt som er over 12 grader.
+\end{itemize}
+
+\textcolor{red}{Mangler noter fra Finn og bro}
+
 
 \section{Multicollinearity}
 From weather

@@ -3,7 +3,7 @@ source("data.R")
 source("Piecewise-opti.R")
 
 # Plotting the first house
-AnalyzeConsumption(houselist=42,makeplot=TRUE)
+AnalyzeConsumption(houselist=41,makeplot=TRUE)
 
 # Plotting ALL houses
 AnalyzeConsumption(houselist=1:n,makeplot=TRUE)

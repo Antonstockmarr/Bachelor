@@ -19,11 +19,12 @@ PiecewiseOpti <- function(i,t,q,makeplot=FALSE)
   
   if (makeplot==TRUE)
     {
-      plot(newdata,conf_interval[,1],ylab='Consumption',xlab='Temperature',
+      plot(newdata,conf_interval[,1],ylab='Consumption',xlab='Temperature', lwd=2,
            main = paste('House number', i),col='red',type='l',ylim=c(0,max(q)))
       points(q~t)
-      matlines(newdata,conf_interval[,2],col="green",lwd=1,lty='dashed')
-      matlines(newdata,conf_interval[,3],col="green",lwd=1,lty='dashed')
+      lines(newdata,conf_interval[,2],col="green",lwd=2,lty='dashed')
+      lines(newdata,conf_interval[,3],col="green",lwd=2,lty='dashed')
+      #legend(x='topright',legend = c('Fitted line','Data points','Confidence interval'),lty=c(1,NA,'dashed'),pch=c(NA,1,NA),col=c('red','black','green'))
     }
   result = c(breakpoint = a,CSlope = fit$coefficients[2], highTempC = fit$coefficients[1],dimnames=NULL)
   }
