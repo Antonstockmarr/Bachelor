@@ -207,7 +207,6 @@ tmp_ChristmasBreak <-as.integer(apply(day.avg,1,function(x) x %in% ChristmasBrea
 day.avg$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
 levels(day.avg$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 
-
 #Removing Feb data to get rid of NA
 
 jan1<-day.data[[1]]$Date[1]
@@ -217,8 +216,10 @@ day.data[[2]]$Date[1]>jan1
 for(i in 1:n){
   while(day.data[[i]]$Date[1]>jan1){
     day.data[[i]]<-day.data[[i]][-1,]
+    weatherCons[[i]]<-weatherCons[[i]][-1,]
   }
 }
+
 
 
 

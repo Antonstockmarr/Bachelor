@@ -15,13 +15,13 @@ cores = detectCores()
 model.data <- weatherCons
 lmMultiple <- vector(mode="list", length = n)
 # 
-# for (i in 1:2) {
-#   model.tmp <- model.data[[i]]
-#   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
+ for (i in 20:n) {
+   model.tmp <- model.data[[i]]
+   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
 # 
-#   lmMultiple[[i]] <- stepP(lm(Consumption ~ Temperature*WindSpeed*WindDirection*SunHour*Condition*
-#                      UltravioletIndex*MeanSeaLevelPressure+Holiday, data = model.tmp))
-# }
+   lmMultiple[[i]] <- stepP(lm(Consumption ~ (Temperature+WindSpeed+WindDirection+SunHour+Condition+
+                      UltravioletIndex+MeanSeaLevelPressure)^3+Holiday, data = model.tmp))
+ }
 # 
 summary(lmMultiple[[5]]$object)
 plot(lmMultiple[[2]]$object)
@@ -38,7 +38,7 @@ plot(lmMultiple[[2]]$object)
 c <- makeCluster(cores[1]-1)
 registerDoParallel(c)
 
-lmMultiple <- foreach(i=1:n) %dopar% {
+lmMultiple <- foreach(i=11) %dopar% {
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   MultiModel <- stepP(lm(Consumption ~ Temperature*WindSpeed*WindDirection*SunHour*Condition*
