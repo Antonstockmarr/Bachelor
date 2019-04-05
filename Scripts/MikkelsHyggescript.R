@@ -25,5 +25,6 @@ tmp2<-tmp2[-10]
 points(tmp[tmp2],cons.areal[tmp2],col=2,pch=19)
 
 match(max(cons.areal),cons.areal)
+tmp[61]
 
 BBR[62,]
