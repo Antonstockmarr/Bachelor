@@ -15,7 +15,7 @@ cores = detectCores()
 model.data <- weatherCons
 lmMultiple <- vector(mode="list", length = n)
 # 
- for (i in 20:n) {
+ for (i in 10) {
    model.tmp <- model.data[[i]]
    model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
 # 
