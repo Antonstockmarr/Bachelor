@@ -17,6 +17,11 @@ data <- vector(mode="list", length = n)
 day.data <- vector(mode="list", length = n)
 data.key <- rep("",n)
 
+Weekend=weekdays(as.POSIXlt(c(as.Date('2019-01-26'),as.Date('2019-01-27')),format = "%Y-%m-%d", tz = "GMT"),abbreviate = TRUE)
+sat<-substring(Weekend[1],1:2,1:2)
+sun<-substring(Weekend[2],1:2,1:2)
+
+
 # Loading a single table to initialize dates
 dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 names(dt.tmp)[1] = 'StartDateTime'
@@ -40,8 +45,7 @@ for(i in 1:n){
   # Add logical vairable for weekends
   tmp.wd <- as.Date(dt.tmp$ObsTime,tz="GMT")
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
-  dt.tmp$Weekend <- grepl("?",tmp.wd)
-  
+  dt.tmp$Weekend <- grepl(intersect(sat,sun),tmp.wd)
   
   dt.tmp.noNA<- dt.tmp
   
