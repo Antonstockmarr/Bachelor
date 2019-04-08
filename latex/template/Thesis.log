@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  5 APR 2019 15:33
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  8 APR 2019 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1885,7 +1885,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [21]
 Underfull \vbox (badness 1946) has occurred while \output is active []
 
- [22] [23]) [24] [25
+ [22] [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24] [25]) [26] [27
 
 
 
@@ -1893,7 +1896,7 @@ Underfull \vbox (badness 1946) has occurred while \output is active []
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[26
+[28
 
 ]
 \tf@toc=\write8
@@ -1909,9 +1912,15 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
  (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./Andet/Vejledningsmøder.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 420132A9A037C29F89AA85C84E789941.
 
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: 2C48AB54A4364142FEDC371FBFF010FB
+(rerunfilecheck)             After:  EDB74FC566CF2869347291FAB4B12595.
 
 LaTeX Warning: There were undefined references.
 
@@ -1923,10 +1932,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
 Here is how much of TeX's memory you used:
  46879 strings out of 492970
  886597 string characters out of 6133939
- 1497582 words of memory out of 5000000
+ 1497580 words of memory out of 5000000
  50244 multiletter control sequences out of 15000+600000
  550805 words of font info for 59 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,1926s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (38 pages).
+Output written on Thesis.pdf (40 pages).

@@ -233,3 +233,34 @@ For 4 punkter er der 6 degrees of freedom.
     \item Andenordens spline med 4 knudepunkter, tænker Lasse. 6 frihedsgrader og 6 parametre. 
     \item \textcolor{blue}{Citat Lasse: "Prøv at lave et matplot af Lasse"}
 \end{itemize}
+
+\pagebreak
+
+\section{8. april}
+
+\subsection{Noter}
+\begin{itemize}
+    \item Pakken der ikke kommer ind, bliver ikke burgt. Wtf.
+    \item Hint fra Lasse: et eksempel hvor der bliver lavet en måling lidt før klokken hel - der er en time, hvor der ikke er målinger i. Interpolationen til det sidste punkt, er der vist en fejl. \textcolor{red}{Tjek det her!}
+    \item I stedet for at flytte punkter fremad, så se hvad det rigtige data er og så brug det eller noget. 
+    \item Vi vil gerne komme med et forslag til en lille ændring.
+\end{itemize}
+
+\begin{itemize}
+    \item Vores splines ligger forskudt med 5 grader, og så går de i 0 +/- 90. 
+    \item Hver basisspline er kun forskellig fra 0 i et interval på 180. 270 grader support, men 180 passer måske bedre. 
+    \item Lasse foreslår, at vi laver de 6/8 WindDirection i en parentes og så ganger med temperaturen. $\tilde T*(w_1 + w_2+\dots+w_8)*WindSpeed + .$
+    \item Designmatricen skal være singulær blabla\dots
+    \item Der er nogle fysiske rammer der gør, at vi ikke skal transformere. Men man kan diskutere om støjen skal have samme varians. 
+    \item adjusted.r.squared 
+    \item Vi skal måske tilføje hvilken dag på ugen det er??
+    \item Test af varians homogenitet som funcktion af fitted values - levene.test
+    \item Vi er kede af det, når vi ser at vi burde lave weighted least squares i stedet for. Men vi skal gøre det alligevel..
+    \item Hvis korrelationen er for stor, kommer det til at gøre alting lidt mere usikkert. 
+    \item For at residualerne giver mening, skal man hen på de rigtige dage. 
+    \item Brændeovn, brændeovn, brændeovn. 
+    \item Hvis der sker væsentlige forbrugsændringer, hvad sker der så med data? Kan vi så bruge data? 
+    \item Når man skal sammenligne dagsværdier, så er det en god idé at pille temperaturafhængigheden for et døgn ud. 
+    \item For hvert klokkeslag der kan man tegne hvordan tætheden ser ud ved bare at finde nogle quantiles. 
+    \item $Vreg = (t_t, t_{t-1}, t_{t-2},\dots,S_t, S_{t-1})$. Bruge ARIMAX, bruge ARIMA til at fitte blabla.
+\end{itemize}

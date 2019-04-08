@@ -85,3 +85,7 @@
 \contentsline {subsection}{\numberline {4.7.1}Spørgsmål}{23}{subsection.4.7.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.7.2}Noter}{23}{subsection.4.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}8. april}{25}{section.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.1}Noter}{25}{subsection.4.8.1}
