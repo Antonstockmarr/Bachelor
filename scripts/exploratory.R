@@ -3,8 +3,10 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 source("data.R")
+source("BBR.R")
 library(ggplot2) 
 library(gridExtra)
+
 
 # Watts colors
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
@@ -101,4 +103,10 @@ for (i in 1:n) {
       geom_smooth(col=Wcol[2], se = T))
   }
 }
+
+# Investigating BBR data 
+plot(Construction.Year,cons.areal,col=Wcol[2],main='Year of Construction Consumption',xlab='Year of Construction',ylab = expression(paste("Consumption pr.  ", m^2, sep = "")))
+points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col=Wcol[3])
+points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break.points[2]],col=Wcol[4])
+legend('topright', legend = c('Highest consumption', 'Middle consumption', 'Lowest consumption'), col = c(Wcol[4],Wcol[3],Wcol[2]), pch = 1, bty = 'n')
 
