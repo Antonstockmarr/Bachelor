@@ -30,7 +30,13 @@ Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255)
 
 break.points<-as.numeric(quantile(cons.areal, c(.33,.67)))
 
-Construction.Year<-BBR$Byggeår[-10]
+for(i in 1:length(tmp)){
+  if(!is.na(BBR$Ombygningsår[tmp[i]])){
+    Construction.Year[i]<-BBR$Ombygningsår[tmp[i]]
+  }else{
+    Construction.Year[i]<-BBR$Byggeår[tmp[i]]
+  }
+}
 
 plot(Construction.Year,cons.areal,col=Wcol[2],main='Year of Construction Consumption',xlab='Year of Construction',ylab = expression(paste("Consumption pr.  ", m^2, sep = "")))
 points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col=Wcol[3])
