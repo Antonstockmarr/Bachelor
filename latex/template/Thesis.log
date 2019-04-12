@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  12 APR 2019 09:33
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  12 APR 2019 09:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1961,23 +1961,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--23
 
 File: graphics/../../../figures/weather_cons_focus.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons_focus.pdf>
-[12]
 
-LaTeX Warning: Reference `fig: house_attri' on page 13 undefined on input line 38.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+Underfull \vbox (badness 3525) has occurred while \output is active []
+
+ [13]
+
+LaTeX Warning: Reference `fig: house_attri' on page 14 undefined on input line 38.
 
 File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption-PW.eps>
 
-Underfull \vbox (badness 1400) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13] [14]) [15]
+ [14]) [15] [16]
 \openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Statistical.tex [16
+ (./chapters/Statistical.tex [17
 
 
 
-] [17]) [18]
+]) [18]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
  (./Andet/Vejledningsmøder.tex

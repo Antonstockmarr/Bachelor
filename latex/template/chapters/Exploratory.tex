@@ -1,7 +1,7 @@
 \chapter{Exploratory Analysis}
-First part of the analysis is to explore the different attributes in the data in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. \textcolor{red}{Mangler nok noget lidt mere her.}
+First part of the analysis is to explore the different attributes in the data in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modeling. 
 
-To get an overview of the heat consumption for each house, the daily average consumption for each house has been calculated and can be seen as a function of the time in the following figure. 
+\noindent To get an overview of the heat consumption for each house, the daily average consumption for each house has been calculated and can be seen as a function of the time in the following figure. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=.75\textwidth]{../../../figures/daily_cons.pdf}
@@ -35,7 +35,7 @@ between temperature and consumption. High temperatures tend to imply a higher co
 depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. 
 It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature. \textcolor{red}{Anton nævnte noget med SunHour og Ultravioletindex.}
 
-Figures \ref{fig: house_attri} and \ref{fig: weather_cons_focus} are used to investigate linear relationships which is desired when modelling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable.  
+Figures \ref{fig: house_attri} and \ref{fig: weather_cons_focus} are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable.  
 
 \section{Data segmentation}
 When looking at the consumption data, it is useful to distinguish between
@@ -48,7 +48,7 @@ approaches will be examined on how to distinguish between the two distributions.
 The goal is to find some temperature, where it can be assumed that all data points below it
 belongs to the distribution with heating turned on. Three approaches will be described below, together with their pros and cons.
 
-\subsection*{Segmentation by piece-wise optimization}
+\subsection{Segmentation by piece-wise optimization}
 The first approach is to make a linear regression on the data with two segments.
 A breakpoint $\alpha$ is found, such that the SSE is as small as possible.
 The second segment is restricted to being constant. This way the breakpoint
@@ -71,14 +71,14 @@ line fits rather well with the low-temperature data points. But it is not very a
 
 \subsection{Segmentation by significant deviations}
 
-\subsection{Bestemmelse af temperatur breakpoint:}
-\begin{itemize}
-    \item Vi kigger på de huse der har mindst et års data (så vi er sikker på at hele sommeren er med)
-    \item Vi antager at dagene med over 20 grader udenfor, der er der slukket for varmen, og der er dermed kun varmvandsforbruget med, som vi antager er hvid støj.
-    \item For hver grad under 20 ser vi hvor mange procent af consumptionen der ligger indenfor +-2 standardafvigelser fra 20+ sættet.
-    \item Den første grad hvor mere end 20\% af datapunkterne ligger indenfor intervallet gemmes som det hus' alpha.
-    \item vi tager til sidst 15\% "percentile" af alphaerne, og skærer alt data fra vores datasæt som er over 12 grader.
-\end{itemize}
+%\subsection{Bestemmelse af temperatur breakpoint:}
+%\begin{itemize}
+%    \item Vi kigger på de huse der har mindst et års data (så vi er sikker på at hele sommeren er med)
+%    \item Vi antager at dagene med over 20 grader udenfor, der er der slukket for varmen, og der er dermed kun varmvandsforbruget med, som vi antager er hvid støj.
+%    \item For hver grad under 20 ser vi hvor mange procent af consumptionen der ligger indenfor +-2 standardafvigelser fra 20+ sættet.
+%    \item Den første grad hvor mere end 20\% af datapunkterne ligger indenfor intervallet gemmes som det hus' alpha.
+%    \item vi tager til sidst 15\% "percentile" af alphaerne, og skærer alt data fra vores datasæt som er over 12 grader.
+%\end{itemize}
 
 \section{BBR data}
 
@@ -87,7 +87,7 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
 
 
 
-\noindent The complete data set used for modelling in chapter 4 can be seen in table \ref{tab: modeldata} 
+\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata} 
 \begin{table}[H]
     \centering
     \begin{tabular}{ll}

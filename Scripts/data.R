@@ -107,7 +107,7 @@ n <- k
 
 tmp.df<-data.frame(Key=data.key)
 
-BBR.tmp <- read.table('../InstallationData.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
+BBR.tmp <- read.table('../BBRdata.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 BBR <- merge(tmp.df,BBR.tmp)
 
 
