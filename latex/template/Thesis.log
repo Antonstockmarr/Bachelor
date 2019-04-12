@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  12 APR 2019 11:13
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  12 APR 2019 13:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1967,17 +1967,21 @@ File: graphics/../../../figures/weather_cons_focus.pdf Graphic file (type pdf)
  [12] [13]
 File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption-PW.eps>
- [14])
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15] [16]
+
+LaTeX Warning: Reference `' on page 14 undefined on input line 95.
+
+
+LaTeX Warning: Reference `' on page 14 undefined on input line 95.
+
+) [14] [15]
 \openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Statistical.tex [17
+ (./chapters/Statistical.tex [16
 
 
 
-]) [18]
+] [17]) [18]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
  (./Andet/Vejledningsmøder.tex
@@ -2045,10 +2049,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 47417 strings out of 492970
- 895867 string characters out of 6133939
- 1571042 words of memory out of 5000000
- 50746 multiletter control sequences out of 15000+600000
+ 47420 strings out of 492970
+ 895922 string characters out of 6133939
+ 1571321 words of memory out of 5000000
+ 50749 multiletter control sequences out of 15000+600000
  573305 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,2700s stack positions out of 5000i,500n,10000p,200000b,80000s
