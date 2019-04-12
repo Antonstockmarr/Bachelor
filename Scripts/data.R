@@ -3,7 +3,7 @@ library(xts)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 source("DataChecking.R")
-
+source("Polarize.R")
 # Watts colors
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
 
@@ -134,16 +134,25 @@ tmp <- tmp[tmp$ObsTime >= StartDays[42],]
 tmp.dat <- weather
 tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
 tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
+#tmp.wind <-aggregate(x=tmp.dat['WindSpeed'],by= data.frame(Date = tmp.dat[,'ObsTime']),FUN = function(x) sum())
 tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
 tmp.d2 <-aggregate(x=tmp.dat[,13],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
 tmp.dat <-data.frame(tmp.d1[,-13],Obs=tmp.d2[,2])
 day.weather <-tmp.dat
 day.weather <- day.weather[dim(day.weather)[1]:1,]
 
+# WindSpeed and WindDirection
+tmp.rekt <- matrix(data=rep(0,length(weather$ObsTime)*2),ncol=2)
+tmp.rekt[,1] = sin(weather$WindDirection)*weather$WindSpeed
+tmp.rekt[,2] = cos(weather$WindDirection)*weather$WindSpeed
+tmp.coord <- aggregate(x=tmp.rekt,by=data.frame(Date = as.Date(weather$ObsTime,tz="GMT")),FUN = mean)
+tmp.polar <- apply(tmp.coord,MARGIN =c(2:3), FUN = Polarize)
+
 
 # Making temporary weather data in order to merge it with the house data
 day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[42],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
+
 
 
 # Making average daily data:
@@ -227,8 +236,6 @@ for(i in 1:n){
     weatherCons[[i]]<-weatherCons[[i]][-1,]
   }
 }
-
-
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
