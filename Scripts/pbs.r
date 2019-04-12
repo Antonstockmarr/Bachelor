@@ -12,10 +12,10 @@ lasse = pbs(wd, df = NULL, knots = c(90, 180, 270), degree = 2, intercept=T,
           Boundary.knots = c(0, 360), periodic = TRUE)
 
 plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360))
-points(wd, lasse[,2], col = 2)
-points(wd, lasse[,3], col = 3)
-points(wd, lasse[,4], col = 4)
-
+for (j in 2:4)
+{
+  points(wd,lasse[,j], col=j)
+}
 points(wd, rowSums(lasse), col = 9)
 
 ############
@@ -26,13 +26,14 @@ summary(fit)
 fitsh<-stepP(fit)
 fitsh$object
 summary(fitsh$object)
-
-a <- c(0.5,0.5,0.7,0.5)
-BSplines <- matrix(data=lasse[,1:4] %*% diag(a),ncol=4)
+#a <- exp(fitsh$object$coefficients[3:6])
+a <- c(0.5,0.8,0.7,0.9)
+BSplines <- matrix(data=lasse %*% diag(a),ncol=4)
 Knot <- matrix(c(1,0,0,-1,-1,0,0,1),nrow=4,byrow=T)
 Spline <- (BSplines)%*%Knot
-plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=Wcol[2],main = 'Dependency on the wind direction',xlab='West - East',ylab='North - South')
+plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=Wcol[2],main = 'Dependency on the wind direction',xlab='West - East',ylab='South - North')
 abline(h=0,v=0)
+
 ##################
 
 model = lm(house.Energy ~ (Temperature + SunHour + WindSpeed + Condition + UltravioletIndex 
