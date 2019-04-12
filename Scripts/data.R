@@ -15,7 +15,7 @@ Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255)
 data.path = "../Consumption data/"
 file.names <- dir(data.path, pattern =".csv")
 n <- length(file.names)
-Datalengths = rep(c(1,n),nrow=n)
+Datalengths = rep(1,nrow=n)
 data <- vector(mode="list", length = n)
 day.data <- vector(mode="list", length = n)
 data.key <- rep("",n)
@@ -71,8 +71,6 @@ for(i in 1:n){
     k=k+1
     data[[k]] <- dt.tmp
     # Setting start and end times for each table.
-    EndDays[k]= data[[k]]$ObsTime[1]
-    StartDays[k]=data[[k]]$ObsTime[length(dt.tmp$ObsTime)]
     
     #Making daily data
     tmp.dat <- dt.tmp.noNA
@@ -103,10 +101,27 @@ if (k<n){
   data<-data[-(k+1:n)]
   day.data<-day.data[-(k+1:n)]
   data.key<-data.key[-(k+1:n)]
+  Datalengths<-Datalengths[-(k+1:n)]
 }
 
 # k is new n
 n <- k
+
+#Removing Feb data to get rid of NA
+
+jan1<-day.data[[1]]$Date[1]
+
+for(i in 1:n){
+  while(day.data[[i]]$Date[1]>jan1){
+    day.data[[i]]<-day.data[[i]][-1,]
+    #weatherCons[[i]]<-weatherCons[[i]][-1,]
+  }
+  Datalengths[i]=length(day.data[[i]]$Date)
+  EndDays[i]= day.data[[i]]$Date[1]
+  StartDays[i]=day.data[[i]]$Date[length(day.data[[i]]$Date)]
+  
+}
+
 
 tmp.df<-data.frame(Key=data.key)
 
@@ -238,18 +253,7 @@ tmp_ChristmasBreak <-as.integer(apply(day.avg,1,function(x) x %in% ChristmasBrea
 day.avg$Holiday <- as.factor(1*tmp_WinterBreak+2*tmp_SpringBreak+3*tmp_AutumnBreak+4*tmp_ChristmasBreak)
 levels(day.avg$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
 
-#Removing Feb data to get rid of NA
 
-jan1<-day.data[[1]]$Date[1]
-
-day.data[[2]]$Date[1]>jan1
-
-for(i in 1:n){
-  while(day.data[[i]]$Date[1]>jan1){
-    day.data[[i]]<-day.data[[i]][-1,]
-    weatherCons[[i]]<-weatherCons[[i]][-1,]
-  }
-}
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
