@@ -11,9 +11,6 @@ Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255)
 # Example using Watts colors
 plot(data[[1]]$Flow,col=Wcol[2])
 
-# Correlation between consumption and wind
-plot(tmp$WindSpeed,data[[1]]$CoolingDegree*data[[1]]$Flow)
-plot(tmp$WindDirection,data[[42]]$CoolingDegree*data[[42]]$Flow)
 
 
 avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
@@ -26,31 +23,15 @@ avgconsumption[difftime(max(EndDays),min(StartDays), units ="hours")]
 difftime(StartDays[1],min(StartDays), units ="hours")
 difftime(EndDays[1],min(StartDays), units ="hours")
 
-for (i in 1:n) {
-  avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]<-
-    avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]+
-    data[[i]]$Flow*data[[i]]$CoolingDegree
-  weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]<-
-    weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]+
-    rep(1,length(data[[1]]$Flow))
-}
+#for (i in 1:n) {
+#  avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]<-
+#    avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]+
+#    data[[i]]$Flow*data[[i]]$CoolingDegree
+#  weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]<-
+#    weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]+
+#    rep(1,length(data[[1]]$Flow))
+#}
 
-length(difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours"))
-length(data[[i]]$Flow*data[[i]]$CoolingDegree)
-
-maxskip<-rep(0,n)
-sumskip<-rep(0,n)
-for (i in 1:n) {
-  ntmp=length(data[[i]]$StartDateTime)
-  tmpdiftest=difftime(data[[i]]$StartDateTime[1:ntmp-1],data[[i]]$StartDateTime[2:ntmp], units ="hours")
-  maxskip[i]=max(tmpdiftest)
-  if(max(tmpdiftest)>1){
-    print(match(2:max(tmpdiftest),tmpdiftest))
-  }
-}
-
-n69=length(data[[69]]$StartDateTime)
-tmpdiftest=difftime(data[[69]]$StartDateTime[1:n69-1],data[[69]]$StartDateTime[2:n69], units ="hours")
 
 # Investigating pairs plots 
 day.tmp <- day.weather[(day.weather$Date <= as.Date(day.avg$Date[1],tz="GMT")),]
@@ -111,7 +92,7 @@ day.plot.gak <- ggplot(data = day.data[[42]], mapping = aes(Date, (CoolingDegree
   dev.off()
 }
 
-# Daily consumption for the 69 houses
+# Daily consumption for the n houses
 for (i in 1:n) {
   if (length(day.data[[i]]$Flow) > 365) {
     print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
@@ -121,5 +102,3 @@ for (i in 1:n) {
   }
 }
 
-# Heat map
-heatmap(day.data[[1]]$Volume*day.data[[1]]$CoolingDegree)

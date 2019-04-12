@@ -30,11 +30,13 @@ Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255)
 
 break.points<-as.numeric(quantile(cons.areal, c(.33,.67)))
 
+Construction.Year <- tmp
+
 for(i in 1:length(tmp)){
-  if(!is.na(BBR$Ombygningsår[tmp[i]])){
-    Construction.Year[i]<-BBR$Ombygningsår[tmp[i]]
+  if(!is.na(BBR$Ombygningsaar[tmp[i]])){
+    Construction.Year[i]<-BBR$Ombygningsaar[tmp[i]]
   }else{
-    Construction.Year[i]<-BBR$Byggeår[tmp[i]]
+    Construction.Year[i]<-BBR$Byggeaar[tmp[i]]
   }
 }
 
@@ -53,3 +55,4 @@ byg.points<-as.numeric(quantile(Construction.Year, c(.33,.67)))
 plot(No.days,cons.areal,col=Wcol[2])
 points(No.days[Construction.Year>byg.points[1]],cons.areal[Construction.Year>byg.points[1]],col=Wcol[3])
 points(No.days[Construction.Year>byg.points[2]],cons.areal[Construction.Year>byg.points[2]],col=Wcol[4])
+

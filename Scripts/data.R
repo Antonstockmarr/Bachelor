@@ -1,9 +1,12 @@
 rm(list = ls())
-library(xts)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
+
+# Sources and packages
 source("DataChecking.R")
 source("Polarize.R")
+library(xts)
+
 # Watts colors
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
 
@@ -109,6 +112,10 @@ tmp.df<-data.frame(Key=data.key)
 
 BBR.tmp <- read.table('../BBRdata.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 BBR <- merge(tmp.df,BBR.tmp)
+names(BBR)[5] <-  "Kaelder"
+names(BBR)[7] <-  "Byggeaar"
+names(BBR)[9] <-  "Ombygningsaar"
+
 
 
 # Reading weather data  
@@ -146,8 +153,15 @@ tmp.rekt <- matrix(data=rep(0,length(weather$ObsTime)*2),ncol=2)
 tmp.rekt[,1] = sin(weather$WindDirection)*weather$WindSpeed
 tmp.rekt[,2] = cos(weather$WindDirection)*weather$WindSpeed
 tmp.coord <- aggregate(x=tmp.rekt,by=data.frame(Date = as.Date(weather$ObsTime,tz="GMT")),FUN = mean)
-tmp.polar <- apply(tmp.coord,MARGIN =c(2:3), FUN = Polarize)
+#tmp.polar <- apply(tmp.coord,MARGIN =c(2:3), FUN = Polarize,x="V1",y="V2")
 
+tmp.polar <- matrix(rep(0,length(tmp.coord[,1])*2),ncol=2)
+for (i in 1:length(tmp.coord[,1]))
+{
+tmp.polar[i,] <- Polarize(tmp.coord[i,2],tmp.coord[i,3])  
+}
+day.weather$WindSpeed <- tmp.polar[,1]
+day.weather$WindDirection <- tmp.polar[,2]
 
 # Making temporary weather data in order to merge it with the house data
 day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[42],tz="GMT")),]
