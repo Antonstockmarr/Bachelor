@@ -33,8 +33,6 @@ difftime(EndDays[1],min(StartDays), units ="hours")
 #}
 
 
-
-
 # Investigating pairs plots 
 day.tmp <- day.weather[(day.weather$Date <= as.Date(day.avg$Date[1],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
@@ -94,7 +92,7 @@ day.plot.gak <- ggplot(data = day.data[[42]], mapping = aes(Date, (CoolingDegree
   dev.off()
 }
 
-# Daily consumption for the 69 houses
+# Daily consumption for the n houses
 for (i in 1:n) {
   if (length(day.data[[i]]$Flow) > 365) {
     print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
@@ -104,5 +102,3 @@ for (i in 1:n) {
   }
 }
 
-# Heat map
-heatmap(day.data[[1]]$Volume*day.data[[1]]$CoolingDegree)
