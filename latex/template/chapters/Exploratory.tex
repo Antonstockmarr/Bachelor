@@ -1,5 +1,5 @@
 \chapter{Exploratory Analysis}
-First part of the analysis is to explore the different attributes in the data in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modeling. 
+First part of the analysis is to explore the different attributes in the data in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modeling. \\
 
 \noindent To get an overview of the heat consumption for each house, the daily average consumption for each house has been calculated and can be seen as a function of the time in the following figure. 
 \begin{figure}[H]
@@ -8,15 +8,15 @@ First part of the analysis is to explore the different attributes in the data in
     \caption{Daily consumption during a year (2018). The top plot shows the average consumption for all the houses. The plot in the middle shows an example of a house that follows the trend and the last plot shows a house that deviates from the trend}
     \label{fig: daily_cons}
 \end{figure}
-Figure \ref{fig: daily_cons} shows the daily average consumption for all the house and the daily consumption of two houses - one that follows the trend at one that deviates. It can be seen that the slopes around the summer months are close to 0. \textcolor{red}{Noget med at vi kun er interesserede i perioden, hvor der er tændt for varmen, så derfor fjerner vi perioden hvor consumption er tæt på 0.} All three plots show some unusual high data points around April 2018. This can be due to the fact that is was snowing \textcolor{red}{blabla}. \\
-
-The average of the attributes from the house data is examined through a scatterplot in order to find possible correlations.
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=.75\textwidth]{../../../figures/house_attri.pdf}
-%    \caption{}
-%    \label{fig: house_attri}
-%\end{figure}
+\noindent Figure \ref{fig: daily_cons} shows the daily average consumption for all the houses and the daily consumption of two houses - one that follows the trend at one that deviates. It can be seen that the slopes around the summer months are close to 0. As mentioned, the data in focus in this project is where the heat is turned on, hence the period where the heat consumption is close to 0 needs to be removed. Exactly how this is done will be explained and discussed in the data segmentation section. All three plots show some unusual high data points around April 2018. This can be due to the fact that is was snowing in Denmark at that time \textcolor{red}{Tilføj reference på det her}. 
+\newline \\
+\noindent The average of the attributes from the house data is examined through a scatterplot in order to find possible correlations.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.75\textwidth]{../../../figures/house_attri.pdf}
+    \caption{}
+    \label{fig: house_attri}
+\end{figure}
 Figure \ref{fig: house_attri} clearly shows that the consumption is close to 0 in the summer period.  
 \textcolor{red}{Pairs af gennemsnitlig house data - vi ser en masse sammenhænge mellem de forskellige attributer. Vi kan se at CoolingDegree skal være over 25, før at varmeforbruget stiger.}
 \textcolor{red}{CoolingDegree begynder at stige et stykke tid før flowet stiger, hvilket hænger godt sammen med at når man fx tænder en radiator så stiger CoolingDegree. De efterfølgende radiatorer man tænder øger volumnet.} \\
