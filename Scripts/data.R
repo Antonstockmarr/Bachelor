@@ -194,14 +194,16 @@ m=dim(day.avg)[2]
 for(j in 2:m){
   day.avg[,j] <- rep(0,length(day.avg[,1]))
   weightavg<-rep(0,length(day.avg[,1]))
+  #while(sum(is.na(day.avg[,j]))==0){
   for (i in 1:n){
     tmp.index<-1+difftime(as.Date(StartDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day"):difftime(as.Date(EndDays[i],tz="GMT"),as.Date(min(StartDays),tz="GMT"), units ="day")
     tmp.data=day.data[[i]][,j]
     tmp.index<- tmp.index[!is.na(tmp.data)]
-    day.avg[tmp.index,j] <- day.avg[tmp.index,j] + tmp.data[tmp.index]
+    day.avg[tmp.index,j] <- day.avg[tmp.index,j] + tmp.data
     weightavg[tmp.index] <- weightavg[tmp.index] + rep(1,length(tmp.data)) - is.na(day.data[[i]]$Flow)
+    #i=i+1
   }
-  day.avg[[j]] <- day.avg[[j]]/weightavg
+  day.avg[,j] <- day.avg[,j]/weightavg
 }
 
 # Adding consumption attribute to daily avg. house data
