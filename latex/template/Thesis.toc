@@ -40,7 +40,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}BBR data}{14}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Multicollinearity}{14}{section.3.3}
+\contentsline {section}{\numberline {3.3}Multicollinearity}{15}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Statistical models}{17}{chapter.4}
 \defcounter {refsection}{0}\relax 
