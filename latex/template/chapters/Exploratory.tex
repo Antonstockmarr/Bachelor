@@ -37,17 +37,34 @@ is almost no consumption. The consumption in this period is probably mostly tap 
 Figures \ref{fig: house_attri} and \ref{fig: weather_cons_focus}are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
 
 \section{Data segmentation}
-When looking at the consumption data, it is useful to distinguish between periods where the heat is turned off and periods where it is turned on. The models that will be applied in the following sections should only consider periods with heating turned on, if possible. Because of the tap-water consumption, this difference is not always clear cut.
-The data can be seen as part of two different distributions. One where the heating is turned off, and one where it is turned on. In this section different  approaches will be examined on how to distinguish between the two distributions.
-The goal is to find some temperature, where it can be assumed that all data points below it belongs to the distribution with heating turned on. Three approaches will be described below, together with their pros and cons.
+Since one of the focuses of this paper is to estimate how much energy a house uses for heating
+depending on different outside temperatures, it is important to distinguish between when the house
+is actually being heated, and when the water is just being used for tap water consumption. If the
+inhabitants are not home for a longer period, there will probably be low consumption, even though
+it might be cold outside. This does not necessarily mean that the house is well isolated. And if
+there is consumption in warm periods, it is likely to be tap water consumption, and not heating
+The data can be seen as part of two different distributions. One where the heating is turned off,
+ and one where it is turned on. In this section different approaches will be examined on how to
+ distinguish between the two distributions.
+The goal is to find some temperature, where it can be assumed that all data points below it belongs
+to the distribution with heating turned on. Three approaches will be described below, together with
+their pros and cons.
 
 \subsection{Segmentation by piece-wise optimization}
-The first approach is to make a linear regression on the data with two segments. A breakpoint $\alpha$ is found, such that the SSE is as small as possible. The second segment is restricted to being constant. This way the breakpoint
-illustrates when the consumption goes from being linearly dependent on the temperature, to having a constant value. If that assumption holds, all data points below the breakpoint
-can be used in the statistical model for analysing heat consumption, and the rest can be discarded as tap water consumption.
+The first approach is to make a linear regression on the data with two segments. A breakpoint
+$\alpha$ is found, such that the SSE is as small as possible. The second segment is restricted to
+being constant. This way the breakpoint illustrates when the consumption goes from being linearly
+dependent on the temperature, to having a constant value. This method was tested on every available
+house, where a new breakpoint was found for each house.
 
 \noindent Figure \ref{fig: Consumption-PW} shows the regression for two different houses. On both houses the
 line fits rather well with the low-temperature data points. But it is not very accurate around the breakpoint.
+The house on the left shows very clearly, that the assumption that all points below the breakpoint belong to 
+the distribution without heating, is not accurate. Even though this approach can easily take out a lot of data
+where there is clearly no heating, it will in many cases set the breakpoint too high. The "tail" of the low
+consumption distribution might still be included, causing a bias in the model, and some variation that is not
+accounted for. The method is also not very robust. Depending on how the points are spread out, the breakpoint
+is sometimes as high as 20 degrees, which is not desirable.
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/Consumption-PW.eps}
@@ -57,7 +74,14 @@ line fits rather well with the low-temperature data points. But it is not very a
 
 \subsection{Segmentation by investigation slopes}
 
+
 \subsection{Segmentation by significant deviations}
+In the third approach, the data points are examined from high temperatures to low. First, all data points from
+above 20 degrees are assumed to belong to the distribution without heating. Using this data set, an interval
+of two standard deviations is calculated. For each degree interval, starting from above and moving down, all
+data points in that interval are examined. If more than 20\% of them are outside the two standard deviations,
+the upper bound of that degree interval is used as the segmentation breakpoint.
+
 
 %\subsection{Bestemmelse af temperatur breakpoint:}
 %\begin{itemize}

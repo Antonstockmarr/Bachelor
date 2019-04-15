@@ -7,19 +7,19 @@ Polarize <- function(x,y)
   Polar[1] = sqrt(x^2+y^2)
   if (x>0 && y>=0)
   {
-    Polar[2] = atan(y/x)
+    Polar[2] = atan(y/x)*180/pi
   }
   if (x<0 && y>=0)
   {
-    Polar[2] = atan(y/x)+180
+    Polar[2] = atan(y/x)*180/pi+180
   }
   if (x<0 && y<0)
   {
-    Polar[2] = atan(y/x)+180
+    Polar[2] = atan(y/x)*180/pi+180
   }
   if (x>0 && y<0)
   {
-    Polar[2] = atan(y/x)+360
+    Polar[2] = atan(y/x)*180/pi+360
   }
   if (x==0 && y<0)
   {

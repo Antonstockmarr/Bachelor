@@ -1,4 +1,4 @@
-# Dette script kan kun køres efter "source("data.R")"
+# Dette script kan kun k?res efter "source("data.R")"
 
 alpha <- rep(0,n)
 j=1
@@ -17,11 +17,11 @@ for(k in 1:n){
       
       tmp.sd.dist <-(q-tmp.mu)/tmp.sd
       
-      par(mfrow=c(1,2))
-      plot(t,tmp.sd.dist,main=k)#,xlim=c(5,25))
-      lines(t,rep((2),length(t)),col=2)
-      lines(t,rep((2),length(t)),col=2)
-      
+      par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
+      plot(t,tmp.sd.dist,xlab='Temperature',ylab='Standard deviations',col=Wcol[2])#,xlim=c(5,25))
+      lines(t,rep((2),length(t)),col=Wcol[4])
+      lines(t,rep((2),length(t)),col=Wcol[4])
+      mtext(paste("House number ",k), outer = TRUE, cex = 1.5)
       pct.in.sd <- rep(0,length(min(t):(max(t)-1)))
       
       for (i in floor(min(t):(max(t)-1))){
@@ -34,10 +34,11 @@ for(k in 1:n){
         
       }
       alpha[j]<-min(which(pct.in.sd<0.8))+floor(min(t)+1)
+      plot(min(t):(max(t)-1),pct.in.sd,xlab='Temperature',ylab='Proportion inside interval',col=Wcol[2])
+      lines(t,rep(0.8,length(t)),col=Wcol[4])
+      abline(v=alpha[j],col=Wcol[3])
       j=j+1
-      plot(min(t):(max(t)-1),pct.in.sd)
-      
-    }
+      }
   }
 }
 
