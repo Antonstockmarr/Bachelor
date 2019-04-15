@@ -11,7 +11,7 @@ for (i in 1:n) {
   
   lm.simple <- lm(Consumption ~ Temperature, data = model.tmp)
   # Checking model assumptions 
-  par(mfrow = c(2,2))
+  par(mfrow = c(2,2), mar=c(3,3,2,1))
   plot(lm.simple)
   title(paste("Daily consumption for house ", i), outer=TRUE)
 }

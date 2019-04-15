@@ -105,6 +105,7 @@ for (i in 1:n) {
 }
 
 # Investigating BBR data 
+par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
 plot(Construction.Year,cons.areal,col=Wcol[2],main='Year of Construction Consumption',xlab='Year of Construction',ylab = expression(paste("Consumption pr.  ", m^2, sep = "")))
 points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col=Wcol[3])
 points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break.points[2]],col=Wcol[4])

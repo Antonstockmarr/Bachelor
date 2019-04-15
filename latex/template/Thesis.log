@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  12 APR 2019 13:41
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  15 APR 2019 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1947,8 +1947,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-File: graphics/../../../figures/daily_cons.pdf Graphic file (type pdf)
-<use graphics/../../../figures/daily_cons.pdf>
+File: graphics/../../../figures/avg_daily.pdf Graphic file (type pdf)
+<use graphics/../../../figures/avg_daily.pdf>
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
@@ -1961,32 +1961,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--25
 
  []
 
-[11]
-File: graphics/../../../figures/weather_cons_focus.pdf Graphic file (type pdf)
-<use graphics/../../../figures/weather_cons_focus.pdf>
- [12] [13]
+File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weather_cons.pdf>
+[11] [12] [13]
 File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption-PW.eps>
+File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
+<graphics/../../../figures/byggeår.eps>
 
 
-LaTeX Warning: Reference `' on page 14 undefined on input line 95.
+LaTeX Warning: Reference `' on page 14 undefined on input line 101.
 
 
-LaTeX Warning: Reference `' on page 14 undefined on input line 95.
+LaTeX Warning: Reference `' on page 14 undefined on input line 101.
 
 
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 101--120
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 107--126
  [][] 
  []
 
-) [14] [15]
+) [14] [15] [16]
 \openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Statistical.tex [16
+ (./chapters/Statistical.tex [17
 
 
 
-] [17]) [18]
+]) [18]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
  (./Andet/Vejledningsmøder.tex
@@ -2044,6 +2045,9 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Thesis
 (biblatex)                and rerun LaTeX afterwards.
@@ -2054,10 +2058,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 47420 strings out of 492970
- 895922 string characters out of 6133939
- 1571321 words of memory out of 5000000
- 50749 multiletter control sequences out of 15000+600000
+ 47427 strings out of 492970
+ 896068 string characters out of 6133939
+ 1571387 words of memory out of 5000000
+ 50755 multiletter control sequences out of 15000+600000
  573305 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,2700s stack positions out of 5000i,500n,10000p,200000b,80000s

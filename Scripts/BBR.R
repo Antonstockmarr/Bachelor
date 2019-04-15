@@ -1,5 +1,3 @@
-par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
-
 model.data <- weatherCons
 for (i in 1:n) {
   model.tmp <- model.data[[i]]
