@@ -1,18 +1,14 @@
 ### pbs
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("data.R")
 source('stepP.R')
-i=1
+i=2
 wd<-weatherCons[[i]]$WindDirection
-#wd <- c(seq(1,360,length.out=length(weatherCons[[i]]$WindDirection)))
 library(pbs)
-
+wd = wd[order(wd)]
 #fit
-lasse = pbs(wd, df = NULL, knots = c(90, 180, 270), degree = 2, intercept=T, 
-          Boundary.knots = c(0, 360), periodic = TRUE)
+lasse = pbs(wd, df = NULL, knots = c(90,180,270), degree = 2, intercept = T, Boundary.knots = c(0,360))
 
 plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360))
-for (j in 2:4)
+for (j in 2:7)
 {
   points(wd,lasse[,j], col=j)
 }
@@ -22,6 +18,8 @@ points(wd, rowSums(lasse), col = 9)
 
 fit<-lm(Consumption ~Temperature+(lasse*WindSpeed), data = weatherCons[[i]])
 summary(fit)
+
+plot(-1.59*lasse[,1]+0.42*lasse[,2]+0.19*lasse[,3])
 
 fitsh<-stepP(fit)
 fitsh$object

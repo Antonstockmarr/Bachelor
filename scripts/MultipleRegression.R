@@ -4,6 +4,7 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 
 source("data.R")
 source("stepP.R")
+source("BSplines.R")
 library(foreach)
 library(doParallel)
 
@@ -20,6 +21,7 @@ lmMultiple <- vector(mode="list", length = n)
 # 
    lmMultiple[[i]] <- stepP(lm(Consumption ~ (Temperature+WindSpeed+WindDirection+SunHour+Condition+
                       UltravioletIndex+MeanSeaLevelPressure)^3+Holiday, data = model.tmp))
+   
  }
 # 
 summary(lmMultiple[[5]]$object)
@@ -37,14 +39,24 @@ plot(lmMultiple[[2]]$object)
 c <- makeCluster(cores[1]-1)
 registerDoParallel(c)
 
-lmMultiple <- foreach(i=11) %dopar% {
+
+lmMultiple <- foreach(i=1:n) %dopar% {
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
-  MultiModel <- stepP(lm(Consumption ~ Temperature*WindSpeed*WindDirection*SunHour*Condition*
-                                UltravioletIndex*MeanSeaLevelPressure+Holiday, data = model.tmp))
+  Splinebasis <- BSplines(model.tmp$WindDirection)
+  MultiModel <- stepP(lm(Consumption ~ (Temperature+WindSpeed+WindDirection+SunHour+Condition+
+                                UltravioletIndex+MeanSeaLevelPressure+Holiday)^2 +
+                          (WindSpeed*Splinebasis)^2, data = model.tmp))
   MultiModel
 }
 #stop cluster
 stopCluster(c)
-summary(lmMultiple[[5]]$object)
 
+modelListSlope <- vector(mode="list",length=n)
+modelListPval <- vector(mode="list",length=n)
+
+for (i in 1:n)
+{
+  modelListSlope[[i]] = lmMultiple[[i]]$object #for slopes
+  modelListPval[[i]] = summary(lmMultiple[[i]]$object)$coefficients #for p vals
+}
