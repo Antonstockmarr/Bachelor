@@ -5,7 +5,7 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 source("data.R")
 
 model.data <- weatherCons
-for (i in 1:n) {
+for (i in 1:3) {
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   

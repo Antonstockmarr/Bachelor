@@ -109,7 +109,7 @@ the upper bound of that degree interval is used as the segmentation breakpoint.
 \end{itemize}    
 
 \section{Multicollinearity}
-Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity\textcolor{red}{\dots} 
+Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} 
 \begin{table}
     \centering
     \begin{tabular}{ll}
@@ -122,9 +122,11 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     PrecipitationProbability \& Condition & 0.826 \\
     \hline
     \end{tabular}
-    \caption{Correlation between explanatory variables selected based on figure \ref{}. \textcolor{red}{Måske skal denne tabel ændres}}
+    \caption{Correlation between explanatory variables selected based on figures \ref{fig: house_attri}-\ref{fig: weather_cons}}
     \label{tab: correlation_table}
 \end{table}   
+Table \ref{tab: correlation_table} clearly shows that the attributes temperature and dewpoint are highly correlated as their correlation is close to 1. Hence, it is decided to remove the attribute \texttt{DewPoint} while \texttt{Temperature} is kept. The correlation between \texttt{PrecipitationProbability} and \texttt{Condition} are also quite high. However, it is decided to keep both of the attributes since \textcolor{red}{...} \\
+
 \noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata} 
 \begin{table}
     \centering
