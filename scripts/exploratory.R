@@ -55,6 +55,15 @@ day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
   dev.off()
 }
 
+# Sun pairs
+{	
+  pdf(file = "../figures/sun_attri.pdf",width = 4.5,height = 2.8,pointsize = 9)
+  par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
+  pairs(day.weather[c('SunHour','Condition','UltravioletIndex','Radiation')])
+  dev.off()
+}
+
+
 # Possible multicolinarity between Temperature and DewPoint
 cor(day.tmp['Temperature'],day.tmp['DewPoint'])
 # = 0.936
@@ -70,6 +79,14 @@ cor(day.tmp['PrecipitationProbability'],day.tmp['Condition'])
 # Possible multicolinarity between UltravioletIndex and Temperature
 cor(day.tmp['Temperature'],day.tmp['UltravioletIndex'])
 # 0.823 - close, but not enough
+
+# SunHour and radiation
+cor(day.weather['SunHour'],day.weather['Radiation'])
+# Removing SunHour
+weather$SunHour <- NULL
+day.weather$SunHour <- NULL
+
+cor(day.weather['Condition'],day.weather['UltravioletIndex'])
 
 # Average consumption for all houses during a year
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +

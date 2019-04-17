@@ -13,19 +13,25 @@ cores = detectCores()
 
 # Defining new data set where the summer period is left out
 model.data <- weatherCons
+for (i in 1:n)
+{
+  model.data[[i]]$Date <- NULL
+  model.data[[i]]$PrecipitationProbability <- NULL
+  model.data[[i]]$SunHour <- NULL
+}
 lmMultiple <- vector(mode="list", length = n)
-# 
- for (i in 10) {
+
+ for (i in 1:n) {
+   print(paste('Modelling house ',i))
    model.tmp <- model.data[[i]]
    model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
+   Splinebasis <- BSplines(model.tmp$WindDirection)
+   lmMultiple[[i]] <- stepP(lm(Consumption ~ Temperature*WindSpeed*Splinebasis+(.-UltravioletIndex)^2, data = model.tmp))
+    }
 # 
-   lmMultiple[[i]] <- stepP(lm(Consumption ~ (Temperature+WindSpeed+WindDirection+SunHour+Condition+
-                      UltravioletIndex+MeanSeaLevelPressure)^3+Holiday, data = model.tmp))
-   
- }
-# 
-summary(lmMultiple[[5]]$object)
-plot(lmMultiple[[2]]$object)
+summary(lmMultiple[[60]]$object)
+par(mfrow=c(2,2))
+plot(lmMultiple[[60]]$object)
 # 
 # plot(Consumption~Temperature,data=model.tmp)
 # lines(lmMultiple$object)
@@ -41,12 +47,11 @@ registerDoParallel(c)
 
 
 lmMultiple <- foreach(i=1:n) %dopar% {
+  print(paste('Modelling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
-  MultiModel <- stepP(lm(Consumption ~ (Temperature+WindSpeed+WindDirection+SunHour+Condition+
-                                UltravioletIndex+MeanSeaLevelPressure+Holiday)^2 +
-                          (WindSpeed*Splinebasis)^2, data = model.tmp))
+  MultiModel <- stepP(lm(Consumption ~ Temperature*WindSpeed*Splinebasis+(.-UltravioletIndex)^2, data = model.tmp))
   MultiModel
 }
 #stop cluster

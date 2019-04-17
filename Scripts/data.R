@@ -5,6 +5,7 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 # Sources and packages
 source("DataChecking.R")
 source("Polarize.R")
+source("Sun.R")
 library(xts)
 
 # Watts colors
@@ -139,6 +140,7 @@ names(weather)[1]="ObsTime"
 weather$ObsTime = strptime(weather$ObsTime,format='%d-%m-%Y %H:%M:%S',tz = 'GMT')
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 weather$X <- NULL
+weather$Radiation <- Sun(weather$ObsTime[1],tail(weather$ObsTime,n=1))
 
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]
@@ -156,12 +158,18 @@ tmp <- tmp[tmp$ObsTime >= StartDays[42],]
 tmp.dat <- weather
 tmp.dat$ObsTime <- as.Date(tmp.dat$ObsTime,tz="GMT")
 tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
-#tmp.wind <-aggregate(x=tmp.dat['WindSpeed'],by= data.frame(Date = tmp.dat[,'ObsTime']),FUN = function(x) sum())
+# Making tmp.d1 the mean of every attribute for each day except for obs and sunHour.
 tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
-tmp.d2 <-aggregate(x=tmp.dat[,13],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
-tmp.dat <-data.frame(tmp.d1[,-13],Obs=tmp.d2[,2])
+# Making tmp.d2 the sum of obs and sunhour
+tmp.d2 <-aggregate(x=tmp.dat[,c(5,14)],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
+# Combining the two dataframes to a single one
+tmp.dat <-data.frame(tmp.d1[,-c(5,14)],SunHour = tmp.d2[,2],Obs=tmp.d2[,3])
+# Combining Radiation with sunhour
+tmp.dat$Radiation <- tmp.dat$SunHour*tmp.dat$Radiation
 day.weather <-tmp.dat
+# Switching the rows, such that the newest days are first
 day.weather <- day.weather[dim(day.weather)[1]:1,]
+
 
 # WindSpeed and WindDirection
 tmp.rekt <- matrix(data=rep(0,length(weather$ObsTime)*2),ncol=2)
@@ -219,6 +227,7 @@ for (i in 1:n)
   tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
   weatherCons[[i]]<-cbind(day.tmp,tmpcons)
   names(weatherCons[[i]])[names(weatherCons[[i]])=='tmpcons']<-"Consumption"
+  weatherCons[[i]]$Obs <- NULL
 }
 
 
