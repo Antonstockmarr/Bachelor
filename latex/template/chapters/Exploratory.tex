@@ -23,7 +23,7 @@ First part of the analysis is to explore the different attributes in the data in
 \textcolor{red}{Pairs af gennemsnitlig house data - vi ser en masse sammenhænge mellem de forskellige attributer. Vi kan se at CoolingDegree skal være over 25, før at varmeforbruget stiger.}
 \textcolor{red}{CoolingDegree begynder at stige et stykke tid før flowet stiger, hvilket hænger godt sammen med at når man fx tænder en radiator så stiger CoolingDegree. De efterfølgende radiatorer man tænder øger volumnet.} \\
 
-\noindent The figure \ref{fig: weather_cons_focus} shows the dependencies between the average consumption of the houses and the weather attributes.
+\noindent The figure \ref{fig: weather_cons} shows the dependencies between the average consumption of the houses and the weather attributes.
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/weather_cons.pdf}
@@ -126,6 +126,8 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     \label{tab: correlation_table}
 \end{table}   
 Table \ref{tab: correlation_table} clearly shows that the attributes temperature and dewpoint are highly correlated as their correlation is close to 1. Hence, it is decided to remove the attribute \texttt{DewPoint} while \texttt{Temperature} is kept. The correlation between \texttt{PrecipitationProbability} and \texttt{Condition} are also quite high. However, it is decided to keep both of the attributes since \textcolor{red}{...} \\
+
+
 
 \noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata} 
 \begin{table}

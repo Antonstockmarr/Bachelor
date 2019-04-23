@@ -111,3 +111,11 @@
 \contentsline {section}{\numberline {5.8}8. april}{33}{section.5.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.8.1}Noter}{33}{subsection.5.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.9}23. april}{35}{section.5.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.9.1}Spørgsmål}{35}{subsection.5.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.9.2}Noter}{35}{subsection.5.9.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.9.3}Hvad skal vi lave?}{36}{subsection.5.9.3}

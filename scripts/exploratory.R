@@ -6,6 +6,7 @@ source("data.R")
 source("BBR.R")
 library(ggplot2) 
 library(gridExtra)
+library(tidyverse)
 
 
 # Watts colors
@@ -56,6 +57,7 @@ day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
 }
 
 # Sun pairs
+GGally::ggpairs(day.weather[c('SunHour','Condition','UltravioletIndex','Radiation')])
 {	
   pdf(file = "../figures/sun_attri.pdf",width = 4.5,height = 2.8,pointsize = 9)
   par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
