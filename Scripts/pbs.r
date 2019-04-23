@@ -6,9 +6,12 @@ library(pbs)
 wd = wd[order(wd)]
 #fit
 lasse = pbs(wd, df = NULL, knots = c(90,180,270), degree = 2, intercept = T, Boundary.knots = c(0,360))
+wd2 <- wd
+wd2[wd2<45] <- wd2[wd2<45]+360
+lasse = pbs(wd2, df = NULL, knots = c(135, 225,315), degree = 2, intercept = T, Boundary.knots = c(45,405))
 
 plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360))
-for (j in 2:7)
+for (j in 2:5)
 {
   points(wd,lasse[,j], col=j)
 }
