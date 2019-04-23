@@ -21,7 +21,7 @@ for(k in 1:n){
       plot(t,tmp.sd.dist,xlab='Temperature',ylab='Standard deviations',col=Wcol[2])#,xlim=c(5,25))
       lines(t,rep((2),length(t)),col=Wcol[4])
       lines(t,rep((2),length(t)),col=Wcol[4])
-      mtext(paste("House number ",k), outer = TRUE, cex = 1.5)
+      mtext(paste("Breakpoint for house number ",k), outer = TRUE, cex = 1.5)
       pct.in.sd <- rep(0,length(min(t):(max(t)-1)))
       
       for (i in floor(min(t):(max(t)-1))){
@@ -33,8 +33,8 @@ for(k in 1:n){
         pct.in.sd[i-round(min(t))+1] <- (sum(tmp.q>=tmp.mu+2*tmp.sd)+sum(tmp.q<=tmp.mu-2*tmp.sd))/length(tmp.q)
         
       }
-      alpha[j]<-min(which(pct.in.sd<0.8))+floor(min(t)+1)
-      plot(min(t):(max(t)-1),pct.in.sd,xlab='Temperature',ylab='Proportion inside interval',col=Wcol[2])
+      alpha[j]<-min(which(pct.in.sd<0.8))+floor(min(t))
+      plot(min(t):(max(t)-1),pct.in.sd,xlab='Temperature',ylab='Proportion outside interval',col=Wcol[2])
       lines(t,rep(0.8,length(t)),col=Wcol[4])
       abline(v=alpha[j],col=Wcol[3])
       j=j+1
@@ -46,6 +46,6 @@ alpha<-alpha[alpha>0]
 
 hist(alpha)
 
-break.point<-as.numeric(quantile(alpha, .15))
+break.point<-round(as.numeric(quantile(alpha, .25)))
 
 rm(alpha,i,j,pct.in.sd,q,t,tmp.mu,tmp.q,tmp.sd,tmp.sd.dist,tmp.t)

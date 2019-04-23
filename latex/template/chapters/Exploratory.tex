@@ -79,8 +79,16 @@ is sometimes as high as 20 degrees, which is not desirable.
 In the third approach, the data points are examined from high temperatures to low. First, all data points from
 above 20 degrees are assumed to belong to the distribution without heating. Using this data set, an interval
 of two standard deviations is calculated. For each degree interval, starting from above and moving down, all
-data points in that interval are examined. If more than 20\% of them are outside the two standard deviations,
+data points in that interval are examined. If more than 80\% of them are outside the two standard deviations,
 the upper bound of that degree interval is used as the segmentation breakpoint.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/Breakpoint.jpeg}
+    \caption{Piece-wise optimization of the consumption. The red line is the regression line and the green line is the confidence interval.}
+    \label{fig: Consumption-PW}
+\end{figure}
 
 
 %\subsection{Bestemmelse af temperatur breakpoint:}
