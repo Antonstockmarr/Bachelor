@@ -1,3 +1,4 @@
+# Initializing workspace and directory.
 rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
@@ -8,7 +9,7 @@ source("Polarize.R")
 source("Sun.R")
 library(xts)
 
-# Watts colors
+# Watts colorscheme
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
 
 
@@ -21,6 +22,7 @@ data <- vector(mode="list", length = n)
 day.data <- vector(mode="list", length = n)
 data.key <- rep("",n)
 
+# Saving a specific saturday and sunday for the attribute "Weekend"
 Weekend=weekdays(as.POSIXlt(c(as.Date('2019-01-26'),as.Date('2019-01-27')),format = "%Y-%m-%d", tz = "GMT"),abbreviate = TRUE)
 sat<-substring(Weekend[1],1:2,1:2)
 sun<-substring(Weekend[2],1:2,1:2)
@@ -31,12 +33,17 @@ dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsA
 names(dt.tmp)[1] = 'StartDateTime'
 StartDays <- strptime(dt.tmp$EndDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
 EndDays <- strptime(dt.tmp$EndDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
+
+# saving the number of data-set is used.
 k <- 0;
 
+# Big for-loop for loading data.
 for(i in 1:n){
   dt.tmp <- read.table(paste(data.path,file.names[i], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
+  # removing weird NA attribute.
   dt.tmp$X <- NULL
   
+  # Using "EndTime" as "ObsTime" and dropping "StartTime"
   dt.tmp <- dt.tmp[,-1]
   names(dt.tmp)[1]="ObsTime"
   dt.tmp$ObsTime <- strptime(dt.tmp$ObsTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
@@ -51,6 +58,7 @@ for(i in 1:n){
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
   dt.tmp$Weekend <- grepl(intersect(sat,sun),tmp.wd)
   
+  #Make a copy before adding NA's.
   dt.tmp.noNA<- dt.tmp
   
   # Fill missing null values.
@@ -61,17 +69,15 @@ for(i in 1:n){
   tmp.df <- data.frame(ObsTime=index(x),coredata(x[,-1]))
   dt.tmp <- tmp.df[dim(tmp.df)[1]:1,]
   
-  #Datalengths[i] = length(dt.tmp)
-  
   # Setting parameters for data checking
   par = c('min_obs'=1000, 'miss_fraction'=1/20)
   
   # If the data check is ok, store that data set
   if (DataChecking(dt.tmp,par)==TRUE)
   {
+    # Keep track of the amount stored datasets.
     k=k+1
     data[[k]] <- dt.tmp
-    # Setting start and end times for each table.
     
     #Making daily data
     tmp.dat <- dt.tmp.noNA
@@ -98,6 +104,7 @@ for(i in 1:n){
   
 }
 
+#removing unused allocated spaces.
 if (k<n){
   data<-data[-(k+1:n)]
   day.data<-day.data[-(k+1:n)]
@@ -109,23 +116,21 @@ if (k<n){
 n <- k
 
 #Removing Feb data to get rid of NA
-
 jan1<-day.data[[1]]$Date[1]
-
 for(i in 1:n){
   while(day.data[[i]]$Date[1]>jan1){
     day.data[[i]]<-day.data[[i]][-1,]
-    #weatherCons[[i]]<-weatherCons[[i]][-1,]
   }
+  # Saving the amount of observations in each table (with NA's).
   Datalengths[i]=length(day.data[[i]]$Date)
+  # Setting start and end times for each table.
   EndDays[i]= day.data[[i]]$Date[1]
   StartDays[i]=day.data[[i]]$Date[length(day.data[[i]]$Date)]
   
 }
 
-
+# Loading BBR data, and sorting it with the key.
 tmp.df<-data.frame(Key=data.key)
-
 BBR.tmp <- read.table('../BBRdata.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 BBR <- merge(tmp.df,BBR.tmp)
 names(BBR)[5] <-  "Kaelder"
@@ -171,7 +176,7 @@ day.weather <-tmp.dat
 day.weather <- day.weather[dim(day.weather)[1]:1,]
 
 
-# WindSpeed and WindDirection
+# WindSpeed and WindDirection transformed to a daily average.
 tmp.rekt <- matrix(data=rep(0,length(weather$ObsTime)*2),ncol=2)
 tmp.rekt[,1] = sin(weather$WindDirection)*weather$WindSpeed
 tmp.rekt[,2] = cos(weather$WindDirection)*weather$WindSpeed
@@ -190,15 +195,9 @@ day.weather$WindDirection <- tmp.polar[,2]
 day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[42],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[42],tz="GMT"),]
 
-
-
 # Making average daily data:
-
 day.avg <- day.data[[match(max(Datalengths),Datalengths)]]
-#day.avg[,1]<-seq(from=as.Date(min(StartDays),tz="GMT"), to=as.Date(max(EndDays),tz="GMT"), by="day")
-
 m=dim(day.avg)[2]
-
 for(j in 2:m){
   day.avg[,j] <- rep(0,length(day.avg[,1]))
   weightavg<-rep(0,length(day.avg[,1]))
@@ -215,7 +214,7 @@ for(j in 2:m){
 # Adding consumption attribute to daily avg. house data
 day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree
 
-
+# Making a dataset with selected attributes for each house
 weatherCons <- vector(mode="list", length = n)
 for (i in 1:n)
 {
@@ -266,3 +265,4 @@ levels(day.avg$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Au
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
+rm(AutumnBreakDates,ChristmasBreakDates,tmp.coord,tmp.polar,tmp.rekt,SpringBreakDates,WinterBreakDates,jan1,sat,sun,tmp_AutumnBreak,tmp_ChristmasBreak,tmp_SpringBreak,tmp_WinterBreak,tmpcons)
