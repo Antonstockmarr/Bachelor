@@ -34,7 +34,7 @@ First part of the analysis is to explore the different attributes in the data in
 \noindent It is already known that there is a dependency between the heat consumption and the time of year. During the summer period there
 is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature. \textcolor{red}{Anton nævnte noget med SunHour og Ultravioletindex.}
 
-Figures \ref{fig: house_attri} and \ref{fig: weather_cons_focus}are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
+Figures \ref{fig: house_attri} and \ref{fig: weather_cons}are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
 
 \section{Data segmentation}
 Since one of the focuses of this paper is to estimate how much energy a house uses for heating
@@ -117,7 +117,11 @@ the upper bound of that degree interval is used as the segmentation breakpoint.
 \end{itemize}    
 
 \section{Multicollinearity}
-Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} 
+Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} \\
+
+\noindent 
+
+
 \begin{table}
     \centering
     \begin{tabular}{ll}
