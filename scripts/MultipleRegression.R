@@ -22,7 +22,7 @@ for (i in 1:n)
 lmMultiple <- vector(mode="list", length = n)
 
  for (i in 1:n) {
-   print(paste('Modelling house ',i))
+   print(paste('Modeling house ',i))
    model.tmp <- model.data[[i]]
    model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
    Splinebasis <- BSplines(model.tmp$WindDirection)
@@ -52,7 +52,7 @@ registerDoParallel(c)
 
 
 lmMultiple <- foreach(i=1:n) %dopar% {
-  print(paste('Modelling house ',i))
+  print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)

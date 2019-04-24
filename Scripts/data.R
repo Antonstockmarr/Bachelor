@@ -146,6 +146,8 @@ weather$ObsTime = strptime(weather$ObsTime,format='%d-%m-%Y %H:%M:%S',tz = 'GMT'
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 weather$X <- NULL
 weather$Radiation <- Sun(weather$ObsTime[1],tail(weather$ObsTime,n=1))
+# Removing the attribute UltraVioletIndex
+weather$UltraVioletIndex <- NULL
 
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]

@@ -52,16 +52,17 @@ day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
 {
   pdf(file = "../figures/weather_cons_focus.pdf",width = 4.5,height = 2.8,pointsize = 9)
   par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
-  pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','UltravioletIndex','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
+  pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
   dev.off()
 }
 
 # Sun pairs
-GGally::ggpairs(day.weather[c('SunHour','Condition','UltravioletIndex','Radiation')])
+GGally::ggpairs(day.weather[c('SunHour','Condition','Radiation')])
+
 {	
   pdf(file = "../figures/sun_attri.pdf",width = 4.5,height = 2.8,pointsize = 9)
   par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
-  pairs(day.weather[c('SunHour','Condition','UltravioletIndex','Radiation')])
+  pairs(day.weather[c('SunHour','Condition','Radiation')])
   dev.off()
 }
 
@@ -78,17 +79,12 @@ day.weather$DewPoint <- NULL
 cor(day.tmp['PrecipitationProbability'],day.tmp['Condition'])
 # Not enough
 
-# Possible multicolinarity between UltravioletIndex and Temperature
-cor(day.tmp['Temperature'],day.tmp['UltravioletIndex'])
-# 0.823 - close, but not enough
-
 # SunHour and radiation
 cor(day.weather['SunHour'],day.weather['Radiation'])
 # Removing SunHour
 weather$SunHour <- NULL
 day.weather$SunHour <- NULL
 
-cor(day.weather['Condition'],day.weather['UltravioletIndex'])
 
 # Average consumption for all houses during a year
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
