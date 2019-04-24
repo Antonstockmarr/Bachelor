@@ -117,27 +117,16 @@ the upper bound of that degree interval is used as the segmentation breakpoint.
 \end{itemize}    
 
 \section{Multicollinearity}
-Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} \\
+Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} Multicollinearity can be investigated by calculating the correlation using the function \texttt{cor()} in \texttt{R}.\\
 
-\noindent 
+\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} 
 
-
-\begin{table}
+\begin{figure}
     \centering
-    \begin{tabular}{ll}
-     \hline
-     \textbf{Attributes} & \textbf{Correlation}  \\
-    \hline
-    \hline
-    Temperature \& DewPoint  &  0.936 \\
-    Temperature \& UltraVioletIndex  & 0.611 \\
-    PrecipitationProbability \& Condition & 0.826 \\
-    \hline
-    \end{tabular}
-    \caption{Correlation between explanatory variables selected based on figures \ref{fig: house_attri}-\ref{fig: weather_cons}}
-    \label{tab: correlation_table}
-\end{table}   
-Table \ref{tab: correlation_table} clearly shows that the attributes temperature and dewpoint are highly correlated as their correlation is close to 1. Hence, it is decided to remove the attribute \texttt{DewPoint} while \texttt{Temperature} is kept. The correlation between \texttt{PrecipitationProbability} and \texttt{Condition} are also quite high. However, it is decided to keep both of the attributes since \textcolor{red}{...} \\
+    \includegraphics[width=.8\textwidth]{../../../figures/gg_cor.eps}
+    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated.}
+    \label{fig: gg_cor}
+\end{figure}
 
 
 

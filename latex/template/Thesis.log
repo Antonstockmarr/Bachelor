@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  24 APR 2019 10:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  24 APR 2019 12:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1987,29 +1987,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
+[15]
+File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
+<graphics/../../../figures/gg_cor.eps>
 
-Overfull \hbox (26.49002pt too wide) in paragraph at lines 140--141
-\TU/lmtt/m/n/10 DewPoint \TU/lmr/m/n/10 while \TU/lmtt/m/n/10 Temperature \TU/lmr/m/n/10 is kept. The correlation between \TU/lmtt/m/n/10 PrecipitationProbability
+Underfull \hbox (badness 1308) in paragraph at lines 127--127
+[][]\TU/lmr/m/n/10 Scatterplot showing the correlations between the three attributes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
-
- []
-
-[15] [16]
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 147--166
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 136--155
  [][] 
  []
 
-) [17]
+) [16] [17] [18]
 \openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Statistical.tex [18
+ (./chapters/Statistical.tex [19
 
 
 
-] [19]
+]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
@@ -2088,10 +2086,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 47429 strings out of 492970
- 896166 string characters out of 6133939
- 1571499 words of memory out of 5000000
- 50755 multiletter control sequences out of 15000+600000
+ 47434 strings out of 492970
+ 896292 string characters out of 6133939
+ 1571934 words of memory out of 5000000
+ 50759 multiletter control sequences out of 15000+600000
  573305 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,2700s stack positions out of 5000i,500n,10000p,200000b,80000s
