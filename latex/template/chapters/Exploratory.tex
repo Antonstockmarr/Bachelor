@@ -77,17 +77,47 @@ is sometimes as high as 20 degrees, which is not desirable.
 
 \subsection{Segmentation by significant deviations}
 In the third approach, the data points are examined from high temperatures to low. First, all data points from
-above 20 degrees are assumed to belong to the distribution without heating. Using this data set, an interval
-of two standard deviations is calculated. For each degree interval, starting from above and moving down, all
-data points in that interval are examined. If more than 80\% of them are outside the two standard deviations,
-the upper bound of that degree interval is used as the segmentation breakpoint.
+above 20 degrees are assumed to belong to the distribution without heating. If a data point is more than two
+standard deviations above from the mean of this distribution, it is assumed to belong to the distribution with
+heating. Now the data points are divided by temperature into one degree intervals. For each interval, starting
+from above and moving down, all data points in that interval are examined. The last interval where at least
+20\% of the data points are less than two standard deviations away, is chosen as the breakpoint of that house.
+An example of the approach is seen on figure \ref{fig: Breakpoint}. On the left the data points are plotted with
+standard deviations on the y-axis. The red line highlights the two standard devations. On the right there is a plot
+showing how many of the data points that are outside the interval. Here, the red line shows the 80\% that determine
+the breakpoint. The orange line shows the breakpoint.
+
+This model is more robust than the others. It is more selective than the first, and provides a good way to set the
+breakpoint on the correct side of the mentioned "tail" that may occur at temperatures both with and without heating.
+When comparing figure \ref{fig: Breakpoint} to figure \ref{fig: Consumption-PW}, one can see that this method sets
+the breakpoint a bit lower, removing more points without heating. If the consumption data behaves badly, and chunks
+of datapoints are low enough to be within the two standard deviation, then a lot of data can potentially be removed,
+and there might be too little data left.
+
+Until now the focus has been to find a breakpoint for every individual house. But it might be preferable to have a
+single breakpoint all houses. This way the segmentation becomes more robust to houses with unforseen heat consumption.
+Figure \ref{fig: AlphaHist} shows a histogram of the breakpoint values for every house in the data set. The global
+breakpoint should be in the low end of the scale. It is better to remove data points that could have been used, than
+to include too many points that belong to a different distribution with a different variation, which could make the
+assumptions of the model worse. It would not be good to choose the minimum breakpoint, since that would be very
+vulnerable. A single house with a very low breakpoint might make the model bad for all the other houses. So the
+breakpoint that is chosen is the first quantile. As it is shown on the figure, this is $12$ degrees. All models in
+the following sections will only be considering data where the temperature less than or equal to $12$ degrees.
 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/Breakpoint.jpeg}
-    \caption{Piece-wise optimization of the consumption. The red line is the regression line and the green line is the confidence interval.}
-    \label{fig: Consumption-PW}
+    \caption{An illustration of how the breakpoint is found using segmentation by significant deviations. On the left figure the line illustrates two standard deviations from the high temperature distribution.
+    The right figure shows how many points are outside the two standard deviations. The last point below 80\% is the chosen breakpoint.}
+    \label{fig: Breakpoint}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/AlphaHist.jpeg}
+    \caption{A histogram of the alpha values for every house in the third segmentation method. The first quantile is chosen as the overall breakpoint. It is 12 degrees, illustrated by the green line}
+    \label{fig: AlphaHist}
 \end{figure}
 
 
