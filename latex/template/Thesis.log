@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  17 APR 2019 13:53
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  24 APR 2019 10:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1614,7 +1614,14 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
-) (./Thesis.aux (./prefrontmatter/titlepage.aux) (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./Andet/Vejledningsmøder.aux))
+) (./Thesis.aux (./prefrontmatter/titlepage.aux) (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux
+
+LaTeX Warning: Label `fig: Consumption-PW' multiply defined.
+
+
+LaTeX Warning: Label `fig: Consumption-PW@cref' multiply defined.
+
+) (./chapters/Statistical.aux) (./Andet/Vejledningsmøder.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1935,7 +1942,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-] [8]) [9]
+] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+) [9]
 \openout2 = `chapters/Exploratory.aux'.
 
  (./chapters/Exploratory.tex [10
@@ -1961,31 +1973,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--25
 
  []
 
-
-LaTeX Warning: Reference `fig: weather_cons_focus' on page 11 undefined on input line 26.
-
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
-[11]
-
-LaTeX Warning: Reference `fig: weather_cons_focus' on page 12 undefined on input line 37.
-
-[12] [13]
+[11] [12] [13]
 File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption-PW.eps>
+File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Breakpoint.jpeg>
 File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
 <graphics/../../../figures/byggeår.eps>
- [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 112--129
+ [14]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
 
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 133--152
+Overfull \hbox (26.49002pt too wide) in paragraph at lines 140--141
+\TU/lmtt/m/n/10 DewPoint \TU/lmr/m/n/10 while \TU/lmtt/m/n/10 Temperature \TU/lmr/m/n/10 is kept. The correlation between \TU/lmtt/m/n/10 PrecipitationProbability
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+[15] [16]
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 147--166
  [][] 
  []
 
-) [16] [17]
+) [17]
 \openout2 = `chapters/Statistical.aux'.
 
  (./chapters/Statistical.tex [18
@@ -2024,7 +2041,10 @@ Underfull \vbox (badness 1946) has occurred while \output is active []
  [30] [31]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32] [33]) [34] [35
+ [32] [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34] [35]) [36] [37
 
 
 
@@ -2032,7 +2052,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[36
+[38
 
 ]
 \tf@toc=\write8
@@ -2049,10 +2069,13 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3B9A198E8319D67FBE3444F61BC153E1.
+(rerunfilecheck)             Checksum: 2496FEF43338D5A5F0F48B62CD3FDD1C.
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -2065,12 +2088,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 47425 strings out of 492970
- 896036 string characters out of 6133939
- 1571384 words of memory out of 5000000
- 50753 multiletter control sequences out of 15000+600000
+ 47429 strings out of 492970
+ 896166 string characters out of 6133939
+ 1571499 words of memory out of 5000000
+ 50755 multiletter control sequences out of 15000+600000
  573305 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,10567b,2700s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (48 pages).
+Output written on Thesis.pdf (50 pages).

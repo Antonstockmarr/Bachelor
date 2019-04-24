@@ -265,3 +265,36 @@ For 4 punkter er der 6 degrees of freedom.
     \item $Vreg = (t_t, t_{t-1}, t_{t-2},\dots,S_t, S_{t-1})$. Bruge ARIMAX, bruge ARIMA til at fitte blabla.
     \item Argument i lm der hedder weight - hvor meget skiller en dag sig ud og så give den mindre vægt eller smide den ud. 
 \end{itemize}
+
+\pagebreak
+
+\section{23. april}
+
+\subsection{Spørgsmål}
+\begin{itemize}
+    \item Hvorfor sidste spline altid bliver NA? \textcolor{red}{$Temp * I(WindSpeed*Splinebasis) = Temp + I(\dots) + T:I(\dots)$. Ved at gange vindhastighed på fås noget med ortogonal.} 
+    \item Vi vil gerne have retningerne skal være toppene i spline plot, så ikke knuderne. Ved at lægge 45 grader til passer det ikke med boundary knot, så den tager ikke højde for dem der ligger udenfor de 360 grader. \textcolor{red}{Løsning 1: Man kan flytte det hele. Løsning 2: Lasse har fikset :-).}
+    \item Timeværdier: 
+\end{itemize}
+
+\subsection{Noter}
+\begin{itemize}
+    \item $\beta(WindDirection)$ bestemmes ved at tage koefficienten estimeret for spline 1 ganget med basisspline 1 + den næste osv. 
+    
+    \noindent Så får vi en kurve for $\beta(WindDirection)$. Så kan man kigge på, hvordan den ser ud ved 90 grader agtigt.
+    \item Når vi skal sammenligne to huse, skal vi så bruge den samme model på de to huse eller skal vi et eller andet. Det er den fulde model, som IKKE er reduceret vi skal kigge på.
+    \item Når vi så reducerer modellen ser vi hvad der er vigtigt for lige netop ét hus. 
+    \item Køre store model, reducér den og se hvilke parametre vi er nødt til at have med generelt set. Den nye model vi så laver ud fra de vigtige ting, bruger vi så til at sammenligne huse, som er bygget i samme år og samme areal osv.
+    \item For kunden kunne det være interessant at se i hvilket interval af vinkler der påvirker huset, og hvor skal man så isolere bedre. 
+    \item En stor udfordring ved timedata: Kan vi bruge timedata til at sige noget om dagsværdi, hvornår er der slukket for varmen? 
+    \item Hvis der kun er varmt vandsforbrug, så vil der være nogle andre mønstre, som er on and off. Kig hen over en sommerperiode for at undersøge karakteristikken for varmt vandsforbruget - kan vi se det samme, når vi er inde i opvarmingsperioden. 
+\end{itemize}
+
+\subsection{Hvad skal vi lave?}
+\begin{itemize}
+    \item Vi skal tage hver WindDirection*Windspeed med som én variabel, for alle de forskellige retninger vi vælger. For så fjerner den de retninger der er ikke-signifikante.
+    \item Se Bros besked på Facebook for resten. 
+    \item Tilføj farver og rigtige koefficienter i den der 'vinkelcirkel'. 
+    \item Se hvad der sker, hvis vi har 4 eller 8 splines med. 
+    \item Fikse spline plot, hvor x-aksen er de rigtige retninger. 
+\end{itemize}

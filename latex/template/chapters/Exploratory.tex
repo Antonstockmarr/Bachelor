@@ -23,7 +23,7 @@ First part of the analysis is to explore the different attributes in the data in
 \textcolor{red}{Pairs af gennemsnitlig house data - vi ser en masse sammenhænge mellem de forskellige attributer. Vi kan se at CoolingDegree skal være over 25, før at varmeforbruget stiger.}
 \textcolor{red}{CoolingDegree begynder at stige et stykke tid før flowet stiger, hvilket hænger godt sammen med at når man fx tænder en radiator så stiger CoolingDegree. De efterfølgende radiatorer man tænder øger volumnet.} \\
 
-\noindent The figure \ref{fig: weather_cons_focus} shows the dependencies between the average consumption of the houses and the weather attributes.
+\noindent The figure \ref{fig: weather_cons} shows the dependencies between the average consumption of the houses and the weather attributes.
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/weather_cons.pdf}
@@ -34,7 +34,7 @@ First part of the analysis is to explore the different attributes in the data in
 \noindent It is already known that there is a dependency between the heat consumption and the time of year. During the summer period there
 is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature. \textcolor{red}{Anton nævnte noget med SunHour og Ultravioletindex.}
 
-Figures \ref{fig: house_attri} and \ref{fig: weather_cons_focus}are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
+Figures \ref{fig: house_attri} and \ref{fig: weather_cons}are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
 
 \section{Data segmentation}
 Since one of the focuses of this paper is to estimate how much energy a house uses for heating
@@ -147,7 +147,11 @@ the following sections will only be considering data where the temperature less 
 \end{itemize}    
 
 \section{Multicollinearity}
-Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} 
+Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} \\
+
+\noindent 
+
+
 \begin{table}
     \centering
     \begin{tabular}{ll}
@@ -164,6 +168,8 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     \label{tab: correlation_table}
 \end{table}   
 Table \ref{tab: correlation_table} clearly shows that the attributes temperature and dewpoint are highly correlated as their correlation is close to 1. Hence, it is decided to remove the attribute \texttt{DewPoint} while \texttt{Temperature} is kept. The correlation between \texttt{PrecipitationProbability} and \texttt{Condition} are also quite high. However, it is decided to keep both of the attributes since \textcolor{red}{...} \\
+
+
 
 \noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata} 
 \begin{table}

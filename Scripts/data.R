@@ -146,6 +146,8 @@ weather$ObsTime = strptime(weather$ObsTime,format='%d-%m-%Y %H:%M:%S',tz = 'GMT'
 weather$IsHistoricalEstimated=weather$IsHistoricalEstimated=="True"
 weather$X <- NULL
 weather$Radiation <- Sun(weather$ObsTime[1],tail(weather$ObsTime,n=1))
+# Removing the attribute UltraVioletIndex
+weather$UltraVioletIndex <- NULL
 
 # Sorting dates
 sStartDays <- StartDays[order(StartDays)]
@@ -269,4 +271,4 @@ levels(day.avg$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Au
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
-rm(AutumnBreakDates,ChristmasBreakDates,tmp.coord,tmp.polar,tmp.rekt,SpringBreakDates,WinterBreakDates,jan1,sat,sun,tmp_AutumnBreak,tmp_ChristmasBreak,tmp_SpringBreak,tmp_WinterBreak,tmpcons)
+rm(AutumnBreakDates,ChristmasBreakDates,tmp.coord,tmp.polar,tmp.rekt,SpringBreakDates,WinterBreakDates,jan1,sat,sun,tmp_AutumnBreak,tmp_ChristmasBreak,tmp_SpringBreak,tmp_WinterBreak,tmpcons,tmp_Weekend,Weekend)
