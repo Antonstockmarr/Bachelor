@@ -26,8 +26,9 @@ lmMultiple <- vector(mode="list", length = n)
    model.tmp <- model.data[[i]]
    model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
    Splinebasis <- BSplines(model.tmp$WindDirection)
-   lmMultiple[[i]] <- stepP(lm(Consumption ~ Temperature*I(WindSpeed*Splinebasis)+(.-UltravioletIndex-WindSpeed)^2, data = model.tmp))
-    }
+   lmMultiple[[i]] <- stepP(lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+(.-UltravioletIndex-WindSpeed)^2, data = model.tmp))
+ }
+
 # 
 summary(lmMultiple[[60]]$object)
 par(mfrow=c(2,2))
