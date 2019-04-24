@@ -39,10 +39,9 @@ for(k in 1:n){
         
       }
       alpha[j]<-min(which(pct.in.sd<0.8))+floor(min(t))
+      abline(v=alpha[j],col=Wcol[3])
       plot(min(t):(max(t)-1),pct.in.sd,xlab='Temperature',ylab='Proportion outside interval',col=Wcol[2])
       # Alpha for det p?g?ldende hus er den koldeste grad hvor 80% eller mere er indenfor 2 sd i normalfordelingen
-      alpha[j]<-min(which(pct.in.sd<0.8))+floor(min(t)+1)
-      plot(min(t):(max(t)-1),pct.in.sd,xlab='Temperature',ylab='Proportion inside interval',col=Wcol[2])
       lines(t,rep(0.8,length(t)),col=Wcol[4])
       abline(v=alpha[j],col=Wcol[3])
       j=j+1
@@ -52,10 +51,12 @@ for(k in 1:n){
 
 alpha<-alpha[alpha>0]
 
-hist(alpha)
+par(mfrow=c(1,1))
+hist(alpha,main = 'Histogram of the alpha values')
 
 break.point<-round(as.numeric(quantile(alpha, .25)))
-# Breakpointet bestemmes som 15% kvartilet af alphaerne.
-break.point<-as.numeric(quantile(alpha, .15))
+# Breakpointet bestemmes som 25% kvartilet af alphaerne.
+
+abline(v=break.point,col=Wcol[2],lwd=2)
 
 rm(alpha,i,j,pct.in.sd,q,t,tmp.mu,tmp.q,tmp.sd,tmp.sd.dist,tmp.t)
