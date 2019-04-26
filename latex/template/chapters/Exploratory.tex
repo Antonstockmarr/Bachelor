@@ -1,6 +1,7 @@
 \chapter{Exploratory Analysis}
 First part of the analysis is to explore the different attributes in the data in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modeling. \\
 
+\section{\textcolor{red}{Examination of heat consumption}}
 \noindent To get an overview of the heat consumption for each house, the daily average consumption for each house has been calculated and can be seen as a function of the time in figure \ref{fig: daily_cons}. 
 
 \begin{figure}
@@ -31,10 +32,9 @@ First part of the analysis is to explore the different attributes in the data in
     \label{fig: weather_cons}
 \end{figure}
 
-\noindent It is already known that there is a dependency between the heat consumption and the time of year. During the summer period there
-is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature. \textcolor{red}{Anton nævnte noget med SunHour og Ultravioletindex.}
+\noindent It is already known that there is a dependency between the heat consumption and the time of year. During the summer period there is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature. \textcolor{red}{Anton nævnte noget med SunHour og Ultravioletindex.}
 
-Figures \ref{fig: house_attri} and \ref{fig: weather_cons}are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
+Figures \ref{fig: house_attri} and \ref{fig: weather_cons} are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
 
 \section{Data segmentation}
 Since one of the focuses of this paper is to estimate how much energy a house uses for heating
@@ -47,7 +47,7 @@ The data can be seen as part of two different distributions. One where the heati
  and one where it is turned on. In this section different approaches will be examined on how to
  distinguish between the two distributions.
 The goal is to find some temperature, where it can be assumed that all data points below it belongs
-to the distribution with heating turned on. Three approaches will be described below, together with
+to the distribution with heating turned on. Two approaches will be described below, together with
 their pros and cons.
 
 \subsection{Segmentation by piece-wise optimization}
@@ -72,11 +72,11 @@ is sometimes as high as 20 degrees, which is not desirable.
     \label{fig: Consumption-PW}
 \end{figure}
 
-\subsection{Segmentation by investigation slopes}
+
 
 
 \subsection{Segmentation by significant deviations}
-In the third approach, the data points are examined from high temperatures to low. First, all data points from
+In the second approach, the data points are examined from high temperatures to low. First, all data points from
 above 20 degrees are assumed to belong to the distribution without heating. If a data point is more than two
 standard deviations above from the mean of this distribution, it is assumed to belong to the distribution with
 heating. Now the data points are divided by temperature into one degree intervals. For each interval, starting
@@ -87,7 +87,7 @@ standard deviations on the y-axis. The red line highlights the two standard deva
 showing how many of the data points that are outside the interval. Here, the red line shows the 80\% that determine
 the breakpoint. The orange line shows the breakpoint.
 
-This model is more robust than the others. It is more selective than the first, and provides a good way to set the
+This model is more robust than the first. It is more selective, and provides a good way to set the
 breakpoint on the correct side of the mentioned "tail" that may occur at temperatures both with and without heating.
 When comparing figure \ref{fig: Breakpoint} to figure \ref{fig: Consumption-PW}, one can see that this method sets
 the breakpoint a bit lower, removing more points without heating. If the consumption data behaves badly, and chunks
@@ -120,22 +120,12 @@ the following sections will only be considering data where the temperature less 
     \label{fig: AlphaHist}
 \end{figure}
 
-
-%\subsection{Bestemmelse af temperatur breakpoint:}
-%\begin{itemize}
-%    \item Vi kigger på de huse der har mindst et års data (så vi er sikker på at hele sommeren er med)
-%    \item Vi antager at dagene med over 20 grader udenfor, der er der slukket for varmen, og der er dermed kun varmvandsforbruget med, som vi antager er hvid støj.
-%    \item For hver grad under 20 ser vi hvor mange procent af consumptionen der ligger indenfor +-2 standardafvigelser fra 20+ sættet.
-%    \item Den første grad hvor mere end 20\% af datapunkterne ligger indenfor intervallet gemmes som det hus' alpha.
-%    \item vi tager til sidst 15\% "percentile" af alphaerne, og skærer alt data fra vores datasæt som er over 12 grader.
-%\end{itemize}
-
 \section{BBR data}
 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/byggeår.eps}
-    \caption{}
+    \caption{Plot showing the year of construction and the average consumption pr. $m^2$ for each house. It is clearly seen that there is a tendency that the later a house is built or reconstructed, the better is the insulation of the house}
     \label{fig: byggeår}
 \end{figure}
 
@@ -149,18 +139,16 @@ the following sections will only be considering data where the temperature less 
 \section{Multicollinearity}
 Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} Multicollinearity can be investigated by calculating the correlation using the function \texttt{cor()} in \texttt{R}.\\
 
-\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} 
-
+\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} shows a plot of the correlation matrix between the abovementioned attributes.
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/gg_cor.eps}
-    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated.}
+    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated}
     \label{fig: gg_cor}
 \end{figure}
-
-
-
-\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata} 
+\noindent There is a high correlation between \texttt{Radiation} and \texttt{SunHour} at 0.955, thus \texttt{SunHour} is removed from the weather data set. \\
+ 
+\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata}. 
 \begin{table}
     \centering
     \begin{tabular}{ll}
@@ -172,9 +160,7 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     Temperature  &  Temperature outside in Degrees/C. \\
     WindSpeed  &  \\
     WindDirection  &  \\
-    SunHour  &  \\
     Condition  & \\
-    UltravioletIndex  &   \\
     MeanSeaLevelPressure  & \\
     PrecipitationProbability & \\
     Observation & The number of observations for each day for each house.\\
