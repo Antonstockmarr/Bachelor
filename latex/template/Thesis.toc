@@ -121,3 +121,13 @@
 \contentsline {subsection}{\numberline {5.9.2}Noter}{37}{subsection.5.9.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.9.3}Hvad skal vi lave?}{38}{subsection.5.9.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.10}30. april}{39}{section.5.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.10.1}Inden møde}{39}{subsection.5.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.10.2}Spørgsmål}{39}{subsection.5.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.10.3}Noter}{39}{subsection.5.10.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.10.4}Hvad skal vi lave?}{39}{subsection.5.10.4}

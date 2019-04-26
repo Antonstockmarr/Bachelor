@@ -5,6 +5,7 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 source("data.R")
 source("stepP.R")
 source("BSplines.R")
+source("CircleCol.R")
 
 # Defining new data set where the summer period is left out
 model.data <- weatherCons
@@ -19,6 +20,8 @@ for (i in 1:n)
 
 # Full regression model ---------------------------------------------------
 lmMultiple <- vector(mode="list", length = n)
+lmMultipleNoP <- vector(mode = "list", length = n)
+
 for (i in 1:n) {
   
   print(paste('Modeling house ',i))
@@ -26,7 +29,11 @@ for (i in 1:n) {
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
   if(length(weatherCons[[i]]$Date<360)){
-    lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+AutumnBreak+ChristmasBreak+Weekend+(.-WindSpeed-Weekend-AutumnBreak-SpringBreak-ChristmasBreak-WinterBreak)^2, data = model.tmp)
+    lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+
+                                                          I(WindSpeed*Splinebasis)[,2]+
+                                                          I(WindSpeed*Splinebasis)[,3]+
+                                                          I(WindSpeed*Splinebasis)[,4])+
+                               AutumnBreak+ChristmasBreak+Weekend+(.-WindSpeed-Weekend-AutumnBreak-SpringBreak-ChristmasBreak-WinterBreak)^2, data = model.tmp)
   }else{
     lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+AutumnBreak+ChristmasBreak+SpringBreak+WinterBreak+Weekend+(.-WindSpeed-Weekend-AutumnBreak-SpringBreak-ChristmasBreak-WinterBreak)^2, data = model.tmp)
   }
@@ -39,7 +46,6 @@ for (i in 1:n) {
   abline(h=0,v=0)
   
 }
-
 
 # Investigating parameters from model
 summary(lmMultiple[[60]]$object)
@@ -59,3 +65,7 @@ for (i in 1:n)
   modelListSlope[[i]] = lmMultiple[[i]]$object #for slopes
   modelListPval[[i]] = summary(lmMultiple[[i]]$object)$coefficients #for p vals
 }
+
+
+# General regression model for comparing houses ---------------------------
+
