@@ -149,18 +149,16 @@ the following sections will only be considering data where the temperature less 
 \section{Multicollinearity}
 Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} Multicollinearity can be investigated by calculating the correlation using the function \texttt{cor()} in \texttt{R}.\\
 
-\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} 
-
+\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} shows a plot of the correlation matrix between the abovementioned attributes.
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/gg_cor.eps}
-    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated.}
+    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated}
     \label{fig: gg_cor}
 \end{figure}
-
-
-
-\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata} 
+\noindent There is a high correlation between \texttt{Radiation} and \texttt{SunHour} at 0.955, thus \texttt{SunHour} is removed from the weather data set. \\
+ 
+\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata}. 
 \begin{table}
     \centering
     \begin{tabular}{ll}
@@ -172,9 +170,7 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     Temperature  &  Temperature outside in Degrees/C. \\
     WindSpeed  &  \\
     WindDirection  &  \\
-    SunHour  &  \\
     Condition  & \\
-    UltravioletIndex  &   \\
     MeanSeaLevelPressure  & \\
     PrecipitationProbability & \\
     Observation & The number of observations for each day for each house.\\
