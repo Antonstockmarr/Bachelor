@@ -28,9 +28,10 @@ fitsh<-stepP(fit)
 fitsh$object
 summary(fitsh$object)
 #a <- exp(fitsh$object$coefficients[3:6])
-a <- c(0.5,0.8,0.7,0.9)
+a <- c(-0.5,0.8,0.7,0.9)
+#a <- c(1,1,1,1)
 BSplines <- matrix(data=lasse %*% diag(a),ncol=4)
-Knot <- matrix(c(1,0,0,-1,-1,0,0,1),nrow=4,byrow=T)
+Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
 Spline <- (BSplines)%*%Knot
 plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=Wcol[2],main = 'Dependency on the wind direction',xlab='West - East',ylab='South - North')
 abline(h=0,v=0)
