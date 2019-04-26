@@ -30,19 +30,91 @@ for (i in 1:n)
   model.data[[i]]$Date <- NULL
   model.data[[i]]$PrecipitationProbability <- NULL
   model.data[[i]]$SunHour <- NULL
+  model.data[[i]]$UltravioletIndex <- NULL
 }
 lmMultiple <- vector(mode="list", length = n)
+
+lmMultipleNoP <- vector(mode="list", length = n)
+
+CircleColoring <- function(splines,modelobject){
+  colors=rep(0,length(splines[,1]))
+  f<-summary(modelobject)$coefficients
+  
+  N<-sapply(names(f[,1]),function(x) identical(x,"I(WindSpeed * Splinebasis)[, 1]"))
+  E<-sapply(names(f[,1]),function(x) identical(x,"I(WindSpeed * Splinebasis)[, 2]"))
+  S<-sapply(names(f[,1]),function(x) identical(x,"I(WindSpeed * Splinebasis)[, 3]"))
+  W<-sapply(names(f[,1]),function(x) identical(x,"I(WindSpeed * Splinebasis)[, 4]"))
+  
+  ncol=Wcol[2]
+  if(sum(N)==1){
+    p<-f[match(TRUE,N),4]
+    if(p<0.05){
+      ncol=Wcol[3]
+    }
+    if(p<0.01){
+      ncol=Wcol[4]
+    }
+  }
+  ecol=Wcol[2]
+  if(sum(E)==1){
+    p<-f[match(TRUE,E),4]
+    if(p<0.05){
+      ecol=Wcol[3]
+    }
+    if(p<0.01){
+      ecol=Wcol[4]
+    }
+  }
+  scol=Wcol[2]
+  if(sum(S)==1){
+    p<-f[match(TRUE,S),4]
+    if(p<0.05){
+      scol=Wcol[3]
+    }
+    if(p<0.01){
+      scol=Wcol[4]
+    }
+  }
+  wcol=Wcol[2]
+  if(sum(W)==1){
+    p<-f[match(TRUE,W),4]
+    if(p<0.05){
+      wcol=Wcol[3]
+    }
+    if(p<0.01){
+      wcol=Wcol[4]
+    }
+  }
+  
+  colors[splines[,3]==0]<-ncol
+  colors[splines[,4]==0]<-ecol
+  colors[splines[,1]==0]<-wcol
+  colors[splines[,2]==0]<-scol
+  return(colors)
+}
+
+
 
 for (i in 1:n) {
   print(paste('Modelling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
-  lmMultiple[[i]] <- stepP(lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+(.-UltravioletIndex-WindSpeed)^2, data = model.tmp))
+  lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+(.-WindSpeed)^2, data = model.tmp)
+  lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
+  
+  BSplin <- matrix(data=Splinebasis %*% diag(4),ncol=4)
+  Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
+  Spline <- (BSplin)%*%Knot
+  plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=CircleColoring(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
+  abline(h=0,v=0)
 }
 
+summary(lmMultipleNoP[[1]])
+
+
 # 
-summary(lmMultiple[[60]]$object)
+summary(lmMultiple[[49]]$object)
 par(mfrow=c(2,2))
 
 for (i in 1:n)
