@@ -17,11 +17,6 @@ if(FALSE){
 
 source("stepP.R")
 source("BSplines.R")
-library(foreach)
-library(doParallel)
-
-# setup parallel
-cores = detectCores()
 
 # Defining new data set where the summer period is left out
 model.data <- weatherCons
