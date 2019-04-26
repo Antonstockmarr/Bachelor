@@ -1,7 +1,9 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("data.R")
 
-#breakpoint fors�g
+#breakpoint fors???g
+# Slopes when taking in more and more points
+alpha = c(rep(0,n))
 for(k in 1:n){
   day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[k],tz="GMT")),]
   day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[k],tz="GMT"),] 
@@ -14,12 +16,15 @@ for(k in 1:n){
   for (i in fitted.temp){
     tmp.fit<-lm(q[t<=i]~t[t<=i])
     plot.points[,i+1]<-tmp.fit$coefficients[2]+c(2,0,-2)*sigma(tmp.fit)
+    
   }
   
-  plot(fitted.temp,plot.points[2,],main=k)#,ylim=c(-1,.7))
+  plot(fitted.temp,plot.points[2,],main=paste('House number ', k),type='l',ylim=c(-1,1),xlab='Temperature',ylab = 'Slope', col=Wcol[2])
+  matlines(fitted.temp,plot.points[1,],col=Wcol[3])
+  matlines(fitted.temp,plot.points[3,],col=Wcol[3])
 }
 
-
+# Minimum consumption in each degree interval
 for(k in 1:n){
   day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[k],tz="GMT")),]
   day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[k],tz="GMT"),] 
@@ -42,6 +47,3 @@ for(k in 1:n){
   plot(fitted.temp,plot.points,main=k)#,ylim=c(-1,.7))
 }
 
-
-# Focus on attributes from weather data 
-pairs(c(day.avg['Consumption'], day.tmp[c(1:2,5,7,9)]))
