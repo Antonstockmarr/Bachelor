@@ -80,7 +80,7 @@ Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weat
 
 In the house data there are some measurements missing and it can therefore be difficult to do modelling for the houses in question. To avoid these difficulties, a so called "Data Checking" function has been made in order to check whether several constraints for the data are fulfilled. There most be a certain number of observations and the amount of missing data should not exceed a certain fraction of the data. 
 
-\noindent \textcolor{red}{Vi tilføjer en attribute Holiday, som er defineret som working days, christmas break, winter break, spring break, autumn break} \\
+\noindent \textcolor{red}{Vi tilføjer en binær attribute for hver ferie, og endnu en for weekender. De forskellige ferier vi tager med er christmas break, winter break, spring break, autumn break} \\
 
 \subsection{The sun and the wind}
 \noindent A physical factor that could possibly affect the heat consumption is the sun. In raw data, the attributes \texttt{Condition}, \texttt{SunHour},  and \texttt{UltraVioletIndex} can be seen as explanatory variables for the sun. Instead, an attribute, \texttt{Radiation}, is added to calculate the solar radiation for a given day. This attribute is determined with use of the \texttt{R} function \texttt{calcSol} from the library \texttt{solaR}. The ultraviolet index is a measurement of the strength of ultraviolet radiation and since the attribute \texttt{Radiation} is more \textcolor{red}{exact}, \texttt{UltravioletIndex} is removed from the weather data set. 
