@@ -1,7 +1,7 @@
 \chapter{Exploratory Analysis}
 First part of the analysis is to explore the different attributes in the data in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modeling. \\
 
-\section{\textcolor{red}{Examination of heat consumption}}
+\section{Examination of heat consumption}
 \noindent To get an overview of the heat consumption for each house, the daily average consumption for each house has been calculated and can be seen as a function of the time in figure \ref{fig: daily_cons}. 
 
 \begin{figure}
@@ -35,6 +35,19 @@ First part of the analysis is to explore the different attributes in the data in
 \noindent It is already known that there is a dependency between the heat consumption and the time of year. During the summer period there is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature. \textcolor{red}{Anton nævnte noget med SunHour og Ultravioletindex.}
 
 Figures \ref{fig: house_attri} and \ref{fig: weather_cons} are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
+
+\subsection{BBR data}
+Presumably, the BBR data has influence on the heat consumption in particular the total area and year of construction. \textcolor{red}{Mangler lidt her.} \\
+
+\noindent The average of the heat consumption for each house is found/determined for the winter period. By dividing the average consumption with the total area of the house the consumption pr. $m^2$ is calculated. Figure \ref{fig: byggeaar} shows the year of construction and the consumption for each of the houses. The year of construction is here determined by either the year of construction or the year of the latest reconstruction of a house. 
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/byggeår.eps}
+    \caption{Plot showing the year of construction and the average consumption pr. $m^2$ for each house. It is clearly seen that there is a tendency that the later a house is built or reconstructed, the better is the insulation of the house}
+    \label{fig: byggeaar}
+\end{figure}
+
+\noindent Figure \ref{fig: byggeaar} clearly shows that the later a house is constructed (or reconstructed), the better is the insulation of the house as the consumption decreases with the year of construction. Furthermore, there is a clear outlier in the figure which has a remarkable high consumption pr. $m^2$. When looking up the house in the BBR data, it is seen that the outlier is an apartment of 61 $m^2$ build in 1920.  
 
 \section{Data segmentation}
 Since one of the focuses of this paper is to estimate how much energy a house uses for heating
@@ -119,22 +132,6 @@ the following sections will only be considering data where the temperature less 
     \caption{A histogram of the alpha values for every house in the third segmentation method. The first quantile is chosen as the overall breakpoint. It is 12 degrees, illustrated by the green line}
     \label{fig: AlphaHist}
 \end{figure}
-
-\section{BBR data}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/byggeår.eps}
-    \caption{Plot showing the year of construction and the average consumption pr. $m^2$ for each house. It is clearly seen that there is a tendency that the later a house is built or reconstructed, the better is the insulation of the house}
-    \label{fig: byggeår}
-\end{figure}
-
-\begin{itemize}
-    \item Vi tager gennemsnittet af consumption over alle dage under 12 grader for hvert hus.
-    \item Dette bliver divideret med det samlede boligareal.
-    \item Når dette gøres ses 1 tydelig outlier, der tilhører en lejlighed på 61 $m^2$ bygget i 1920.
-    \item Når vi plotter gennemsnitsconsumption med det seneste ombygningsår, ser vi en tendens af, at jo senere huset er blevet bygget om, jo mindre er varmeforbruget for huset.
-\end{itemize}    
 
 \section{Multicollinearity}
 Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} Multicollinearity can be investigated by calculating the correlation using the function \texttt{cor()} in \texttt{R}.\\
