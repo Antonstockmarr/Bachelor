@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  26 APR 2019 11:07
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.1.9)  26 APR 2019 13:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1986,42 +1986,42 @@ File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
  [15]
 File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Breakpoint.jpeg>
-
-Underfull \vbox (badness 5217) has occurred while \output is active []
-
- [16]
 File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
 <graphics/../../../figures/AlphaHist.jpeg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
 File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
 <graphics/../../../figures/gg_cor.eps>
 
-Underfull \hbox (badness 1308) in paragraph at lines 143--143
+Underfull \hbox (badness 1308) in paragraph at lines 140--140
 [][]\TU/lmr/m/n/10 Scatterplot showing the correlations between the three attributes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--147
+Underfull \hbox (badness 10000) in paragraph at lines 136--144
 
  []
 
-
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 151--168
+[17]
+Overfull \hbox (48.50003pt too wide) in paragraph at lines 148--165
  [][] 
  []
 
-) [17] [18] [19] [20]
+) [18] [19]
 \openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Statistical.tex [21
+ (./chapters/Statistical.tex [20
 
 
 
-]
+] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
@@ -2081,7 +2081,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F1A8D3C80207CBBD1AD0FC1D2A218FE9.
+(rerunfilecheck)             Checksum: B98DBFE7E502D181168949BFF4BDD57D.
 
 
 LaTeX Warning: There were undefined references.
@@ -2099,7 +2099,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
 Here is how much of TeX's memory you used:
  47454 strings out of 492970
  896650 string characters out of 6133939
- 1575896 words of memory out of 5000000
+ 1576776 words of memory out of 5000000
  50778 multiletter control sequences out of 15000+600000
  573305 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

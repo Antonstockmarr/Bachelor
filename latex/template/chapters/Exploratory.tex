@@ -86,8 +86,6 @@ is sometimes as high as 20 degrees, which is not desirable.
 \end{figure}
 
 
-
-
 \subsection{Segmentation by significant deviations}
 In the second approach, the data points are examined from high temperatures to low. First, all data points from
 above 20 degrees are assumed to belong to the distribution without heating. If a data point is more than two
@@ -117,12 +115,11 @@ vulnerable. A single house with a very low breakpoint might make the model bad f
 breakpoint that is chosen is the first quantile. As it is shown on the figure, this is $12$ degrees. All models in
 the following sections will only be considering data where the temperature less than or equal to $12$ degrees.
 
-
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/Breakpoint.jpeg}
     \caption{An illustration of how the breakpoint is found using segmentation by significant deviations. On the left figure the line illustrates two standard deviations from the high temperature distribution.
-    The right figure shows how many points are outside the two standard deviations. The last point below 80\% is the chosen breakpoint.}
+    The right figure shows how many points are outside the two standard deviations. The last point below 80\% is the chosen breakpoint}
     \label{fig: Breakpoint}
 \end{figure}
 
@@ -155,16 +152,16 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     \hline
     Date  &  End time and date for measurements. Hourly values.\\
     Temperature  &  Temperature outside in Degrees/C. \\
-    WindSpeed  &  \\
+    WindSpeed  &  \\ 
     WindDirection  &  \\
     Condition  & \\
-    MeanSeaLevelPressure  & \\
-    PrecipitationProbability & \\
+    MeanSeaLevelPressure & Avg. atmospheric pressure at mean sea level in mbar.\\
+    PrecipitationProbability & Measure of the probability that precipitation will occur. \\
     Observation & The number of observations for each day for each house.\\
     Consumption & CoolingDegree times Volume from House data \\
-    Holiday & \\
+    Holiday & A categorical attribute with 6 levels: Working day, Weekend, \\ &  Autumn break, Christmas break, Winter break and Spring break.\\
     \hline
     \end{tabular}
-    \caption{Attributes used for modelling.}
+    \caption{Attributes used for modeling}
     \label{tab: modeldata}
 \end{table}   
