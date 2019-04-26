@@ -245,19 +245,15 @@ for (i in 1:n)
   tmp_SpringBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% SpringBreakDates)[1,])
   tmp_AutumnBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
   tmp_ChristmasBreak <-as.integer(apply(day.data[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
-  tmp_Weekend<-day.data[[i]]$Weekend-tmp_WinterBreak-tmp_SpringBreak-tmp_AutumnBreak-tmp_ChristmasBreak
-  tmp_Weekend[tmp_Weekend==-1]<-0
-  day.data[[i]]$Holiday <- as.factor(tmp_Weekend+2*tmp_WinterBreak+3*tmp_SpringBreak+4*tmp_AutumnBreak+5*tmp_ChristmasBreak)
-  levels(day.data[[i]]$Holiday) <- c('Working days','Weekend', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
-  
-  tmp_WinterBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% WinterBreakDates)[1,])
-  tmp_SpringBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% SpringBreakDates)[1,])
-  tmp_AutumnBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% AutumnBreakDates)[1,])
-  tmp_ChristmasBreak <-as.integer(apply(weatherCons[[i]],1,function(x) x %in% ChristmasBreakDates)[1,])
-  tmp_Weekend<-day.data[[i]]$Weekend-tmp_WinterBreak-tmp_SpringBreak-tmp_AutumnBreak-tmp_ChristmasBreak
-  tmp_Weekend[tmp_Weekend==-1]<-0
-  weatherCons[[i]]$Holiday <- as.factor(tmp_Weekend+2*tmp_WinterBreak+3*tmp_SpringBreak+4*tmp_AutumnBreak+5*tmp_ChristmasBreak)
-  levels(weatherCons[[i]]$Holiday) <- c('Working days', 'Weekend', 'Winter break', 'Spring break', 'Autumn break', 'Christmas break')
+  tmp_Holiday<-rep(NA,length(day.data[[i]]$Date))
+  tmp_Holiday[1==day.data[[i]]$Weekend]<-'Weekend'
+  tmp_Holiday[1==tmp_WinterBreak]<-'Winter break'
+  tmp_Holiday[1==tmp_SpringBreak]<-'Spring break'
+  tmp_Holiday[1==tmp_AutumnBreak]<-'Autumn break'
+  tmp_Holiday[1==tmp_ChristmasBreak]<-'Christmas break'
+  tmp_Holiday<- as.factor(tmp_Holiday)
+  day.data[[i]]$Holiday<-tmp_Holiday
+  weatherCons[[i]]$Holiday<-tmp_Holiday
 }
 
 tmp_WinterBreak <-as.integer(apply(day.avg,1,function(x) x %in% WinterBreakDates)[1,])
@@ -271,4 +267,5 @@ levels(day.avg$Holiday) <- c('Working days', 'Winter break', 'Spring break', 'Au
 
 
 rm(i,file.names,data.path,dt.tmp,Datalengths,sStartDays,sEndDays,tmp,x,tmp.df,tmp.xts,t1,d1,weatherEnd,weatherStart,tmp.wd,tmp.dat,tmp.d1,tmp.d2,par,day.tmp,tmp.data,tmp.index,weightavg,m,j,k,dt.tmp.noNA,BBR.tmp)
-rm(AutumnBreakDates,ChristmasBreakDates,tmp.coord,tmp.polar,tmp.rekt,SpringBreakDates,WinterBreakDates,jan1,sat,sun,tmp_AutumnBreak,tmp_ChristmasBreak,tmp_SpringBreak,tmp_WinterBreak,tmpcons,tmp_Weekend,Weekend)
+rm(AutumnBreakDates,ChristmasBreakDates,tmp.coord,tmp.polar,tmp.rekt,SpringBreakDates,WinterBreakDates,jan1,sat,sun,tmp_AutumnBreak,tmp_ChristmasBreak,tmp_SpringBreak,tmp_WinterBreak,tmpcons,Weekend)
+
