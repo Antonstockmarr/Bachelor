@@ -35,7 +35,7 @@ for (i in 1:n) {
   BSplin <- matrix(data=Splinebasis %*% diag(4),ncol=4)
   Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
   Spline <- (BSplin)%*%Knot
-  plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=CircleColoring(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
+  plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
   abline(h=0,v=0)
   
 }
