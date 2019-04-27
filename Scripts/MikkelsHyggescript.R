@@ -17,11 +17,6 @@ if(FALSE){
 
 source("stepP.R")
 source("BSplines.R")
-library(foreach)
-library(doParallel)
-
-# setup parallel
-cores = detectCores()
 
 # Defining new data set where the summer period is left out
 model.data <- weatherCons
@@ -96,11 +91,16 @@ CircleColoring <- function(splines,modelobject){
 
 
 for (i in 1:n) {
+  
   print(paste('Modelling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
-  lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+(.-WindSpeed)^2, data = model.tmp)
+  if(length(weatherCons[[i]]$Date<360)){
+    lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+AutumnBreak+ChristmasBreak+Weekend+(.-WindSpeed-Weekend-AutumnBreak-SpringBreak-ChristmasBreak-WinterBreak)^2, data = model.tmp)
+  }else{
+    lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(I(WindSpeed*Splinebasis)[,1]+I(WindSpeed*Splinebasis)[,2]+I(WindSpeed*Splinebasis)[,3]+I(WindSpeed*Splinebasis)[,4])+AutumnBreak+ChristmasBreak+SpringBreak+WinterBreak+Weekend+(.-WindSpeed-Weekend-AutumnBreak-SpringBreak-ChristmasBreak-WinterBreak)^2, data = model.tmp)
+  }
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
   
   BSplin <- matrix(data=Splinebasis %*% diag(4),ncol=4)
@@ -108,6 +108,7 @@ for (i in 1:n) {
   Spline <- (BSplin)%*%Knot
   plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=CircleColoring(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
   abline(h=0,v=0)
+  
 }
 
 summary(lmMultipleNoP[[1]])
