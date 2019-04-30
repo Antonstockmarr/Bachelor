@@ -63,7 +63,7 @@ for(i in 1:n){
   
   # Fill missing null values.
   tmp.xts <- xts(dt.tmp[,-1], order.by=dt.tmp[,1])
-  t1<-rev(seq(from=tail(dt.tmp$ObsTime,n=1), to=dt.tmp$ObsTime[1], by="hour"))
+  t1<-rev(seq(from=(tail(dt.tmp$ObsTime,n=1)-hour(tail(dt.tmp$ObsTime,n=1))*60*60), to=(dt.tmp$ObsTime[1]+(23-hour(dt.tmp$ObsTime[1]))*60*60), by="hour"))
   d1 <- xts(rep(1,length(t1)), order.by=t1)
   x <- merge(d1,tmp.xts,all=TRUE)
   tmp.df <- data.frame(ObsTime=index(x),coredata(x[,-1]))
@@ -128,6 +128,15 @@ for(i in 1:n){
   StartDays[i]=day.data[[i]]$Date[length(day.data[[i]]$Date)]
   
 }
+
+#Removing Feb data from hour data
+jan1<-data[[1]]$ObsTime[1]
+for(i in 1:n){
+  while(data[[i]]$ObsTime[1]>jan1){
+    data[[i]]<-data[[i]][-1,]
+  }
+}
+
 
 # Loading BBR data, and sorting it with the key.
 tmp.df<-data.frame(Key=data.key)
