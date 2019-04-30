@@ -298,3 +298,39 @@ For 4 punkter er der 6 degrees of freedom.
     \item Se hvad der sker, hvis vi har 4 eller 8 splines med. 
     \item Fikse spline plot, hvor x-aksen er de rigtige retninger. 
 \end{itemize}
+
+\pagebreak
+
+\section{30. april}
+
+\subsection{Inden møde}
+\begin{itemize}
+    \item Vi skal have vores data delt op, så vi for et hus har alle tidspunkter på samme række.
+\end{itemize}
+
+\subsection{Spørgsmål}
+\begin{itemize}
+    \item Hvor finder vi konstanterne til at vægte de forskellige vindretninger? \textcolor{red}{Vi skal gange estimaterne fra modellen på, men det giver problemer når fortegnet af estimaterne er negativ. }
+    \item Hvilken måde skal vi modellere over data der har forskellige længder? Der er nogle der ikke har winter og spring med? \textcolor{red}{Tror vi fikser denne selv.}
+\end{itemize}
+
+\subsection{Noter}
+\begin{itemize}
+        \item Hvilken model skal man bruge som den reduceret model? Lave en tabel med signifikans af reduceret model (inkludér fortegn på estimaterne foran stjerne(r)). Alt der har mere end 1 stjerne er signifikant uanset hvad. Så man vil tage alle med, hvor der indgår minimum en stjerne mere end 1 gang. 
+        \item Vi vil gerne påvise, at huse er følsomme overfor forskellige retninger, så der skal hele splinen med i den reduceret model. 
+        \item Er der kollinearitet mellem ferierne? De burde være uafhængige. Solen og temperatur i forhold til weekender? Nope det er der ikke. 
+        \item Det betyder noget for usikkerheder: ingen af ferierne er signifikante, og vi tilføjer de fem parametre, så er forskellen next to nothing. Hvis man de er signifikante, og vi ikke tager dem med, så gør det usikkerheden for de medtagne parametre større. 
+        \item Hvor meget ændrer estimatet sig for sigma for hele modellen? 
+        \item For hver enkelt retning skal man lave en forudsigelse for de parametre man gerne vil forudsige med. Brug \texttt{predict} og lav et prediction interval eller et conifdence interval. Vælg median for SolarRadiation. 
+        \item Lav en dataframe med alle retninger hvor du har fast temperatur og SolarRadiation hvor man predicter med det. Ændre WindDirection til Splinebasis. Vælg vinden til en realistisk vindhastighed. 
+        \item Det er interessant at kigge på forskellige vindhastigheder og forskellige temperaturer. 
+        \item Polygon funktion, brug origo 
+        \item Sammenligning af huse: 70 huse for et halvt år - er der forskel på at tage det samme hus og modellere det på et helt eller et halvt år. Er estimaterne robuste?
+        \item Lasse: "Naturlig forklaring på negative estimater: en usikkerhed kan være at et vindue ikke er helt tæt, så presser vinden vinduet tættere." Hvis der er en utæthed der bliver mindre, som betyder mere end afkølingen, så et eller andet.. 
+\end{itemize}
+
+\subsection{Hvad skal vi lave?}
+\begin{itemize}
+    \item Vi skal have vores data delt op, så vi for et hus har alle tidspunkter på samme række, så vi kan sammenligne dem.
+    \item Vi skal nok dele data op i korte og lange huse.  
+\end{itemize}

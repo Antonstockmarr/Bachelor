@@ -30,10 +30,15 @@ When SSE is minimized the model needs to be validated by checking wether the und
 \textcolor{red}{Da alle attributter er gennemsnitlige for at få dagsværdier, giver condition ikke rigtig mening at have med i modellen. Derfor undlades den for nu.}
 
 \subsection{Splines}
+In the multiple regression model, splines will be used to model the wind direction. It does not make much sence to include the wind direction as it is in the model. It is not useful to know how significant the wind direction is, if it is not connected to the wind speed and if it is not known which directions are important. By modeling the wind direction with splines, each spline will represent a specific general direction.
 
-Modellere wind direction
+
+Modelere wind direction
 Lave en parameter om til flere vind retninger.
-
+2. degree splines
+Knots
+Mellem retningerne
+Giver mere mening for brugeren
 
 \textcolor{red}{Vi vil gerne vægte vores vind i forskellige retninger i vores model, så derfor bruger vi splines til at modellere de forskellige retninger.} \\
 
