@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  30 APR 2019 14:15
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  30 APR 2019 14:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1795,4 +1795,134 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--26
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 [11]
-Underfull \hbox (badness 
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+[12] [13]
+File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
+<graphics/../../../figures/byggeår.eps>
+ [14]
+File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
+<graphics/../../../figures/Consumption-PW.eps>
+ [15]
+File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Breakpoint.jpeg>
+
+Underfull \vbox (badness 5217) has occurred while \output is active []
+
+ [16]
+File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
+<graphics/../../../figures/AlphaHist.jpeg>
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
+<graphics/../../../figures/gg_cor.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--144
+
+ []
+
+
+Overfull \hbox (48.50003pt too wide) in paragraph at lines 148--165
+ [][] 
+ []
+
+) [17] [18] [19] [20]
+\openout2 = `chapters/Statistical.aux'.
+
+ (./chapters/Statistical.tex [21
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+) [22]
+\openout2 = `Andet/Vejledningsmøder.aux'.
+
+ (./Andet/Vejledningsmøder.tex
+Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
+[]\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
+ []
+
+[23
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24] [25] [26] [27] [28]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29] [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
+Underfull \vbox (badness 1946) has occurred while \output is active []
+
+ [32] [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34] [35]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [36] [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38] [39]) [40] [41
+
+
+
+]
+No complaints by nag.
+File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
+<use graphics/DTU-frise-SH-15.pdf>
+[42
+
+]
+\tf@toc=\write7
+\openout7 = `Thesis.toc'.
+
+\tf@tdo=\write8
+\openout8 = `Thesis.tdo'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
+ (./Thesis.aux (./prefrontmatter/titlepage.aux)
+Package cleveref Info: loaded `english' language definitions on input line 25.
+ (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./Andet/Vejledningsmøder.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: F2A8412870250AE16CD787C7B9CD8DA0.
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Thesis
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'Thesis.run.xml'.
+\openout1 = `Thesis.run.xml'.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
+ ) 
+Here is how much of TeX's memory you used:
+ 49453 strings out of 492933
+ 940973 string characters out of 6133145
+ 1626904 words of memory out of 5000000
+ 52783 multiletter control sequences out of 15000+600000
+ 575379 words of font info for 81 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 62i,13n,82p,1232b,2725s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on Thesis.pdf (54 pages).
