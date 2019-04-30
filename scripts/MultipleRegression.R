@@ -51,6 +51,14 @@ for (i in 1:n) {
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4] 
   
 }
+colnames(lmSummary_est) <- c("I","T","W1","W2","W3","W4","SolaR","T:W1","T:W2","T:W3","T:W4")
+t.est <- as.table(lmSummary_est)
+# Saving estimates in a .csv file 
+write.csv(t.est, file = "lmMult_est.csv", row.names = TRUE)
+colnames(lmSummary_p) <- c("I","T","W1","W2","W3","W4","SolaR","T:W1","T:W2","T:W3","T:W4")
+t.pvalues <- as.table(lmSummary_p)
+# Saving p-values in a .csv file 
+write.csv(t.pvalues, file = "lmMult_pvalues.csv", row.names = TRUE)
 
 
 # Investigating parameters from model
