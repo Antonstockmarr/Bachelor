@@ -129,6 +129,15 @@ for(i in 1:n){
   
 }
 
+#Removing Feb data from hour data
+jan1<-data[[1]]$ObsTime[1]
+for(i in 1:n){
+  while(data[[i]]$ObsTime[1]>jan1){
+    data[[i]]<-data[[i]][-1,]
+  }
+}
+
+
 # Loading BBR data, and sorting it with the key.
 tmp.df<-data.frame(Key=data.key)
 BBR.tmp <- read.table('../BBRdata.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
