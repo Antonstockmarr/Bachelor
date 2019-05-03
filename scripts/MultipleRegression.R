@@ -48,8 +48,6 @@ for (i in 1:n) {
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
   
   
-  
-  
   BSplin <- matrix(data=Splinebasis %*% diag(c(1,1,1,-0.1)),ncol=4)
   Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
   Spline <- (BSplin)%*%Knot
@@ -65,8 +63,6 @@ for (i in 1:n) {
   
 }
 
-plot(model.tmp$North*lmSummary_est[40,'W1']+model.tmp$East*lmSummary_est[40,'W2']
-     +model.tmp$South*lmSummary_est[40,'W3']+model.tmp$West*lmSummary_est[40,'W4'],ylab='Wind')
 
 t.est <- as.table(lmSummary_est)
 # Saving estimates in a .csv file 
