@@ -190,8 +190,8 @@ day.weather <- day.weather[dim(day.weather)[1]:1,]
 
 # WindSpeed and WindDirection transformed to a daily average.
 tmp.rekt <- matrix(data=rep(0,length(weather$ObsTime)*2),ncol=2)
-tmp.rekt[,1] = sin(weather$WindDirection)*weather$WindSpeed
-tmp.rekt[,2] = cos(weather$WindDirection)*weather$WindSpeed
+tmp.rekt[,1] = sin(weather$WindDirection/180*pi)*weather$WindSpeed
+tmp.rekt[,2] = cos(weather$WindDirection/180*pi)*weather$WindSpeed
 tmp.coord <- aggregate(x=tmp.rekt,by=data.frame(Date = as.Date(weather$ObsTime,tz="GMT")),FUN = mean)
 
 tmp.polar <- matrix(rep(0,length(tmp.coord[,1])*2),ncol=2)
@@ -201,6 +201,11 @@ tmp.polar[i,] <- Polarize(tmp.coord[i,2],tmp.coord[i,3])
 }
 day.weather$WindSpeed <- tmp.polar[,1]
 day.weather$WindDirection <- tmp.polar[,2]
+
+#weather$ObsTime[15:38]
+#plot(tmp.rekt[15:38,1],tmp.rekt[15:38,2])
+
+
 
 # Making temporary weather data in order to merge it with the house data
 day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[42],tz="GMT")),]
