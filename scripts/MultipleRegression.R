@@ -1,6 +1,6 @@
 rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-par(mar=c(3,3,2,1), mgp=c(2,0.7,0),mfrow=c(1,1))
+par(mar=c(3,3,2,1), mgp=c(2,0.7,0),mfrow=c(1,1),xpd=FALSE)
 
 source("data.R")
 source("stepP.R")
@@ -48,18 +48,20 @@ for (i in 1:n) {
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
   
   
-  BSplin <- matrix(data=Splinebasis %*% diag(c(1,1,1,-0.1)),ncol=4)
-  Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
-  Spline <- (BSplin)%*%Knot
-  #plot(Spline[,1],Spline[,2],xlim=c(-1,1),ylim=c(-1,1),col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
-  #abline(h=0,v=0)
   
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1] 
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4] 
   #wd2 <- model.tmp$WindDirection[order(model.tmp$WindDirection)]
   plot(model.tmp$WindDirection,Splinebasis[,1]*lmSummary_est[i,'W1']+Splinebasis[,2]*lmSummary_est[i,'W2']
-       +Splinebasis[,3]*lmSummary_est[i,'W3']+Splinebasis[,4]*lmSummary_est[i,'W4'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2])
+       +Splinebasis[,3]*lmSummary_est[i,'W3']+Splinebasis[,4]*lmSummary_est[i,'W4'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2],
+       main= i)
   abline(h=0)
+
+  BSplin <- matrix(data=Splinebasis %*% diag(lmSummary_est[i,c('W1','W2','W3','W4')]),ncol=4)
+  Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
+  Spline <- (BSplin)%*%Knot
+  plot(Spline[,1],Spline[,2],col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
+  abline(h=0,v=0)
   
 }
 
