@@ -39,10 +39,10 @@ for (i in 1:n) {
 #  wd[wd<45] <- wd[wd<45]+360
   tmp.wind <- Splinebasis*model.tmp$WindSpeed#[order(wd)]
 #  tmp.wind <- model.tmp$WindSpeed[order(model.tmp$WindDirection)]
-  model.tmp$South <- tmp.wind[,1]
-  model.tmp$West <- tmp.wind[,2]
   model.tmp$North <- tmp.wind[,3]
   model.tmp$East <- tmp.wind[,4]
+  model.tmp$South <- tmp.wind[,1]
+  model.tmp$West <- tmp.wind[,2]
   lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+
                                                         Radiation, data = model.tmp)
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
@@ -70,6 +70,36 @@ write.csv2(t.est, file = "lmMult_est.csv", row.names = TRUE)
 t.pvalues <- as.table(lmSummary_p)
 # Saving p-values in a .csv file 
 write.csv2(t.pvalues, file = "lmMult_pvalues.csv", row.names = TRUE)
+
+
+# Making +*** table
+lmSummary_star <- matrix(rep('',11*n),nrow = n)
+for(i in 1:n){
+  for(j in 1:11){
+    if(lmSummary_est[i,j]<0){
+      lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'-')
+    }else{
+      lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'+')
+    }
+    if(lmSummary_p[i,j]<0.05){
+      lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'*')
+      if(lmSummary_p[i,j]<0.01){
+        lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'*')
+      }
+      if(lmSummary_p[i,j]<0.001){
+        lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'*')
+      }
+    }else if(lmSummary_p[i,j]<0.1){
+      lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'.')
+    }
+  }
+}
+colnames(lmSummary_star) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
+write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
+
+
+
+
 
 
 # Investigating parameters from model
