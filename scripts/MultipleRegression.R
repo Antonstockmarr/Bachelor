@@ -66,8 +66,7 @@ for (i in 1:n) {
 
 t.est <- as.table(lmSummary_est)
 # Saving estimates in a .csv file 
-#write.csv(t.est, file = "lmMult_est.csv", row.names = TRUE)
-write.csv2(lmSummary_est, file = "lmMult_est.csv", row.names = TRUE)
+write.csv(t.est, file = "lmMult_est.csv", row.names = TRUE)
 t.pvalues <- as.table(lmSummary_p)
 # Saving p-values in a .csv file 
 write.csv2(t.pvalues, file = "lmMult_pvalues.csv", row.names = TRUE)
