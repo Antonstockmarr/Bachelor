@@ -8,6 +8,7 @@ source("DataChecking.R")
 source("Polarize.R")
 source("Sun.R")
 library(xts)
+library(solaR)
 
 # Watts colorscheme
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
@@ -192,7 +193,6 @@ tmp.rekt <- matrix(data=rep(0,length(weather$ObsTime)*2),ncol=2)
 tmp.rekt[,1] = sin(weather$WindDirection)*weather$WindSpeed
 tmp.rekt[,2] = cos(weather$WindDirection)*weather$WindSpeed
 tmp.coord <- aggregate(x=tmp.rekt,by=data.frame(Date = as.Date(weather$ObsTime,tz="GMT")),FUN = mean)
-#tmp.polar <- apply(tmp.coord,MARGIN =c(2:3), FUN = Polarize,x="V1",y="V2")
 
 tmp.polar <- matrix(rep(0,length(tmp.coord[,1])*2),ncol=2)
 for (i in 1:length(tmp.coord[,1]))
