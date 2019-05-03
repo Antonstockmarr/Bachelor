@@ -39,10 +39,10 @@ for (i in 1:n) {
 #  wd[wd<45] <- wd[wd<45]+360
   tmp.wind <- Splinebasis*model.tmp$WindSpeed#[order(wd)]
 #  tmp.wind <- model.tmp$WindSpeed[order(model.tmp$WindDirection)]
-  model.tmp$North <- tmp.wind[,1]
-  model.tmp$East <- tmp.wind[,2]
-  model.tmp$South <- tmp.wind[,3]
-  model.tmp$West <- tmp.wind[,4]
+  model.tmp$South <- tmp.wind[,1]
+  model.tmp$West <- tmp.wind[,2]
+  model.tmp$North <- tmp.wind[,3]
+  model.tmp$East <- tmp.wind[,4]
   lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+
                                                         Radiation, data = model.tmp)
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
