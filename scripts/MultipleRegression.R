@@ -61,6 +61,11 @@ t.pvalues <- as.table(lmSummary_p)
 write.csv(t.pvalues, file = "lmMult_pvalues.csv", row.names = TRUE)
 
 
+# Counting negative estimates
+sum(lmSummary_est[,3:6] < 0) / sum(lmSummary_est[,3:6] < 1000000)
+sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
+
+
 # Investigating parameters from model
 summary(lmMultipleNoP[[1]])
 par(mfrow=c(2,2))
