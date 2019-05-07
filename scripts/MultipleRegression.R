@@ -66,6 +66,7 @@ for (i in 1:n) {
 }
 
 
+
 t.est <- as.table(lmSummary_est)
 # Saving estimates in a .csv file 
 write.csv2(t.est, file = "lmMult_est.csv", row.names = TRUE)
