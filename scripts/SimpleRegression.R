@@ -10,6 +10,7 @@ for (i in 1:3) {
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   
   lm.simple <- lm(Consumption ~ Temperature, data = model.tmp)
+  summary(lm.simple)
   # Checking model assumptions 
   par(mfrow = c(2,2), mar=c(3,3,2,1))
   plot(lm.simple)
