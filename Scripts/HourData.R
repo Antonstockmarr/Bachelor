@@ -1,4 +1,4 @@
-source("Data.r")
+source("data.r")
 HourData <- vector("list",length=n)
 
 
@@ -22,14 +22,16 @@ for (i in 1:n)
     Attribute$Date <- day.data[[i]]$Date
     for (j in 0:23)
     {
-      Attribute[j+2] <- weather[(hour(data[[i]]$ObsTime) == j) && as.Date(data[[i]]$ObsTime)<=as.Date(EndDays[i]) && as.Date(data[[i]]$ObsTime)>=as.Date(StartDays[i]),k]
+      tmp <- weather[weather$ObsTime <= data[[i]]$ObsTime[1],]
+      tmp <- tmp[tmp$ObsTime >= tail(data[[i]]$ObsTime,1),]
+      Attribute[j+2] <- tmp[(hour(data[[i]]$ObsTime) == j),k]
     }
     HourTmp[[k-1]] <- Attribute
   }
   
-  HourData[[i]]<- data.frame(Consumption = Cons, Temperature = HourTmp[1], WindSpeed = HourTmp[2],
-                             WindDirection = HourTmp[3], SunHour = HourTmp[4], Condition = HourTmp[5],
-                             UltravioletIndex = HourTmp[6], MeanSeaLevelPressure = HourTmp[7], DewPoint = HourTmp[8],
-                             Humidity = HourTmp[9], PrecipitationProbability = HourData[10],
-                             IsHistoricalEstimated = HourTmp[11], Radiation = HourTmp[12])
+  HourData[[i]]<- data.frame(Consumption = Cons, Temperature = HourTmp[[1]], WindSpeed = HourTmp[[2]],
+                             WindDirection = HourTmp[[3]], SunHour = HourTmp[[4]], Condition = HourTmp[[5]],
+                             UltravioletIndex = HourTmp[[6]], MeanSeaLevelPressure = HourTmp[[7]], DewPoint = HourTmp[[8]],
+                             Humidity = HourTmp[[9]], PrecipitationProbability = HourTmp[[10]],
+                             IsHistoricalEstimated = HourTmp[[11]], Radiation = HourTmp[[12]])
 }

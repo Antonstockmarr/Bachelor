@@ -55,7 +55,7 @@ for (i in 1:n) {
   plot(model.tmp$WindDirection,Splinebasis[,1]*lmSummary_est[i,'W1']+Splinebasis[,2]*lmSummary_est[i,'W2']
        +Splinebasis[,3]*lmSummary_est[i,'W3']+Splinebasis[,4]*lmSummary_est[i,'W4'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2],
        main= i)
-  abline(h=0)
+  abline(h=0,v=c(0,90,180,270,360))
 
   BSplin <- matrix(data=Splinebasis %*% diag(lmSummary_est[i,c('W1','W2','W3','W4')]),ncol=4)
   Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
@@ -101,6 +101,9 @@ write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
 
 
 
+
+
+
 # Counting negative estimates
 sum(lmSummary_est[,3:6] < 0) / sum(lmSummary_est[,3:6] < 1000000)
 sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
@@ -124,6 +127,8 @@ for (i in 1:n)
   modelListSlope[[i]] = lmMultiple[[i]]$object #for slopes
   modelListPval[[i]] = summary(lmMultiple[[i]]$object)$coefficients #for p vals
 }
+
+
 
 
 # General regression model for comparing houses ---------------------------
