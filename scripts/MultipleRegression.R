@@ -102,7 +102,9 @@ write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
 
 
 
-
+# Counting negative estimates
+sum(lmSummary_est[,3:6] < 0) / sum(lmSummary_est[,3:6] < 1000000)
+sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
 
 
 # Investigating parameters from model
@@ -123,8 +125,6 @@ for (i in 1:n)
   modelListSlope[[i]] = lmMultiple[[i]]$object #for slopes
   modelListPval[[i]] = summary(lmMultiple[[i]]$object)$coefficients #for p vals
 }
-
-
 
 
 # General regression model for comparing houses ---------------------------

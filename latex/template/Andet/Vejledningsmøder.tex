@@ -132,7 +132,7 @@
 \pagebreak
 
 \section{12. marts}
-Bestemmelse af max temp. Hvor stabil er hældningen? Jo flere data der er med i modellen, jo bedre er estimatet. Men når de dårlige
+\noindent Bestemmelse af max temp. Hvor stabil er hældningen? Jo flere data der er med i modellen, jo bedre er estimatet. Men når de dårlige
 værdier inkluderes bliver det dårligere igen.
 Kig på diagnostic plot af de fittede huse. 
 Lav en linear model med backward selection. Fuld regressionsmodel. Se på hvilke variable som er vigtige. Sammenlign hældninger.
@@ -334,3 +334,29 @@ For 4 punkter er der 6 degrees of freedom.
     \item Vi skal have vores data delt op, så vi for et hus har alle tidspunkter på samme række, så vi kan sammenligne dem.
     \item Vi skal nok dele data op i korte og lange huse.  
 \end{itemize}
+
+
+\section{7. maj}
+
+funktion med prediction af middelvarmen. Input temp og vind forhold + sol.
+Predict. Confidence interval eller prediction interval.
+
+vind = 1 giver varme pr. vindhastighed. Men confidence interval vil du gerne kun have usikkerheden på det estimat.
+
+I en specifik retning er der også en effekt af vindretning og temperatur.
+
+
+Predict giver et godt samlet overblik, men hvis man vil se på specifikke afhængigheder skal man sætte input fx temp=12 grader.
+
+
+Y = sigma*x
+
+$V[y] = x^T V[sigma] x$
+
+
+Plot: Hvordan afhænger hver spline af temperaturen for w=1.
+
+
+
+simulering pakke:
+mess
