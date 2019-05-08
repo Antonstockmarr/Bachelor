@@ -22,12 +22,14 @@ is chosen for estimating the model. The parameters $\beta_j$ are optimized to mi
     \item Variance should be independent of location
     \item Linear relationship between $x_j$ and $Y$
 \end{enumerate}
-If these assumptions are not met \\
+If these assumptions are not met \textcolor{red}{\dots} \\
+
+\noindent The fitting of the regression models is carried out by using the method stepwise regression \textcolor{red}{Bruger vi adjusted R-squared?} which updates the model in each step. In each step it is considered whether a variable is added or subtracted from the set of explanatory variables based on specific criteria. \\
 
 \noindent Both a simple linear and a multiple linear regression model will be implemented in order to detect which attributes affect the performance of a specific house. This will be done by interpreting the estimates of the relation between the different explanatory attributes and \texttt{Consumption}. As mentioned, the p-value of the estimates of the explanatory variables will be the main focus when investigating which attributes influence the performance. 
 
 \section{Simple linear regression model}
-A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature}. Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met. \\
+A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature}. Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. The models are performed by using the \texttt{lm()} function. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met. \\
 
 \noindent 
 
