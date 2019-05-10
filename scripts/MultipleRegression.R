@@ -7,6 +7,10 @@ source("stepP.R")
 source("BSplines.R")
 source("CircleCol.R")
 
+k<-1:n
+Long <-k[Datalengths>=360]
+Short <-k[Datalengths<360]
+
 # Defining new data set where the summer period is left out
 model.data <- weatherCons
 # Various attributes are removed 
@@ -16,10 +20,113 @@ for (i in 1:n)
   model.data[[i]]$PrecipitationProbability <- NULL
   model.data[[i]]$SunHour <- NULL
   model.data[[i]]$UltravioletIndex <- NULL
+  model.data[[i]]$Condition <- NULL
 }
 
 
 # Full regression model ---------------------------------------------------
+lmMultipleFull <- vector(mode = "list", length = n)
+lmFull_est_L <- matrix(rep(0,17*length(Long)),nrow = length(Long))
+lmFull_p_L <- matrix(rep(0,17*length(Long)),nrow = length(Long))
+lmFull_est_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
+lmFull_p_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
+
+for (i in Long) {
+  print(paste('Full Model of long house ',i))
+  model.tmp <- model.data[[i]]
+  model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
+  Splinebasis <- BSplines(model.tmp$WindDirection)
+  
+  tmp.wind <- Splinebasis*model.tmp$WindSpeed
+  model.tmp$North <- tmp.wind[,3]
+  model.tmp$East <- tmp.wind[,4]
+  model.tmp$South <- tmp.wind[,1]
+  model.tmp$West <- tmp.wind[,2]
+  lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+WinterBreak+SpringBreak+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
+  
+  lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1] 
+  lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4] 
+}
+for (i in Short) {
+  print(paste('Full Model of Short house ',i))
+  model.tmp <- model.data[[i]]
+  model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
+  Splinebasis <- BSplines(model.tmp$WindDirection)
+  
+  tmp.wind <- Splinebasis*model.tmp$WindSpeed
+  model.tmp$North <- tmp.wind[,3]
+  model.tmp$East <- tmp.wind[,4]
+  model.tmp$South <- tmp.wind[,1]
+  model.tmp$West <- tmp.wind[,2]
+  lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
+  
+  lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1] 
+  lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4] 
+}
+
+lmSummary_star_L <- matrix(rep('',17*length(Long)),nrow = length(Long))
+for(i in 1:length(Long)){
+  for(j in 1:17){
+    if(lmFull_est_L[i,j]<0){
+      lmSummary_star_L[i,j] <-paste(lmSummary_star_L[i,j],'-')
+    }else{
+      lmSummary_star_L[i,j] <-paste(lmSummary_star_L[i,j],'+')
+    }
+    if(lmFull_p_L[i,j]<0.05){
+      lmSummary_star_L[i,j] <-paste(lmSummary_star_L[i,j],'*')
+      if(lmFull_p_L[i,j]<0.01){
+        lmSummary_star_L[i,j] <-paste(lmSummary_star_L[i,j],'*')
+      }
+      if(lmFull_p_L[i,j]<0.001){
+        lmSummary_star_L[i,j] <-paste(lmSummary_star_L[i,j],'*')
+      }
+    }else if(lmFull_p_L[i,j]<0.1){
+      lmSummary_star_L[i,j] <-paste(lmSummary_star_L[i,j],'.')
+    }
+  }
+}
+colnames(lmSummary_star_L) <- c("I","T","N","E","S","W","MeanSeaLvl","SolaR","WinterB","SpringB","AutumnB","ChristB","Weekend","T:N","T:E","T:S","T:W")
+write.csv2(lmSummary_star_L, file = "lmMult_star_L.csv", row.names = TRUE)
+star_count_L_array <- lmSummary_star_L
+star_count_L_array <- gsub("\\.", "", star_count_L_array)
+star_count_L_array <- nchar(star_count_L_array)
+star_count_L_array <- star_count_L_array>2
+colSums(star_count_L_array)/length(Long)
+
+lmSummary_star_S <- matrix(rep('',15*length(Short)),nrow = length(Short))
+for(i in 1:length(Short)){
+  for(j in 1:15){
+    if(lmFull_est_S[i,j]<0){
+      lmSummary_star_S[i,j] <-paste(lmSummary_star_S[i,j],'-')
+    }else{
+      lmSummary_star_S[i,j] <-paste(lmSummary_star_S[i,j],'+')
+    }
+    if(lmFull_p_S[i,j]<0.05){
+      lmSummary_star_S[i,j] <-paste(lmSummary_star_S[i,j],'*')
+      if(lmFull_p_S[i,j]<0.01){
+        lmSummary_star_S[i,j] <-paste(lmSummary_star_S[i,j],'*')
+      }
+      if(lmFull_p_S[i,j]<0.001){
+        lmSummary_star_S[i,j] <-paste(lmSummary_star_S[i,j],'*')
+      }
+    }else if(lmFull_p_S[i,j]<0.1){
+      lmSummary_star_S[i,j] <-paste(lmSummary_star_S[i,j],'.')
+    }
+  }
+}
+colnames(lmSummary_star_S) <- c("I","T","N","E","S","W","MeanSeaLvl","SolaR","AutumnB","ChristB","Weekend","T:N","T:E","T:S","T:W")
+write.csv2(lmSummary_star_S, file = "lmMult_star_S.csv", row.names = TRUE)
+star_count_S_array <- lmSummary_star_S
+star_count_S_array <- gsub("\\.", "", star_count_S_array)
+star_count_S_array <- nchar(star_count_S_array)
+star_count_S_array <- star_count_S_array>2
+colSums(star_count_S_array)/length(Short)
+
+summary(stepP(lmMultipleFull[[6]])$object)
+summary(lmMultipleFull[[6]])
+
+
+# General regression model for comparing houses ---------------------------
 lmMultiple <- vector(mode="list", length = n)
 lmMultipleNoP <- vector(mode = "list", length = n)
 lmSummary_est <- matrix(rep(0,11*n),nrow = n)
@@ -62,10 +169,7 @@ for (i in 1:n) {
   Spline <- (BSplin)%*%Knot
   plot(Spline[,1],Spline[,2],col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
   abline(h=0,v=0)
-  
 }
-
-
 
 t.est <- as.table(lmSummary_est)
 # Saving estimates in a .csv file 
@@ -127,5 +231,4 @@ for (i in 1:n)
 }
 
 
-# General regression model for comparing houses ---------------------------
 
