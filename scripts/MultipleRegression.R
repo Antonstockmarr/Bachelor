@@ -12,7 +12,7 @@ k <-1:n
 Long <- k[Datalengths>=360]
 Short <- k[Datalengths<360]
 
-# Defining new data set where the summer period is left out
+# Defining data used for modeling
 model.data <- weatherCons
 # Various attributes are removed
 for (i in 1:n)
@@ -221,7 +221,7 @@ star_count_array <- lmSummary_star
 star_count_array <- gsub("\\.", "", star_count_array)
 star_count_array <- nchar(star_count_array)
 star_count_array <- star_count_array>2
-colSums(star_count_array)/length(n)
+colSums(star_count_array)/n
 
 
 
