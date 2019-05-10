@@ -12,7 +12,7 @@ k <-1:n
 Long <- k[Datalengths>=360]
 Short <- k[Datalengths<360]
 
-# Defining new data set where the summer period is left out
+# Defining data used for modeling
 model.data <- weatherCons
 # Various attributes are removed
 for (i in 1:n)

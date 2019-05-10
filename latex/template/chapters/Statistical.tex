@@ -41,13 +41,15 @@ A simple linear regression model is fitted to each house with \texttt{Consumptio
     \label{fig: simple_lm_18}
 \end{figure}
 
-\textcolor{blue}{Overordnet kan den simple lineær regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet. }
+\textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket.}
+
+\noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet.}
 
 \section{Multiple linear regression model}
 
 \textcolor{red}{Da alle attributter er gennemsnitlige for at få dagsværdier, giver condition ikke rigtig mening at have med i modellen. Derfor undlades den for nu.}
 
-Vi medtager ikke interactions mellem holiday attributen og de andre attributter, da dette ikke er main focus. 
+\noindent \textcolor{blue}{Som nævnt er der nogle huse hvor vi kun har observationer for ca et havlt år, mens vi for andre huse har observationer for lidt over et år. WinterBreak og SpringBreak indgår ikke i de 'korte' observationer. Derfor er vi nødt til at lave to multiple linear regression models - en til at beskrive de 'korte' huse og en til at beskrive de 'lange' huse. Vi medtager ikke interactions mellem holiday attributen og de andre attributter, da dette ikke er main focus. }
 
 \subsection{Splines}
 In the multiple regression model, splines will be used to model the wind direction. It does not make much sence to include the wind direction as it is in the model. It is not useful to know how significant the wind direction is, if it is not connected to the wind speed and if it is not known which directions are important. By modeling the wind direction with splines, each spline will represent a specific general direction.
