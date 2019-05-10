@@ -7,9 +7,10 @@ source("stepP.R")
 source("BSplines.R")
 source("CircleCol.R")
 
-k<-1:n
-Long <-k[Datalengths>=360]
-Short <-k[Datalengths<360]
+# Initializing vectors containing "long" and "short" houses
+k <-1:n
+Long <- k[Datalengths>=360]
+Short <- k[Datalengths<360]
 
 # Defining new data set where the summer period is left out
 model.data <- weatherCons
@@ -25,28 +26,34 @@ for (i in 1:n)
 
 
 # Full regression model ---------------------------------------------------
+# Initializing
 lmMultipleFull <- vector(mode = "list", length = n)
 lmFull_est_L <- matrix(rep(0,17*length(Long)),nrow = length(Long))
 lmFull_p_L <- matrix(rep(0,17*length(Long)),nrow = length(Long))
 lmFull_est_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
 lmFull_p_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
 
+# Full regression model for "long" houses
 for (i in Long) {
   print(paste('Full Model of long house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
 
+  # Splines
   tmp.wind <- Splinebasis*model.tmp$WindSpeed
   model.tmp$North <- tmp.wind[,3]
   model.tmp$East <- tmp.wind[,4]
   model.tmp$South <- tmp.wind[,1]
   model.tmp$West <- tmp.wind[,2]
   lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+WinterBreak+SpringBreak+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
-
+  
+  # Saving coefficients
   lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
 }
+
+# Full regression model for "short" houses
 for (i in Short) {
   print(paste('Full Model of Short house ',i))
   model.tmp <- model.data[[i]]
@@ -64,7 +71,9 @@ for (i in Short) {
   lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
 }
 
+# Initializing a matrix containing empty strings for "long" houses
 lmSummary_star_L <- matrix(rep('',17*length(Long)),nrow = length(Long))
+# Adding signs and stars
 for(i in 1:length(Long)){
   for(j in 1:17){
     if(lmFull_est_L[i,j]<0){
@@ -85,6 +94,7 @@ for(i in 1:length(Long)){
     }
   }
 }
+# Printing table 
 colnames(lmSummary_star_L) <- c("I","T","N","E","S","W","MeanSeaLvl","SolaR","WinterB","SpringB","AutumnB","ChristB","Weekend","T:N","T:E","T:S","T:W")
 write.csv2(lmSummary_star_L, file = "lmMult_star_L.csv", row.names = TRUE)
 star_count_L_array <- lmSummary_star_L
@@ -93,6 +103,7 @@ star_count_L_array <- nchar(star_count_L_array)
 star_count_L_array <- star_count_L_array>2
 colSums(star_count_L_array)/length(Long)
 
+# Initializing a matrix containing empty strings for "short" houses
 lmSummary_star_S <- matrix(rep('',15*length(Short)),nrow = length(Short))
 for(i in 1:length(Short)){
   for(j in 1:15){
@@ -122,8 +133,8 @@ star_count_S_array <- nchar(star_count_S_array)
 star_count_S_array <- star_count_S_array>2
 colSums(star_count_S_array)/length(Short)
 
-summary(stepP(lmMultipleFull[[6]])$object)
-summary(lmMultipleFull[[6]])
+#summary(stepP(lmMultipleFull[[6]])$object)
+#summary(lmMultipleFull[[6]])
 
 
 # General regression model for comparing houses ---------------------------
@@ -131,8 +142,8 @@ lmMultiple <- vector(mode="list", length = n)
 lmMultipleNoP <- vector(mode = "list", length = n)
 lmSummary_est <- matrix(rep(0,11*n),nrow = n)
 lmSummary_p <- matrix(rep(0,11*n),nrow = n)
-colnames(lmSummary_est) <- c("I","T","W1","W2","W3","W4","SolaR","T:W1","T:W2","T:W3","T:W4")
-colnames(lmSummary_p) <- c("I","T","W1","W2","W3","W4","SolaR","T:W1","T:W2","T:W3","T:W4")
+colnames(lmSummary_est) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
+colnames(lmSummary_p) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 
 
 par(mfrow = c(1,1))
@@ -153,22 +164,25 @@ for (i in 1:n) {
   lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+
                                                         Radiation, data = model.tmp)
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
-
+  # Checking model assumptions 
+  par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
+  plot(lmMultiple[[i]]$object)
+  title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
 
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]
   #wd2 <- model.tmp$WindDirection[order(model.tmp$WindDirection)]
-  plot(model.tmp$WindDirection,Splinebasis[,1]*lmSummary_est[i,'W1']+Splinebasis[,2]*lmSummary_est[i,'W2']
-       +Splinebasis[,3]*lmSummary_est[i,'W3']+Splinebasis[,4]*lmSummary_est[i,'W4'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2],
-       main= i)
-  abline(h=0,v=c(0,90,180,270,360))
+  #plot(model.tmp$WindDirection,Splinebasis[,1]*lmSummary_est[i,'N']+Splinebasis[,2]*lmSummary_est[i,'E']
+  #     +Splinebasis[,3]*lmSummary_est[i,'S']+Splinebasis[,4]*lmSummary_est[i,'W'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2],
+  #     main= i)
+  #abline(h=0,v=c(0,90,180,270,360))
 
-  BSplin <- matrix(data=Splinebasis %*% diag(lmSummary_est[i,c('W1','W2','W3','W4')]),ncol=4)
+  BSplin <- matrix(data=Splinebasis %*% diag(lmSummary_est[i,c('N','E','S','W')]),ncol=4)
   Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
   Spline <- (BSplin)%*%Knot
-  plot(Spline[,1],Spline[,2],col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
-  abline(h=0,v=0)
+  #plot(Spline[,1],Spline[,2],col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
+  #abline(h=0,v=0)
 }
 
 t.est <- as.table(lmSummary_est)
@@ -203,9 +217,11 @@ for(i in 1:n){
 }
 colnames(lmSummary_star) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
-
-
-
+star_count_array <- lmSummary_star
+star_count_array <- gsub("\\.", "", star_count_array)
+star_count_array <- nchar(star_count_array)
+star_count_array <- star_count_array>2
+colSums(star_count_array)/length(n)
 
 
 
