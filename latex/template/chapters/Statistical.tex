@@ -33,18 +33,24 @@ A simple linear regression model is fitted to each house with \texttt{Consumptio
 
 \noindent 
 
-
 \subsection{Results}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/simple_lm18.pdf}
+    \caption{}
+    \label{fig: simple_lm_18}
+\end{figure}
 
 \section{Multiple linear regression model}
 
 \textcolor{red}{Da alle attributter er gennemsnitlige for at få dagsværdier, giver condition ikke rigtig mening at have med i modellen. Derfor undlades den for nu.}
 
+Vi medtager ikke interactions mellem holiday attributen og de andre attributter, da dette ikke er main focus. 
+
 \subsection{Splines}
 In the multiple regression model, splines will be used to model the wind direction. It does not make much sence to include the wind direction as it is in the model. It is not useful to know how significant the wind direction is, if it is not connected to the wind speed and if it is not known which directions are important. By modeling the wind direction with splines, each spline will represent a specific general direction.
 
-
-Modelere wind direction
+Modellere wind direction
 Lave en parameter om til flere vind retninger.
 2. degree splines
 Knots
