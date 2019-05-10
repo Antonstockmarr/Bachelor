@@ -9,7 +9,7 @@ for (i in 1:n)
   Avgcons[i] <- mean(weatherCons[[i]]$Consumption,na.rm = TRUE)
 }
 
-for (i in 1:n)
+for (i in 1:1)
 {
   print(i)
   Cons <- data.frame(matrix(ncol=25,nrow = length(day.data[[i]]$Date)))#  
@@ -32,10 +32,10 @@ for (i in 1:n)
       tmp <- tmp[tmp$ObsTime >= tail(data[[i]]$ObsTime,1),]
       Attribute[j+2] <- tmp[(hour(data[[i]]$ObsTime) == j),k]
     }
-    HourTmp[[k-1]] <- as.matrix(Attribute)
+    HourTmp[[k-1]] <- data.matrix(Attribute)
   }
   
-  HourData[[i]]<- list(Consumption = as.matrix(Cons), Temperature = HourTmp[[1]], WindSpeed = HourTmp[[2]],
+  HourData[[i]]<- list(Consumption = data.matrix(Cons), Temperature = HourTmp[[1]], WindSpeed = HourTmp[[2]],
                             WindDirection = HourTmp[[3]], SunHour = HourTmp[[4]], Condition = HourTmp[[5]],
                             UltravioletIndex = HourTmp[[6]], MeanSeaLevelPressure = HourTmp[[7]], DewPoint = HourTmp[[8]],
                             Humidity = HourTmp[[9]], PrecipitationProbability = HourTmp[[10]],
@@ -45,8 +45,10 @@ for (i in 1:n)
 Houravg = matrix(c(rep(0,24*n)),nrow = 24) 
 for (i in 1:n)
   {
-  
-  Houravg[,i] <- (sapply(HourData[[i]]$Consumption[HourData[[i]]$Temperature[-1]>=15],FUN=mean,na.rm = TRUE)[-1])/Avgcons[i]
+  SummerDays <- day.weather$Date[day.weather$Temperature >= 15]
+  tmp <- HourData[[i]]$Consumption[,'Date']
+  tmp_index <- sapply(tmp,function(x) x %in% SummerDays)
+  Houravg[,i] <- sapply(HourData[[i]]$Consumption[tmp_index,],FUN=mean,na.rm = TRUE)
   }
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
