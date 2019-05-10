@@ -204,9 +204,6 @@ day.weather$WindSpeed <- tmp.polar[,1]
 day.weather$WindDirection <- tmp.polar[,2]
 
 
-weather$ObsTime[15:38]
-plot(tmp.rekt[15:38,1],tmp.rekt[15:38,2])
-points(tmp.coord[2,2],tmp.coord[2,3],col=2)
 
 head(weather$ObsTime)
 head(tmp.coord)

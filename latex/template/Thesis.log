@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  7 MAY 2019 12:46
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  7 MAY 2019 13:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1772,46 +1772,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
 [18]
-Overfull \vbox (322.19998pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
- [19]) [20]
-\openout2 = `Andet/Vejledningsmøder.aux'.
-
- (./Andet/Vejledningsmøder.tex
-Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
-[]\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
  []
 
-[21
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Overfull \vbox (322.19998pt too high) has occurred while \output is active []
+
+ [20]) [21]
+\openout2 = `Andet/Vejledningsmøder.aux'.
+
+ (./Andet/Vejledningsmøder.tex [22
 
 
 
 ]
+Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
+[]\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
+ []
+
+[23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
+ [24]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [23] [24] [25] [26]
+ [25] [26] [27] [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27] [28]
+ [29] [30]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
+ [31]
 Underfull \vbox (badness 1946) has occurred while \output is active []
-
- [30] [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32] [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1819,7 +1824,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [34] [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36] [37]) [38] [39
+ [36] [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38] [39]) [40] [41
 
 
 
@@ -1827,7 +1835,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[40
+[42
 
 ]
 \tf@toc=\write8
@@ -1853,10 +1861,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
 Here is how much of TeX's memory you used:
  49443 strings out of 492933
  945245 string characters out of 6133145
- 1794088 words of memory out of 5000000
+ 1790088 words of memory out of 5000000
  52785 multiletter control sequences out of 15000+600000
  552895 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,1232b,2199s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (52 pages).
+Output written on Thesis.pdf (54 pages).

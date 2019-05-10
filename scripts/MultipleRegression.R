@@ -13,7 +13,7 @@ Short <-k[Datalengths<360]
 
 # Defining new data set where the summer period is left out
 model.data <- weatherCons
-# Various attributes are removed 
+# Various attributes are removed
 for (i in 1:n)
 {
   model.data[[i]]$Date <- NULL
@@ -36,32 +36,32 @@ for (i in Long) {
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
-  
+
   tmp.wind <- Splinebasis*model.tmp$WindSpeed
   model.tmp$North <- tmp.wind[,3]
   model.tmp$East <- tmp.wind[,4]
   model.tmp$South <- tmp.wind[,1]
   model.tmp$West <- tmp.wind[,2]
   lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+WinterBreak+SpringBreak+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
-  
-  lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1] 
-  lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4] 
+
+  lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
+  lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
 }
 for (i in Short) {
   print(paste('Full Model of Short house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
-  
+
   tmp.wind <- Splinebasis*model.tmp$WindSpeed
   model.tmp$North <- tmp.wind[,3]
   model.tmp$East <- tmp.wind[,4]
   model.tmp$South <- tmp.wind[,1]
   model.tmp$West <- tmp.wind[,2]
   lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
-  
-  lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1] 
-  lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4] 
+
+  lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
+  lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
 }
 
 lmSummary_star_L <- matrix(rep('',17*length(Long)),nrow = length(Long))
@@ -141,7 +141,7 @@ for (i in 1:n) {
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
-  
+
 #  wd <- model.tmp$WindDirection[order(model.tmp$WindDirection)]
 #  wd[wd<45] <- wd[wd<45]+360
   tmp.wind <- Splinebasis*model.tmp$WindSpeed#[order(wd)]
@@ -153,16 +153,16 @@ for (i in 1:n) {
   lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+
                                                         Radiation, data = model.tmp)
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
-  
-  
-  
-  lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1] 
-  lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4] 
+
+
+
+  lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
+  lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]
   #wd2 <- model.tmp$WindDirection[order(model.tmp$WindDirection)]
   plot(model.tmp$WindDirection,Splinebasis[,1]*lmSummary_est[i,'W1']+Splinebasis[,2]*lmSummary_est[i,'W2']
        +Splinebasis[,3]*lmSummary_est[i,'W3']+Splinebasis[,4]*lmSummary_est[i,'W4'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2],
        main= i)
-  abline(h=0)
+  abline(h=0,v=c(0,90,180,270,360))
 
   BSplin <- matrix(data=Splinebasis %*% diag(lmSummary_est[i,c('W1','W2','W3','W4')]),ncol=4)
   Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
@@ -172,10 +172,10 @@ for (i in 1:n) {
 }
 
 t.est <- as.table(lmSummary_est)
-# Saving estimates in a .csv file 
+# Saving estimates in a .csv file
 write.csv2(t.est, file = "lmMult_est.csv", row.names = TRUE)
 t.pvalues <- as.table(lmSummary_p)
-# Saving p-values in a .csv file 
+# Saving p-values in a .csv file
 write.csv2(t.pvalues, file = "lmMult_pvalues.csv", row.names = TRUE)
 
 
@@ -206,6 +206,9 @@ write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
 
 
 
+
+
+
 # Counting negative estimates
 sum(lmSummary_est[,3:6] < 0) / sum(lmSummary_est[,3:6] < 1000000)
 sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
@@ -214,7 +217,7 @@ sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
 # Investigating parameters from model
 summary(lmMultipleNoP[[1]])
 par(mfrow=c(2,2))
-# Checking model assumptions 
+# Checking model assumptions
 for (i in 1:n)
 {
   plot(lmMultiple[[i]]$object)
@@ -229,6 +232,3 @@ for (i in 1:n)
   modelListSlope[[i]] = lmMultiple[[i]]$object #for slopes
   modelListPval[[i]] = summary(lmMultiple[[i]]$object)$coefficients #for p vals
 }
-
-
-
