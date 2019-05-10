@@ -31,15 +31,17 @@ If these assumptions are not met \textcolor{red}{\dots} \\
 \section{Simple linear regression model}
 A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature}. Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. The models are performed by using the \texttt{lm()} function. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met. \\
 
-\noindent 
+\noindent \textcolor{red}{Opskriv hvilken simpel lineær regressionsmodel, vi bruger.}
 
 \subsection{Results}
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/simple_lm18.pdf}
-    \caption{}
+    \includegraphics[width=1.\textwidth]{../../../figures/simple_lm18.pdf}
+    \caption{Residual plots of house 18 based on the simple linear regression model given in equation \eqref{}. The model assumptions of a linear regression model are not fulfilled for this specific house.}
     \label{fig: simple_lm_18}
 \end{figure}
+
+\textcolor{blue}{Overordnet kan den simple lineær regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet. }
 
 \section{Multiple linear regression model}
 
@@ -76,87 +78,6 @@ Giver mere mening for brugeren
 %    \label{}
 %\end{table}
 
-%\begin{table}
-%    \centering
-%    \begin{tabular}{cccccccccccccc}
-%        \hline
-%        & \bfseries I & \bfseries T & \bfseries N &\bfseries E & \bfseries S & \bfseries W & \bfseries SolaR & \bfseries T:N & \bfseries T:E & \bfseries T:S & \bfseries T:W \\
-%        \hline
-%        1 & $\Plus \ast\ast\ast$	& $\Minus \ast \ast \ast$ & $\Plus$ & $\Plus$	& $\Plus$	& $\Plus \ast \ast$	& $\Minus$	& $\Plus$	& $\Minus$ & $\Plus$	& $\Minus \ast \ast$ \\
-%        2 & $\Plus \ast \ast \ast$	& $\Minus \ast \ast \ast$ & $\Plus$ & $\Plus \ast \ast$	& $\Plus$	& $\Plus \ast \ast \ast$	& $\Minus \ast \ast \ast$	& $\Minus$	& $\Plus$ & $\Plus$	& $\Minus \ast \ast \ast$ \\
-%        3 & $\Plus \ast \ast \ast$	& $\Minus \ast \ast \ast$ & $\Plus$ & $\Plus\ast\ast\ast$	& $\Plus$	& $\Plus \ast \ast\ast$	& $\Minus\ast\ast\ast$	& $\Minus$	& $\Minus$ & $\Plus\ast$	& $\Minus \ast$ \\
-%        4 & \\
-%        5 & \\
-%        6 & \\
-%        7 & \\
-%        8 & \\
-%        9 & \\
-%        10 & \\
-%        11 & \\
-%        12 & \\
-%        13 & \\
-%        14 & \\
-%        15 & \\
-%        16 & \\
-%        17 & \\
-%        18 & \\
-%        19 & \\
-%        20 & \\
-%        21 & \\
-%        22 & \\
-%        23 & \\
-%        24 & \\
-%        25 & \\
-%        26 & \\
-%        27 & \\
-%        28 & \\
-%        29 & \\
-%        30 & \\
-%        31 & \\
-%        32 & \\
-%        33 & \\
-%        34 & \\
-%        35 & \\
-%        36 & \\
-%        37 & \\
-%        38 & \\
-%        39 & \\
-%        40 & \\
-%        41 & \\
-%        42 & \\
-%        43 & \\
-%        44 & \\
-%        45 & \\
-%        46 & \\
-%        47 & \\
-%        48 & \\
-%        49 & \\
-%        50 & \\
-%        51 & \\
-%        52 & \\
-%        53 & \\
-%        54 & \\
-%        55 & \\
-%        56 & \\
-%        57 & \\
-%        58 & \\
-%        59 & \\
-%        60 & \\
-%        61 & \\
-%        62 & \\
-%        63 & \\
-%        64 & \\
-%        65 & \\
-%        66 & \\
-%        67 & \\
-%        68 & \\
-%        69 & \\
-%        70 & \\
-%        \hline
-%    \end{tabular}
-%    \caption{Table showing all games.}
-%    \label{}
-%\end{table}
 
 \subsection{Results}
 

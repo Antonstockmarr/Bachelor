@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  10 MAY 2019 13:11
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  10 MAY 2019 14:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1783,24 +1783,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
 File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
+
+LaTeX Warning: Reference `' on page 18 undefined on input line 40.
+
+
+LaTeX Warning: Reference `' on page 18 undefined on input line 40.
+
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-) [19]
+[19]) [20]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
- (./Andet/Vejledningsmøder.tex [20
-
-
-
-]
+ (./Andet/Vejledningsmøder.tex
 Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
 []\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
  []
 
-[21]
+[21
+
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
@@ -1854,16 +1860,20 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: DFE05661DAB95B0AD07EF79F0AB74A5B.
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 49435 strings out of 492933
- 945175 string characters out of 6133145
- 1751225 words of memory out of 5000000
- 52781 multiletter control sequences out of 15000+600000
+ 49436 strings out of 492933
+ 945177 string characters out of 6133145
+ 1751612 words of memory out of 5000000
+ 52782 multiletter control sequences out of 15000+600000
  552879 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,1232b,2199s stack positions out of 5000i,500n,10000p,200000b,80000s
