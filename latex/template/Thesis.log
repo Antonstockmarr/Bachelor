@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  10 MAY 2019 11:32
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  10 MAY 2019 13:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1788,16 +1788,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-Overfull \vbox (322.19998pt too high) has occurred while \output is active []
-
- [20]) [21]
+) [19]
 \openout2 = `Andet/Vejledningsmøder.aux'.
 
- (./Andet/Vejledningsmøder.tex [22
+ (./Andet/Vejledningsmøder.tex [20
 
 
 
@@ -1806,19 +1800,22 @@ Overfull \hbox (12.08003pt too wide) in paragraph at lines 17--18
 []\TU/lmr/m/n/10 Der er to måder at lave varmt brugsvarme på - enten varmeveksler eller varmevands-
  []
 
-[23]
+[21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
+ [22]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 39.
- [25] [26] [27] [28]
+ [23] [24] [25] [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29] [30]
+ [27] [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
+ [29]
 Underfull \vbox (badness 1946) has occurred while \output is active []
+
+ [30] [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32] [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1827,14 +1824,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36] [37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38] [39]
 Overfull \hbox (10.66202pt too wide) in paragraph at lines 349--350
 []\TU/lmr/m/n/10 Predict giver et godt samlet overblik, men hvis man vil se på specifikke afhængigheder
  []
 
-) [40] [41
+) [38] [39
 
 
 
@@ -1842,7 +1836,7 @@ Overfull \hbox (10.66202pt too wide) in paragraph at lines 349--350
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[42
+[40
 
 ]
 \tf@toc=\write8
@@ -1858,27 +1852,20 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
  (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./Andet/Vejledningsmøder.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 49.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
-
-
-Package rerunfilecheck Warning: File `Thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Thesis.out':
-(rerunfilecheck)             Before: EB9ADB0102945C7FB27DEE881CEE7EC3
-(rerunfilecheck)             After:  DFE05661DAB95B0AD07EF79F0AB74A5B.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: DFE05661DAB95B0AD07EF79F0AB74A5B.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 49450 strings out of 492933
- 945473 string characters out of 6133145
- 1790320 words of memory out of 5000000
- 52791 multiletter control sequences out of 15000+600000
- 552895 words of font info for 64 fonts, out of 8000000 for 9000
+ 49435 strings out of 492933
+ 945175 string characters out of 6133145
+ 1751225 words of memory out of 5000000
+ 52781 multiletter control sequences out of 15000+600000
+ 552879 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,82p,1232b,2228s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,82p,1232b,2199s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (54 pages).
+Output written on Thesis.pdf (52 pages).
