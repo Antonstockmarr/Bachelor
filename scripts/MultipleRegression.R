@@ -130,7 +130,5 @@ for (i in 1:n)
 }
 
 
-
-
 # General regression model for comparing houses ---------------------------
 
