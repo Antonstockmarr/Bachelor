@@ -40,14 +40,16 @@ A simple linear regression model is fitted to each house with \texttt{Consumptio
     \caption{Residual plots of house 18 based on the simple linear regression model given in equation \eqref{}. The model assumptions of a linear regression model are not fulfilled for this specific house.}
     \label{fig: simple_lm_18}
 \end{figure}
+\textcolor{red}{Indsæt et eksempel der viser hvordan det skal se ud.}
 
-\textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket.}
+\textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket. Q-Q plottet ligger ikke fint langs en ret linje. Residuals vs. fitted viser en underlig opførsel, som ikke er randomly scattered.}
 
 \noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet.}
 
 \section{Multiple linear regression model}
+\textcolor{blue}{En multiple linear regression model forventes at kunne forklare consumption bedre, da den medtager flere independent variable. }
 
-\textcolor{red}{Da alle attributter er gennemsnitlige for at få dagsværdier, giver condition ikke rigtig mening at have med i modellen. Derfor undlades den for nu.}
+\noindent \textcolor{red}{Da alle attributter er gennemsnitlige for at få dagsværdier, giver condition ikke rigtig mening at have med i modellen. Derfor undlades den for nu.}
 
 \noindent \textcolor{blue}{Som nævnt er der nogle huse hvor vi kun har observationer for ca et havlt år, mens vi for andre huse har observationer for lidt over et år. WinterBreak og SpringBreak indgår ikke i de 'korte' observationer. Derfor er vi nødt til at lave to multiple linear regression models - en til at beskrive de 'korte' huse og en til at beskrive de 'lange' huse. Vi medtager ikke interactions mellem holiday attributen og de andre attributter, da dette ikke er main focus. }
 
