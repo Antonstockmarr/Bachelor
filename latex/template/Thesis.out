@@ -26,41 +26,42 @@
 \BOOKMARK [2][]{subsection.4.3.2}{4.3.2\040Results}{section.4.3}% 26
 \BOOKMARK [1][]{section.4.4}{4.4\040Regression\040model\040for\040comparing\040houses}{chapter.4}% 27
 \BOOKMARK [1][]{section.4.5}{4.5\040Comparison}{chapter.4}% 28
-\BOOKMARK [0][]{chapter.5}{5 Vejledningsmøder}{}% 29
-\BOOKMARK [1][]{section.5.1}{5.1\04019.\040februar}{chapter.5}% 30
-\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Spørgsmål}{section.5.1}% 31
-\BOOKMARK [2][]{subsection.5.1.2}{5.1.2\040Noter}{section.5.1}% 32
-\BOOKMARK [2][]{subsection.5.1.3}{5.1.3\040Hvad\040skal\040vi?}{section.5.1}% 33
-\BOOKMARK [1][]{section.5.2}{5.2\04026.\040februar}{chapter.5}% 34
-\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Spørgsmål}{section.5.2}% 35
-\BOOKMARK [2][]{subsection.5.2.2}{5.2.2\040Noter}{section.5.2}% 36
-\BOOKMARK [2][]{subsection.5.2.3}{5.2.3\040Hvad\040skal\040vi\040lave?}{section.5.2}% 37
-\BOOKMARK [1][]{section.5.3}{5.3\0405.\040marts}{chapter.5}% 38
-\BOOKMARK [2][]{subsection.5.3.1}{5.3.1 Spørgsmål}{section.5.3}% 39
-\BOOKMARK [2][]{subsection.5.3.2}{5.3.2\040Hvad\040skal\040vi\040have\040lavet?}{section.5.3}% 40
-\BOOKMARK [2][]{subsection.5.3.3}{5.3.3\040Noter}{section.5.3}% 41
-\BOOKMARK [3][]{subsubsection.5.3.3.1}{5.3.3.1\040Til\040projektplan:}{subsection.5.3.3}% 42
-\BOOKMARK [3][]{subsubsection.5.3.3.2}{5.3.3.2\040Andet:}{subsection.5.3.3}% 43
-\BOOKMARK [1][]{section.5.4}{5.4\04012.\040marts}{chapter.5}% 44
-\BOOKMARK [1][]{section.5.5}{5.5\04019.\040marts}{chapter.5}% 45
-\BOOKMARK [2][]{subsection.5.5.1}{5.5.1 Spørgsmål}{section.5.5}% 46
-\BOOKMARK [2][]{subsection.5.5.2}{5.5.2\040Noter}{section.5.5}% 47
-\BOOKMARK [2][]{subsection.5.5.3}{5.5.3\040Hvad\040skal\040vi\040lave?}{section.5.5}% 48
-\BOOKMARK [1][]{section.5.6}{5.6\04026.\040marts}{chapter.5}% 49
-\BOOKMARK [2][]{subsection.5.6.1}{5.6.1\040Noter}{section.5.6}% 50
-\BOOKMARK [2][]{subsection.5.6.2}{5.6.2\040Hvad\040skal\040vi\040lave?}{section.5.6}% 51
-\BOOKMARK [1][]{section.5.7}{5.7\0405.\040april}{chapter.5}% 52
-\BOOKMARK [2][]{subsection.5.7.1}{5.7.1 Spørgsmål}{section.5.7}% 53
-\BOOKMARK [2][]{subsection.5.7.2}{5.7.2\040Noter}{section.5.7}% 54
-\BOOKMARK [1][]{section.5.8}{5.8\0408.\040april}{chapter.5}% 55
-\BOOKMARK [2][]{subsection.5.8.1}{5.8.1\040Noter}{section.5.8}% 56
-\BOOKMARK [1][]{section.5.9}{5.9\04023.\040april}{chapter.5}% 57
-\BOOKMARK [2][]{subsection.5.9.1}{5.9.1 Spørgsmål}{section.5.9}% 58
-\BOOKMARK [2][]{subsection.5.9.2}{5.9.2\040Noter}{section.5.9}% 59
-\BOOKMARK [2][]{subsection.5.9.3}{5.9.3\040Hvad\040skal\040vi\040lave?}{section.5.9}% 60
-\BOOKMARK [1][]{section.5.10}{5.10\04030.\040april}{chapter.5}% 61
-\BOOKMARK [2][]{subsection.5.10.1}{5.10.1 Inden møde}{section.5.10}% 62
-\BOOKMARK [2][]{subsection.5.10.2}{5.10.2 Spørgsmål}{section.5.10}% 63
-\BOOKMARK [2][]{subsection.5.10.3}{5.10.3\040Noter}{section.5.10}% 64
-\BOOKMARK [2][]{subsection.5.10.4}{5.10.4\040Hvad\040skal\040vi\040lave?}{section.5.10}% 65
-\BOOKMARK [1][]{section.5.11}{5.11\0407.\040maj}{chapter.5}% 66
+\BOOKMARK [0][]{chapter.5}{5\040Models\040on\040the\040Hourly\040Consumption}{}% 29
+\BOOKMARK [0][]{chapter.6}{6 Vejledningsmøder}{}% 30
+\BOOKMARK [1][]{section.6.1}{6.1\04019.\040februar}{chapter.6}% 31
+\BOOKMARK [2][]{subsection.6.1.1}{6.1.1 Spørgsmål}{section.6.1}% 32
+\BOOKMARK [2][]{subsection.6.1.2}{6.1.2\040Noter}{section.6.1}% 33
+\BOOKMARK [2][]{subsection.6.1.3}{6.1.3\040Hvad\040skal\040vi?}{section.6.1}% 34
+\BOOKMARK [1][]{section.6.2}{6.2\04026.\040februar}{chapter.6}% 35
+\BOOKMARK [2][]{subsection.6.2.1}{6.2.1 Spørgsmål}{section.6.2}% 36
+\BOOKMARK [2][]{subsection.6.2.2}{6.2.2\040Noter}{section.6.2}% 37
+\BOOKMARK [2][]{subsection.6.2.3}{6.2.3\040Hvad\040skal\040vi\040lave?}{section.6.2}% 38
+\BOOKMARK [1][]{section.6.3}{6.3\0405.\040marts}{chapter.6}% 39
+\BOOKMARK [2][]{subsection.6.3.1}{6.3.1 Spørgsmål}{section.6.3}% 40
+\BOOKMARK [2][]{subsection.6.3.2}{6.3.2\040Hvad\040skal\040vi\040have\040lavet?}{section.6.3}% 41
+\BOOKMARK [2][]{subsection.6.3.3}{6.3.3\040Noter}{section.6.3}% 42
+\BOOKMARK [3][]{subsubsection.6.3.3.1}{6.3.3.1\040Til\040projektplan:}{subsection.6.3.3}% 43
+\BOOKMARK [3][]{subsubsection.6.3.3.2}{6.3.3.2\040Andet:}{subsection.6.3.3}% 44
+\BOOKMARK [1][]{section.6.4}{6.4\04012.\040marts}{chapter.6}% 45
+\BOOKMARK [1][]{section.6.5}{6.5\04019.\040marts}{chapter.6}% 46
+\BOOKMARK [2][]{subsection.6.5.1}{6.5.1 Spørgsmål}{section.6.5}% 47
+\BOOKMARK [2][]{subsection.6.5.2}{6.5.2\040Noter}{section.6.5}% 48
+\BOOKMARK [2][]{subsection.6.5.3}{6.5.3\040Hvad\040skal\040vi\040lave?}{section.6.5}% 49
+\BOOKMARK [1][]{section.6.6}{6.6\04026.\040marts}{chapter.6}% 50
+\BOOKMARK [2][]{subsection.6.6.1}{6.6.1\040Noter}{section.6.6}% 51
+\BOOKMARK [2][]{subsection.6.6.2}{6.6.2\040Hvad\040skal\040vi\040lave?}{section.6.6}% 52
+\BOOKMARK [1][]{section.6.7}{6.7\0405.\040april}{chapter.6}% 53
+\BOOKMARK [2][]{subsection.6.7.1}{6.7.1 Spørgsmål}{section.6.7}% 54
+\BOOKMARK [2][]{subsection.6.7.2}{6.7.2\040Noter}{section.6.7}% 55
+\BOOKMARK [1][]{section.6.8}{6.8\0408.\040april}{chapter.6}% 56
+\BOOKMARK [2][]{subsection.6.8.1}{6.8.1\040Noter}{section.6.8}% 57
+\BOOKMARK [1][]{section.6.9}{6.9\04023.\040april}{chapter.6}% 58
+\BOOKMARK [2][]{subsection.6.9.1}{6.9.1 Spørgsmål}{section.6.9}% 59
+\BOOKMARK [2][]{subsection.6.9.2}{6.9.2\040Noter}{section.6.9}% 60
+\BOOKMARK [2][]{subsection.6.9.3}{6.9.3\040Hvad\040skal\040vi\040lave?}{section.6.9}% 61
+\BOOKMARK [1][]{section.6.10}{6.10\04030.\040april}{chapter.6}% 62
+\BOOKMARK [2][]{subsection.6.10.1}{6.10.1 Inden møde}{section.6.10}% 63
+\BOOKMARK [2][]{subsection.6.10.2}{6.10.2 Spørgsmål}{section.6.10}% 64
+\BOOKMARK [2][]{subsection.6.10.3}{6.10.3\040Noter}{section.6.10}% 65
+\BOOKMARK [2][]{subsection.6.10.4}{6.10.4\040Hvad\040skal\040vi\040lave?}{section.6.10}% 66
+\BOOKMARK [1][]{section.6.11}{6.11\0407.\040maj}{chapter.6}% 67
