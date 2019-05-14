@@ -64,15 +64,16 @@ for (i in 1:n) {
   
   
   lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
-  
+  summary(lmMultipleNoP[[i]])
+  head(model.Wind)
   
   Splinebasis2 <- BSplines(1:360)
   newData = data.frame(Temperature = rep(0, 360),
                        Radiation = rep(30, 360),
                        N = Splinebasis2[,3],
-                       E = Splinebasis2[,3],
-                       S = Splinebasis2[,3],
-                       W = Splinebasis2[,3])
+                       E = Splinebasis2[,4],
+                       S = Splinebasis2[,1],
+                       W = Splinebasis2[,2])
   
   Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
   
