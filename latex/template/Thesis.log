@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  11 MAY 2019 14:51
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  24 MAY 2019 09:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1804,6 +1804,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
+
+Overfull \hbox (113.80025pt too wide) in paragraph at lines 74--90
+ [][] 
+ []
+
 ) [20]
 \openout2 = `chapters/HourModels.aux'.
 
@@ -1893,10 +1898,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
  ) 
 Here is how much of TeX's memory you used:
- 49450 strings out of 492933
- 945562 string characters out of 6133145
- 1754911 words of memory out of 5000000
- 52788 multiletter control sequences out of 15000+600000
+ 49454 strings out of 492933
+ 945614 string characters out of 6133145
+ 1757114 words of memory out of 5000000
+ 52792 multiletter control sequences out of 15000+600000
  552879 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,1232b,2199s stack positions out of 5000i,500n,10000p,200000b,80000s
