@@ -105,7 +105,7 @@ for (i in 1:n) {
 }
 
 Splinebasis2 <- BSplines(1:360)
-newData = data.frame(Temperature = rep(0, 360),
+newData = data.frame(Temperature = rep(-5, 360),
                      Radiation = rep(30, 360),
                      N = Splinebasis2[,3],
                      E = Splinebasis2[,3],
@@ -115,9 +115,9 @@ newData = data.frame(Temperature = rep(0, 360),
 Pred<-data.frame(predict(object=lmMultipleNoP[[1]], newdata=newData, interval = "confidence", level = 0.95))
 
 length(model.tmp$Consumption)
-length(f$fit)
-plot(f$fit,type='l',ylim=range(0,f$upr))
-lines(f$upr,lty=2)
-lines(f$lwr,lty=2)
+length(Pred$fit)
+plot(Pred$fit,type='l',ylim=range(0,Pred$upr))
+lines(Pred$upr,lty=2)
+lines(Pred$lwr,lty=2)
 
-summary(f)
+summary(Pred)
