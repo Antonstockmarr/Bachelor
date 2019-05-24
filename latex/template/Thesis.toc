@@ -135,3 +135,5 @@
 \contentsline {subsection}{\numberline {6.10.4}Hvad skal vi lave?}{40}{subsection.6.10.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.11}7. maj}{40}{section.6.11}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {A}Significance of parameters}{41}{appendix.A}% 

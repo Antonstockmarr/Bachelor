@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  24 MAY 2019 09:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  24 MAY 2019 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1478,7 +1478,14 @@ LaTeX Warning: Label `fig: daily_cons' multiply defined.
 
 LaTeX Warning: Label `fig: daily_cons@cref' multiply defined.
 
-) (./Andet/Vejledningsmøder.aux))
+) (./Andet/Vejledningsmøder.aux) (./appendices/AnAppendix.aux
+
+LaTeX Warning: Label `lmMult_full_L' multiply defined.
+
+
+LaTeX Warning: Label `lmMult_full_L@cref' multiply defined.
+
+))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1805,7 +1812,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
  []
 
 
-Overfull \hbox (113.80025pt too wide) in paragraph at lines 74--90
+Overfull \hbox (171.81027pt too wide) in paragraph at lines 73--84
  [][] 
  []
 
@@ -1859,7 +1866,22 @@ Overfull \hbox (10.66202pt too wide) in paragraph at lines 349--350
 []\TU/lmr/m/n/10 Predict giver et godt samlet overblik, men hvis man vil se på specifikke afhængigheder
  []
 
-) [40] [41
+) [40]
+\openout2 = `appendices/AnAppendix.aux'.
+
+ (./appendices/AnAppendix.tex
+Overfull \hbox (286.1603pt too wide) in paragraph at lines 5--54
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 42.25996pt on input line 56.
+
+) [41
+
+
+
+] [42] [43
 
 
 
@@ -1867,7 +1889,7 @@ Overfull \hbox (10.66202pt too wide) in paragraph at lines 349--350
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[42
+[44
 
 ]
 \tf@toc=\write8
@@ -1880,11 +1902,11 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 50.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 50.
  (./Thesis.aux (./prefrontmatter/titlepage.aux)
 Package cleveref Info: loaded `english' language definitions on input line 25.
- (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./chapters/HourModels.aux) (./Andet/Vejledningsmøder.aux))
+ (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./chapters/HourModels.aux) (./Andet/Vejledningsmøder.aux) (./appendices/AnAppendix.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 50.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 50.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4230DE56854027E69CBAAE03B5416942.
+(rerunfilecheck)             Checksum: C739D709CEC233D6DB9B7EF44AFCCD43.
 
 
 LaTeX Warning: There were undefined references.
@@ -1898,12 +1920,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
  ) 
 Here is how much of TeX's memory you used:
- 49454 strings out of 492933
- 945614 string characters out of 6133145
- 1757114 words of memory out of 5000000
- 52792 multiletter control sequences out of 15000+600000
+ 49463 strings out of 492933
+ 945860 string characters out of 6133145
+ 1786900 words of memory out of 5000000
+ 52793 multiletter control sequences out of 15000+600000
  552879 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,82p,1232b,2199s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (54 pages).
+Output written on Thesis.pdf (56 pages).
