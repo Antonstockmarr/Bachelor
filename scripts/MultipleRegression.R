@@ -198,25 +198,26 @@ lmSummary_star <- matrix(rep('',12*n),nrow = n)
 for(i in 1:n){
   lmSummary_star[i,1]<-i
   for(j in 2:12){
-    if(lmSummary_est[i,j]<0){
+    if(lmSummary_est[i,j-1]<0){
       lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'-')
     }else{
       lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'+')
     }
-    if(lmSummary_p[i,j]<0.05){
+    if(lmSummary_p[i,j-1]<0.05){
       lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'*')
-      if(lmSummary_p[i,j]<0.01){
+      if(lmSummary_p[i,j-1]<0.01){
         lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'*')
       }
-      if(lmSummary_p[i,j]<0.001){
+      if(lmSummary_p[i,j-1]<0.001){
         lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'*')
       }
-    }else if(lmSummary_p[i,j]<0.1){
+    }else if(lmSummary_p[i,j-1]<0.1){
       lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'.')
     }
   }
 }
-colnames(lmSummary_star) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
+colnames(lmSummary_star) <- c("HouseIndex","I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
+write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
 write.csv2(lmSummary_star[Long,], file = "lmMult_L_star.csv", row.names = TRUE)
 write.csv2(lmSummary_star[Short,], file = "lmMult_S_star.csv", row.names = TRUE)
 star_count_array <- lmSummary_star
