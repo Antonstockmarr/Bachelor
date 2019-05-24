@@ -96,7 +96,7 @@ for(i in 1:length(Long)){
 }
 # Printing table 
 colnames(lmSummary_star_L) <- c("I","T","N","E","S","W","MeanSeaLvl","SolaR","WinterB","SpringB","AutumnB","ChristB","Weekend","T:N","T:E","T:S","T:W")
-write.csv2(lmSummary_star_L, file = "lmMult_star_L.csv", row.names = TRUE)
+write.csv2(lmSummary_star_L[Long,], file = "lmMult_star_L.csv", row.names = TRUE)
 star_count_L_array <- lmSummary_star_L
 star_count_L_array <- gsub("\\.", "", star_count_L_array)
 star_count_L_array <- nchar(star_count_L_array)

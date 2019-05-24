@@ -56,7 +56,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Regression model for comparing houses}{20}{section.4.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Comparison}{20}{section.4.5}% 
+\contentsline {section}{\numberline {4.5}\leavevmode {\color {red}Comparison}}{20}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{21}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
