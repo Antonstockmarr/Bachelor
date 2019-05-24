@@ -194,9 +194,10 @@ write.csv2(t.pvalues, file = "lmMult_pvalues.csv", row.names = TRUE)
 
 
 # Making +*** table
-lmSummary_star <- matrix(rep('',11*n),nrow = n)
+lmSummary_star <- matrix(rep('',12*n),nrow = n)
 for(i in 1:n){
-  for(j in 1:11){
+  lmSummary_star[i,1]<-i
+  for(j in 2:12){
     if(lmSummary_est[i,j]<0){
       lmSummary_star[i,j] <-paste(lmSummary_star[i,j],'-')
     }else{
@@ -216,7 +217,8 @@ for(i in 1:n){
   }
 }
 colnames(lmSummary_star) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
-write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
+write.csv2(lmSummary_star[Long,], file = "lmMult_L_star.csv", row.names = TRUE)
+write.csv2(lmSummary_star[Short,], file = "lmMult_S_star.csv", row.names = TRUE)
 star_count_array <- lmSummary_star
 star_count_array <- gsub("\\.", "", star_count_array)
 star_count_array <- nchar(star_count_array)
