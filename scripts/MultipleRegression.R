@@ -216,6 +216,7 @@ for(i in 1:n){
     }
   }
 }
+
 colnames(lmSummary_star) <- c("HouseIndex","I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 write.csv2(lmSummary_star, file = "lmMult_star.csv", row.names = TRUE)
 write.csv2(lmSummary_star[Long,], file = "lmMult_L_star.csv", row.names = TRUE)
