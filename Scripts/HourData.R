@@ -9,7 +9,7 @@ for (i in 1:n)
   Avgcons[i] <- mean(weatherCons[[i]]$Consumption,na.rm = TRUE)
 }
 
-for (i in 1:1)
+for (i in 1:n)
 {
   print(i)
   Cons <- data.frame(matrix(ncol=25,nrow = length(day.data[[i]]$Date)))#  
