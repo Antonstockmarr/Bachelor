@@ -1,13 +1,15 @@
 %!TEX root = ../Thesis.tex
-\chapter{Significance of parameters}
+\chapter{Tables}
+
+\section{Significance of parameters from multiple linear regression model}
 \begin{table}
     \centering
-    \begin{tabular}{ccccccccccccccccccccc}
+    \resizebox{!}{0.48\textwidth}{\begin{tabular}{ccccccccccccccccccccc}
      \hline
      Index & I & T & N & E & S & W & MSL & SR & WB & SB & AB & CB & WKND & T:N & T:E & T:S & T:W \\
     \hline
-     1 &  & \Minus*** &  & \Plus. &  & \Plus*** & \Plus* &  &  &  & \Minus*** & \Minus*** &  &  &  &  & \Plus. & \Minus*** & \\
-     2 & \Plus** &\Minus*** & &\Plus** & &\Plus*** & &\Minus* & &\Minus* & &\Plus* & & & & & & &\Minus*** \\
+     1 &  & \Minus*** &  & \Plus. &  & \Plus*** & \Plus* & & & \Minus*** & \Minus*** &  &  &  &  & \Plus. & \Minus*** & \\
+     2 & \Plus** &\Minus*** & &\Plus** & &\Plus*** & &\Minus* & &\Minus* & &\Plus* & & & &  &\Minus*** \\
      3 &  &\Minus*** & &\Plus*** & &\Plus*** &\Plus*** &\Minus*** &\Plus. & &\Minus* & & & & &\Plus** &\Minus* \\
      4 & \Minus* &\Minus*** &\Plus* & &\Plus*** & &\Plus** &\Minus*** & & & & & & & & & \\
      5 & &\Minus*** & &\Plus*** & &\Plus*** &\Plus*** &\Minus*** &\Plus** &\Plus*** & & & &\Plus* & &\Plus*** &\Minus** \\
@@ -50,8 +52,50 @@
      65 & &\Minus*** & &\Plus* & &\Plus*** & &\Minus*** & & & & & & & &\Plus* &\Minus** \\
      66 & &\Minus*** & &\Plus*** &\Plus* &\Plus*** & &\Minus*** & &\Minus. &\Minus. & & & & &\Plus** &\Minus** \\
     \hline
-    \end{tabular}
-    \caption{Significance of parameters for 'long' houses. \textcolor{red}{Punktum betyder, at det er mellem 5 og 10\%}}
-    \label{lmMult_full_L}
+    \end{tabular}}
+    \caption{Significance of parameters from the full multiple linear regression model performed on 'long' houses.\textcolor{red}{Punktum betyder, at det er mellem 5 og 10\%}}
+    \label{tab: lmMult_full_L}
 \end{table}
 
+\begin{table}
+    \centering
+    \resizebox{!}{0.33\textwidth}{\begin{tabular}{ccccccccccccccccccc}
+     \hline
+     Index & I & T & N & E & S & W & MSL & SR & AB & CB & WKND & T:N & T:E & T:S & T:W \\
+    \hline
+    6&   & \Minus *** &   & \Plus * &   & \Plus ** &   & \Minus * & \Minus .  &   &   &   &   &   & \\
+8& \Plus ** & \Minus *** &   & \Plus * &   & \Plus *** &   & \Minus * &   &   &   &   &   & \Plus . & \Minus *\\
+9&   & \Minus *** & \Minus .  &   &   & \Plus ** & \Plus ** & \Minus *** & \Minus * &   & \Minus * & \Plus . &   & \Plus * & \Minus ** \\
+10&   & \Minus *** &   & \Plus *** &   & \Plus *** & \Plus . & \Minus ** &   &   & \Minus ** & \Plus . &   &   & \Minus * \\
+13&   & \Minus *** &   & \Plus * &   & \Plus ** & \Plus * & \Minus * &   &   & \Minus .  & \Plus . &   & \Plus ** & \Minus *\\
+15&   & \Minus *** &   & \Plus *** &   & \Plus ** &   & \Minus .  &   & \Minus .  & \Minus .  &   &   &   & \Minus . \\
+16&   & \Minus *** &   & \Plus * &   & \Plus *** & \Plus . & \Minus * &   &   &   &   &   &   & \Minus ** \\
+17&   & \Minus *** &   & \Plus ** & \Plus ** & \Plus *** &   & \Minus ** &   &   & \Minus .  &   &   &   & \Minus *** \\
+19&   & \Minus *** &   & \Plus ** & \Minus .  &   & \Plus . & \Minus .  &   &   & \Minus .  & \Plus . &   & \Plus ** & \\
+20&   & \Minus *** &   &   & \Plus * &   &   &   &   &   &   &   &   &   & \\
+24&   & \Minus *** &   & \Plus * &   & \Plus *** & \Plus * &   &   &   &   &   &   &   & \Minus *** \\ 
+25&   & \Minus *** &   & \Plus ** &   & \Plus *** &   &   & \Minus .  &   &   &   &   & \Plus . & \Minus * \\
+26&   & \Minus *** &   & \Plus . & \Plus . & \Plus *** & \Plus * & \Minus ** & \Minus *** &   &   &   &   &   & \Minus * \\
+27&   & \Minus *** &   & \Plus * & \Plus ** & \Plus *** &   &   &   & \Minus * &   &   &   &   & \Minus * \\
+35&   & \Minus *** &   & \Plus ** & \Plus * & \Plus *** &   & \Minus ** &   & \Plus * &   &   &   &   & \Minus ** \\
+39& \Plus ** & \Minus *** &   &   &   & \Plus * & \Minus * & \Minus .  &   &   & \Minus .  &   &   &   & \\
+43&   & \Minus *** &   & \Plus ** & \Plus * & \Plus *** &   & \Minus ** &   & \Plus * &   &   &   &   & \Minus ** \\
+51&   & \Minus *** &   & \Plus . &   & \Plus *** &   & \Minus ** &   &   & \Minus * &   &   & \Plus * & \Minus * \\
+53&   & \Minus *** &   & \Plus * &   & \Plus * &   &   &   &   &   &   &   &   & \Minus . \\
+59&   & \Minus *** & \Minus .  & \Plus *** & \Plus * & \Plus *** &   & \Minus .  &   &   &   & \Plus . &   & \Plus . & \Minus . \\
+60&   & \Minus *** & \Minus * & \Plus ** & \Plus . & \Plus *** &   & \Minus *** &   &   &   & \Plus * &   & \Plus * & \Minus *** \\
+62& \Plus * & \Minus *** &   &   &   & \Plus * &   & \Minus .  & \Minus * &   &   &   &   &   & \\
+63& \Plus . & \Minus *** &   & \Plus * &   &   &   &   &   &   & \Minus ** &   &   & \Plus . & \\
+67& \Plus * & \Minus *** &   & \Plus *** &   & \Plus *** &   & \Minus *** & \Plus . & \Plus * &   &   & \Minus * & \Plus . & \Minus ** \\
+68&   & \Minus *** &   &   &   & \Plus * &   & \Minus *** &   & \Plus * & \Minus ** &   &   & \Plus * & \Minus * \\
+69&   & \Minus *** &   &   & \Plus . & \Plus ** &   & \Minus .  & \Minus *** &   &   &   & \Plus . &   & \\
+70&   & \Minus *** &   & \Plus . & \Plus . & \Plus *** & \Plus ** & \Minus *** &   &   &   &   &   &   & \Minus * \\
+
+    \hline
+    \end{tabular}}
+    \caption{Significance of parameters from the full multiple linear regression model performed on 'short' houses. \textcolor{red}{Punktum betyder, at det er mellem 5 og 10\%}}
+    \label{tab: lmMult_full_S}
+\end{table}
+
+
+\chapter{Figures}

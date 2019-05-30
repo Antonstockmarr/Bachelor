@@ -33,7 +33,7 @@ A simple linear regression model is fitted to each house with \texttt{Consumptio
 
 \noindent \textcolor{red}{Opskriv hvilken simpel lineær regressionsmodel, vi bruger.}
 
-\subsection{Results}
+\subsection{Validation}
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/simple_lm18.pdf}
@@ -44,14 +44,16 @@ A simple linear regression model is fitted to each house with \texttt{Consumptio
 
 \textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket. Q-Q plottet ligger ikke fint langs en ret linje. Residuals vs. fitted viser en underlig opførsel, som ikke er randomly scattered.}
 
+\subsection{Results}
+\textcolor{red}{Plot a estimater af beta coefficienter for den simple lineære model.}
+
 \noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet.}
 
 \section{Multiple linear regression model}
-\textcolor{blue}{En multiple linear regression model forventes at kunne forklare consumption bedre, da den medtager flere independent variable. }
+The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. This lead to the following two multiple linear regression models: 
+\textcolor{red}{Indsæt modellerne.}
 
-\noindent \textcolor{red}{Da alle attributter er gennemsnitlige for at få dagsværdier, giver condition ikke rigtig mening at have med i modellen. Derfor undlades den for nu.}
-
-\noindent \textcolor{blue}{Som nævnt er der nogle huse hvor vi kun har observationer for ca et havlt år, mens vi for andre huse har observationer for lidt over et år. WinterBreak og SpringBreak indgår ikke i de 'korte' observationer. Derfor er vi nødt til at lave to multiple linear regression models - en til at beskrive de 'korte' huse og en til at beskrive de 'lange' huse. Vi medtager ikke interactions mellem holiday attributen og de andre attributter, da dette ikke er main focus. }
+\noindent The models show that the interactions between the attribute \texttt{Holiday} and the other attributes are chosen to be excluded. The reason is that \texttt{Holiday} is used to investigate how the consumption changes during holiday periods. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND), the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). 
 
 \subsection{Splines}
 In the multiple regression model, splines will be used to model the wind direction. It does not make much sence to include the wind direction as it is in the model. It is not useful to know how significant the wind direction is, if it is not connected to the wind speed and if it is not known which directions are important. By modeling the wind direction with splines, each spline will represent a specific general direction.
@@ -68,24 +70,48 @@ Giver mere mening for brugeren
 \textcolor{red}{Tilføj billede af splines}
 
 \subsection{Results}
+\noindent When performing the two models given in , without reduction, \textcolor{red}{Et eller andet} \cref{tab: lmMult_full_S}.  In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. 
 \begin{table}
     \centering
-    \begin{tabular}{cccccccccccccccccccccc}
+    \resizebox{0.70\textheight}{!}{\begin{tabular}{l|cccccccccccccccccccc}
      \hline 
-    & Index & I & T & N & E & S & W & MSL & SR & WB & SB & AB & CB & WKND & T:N & T:E & T:S & T:W \\
-    \hline \\
-    Sum of & $\geq$ * & 22 & 43 & 8 & 36 & 15 & 39 & 14 & 37 & 19 & 15 & 11 & 14 & 12 & 8 & 5 & 27\\
-    Total & 43\\
+    & I & T & N & E & S & W & MSL & SR & WB & SB & AB & CB & WKND & T:N & T:E & T:S & T:W \\
     \hline 
-    Total of & \Plus \\
-    Total of &\Minus \\
+    Sum of *** & 5 & 41 & 0 & 18 & 2 & 24 & 6 & 22 & 3 & 3 & 1 & 5 & 4 & 0 & 1 & 7 &9 \\
+    Sum of ** & 5 & 1 & 1 & 9 & 5 & 12 & 4 & 10 & 6 & 2 & 0 & 2 & 0 & 1 & 1 & 9 & 9 \\
+    Sum of * & 6 & 1 & 5 & 7 & 7 & 2 & 2 & 2 & 3 & 6 & 5 & 3 & 8 & 2 & 3 & 5 & 11 \\
+    \hdashline
+    Total & 17 & 43 & 6 & 34 & 14 & 38 & 12 & 34 & 12 & 11 & 6 & 10 & 12 & 3 & 5 & 21 & 29\\
     \hline
-\end{tabular}
-\caption{Significance of parameters for 'long' houses. \textcolor{red}{Punktum betyder, at det er mellem 5 og 10\%}}
-\label{lmMult_full_L}
+\end{tabular}}
+\caption{The distribution of significant parameters from the multiple linear regression model for long houses}
+\label{tab: lmMult_full_L_sum}
 \end{table}
 
+\begin{table}
+    \centering
+    \resizebox{0.7\textheight}{!}{\begin{tabular}{l|cccccccccccccccccc}
+     \hline 
+    & I & T & N & E & S & W & MSL & SR & AB & CB & WKND & T:N & T:E & T:S & T:W \\
+    \hline 
+    Sum of *** & 0 & 27 & 0 & 4 & 0 & 15 & 0 & 5 & 2 & 0 & 0 & 0 & 0 & 0 & 3\\
+    Sum of ** & 2 & 0 & 0 & 6 & 2 & 5 & 2 & 6 & 0 & 0 & 3 & 0 & 0 & 2 & 5 \\
+    Sum of * & 2 & 0 & 1 & 8 & 4 & 4 & 4 & 4 & 2 & 5 & 2 & 1 & 1 & 3 & 9 \\
+    \hdashline
+    Total & 4 & 27 & 1 & 18 & 6 & 24 & 6 & 15 & 4 & 5 & 5 & 1 & 1 & 6 & 17\\
+    \hline
+\end{tabular}}
+\caption{The distribution of significant parameters from the multiple linear regression model for short houses}
+\label{tab: lmMult_full_S_sum}
+\end{table}
+
+\textcolor{blue}{Hvis bare én af retningerne har over halvdelen signifikant skal alle retningerne med.}
+
 \section{Regression model for comparing houses}
-Baseret på tabeller over signifikante parametre for både korte og lange huse, kan vi lave en general model for alle huse, der inkluderer temperaturen, splines og radiation.
+\textcolor{blue}{Baseret på tabeller over signifikante parametre for både korte og lange huse, kan vi lave en general model for alle huse, der inkluderer temperaturen, splines og radiation.}
+
+\subsection{Validation}
+
+\subsection{Results}
 
 \section{\textcolor{red}{Comparison}}
