@@ -64,8 +64,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{25}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Tables}{27}{appendix.A}% 
+\contentsline {section}{\numberline {5.1}ARIMAX}{25}{section.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Significance of parameters from multiple linear regression model}{27}{section.A.1}% 
+\contentsline {appendix}{\chapternumberline {A}Tables}{31}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{31}{appendix.B}% 
+\contentsline {section}{\numberline {A.1}Significance of parameters from multiple linear regression model}{31}{section.A.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {B}Figures}{35}{appendix.B}% 

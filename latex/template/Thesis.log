@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  30 MAY 2019 13:49
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  30 MAY 2019 13:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1474,14 +1474,8 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (./Thesis.aux (./prefrontmatter/titlepage.aux) (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./chapters/HourModels.aux
-
-LaTeX Warning: Label `fig: daily_cons' multiply defined.
-
-
-LaTeX Warning: Label `fig: daily_cons@cref' multiply defined.
-
-) (./appendices/AnAppendix.aux))
+)
+No file Thesis.aux.
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -1511,7 +1505,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1535,9 +1529,11 @@ LaTeX Info: Redefining \nameref on input line 10.
 LaTeX Info: Redefining \ref on input line 10.
 LaTeX Info: Redefining \pageref on input line 10.
 LaTeX Info: Redefining \nameref on input line 10.
-(./Thesis.out) (./Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
@@ -1547,7 +1543,6 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' not found.
-
 No file Thesis.bbl.
 Package biblatex Info: Reference section=0 on input line 10.
 Package biblatex Info: Reference segment=0 on input line 10.
@@ -1641,38 +1636,15 @@ File: graphics/Signature.pdf Graphic file (type pdf)
 ]) [5] [6
 
 
-] (./Thesis.toc
-Package cleveref Info: loaded `english' language definitions on input line 3.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5.
- [7]) [8]
+] [7] [8
+
+]
 \openout2 = `chapters/Introduction.aux'.
 
  (./chapters/Introduction.tex
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 13.82405pt on input line 4.
 ) [1
-
 
 
 
@@ -1688,6 +1660,36 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+
+
+LaTeX Warning: Reference `tab: housedata' on page 3 undefined on input line 9.
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 12.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 12.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 12.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 12.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 12.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 12.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 12.
+
+
+LaTeX Warning: Reference `tab: weatherdata' on page 3 undefined on input line 31.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1713,46 +1715,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
+
+LaTeX Warning: Reference `fig: daily_cons' on page 7 undefined on input line 5.
+
 File: graphics/../../../figures/avg_daily.pdf Graphic file (type pdf)
 <use graphics/../../../figures/avg_daily.pdf>
+
+LaTeX Warning: Reference `fig: daily_cons' on page 7 undefined on input line 14.
+
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--26
-
- []
+LaTeX Warning: Reference `fig: house_attri' on page 7 undefined on input line 23.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 14--26
 
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--26
+
+ []
+
+
+LaTeX Warning: Reference `fig: weather_cons' on page 7 undefined on input line 27.
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 [7]
+
+LaTeX Warning: Reference `fig: house_attri' on page 8 undefined on input line 37.
+
+
+LaTeX Warning: Reference `fig: weather_cons' on page 8 undefined on input line 37.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
-[8] [9]
+
+LaTeX Warning: Reference `fig: byggeaar' on page 8 undefined on input line 42.
+
 File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
 <graphics/../../../figures/byggeår.eps>
- [10]
+[8] [9]
+
+LaTeX Warning: Reference `fig: byggeaar' on page 10 undefined on input line 50.
+
+[10]
+
+LaTeX Warning: Reference `fig: Consumption-PW' on page 11 undefined on input line 73.
+
 File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption-PW.eps>
- [11]
+
+LaTeX Warning: Reference `fig: Breakpoint' on page 11 undefined on input line 96.
+
+
+LaTeX Warning: Reference `fig: Breakpoint' on page 11 undefined on input line 103.
+
+
+LaTeX Warning: Reference `fig: Consumption-PW' on page 11 undefined on input line 103.
+
+[11]
+
+LaTeX Warning: Reference `fig: AlphaHist' on page 12 undefined on input line 110.
+
 File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Breakpoint.jpeg>
-
-Underfull \vbox (badness 5217) has occurred while \output is active []
-
- [12]
 File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
 <graphics/../../../figures/AlphaHist.jpeg>
 
 Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+
+LaTeX Warning: Reference `fig: weather_cons' on page 13 undefined on input line 136.
+
+
+LaTeX Warning: Reference `fig: gg_cor' on page 13 undefined on input line 136.
 
 File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
 <graphics/../../../figures/gg_cor.eps>
@@ -1761,19 +1809,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--144
 
  []
 
+[13]
+
+LaTeX Warning: Reference `tab: modeldata' on page 14 undefined on input line 145.
+
 
 Overfull \hbox (8.14005pt too wide) in paragraph at lines 148--165
  [][] 
  []
 
-) [13] [14] [15] [16]
+) [14] [15]
 \openout2 = `chapters/Statistical.aux'.
 
- (./chapters/Statistical.tex [17
+ (./chapters/Statistical.tex [16
 
 
 
 ]
+
+LaTeX Warning: Reference `lm' on page 17 undefined on input line 9.
+
+
+LaTeX Warning: Reference `tab: modeldata' on page 17 undefined on input line 9.
+
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
@@ -1790,13 +1849,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
 File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
+
+LaTeX Warning: Reference `eq: simple' on page 1 undefined on input line 46.
+
+
+LaTeX Warning: Reference `eq: simple' on page 1 undefined on input line 46.
+
 [18]
+
+LaTeX Warning: Reference `fig: simple_lm_18' on page 19 undefined on input line 51.
+
+
+LaTeX Warning: Reference `tab: modeldata' on page 19 undefined on input line 59.
+
+
 Underfull \vbox (badness 1515) has occurred while \output is active []
 
  [19]
 Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
+
+
+LaTeX Warning: Reference `tab: lmMult_full_S' on page 1 undefined on input line 79.
+
+
+LaTeX Warning: Reference `tab: lmMult_full_L_sum' on page 1 undefined on input line 79.
+
+
+LaTeX Warning: Reference `tab: lmMult_full_S_sum' on page 1 undefined on input line 79.
 
 [20]
 Overfull \hbox (11.04pt too wide) in paragraph at lines 121--170
@@ -1824,7 +1905,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 File: graphics/../../../figures/Heatmap.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap.pdf>
-) [25] [26]
+
+
+LaTeX Warning: Float too large for page by 13.5915pt on input line 13.
+
+File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
+<use graphics/../../../figures/Heatmap_summer.pdf>
+
+LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 19.
+
+
+LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 19.
+
+
+LaTeX Warning: Float too large for page by 1.5915pt on input line 21.
+
+File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
+<use graphics/../../../figures/Heatmap_winter.pdf>
+
+LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 26.
+
+
+LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 26.
+
+
+LaTeX Warning: Float too large for page by 1.5915pt on input line 28.
+
+
+LaTeX Warning: Reference `arimax1_55' on page 1 undefined on input line 39.
+
+
+LaTeX Warning: Reference `arimax1_18' on page 1 undefined on input line 39.
+
+File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
+<graphics/../../../figures/arimax/Arimax1_18.jpeg>
+File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
+<graphics/../../../figures/arimax/Arimax1_55.jpeg>
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 59.
+
+) [25] [26] [27] [28] [29] [30]
 \openout2 = `appendices/AnAppendix.aux'.
 
  (./appendices/AnAppendix.tex
@@ -1832,22 +1953,22 @@ Overfull \hbox (30.64294pt too wide) in paragraph at lines 7--56
  [][] 
  []
 
-[27
+[31
 
 
 
-] [28] [29] [30
+] [32] [33] [34
 
-]) [31] [32
+]) [35] [36
 
 
-] [33
+] [37
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[34
+[38
 
 ]
 \tf@toc=\write7
@@ -1860,11 +1981,25 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
  (./prefrontmatter/colophon.aux) (./frontmatter/Summary.aux) (./frontmatter/Preface.aux) (./frontmatter/Acknowledgements.aux) (./chapters/Introduction.aux) (./chapters/Data.aux) (./chapters/Exploratory.aux) (./chapters/Statistical.aux) (./chapters/HourModels.aux) (./appendices/AnAppendix.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 50.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 50.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0A24D8345E29E676C56F8A21CC9B9655.
 
 
-LaTeX Warning: There were multiply-defined labels.
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: 
+(rerunfilecheck)             After:  A3BB0FD7F16EE3D8373ED33C19FE1338.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Thesis
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
@@ -1872,12 +2007,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
  ) 
 Here is how much of TeX's memory you used:
- 49069 strings out of 492933
- 933510 string characters out of 6133145
- 1626655 words of memory out of 5000000
- 52418 multiletter control sequences out of 15000+600000
+ 49044 strings out of 492933
+ 933440 string characters out of 6133145
+ 1578026 words of memory out of 5000000
+ 52416 multiletter control sequences out of 15000+600000
  552871 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1407b,2228s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,1407b,1928s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (44 pages).
+Output written on Thesis.pdf (48 pages).

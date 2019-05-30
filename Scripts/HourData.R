@@ -3,11 +3,6 @@ source("data.r")
 HourData <- vector("list",length=n)
 rotate <- function(x) t(apply(x, 2, rev))
 
-Avgcons <- c(1:n)
-for (i in 1:n)
-{
-  Avgcons[i] <- mean(weatherCons[[i]]$Consumption,na.rm = TRUE)
-}
 
 for (i in 1:n)
 {
@@ -42,14 +37,21 @@ for (i in 1:n)
                             IsHistoricalEstimated = HourTmp[[11]], Radiation = HourTmp[[12]])
 }
 
-Houravg = matrix(c(rep(0,24*n)),nrow = 24) 
+
+# Plot of the hour values as percentage of day
+#Avgcons <- c(1:n)
+#Sumcons <- c(1:n)
+Houravg = matrix(c(rep(0,24*n)),nrow = 24)
+#for (i in 1:n)
+#{
+#  Sumcons[i] <- sum(weatherCons[[i]]$Consumption,na.rm = TRUE)
+#  Avgcons[i] <- mean(weatherCons[[i]]$Consumption,na.rm = TRUE)
+#}
 for (i in 1:n)
-  {
-  SummerDays <- day.weather$Date[day.weather$Temperature >= 15]
-  tmp <- HourData[[i]]$Consumption[,'Date']
-  tmp_index <- sapply(tmp,function(x) x %in% SummerDays)
-  Houravg[,i] <- sapply(HourData[[i]]$Consumption[tmp_index,],FUN=mean,na.rm = TRUE)
-  }
+{
+  Houravg[,i] <- colMeans(HourData[[i]]$Consumption,na.rm = TRUE)[-1]
+  Houravg[,i] <- Houravg[,i]/sum(Houravg[,i])
+}
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
 tt <- Houravg
@@ -60,11 +62,35 @@ image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE,
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
-tmp <-do.call(rbind,HourData[[1]]$Temperature)
-HourData[[1]]$Temperature <- tmp
-str(HourData[[1]])
 
-HourData[[1]]$Temperature['Date',80]
+# Consumption in the summer period
+for (i in 1:n)
+  {
+  SummerDays <- day.weather$Date[day.weather$Temperature >= 15]
+  tmp <- HourData[[i]]$Consumption[,'Date']
+  tmp_index <- sapply(tmp,function(x) x %in% SummerDays)
+  Houravg[,i] <- colMeans(HourData[[i]]$Consumption[tmp_index,],na.rm = TRUE)[-1]
+  Houravg[,i] <- Houravg[,i]/sum(Houravg[,i])
+}
+tt <- Houravg
+image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
+           lab.breaks=NULL,main = 'Average consumption of all houses (summer period)')
+axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
+abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
 
-tmp <- as.matrix(Attribute)
+# Consumption in the winter period
+for (i in 1:n)
+{
+  SummerDays <- day.weather$Date[day.weather$Temperature < 12]
+  tmp <- HourData[[i]]$Consumption[,'Date']
+  tmp_index <- sapply(tmp,function(x) x %in% SummerDays)
+  Houravg[,i] <- colMeans(HourData[[i]]$Consumption[tmp_index,],na.rm = TRUE)[-1]
+  Houravg[,i] <- Houravg[,i]/sum(Houravg[,i])
+}
+tt <- Houravg
+image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
+           lab.breaks=NULL,main = 'Average consumption of all houses (winter period)')
+axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
+abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
+
