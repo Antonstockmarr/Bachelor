@@ -131,7 +131,7 @@ star_count_S_array <- lmSummary_star_S
 star_count_S_array <- gsub("\\.", "", star_count_S_array)
 star_count_S_array <- nchar(star_count_S_array)
 star_count_S_array <- star_count_S_array>3
-colSums(star_count_S_array4
+colSums(star_count_S_array)
 #summary(stepP(lmMultipleFull[[6]])$object)
 #summary(lmMultipleFull[[6]])
 

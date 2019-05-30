@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  24 MAY 2019 16:10
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  30 MAY 2019 13:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1790,28 +1790,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
 File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
+[18]
+Underfull \vbox (badness 1515) has occurred while \output is active []
 
-LaTeX Warning: Reference `' on page 18 undefined on input line 40.
-
-
-LaTeX Warning: Reference `' on page 18 undefined on input line 40.
-
-[18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+ [19]
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-[20]) [21]
+[20]
+Overfull \hbox (11.04pt too wide) in paragraph at lines 121--170
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 42.25996pt on input line 172.
+
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 176--209
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21] [22]) [23]
 \openout2 = `chapters/HourModels.aux'.
 
- (./chapters/HourModels.tex [22
+ (./chapters/HourModels.tex [24
 
 
 
 ]
 File: graphics/../../../figures/Heatmap.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap.pdf>
-) [23] [24]
+) [25] [26]
 \openout2 = `appendices/AnAppendix.aux'.
 
  (./appendices/AnAppendix.tex
@@ -1819,22 +1832,22 @@ Overfull \hbox (30.64294pt too wide) in paragraph at lines 7--56
  [][] 
  []
 
-[25
+[27
 
 
 
-] [26] [27] [28
+] [28] [29] [30
 
-]) [29] [30
+]) [31] [32
 
 
-] [31
+] [33
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[32
+[34
 
 ]
 \tf@toc=\write7
@@ -1851,9 +1864,6 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 0A24D8345E29E676C56F8A21CC9B9655.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
@@ -1862,12 +1872,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 50.
  ) 
 Here is how much of TeX's memory you used:
- 49064 strings out of 492933
- 933417 string characters out of 6133145
- 1625551 words of memory out of 5000000
- 52413 multiletter control sequences out of 15000+600000
+ 49069 strings out of 492933
+ 933510 string characters out of 6133145
+ 1626655 words of memory out of 5000000
+ 52418 multiletter control sequences out of 15000+600000
  552871 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1232b,2228s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,1407b,2228s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Thesis.pdf (42 pages).
+Output written on Thesis.pdf (44 pages).
