@@ -124,7 +124,7 @@ sum(mcons_winter[c(1:5,24)])
 mcons_summer <-apply(summeravg,1,mean)
 sum(mcons_summer[c(1:5,24)])
 
-plot(mcons_winter,ylim=c(0.035,0.055),type='l',col="blue",cex.axis = 1,xaxt="n",ylab = "Fraction of daily consumption",xlab = "Hour")
+plot(mcons_winter,ylim=c(0.035,0.055),type='l',col="blue",cex.axis = 1,xaxt="n",ylab = "Fraction of daily consumption per hour",xlab = "Hour")
 axis(side=1,at=c(0,6,12,18,24),labels=c("00","06","12","18","24"))
 lines(mcons_summer,col='red')
 legend(x="topright",legend=c("Winter period","Summer period"),lty=c(1,1),col =c("blue","red"))
