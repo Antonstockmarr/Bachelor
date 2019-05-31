@@ -51,26 +51,6 @@ for (i in Long) {
   # Saving coefficients
   lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
-  
-  # Wind profile plot
-  model.Wind<-data.frame(Consumption=model.tmp$Consumption,Temperature=model.tmp$Temperature,Radiation=model.tmp$Radiation,N=model.tmp$North,E=model.tmp$East,S=model.tmp$South,W=model.tmp$West)
-  lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
-  Splinebasis2 <- BSplines(1:360)
-  newData = data.frame(Temperature = rep(0, 360), # 0 grader
-                       Radiation = rep(0, 360), # Om natten
-                       N = Splinebasis2[,3],
-                       E = Splinebasis2[,4],
-                       S = Splinebasis2[,1],
-                       W = Splinebasis2[,2])
-  
-  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
-  
-  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
-  lines(Wind.Pred[[i]]$upr,lty=2)
-  lines(Wind.Pred[[i]]$lwr,lty=2)
-  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
-  
-  
 }
 
 # Full regression model for "short" houses
@@ -89,24 +69,6 @@ for (i in Short) {
 
   lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
-  
-  # Wind profile plot
-  model.Wind<-data.frame(Consumption=model.tmp$Consumption,Temperature=model.tmp$Temperature,Radiation=model.tmp$Radiation,N=model.tmp$North,E=model.tmp$East,S=model.tmp$South,W=model.tmp$West)
-  lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
-  Splinebasis2 <- BSplines(1:360)
-  newData = data.frame(Temperature = rep(0, 360), # 0 grader
-                       Radiation = rep(0, 360), # Om natten
-                       N = Splinebasis2[,3],
-                       E = Splinebasis2[,4],
-                       S = Splinebasis2[,1],
-                       W = Splinebasis2[,2])
-  
-  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
-  
-  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
-  lines(Wind.Pred[[i]]$upr,lty=2)
-  lines(Wind.Pred[[i]]$lwr,lty=2)
-  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
   
 }
 
@@ -135,7 +97,7 @@ for(i in 1:length(Long)){
 }
 # Printing table 
 colnames(lmSummary_star_L) <- c("I","T","N","E","S","W","MeanSeaLvl","SolaR","WinterB","SpringB","AutumnB","ChristB","Weekend","T:N","T:E","T:S","T:W")
-write.csv2(lmSummary_star_L[Long,], file = "lmMult_star_L.csv", row.names = TRUE)
+write.csv2(lmSummary_star_L, file = "lmMult_star_L.csv", row.names = TRUE)
 star_count_L_array <- lmSummary_star_L
 star_count_L_array <- gsub("\\.", "", star_count_L_array)
 star_count_L_array <- nchar(star_count_L_array)
@@ -180,6 +142,7 @@ lmMultiple <- vector(mode="list", length = n)
 lmMultipleNoP <- vector(mode = "list", length = n)
 lmSummary_est <- matrix(rep(0,11*n),nrow = n)
 lmSummary_p <- matrix(rep(0,11*n),nrow = n)
+Wind.Pred <- vector(mode = "list", length = n)
 colnames(lmSummary_est) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 colnames(lmSummary_p) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 
@@ -210,17 +173,27 @@ for (i in 1:n) {
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]
-  #wd2 <- model.tmp$WindDirection[order(model.tmp$WindDirection)]
-  #plot(model.tmp$WindDirection,Splinebasis[,1]*lmSummary_est[i,'N']+Splinebasis[,2]*lmSummary_est[i,'E']
-  #     +Splinebasis[,3]*lmSummary_est[i,'S']+Splinebasis[,4]*lmSummary_est[i,'W'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2],
-  #     main= i)
-  #abline(h=0,v=c(0,90,180,270,360))
 
-  BSplin <- matrix(data=Splinebasis %*% diag(lmSummary_est[i,c('N','E','S','W')]),ncol=4)
-  Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
-  Spline <- (BSplin)%*%Knot
-  #plot(Spline[,1],Spline[,2],col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
-  #abline(h=0,v=0)
+  
+  # Wind profile plot
+  par(mfrow = c(1,1))
+  model.Wind<-data.frame(Consumption=model.tmp$Consumption,Temperature=model.tmp$Temperature,Radiation=model.tmp$Radiation,N=model.tmp$North,E=model.tmp$East,S=model.tmp$South,W=model.tmp$West)
+  lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
+  Splinebasis2 <- BSplines(1:360)
+  newData = data.frame(Temperature = rep(0, 360), # 0 grader
+                       Radiation = rep(0, 360), # Om natten
+                       N = Splinebasis2[,3],
+                       E = Splinebasis2[,4],
+                       S = Splinebasis2[,1],
+                       W = Splinebasis2[,2])
+  
+  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
+  
+  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
+  lines(Wind.Pred[[i]]$upr,lty=2)
+  lines(Wind.Pred[[i]]$lwr,lty=2)
+  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
+  
 }
 
 t.est <- as.table(lmSummary_est)
