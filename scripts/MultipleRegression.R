@@ -139,8 +139,8 @@ write.csv2(lmSummary_star_L[Long,], file = "lmMult_star_L.csv", row.names = TRUE
 star_count_L_array <- lmSummary_star_L
 star_count_L_array <- gsub("\\.", "", star_count_L_array)
 star_count_L_array <- nchar(star_count_L_array)
-star_count_L_array <- star_count_L_array>2
-colSums(star_count_L_array)/length(Long)
+star_count_L_array <- star_count_L_array>3
+colSums(star_count_L_array)
 
 # Initializing a matrix containing empty strings for "short" houses
 lmSummary_star_S <- matrix(rep('',15*length(Short)),nrow = length(Short))
@@ -169,9 +169,8 @@ write.csv2(lmSummary_star_S, file = "lmMult_star_S.csv", row.names = TRUE)
 star_count_S_array <- lmSummary_star_S
 star_count_S_array <- gsub("\\.", "", star_count_S_array)
 star_count_S_array <- nchar(star_count_S_array)
-star_count_S_array <- star_count_S_array>2
-colSums(star_count_S_array)/length(Short)
-
+star_count_S_array <- star_count_S_array>3
+colSums(star_count_S_array)
 #summary(stepP(lmMultipleFull[[6]])$object)
 #summary(lmMultipleFull[[6]])
 
@@ -263,7 +262,7 @@ write.csv2(lmSummary_star[Short,], file = "lmMult_S_star.csv", row.names = TRUE)
 star_count_array <- lmSummary_star
 star_count_array <- gsub("\\.", "", star_count_array)
 star_count_array <- nchar(star_count_array)
-star_count_array <- star_count_array>2
+star_count_array <- star_count_array>3
 colSums(star_count_array)/n
 
 
