@@ -2,18 +2,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 if(!exists("n")){
   source("data.R")
 }
-if(FALSE){
-  Summer<-c(as.POSIXct(as.Date('2018-05-15'),format = "%Y-%m-%d", tz = "GMT"),as.POSIXct(as.Date('2018-09-15'),format = "%Y-%m-%d", tz = "GMT"))
 
-  tmp<-data[[1]][data[[1]]$ObsTime>Summer[1],]
-  tmp<-tmp[tmp$ObsTime<Summer[2],]
-  
-  tmpc<-tmp$Volume*tmp$CoolingDegree
-
-  hour(tmp$ObsTime)
-
-  plot(hour(tmp$ObsTime),tmpc)#,type='l')
-}
 
 
 source("stepP.R")
@@ -59,17 +48,10 @@ for (i in 1:n) {
   model.tmp$West <- tmp.wind[,2]
   
   model.Wind<-data.frame(Consumption=model.tmp$Consumption,Temperature=model.tmp$Temperature,Radiation=model.tmp$Radiation,N=model.tmp$North,E=model.tmp$East,S=model.tmp$South,W=model.tmp$West)
-  
-  
-  
-  
   lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
-  summary(lmMultipleNoP[[i]])
-  head(model.Wind)
-  
   Splinebasis2 <- BSplines(1:360)
-  newData = data.frame(Temperature = rep(0, 360),
-                       Radiation = rep(30, 360),
+  newData = data.frame(Temperature = rep(0, 360), # 0 grader
+                       Radiation = rep(0, 360), # Om natten
                        N = Splinebasis2[,3],
                        E = Splinebasis2[,4],
                        S = Splinebasis2[,1],
@@ -80,44 +62,13 @@ for (i in 1:n) {
   plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
   lines(Wind.Pred[[i]]$upr,lty=2)
   lines(Wind.Pred[[i]]$lwr,lty=2)
-  
-  
-  
+  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
   
   lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
   
-  
-  
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1] 
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4] 
-  # #wd2 <- model.tmp$WindDirection[order(model.tmp$WindDirection)]
-  # plot(model.tmp$WindDirection,Splinebasis[,1]*lmSummary_est[i,'W1']+Splinebasis[,2]*lmSummary_est[i,'W2']
-  #      +Splinebasis[,3]*lmSummary_est[i,'W3']+Splinebasis[,4]*lmSummary_est[i,'W4'],ylab='Dependency',xlab='Wind Direction',col=Wcol[2],
-  #      main= i)
-  # abline(h=0)
-  # 
-  # BSplin <- matrix(data=Splinebasis %*% diag(lmSummary_est[i,c('W1','W2','W3','W4')]),ncol=4)
-  # Knot <- matrix(c(0,1,1,0,0,-1,-1,0),nrow=4,byrow=T)
-  # Spline <- (BSplin)%*%Knot
-  # plot(Spline[,1],Spline[,2],col=CircleCol(Splinebasis,lmMultiple[[i]]$object),main = paste('Dependency on the wind direction for house ',i),xlab='West - East',ylab='South - North')
-  # abline(h=0,v=0)
-  # 
 }
+summary(lmMultipleNoP[[i]])
 
-Splinebasis2 <- BSplines(1:360)
-newData = data.frame(Temperature = rep(-5, 360),
-                     Radiation = rep(30, 360),
-                     N = Splinebasis2[,3],
-                     E = Splinebasis2[,3],
-                     S = Splinebasis2[,3],
-                     W = Splinebasis2[,3])
-
-Pred<-data.frame(predict(object=lmMultipleNoP[[1]], newdata=newData, interval = "confidence", level = 0.95))
-
-length(model.tmp$Consumption)
-length(Pred$fit)
-plot(Pred$fit,type='l',ylim=range(0,Pred$upr))
-lines(Pred$upr,lty=2)
-lines(Pred$lwr,lty=2)
-
-summary(Pred)
+        

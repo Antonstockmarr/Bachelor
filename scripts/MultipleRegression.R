@@ -51,6 +51,26 @@ for (i in Long) {
   # Saving coefficients
   lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
+  
+  # Wind profile plot
+  model.Wind<-data.frame(Consumption=model.tmp$Consumption,Temperature=model.tmp$Temperature,Radiation=model.tmp$Radiation,N=model.tmp$North,E=model.tmp$East,S=model.tmp$South,W=model.tmp$West)
+  lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
+  Splinebasis2 <- BSplines(1:360)
+  newData = data.frame(Temperature = rep(0, 360), # 0 grader
+                       Radiation = rep(0, 360), # Om natten
+                       N = Splinebasis2[,3],
+                       E = Splinebasis2[,4],
+                       S = Splinebasis2[,1],
+                       W = Splinebasis2[,2])
+  
+  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
+  
+  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
+  lines(Wind.Pred[[i]]$upr,lty=2)
+  lines(Wind.Pred[[i]]$lwr,lty=2)
+  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
+  
+  
 }
 
 # Full regression model for "short" houses
@@ -69,6 +89,25 @@ for (i in Short) {
 
   lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
+  
+  # Wind profile plot
+  model.Wind<-data.frame(Consumption=model.tmp$Consumption,Temperature=model.tmp$Temperature,Radiation=model.tmp$Radiation,N=model.tmp$North,E=model.tmp$East,S=model.tmp$South,W=model.tmp$West)
+  lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
+  Splinebasis2 <- BSplines(1:360)
+  newData = data.frame(Temperature = rep(0, 360), # 0 grader
+                       Radiation = rep(0, 360), # Om natten
+                       N = Splinebasis2[,3],
+                       E = Splinebasis2[,4],
+                       S = Splinebasis2[,1],
+                       W = Splinebasis2[,2])
+  
+  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
+  
+  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
+  lines(Wind.Pred[[i]]$upr,lty=2)
+  lines(Wind.Pred[[i]]$lwr,lty=2)
+  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
+  
 }
 
 # Initializing a matrix containing empty strings for "long" houses
