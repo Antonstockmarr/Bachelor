@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  31 MAY 2019 14:18
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  31 MAY 2019 14:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1832,7 +1832,6 @@ LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
 ] [26] [27]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
- [28]
 File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/arimax/Arimax1_18.jpeg>
 File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
@@ -1840,9 +1839,9 @@ File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 61.
+               Default added (so using `tbp') on input line 60.
 
-) [29] [30] [31]
+) [28] [29] [30] [31]
 \openout2 = `appendices/AnAppendix.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [32
@@ -1888,7 +1887,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
 Here is how much of TeX's memory you used:
  49333 strings out of 492933
  946653 string characters out of 6133145
- 1641578 words of memory out of 5000000
+ 1641952 words of memory out of 5000000
  52659 multiletter control sequences out of 15000+600000
  552871 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
