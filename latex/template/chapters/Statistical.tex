@@ -60,15 +60,15 @@ To validate the model, different methods are used. The abovementioned model assu
 \subsection{Results}
 \cref{tab: est_simple_lm} shows the estimates from all the simple linear regression models. 
 
-
 \noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet.}
 
 \section{Multiple linear regression model}
 The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. This lead to the following two multiple linear regression models: 
 \begin{align}
-    Y_m = \mu
+    Y_{m,L} & = \mu + \beta_{\text{HC}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon \label{eq: multi_L}\\
+    Y_{m,S} & = \mu + \beta_{\text{HC}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon
+    \label{eq: multi_S}
 \end{align}
-\textcolor{red}{Indsæt modellerne.}
 
 \noindent The models show that the interactions between the attribute \texttt{Holiday} and the other attributes are chosen to be excluded. The reason is that \texttt{Holiday} is used to investigate how the consumption changes during holiday periods. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND), the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). 
 
@@ -86,8 +86,36 @@ Giver mere mening for brugeren
 
 \textcolor{red}{Tilføj billede af splines}
 
+\subsection{Validation}
+As for the simple linear regression model, the multiple models has to fulfill several assumptions. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm18L.pdf}
+    \caption{}
+    \label{fig: multiple_lm18L}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm55L.pdf}
+    \caption{}
+    \label{fig: multiple_lm55L}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm68S.pdf}
+    \caption{}
+    \label{fig: multiple_lm68S}
+\end{figure}
+
+
 \subsection{Results}
-\noindent When performing the two models given in \textcolor{red}{en eller anden ref til en ligning her}, without reduction, \textcolor{red}{Et eller andet} \cref{tab: lmMult_full_S}.  In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. 
+\noindent When performing the two models given in \cref{eq: multi_L} and \cref{eq: multi_S}, without reduction, the significance of the parameters are determined and can be found in \cref{tab: lmMult_full_L}-\ref{tab: lmMult_full_S}. In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. The tables clearly show that the total of significance of each parameter for the different holidays occurs in less than half of the cases. 
+
+\textcolor{red}{Hvis bare én af retningerne har over halvdelen signifikant skal alle retningerne med.}
+
 \begin{table}
     \centering
     \resizebox{0.70\textheight}{!}{\begin{tabular}{l|cccccccccccccccccccc}
@@ -104,7 +132,6 @@ Giver mere mening for brugeren
 \caption{The distribution of significant parameters from the multiple linear regression model for long houses. There are 43 long houses, thus the total of the signifance of each parameter for each house is in relation to the number of long houses}
 \label{tab: lmMult_full_L_sum}
 \end{table}
-
 \begin{table}
     \centering
     \resizebox{0.7\textheight}{!}{\begin{tabular}{l|cccccccccccccccccc}
@@ -122,10 +149,8 @@ Giver mere mening for brugeren
 \label{tab: lmMult_full_S_sum}
 \end{table}
 
-\textcolor{blue}{Hvis bare én af retningerne har over halvdelen signifikant skal alle retningerne med.}
-
 \section{Regression model for comparing houses}
-\textcolor{blue}{Baseret på tabeller over signifikante parametre for både korte og lange huse, kan vi lave en general model for alle huse, der inkluderer temperaturen, splines og radiation.}
+Based on the tables illustrating the significant parameters for the long and short houses, an updated multiple linear regression model is made. The purpose of this more general model is to compare which parameters influence each house. Furthermore, houses with e.g. same area, construction year etc. can be compared. 
 
 \begin{table}
     \centering

@@ -52,28 +52,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.1}Splines}{21}{subsection.4.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Results}{22}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.2}Validation}{22}{subsection.4.3.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.3}Results}{22}{subsection.4.3.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Regression model for comparing houses}{22}{section.4.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Validation}{24}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Validation}{25}{subsection.4.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Results}{24}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.2}Results}{25}{subsection.4.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Comparison}{24}{section.4.5}% 
+\contentsline {section}{\numberline {4.5}Comparison}{25}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{25}{chapter.5}% 
+\contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{27}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{25}{section.5.1}% 
+\contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{27}{section.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}ARIMAX}{28}{section.5.2}% 
+\contentsline {section}{\numberline {5.2}ARIMAX}{30}{section.5.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Tables}{33}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {A}Tables}{35}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates of the simple linear regression model}{33}{section.A.1}% 
+\contentsline {section}{\numberline {A.1}Estimates of the simple linear regression model}{35}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Significance of parameters from multiple linear regression model}{33}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Significance of parameters from multiple linear regression model}{35}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{37}{appendix.B}% 
+\contentsline {appendix}{\chapternumberline {B}Figures}{39}{appendix.B}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{39}{section*.6}% 
+\contentsline {chapter}{Bibliography}{41}{section*.6}% 

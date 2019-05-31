@@ -48,6 +48,14 @@ for (i in Long) {
   model.tmp$West <- tmp.wind[,2]
   lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+WinterBreak+SpringBreak+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
   
+  # Checking model assumptions 
+  par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
+  plot(lmMultipleFull[[i]])
+  title(paste("Daily consumption for house ", i, "using multiple lm"), outer=TRUE, adj = 0.5, line = -1.25)
+  # Testing for normality
+  s.test[[i]] <- shapiro.test(lm.simple[[i]]$residuals)
+  print(s.test[[i]]$p.value)
+  
   # Saving coefficients
   lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
@@ -67,6 +75,11 @@ for (i in Short) {
   model.tmp$West <- tmp.wind[,2]
   lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
 
+  # Checking model assumptions 
+  par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
+  plot(lmMultipleFull[[i]])
+  title(paste("Daily consumption for house ", i, "using multiple lm"), outer=TRUE, adj = 0.5, line = -1.25)
+  
   lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
   
