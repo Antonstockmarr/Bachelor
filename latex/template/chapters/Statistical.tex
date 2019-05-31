@@ -22,37 +22,43 @@ is chosen for estimating the model. The parameters $\beta_j$ are optimized to mi
     \item Variance should be independent of location
     \item Linear relationship between $x_j$ and $Y$
 \end{enumerate}
-If these assumptions are not met, it can influence the parameter estimates and with it the significance. \textcolor{red}{Der mangler lidt her.} \\
+Chapter 7 in \cite{Stat_bog} explains the model assupmtions listed above. To summarize, a model can be checked by looking at diagnostic plots of the residuals. The first plot considered is the Residuals vs Fitted, where the residuals are expected to be randomly scattered. To test whether the residuals are normally distributed a normal quantile–quantile plot is used. Here the residuals are expected to follow a straight line. A Scale-Location plot shows normalized and weighted residuals by sample leverage where the residuals are also expected to be randomly scattered. The last diagnostic plot shows the Residuals vs Leverage which should be a straight line and there should not be any clear patterns. If these assumptions are not met, it can influence the parameter estimates and with it the significance of the parameters. In addition, a Shapiro-Wilk test is performed to check if the residuals of the models are i.i.d with $\mathcal{N}(0,\sigma^2)$. \\
 
-\noindent The fitting of the regression models is carried out by using the method stepwise regression \textcolor{red}{Bruger vi adjusted R-squared?} which updates the model in each step. In each step it is considered whether a variable is added or subtracted from the set of explanatory variables based on specific criteria. This process is called variable selection and \textcolor{red}{en eller anden artikel der forklarer forward/backward selection} explains how this process can be done by using either forward or backward selection. In this project a modified version of backward selection is applied. The models are used for comparing which explanatory variables influence each house. Therefore, the models are not reduced using the \texttt{R} function \texttt{step}. Instead the signifance of the parameters are investigated and then the parameters which are significant for the majority of the houses will be used in an updated linear regression model. Thus, the variable selection is done manually which can be said to be a modified form of backward selection. The level of signifance is determined by an F-test where the variables selected have a p-value below a threshold which is chosen at 0.05. \textcolor{red}{Mangler nok en ref. til det her.}\\
+\noindent The fitting of the regression models is carried out by using the method stepwise regression which updates the model in each step. In each step it is considered whether a variable is added or subtracted from the set of explanatory variables based on specific criteria. This process is called variable selection and Chapter 7 in \cite{Stat_bog2} explains how this process can be done by using either forward or backward selection. In this project a modified version of backward selection is applied. The models are used for comparing which explanatory variables influence each house. Therefore, the models are not reduced using the \texttt{R} function \texttt{step}. Instead the signifance of the parameters are investigated and then the parameters which are significant for the majority of the houses will be used in an updated linear regression model. Thus, the variable selection is done manually which can be said to be a modified form of backward selection. The level of signifance is determined by an F-test where the variables selected have a p-value below a threshold which is chosen at 0.05. \textcolor{red}{Mangler nok en ref. til det her.}\\
 
 \noindent Both a simple linear and a multiple linear regression model will be implemented in order to detect which attributes affect the performance of a specific house. This will be done by interpreting the estimates of the relation between the different explanatory attributes and \texttt{Consumption}. As mentioned, the p-value of the estimates of the explanatory variables will be the main focus when investigating which attributes influence the performance. 
 
 \section{Simple linear regression model}
-A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature} (here denoted HC and T). Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. The models are performed by using the \texttt{lm()} function. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met. \\
-
-The simple model only includes one explanatory variable, thus a variable selection is not performed. 
+A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature} (here denoted HC and T). Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. The models are performed by using the \texttt{lm()} function. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met. The simple model only includes one explanatory variable, thus a variable selection is not performed. \textcolor{red}{Begrundelse for at vi ikke transformerer data.}
 
 \noindent Hence, the simple linear regression model applied to each house is
 \begin{equation}
-    Y_s = \mu + \beta_{\text{HC}}\cdot x_{\text{T}} + \varepsilon.
+    Y_s = \mu + \beta_{\text{HC}}\cdot x_{\text{T}} + \varepsilon
     \label{eq: simple}
 \end{equation}
 
 \subsection{Validation}
+To validate the model, different methods are used. The abovementioned model assumptions are checked and futhermore a test of normally distributed residuals is performed. If the model assumptions are fulfilled and the residuals are i.i.d with $\mathcal{N}(0,\sigma^2)$, the model is said to be valid. 
+
+\noindent \cref{fig: simple_lm_18} and \cref{fig: fig: simple_lm_55} shows examples of the model applied on two of the houses where one does not fulfill the assumptions and a house that overall fulfill the assumptions \textcolor{red}{skal nok lige skrives lidt bedre :-))}. The top left plot in \cref{fig: simple_lm_18} clearly shows that the residuals are not randomly scattered. \textcolor{red}{Mangler noget her.}
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/simple_lm18.pdf}
-    \caption{Residual plots of house 18 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are not fulfilled for this specific house.}
+    \caption{Residual plots of house 18 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are not fulfilled for this specific house}
     \label{fig: simple_lm_18}
 \end{figure}
-\textcolor{red}{Indsæt et eksempel der viser hvordan det skal se ud.}
 
-\textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket. Q-Q plottet ligger ikke fint langs en ret linje. Residuals vs. fitted viser en underlig opførsel, som ikke er randomly scattered.}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/simple_lm55.pdf}
+    \caption{Residual plots of house 55 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are overall fulfilled}
+    \label{fig: simple_lm_55}
+\end{figure}
+
+% \textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket. Q-Q plottet ligger ikke fint langs en ret linje. Residuals vs. fitted viser en underlig opførsel, som ikke er randomly scattered.}
 
 \subsection{Results}
-\textcolor{red}{Plot a estimater af beta coefficienter for den simple lineære model.}
-
+\cref{tab: est_simple_lm} shows the estimates from all the simple linear regression models. 
 \noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet.}
 
 \section{Multiple linear regression model}
@@ -214,4 +220,4 @@ Giver mere mening for brugeren
 
 \subsection{Results}
 
-\section{\textcolor{red}{Comparison}}
+\section{Comparison}
