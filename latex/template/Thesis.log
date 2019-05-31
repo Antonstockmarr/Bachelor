@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  31 MAY 2019 14:05
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  31 MAY 2019 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1475,7 +1475,7 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux))
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1685,15 +1685,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
+Overfull \hbox (1.69006pt too wide) in paragraph at lines 33--52
+ [][] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 57--60
-
+Overfull \hbox (9.66005pt too wide) in paragraph at lines 59--76
+ [][] 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
@@ -1780,37 +1785,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
  []
 
 [18]
-
-LaTeX Warning: Reference `fig: fig: simple_lm_55' on page 1 undefined on input line 43.
-
 File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
 File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm55.pdf>
-
-LaTeX Warning: Reference `tab: est_simple_lm' on page 1 undefined on input line 61.
-
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+ [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
-
-LaTeX Warning: Reference `tab: lmMult_full_S' on page 1 undefined on input line 85.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 127--176
+[21]
+Overfull \hbox (11.04pt too wide) in paragraph at lines 132--181
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 42.25996pt on input line 178.
+LaTeX Warning: Float too large for page by 42.25996pt on input line 183.
 
 
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 182--215
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 187--220
  [][] 
  []
 
@@ -1825,18 +1818,21 @@ File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_summer.pdf>
 
 
-LaTeX Warning: Float too large for page by 37.5915pt on input line 13.
+LaTeX Warning: Float too large for page by 37.5915pt on input line 10.
 
 File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_winter.pdf>
 
-LaTeX Warning: Float too large for page by 1.5915pt on input line 21.
+LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
 
 [25
 
 
 
 ] [26] [27]
+File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Season_distribution.jpeg>
+ [28]
 File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/arimax/Arimax1_18.jpeg>
 File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
@@ -1844,17 +1840,32 @@ File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 52.
+               Default added (so using `tbp') on input line 61.
 
-) [28] [29] [30] [31
+) [29] [30] [31]
+\openout2 = `appendices/AnAppendix.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [32
 
 
+
+]
+Overfull \hbox (30.64294pt too wide) in paragraph at lines 57--106
+ [][] 
+ []
+
+[33] [34] [35] [36]) [37
+
+] [38
+
+
+] [39
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[32
+[40
 
 ]
 \tf@toc=\write7
@@ -1864,27 +1875,23 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux)
 Package cleveref Info: loaded `english' language definitions on input line 25.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux))
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 222335A9FC6DC69120F6FA5372EA4AAE.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 9457B7523833B82E940D194065CBD258.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 49309 strings out of 492933
- 945484 string characters out of 6133145
- 1608320 words of memory out of 5000000
- 52645 multiletter control sequences out of 15000+600000
+ 49333 strings out of 492933
+ 946653 string characters out of 6133145
+ 1641578 words of memory out of 5000000
+ 52659 multiletter control sequences out of 15000+600000
  552871 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1332b,6124s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,1493b,6122s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (42 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (50 pages).

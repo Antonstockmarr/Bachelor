@@ -50,7 +50,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Multiple linear regression model}{19}{section.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Splines}{20}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.1}Splines}{21}{subsection.4.3.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.2}Results}{22}{subsection.4.3.2}% 
 \defcounter {refsection}{0}\relax 
@@ -64,6 +64,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{25}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}ARIMAX}{25}{section.5.1}% 
+\contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{25}{section.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{31}{section*.6}% 
+\contentsline {section}{\numberline {5.2}ARIMAX}{28}{section.5.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {A}Tables}{33}{appendix.A}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Estimates of the simple linear regression model}{33}{section.A.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Significance of parameters from multiple linear regression model}{33}{section.A.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {B}Figures}{37}{appendix.B}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{39}{section*.6}% 
