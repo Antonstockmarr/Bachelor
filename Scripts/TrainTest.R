@@ -1,11 +1,11 @@
-TrainTest=function(Dataset,days){
+TrainTest=function(Dataset,points){
   n=length(Dataset)
   Train=vector(mode="list", length = n)
   Test=vector(mode="list", length = n)
   for(i in 1:n){
     ni<-dim(Dataset[[i]])[1]
-    Train[[i]]<-Dataset[[i]][1:(ni-days),]
-    Test[[i]]<-Dataset[[i]][ni+(1:days),]
+    Train[[i]]<-Dataset[[i]][1:(ni-points),]
+    Test[[i]]<-Dataset[[i]][ni+(1:points),]
   }
   return(list(Train,Test))
 }
