@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  31 MAY 2019 14:18
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  31 MAY 2019 15:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1794,23 +1794,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
+File: graphics/../../../figures/multiple_lm18L.pdf Graphic file (type pdf)
+<use graphics/../../../figures/multiple_lm18L.pdf>
 [21]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 132--181
+File: graphics/../../../figures/multiple_lm55L.pdf Graphic file (type pdf)
+<use graphics/../../../figures/multiple_lm55L.pdf>
+File: graphics/../../../figures/multiple_lm68S.pdf Graphic file (type pdf)
+<use graphics/../../../figures/multiple_lm68S.pdf>
+
+Overfull \hbox (11.04pt too wide) in paragraph at lines 157--206
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 42.25996pt on input line 183.
+LaTeX Warning: Float too large for page by 42.25996pt on input line 208.
 
 
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 187--220
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 212--245
  [][] 
  []
 
+[22] [23]
+Overfull \vbox (189.40799pt too high) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22] [23]) [24]
+ [24]) [25] [26]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
@@ -1825,14 +1832,13 @@ File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 
 LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
 
-[25
+[27
 
 
 
-] [26] [27]
+] [28] [29]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
- [28]
 File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/arimax/Arimax1_18.jpeg>
 File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
@@ -1840,12 +1846,12 @@ File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 61.
+               Default added (so using `tbp') on input line 60.
 
-) [29] [30] [31]
+) [30] [31] [32] [33]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [32
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [34
 
 
 
@@ -1854,18 +1860,18 @@ Overfull \hbox (30.64294pt too wide) in paragraph at lines 57--106
  [][] 
  []
 
-[33] [34] [35] [36]) [37
+[35] [36] [37] [38]) [39
 
-] [38
+] [40
 
 
-] [39
+] [41
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[40
+[42
 
 ]
 \tf@toc=\write7
@@ -1879,19 +1885,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 9457B7523833B82E940D194065CBD258.
+(rerunfilecheck)             Checksum: AD18D87D2E0C0E5877BFE8D3C0CF58D1.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
  ) 
 Here is how much of TeX's memory you used:
- 49333 strings out of 492933
- 946653 string characters out of 6133145
- 1641578 words of memory out of 5000000
- 52659 multiletter control sequences out of 15000+600000
+ 49355 strings out of 492933
+ 947393 string characters out of 6133145
+ 1643503 words of memory out of 5000000
+ 52678 multiletter control sequences out of 15000+600000
  552871 words of font info for 61 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,81p,1493b,6122s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (50 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (52 pages).
