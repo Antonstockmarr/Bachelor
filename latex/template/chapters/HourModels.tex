@@ -37,14 +37,21 @@ In this section, a more detailed look at the hourly consumption will be provided
 
 
 \section{The ARMA Models and Their Extensions}
-A time series, such as the one provided by the consumption of a house during a certain period, is a realization of a stochastic process. In this section the ARMA model will be introduced, and an extended ARMA model, the ARIMAX model, will be fitted to the consumption. The theory of the ARMA model is based on chapter 5 from the book "Time Series Analysis" by Henrik Madsen \cite{Time_Series_Analysis}. The ARMA model fits the data to a linear stochastic process, with an autoregression part (AR) and a moving average part (MA). A linear process $\{Y_t\}$ is a process that can be written as
+The consumption of a house during a certain period with hour intervals is a time series. A time series is a realization of a stochastic process. In this section the ARMA model will be introduced, and an extended ARMA model, the ARIMAX model, will be fitted to the consumption. The theory of the ARMA model is based on chapter 5 from the book "Time Series Analysis" by Henrik Madsen \cite{Time_Series_Analysis}. The ARMA model fits the data to a linear stochastic process, with an autoregression part (AR) and a moving average part (MA). A linear process $\{Y_t\}$ is a process that can be written as
 \begin{equation}
-    Y_t - \mu = \sum_{i=0}^{\infty} \psi_i \epsilon_{t-i},
+    Y_t - \mu = \sum_{i=0}^{\infty} \psi_i \epsilon_{t-i}, \label{linearProcess}
 \end{equation}
-where $\mu$ is the mean of the process, $\{\epsilon_i\}$ is white noise and $\{\psi_i\}$ is the weights.
+where $\mu$ is the mean of the process, $\{\epsilon_i\}$ is white noise and $\{\psi_i\}$ is the weights. For now, the mean $\mu$ is assumed to be zero. To define the ARMA model, the backwards shift operator $B$ is first introduced as $B(Y_t) = Y_{t-1}$. An ARMA process has the form
+\begin{equation}
+    \phi (B)Y_t = \theta (B) \epsilon_t,
+\end{equation}
+where $\phi$ and $\theta$ are polynomials on the shift operator B with degree $p$ and $q$ respectively. $\theta(B)$ is the autoregressive part and $\phi(B)$ is the moving average part. The process is denoted as an $ARMA(p,q)$ process. ARMA processes are linear. If one applies $\psi(B)$ to $Y_t$ and substitutes $Y_{t-1}$, then $Y_{t-2}$ and so forth, the form in \cref{linearProcess} is obtained.
 
-
-
+\noindent An ARMA process is stationary if all the roots of $\phi(z^{-1})$ are within the unit circle. Stationarity is a very desirable property. In a stationary process, the mean and variance does not change over time. But often, processes will not be stationary due to long term trends. For example the mean consumption of a house has a periodic trend during the year. This was clearly illustrated on \cref{fig: daily_cons}. But long term trends can be eliminated by introducing differencing. Instead of modelling the process $\{Y_t\}$, one can model the process $\{Y_t - Y_{t-1}\}$, i.e. the difference between observations. This is formalized with the difference operator $\Delta = (1-B)$. The differenced ARMA model is called the $ARIMA(p,d,q)$ model, or the autoregressive \texttt{integrated} moving average model. It has the form
+\begin{equation}
+    \phi (B) \Delta^d Y_t = \theta (B) \epsilon_t,
+\end{equation}
+where $d\in \mathbb{N}$ is the differencing factor. 
 
 
 An ARIMAX model is constructed for the hourly data of every house. The outside temperature is used as the exogenous variates. The exploratory analysis has shown that there is a high covariance between the temperature and the consumption, making this the obvious choice. The model is expected to have a seasonal component with season 24, because the consumption in certain time periods are likely to be close to each other from day to day.
