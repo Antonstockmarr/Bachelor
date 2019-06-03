@@ -3,5 +3,3 @@ if(!exists("n")){
   source("data.R")
 }
 
-
-        

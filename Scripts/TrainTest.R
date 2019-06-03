@@ -5,7 +5,7 @@ TrainTest=function(Dataset,points){
   for(i in 1:n){
     ni<-dim(Dataset[[i]])[1]
     Train[[i]]<-Dataset[[i]][1:(ni-points),]
-    Test[[i]]<-Dataset[[i]][ni+(1:points),]
+    Test[[i]]<-Dataset[[i]][ni-points+(1:points),]
   }
   return(list(Train,Test))
 }
