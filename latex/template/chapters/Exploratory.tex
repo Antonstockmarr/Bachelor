@@ -25,13 +25,12 @@ First part of the analysis is to explore the different attributes in the data, i
 
 \textcolor{blue}{\noindent It is already known that there is a dependency between the heat consumption and the time of the year. During the summer period there is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature.}
 
-
 \subsection{Weather data}
-The weather data is also examined through scatterplots given in \cref{fig: weatherpairs} and \cref{fig: weather_cons}. in order to detect dependencies between the average consumption of the houses and the weather attributes. The outside has a significance influence on the consumption
+The weather data is also examined through scatterplots given in \cref{fig: weatherpairs} and \cref{fig: weather_cons}. in order to detect dependencies between the average consumption of the houses and the weather attributes. It is already known that the outside temperature has a significant influence on the consumption which is in line with the linearly relationship between the temperature and the consumption in \cref{fig: weatherpairs}. Furthermore, consumption is approximately influenced by the dew point which is probably explained by the linear relationship between \texttt{Temperature} and \texttt{DewPoint} illustrated in \cref{fig: weather_cons}.
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/weatherpairs.pdf}
-    \caption{Scatterplots of the daily values of relevant weather attributes. There are clear linearly dependencys between \texttt{Consumption} and \texttt{Temperature} as was expected}
+    \caption{Scatterplots of the daily values of relevant weather attributes. There are clear linearly dependencys between \texttt{Consumption} and \texttt{Temperature}, as was expected}
     \label{fig: weatherpairs}
 \end{figure}
 
