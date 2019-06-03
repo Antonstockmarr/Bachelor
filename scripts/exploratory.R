@@ -120,6 +120,9 @@ cor(day.tmp['PrecipitationProbability'],day.tmp['Condition'])
 
 
 # Investigating BBR data --------------------------------------------------
+ggplot(data = BBR, aes(x = )) + geom_histogram()
+
+
 par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
 plot(Construction.Year,cons.areal,col=Wcol[2],main='Year of Construction Consumption',xlab='Year of Construction',ylab = expression(paste("Consumption pr.  ", m^2, sep = "")))
 points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col=Wcol[3])
