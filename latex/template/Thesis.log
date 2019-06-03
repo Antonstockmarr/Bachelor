@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  31 MAY 2019 15:55
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 11:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1099,6 +1099,14 @@ Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
@@ -1286,7 +1294,8 @@ File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -1304,8 +1313,7 @@ Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
-))
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/flafter.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/flafter.sty
 Package: flafter 2018/11/28 v1.4d Standard LaTeX floats after reference (FMi)
 Applying: [2015/01/01] float order in 2-column on input line 49.
 Already applied: [0000/00/00] float order in 2-column on input line 151.
@@ -1359,22 +1367,22 @@ File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 246.
+(hyperref)                removing `\\' on input line 247.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 246.
+(hyperref)                removing `\\' on input line 247.
 
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 246.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 246.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 246.
-Package hyperref Info: Option `breaklinks' set `true' on input line 246.
-Package hyperref Info: Option `plainpages' set `false' on input line 246.
-Package hyperref Info: Option `unicode' set `true' on input line 246.
-Package hyperref Info: Option `colorlinks' set `false' on input line 246.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 247.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 247.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 247.
+Package hyperref Info: Option `breaklinks' set `true' on input line 247.
+Package hyperref Info: Option `plainpages' set `false' on input line 247.
+Package hyperref Info: Option `unicode' set `true' on input line 247.
+Package hyperref Info: Option `colorlinks' set `false' on input line 247.
 ) (./preamble/fonts.tex
 
 Package fontspec Info: Font family 'texgyreadventor(0)' created for font
@@ -1661,7 +1669,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 5.
- [7]) [8]
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [7]) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
@@ -1714,190 +1733,4 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-File: graphics/../../../figures/avg_daily.pdf Graphic file (type pdf)
-<use graphics/../../../figures/avg_daily.pdf>
-File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
-<use graphics/../../../figures/house_attri.pdf>
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--26
-
- []
-
-File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
-<use graphics/../../../figures/weather_cons.pdf>
-[7]
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
- [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-
- []
-
-File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
-<graphics/../../../figures/byggeår.eps>
-File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
-<graphics/../../../figures/Consumption-PW.eps>
-[10] [11]
-Underfull \vbox (badness 2205) has occurred while \output is active []
-
- [12]
-File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
-<graphics/../../../figures/Breakpoint.jpeg>
-File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
-<graphics/../../../figures/AlphaHist.jpeg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
-
- []
-
-File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
-<graphics/../../../figures/gg_cor.eps>
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--144
-
- []
-
-
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 148--165
- [][] 
- []
-
-) [13] [14] [15] [16]
-\openout2 = `chapters/Statistical.aux'.
-
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [17
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-[18]
-File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
-<use graphics/../../../figures/simple_lm18.pdf>
-File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
-<use graphics/../../../figures/simple_lm55.pdf>
- [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
-
- []
-
-File: graphics/../../../figures/multiple_lm18L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/multiple_lm18L.pdf>
-[21]
-File: graphics/../../../figures/multiple_lm55L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/multiple_lm55L.pdf>
-File: graphics/../../../figures/multiple_lm68S.pdf Graphic file (type pdf)
-<use graphics/../../../figures/multiple_lm68S.pdf>
-
-Overfull \hbox (11.04pt too wide) in paragraph at lines 157--206
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 42.25996pt on input line 208.
-
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 212--245
- [][] 
- []
-
-[22] [23]
-Overfull \vbox (189.40799pt too high) has occurred while \output is active []
-
- [24]) [25] [26]
-\openout2 = `chapters/HourModels.aux'.
-
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
-File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
-<use graphics/../../../figures/Heatmap_summer.pdf>
-
-
-LaTeX Warning: Float too large for page by 37.5915pt on input line 10.
-
-File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
-<use graphics/../../../figures/Heatmap_winter.pdf>
-
-LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
-
-[27
-
-
-
-] [28] [29]
-File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
-<graphics/../../../figures/Season_distribution.jpeg>
-File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
-<graphics/../../../figures/arimax/Arimax1_18.jpeg>
-File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
-<graphics/../../../figures/arimax/Arimax1_55.jpeg>
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 60.
-
-) [30] [31] [32] [33]
-\openout2 = `appendices/AnAppendix.aux'.
-
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [34
-
-
-
-]
-Overfull \hbox (30.64294pt too wide) in paragraph at lines 57--106
- [][] 
- []
-
-[35] [36] [37] [38]) [39
-
-] [40
-
-
-] [41
-
-]
-No complaints by nag.
-File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
-<use graphics/DTU-frise-SH-15.pdf>
-[42
-
-]
-\tf@toc=\write7
-\openout7 = `Thesis.toc'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 43.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 43.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux)
-Package cleveref Info: loaded `english' language definitions on input line 25.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 43.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 43.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AD18D87D2E0C0E5877BFE8D3C0CF58D1.
-Package logreq Info: Writing requests to 'Thesis.run.xml'.
-\openout1 = `Thesis.run.xml'.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 43.
- ) 
-Here is how much of TeX's memory you used:
- 49355 strings out of 492933
- 947393 string characters out of 6133145
- 1643503 words of memory out of 5000000
- 52678 multiletter control sequences out of 15000+600000
- 552871 words of font info for 61 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1493b,6122s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (52 pages).
+File: graphics/../../../figures/

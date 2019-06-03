@@ -1,7 +1,7 @@
 \chapter{Exploratory Analysis}
 First part of the analysis is to explore the different attributes in the data in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modeling. \\
 
-\section{Examination of heat consumption}
+\section{Examination of the Heat Consumption}
 \noindent To get an overview of the heat consumption for each house, the daily average consumption for each house has been calculated and can be seen as a function of the time in figure \ref{fig: daily_cons}. 
 
 \begin{figure}
@@ -36,6 +36,8 @@ First part of the analysis is to explore the different attributes in the data in
 
 Figures \ref{fig: house_attri} and \ref{fig: weather_cons} are used to investigate linear relationships which is desired when modeling. If a linear relation is not \textcolor{red}{obtained} this could give rise to a transformation on either the dependent or the independent variable. \textcolor{red}{Jeg synes der mangler lidt her.}
 
+\subsection{Weather data}
+
 \subsection{BBR data}
 Presumably, the BBR data has influence on the heat consumption in particular the total area and year of construction. \textcolor{red}{Mangler lidt her.} \\
 
@@ -48,6 +50,42 @@ Presumably, the BBR data has influence on the heat consumption in particular the
 \end{figure}
 
 \noindent Figure \ref{fig: byggeaar} clearly shows that the later a house is constructed (or reconstructed), the better is the insulation of the house as the consumption decreases with the year of construction. Furthermore, there is a clear outlier in the figure which has a remarkable high consumption pr. $m^2$. When looking up the house in the BBR data, it is seen that the outlier is an apartment of 61 $m^2$ build in 1920.  
+
+\section{Multicollinearity}
+Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} Multicollinearity can be investigated by calculating the correlation using the function \texttt{cor()} in \texttt{R}.\\
+
+\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} shows a plot of the correlation matrix between the abovementioned attributes.
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/gg_cor.eps}
+    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated}
+    \label{fig: gg_cor}
+\end{figure}
+\noindent There is a high correlation between \texttt{Radiation} and \texttt{SunHour} at 0.955, thus \texttt{SunHour} is removed from the weather data set. \\
+ 
+\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata}. 
+\begin{table}
+    \centering
+    \begin{tabular}{ll}
+     \hline
+     \textbf{Variable} & \textbf{Description} \\
+    \hline
+    \hline
+    Date  &  End time and date for measurements. Hourly values.\\
+    Temperature  &  Temperature outside in Degrees/C. \\
+    WindSpeed  &  \\ 
+    WindDirection  &  \\
+    Condition  & \\
+    MeanSeaLevelPressure & Avg. atmospheric pressure at mean sea level in mbar.\\
+    PrecipitationProbability & Measure of the probability that precipitation will occur. \\
+    Observation & The number of observations for each day for each house.\\
+    Consumption & CoolingDegree times Volume from House data \\
+    Holiday & A categorical attribute with 6 levels: Working day, \\ & Weekend, Autumn break, Christmas break, \\ & Winter break and Spring break.\\
+    \hline
+    \end{tabular}
+    \caption{Attributes used for modeling}
+    \label{tab: modeldata}
+\end{table}   
 
 \section{Data segmentation}
 Since one of the focuses of this paper is to estimate how much energy a house uses for heating
@@ -129,39 +167,3 @@ the following sections will only be considering data where the temperature less 
     \caption{A histogram of the alpha values for every house in the third segmentation method. The first quantile is chosen as the overall breakpoint. It is 12 degrees, illustrated by the green line}
     \label{fig: AlphaHist}
 \end{figure}
-
-\section{Multicollinearity}
-Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} Multicollinearity can be investigated by calculating the correlation using the function \texttt{cor()} in \texttt{R}.\\
-
-\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} shows a plot of the correlation matrix between the abovementioned attributes.
-\begin{figure}
-    \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/gg_cor.eps}
-    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated}
-    \label{fig: gg_cor}
-\end{figure}
-\noindent There is a high correlation between \texttt{Radiation} and \texttt{SunHour} at 0.955, thus \texttt{SunHour} is removed from the weather data set. \\
- 
-\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata}. 
-\begin{table}
-    \centering
-    \begin{tabular}{ll}
-     \hline
-     \textbf{Variable} & \textbf{Description} \\
-    \hline
-    \hline
-    Date  &  End time and date for measurements. Hourly values.\\
-    Temperature  &  Temperature outside in Degrees/C. \\
-    WindSpeed  &  \\ 
-    WindDirection  &  \\
-    Condition  & \\
-    MeanSeaLevelPressure & Avg. atmospheric pressure at mean sea level in mbar.\\
-    PrecipitationProbability & Measure of the probability that precipitation will occur. \\
-    Observation & The number of observations for each day for each house.\\
-    Consumption & CoolingDegree times Volume from House data \\
-    Holiday & A categorical attribute with 6 levels: Working day, \\ & Weekend, Autumn break, Christmas break, \\ & Winter break and Spring break.\\
-    \hline
-    \end{tabular}
-    \caption{Attributes used for modeling}
-    \label{tab: modeldata}
-\end{table}   

@@ -53,7 +53,7 @@ for (i in Long) {
   plot(lmMultipleFull[[i]])
   title(paste("Daily consumption for house ", i, "using multiple lm"), outer=TRUE, adj = 0.5, line = -1.25)
   # Testing for normality
-  s.test[[i]] <- shapiro.test(lm.simple[[i]]$residuals)
+  s.test[[i]] <- shapiro.test(lmMultipleFull[[i]]$residuals)
   print(s.test[[i]]$p.value)
   
   # Saving coefficients
@@ -79,6 +79,9 @@ for (i in Short) {
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
   plot(lmMultipleFull[[i]])
   title(paste("Daily consumption for house ", i, "using multiple lm"), outer=TRUE, adj = 0.5, line = -1.25)
+  # Testing for normality
+  s.test[[i]] <- shapiro.test(lmMultipleFull[[i]]$residuals)
+  print(s.test[[i]]$p.value)
   
   lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4]

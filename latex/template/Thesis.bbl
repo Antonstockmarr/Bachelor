@@ -39,6 +39,26 @@
       \field{labeltitlesource}{title}
       \field{title}{{Statistics: An introduction using R}}
     \endentry
+    \entry{Time_Series_Analysis}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ac5d1263fca18a1f2d85317607e7d734}{%
+           family={Madsen},
+           familyi={M\bibinitperiod},
+           given={Henrik},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac5d1263fca18a1f2d85317607e7d734}
+      \strng{fullhash}{ac5d1263fca18a1f2d85317607e7d734}
+      \strng{bibnamehash}{ac5d1263fca18a1f2d85317607e7d734}
+      \strng{authorbibnamehash}{ac5d1263fca18a1f2d85317607e7d734}
+      \strng{authornamehash}{ac5d1263fca18a1f2d85317607e7d734}
+      \strng{authorfullhash}{ac5d1263fca18a1f2d85317607e7d734}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Time Series Analysis}}
+    \endentry
     \entry{Stat_bog2}{book}{}
       \name{author}{1}{}{%
         {{hash=9e29c0a02eac4082be47381460e79132}{%

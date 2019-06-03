@@ -41,30 +41,21 @@ day.tmp <- day.weather[(day.weather$Date <= as.Date(day.avg$Date[1],tz="GMT")),]
 day.tmp <- day.tmp[day.tmp$Date >= as.Date(tail(day.avg$Date,1),tz="GMT"),]
 
 # House pairs
-{	
-  pdf(file = "../figures/house_attri.pdf",width = 4.5,height = 2.8,pointsize = 9)
-  par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
-  pairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
-  dev.off()
-}
+par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
+pairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
+GGally::ggpairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
 
 # Weather pairs
-{
-  pdf(file = "../figures/weather_cons_focus.pdf",width = 4.5,height = 2.8,pointsize = 9)
-  par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
-  pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
-  dev.off()
-}
+par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
+pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
+GGally::ggpairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
+
 
 # Sun pairs
 GGally::ggpairs(day.weather[c('SunHour','Condition','Radiation')])
 
-{	
-  pdf(file = "../figures/sun_attri.pdf",width = 4.5,height = 2.8,pointsize = 9)
-  par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
-  pairs(day.weather[c('SunHour','Condition','Radiation')])
-  dev.off()
-}
+par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
+pairs(day.weather[c('SunHour','Condition','Radiation')])
 
 
 # Possible multicolinarity between Temperature and DewPoint
