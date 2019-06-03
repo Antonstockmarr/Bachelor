@@ -1,5 +1,3 @@
-%!TEX TS-program = xelatex
-
 \input{preamble/static}
 \input{preamble/general}
 \input{preamble/fonts}
@@ -30,8 +28,7 @@
 \include{chapters/Exploratory}
 \include{chapters/Statistical}
 \include{chapters/HourModels}
-%\include{chapters/LongTitle}
-%\blinddocument
+%\include{chapters/Discussion}
 %\include{chapters/Conclusion}
 %\include{Andet/Vejledningsmøder}
 %\include{Andet/Noter}
@@ -40,11 +37,8 @@
 \include{appendices/AnAppendix}
 
 \backmatter
-%\printbibliography
-%\begin{thebibliography}{9}
-%\addcontentsline{toc}{chapters}{References}
-%\bibitem{linearregression}
-%Wikipedia english (2018): Linear regression [online]
-%\end{thebibliography}
+%\nocite{*}
+\printbibliography
+
 
 \end{document}

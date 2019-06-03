@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  30 MAY 2019 19:33
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -875,7 +875,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \Hy@SectionHShift=\skip192
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
-) (./preamble/dtucolors.sty) (/usr/local/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/preamble/dtucolors.sty) (/usr/local/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
 Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
@@ -1099,6 +1099,14 @@ Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
@@ -1168,7 +1176,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'alphabetic.dbx' not found.
+Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count432
@@ -1208,4 +1216,707 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@shorteditor=\count466
 \c@savedshorteditor=\count467
 \c@labelname=\count468
-\c@savedlabelname=
+\c@savedlabelname=\count469
+\c@institution=\count470
+\c@savedinstitution=\count471
+\c@lista=\count472
+\c@savedlista=\count473
+\c@listb=\count474
+\c@savedlistb=\count475
+\c@listc=\count476
+\c@savedlistc=\count477
+\c@listd=\count478
+\c@savedlistd=\count479
+\c@liste=\count480
+\c@savedliste=\count481
+\c@listf=\count482
+\c@savedlistf=\count483
+\c@location=\count484
+\c@savedlocation=\count485
+\c@organization=\count486
+\c@savedorganization=\count487
+\c@origlocation=\count488
+\c@savedoriglocation=\count489
+\c@origpublisher=\count490
+\c@savedorigpublisher=\count491
+\c@publisher=\count492
+\c@savedpublisher=\count493
+\c@language=\count494
+\c@savedlanguage=\count495
+\c@origlanguage=\count496
+\c@savedoriglanguage=\count497
+\c@pageref=\count498
+\c@savedpageref=\count499
+\shorthandwidth=\skip267
+\shortjournalwidth=\skip268
+\shortserieswidth=\skip269
+\shorttitlewidth=\skip270
+\shortauthorwidth=\skip271
+\shorteditorwidth=\skip272
+\locallabelnumberwidth=\skip273
+\locallabelalphawidth=\skip274
+\localshorthandwidth=\skip275
+\localshortjournalwidth=\skip276
+\localshortserieswidth=\skip277
+\localshorttitlewidth=\skip278
+\localshortauthorwidth=\skip279
+\localshorteditorwidth=\skip280
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+\c@textcitecount=\count500
+\c@textcitetotal=\count501
+\c@textcitemaxnames=\count502
+\c@biburlnumpenalty=\count503
+\c@biburlucpenalty=\count504
+\c@biburllcpenalty=\count505
+\c@smartand=\count506
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count507
+\c@bbx:relatedtotal=\count508
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/flafter.sty
+Package: flafter 2018/11/28 v1.4d Standard LaTeX floats after reference (FMi)
+Applying: [2015/01/01] float order in 2-column on input line 49.
+Already applied: [0000/00/00] float order in 2-column on input line 151.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+LaTeX Info: Redefining \Cref on input line 925.
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `listings' support loaded on input line 3131.
+Package cleveref Info: always capitalise cross-reference names on input line 7825.
+Package cleveref Info: include cross-reference names in hyperlinks on input line 7836.
+Package cleveref Info: no abbreviation of names on input line 7852.
+Package cleveref Info: include cross-reference names in hyperlinks on input line 7852.
+Package cleveref Info: always capitalise cross-reference names on input line 7852.
+)
+\c@subfigure=\count509
+\cftbeforesubfigureskip=\skip281
+\cftsubfigureindent=\skip282
+\cftsubfigurenumwidth=\skip283
+\c@subtable=\count510
+\cftbeforesubtableskip=\skip284
+\cftsubtableindent=\skip285
+\cftsubtablenumwidth=\skip286
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/totcount/totcount.sty
+Package: totcount 2011/01/25 v1.2 package for gettingthe total value of LaTeX counters
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2019/01/24 v1.1.2 Todonotes source and documentation.
+Package: todonotes 2018/11/22
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2019/02/02 v3.1.1 (3.1.1)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2019/02/02 v3.1.1 (3.1.1)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+\c@@todonotes@numberoftodonotes=\count511
+)
+\c@todocounter=\count512
+\c@todocounter@totc=\count513
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 247.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 247.
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+)
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 247.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 247.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 247.
+Package hyperref Info: Option `breaklinks' set `true' on input line 247.
+Package hyperref Info: Option `plainpages' set `false' on input line 247.
+Package hyperref Info: Option `unicode' set `true' on input line 247.
+Package hyperref Info: Option `colorlinks' set `false' on input line 247.
+) (./preamble/fonts.tex
+
+Package fontspec Info: Font family 'texgyreadventor(0)' created for font
+(fontspec)             'texgyreadventor' with options
+(fontspec)             [Ligatures=TeX,Ligatures=TeX,Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Scale=0.8].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-regular.otf]/OT:script=latn;language=DFLT;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-regular.otf]/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-bold.otf]/OT:script=latn;language=DFLT;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-bold.otf]/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-italic.otf]/OT:script=latn;language=DFLT;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-italic.otf]/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-bolditalic.otf]/OT:script=latn;language=DFLT;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+(fontspec)             <->s*[0.8]"[texgyreadventor-bolditalic.otf]/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+
+LaTeX Info: Redefining \sffamily on input line 27.
+) (./preamble/etc.tex (/usr/local/texlive/2018/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count514
+\c@Blindtext=\count515
+\c@blind@countparstart=\count516
+\blind@countxx=\count517
+\blindtext@numBlindtext=\count518
+\blind@countyy=\count519
+\c@blindlist=\count520
+\c@blindlistlevel=\count521
+\c@blindlist@level=\count522
+\blind@listitem=\count523
+\c@blind@listcount=\count524
+\c@blind@levelcount=\count525
+\blind@mathformula=\count526
+\blind@Mathformula=\count527
+\c@blind@randomcount=\count528
+\c@blind@randommax=\count529
+\c@blind@pangramcount=\count530
+\c@blind@pangrammax=\count531
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count532
+\float@exts=\toks46
+\float@box=\box67
+\@float@everytoks=\toks47
+\@floatcapt=\box68
+)
+\@float@every@algorithm=\toks48
+\c@algorithm=\count533
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count534
+\c@ALG@rem=\count535
+\c@ALG@nested=\count536
+\ALG@tlm=\skip287
+\ALG@thistlm=\skip288
+\c@ALG@Lnr=\count537
+\c@ALG@blocknr=\count538
+\c@ALG@storecount=\count539
+\c@ALG@tmpcounter=\count540
+\ALG@tmplength=\skip289
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/02/04 v3.8 Customized lists
+\labelindent=\skip290
+\enit@outerparindent=\dimen326
+\enit@toks=\toks49
+\enit@inbox=\box69
+\enit@count@id=\count541
+\enitdp@description=\count542
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'polyglossia' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
+\openout1 = `Thesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+Package nag Info: pgf.sty is broken: disabling dollar check on input line 8.
+Package nag Info: Command \RaggedLeft not defined, skipping amendment on input line 8.
+Package nag Info: Command \RaggedRight not defined, skipping amendment on input line 8.
+LaTeX Info: Redefining \microtypecontext on input line 8.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmr' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+\c@lstlisting=\count543
+ ABD: EveryShipout initializing macros
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring OFF on input line 8.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count544
+)
+Redoing nameref's sectioning
+Redoing nameref's label
+LaTeX Info: Redefining \nameref on input line 8.
+LaTeX Info: Redefining \ref on input line 8.
+LaTeX Info: Redefining \pageref on input line 8.
+LaTeX Info: Redefining \nameref on input line 8.
+(/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.out) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.out)
+\@outlinefile=\write6
+\openout6 = `Thesis.out'.
+
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `Thesis.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'Thesis.bbl' found.
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl)
+Package biblatex Info: Reference section=0 on input line 8.
+Package biblatex Info: Reference segment=0 on input line 8.
+
+
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 8.
+
+Package nag Info: Command \caption@xlabel not defined, skipping amendment on input line 8.
+Package nag Info: Command \captionabove not defined, skipping amendment on input line 8.
+Package nag Info: Command \captionbelow not defined, skipping amendment on input line 8.
+Package nag Info: Command \hc@caption not defined, skipping amendment on input line 8.
+Package nag Info: Command \topcaption not defined, skipping amendment on input line 8.
+\openout2 = `prefrontmatter/titlepage.aux'.
+
+(/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.tex
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 8.00003pt on input line 6.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `texgyreadventor' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+File: graphics/DTU-Compute-B-UK.pdf Graphic file (type pdf)
+<use graphics/DTU-Compute-B-UK.pdf>
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 19.90407pt on input line 14.
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 16.59206pt on input line 15.
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 11.52003pt on input line 21.
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 9.60004pt on input line 21.
+File: graphics/DTU-logo-CMYK.pdf Graphic file (type pdf)
+<use graphics/DTU-logo-CMYK.pdf>
+File: graphics/SEAS-logo-square-1.png Graphic file (type bmp)
+<graphics/SEAS-logo-square-1.png>
+
+Overfull \hbox (5.57422pt too wide) in paragraph at lines 12--25
+\TU/texgyreadventor(0)/m/n/24.88 readings of electricity, water and heat con-
+ []
+
+) [1
+
+
+]
+\openout2 = `prefrontmatter/colophon.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.tex
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 7.20003pt on input line 7.
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/bx/n' will be
+(Font)              scaled to size 7.20003pt on input line 8.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 5--13
+
+ []
+
+File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
+<use graphics/DTU-frise-SH-15.pdf>
+[2
+
+
+
+]
+\openout2 = `frontmatter/Summary.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.tex
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 43.20016pt on input line 2.
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 33.60013pt on input line 2.
+) [1
+
+
+
+
+
+]
+\openout2 = `frontmatter/Preface.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.tex [2
+
+
+
+]
+File: graphics/Signature.pdf Graphic file (type pdf)
+<use graphics/Signature.pdf>
+) [3]
+\openout2 = `frontmatter/Acknowledgements.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.tex [4
+
+
+
+]) [5] [6
+
+
+] (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.toc
+Package cleveref Info: loaded `english' language definitions on input line 3.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [7]) [8]
+\openout2 = `chapters/Introduction.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 13.82405pt on input line 4.
+) [1
+
+
+
+
+]
+\openout2 = `chapters/Data.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex [2
+
+
+
+]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (1.69006pt too wide) in paragraph at lines 38--57
+ [][] 
+ []
+
+[3]
+Overfull \hbox (9.66005pt too wide) in paragraph at lines 64--81
+ [][] 
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+[5]) [6]
+\openout2 = `chapters/Exploratory.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+File: graphics/../../../figures/avg_daily.pdf Graphic file (type pdf)
+<use graphics/../../../figures/avg_daily.pdf>
+File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
+<use graphics/../../../figures/housepairs.pdf>
+[7
+
+
+
+]
+File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weatherpairs.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+[8]
+File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
+<graphics/../../../figures/byggeår.eps>
+ [9]
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
+<graphics/../../../figures/gg_cor.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--62
+
+ []
+
+[10]
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 66--83
+ [][] 
+ []
+
+[11] [12]
+File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
+<graphics/../../../figures/Consumption-PW.eps>
+ [13]
+File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Breakpoint.jpeg>
+File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
+<graphics/../../../figures/AlphaHist.jpeg>
+) [14] [15] [16]
+\openout2 = `chapters/Statistical.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [17
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+[18]
+File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
+<use graphics/../../../figures/simple_lm18.pdf>
+File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
+<use graphics/../../../figures/simple_lm55.pdf>
+ [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+[21]
+File: graphics/../../../figures/multiple_lm18L.pdf Graphic file (type pdf)
+<use graphics/../../../figures/multiple_lm18L.pdf>
+File: graphics/../../../figures/multiple_lm55L.pdf Graphic file (type pdf)
+<use graphics/../../../figures/multiple_lm55L.pdf>
+File: graphics/../../../figures/multiple_lm68S.pdf Graphic file (type pdf)
+<use graphics/../../../figures/multiple_lm68S.pdf>
+
+Underfull \vbox (badness 2762) has occurred while \output is active []
+
+ [22]
+Overfull \hbox (11.04pt too wide) in paragraph at lines 158--207
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 42.25996pt on input line 209.
+
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 213--246
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23] [24]
+Overfull \vbox (189.40799pt too high) has occurred while \output is active []
+
+ [25]) [26]
+\openout2 = `chapters/HourModels.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
+File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
+<use graphics/../../../figures/Heatmap_summer.pdf>
+
+
+LaTeX Warning: Float too large for page by 37.5915pt on input line 10.
+
+File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
+<use graphics/../../../figures/Heatmap_winter.pdf>
+
+LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
+
+[27
+
+
+
+] [28] [29]
+File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Season_distribution.jpeg>
+ [30] [31]
+File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
+<graphics/../../../figures/arimax/Arimax1_18.jpeg>
+File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
+<graphics/../../../figures/arimax/Arimax1_55.jpeg>
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 79.
+
+) [32] [33] [34]
+\openout2 = `appendices/AnAppendix.aux'.
+
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex
+Overfull \hbox (30.64294pt too wide) in paragraph at lines 102--151
+ [][] 
+ []
+
+[35
+
+
+
+] [36] [37] [38] [39] [40
+
+]
+File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
+<use graphics/../../../figures/house_attri.pdf>
+File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weather_cons.pdf>
+) [41] [42]
+
+Package biblatex Warning: No driver for entry type 'sne'.
+(biblatex)                Using fallback driver on input line 41.
+
+[43
+
+
+
+]
+No complaints by nag.
+File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
+<use graphics/DTU-frise-SH-15.pdf>
+[44
+
+]
+\tf@toc=\write7
+\openout7 = `Thesis.toc'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux)
+Package cleveref Info: loaded `english' language definitions on input line 25.
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 44.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 8C56DFF92A7180470A6BAC64D3FE20B3.
+Package logreq Info: Writing requests to 'Thesis.run.xml'.
+\openout1 = `Thesis.run.xml'.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
+ ) 
+Here is how much of TeX's memory you used:
+ 49529 strings out of 492933
+ 950618 string characters out of 6133145
+ 1652857 words of memory out of 5000000
+ 52823 multiletter control sequences out of 15000+600000
+ 554124 words of font info for 68 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 62i,13n,81p,1699b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (54 pages).

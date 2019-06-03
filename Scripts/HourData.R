@@ -75,6 +75,8 @@ for (i in 1:n)
   Houravg[,i] <- Houravg[,i]/sum(Houravg[,i])
 }
 Houravg <- Houravg[c(2:24,1),]
+summeravg <- Houravg
+
 
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
@@ -84,6 +86,8 @@ image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE,
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
+
+mcons_summer <-apply(Houravg,1,mean)
 
 # Consumption in the winter period
 for (i in 1:n)
@@ -95,6 +99,7 @@ for (i in 1:n)
   Houravg[,i] <- Houravg[,i]/sum(Houravg[,i])
 }
 Houravg <- Houravg[c(2:24,1),]
+winteravg <- Houravg
 
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
@@ -104,6 +109,32 @@ image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE,
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
+
+library('reshape2')
+tmp <- data.frame("cons"=Houravg)
+tmp$id <- rownames(Houravg)
+newdata <- melt(tmp)
+model <- lm(value ~ id, data=newdata)
+
+Houravg['06',]+Houravg['07',]+Houravg['08',]+Houravg['09',]
+
+mcons_winter <-apply(winteravg,1,mean)
+sum(mcons_winter[c(1:5,24)])
+
+mcons_summer <-apply(summeravg,1,mean)
+sum(mcons_summer[c(1:5,24)])
+
+plot(mcons_winter,ylim=c(0.035,0.055),type='l',col="blue",cex.axis = 1,xaxt="n",ylab = "Fraction of daily consumption per hour",xlab = "Hour")
+axis(side=1,at=c(0,6,12,18,24),labels=c("00","06","12","18","24"))
+lines(mcons_summer,col='red')
+legend(x="topright",legend=c("Winter period","Summer period"),lty=c(1,1),col =c("blue","red"))
+for (i in 1:n)
+{
+plot(summeravg[,i],ylim=c(0,0.1),type='l',col="red")
+lines(winteravg[,i],col='blue')
+}
+
+4/24
 
 # Consumption in winter minus summer
 for (i in 1:n)
@@ -118,10 +149,13 @@ for (i in 1:n)
   Houravg[,i] <- Houravg[,i] - colMeans(HourData[[i]]$Consumption[tmp_index,],na.rm = TRUE)[-1]
   Houravg[,i] <- Houravg[,i]/sum(Houravg[,i])
 }
+Houravg <- Houravg[c(2:24,1),]
+
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
 tt <- Houravg
 image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
-           lab.breaks=NULL,main = 'Average consumption of all houses (winter period)')
+           lab.breaks=NULL,main = 'Average consumption of all houses (winter - summer)')
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
+

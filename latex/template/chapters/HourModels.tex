@@ -1,14 +1,11 @@
 \chapter{Models on the Hourly Consumption}
 In this section, a more detailed look at the hourly consumption will be provided. One of the goals is to get a better understanding of the tap-water consumption during the summer period, such that it can be used when looking at the winter period. This can be done by looking at the distributions of the consumption during the day in the two periods. Another goal of this section is to model the hourly consumption as a time series. An ARIMAX model will be applied to give a better understanding of the data. The ARIMAX model can also be used to give short term predictions of the consumption. These predictions will be compared to the ones provided by the multiple regression model.
 
-\noindent \cref{fig: Hourcons_summer} and \cref{fig: Hourcons_winter} show the average consumption of each house during the day for the summer period and the winter period respectively. The different hours can be seen on the y-axis, and the colour coding show the fraction of that house's consumption in that hour interval. Each vertical strip of colours is a single house. Each strip sum up to $1$. Looking at the summer period in \cref{fig: Hourcons_summer}, a generel trend is apparent: the consumption is usually larger around $7$ in the morning and to some degree around $7$ in the evening. Most houses use about 
-
-
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{../../../figures/Heatmap_summer.pdf}
-    \caption{The normalized average consumption of every house during the day in the summer period. This is characterized by the days where the average temperature is above 15 degrees. The horizontal lines indicate the hours and each vertical strip is a house. The scale indicates the fraction of the total consumption during the day}
+    \caption{The normalized average consumption of every house during the day in the summer period. This is characterized by the days where the average outside temperature is above 15 degrees. The horizontal lines indicate the hours and each vertical strip is a house. The scale indicates the fraction of the total consumption during the day}
     \label{fig: Hourcons_summer}
 \end{figure}
 
@@ -16,8 +13,22 @@ In this section, a more detailed look at the hourly consumption will be provided
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{../../../figures/Heatmap_winter.pdf}
-    \caption{This figure shows the same as \cref{fig: daily_cons}, but only in the winter period, characterized by a temperature below 12 degrees}
+    \caption{This figure shows the same as \cref{fig: daily_cons}, but only in the winter period, characterized by an outside temperature below 12 degrees}
     \label{fig: Hourcons_winter}
+\end{figure}
+
+\section{Description of the Hourly Consumption}
+\noindent \cref{fig: Hourcons_summer} and \cref{fig: Hourcons_winter} show the average consumption of each house during the day for the summer period and the winter period respectively. The different hours can be seen on the y-axis, and the colour coding show the fraction of that house's consumption in that hour interval. Each vertical strip of colours is a single house. Each strip sum up to $1$. Looking at the summer period in \cref{fig: Hourcons_summer}, a generel trend is apparent: the consumption is usually larger around $7$ AM and to some degree around $7$ PM. Almost every house peaks in one of these periods, and some peaks go up to $12\%$ of the daily consumption. On the other hand, there is almost no consumption between $11$ PM and $5$ AM. The same goes for the afternoon between $1$ PM and $4$ PM. These trends make sence. In the summer period, not much energy is used for heating the house. There is usually a significant amount of tap water consumption in the morning, when people take warm baths and make breakfast. Sometimes a dishwasher might be running as well. Then there is not much consumption while people are at work or school. When they get home in the late afternoon the consumption rises again as they prepare for dinner or use hot water in other ways. During the night time the consumption becomes low again.
+
+\noindent The winter period on \cref{fig: Hourcons_winter} is a bit different. There are still significant peaks in the morning, and to some extent in the evening as well, but in general the consumption is more spread out on the entire day. This is mostly because of the heating consumption in the winter period. While people are not at home or while they are sleeping, the heating is still turned on. The highest peaks only go to $8\%$ of the daily consumption here. One house stands out in this plot. A bit to the left of the middle there is a house where the consumption is several times higher between $8$ AM and $12$ noon. This house has almost no consumption during the night. But the house is not a commercial building and its area is only $138 m^2$. So this house appears to have an efficient night time drop for their thermostat. 
+
+\noindent These figures illustrate the general trend of the houses, but it is hard to compare them in a meaningful way. But \cref{fig: Season_dist} shows the average distribution of all houses during the day. Both the winter season and the summer season show the same trends that was discussed above. But this plot also shows how the winter period is more smoothed out than the summer period. Keep in mind that the lines only show the relative distribution, and they do not take into account that the consumption in the winter period is significantly higher. As one can see on the y-axis, the difference between the two curves is very small. A night time period can be defined as the hours $23-05$. This is the period after the consumption drops in the evening, and before it rises in the morning. In this period, the houses on average use $21,9\%$ of their daily consumption in the summer period, and $23,7\%$ in the winter period. A completely uniform consumption would be $25\%$. It is not surpricing that the consumption in the night hours is lower than the average. Neither is it surpricing that the consumption at night in the summer period is relatively smaller than in the winter period. The extra cost of heating the house makes the consumption more spread out on the 24 hours of the day. But it is surpricing that the difference between the summer period and the winter period is only $1.8$ percentage points. With this in mind, the time series modelling will now be introduced.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{../../../figures/Season_distribution.jpeg}
+    \caption{The average distribution of the heat consumption during the day for the winter period and the summer period respectively. The winter period is more smoothed out, but they are very similar}
+    \label{fig: Season_dist}
 \end{figure}
 
 
@@ -25,8 +36,30 @@ In this section, a more detailed look at the hourly consumption will be provided
 
 
 
+\section{The ARMA Models and Their Extensions}
+The consumption of a house during a certain period with hour intervals is a time series. A time series is a realization of a stochastic process. In this section the ARMA model will be introduced, and an extended ARMA model, the ARIMAX model, will be fitted to the consumption. The theory of the ARMA model is based on chapter 5 from the book "Time Series Analysis" by Henrik Madsen \cite{Time_Series_Analysis}. The ARMA model fits the data to a linear stochastic process, with an autoregression part (AR) and a moving average part (MA). A linear process $\{Y_t\}$ is a process that can be written as
+\begin{equation}
+    Y_t - \mu = \sum_{i=0}^{\infty} \psi_i \epsilon_{t-i}, \label{linearProcess}
+\end{equation}
+where $\mu$ is the mean of the process, $\{\epsilon_i\}$ is white noise and $\{\psi_i\}$ is the weights. For now, the mean $\mu$ is assumed to be zero. To define the ARMA model, the backwards shift operator $B$ is first introduced as $B(Y_t) = Y_{t-1}$. An ARMA process has the form
+\begin{equation}
+    \phi (B)Y_t = \theta (B) \epsilon_t,
+\end{equation}
+where $\phi$ and $\theta$ are polynomials on the shift operator B with degree $p$ and $q$ respectively. $\theta(B)$ is the autoregressive part and $\phi(B)$ is the moving average part. The process is denoted as an $ARMA(p,q)$ process. ARMA processes are linear. If one applies $\psi(B)$ to $Y_t$ and substitutes $Y_{t-1}$, then $Y_{t-2}$ and so forth, the form in \cref{linearProcess} is obtained.
 
-\section{ARIMAX}
+\noindent An ARMA process is stationary if all the roots of $\phi(z^{-1})$ are within the unit circle. Stationarity is a very desirable property. In a stationary process, the mean and variance does not change over time. But often, processes will not be stationary due to long term trends. For example the mean consumption of a house has a periodic trend during the year. This was clearly illustrated on \cref{fig: daily_cons}. But long term trends can be eliminated by introducing differencing. Instead of modelling the process $\{Y_t\}$, one can model the process $\{Y_t - Y_{t-1}\}$, i.e. the difference between observations. This is formalized with the difference operator $\Delta = (1-B)$. The differenced ARMA model is called the $ARIMA(p,d,q)$ model, or the autoregressive \texttt{integrated} moving average model. It has the form
+\begin{equation}
+    \phi (B) \Delta^d Y_t = \theta (B) \epsilon_t,
+    \label{ARIMA}
+\end{equation}
+where $d\in \mathbb{N}$ is the differencing factor. Apart from the long term trends, the model might also have short term periodic trends. In this case a 24 hour periodic trend would be expected. The ARIMA model can be expanded to a seasonal ARIMA with season $s$, such that
+\begin{equation}
+    \phi (B) \Phi (B^s) \Delta^d \Delta_s^D Y_t = \theta (B) \Theta (B^s) \epsilon_t.
+\end{equation}
+This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\theta$ are defined as in \cref{ARIMA}. But here $\Phi$ and $\Theta$ are also included. They are polynomials in $B^s$ of degree $P$ and $Q$ respectively. $D$ is the differencing of the seasonal component of the model.
+
+
+
 An ARIMAX model is constructed for the hourly data of every house. The outside temperature is used as the exogenous variates. The exploratory analysis has shown that there is a high covariance between the temperature and the consumption, making this the obvious choice. The model is expected to have a seasonal component with season 24, because the consumption in certain time periods are likely to be close to each other from day to day.
 
 \noindent In the following a general modelling approach will be used where a large model is applied at first. It is then reduced by looking at the standard deviation of the estimates on all houses. The initial model is an ARIMAX(2,2,2) model with a seasonal (0,1,1) component. This is a very extensive model, and differencing is used to make it stationary. \cref{arimax1_55} shows an example of how the model performs on house $55$, while \cref{arimax1_18} shows the same model for house $18$. For house $18$ both the ACF and the PACF ressemble white noise fairly well, with a few exceptions. The same goes for house $55$. Both have a few significant lags, and they both have a significant lag around lag $61$, even though it is barely so. It is supricing that neither house have lags in the seasons that are even close to being significant. This indicates that the dependencies from day to day might not be as important as it was initially assumed. But as mentioned, this model has some parameters that might not be necessary to include.
@@ -58,11 +91,3 @@ An ARIMAX model is constructed for the hourly data of every house. The outside t
     \caption{For each parameter in the first ARIMAX model, this table shows how many of the houses have an estimate that is less than two standard deviations. The average Log Likelihood of the model is $-77$}
     \label{First arimax}
     \end{table}
-
-Der er ikke noget i lag 24. Seasonal er ret ligegyldigt.
-ARIMAX er en del bedre end ARIMA med temperatur som covariate.
-Vi kører en (1,0,1) model. De fleste ser fine ud. Men nogen har ret signifikante lags, specielt in pacf.
-Derfor tilføjes ar(2) og ma(2). Der er mange forskellige modeller og i nogen er bestemte parametrer meget insignifikante.
-Der kommer også warnings for nogen af dem.
-qq-lines er fine for mange af modellerne, dårlige for nogen af dem.
-Nogen huse er helt hen i vejret (Øv, hus 28). De har meget oscillering.
