@@ -143,10 +143,8 @@ for(i in 1:n){
 tmp.df<-data.frame(Key=data.key)
 BBR.tmp <- read.table('../BBRdata.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 BBR <- merge(tmp.df,BBR.tmp)
-names(BBR)[5] <-  "Kaelder"
-names(BBR)[7] <-  "Byggeaar"
-names(BBR)[9] <-  "Ombygningsaar"
-
+# HouseType into continous variable
+BBR$HouseType <- as.factor(BBR$HouseType)
 
 
 # Reading weather data  

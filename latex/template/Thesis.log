@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 16:23
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 19:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1742,10 +1742,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
+File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
+<use graphics/../../../figures/bbr_hist.pdf>
 File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
 <graphics/../../../figures/byggeår.eps>
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
@@ -1753,12 +1755,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
 <graphics/../../../figures/gg_cor.eps>
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--61
+Underfull \hbox (badness 10000) in paragraph at lines 60--68
 
  []
 
 
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 65--82
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 72--89
  [][] 
  []
 
@@ -1766,11 +1768,11 @@ Overfull \hbox (8.14005pt too wide) in paragraph at lines 65--82
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11] [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
 File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption-PW.eps>
- [13]
-Underfull \vbox (badness 2205) has occurred while \output is active []
-
  [14]
 File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Breakpoint.jpeg>
@@ -1917,10 +1919,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 49531 strings out of 492933
- 950637 string characters out of 6133145
- 1653003 words of memory out of 5000000
- 52825 multiletter control sequences out of 15000+600000
+ 49537 strings out of 492933
+ 950827 string characters out of 6133145
+ 1653068 words of memory out of 5000000
+ 52830 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,81p,1636b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s

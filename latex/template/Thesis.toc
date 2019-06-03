@@ -38,9 +38,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Data segmentation}{13}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{13}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{14}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{13}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{14}{subsection.3.3.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Statistical models}{19}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
