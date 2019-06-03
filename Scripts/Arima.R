@@ -1,5 +1,17 @@
 library("forecast")
 
+for(i in 1:n){
+  nas<-which(!is.na(data[[i]]$Flow))
+  tmp.dat<-data[[i]][nas[1]:tail(nas,1),]
+  nas<-which(is.na(tmp.dat$Flow))
+  print(nas)
+  m<-dim(tmp.dat)[2]
+  for(j in nas){
+    tmp.dat[j,2:m]<-(data[[i]][j-1,2:m]+data[[i]][j+1,2:m])/2
+  }
+  data[[i]]<-tmp.dat
+}
+
 ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
 {
   logavg <- 0
