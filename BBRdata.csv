@@ -1,4 +1,4 @@
-Key;Hustype;Samlet areal;Etager;Kælder;Tagetage;Byggeår;Overflader;Ombygningsår;Supplerende opvarmning
+Key;HouseType;TotalArea;Floors;Basement;Attic;ConstructionYear;Surfaces;ReconstructionYear;AdditionalHeating
 94f7ce39-01a8-4340-ac65-2b329bc52c94;Parcel;153;1;0;0;1978;Mursten;;Brændeovn
 1e85c999-6b0e-42d6-8aac-403c10438d85;Parcel;135;1;0;0;1981;Mursten;;Brændeovn
 b3328986-321f-4e79-b7b6-1cd4173f0e1e;Parcel;249;1;83;0;1937;Mursten;;
