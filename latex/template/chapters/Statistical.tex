@@ -33,7 +33,7 @@ A simple linear regression model is fitted to each house with \texttt{Consumptio
 
 \noindent Hence, the simple linear regression model applied to each house is
 \begin{equation}
-    Y_s = \mu + \beta_{\text{HC}}\cdot x_{\text{T}} + \varepsilon
+    Y_{\text{Q}} = \mu + \beta_{\text{T}} \cdot x_{\text{T}} + \varepsilon
     \label{eq: simple}
 \end{equation}
 
@@ -66,8 +66,8 @@ To validate the model, different methods are used. The abovementioned model assu
 \section{Multiple linear regression model}
 The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. This lead to the following two multiple linear regression models: 
 \begin{align}
-    Y_{m,L} & = \mu + \beta_{\text{HC}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon \label{eq: multi_L}\\
-    Y_{m,S} & = \mu + \beta_{\text{HC}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon
+    Y_{m,L} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon \label{eq: multi_L}\\
+    Y_{m,S} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon
     \label{eq: multi_S}
 \end{align}
 
