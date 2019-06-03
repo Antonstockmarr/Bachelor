@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 15:22
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 15:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1737,15 +1737,14 @@ File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
 ]
 File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weatherpairs.pdf>
-
+ [8]
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-[8]
 File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
 <graphics/../../../figures/byggeår.eps>
- [9]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
@@ -1768,16 +1767,20 @@ File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
  [13]
 File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Breakpoint.jpeg>
+
+Underfull \vbox (badness 5217) has occurred while \output is active []
+
+ [14]
 File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
 <graphics/../../../figures/AlphaHist.jpeg>
-) [14] [15] [16]
+) [15] [16] [17]
 \openout2 = `chapters/Statistical.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [17
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [18
 
 
 
-]
+] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
@@ -1787,17 +1790,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-[18]
+[20]
 File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
 File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm55.pdf>
- [19] [20]
+ [21] [22]
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-[21]
+[23]
 File: graphics/../../../figures/multiple_lm18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/multiple_lm18L.pdf>
 File: graphics/../../../figures/multiple_lm55L.pdf Graphic file (type pdf)
@@ -1807,7 +1810,7 @@ File: graphics/../../../figures/multiple_lm68S.pdf Graphic file (type pdf)
 
 Underfull \vbox (badness 2762) has occurred while \output is active []
 
- [22]
+ [24]
 Overfull \hbox (11.04pt too wide) in paragraph at lines 158--207
  [][] 
  []
@@ -1823,10 +1826,10 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 213--246
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23] [24]
+ [25] [26]
 Overfull \vbox (189.40799pt too high) has occurred while \output is active []
 
- [25]) [26]
+ [27]) [28]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
@@ -1841,14 +1844,14 @@ File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 
 LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
 
-[27
+[29
 
 
 
-] [28] [29]
+] [30] [31]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
- [30] [31]
+ [32] [33]
 File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/arimax/Arimax1_18.jpeg>
 File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
@@ -1856,9 +1859,9 @@ File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 79.
+               Default added (so using `tbp') on input line 85.
 
-) [32] [33] [34]
+) [34] [35] [36]
 \openout2 = `appendices/AnAppendix.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex
@@ -1866,23 +1869,23 @@ Overfull \hbox (30.64294pt too wide) in paragraph at lines 102--151
  [][] 
  []
 
-[35
+[37
 
 
 
-] [36] [37] [38] [39] [40
+] [38] [39] [40] [41] [42
 
 ]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
-) [41] [42]
+) [43] [44]
 
 Package biblatex Warning: No driver for entry type 'sne'.
 (biblatex)                Using fallback driver on input line 41.
 
-[43
+[45
 
 
 
@@ -1890,7 +1893,7 @@ Package biblatex Warning: No driver for entry type 'sne'.
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[44
+[46
 
 ]
 \tf@toc=\write7
@@ -1911,12 +1914,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 49529 strings out of 492933
- 950618 string characters out of 6133145
- 1652857 words of memory out of 5000000
- 52823 multiletter control sequences out of 15000+600000
+ 49531 strings out of 492933
+ 950637 string characters out of 6133145
+ 1653001 words of memory out of 5000000
+ 52825 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1699b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,1636b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (54 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (56 pages).
