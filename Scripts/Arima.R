@@ -3,10 +3,10 @@ library("forecast")
 ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
 {
   logavg <- 0
-  for(i in 1:n){
+  for(i in 1:1){
     a <- 12
-    tmp.dat <- weather[(weather$ObsTime < EndDays[i]+1),]
-    tmp.dat <- tmp[tmp$ObsTime >= StartDays[i],]
+    tmp.dat <- weather[(weather$ObsTime <= head(data[[i]]$ObsTime,1)),]
+    tmp.dat <- tmp.dat[tmp.dat$ObsTime >= tail(data[[i]]$ObsTime,1),]
     tmp <- tmp.dat$Temperature
     Temperature <- (tmp<a)*(a-tmp)
     arima.dat <- data.frame(Temperature = Temperature, Consumption = data[[i]]$CoolingDegree*data[[i]]$Volume)
