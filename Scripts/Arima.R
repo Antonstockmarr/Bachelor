@@ -1,10 +1,10 @@
+source("data.R")
 library("forecast")
 
 for(i in 1:n){
   nas<-which(!is.na(data[[i]]$Flow))
   tmp.dat<-data[[i]][nas[1]:tail(nas,1),]
   nas<-which(is.na(tmp.dat$Flow))
-  print(nas)
   m<-dim(tmp.dat)[2]
   for(j in nas){
     tmp.dat[j,2:m]<-(data[[i]][j-1,2:m]+data[[i]][j+1,2:m])/2
@@ -14,8 +14,9 @@ for(i in 1:n){
 
 ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
 {
+  models <- vector(mode = 'list',length = n)
   logavg <- 0
-  for(i in 1:1){
+  for(i in 1:n){
     a <- 12
     tmp.dat <- weather[(weather$ObsTime <= head(data[[i]]$ObsTime,1)),]
     tmp.dat <- tmp.dat[tmp.dat$ObsTime >= tail(data[[i]]$ObsTime,1),]
@@ -32,7 +33,7 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
     logavg = logavg + A$loglik/n
     
     plot(A)
-    
+    models[[i]]=A
     names(two_sd)[length(two_sd)] <- names(A$coef)[length(names(A$coef))]
     names(three_sd)[length(three_sd)] <- names(A$coef)[length(names(A$coef))]
     for (j in names(A$coef))
@@ -49,44 +50,37 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
     }
     
   }
-  result <- vector(mode='list',length=3)
+  result <- vector(mode='list',length=4)
   result[[1]] <- two_sd
   result[[2]] <- three_sd
   result[[3]] <- logavg
+  result[[4]] <- models
   result
 }
 
 
 # The first model
-two_sd <- data.frame("ar1"=0,"ma1"=0,'ar2'=0,'ma2'=0,'sma1'=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0,'ar2'=0,'ma2'=0,'sma1'=0,"Temperature"=0)
+two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'sma2'=0,"Temperature"=0)
 
-model1 <- ARIMAX_model(two_sd,three_sd,c(2,1,2),c(0,0,1))
-
-
-# The next model
-two_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0,'sma1'=0,"Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0,'sma1'=0,"Temperature"=0)
-
-model2 <- ARIMAX_model(two_sd,three_sd,c(2,1,1),c(0,0,1))
+model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,2))
 
 
+# The second model
+two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-# The next model
-two_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0, "Temperature"=0)
+model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1))
 
-model3 <- ARIMAX_model(two_sd,three_sd,c(2,1,1),c(0,0,0))
+# The third model
+two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-
-# The next model
-two_sd <- data.frame("ar1"=0,"ma1"=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0, "Temperature"=0)
-
-model4 <- ARIMAX_model(two_sd,three_sd,c(1,1,1),c(0,0,0))
+model3 <- ARIMAX_model(two_sd,three_sd,c(1,0,2),c(1,1,1))
 
 
-two_sd <- data.frame("ar1"=0,"ma1"=0,'sar1'=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0,'sar1'=0,"Temperature"=0)
+# The third model
+two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
 
-model5 <- ARIMAX_model(two_sd,three_sd,c(1,1,1),c(1,0,0))
+model4 <- ARIMAX_model(two_sd,three_sd,c(1,0,2),c(1,1,2))
