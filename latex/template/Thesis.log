@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 14:59
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  3 JUN 2019 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1483,8 +1483,7 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-)
-No file Thesis.aux.
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1514,7 +1513,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1538,11 +1537,9 @@ LaTeX Info: Redefining \nameref on input line 8.
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
+(/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.out) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
@@ -1551,10 +1548,11 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `Thesis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Thesis.bbl' not found.
-No file Thesis.bbl.
+Package biblatex Info: ... file 'Thesis.bbl' found.
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
+
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 8.
 
@@ -1647,15 +1645,49 @@ File: graphics/Signature.pdf Graphic file (type pdf)
 ]) [5] [6
 
 
-] [7] [8
-
-]
+] (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.toc
+Package cleveref Info: loaded `english' language definitions on input line 3.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [7]) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 13.82405pt on input line 4.
 ) [1
+
 
 
 
@@ -1672,509 +1704,219 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-
-LaTeX Warning: Reference `tab: housedata' on page 3 undefined on input line 8.
-
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 11.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 11.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 11.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 11.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 11.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 11.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 11.
-LaTeX Font Info:    Try loading font information for U+msa on input line 11.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 11.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-
-LaTeX Warning: Reference `tab: weatherdata' on page 3 undefined on input line 35.
-
-
 Overfull \hbox (1.69006pt too wide) in paragraph at lines 38--57
  [][] 
  []
 
 [3]
-
-LaTeX Warning: Reference `tab: BBR' on page 4 undefined on input line 61.
-
-
 Overfull \hbox (9.66005pt too wide) in paragraph at lines 64--81
  [][] 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
-) [5]
+[5]) [6]
 \openout2 = `chapters/Exploratory.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex [6
-
-
-
-]
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-
-LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 5.
-
-
-LaTeX Warning: Citation 'vejr2018' on page 7 undefined on input line 5.
-
 File: graphics/../../../figures/avg_daily.pdf Graphic file (type pdf)
 <use graphics/../../../figures/avg_daily.pdf>
-
-LaTeX Warning: Reference `fig: housepairs' on page 1 undefined on input line 13.
-
-
-LaTeX Warning: Reference `fig: house_attri' on page 1 undefined on input line 13.
-
-
-LaTeX Warning: Reference `eq: Q_heat' on page 1 undefined on input line 13.
-
-
-LaTeX Warning: Reference `tab: housedata' on page 1 undefined on input line 13.
-
 File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
 <use graphics/../../../figures/housepairs.pdf>
-)
-Runaway argument?
-{Scatterplots of the daily values of relevant house attributes. There\ETC.
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:28: File ended while scanning use of \@xdblarg.
-<inserted text> 
-                \par 
-l.28 \include{chapters/Exploratory}
-                                   
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+[7
 
+
+
+]
+File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weatherpairs.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--40
+
+ []
+
+[8]
+File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
+<graphics/../../../figures/byggeår.eps>
+ [9]
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
+<graphics/../../../figures/gg_cor.eps>
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--62
+
+ []
+
+[10]
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 66--83
+ [][] 
+ []
+
+[11] [12]
+File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
+<graphics/../../../figures/Consumption-PW.eps>
+ [13]
+File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Breakpoint.jpeg>
+File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
+<graphics/../../../figures/AlphaHist.jpeg>
+) [14] [15] [16]
 \openout2 = `chapters/Statistical.aux'.
 
-(/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex
-
-LaTeX Warning: Reference `lm' on page 7 undefined on input line 9.
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [17
 
 
-LaTeX Warning: Reference `tab: modeldata' on page 7 undefined on input line 9.
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
 
 
-LaTeX Warning: Citation 'Stat_bog' on page 7 undefined on input line 25.
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
+ []
 
-LaTeX Warning: Citation 'Stat_bog2' on page 7 undefined on input line 27.
-
-
-LaTeX Warning: Reference `fig: simple_lm_18' on page 1 undefined on input line 43.
-
-
-LaTeX Warning: Reference `fig: simple_lm_55' on page 1 undefined on input line 43.
-
-
-LaTeX Warning: Reference `fig: simple_lm_18' on page 1 undefined on input line 43.
-
+[18]
 File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
-
-LaTeX Warning: Reference `eq: simple' on page 1 undefined on input line 47.
-
-
-LaTeX Warning: Reference `eq: simple' on page 1 undefined on input line 47.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex:52: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.52     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm55.pdf>
+ [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
-LaTeX Warning: Reference `eq: simple' on page 1 undefined on input line 54.
+ []
 
-
-LaTeX Warning: Reference `eq: simple' on page 1 undefined on input line 54.
-
-
-LaTeX Warning: Reference `tab: shapiro_simple_lm' on page 1 undefined on input line 58.
-
-
-LaTeX Warning: Reference `tab: est_simple_lm' on page 1 undefined on input line 62.
-
-
-LaTeX Warning: Reference `tab: modeldata' on page 7 undefined on input line 67.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex:94: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.94     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+[21]
 File: graphics/../../../figures/multiple_lm18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/multiple_lm18L.pdf>
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex:100: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.100     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 File: graphics/../../../figures/multiple_lm55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/multiple_lm55L.pdf>
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex:108: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.108     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 File: graphics/../../../figures/multiple_lm68S.pdf Graphic file (type pdf)
 <use graphics/../../../figures/multiple_lm68S.pdf>
 
-LaTeX Warning: Reference `eq: multi_L' on page 1 undefined on input line 116.
+Underfull \vbox (badness 2762) has occurred while \output is active []
 
-
-LaTeX Warning: Reference `eq: multi_S' on page 1 undefined on input line 116.
-
-
-LaTeX Warning: Reference `tab: lmMult_full_L' on page 1 undefined on input line 116.
-
-
-LaTeX Warning: Reference `tab: lmMult_full_S' on page 7 undefined on input line 116.
-
-
-LaTeX Warning: Reference `tab: lmMult_full_L_sum' on page 1 undefined on input line 116.
-
-
-LaTeX Warning: Reference `tab: lmMult_full_S_sum' on page 1 undefined on input line 116.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex:121: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.121     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex:137: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.137     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex:157: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.157     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
+ [22]
 Overfull \hbox (11.04pt too wide) in paragraph at lines 158--207
  [][] 
  []
+
+
+LaTeX Warning: Float too large for page by 42.25996pt on input line 209.
 
 
 Overfull \hbox (1.34999pt too wide) in paragraph at lines 213--246
  [][] 
  []
 
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23] [24]
+Overfull \vbox (189.40799pt too high) has occurred while \output is active []
+
+ [25]) [26]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex:6: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6     \centering
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_summer.pdf>
 
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex:14: LaTeX Error: Not in outer par mode.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: Float too large for page by 37.5915pt on input line 10.
 
 File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_winter.pdf>
 
-LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 16.
+LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
+
+[27
 
 
-LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 16.
 
-
-LaTeX Warning: Reference `fig: Hourcons_summer' on page 1 undefined on input line 21.
-
-
-LaTeX Warning: Reference `fig: Hourcons_winter' on page 1 undefined on input line 21.
-
-
-LaTeX Warning: Reference `fig: Hourcons_summer' on page 1 undefined on input line 21.
-
-
-LaTeX Warning: Reference `fig: Hourcons_winter' on page 1 undefined on input line 23.
-
-
-LaTeX Warning: Reference `fig: Season_dist' on page 1 undefined on input line 25.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex:28: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+] [28] [29]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
-
-LaTeX Warning: Citation 'Time_Series_Analysis' on page 7 undefined on input line 40.
-
-
-LaTeX Warning: Reference `linearProcess' on page 1 undefined on input line 48.
-
-
-LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 50.
-
-
-LaTeX Warning: Reference `arimax1_55' on page 1 undefined on input line 59.
-
-
-LaTeX Warning: Reference `arimax1_18' on page 1 undefined on input line 59.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex:65: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.65     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ [30] [31]
 File: graphics/../../../figures/arimax/Arimax1_18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/arimax/Arimax1_18.jpeg>
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex:73: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.73     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/arimax/Arimax1_55.jpeg>
+
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 79.
 
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex:79: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.79 \begin{table}[]
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
+) [32] [33] [34]
 \openout2 = `appendices/AnAppendix.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex:6: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6     \centering
-                  
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex:53: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.53     \centering
-                   
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex:101: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
 Overfull \hbox (30.64294pt too wide) in paragraph at lines 102--151
  [][] 
  []
 
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex:156: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.156     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+[35
 
 
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex:198: LaTeX Error: Not in outer par mode.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.198     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+] [36] [37] [38] [39] [40
 
+]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
-
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex:205: LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.205     \centering
-                    
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
-)
+) [41] [42]
 
-LaTeX Warning: Empty bibliography on input line 41.
+Package biblatex Warning: No driver for entry type 'sne'.
+(biblatex)                Using fallback driver on input line 41.
 
-/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:44: TeX capacity exceeded, sorry [main memory size=5000000].
-\mbox #1->\leavevmode \hbox {#1}
-                                
-l.44 \end{document}
-                   
-If you really absolutely need more capacity,
-you can ask a wizard to enlarge me.
+[43
 
- 
+
+
+]
+No complaints by nag.
+File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
+<use graphics/DTU-frise-SH-15.pdf>
+[44
+
+]
+\tf@toc=\write7
+\openout7 = `Thesis.toc'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux)
+Package cleveref Info: loaded `english' language definitions on input line 25.
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Acknowledgements.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 44.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
+Package rerunfilecheck Info: File `Thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 8C56DFF92A7180470A6BAC64D3FE20B3.
+Package logreq Info: Writing requests to 'Thesis.run.xml'.
+\openout1 = `Thesis.run.xml'.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
+ ) 
 Here is how much of TeX's memory you used:
- 49333 strings out of 492933
- 941499 string characters out of 6133145
- 5000000 words of memory out of 5000000
- 52694 multiletter control sequences out of 15000+600000
- 554116 words of font info for 67 fonts, out of 8000000 for 9000
+ 49529 strings out of 492933
+ 950618 string characters out of 6133145
+ 1652857 words of memory out of 5000000
+ 52823 multiletter control sequences out of 15000+600000
+ 554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,15n,81p,1699b,2963s stack positions out of 5000i,500n,10000p,200000b,80000s
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (16 pages).
+ 62i,13n,81p,1699b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (54 pages).
