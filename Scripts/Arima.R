@@ -5,9 +5,12 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
   logavg <- 0
   for(i in 1:n){
     a <- 12
-    tmp <- weatherCons[[i]]$Temperature
+    tmp.dat <- weather[(weather$ObsTime < EndDays[i]+1),]
+    tmp.dat <- tmp[tmp$ObsTime >= StartDays[i],]
+    tmp <- tmp.dat$Temperature
     Temperature <- (tmp<a)*(a-tmp)
-    A <- arima(weatherCons[[i]]$Consumption, order =nonseas, seasonal = list(order = seas, period = 24),xreg=Temperature)
+    arima.dat <- data.frame(Temperature = Temperature, Consumption = data[[i]]$CoolingDegree*data[[i]]$Volume)
+    A <- arima(arima.dat$Consumption, order =nonseas, seasonal = list(order = seas, period = 24),xreg=arima.dat$Temperature)
     lagmax = 4*24
     print(i)
     par(mfrow=c(2,1))
