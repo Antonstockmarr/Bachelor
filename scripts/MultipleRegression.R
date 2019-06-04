@@ -48,14 +48,6 @@ for (i in Long) {
   model.tmp$West <- tmp.wind[,2]
   lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+WinterBreak+SpringBreak+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
   
-  # Checking model assumptions 
-  par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
-  plot(lmMultipleFull[[i]])
-  title(paste("Daily consumption for house ", i, "using multiple lm"), outer=TRUE, adj = 0.5, line = -1.25)
-  # Testing for normality
-  s.test[[i]] <- shapiro.test(lmMultipleFull[[i]]$residuals)
-  print(s.test[[i]]$p.value)
-  
   # Saving coefficients
   lmFull_est_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_L[match(i,Long),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
@@ -74,14 +66,6 @@ for (i in Short) {
   model.tmp$South <- tmp.wind[,1]
   model.tmp$West <- tmp.wind[,2]
   lmMultipleFull[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+MeanSeaLevelPressure+Radiation+AutumnBreak+ChristmasBreak+Weekend, data = model.tmp)
-
-  # Checking model assumptions 
-  par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
-  plot(lmMultipleFull[[i]])
-  title(paste("Daily consumption for house ", i, "using multiple lm"), outer=TRUE, adj = 0.5, line = -1.25)
-  # Testing for normality
-  s.test[[i]] <- shapiro.test(lmMultipleFull[[i]]$residuals)
-  print(s.test[[i]]$p.value)
   
   lmFull_est_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,1]
   lmFull_p_S[match(i,Short),] <- summary(lmMultipleFull[[i]])$coefficients[,4]
@@ -164,7 +148,7 @@ colnames(lmSummary_p) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:
 sMultiple.test <- vector(mode = "list", length = n)
 
 par(mfrow = c(1,1))
-for (i in 1:18) {
+for (i in 1:n) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -182,7 +166,7 @@ for (i in 1:18) {
                                                         Radiation, data = model.tmp)
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
-  (plot(lmMultipleNoP[[i]]$object))
+  plot(lmMultipleNoP[[i]])
   title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
   # Testing for normality
   sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
