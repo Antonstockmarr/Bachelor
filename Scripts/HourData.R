@@ -3,7 +3,7 @@ source("data.r")
 HourData <- vector("list",length=n)
 rotate <- function(x) t(apply(x, 2, rev))
 
-
+if(FALSE){
 for (i in 1:n)
 {
   print(i)
@@ -36,6 +36,9 @@ for (i in 1:n)
                             Humidity = HourTmp[[9]], PrecipitationProbability = HourTmp[[10]],
                             IsHistoricalEstimated = HourTmp[[11]], Radiation = HourTmp[[12]])
 }
+}
+
+load("HourData.Rdata")
 
 
 # Plot of the hour values as percentage of day
