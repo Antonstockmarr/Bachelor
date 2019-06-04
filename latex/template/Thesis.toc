@@ -10,78 +10,72 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Contents}{vii}{section*.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}% 
+\contentsline {chapter}{\chapternumberline {1}Data}{1}{chapter.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.1}Original data}{1}{section.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Introduction to WATTS app}{1}{section.1.2}% 
+\contentsline {section}{\numberline {1.2}Cleaning and preparation}{2}{section.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}Data}{3}{chapter.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Missing values}{3}{subsection.1.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Original data}{3}{section.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}The sun and the wind}{3}{subsection.1.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Cleaning and preparation}{4}{section.2.2}% 
+\contentsline {chapter}{\chapternumberline {2}Exploratory Analysis}{5}{chapter.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Missing values}{5}{subsection.2.2.1}% 
+\contentsline {section}{\numberline {2.1}Examination of the Heat Consumption}{5}{section.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}The sun and the wind}{5}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.1.1}Weather data}{6}{subsection.2.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Exploratory Analysis}{7}{chapter.3}% 
+\contentsline {subsection}{\numberline {2.1.2}BBR data}{7}{subsection.2.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Examination of the Heat Consumption}{7}{section.3.1}% 
+\contentsline {section}{\numberline {2.2}Multicollinearity}{8}{section.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Weather data}{8}{subsection.3.1.1}% 
+\contentsline {section}{\numberline {2.3}Data segmentation}{11}{section.2.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}BBR data}{9}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {2.3.1}Segmentation by piece-wise optimization}{12}{subsection.2.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multicollinearity}{10}{section.3.2}% 
+\contentsline {subsection}{\numberline {2.3.2}Segmentation by significant deviations}{12}{subsection.2.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Data segmentation}{13}{section.3.3}% 
+\contentsline {chapter}{\chapternumberline {3}Models on the Daily Consumption}{17}{chapter.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{14}{subsection.3.3.1}% 
+\contentsline {section}{\numberline {3.1}Linear regression}{17}{section.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{14}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.1.1}Model assumptions}{17}{subsection.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Statistical models}{19}{chapter.4}% 
+\contentsline {section}{\numberline {3.2}Simple linear regression model}{18}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Linear regression}{19}{section.4.1}% 
+\contentsline {subsection}{\numberline {3.2.1}Validation}{19}{subsection.3.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Model assumptions}{19}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Results}{19}{subsection.3.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Simple linear regression model}{20}{section.4.2}% 
+\contentsline {section}{\numberline {3.3}Multiple linear regression model}{19}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Validation}{21}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {3.3.1}Splines}{21}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Results}{21}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {3.3.2}Validation}{22}{subsection.3.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Multiple linear regression model}{21}{section.4.3}% 
+\contentsline {subsection}{\numberline {3.3.3}Results}{22}{subsection.3.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Splines}{23}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {3.4}Regression model for comparing houses}{23}{section.3.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Validation}{24}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {3.4.1}Validation}{26}{subsection.3.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}Results}{24}{subsection.4.3.3}% 
+\contentsline {subsection}{\numberline {3.4.2}Results}{26}{subsection.3.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Regression model for comparing houses}{25}{section.4.4}% 
+\contentsline {section}{\numberline {3.5}Comparison}{26}{section.3.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Validation}{28}{subsection.4.4.1}% 
+\contentsline {chapter}{\chapternumberline {4}Models on the Hourly Consumption}{27}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Results}{28}{subsection.4.4.2}% 
+\contentsline {section}{\numberline {4.1}Description of the Hourly Consumption}{27}{section.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Comparison}{28}{section.4.5}% 
+\contentsline {section}{\numberline {4.2}The ARMA Models and Their Extensions}{30}{section.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{29}{chapter.5}% 
+\contentsline {appendix}{\chapternumberline {A}Tables}{35}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{29}{section.5.1}% 
+\contentsline {section}{\numberline {A.1}Estimates of the simple linear regression model}{35}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}The ARMA Models and Their Extensions}{32}{section.5.2}% 
+\contentsline {section}{\numberline {A.2}Significance of parameters from multiple linear regression model}{35}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Tables}{37}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {B}Figures}{41}{appendix.B}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates of the simple linear regression model}{37}{section.A.1}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Significance of parameters from multiple linear regression model}{37}{section.A.2}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{43}{appendix.B}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{45}{section*.6}% 
+\contentsline {chapter}{Bibliography}{43}{section*.6}% 

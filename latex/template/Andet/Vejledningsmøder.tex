@@ -374,14 +374,12 @@ ARIMAX : (2,2,2) x (0,1,1)
 
 \subsection{Spørgsmål}
 \begin{itemize}
-    \item Hvorfor transformerer vi ikke data? 
-    \item Shapiro-Wilk test til at tjekke normalfordelte residualer? 
-    \item Giver det mening at lave lm over gennemsnitlig data i forhold til at se på en systematisk måde, hvilke timeintervaller der rent faktisk er signifikante (se heatmaps)?
-    \item Hjælp til at farve WindDirection plots. Enorm meget gul farve, som det ser ud nu. 
-    \item Tjek tabeller over estimater for simple lineær model. 
-    \item Hvorfor skulle alle vindretninger og interactions mellem temp og vindretninger med, når fx kun 1 af dem er signifikant?
-    \item Højst sandsynligt ændre på dagsværdierne.
-    \item Brændeovn? 
+    \item Hvorfor transformerer vi ikke data? \textcolor{red}{kilo watt er baseret på cooling gange volume. Det giver ikke mening, fordi man skal "interpret" resultaterne.}
+    \item Giver det mening at lave lm over gennemsnitlig data i forhold til at se på en systematisk måde, hvilke timeintervaller der rent faktisk er signifikante (se heatmaps)? \textcolor{red}{Vi kan tage gennemsnittet af hver time, tager kvartiler osv.}
+    \item Hjælp til at farve WindDirection plots. Enorm meget gul farve, som det ser ud nu. \textcolor{red}{Det ligger i detaljen med hvordan man normerer forbruget inden vi kigger på WindDirection. Lasse synes det er godt vi ikke gør det samme.}
+    \item Højst sandsynligt ændre på dagsværdierne. Gennemsnit i stedet for sum. \textcolor{red}{Det lige meget haha}
+    \item Brændeovn? \textcolor{red}{Sæs}
+    \item ARIMAX modeller. \textcolor{red}{Det der er i lag 1 betyder ingenting for estimaterne. eX blabla har vi brugt 12-temperaturen, og alt over 12 grader vægter 0. Vi kan se på ca. 3 huse hvor vi afprøver med de forskellige temp ting for at se på om standard afvigelser ændrer sig.}
 \end{itemize} 
 
 \subsection{Fremlæggelse hos SEAS-NVE}
@@ -391,4 +389,15 @@ ARIMAX : (2,2,2) x (0,1,1)
     \item Jaaa vise heatmaps
     \item Foreslag til hvordan kan man vise de her ting i appen.
     \item Udbygge data checking funktionen - vi kan ikke komme med nogen konklusion, hvis der ikke er nok data. 
+\end{itemize}
+
+\subsection{Noter}
+\begin{itemize}
+    \item Tilføj også sign test på lm 
+    \item Tjek tabeller over estimater for simple lineær model. 
+    \item Hvorfor skulle alle vindretninger og interactions mellem temp og vindretninger med, når fx kun 1 af dem er signifikant?
+    \item ARIMA laver lineær regression og så derefter fittes en ARIMA model på residualerne. Hvis man fastholder termostatet på et konstant niveau, er det lineært nok et eller andet. Bare brug MARIMA i R. 
+    \item Vi er intra i den stationære respons af overføringsfunktionen - når temp stiger 1 grad hvor konvergerer responsen så imod?
+    \item Hvis vi skal gå efter den fysiske model, så skal man ikke nødvendigvis have en sæsondiff. Der er nogle døgnprofiler, der ikke givetvis er temperaturafhængige. Man kan lave eXreq kolonner hvor summen er 1 et eller andet. 
+    \item Kigge på hvor meget der er forbrugsvand? Selvom man ikke kan regne med, at de forbruger det samme hele vejen rundt. 
 \end{itemize}
