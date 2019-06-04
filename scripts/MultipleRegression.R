@@ -180,7 +180,6 @@ for (i in 1:18) {
   model.tmp$West <- tmp.wind[,2]
   lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+
                                                         Radiation, data = model.tmp)
-  #lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
   (plot(lmMultipleNoP[[i]]$object))
