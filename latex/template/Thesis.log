@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  4 JUN 2019 13:00
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  4 JUN 2019 13:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1858,7 +1858,7 @@ LaTeX Warning: No positions in optional float specifier.
 \openout2 = `appendices/AnAppendix.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex
-Overfull \hbox (30.64294pt too wide) in paragraph at lines 102--151
+Overfull \hbox (30.64294pt too wide) in paragraph at lines 103--152
  [][] 
  []
 
@@ -1866,14 +1866,14 @@ Overfull \hbox (30.64294pt too wide) in paragraph at lines 102--151
 
 
 
-] [36] [37] [38] [39] [40
-
-]
+] [36] [37] [38] [39] [40]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
-) [41] [42]
+) [41
+
+] [42]
 
 Package biblatex Warning: No driver for entry type 'sne'.
 (biblatex)                Using fallback driver on input line 41.
@@ -1900,17 +1900,17 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 44.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C8AD5C834C70BC1E7CBF2D028578CCD6.
+(rerunfilecheck)             Checksum: 2BDDE2F2A29CCAEB83D146B6252C8E69.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 49526 strings out of 492933
- 950070 string characters out of 6133145
- 1649553 words of memory out of 5000000
- 52826 multiletter control sequences out of 15000+600000
+ 49529 strings out of 492933
+ 950140 string characters out of 6133145
+ 1650034 words of memory out of 5000000
+ 52829 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,81p,1636b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s

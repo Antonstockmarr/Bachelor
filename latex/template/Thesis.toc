@@ -72,9 +72,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {appendix}{\chapternumberline {A}Tables}{35}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates of the simple linear regression model}{35}{section.A.1}% 
+\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{35}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Significance of parameters from multiple linear regression model}{35}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{35}{section.A.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{35}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {appendix}{\chapternumberline {B}Figures}{41}{appendix.B}% 
 \defcounter {refsection}{0}\relax 
