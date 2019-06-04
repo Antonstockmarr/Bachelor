@@ -7,6 +7,7 @@ source("BBR.R")
 library(ggplot2) 
 library(gridExtra)
 library(tidyverse)
+library(grid)
 
 
 # Watts colors
@@ -120,8 +121,14 @@ cor(day.tmp['PrecipitationProbability'],day.tmp['Condition'])
 
 
 # Investigating BBR data --------------------------------------------------
-ggplot(data = BBR, aes(x = )) + geom_histogram()
-
+HouseType <- c(BBR$HouseType)
+legend11 <- "Type 1: Industry \n Type 2: Public \n Type 3: Apartment \n Type 4: Parcel \n Type 5: Terrace"
+my_grob = grid.text(legend11, x=0.1,  y=0.8, gp=gpar(col="black", fontsize=12, fontface="bold"), just = "left")
+plot11 <- ggplot(data = data.frame(HouseType), aes(x = HouseType)) + geom_histogram(bins = 15) + theme(legend.position = "topleft",legend.direction = "horizontal") + annotation_custom(my_grob)
+plot12 <- ggplot(data = BBR, aes(x = TotalArea)) + geom_histogram(bins = 15)
+plot13 <- ggplot(data = BBR, aes(x = ConstructionYear)) + geom_histogram(bins = 15)
+plot14 <- ggplot(data = BBR, aes(x = ReconstructionYear)) + geom_histogram(bins = 15)
+grid.arrange(plot11, plot12, plot13, plot14, nrow = 2, ncol = 2)
 
 par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
 plot(Construction.Year,cons.areal,col=Wcol[2],main='Year of Construction Consumption',xlab='Year of Construction',ylab = expression(paste("Consumption pr.  ", m^2, sep = "")))
