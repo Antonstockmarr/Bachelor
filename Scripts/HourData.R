@@ -89,6 +89,24 @@ abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
 mcons_summer <-apply(Houravg,1,mean)
 
+#Finns plot
+ttavg<-tt[,1]
+for(i in 2:n){
+  ttavg<-ttavg+tt[,i]
+}
+ttavg<-ttavg/n
+
+k=1:24
+plot(k,ttavg,col=Wcol[3],pch=19,ylab ="% of avg consumption each hour",xlab="Hour")
+points(k[ttavg>=quantile(ttavg)[4]],ttavg[ttavg>=quantile(ttavg)[4]],col=Wcol[4],pch=19)
+points(k[ttavg<=quantile(ttavg)[2]],ttavg[ttavg<=quantile(ttavg)[2]],col=Wcol[2],pch=19)
+abline(h=quantile(ttavg)[4],lty=2,col="gray")
+abline(h=quantile(ttavg)[3],lty=2,col="gray")
+abline(h=quantile(ttavg)[2],lty=2,col="gray")
+
+
+
+
 # Consumption in the winter period
 for (i in 1:n)
 {
