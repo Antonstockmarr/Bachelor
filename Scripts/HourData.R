@@ -159,3 +159,17 @@ image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE,
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
+head(tt)
+ttn<-tt
+for(i in 1:n){
+  quantile(tt[,i])[4]
+  ttn[,i]<-tt[,i]>quantile(tt[,i])[4]
+}
+  
+head(ttn)
+
+image.plot(t(ttn[rev(order(row.names(ttn))),]), axes=FALSE, 
+           lab.breaks=NULL,main = 'Average consumption of all houses (winter - summer)')
+axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
+abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
+

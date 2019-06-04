@@ -7,6 +7,10 @@ source("BSplines.R")
 
 # Daily predictions ----------------------------------
 
+k <-1:n
+Long <- k[Datalengths>=360]
+Short <- k[Datalengths<360]
+
 # Defining data used for modeling
 model.data <- weatherCons
 # Various attributes are removed
@@ -24,8 +28,14 @@ ttd<-TrainTest(model.data,31)
 lmMultipleNoP <- vector(mode = "list", length = n)
 
 par(mfrow = c(1,1))
-for (i in 1:n) {
-  print(paste('Modeling house ',i))
+k<-0
+for (i in c(Long,Short)) {
+  k<-k+1
+  if(k>length(Long)){
+    print(paste('Modeling long house ',i))
+  }else{
+    print(paste('Modeling short house ',i))
+  }
   model.tmp <- ttd[[1]][[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
@@ -48,7 +58,13 @@ for (i in 1:n) {
   newData$Consumption<-NULL
   Pred<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
   
-  plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=paste("hus: ",i))
+  if(k>length(Long)){
+    mm<-paste("Short house: ",i)
+  }else{
+    mm<-paste("Long house: ",i)
+  }
+  
+  plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm)
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
   lines(ttd[[2]][[i]]$Consumption,lty=1,col=2)
