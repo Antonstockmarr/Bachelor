@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  4 JUN 2019 11:58
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  4 JUN 2019 13:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1757,7 +1757,7 @@ Overfull \hbox (8.14005pt too wide) in paragraph at lines 72--89
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7415) has occurred while \output is active []
 
  [9] [10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1909,7 +1909,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
 Here is how much of TeX's memory you used:
  49526 strings out of 492933
  950070 string characters out of 6133145
- 1649257 words of memory out of 5000000
+ 1649553 words of memory out of 5000000
  52826 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
