@@ -8,7 +8,7 @@ source("data.R")
 s.test <- vector(mode = "list", length = n)
 lm.simple <- vector(mode = "list", length = n)
 model.data <- weatherCons
-for (i in 1:n) {
+for (i in 1:2) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -23,6 +23,7 @@ for (i in 1:n) {
   # Testing for normality
   s.test[[i]] <- shapiro.test(lm.simple[[i]]$residuals)
   print(s.test[[i]]$p.value)
+  print(binom.test(x = sum((sign(lm.simple[[i]]$residuals)+1)/2), n = length(lm.simple[[i]]$residuals)))
 }
 plot(Consumption ~ Temperature, data = model.tmp)
 abline(lm.simple)

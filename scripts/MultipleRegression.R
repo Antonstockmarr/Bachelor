@@ -161,10 +161,10 @@ lmSummary_p <- matrix(rep(0,11*n),nrow = n)
 Wind.Pred <- vector(mode = "list", length = n)
 colnames(lmSummary_est) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 colnames(lmSummary_p) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
-
+sMultiple.test <- vector(mode = "list", length = n)
 
 par(mfrow = c(1,1))
-for (i in 1:n) {
+for (i in 1:18) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -180,12 +180,14 @@ for (i in 1:n) {
   model.tmp$West <- tmp.wind[,2]
   lmMultipleNoP[[i]] <- lm(Consumption ~ Temperature*(North + East + South + West)+
                                                         Radiation, data = model.tmp)
-  lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
+  #lmMultiple[[i]] <- stepP(lmMultipleNoP[[i]])
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
-  plot(lmMultiple[[i]]$object)
+  (plot(lmMultipleNoP[[i]]$object))
   title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
-
+  # Testing for normality
+  sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
+  print(sMultiple.test[[i]]$p.value)
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]
