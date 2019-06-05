@@ -5,7 +5,7 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0),mfrow=c(1,1),xpd=FALSE)
 source("data.R")
 source("stepP.R")
 source("BSplines.R")
-source("CircleCol.R")
+source("CirclePlot.R")
 
 # Initializing vectors containing "long" and "short" houses
 k <-1:n
@@ -166,11 +166,11 @@ for (i in 1:n) {
                                                         Radiation, data = model.tmp)
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
-  plot(lmMultipleNoP[[i]])
-  title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
+  #plot(lmMultipleNoP[[i]])
+  #title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
   # Testing for normality
   sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
-  print(sMultiple.test[[i]]$p.value)
+  #print(sMultiple.test[[i]]$p.value)
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]
@@ -188,14 +188,16 @@ for (i in 1:n) {
                        S = Splinebasis2[,1],
                        W = Splinebasis2[,2])
   
-  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
+  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.25))
   
-  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
-  lines(Wind.Pred[[i]]$upr,lty=2)
-  lines(Wind.Pred[[i]]$lwr,lty=2)
-  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
-  
+  # plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
+  # lines(Wind.Pred[[i]]$upr,lty=2)
+  # lines(Wind.Pred[[i]]$lwr,lty=2)
+  # abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
+  # 
+  CirclePlot(Wind.Pred[[i]])
 }
+
 
 t.est <- as.table(lmSummary_est)
 # Saving estimates in a .csv file
