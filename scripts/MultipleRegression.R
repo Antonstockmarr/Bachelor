@@ -146,6 +146,7 @@ Wind.Pred <- vector(mode = "list", length = n)
 colnames(lmSummary_est) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 colnames(lmSummary_p) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 sMultiple.test <- vector(mode = "list", length = n)
+sign.testM <- vector(mode = "list", length = n)
 
 par(mfrow = c(1,1))
 for (i in 1:n) {
