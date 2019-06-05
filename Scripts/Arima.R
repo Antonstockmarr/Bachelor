@@ -1,4 +1,6 @@
+source("data.R")
 library("forecast")
+library("marima")
 
 for(i in 1:n){
   nas<-which(!is.na(data[[i]]$Flow))
@@ -11,10 +13,47 @@ for(i in 1:n){
   data[[i]]<-tmp.dat
 }
 
-ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
+
+Marima_model <- function(houses)
 {
+# (1,0,1)x(1,1,1)
+differencing = matrix(c(1, 24,2,0))
+result <- vector(mode='list', length = n)
+for (i in houses)
+{
+  a <- 12
+  tmp.dat <- weather[(weather$ObsTime <= head(data[[i]]$ObsTime,1)),]
+  tmp.dat <- tmp.dat[tmp.dat$ObsTime >= tail(data[[i]]$ObsTime,1),]
+  tmp <- tmp.dat$Temperature
+  Temperature <- (tmp<a)*(a-tmp)
+  arima.dat <- cbind(data[[i]]$CoolingDegree*data[[i]]$Volume,Temperature)
+  dd <- define.dif(arima.dat, differencing)
+  dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
+  m1 <- marima(dd$y.dif, ar.pattern = dm1$ar.pattern, ma.pattern = dm1$ma.pattern, Plot = 'log.det',penalty=0)
+  #short.form(m1$ar.estimates,leading = F)
+  #short.form(m1$ma.estimates,leading = F)
+  #m1$ar.pvalues[1,,]
+  #m1$ma.pvalues[1,,]
+  days = 7
+  par(mar=c(3,3,2,1), mgp=c(2,0.7,0),mfrow=c(2,1),xpd=FALSE,pty = 'm')
+  lagmax = days*24+2
+  print(i)
+  acf((m1$residuals[,colSums(is.na(m1$residuals)) == 0])[1,],panel.first = c(abline(v=(1:days)*24,col=Wcol[4],lty=2)),lag.max=lagmax,main="")
+  title(paste("House ",i))
+  acf((m1$residuals[,colSums(is.na(m1$residuals)) == 0])[1,],"partial",lag.max = lagmax,panel.first = c(abline(v=(1:days)*24,col="red",lty=2)),main="")
+  result[[i]]<- m1
+}
+result
+}
+
+
+ARIMAX_model <- function(two_sd,three_sd,nonseas,seas,houses,xreg)
+{
+  models <- vector(mode = 'list',length = n)
   logavg <- 0
-  for(i in 1:1){
+  for(i in houses){
+    if (xreg)
+    {
     a <- 12
     tmp.dat <- weather[(weather$ObsTime <= head(data[[i]]$ObsTime,1)),]
     tmp.dat <- tmp.dat[tmp.dat$ObsTime >= tail(data[[i]]$ObsTime,1),]
@@ -22,6 +61,11 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
     Temperature <- (tmp<a)*(a-tmp)
     arima.dat <- data.frame(Temperature = Temperature, Consumption = data[[i]]$CoolingDegree*data[[i]]$Volume)
     A <- arima(arima.dat$Consumption, order =nonseas, seasonal = list(order = seas, period = 24),xreg=arima.dat$Temperature)
+    }
+    else
+    {
+    A <- arima(arima.dat$Consumption, order =nonseas, seasonal = list(order = seas, period = 24))
+    }
     lagmax = 4*24
     print(i)
     par(mfrow=c(2,1))
@@ -31,7 +75,7 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
     logavg = logavg + A$loglik/n
     
     plot(A)
-    
+    models[[i]]=A
     names(two_sd)[length(two_sd)] <- names(A$coef)[length(names(A$coef))]
     names(three_sd)[length(three_sd)] <- names(A$coef)[length(names(A$coef))]
     for (j in names(A$coef))
@@ -48,44 +92,69 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas)
     }
     
   }
-  result <- vector(mode='list',length=3)
+  result <- vector(mode='list',length=4)
   result[[1]] <- two_sd
   result[[2]] <- three_sd
   result[[3]] <- logavg
+  result[[4]] <- models
   result
 }
 
 
 # The first model
-two_sd <- data.frame("ar1"=0,"ma1"=0,'ar2'=0,'ma2'=0,'sma1'=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0,'ar2'=0,'ma2'=0,'sma1'=0,"Temperature"=0)
+two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'sma2'=0,"Temperature"=0)
 
-model1 <- ARIMAX_model(two_sd,three_sd,c(2,1,2),c(0,0,1))
-
-
-# The next model
-two_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0,'sma1'=0,"Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0,'sma1'=0,"Temperature"=0)
-
-model2 <- ARIMAX_model(two_sd,three_sd,c(2,1,1),c(0,0,1))
+model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,2))
 
 
+# The second model
+two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-# The next model
-two_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ar2"=0,"ma1"=0, "Temperature"=0)
-
-model3 <- ARIMAX_model(two_sd,three_sd,c(2,1,1),c(0,0,0))
-
-
-# The next model
-two_sd <- data.frame("ar1"=0,"ma1"=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0, "Temperature"=0)
-
-model4 <- ARIMAX_model(two_sd,three_sd,c(1,1,1),c(0,0,0))
+model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),1,T)
 
 
-two_sd <- data.frame("ar1"=0,"ma1"=0,'sar1'=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0,'sar1'=0,"Temperature"=0)
+model2marima <- Marima_model(1)
 
-model5 <- ARIMAX_model(two_sd,three_sd,c(1,1,1),c(1,0,0))
+# The third model
+two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
+
+model3 <- ARIMAX_model(two_sd,three_sd,c(1,0,2),c(1,1,1))
+
+
+# The third model
+two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
+
+model4 <- ARIMAX_model(two_sd,three_sd,c(1,0,2),c(1,1,2))
+
+for (i in 1:38)
+{
+  Testmodel[[4]][[i]] <- model2_2[[4]][[i]]
+}
+
+for (i in 40:n)
+{
+  Testmodel[[4]][[i]] <- model2[[4]][[i]]
+}
+
+
+for (i in c(1:38,40:n))
+{
+  plot(Testmodel[[4]][[i]])
+}
+
+days = 7
+lagmax = days*24+2
+for (i in c(1:38,40:n))
+{
+  par(mfrow=c(2,1))
+  acf(Testmodel[[4]][[i]]$residuals,panel.first = c(abline(v=(1:days)*24,col=Wcol[4],lty=2)),lag.max=lagmax,main="")
+  title(paste("House ",i))
+  acf(Testmodel[[4]][[i]]$residuals,"partial",lag.max = lagmax,panel.first = c(abline(v=(1:days)*24,col="red",lty=2)),main="")
+  
+}
+
+
