@@ -171,6 +171,8 @@ for (i in 1:n) {
   # Testing for normality
   sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
   #print(sMultiple.test[[i]]$p.value)
+  sign.testM[[i]] <- binom.test(x = sum(sign(lmMultipleNoP[[i]]$residuals) == 1), n = length(lmMultipleNoP[[i]]$residuals))
+  print(sign.testM[[i]]$p.value)
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]

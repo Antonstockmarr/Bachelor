@@ -68,6 +68,7 @@ for (i in c(Long,Short)) {
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
   lines(ttd[[2]][[i]]$Consumption,lty=1,col=2)
+  legend(x = "topright", legend = c("Prediction", "95% CI", "Data"), lty = c(1,2,1), col = c(1,1,2))
 }
 
 # Hourly Predictions ----------------------------------------
