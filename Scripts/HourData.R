@@ -3,7 +3,7 @@ source("data.r")
 HourData <- vector("list",length=n)
 rotate <- function(x) t(apply(x, 2, rev))
 
-
+if(FALSE){
 for (i in 1:n)
 {
   print(i)
@@ -36,6 +36,9 @@ for (i in 1:n)
                             Humidity = HourTmp[[9]], PrecipitationProbability = HourTmp[[10]],
                             IsHistoricalEstimated = HourTmp[[11]], Radiation = HourTmp[[12]])
 }
+}
+
+load("HourData.Rdata")
 
 
 # Plot of the hour values as percentage of day
@@ -88,6 +91,24 @@ abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
 
 mcons_summer <-apply(Houravg,1,mean)
+
+#Finns plot
+ttavg<-tt[,1]
+for(i in 2:n){
+  ttavg<-ttavg+tt[,i]
+}
+ttavg<-ttavg/n
+
+k=1:24
+plot(k,ttavg,col=Wcol[3],pch=19,ylab ="% of avg consumption each hour",xlab="Hour")
+points(k[ttavg>=quantile(ttavg)[4]],ttavg[ttavg>=quantile(ttavg)[4]],col=Wcol[4],pch=19)
+points(k[ttavg<=quantile(ttavg)[2]],ttavg[ttavg<=quantile(ttavg)[2]],col=Wcol[2],pch=19)
+abline(h=quantile(ttavg)[4],lty=2,col="gray")
+abline(h=quantile(ttavg)[3],lty=2,col="gray")
+abline(h=quantile(ttavg)[2],lty=2,col="gray")
+
+
+
 
 # Consumption in the winter period
 for (i in 1:n)
@@ -155,6 +176,20 @@ rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','1
 colnames(Houravg) <- c(1:n)
 tt <- Houravg
 image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
+           lab.breaks=NULL,main = 'Average consumption of all houses (winter - summer)')
+axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
+abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
+
+head(tt)
+ttn<-tt
+for(i in 1:n){
+  quantile(tt[,i])[4]
+  ttn[,i]<-tt[,i]>quantile(tt[,i])[4]
+}
+  
+head(ttn)
+
+image.plot(t(ttn[rev(order(row.names(ttn))),]), axes=FALSE, 
            lab.breaks=NULL,main = 'Average consumption of all houses (winter - summer)')
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)

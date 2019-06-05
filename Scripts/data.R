@@ -49,11 +49,6 @@ for(i in 1:n){
   names(dt.tmp)[1]="ObsTime"
   dt.tmp$ObsTime <- strptime(dt.tmp$ObsTime, format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
   
-  # Removing data before startdate of weather data
-  #while(as.POSIXlt(x="2017-12-31 23:00:00",tz="GMT", format = "%Y-%m-%d %H:%M:%S")>=dt.tmp$ObsTime[length(dt.tmp$ObsTime)]){
-  #  dt.tmp<-dt.tmp[1:(length(dt.tmp$ObsTime)-1),]
-  #}
-  
   # Add logical vairable for weekends
   tmp.wd <- as.Date(dt.tmp$ObsTime,tz="GMT")
   tmp.wd <-weekdays(tmp.wd,abbreviate = TRUE)
@@ -86,6 +81,7 @@ for(i in 1:n){
     tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
     tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
     tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
+    tmp.d1[,2:4]<-tmp.d1[,2:4]*24 # Sum instead of mean (when there is 24 points) otherwise weight to 24 points
     tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
     
     
@@ -143,10 +139,8 @@ for(i in 1:n){
 tmp.df<-data.frame(Key=data.key)
 BBR.tmp <- read.table('../BBRdata.csv', sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
 BBR <- merge(tmp.df,BBR.tmp)
-names(BBR)[5] <-  "Kaelder"
-names(BBR)[7] <-  "Byggeaar"
-names(BBR)[9] <-  "Ombygningsaar"
-
+# HouseType into continous variable
+BBR$HouseType <- as.factor(BBR$HouseType)
 
 
 # Reading weather data  

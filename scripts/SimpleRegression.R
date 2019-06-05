@@ -6,6 +6,7 @@ source("data.R")
 
 # Initializing
 s.test <- vector(mode = "list", length = n)
+sign.test <- vector(mode = "list", length = n)
 lm.simple <- vector(mode = "list", length = n)
 model.data <- weatherCons
 for (i in 1:n) {
@@ -23,7 +24,24 @@ for (i in 1:n) {
   # Testing for normality
   s.test[[i]] <- shapiro.test(lm.simple[[i]]$residuals)
   print(s.test[[i]]$p.value)
+  #sign.test[[i]] <- binom.test(x = sum((sign(lm.simple[[i]]$residuals)+1)/2), n = length(lm.simple[[i]]$residuals))
+  sign.test[[i]] <- binom.test(x = sign(lm.simple[[i]]$residuals)+1, n = length(lm.simple[[i]]$residuals))
+  
+  print(sign.test[[i]]$p.value)
 }
+
+# Calculating p-values under 0.05 for normality tests
+Sum_shapiro <- 0
+Sum_sign <- 0
+for (i in 1:n) {
+  if (s.test[[i]]$p.value < 0.05) {
+    Sum_shapiro <- Sum_shapiro+1
+  }
+  if (sign.test[[i]]$p.value < 0.05) {
+    Sum_sign <- Sum_sign+1
+  }
+}
+
 plot(Consumption ~ Temperature, data = model.tmp)
 abline(lm.simple)
 
