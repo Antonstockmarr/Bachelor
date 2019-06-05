@@ -112,7 +112,7 @@ model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,2))
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1))
+model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),1,T)
 
 
 model2marima <- Marima_model(1)
