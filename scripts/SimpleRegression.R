@@ -30,6 +30,9 @@ for (i in 1:n) {
   
   sign.test[[i]] <- binom.test(x = sum(sign(lm.simple[[i]]$residuals) == 1), n = length(lm.simple[[i]]$residuals))
   print(sign.test[[i]]$p.value)
+  
+  # 95% confidence interval
+  
 }
 par(mfrow=c(1,1))
 plot(plotpoints[2,],ylim=c(-10,0))

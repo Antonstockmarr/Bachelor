@@ -2,7 +2,7 @@
 Now that data is cleaned and prepared, a statistical analysis consisting of data segmentation and linear regression models can be made. The purpose of the analysis is to detect which attributes affects the performance of a specific house.
 
 \section{Linear regression}
-Linear regression is a method to model the relationship between a dependent variable and one or more independent variables where the unknown model parameters are estimated from the data. \textcolor{red}{Mangler nok lidt her.} With the dependent variable $Y$ and the independent variables $x_1, \dots, x_n$, the linear regression model is formulated as
+Linear regression is a method to model the relationship between a dependent variable and one or more independent variables, where the unknown model parameters are estimated from the data. \textcolor{red}{Mangler nok lidt her.} With the dependent variable $Y$ and the independent variables $x_1, \dots, x_n$, the linear regression model is formulated as
 \begin{equation}
     Y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \cdots + \beta_p x_{i,p} + \varepsilon_i, \quad \varepsilon_i ~ \mathcal{N}(0,\sigma^2), \quad i = 1,\dots, n. \label{lm}
 \end{equation}
@@ -26,48 +26,48 @@ Chapter 7 in \cite{Stat_bog} explains the model assupmtions listed above. To su
 
 \noindent The fitting of the regression models is carried out by using the method stepwise regression which updates the model in each step. In each step it is considered whether a variable is added or subtracted from the set of explanatory variables based on specific criteria. This process is called variable selection and Chapter 7 in \cite{Stat_bog2} explains how this process can be done by using either forward or backward selection. In this project a modified version of backward selection is applied. The models are used for comparing which explanatory variables influence each house. Therefore, the models are not reduced using the \texttt{R} function \texttt{step}. Instead the signifance of the parameters are investigated and then the parameters which are significant for the majority of the houses will be used in an updated linear regression model. Thus, the variable selection is done manually which can be said to be a modified form of backward selection. The level of signifance is determined by an F-test where the variables selected have a p-value below a threshold which is chosen at 0.05. \textcolor{red}{Mangler nok en ref. til det her.}\\
 
-\noindent Both a simple linear and a multiple linear regression model will be implemented in order to detect which attributes affect the performance of a specific house. This will be done by interpreting the estimates of the relation between the different explanatory attributes and \texttt{Consumption}. As mentioned, the p-value of the estimates of the explanatory variables will be the main focus when investigating which attributes influence the performance. 
+\noindent Both a simple linear and a multiple linear regression model will be implemented in order to detect which attributes affect the performance of a specific house. This will be done by interpreting the estimates of the relation between the different explanatory attributes and \texttt{Consumption}. As mentioned, the p-value of the estimates of the explanatory variables will be the main focus when investigating which attributes influence the performance. Moreover, transformation of data is not considered since the purpose is to interpret the results and a transformation would \textcolor{red}{ikke gøre dette muligt eller?}
 
 \section{Simple linear regression model}
-A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature} (here denoted HC and T). Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. The models are performed by using the \texttt{lm()} function. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met. The simple model only includes one explanatory variable, thus a variable selection is not performed. \textcolor{red}{Begrundelse for at vi ikke transformerer data.}
-
-\noindent Hence, the simple linear regression model applied to each house is
+A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature}. Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. Hence, the simple linear regression model applied to each house is
 \begin{equation}
     Y_{\text{Q}} = \mu + \beta_{\text{T}} \cdot x_{\text{T}} + \varepsilon
     \label{eq: simple}
 \end{equation}
 
-\subsection{Validation}
-To validate the model, different methods are used. The abovementioned model assumptions are checked and futhermore a test of normally distributed residuals is performed. If the model assumptions are fulfilled and the residuals are i.i.d with $\mathcal{N}(0,\sigma^2)$, the model is said to be valid. 
+\noindent The models are performed by using the \texttt{lm()} function in \texttt{R}. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met and different tests on normality of residuals are perfomed. The simple model only includes one explanatory variable, thus a variable selection is not performed. \textcolor{red}{Synes der mangler et eller andet her}
 
-\noindent \cref{fig: simple_lm_18} and \cref{fig: simple_lm_55} shows examples of the model applied on two of the houses where one does not fulfill the assumptions and a house that overall fulfill the assumptions \textcolor{red}{skal nok lige skrives lidt bedre :-))}. The top left plot in \cref{fig: simple_lm_18} clearly shows that the residuals are not randomly scattered. \textcolor{red}{Mangler noget her.}
+\subsection{Validation}
+To validate the model, different methods are used. The abovementioned model assumptions are checked and futhermore tests of normally distributed residuals is performed. If the model assumptions are fulfilled and the residuals are i.i.d with $\mathcal{N}(0,\sigma^2)$, the model is said to be valid. \\
+
+\noindent \cref{fig: simple_lm_18} and \cref{fig: simple_lm_55} shows examples of the model applied on two of the houses, where one does not fulfill the assumptions and another model that overall can be said to fulfill the assumptions. The Residuals vs. Fitted plot in \cref{fig: simple_lm_18} clearly shows that the residuals are not randomly scattered around mean 0 indicating that the variance are not constant and an odd behaviour appears in the bottom left corner. The QQ-plot shows tails and the residuals do not follow a straight line. The Scale-Location and Residuals vs. Leverage plots also show that the residuals can not be said to be i.i.d. In contrast to the model of house 18, the behavior of the residuals in \cref{fig: simple_lm_55} seems more normally distributed. Overall, they are randomly scattered around mean 0 and the QQ-plot shows that the majority  of the residuals lie on a straight line. However, the majority of the models do not fulfill the assumptions.
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/simple_lm18.pdf}
     \caption{Residual plots of house 18 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are not fulfilled for this specific house}
     \label{fig: simple_lm_18}
 \end{figure}
-
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/simple_lm55.pdf}
     \caption{Residual plots of house 55 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are overall fulfilled}
     \label{fig: simple_lm_55}
 \end{figure}
-
-\noindent In addition, \cref{tab: shapiro_simple_lm} shows the p-values from the Shapiro-Wilk test and it is clear that the majority of the simple models have residuals where the p-value is above the significance level. \textcolor{blue}{Model assumptions kan ikke sige at være opfyldt, når de ikke er opfyldt i størstedelen af tilfældene}
+In addition, a Shapiro-Wilk test and a sign test is perfomed. The hypothesis tested is that the residuals are i.i.d and if the p-value $> 0.05$ the hypothesis can not be rejected i.e. the residuals are normally distributed. If the model assumptions are also fulfilled, then the model is concluded to be valid. The p-values from both of the tests are found in \cref{tab: shapiro_simple_lm} and it is clearly seen that the majority of the simple linear regression models have residuals with p-value above the significance level at 0.05. Thus, the hypothesis is rejected and it can be concluded that the residuals are not i.i.d.
 % \textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket. Q-Q plottet ligger ikke fint langs en ret linje. Residuals vs. fitted viser en underlig opførsel, som ikke er randomly scattered.}
 
 \subsection{Results}
-\cref{tab: est_simple_lm} shows the estimates from all the simple linear regression models. 
+\cref{tab: est_simple_lm} shows the estimates from all the simple linear regression models and they are also visualized in \cref{fig: } including a 95\% confidence interval. 
 
 \noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet. Der vendes tilbage til dette i sammenligningen af de to regressionsmodeller.}
+
+The conclusion that the temperature is highly significant implies that this attribute will be included in the multiple linear regression model.
 
 \section{Multiple linear regression model}
 The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. This lead to the following two multiple linear regression models: 
 \begin{align}
-    Y_{m,L} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon \label{eq: multi_L}\\
-    Y_{m,S} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon
+    Y_{Q,L} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon \label{eq: multi_L}\\
+    Y_{Q,S} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon
     \label{eq: multi_S}
 \end{align}
 
@@ -250,5 +250,17 @@ Based on the tables illustrating the significant parameters for the long and sho
 \subsection{Validation}
 
 \subsection{Results}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.pdf}
+    \caption{}
+    \label{fig: lmpred_18L}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.pdf}
+    \caption{}
+    \label{fig: lmpred_55L}
+\end{figure}
 
 \section{Comparison}

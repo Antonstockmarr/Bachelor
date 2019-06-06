@@ -1999,6 +1999,7 @@
     <bcf:citekey order="2">Stat_bog</bcf:citekey>
     <bcf:citekey order="3">Stat_bog2</bcf:citekey>
     <bcf:citekey order="4">Time_Series_Analysis</bcf:citekey>
+    <bcf:citekey order="5">Time_Series_Analysis</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
