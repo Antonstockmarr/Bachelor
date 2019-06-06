@@ -88,30 +88,30 @@ Giver mere mening for brugeren
 
 \textcolor{red}{Tilføj billede af splines}
 
-\subsection{Validation}
-The multiple models has to fulfill several assumptions. 
+%\subsection{Validation}
+%The multiple models has to fulfill several assumptions. 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm18L.pdf}
-    \caption{Diagnostic plot of the multiple linear regression model for long house 18}
-    \label{fig: multiple_lm18L}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm55L.pdf}
-    \caption{}
-    \label{fig: multiple_lm55L}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm18L.pdf}
+%    \caption{Diagnostic plot of the multiple linear regression model for long house 18}
+%    \label{fig: multiple_lm18L}
+%\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm55L.pdf}
+%    \caption{}
+%    \label{fig: multiple_lm55L}
+%\end{figure}
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm68S.pdf}
-    \caption{}
-    \label{fig: multiple_lm68S}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm68S.pdf}
+%    \caption{}
+%    \label{fig: multiple_lm68S}
+%\end{figure}
 
 
 \subsection{Results}
@@ -160,6 +160,20 @@ Based on the tables illustrating the significant parameters for the long and sho
 Likewise, the models are validated and if the assumptions are fulfilled \textcolor{red}{Et eller andet her.}
 
 \subsection{Validation}
+In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \textcolor{red}{diskussionen}. On the other hand, the diagnostic plots of the residuals from house 18 are definitely improved and the residuals show a randomly behavior. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} is used to determine if the general model is valid. 
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.pdf}
+    \caption{Diagnostic plot of the general multiple linear regression model for long house 18}
+    \label{fig: general_lm18L}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/general_lm55L.pdf}
+    \caption{Diagnostic plot of the general multiple linear regression model for long house 55}
+    \label{fig: general_lm55L}
+\end{figure}
+
 
 
 \subsection{Results}

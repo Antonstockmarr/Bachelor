@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  6 JUN 2019 15:05
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  6 JUN 2019 16:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1809,23 +1809,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-File: graphics/../../../figures/multiple_lm18L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/multiple_lm18L.pdf>
 [22]
-File: graphics/../../../figures/multiple_lm55L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/multiple_lm55L.pdf>
-File: graphics/../../../figures/multiple_lm68S.pdf Graphic file (type pdf)
-<use graphics/../../../figures/multiple_lm68S.pdf>
+File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
+<use graphics/../../../figures/general_lm18L.pdf>
+File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
+<use graphics/../../../figures/general_lm55L.pdf>
  [23]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 168--217
+Overfull \hbox (11.04pt too wide) in paragraph at lines 182--231
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 42.25996pt on input line 219.
+LaTeX Warning: Float too large for page by 42.25996pt on input line 233.
 
 
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 223--256
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 237--270
  [][] 
  []
 
@@ -1836,7 +1834,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
-Overfull \vbox (241.47421pt too high) has occurred while \output is active []
+Overfull \vbox (227.22598pt too high) has occurred while \output is active []
 
  [27]
 File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
@@ -1937,7 +1935,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 44.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AA982F21357F71F3F6BE6D75A6EC845C.
+(rerunfilecheck)             Checksum: ED741C73844ED47B9608AF0D07DD7467.
 
 
 LaTeX Warning: There were undefined references.
@@ -1948,10 +1946,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 49557 strings out of 492933
- 950938 string characters out of 6133145
- 1650822 words of memory out of 5000000
- 52854 multiletter control sequences out of 15000+600000
+ 49551 strings out of 492933
+ 950700 string characters out of 6133145
+ 1653853 words of memory out of 5000000
+ 52849 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,81p,1636b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
