@@ -167,11 +167,11 @@ for (i in 1:n) {
                                                         Radiation, data = model.tmp)
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
-  #plot(lmMultipleNoP[[i]])
-  #title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
+  plot(lmMultipleNoP[[i]])
+  title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
   # Testing for normality
   sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
-  #print(sMultiple.test[[i]]$p.value)
+  print(sMultiple.test[[i]]$p.value)
   sign.testM[[i]] <- binom.test(x = sum(sign(lmMultipleNoP[[i]]$residuals) == 1), n = length(lmMultipleNoP[[i]]$residuals))
   print(sign.testM[[i]]$p.value)
 
@@ -193,11 +193,11 @@ for (i in 1:n) {
   
   Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.25))
   
-  # plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
-  # lines(Wind.Pred[[i]]$upr,lty=2)
-  # lines(Wind.Pred[[i]]$lwr,lty=2)
-  # abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
-  # 
+  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
+  lines(Wind.Pred[[i]]$upr,lty=2)
+  lines(Wind.Pred[[i]]$lwr,lty=2)
+  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
+  
   CirclePlot(Wind.Pred[[i]])
 }
 

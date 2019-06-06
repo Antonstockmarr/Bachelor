@@ -9,14 +9,17 @@ s.test <- vector(mode = "list", length = n)
 sign.test <- vector(mode = "list", length = n)
 lm.simple <- vector(mode = "list", length = n)
 model.data <- weatherCons
+plotpoints<-matrix(rep(0,3*n),ncol=n)
 for (i in 1:n) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   
   lm.simple[[i]] <- lm(Consumption ~ Temperature, data = model.tmp)
-  print(summary(lm.simple[[i]]))
-  
+  #print(summary(lm.simple[[i]]))
+  f<-summary(lm.simple[[i]])
+  f<-f$coefficients[2,1:2]
+  plotpoints[,i]<-c(f[1]-2*f[2],f[1],f[1]+2*f[2])
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
   plot(lm.simple[[i]])
@@ -31,6 +34,12 @@ for (i in 1:n) {
   # 95% confidence interval
   
 }
+par(mfrow=c(1,1))
+plot(plotpoints[2,],ylim=c(-10,0))
+for(i in 1:n){
+  lines(c(i,i),c(plotpoints[1,i],plotpoints[3,i]),col=2)
+}
+abline(h=0,lty=2,col=Wcol[2])
 
 # Calculating p-values under 0.05 for normality tests
 Sum_shapiro <- 0
