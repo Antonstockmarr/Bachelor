@@ -10,6 +10,7 @@ sign.test <- vector(mode = "list", length = n)
 lm.simple <- vector(mode = "list", length = n)
 model.data <- weatherCons
 plotpoints<-matrix(rep(0,3*n),ncol=n)
+t<-rep(0,n)
 for (i in 1:n) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
@@ -29,8 +30,7 @@ for (i in 1:n) {
   print(s.test[[i]]$p.value)
   
   sign.test[[i]] <- binom.test(x = sum(sign(lm.simple[[i]]$residuals) == 1), n = length(lm.simple[[i]]$residuals))
-  print(sign.test[[i]]$p.value)
-  
+  t[i]<-(sign.test[[i]]$p.value)
   # 95% confidence interval
   
 }
