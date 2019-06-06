@@ -53,23 +53,25 @@ To validate the model, different methods are used. The abovementioned model assu
     \caption{Residual plots of house 55 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are overall fulfilled}
     \label{fig: simple_lm_55}
 \end{figure}
-In addition, a Shapiro-Wilk test and a sign test is perfomed. The hypothesis tested is that the residuals are i.i.d and if the p-value $> 0.05$ the hypothesis can not be rejected i.e. the residuals are normally distributed. If the model assumptions are also fulfilled, then the model is concluded to be valid. The p-values from both of the tests are found in \cref{tab: shapiro_simple_lm} and it is clearly seen that the majority of the simple linear regression models have residuals with p-value above the significance level at 0.05. Thus, the hypothesis is rejected and it can be concluded that the residuals are not i.i.d.
+In addition, a Shapiro-Wilk test and a sign test is perfomed. The hypothesis tested in the Shapiro-Wilk test is that the residuals are i.i.d and if the p-value $> 0.05$ the hypothesis can not be rejected i.e. the residuals are normally distributed. In the sign test the hypothesis is that the number of positive signs are equal to the number of negative signs, which is one of the requirements when checking for normality. If the model assumptions are also fulfilled, then the model is concluded to be valid. The p-values from both of the tests are found in \cref{tab: shapiro_simple_lm} and it is clearly seen that the majority of the simple linear regression models have residuals with p-value above the significance level at 0.05. Thus, the hypothesis is rejected and it can be concluded that the residuals are not i.i.d.
 % \textcolor{blue}{Det interessante at kigge efter er de huse, hvis residuals har en mærkværdig opførsel eller den simple modellering. Som eksempel ses hus 18 i figur \ref{fig: simple_lm_18}. Det ses tydeligt, at residualerne for modellen for dette specifikke hus er gakket. Q-Q plottet ligger ikke fint langs en ret linje. Residuals vs. fitted viser en underlig opførsel, som ikke er randomly scattered.}
 
 \subsection{Results}
-\cref{tab: est_simple_lm} shows the estimates from all the simple linear regression models and they are also visualized in \cref{fig: } including a 95\% confidence interval. 
+\cref{tab: est_simple_lm} shows the estimates from all the simple linear regression models and they are also visualized in \cref{fig: } including a 95\% confidence interval.
 
-\noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet. Der vendes tilbage til dette i sammenligningen af de to regressionsmodeller.}
+\noindent \textcolor{blue}{Overordnet kan den simple lineære regressionsmodel ikke beskrive trenden. Den antager, at temperaturen er den eneste faktor der påvirker husenes varmeforbrug. Men ved at undersøge hvorvidt model assumptions er opfyldt, så 'failer' modellen i de fleste tilfælde. Dette tyder på, at der findes flere faktorer, der påvirker varmeforbruget, hvilket selvfølgelig er forventet. Der vendes tilbage til dette i sammenligningen af de to regressionsmodeller. Når vi fitter en lineær model med en attribute, så vil man lægge linjen så summen af alle residualerne er lig 0, derfor består sign testen, men shapiro og model assumptions er ikke opfyldt, så det er ikke nok.}
 
 The conclusion that the temperature is highly significant implies that this attribute will be included in the multiple linear regression model.
 
 \section{Multiple linear regression model}
-The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. This lead to the following two multiple linear regression models: 
+The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND), the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). This lead to the following two multiple linear regression models:
 \begin{align}
-    Y_{Q,L} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon \label{eq: multi_L}\\
-    Y_{Q,S} & = \mu + \beta_{\text{Q}}\cdot x_{\text{T}} + \textcolor{red}{\dots} + \varepsilon
-    \label{eq: multi_S}
+    Y_{Q,L} = \mu & + \beta_{\text{T}}\cdot x_{\text{T}} + \beta_{\text{N}}\cdot x_{\text{N}} + \beta_{\text{E}}\cdot x_{\text{E}}+ \beta_{\text{S}}\cdot x_{\text{S}} + \beta_{\text{W}}\cdot x_{\text{W}} + \beta_{\text{MSL}}\cdot x_{\text{MSL}} \nonumber \\ & + \beta_{\text{SR}}\cdot x_{\text{SR}} + \beta_{\text{WB}}\cdot x_{\text{WB}} + \beta_{\text{SB}}\cdot x_{\text{SB}}  + \beta_{\text{AB}}\cdot x_{\text{AB}} + \beta_{\text{CB}}\cdot x_{\text{CB}} \label{eq: multi_L}  \\ & + \beta_{\text{WKND}}\cdot x_{\text{WKND}} + (\beta_{\text{T:N}} + \beta_{\text{T:E}} + \beta_{\text{T:S}} + \beta_{\text{T:W}}) \cdot x_{\text{T}} + \varepsilon \nonumber \\ \nonumber \\
+    Y_{Q,S} = \mu & + \beta_{\text{T}}\cdot x_{\text{T}} + \beta_{\text{N}}\cdot x_{\text{N}} + \beta_{\text{E}}\cdot x_{\text{E}}+ \beta_{\text{S}}\cdot x_{\text{S}} + \beta_{\text{W}}\cdot x_{\text{W}} + \beta_{\text{MSL}}\cdot x_{\text{MSL}} \nonumber \\ & + \beta_{\text{SR}}\cdot x_{\text{SR}} + \beta_{\text{AB}}\cdot x_{\text{AB}} + \beta_{\text{CB}}\cdot x_{\text{CB}} + \beta_{\text{WKND}}\cdot x_{\text{WKND}} \label{eq: multi_S} \\ & + (\beta_{\text{T:N}} + \beta_{\text{T:E}} + \beta_{\text{T:S}} + \beta_{\text{T:W}}) \cdot x_{\text{T}} + \varepsilon  \nonumber
 \end{align}
+The models include the interaction between the temperature and the wind since it is expected that this interaction has an influence on the heat consumption. That is, it is expected that the influence of the wind is greater when the temperature is lower. In linear regression, it is desired to have as simple a model as possible, and since the models would be too complex when including all the interactions, only the interaction between the temperature and the wind is included.\\
+
+\noindent As for the simple model, the multiple models must also be validated by investigating diagnostic plots and testing for normally distributed residuals. Before performing the models, the wind will be modified which the following section explains.
 
 \noindent The models show that the interactions between the attribute \texttt{Holiday} and the other attributes are chosen to be excluded. The reason is that \texttt{Holiday} is used to investigate how the consumption changes during holiday periods. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND) and the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). The wind directions are not inserted directly into the model. As mentioned in \cref{tab: weatherdata}, the wind directions are given as degrees from $0$ to $360$. Instead of just classifying degree intervals as north, south, east or west, splines are used to model the directions. How this is done is described below.
 
@@ -83,12 +85,12 @@ The goal is to describe the wind direction as a two-dimensional spline, $X$. Eac
     0 \quad \text{otherwise}\,,
     \end{cases}
     \end{equation}
-    for $j = 0$ and $i = p + q$, and 
-    
+    for $j = 0$ and $i = p + q$, and
+
     \begin{equation}
         \mathcal{N}_{\Xi,i}^j(\xi) = \frac{\xi-\xi_i}{\xi_{i+j}-\xi_i}\mathcal{N}_{\Xi,i}^{j-1}(\xi) + \frac{\xi_{i+j+1}-\xi}{\xi_{i+j+1}-\xi_{i+1}} \mathcal{N}_{\Xi, i + 1}^{j-1}(\xi),
     \end{equation}
-    for $j = 1,2,..., q$ and $i = 1,2,..., p + q - j$. 
+    for $j = 1,2,..., q$ and $i = 1,2,..., p + q - j$.
 
 \noindent When the splines are uniform, the continuity of the basis splines across a knot is $q-1$. This means that the $q-1$'th derivative exists and is continuous. In this project splines of degree $2$ is used, meaning that the first derivative is continuous at every point on the spline.
 
@@ -107,42 +109,43 @@ Giver mere mening for brugeren
 
 \textcolor{red}{Tilføj billede af splines}
 
-\subsection{Validation}
-As for the simple linear regression model, the multiple models has to fulfill several assumptions. 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm18L.pdf}
-    \caption{Diagnostic plot of the multiple linear regression model for long house 18}
-    \label{fig: multiple_lm18L}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm55L.pdf}
-    \caption{}
-    \label{fig: multiple_lm55L}
-\end{figure}
+%\subsection{Validation}
+%The multiple models has to fulfill several assumptions.
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm68S.pdf}
-    \caption{}
-    \label{fig: multiple_lm68S}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm18L.pdf}
+%    \caption{Diagnostic plot of the multiple linear regression model for long house 18}
+%    \label{fig: multiple_lm18L}
+%\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm55L.pdf}
+%    \caption{}
+%    \label{fig: multiple_lm55L}
+%\end{figure}
+
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1.\textwidth]{../../../figures/multiple_lm68S.pdf}
+%    \caption{}
+%    \label{fig: multiple_lm68S}
+%\end{figure}
 
 
 \subsection{Results}
-\noindent When performing the two models given in \cref{eq: multi_L} and \cref{eq: multi_S}, without reduction, the significance of the parameters are determined and can be found in \cref{tab: lmMult_full_L}-\ref{tab: lmMult_full_S}. In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. The tables clearly show that the total of significance of each parameter for the different holidays occurs in less than half of the cases. 
+\noindent When performing the two models given in \cref{eq: multi_L} and \cref{eq: multi_S}, without reduction, the significance of the parameters are determined and can be found in \cref{tab: lmMult_full_L}-\ref{tab: lmMult_full_S}. In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. The tables clearly show that the total of significance of each parameter for the different holidays occurs in less than half of the cases.
 
 \textcolor{red}{Hvis bare én af retningerne har over halvdelen signifikant skal alle retningerne med.}
 
 \begin{table}
     \centering
     \resizebox{0.70\textheight}{!}{\begin{tabular}{l|cccccccccccccccccccc}
-     \hline 
+     \hline
     & I & T & N & E & S & W & MSL & SR & WB & SB & AB & CB & WKND & T:N & T:E & T:S & T:W \\
-    \hline 
+    \hline
     Sum of *** & 5 & 41 & 0 & 18 & 2 & 24 & 6 & 22 & 3 & 3 & 1 & 5 & 4 & 0 & 1 & 7 &9 \\
     Sum of ** & 6 & 1 & 1 & 9 & 5 & 12 & 4 & 10 & 6 & 2 & 0 & 2 & 0 & 1 & 1 & 9 & 9 \\
     Sum of * & 6 & 1 & 5 & 7 & 7 & 2 & 2 & 2 & 3 & 6 & 5 & 3 & 8 & 2 & 3 & 5 & 11 \\
@@ -156,9 +159,9 @@ As for the simple linear regression model, the multiple models has to fulfill se
 \begin{table}
     \centering
     \resizebox{0.7\textheight}{!}{\begin{tabular}{l|cccccccccccccccccc}
-     \hline 
+     \hline
     & I & T & N & E & S & W & MSL & SR & AB & CB & WKND & T:N & T:E & T:S & T:W \\
-    \hline 
+    \hline
     Sum of *** & 0 & 27 & 0 & 4 & 0 & 15 & 0 & 5 & 2 & 0 & 0 & 0 & 0 & 0 & 3\\
     Sum of ** & 2 & 0 & 0 & 6 & 2 & 5 & 2 & 6 & 0 & 0 & 3 & 0 & 0 & 2 & 5 \\
     Sum of * & 2 & 0 & 1 & 8 & 4 & 4 & 4 & 4 & 2 & 5 & 2 & 1 & 1 & 3 & 9 \\
@@ -171,8 +174,30 @@ As for the simple linear regression model, the multiple models has to fulfill se
 \end{table}
 
 \section{Regression model for comparing houses}
-Based on the tables illustrating the significant parameters for the long and short houses, an updated multiple linear regression model is made. The purpose of this more general model is to compare which parameters influence each house. Furthermore, houses with e.g. same area, construction year etc. can be compared. 
+Based on the tables illustrating the significant parameters for the long and short houses, an updated multiple linear regression model is made. The purpose of this more general model is to compare which parameters influence each house. Furthermore, houses with e.g. same area, construction year etc. can be compared. The comparison model derived from \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum}, becomes
+\begin{align}
+        Y_{Q} = \mu & + \beta_{\text{T}}\cdot x_{\text{T}} + \beta_{\text{N}}\cdot x_{\text{N}} + \beta_{\text{E}}\cdot x_{\text{E}}+ \beta_{\text{S}}\cdot x_{\text{S}} + \beta_{\text{W}}\cdot x_{\text{W}} \nonumber \\ & + \beta_{\text{SR}}\cdot x_{\text{SR}} + (\beta_{\text{T:N}} + \beta_{\text{T:E}} + \beta_{\text{T:S}} + \beta_{\text{T:W}}) \cdot x_{\text{T}} + \varepsilon. \label{eq: general_lm}
+\end{align}
+Likewise, the models are validated and if the assumptions are fulfilled \textcolor{red}{Et eller andet her.}
 
+\subsection{Validation}
+In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \textcolor{red}{diskussionen}. On the other hand, the diagnostic plots of the residuals from house 18 are definitely improved and the residuals show a randomly behavior. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} is used to determine if the general model is valid.
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.pdf}
+    \caption{Diagnostic plot of the general multiple linear regression model for long house 18}
+    \label{fig: general_lm18L}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/general_lm55L.pdf}
+    \caption{Diagnostic plot of the general multiple linear regression model for long house 55}
+    \label{fig: general_lm55L}
+\end{figure}
+
+
+
+\subsection{Results}
 \begin{table}
     \centering
     \begin{tabular}{cccccccccccc}
@@ -267,9 +292,6 @@ Based on the tables illustrating the significant parameters for the long and sho
     \label{lmMult_gen_S}
 \end{table}
 
-\subsection{Validation}
-
-\subsection{Results}
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.pdf}

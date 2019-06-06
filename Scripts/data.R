@@ -84,7 +84,6 @@ for(i in 1:n){
     tmp.d1[,2:4]<-tmp.d1[,2:4]*24 # Sum instead of mean (when there is 24 points) otherwise weight to 24 points
     tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
     
-    
     # Fill missing null values.
     tmp.xts <- xts(tmp.dat[,-1], order.by=tmp.dat[,1])
     t1<-rev(seq(from=tmp.dat$Date[1], to=tail(tmp.dat$Date,n=1), by="day"))
