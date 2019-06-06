@@ -60,7 +60,7 @@ Houravg <- Houravg[c(2:24,1),]
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
 tt <- Houravg
-library('fieflds')
+library('fields')
 
 image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
            lab.breaks=NULL,main = 'Average consumption of all houses during the day')

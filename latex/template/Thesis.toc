@@ -20,6 +20,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.2}The sun and the wind}{3}{subsection.1.2.2}% 
 \defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.3}Data checking}{4}{subsection.1.2.3}% 
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Exploratory Analysis}{5}{chapter.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Examination of the Heat Consumption}{5}{section.2.1}% 
@@ -42,27 +44,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Model assumptions}{17}{subsection.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Simple linear regression model}{18}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Simple linear regression model}{19}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Validation}{19}{subsection.3.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Results}{19}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.2}Results}{20}{subsection.3.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Multiple linear regression model}{19}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Multiple linear regression model}{21}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Splines}{21}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.1}Splines}{22}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.2}Validation}{22}{subsection.3.3.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.3}Results}{22}{subsection.3.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Regression model for comparing houses}{23}{section.3.4}% 
+\contentsline {section}{\numberline {3.4}Regression model for comparing houses}{25}{section.3.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.1}Validation}{26}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.1}Validation}{27}{subsection.3.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.2}Results}{26}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.2}Results}{27}{subsection.3.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Comparison}{26}{section.3.5}% 
+\contentsline {section}{\numberline {3.5}Comparison}{27}{section.3.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Models on the Hourly Consumption}{29}{chapter.4}% 
 \defcounter {refsection}{0}\relax 

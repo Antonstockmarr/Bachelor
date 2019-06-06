@@ -27,6 +27,9 @@ for (i in 1:n) {
   
   sign.test[[i]] <- binom.test(x = sum(sign(lm.simple[[i]]$residuals) == 1), n = length(lm.simple[[i]]$residuals))
   print(sign.test[[i]]$p.value)
+  
+  # 95% confidence interval
+  
 }
 
 # Calculating p-values under 0.05 for normality tests
