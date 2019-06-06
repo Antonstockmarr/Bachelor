@@ -147,7 +147,7 @@ colnames(lmSummary_est) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","
 colnames(lmSummary_p) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 sMultiple.test <- vector(mode = "list", length = n)
 sign.testM <- vector(mode = "list", length = n)
-
+t<-rep(0,n)
 par(mfrow = c(1,1))
 for (i in 1:n) {
   print(paste('Modeling house ',i))
@@ -173,7 +173,7 @@ for (i in 1:n) {
   sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
   print(sMultiple.test[[i]]$p.value)
   sign.testM[[i]] <- binom.test(x = sum(sign(lmMultipleNoP[[i]]$residuals) == 1), n = length(lmMultipleNoP[[i]]$residuals))
-  print(sign.testM[[i]]$p.value)
+  t[i]<-(sign.testM[[i]]$p.value)
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]
@@ -200,7 +200,7 @@ for (i in 1:n) {
   
   CirclePlot(Wind.Pred[[i]])
 }
-
+t
 
 t.est <- as.table(lmSummary_est)
 # Saving estimates in a .csv file
