@@ -118,6 +118,7 @@
       \field{title}{{A Modern Approach to Regression with R}}
     \endentry
   \enddatalist
+  \missing{Splines}
 \endrefsection
 \endinput
 
