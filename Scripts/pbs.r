@@ -2,19 +2,25 @@
 source('stepP.R')
 i=2
 wd<-weatherCons[[i]]$WindDirection
+wd <- seq(from =0, to = 360, by = 360/1000)
 library(pbs)
 wd = wd[order(wd)]
 #fit
-lasse = pbs(wd, df = NULL, knots = c(90,180,270), degree = 2, intercept = T, Boundary.knots = c(0,360))
+lasse = pbs(wd, df = NULL, knots = c(90,180,270), degree = 1, intercept = T, Boundary.knots = c(0,360))
 wd2 <- wd
 wd2[wd2<45] <- wd2[wd2<45]+360
 lasse = pbs(wd2, df = NULL, knots = c(135, 225,315), degree = 2, intercept = T, Boundary.knots = c(45,405))
 
-plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360))
-for (j in 2:5)
+plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360),xaxt = 'n',xlab = 'Direction in degrees',ylab = 'Spline value',main="Spline Basis")
+axis(1, at=seq(0,360, length=5), labels=c(0,90,180,270,360))
+
+for (j in 2:4)
 {
   points(wd,lasse[,j], col=j)
 }
+abline(v=c(45,135,225,315),col = c(4,1,2,3),lwd=2)
+legend(x='topright',legend = c('i=1','i=2','i=3','i=4'), col = c(4,1,2,3),lty = c(1,1,1,1),cex=1.1)
+
 points(wd, rowSums(lasse), col = 9)
 
 ############
