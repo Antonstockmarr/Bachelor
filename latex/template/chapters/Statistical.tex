@@ -92,7 +92,18 @@ The goal is to describe the wind direction as a two-dimensional spline, $X$. Eac
     \end{equation}
     for $j = 1,2,..., q$ and $i = 1,2,..., p + q - j$.
 
-\noindent When the splines are uniform, the continuity of the basis splines across a knot is $q-1$. This means that the $q-1$'th derivative exists and is continuous. In this project splines of degree $2$ is used, meaning that the first derivative is continuous at every point on the spline.
+\noindent When the splines are uniform, the continuity of the basis splines across a knot is $q-1$. This means that the $q-1$'th derivative exists and is continuous. In this project splines of degree $2$ is used, meaning that the first derivative is continuous at every point on the spline. The splines used here are periodic, and four knots are used for the knot vector, each associated with a general direction. Here they are defined as $northeast$, $southeats$, $southwest$ and $northwest$. The reason for this will be explained later in this section. For each of these knots there is a basis spline. When the degree of the splines is $2$, it means that the spline for a given knot is zero at the opposite knot. For example, when using four knots the spline peaking in the north would always be zero in the south. Higher degrees would not maintain this property. The spline basis can be seen on \cref{fig:spline_basis}. Notice that the sum of the entire spline basis at a given point always adds up to one. The figure shows how the $i$'th spline, associated with the $i$'th knot does not peak at that knot, but in the following interval. This is the reason why the knots are chosen in this way. By choosing the knots to be between the main directions north, east, south and west, this is where the basic splines peek, making it more transparent to the user when the wind directions are modelled later on.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/SplineBasis.jpeg}
+    \caption{The spline basis used to model the wind direction. Each color is a different basis spline, and the vertical lines mark the knots}
+    \label{fig:spline_basis}
+\end{figure}
+
+
 
 
 In the multiple regression model, splines will be used to model the wind direction. It does not make much sence to include the wind direction as it is in the model. It is not useful to know how significant the wind direction is, if it is not connected to the wind speed and if it is not known which directions are important. By modeling the wind direction with splines, each spline will represent a specific general direction.
