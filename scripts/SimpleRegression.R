@@ -15,7 +15,7 @@ for (i in 1:n) {
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   
   lm.simple[[i]] <- lm(Consumption ~ Temperature, data = model.tmp)
-  #print(summary(lm.simple[[i]]))
+  print(summary(lm.simple[[i]]))
   
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
