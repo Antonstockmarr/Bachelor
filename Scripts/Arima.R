@@ -17,6 +17,8 @@ for(i in 1:n){
   k<-dim(data[[i]])[1]
   data[[i]]<-data[[i]][k:1,]
 }
+k<-dim(weather)[1]
+weather <- weather[k:1,]
 
 Marima_model <- function(houses)
 {
