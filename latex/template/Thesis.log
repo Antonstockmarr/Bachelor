@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  6 JUN 2019 16:06
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  6 JUN 2019 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1549,7 +1549,15 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl)
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Splines
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
 
@@ -1804,36 +1812,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
-[22]
+[23]
 File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm18L.pdf>
 File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm55L.pdf>
- [23]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 182--231
+
+Overfull \hbox (11.04pt too wide) in paragraph at lines 202--251
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 42.25996pt on input line 233.
+LaTeX Warning: Float too large for page by 42.25996pt on input line 253.
 
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 237--270
+[24]
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 257--290
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24] [25]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
+ [25] [26]
 Overfull \vbox (227.22598pt too high) has occurred while \output is active []
 
  [27]
@@ -1878,7 +1883,7 @@ File: graphics/../../../figures/arimax/Arimax1_55.jpeg Graphic file (type bmp)
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 103.
+               Default added (so using `tbp') on input line 108.
 
 ) [37] [38] [39]
 \openout2 = `appendices/AnAppendix.aux'.
@@ -1946,10 +1951,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 49551 strings out of 492933
- 950700 string characters out of 6133145
- 1653853 words of memory out of 5000000
- 52849 multiletter control sequences out of 15000+600000
+ 49552 strings out of 492933
+ 950710 string characters out of 6133145
+ 1653869 words of memory out of 5000000
+ 52850 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,81p,1636b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
