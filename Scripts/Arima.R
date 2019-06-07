@@ -17,7 +17,7 @@ for(i in 1:n){
 Marima_model <- function(houses)
 {
 # (1,0,1)x(1,1,1)
-differencing = matrix(c(1, 24))
+differencing = c(1, 24)
 result <- vector(mode='list', length = n)
 for (i in houses)
 {
@@ -118,7 +118,7 @@ model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1:10),T)
 
 model2marima <- Marima_model(c(1:10))
 
-i=1
+i=10
 short.form(model2marima[[i]]$ar.estimates)
 short.form(model2marima[[i]]$ma.estimates)
 model2[[4]][[i]]
