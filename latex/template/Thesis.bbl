@@ -65,6 +65,18 @@
       \field{labeltitlesource}{title}
       \field{title}{{Statistics: An introduction using R}}
     \endentry
+    \entry{condition}{url}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labeltitlesource}{title}
+      \field{title}{{Description of the attribute Condition}}
+      \verb{urlraw}
+      \verb https://www.wunderground.com/weather/api/d/docs?d=resources%2Fphrase-glossary&_ga=2.166768631.87242339.1555497846-195014723.1555497846&fbclid=IwAR3NANmRzhGE0uS4m5YqMu06_qJDJFQ7-Wd3xWjKPV68Njtso_4PSVuVk9o
+      \endverb
+      \verb{url}
+      \verb https://www.wunderground.com/weather/api/d/docs?d=resources%2Fphrase-glossary&_ga=2.166768631.87242339.1555497846-195014723.1555497846&fbclid=IwAR3NANmRzhGE0uS4m5YqMu06_qJDJFQ7-Wd3xWjKPV68Njtso_4PSVuVk9o
+      \endverb
+    \endentry
     \entry{Time_Series_Analysis}{book}{}
       \name{author}{1}{}{%
         {{hash=ac5d1263fca18a1f2d85317607e7d734}{%
@@ -106,6 +118,7 @@
       \field{title}{{A Modern Approach to Regression with R}}
     \endentry
   \enddatalist
+  \missing{Splines}
 \endrefsection
 \endinput
 

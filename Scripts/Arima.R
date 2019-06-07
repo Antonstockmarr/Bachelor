@@ -21,7 +21,7 @@ for(i in 1:n){
 Marima_model <- function(houses)
 {
 # (1,0,1)x(1,1,1)
-differencing = matrix(c(1, 24,2,0))
+differencing = matrix(c(1, 24))
 result <- vector(mode='list', length = n)
 for (i in houses)
 {
@@ -33,6 +33,7 @@ for (i in houses)
   arima.dat <- cbind(data[[i]]$CoolingDegree*data[[i]]$Volume,Temperature)
   dd <- define.dif(arima.dat, differencing)
   dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
+  dm1$ar.pattern[1,2,25:26] <- 0
   m1 <- marima(dd$y.dif, ar.pattern = dm1$ar.pattern, ma.pattern = dm1$ma.pattern, Plot = 'log.det',penalty=0)
   #short.form(m1$ar.estimates,leading = F)
   #short.form(m1$ma.estimates,leading = F)
@@ -116,10 +117,15 @@ model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,2))
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),1,T)
+model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1:10),T)
 
 
-model2marima <- Marima_model(1)
+model2marima <- Marima_model(c(1:10))
+
+i=1
+short.form(model2marima[[i]]$ar.estimates)
+short.form(model2marima[[i]]$ma.estimates)
+model2[[4]][[i]]
 
 # The third model
 two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
