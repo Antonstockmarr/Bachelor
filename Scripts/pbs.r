@@ -12,7 +12,7 @@ wd2[wd2<45] <- wd2[wd2<45]+360
 lasse = pbs(wd2, df = NULL, knots = c(135, 225,315), degree = 2, intercept = T, Boundary.knots = c(45,405))
 
 plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360),xaxt = 'n',xlab = 'Direction in degrees',ylab = 'Spline value',main="Spline Basis")
-axis(1, at=seq(0,360, length=5), labels=c(0,90,180,270,360))
+axis(1, at=seq(0,360, length=9), labels=c(0,45,90,135,180,225,270,315,360))
 
 for (j in 2:4)
 {

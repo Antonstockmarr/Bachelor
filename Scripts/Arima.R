@@ -113,14 +113,15 @@ model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,2))
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),40,T)
+model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1:10),T)
 
 
-model2marima <- Marima_model(40)
+model2marima <- Marima_model(c(1:10))
 
-short.form(model2marima[[40]]$ar.estimates)
-short.form(model2marima[[40]]$ma.estimates)
-model2[[4]][[40]]
+i=1
+short.form(model2marima[[i]]$ar.estimates)
+short.form(model2marima[[i]]$ma.estimates)
+model2[[4]][[i]]
 
 # The third model
 two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
