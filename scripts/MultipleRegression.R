@@ -147,7 +147,7 @@ colnames(lmSummary_est) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","
 colnames(lmSummary_p) <- c("I","T","N","E","S","W","SolaR","T:N","T:E","T:S","T:W")
 sMultiple.test <- vector(mode = "list", length = n)
 sign.testM <- vector(mode = "list", length = n)
-t<-rep(0,n)
+t<-matrix(rep(0,n*2),ncol=n)
 par(mfrow = c(1,1))
 for (i in 1:n) {
   print(paste('Modeling house ',i))
@@ -171,9 +171,9 @@ for (i in 1:n) {
   title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
   # Testing for normality
   sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
-  print(sMultiple.test[[i]]$p.value)
+  t[1,i]<-(sMultiple.test[[i]]$p.value)
   sign.testM[[i]] <- binom.test(x = sum(sign(lmMultipleNoP[[i]]$residuals) == 1), n = length(lmMultipleNoP[[i]]$residuals))
-  t[i]<-(sign.testM[[i]]$p.value)
+  t[2,i]<-(sign.testM[[i]]$p.value)
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]

@@ -10,7 +10,7 @@ sign.test <- vector(mode = "list", length = n)
 lm.simple <- vector(mode = "list", length = n)
 model.data <- weatherCons
 plotpoints<-matrix(rep(0,3*n),ncol=n)
-t<-rep(0,n)
+ts<-matrix(rep(0,n*2),ncol=n)
 for (i in 1:n) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
@@ -27,10 +27,10 @@ for (i in 1:n) {
   title(paste("Daily consumption for house ", i, "using simple lm"), outer=TRUE, adj = 0.5, line = -1.25)
   # Testing for normality
   s.test[[i]] <- shapiro.test(lm.simple[[i]]$residuals)
-  print(s.test[[i]]$p.value)
+  ts[1,i]<-(s.test[[i]]$p.value)
   
   sign.test[[i]] <- binom.test(x = sum(sign(lm.simple[[i]]$residuals) == 1), n = length(lm.simple[[i]]$residuals))
-  t[i]<-(sign.test[[i]]$p.value)
+  ts[2,i]<-(sign.test[[i]]$p.value)
   # 95% confidence interval
   
 }
