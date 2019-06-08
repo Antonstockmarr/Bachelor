@@ -97,6 +97,28 @@
       \field{labeltitlesource}{title}
       \field{title}{{Time Series Analysis}}
     \endentry
+    \entry{Splines}{paper}{}
+      \name{author}{1}{}{%
+        {{hash=e94db3c7796f1a06a284916f0c8d437f}{%
+           family={{Nielsen, P. N., Gravesen, J., Gersborg, A. R., \& Pedersen, N. L.}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Technical University of Denmark (DTU)}%
+      }
+      \strng{namehash}{e94db3c7796f1a06a284916f0c8d437f}
+      \strng{fullhash}{e94db3c7796f1a06a284916f0c8d437f}
+      \strng{bibnamehash}{e94db3c7796f1a06a284916f0c8d437f}
+      \strng{authorbibnamehash}{e94db3c7796f1a06a284916f0c8d437f}
+      \strng{authornamehash}{e94db3c7796f1a06a284916f0c8d437f}
+      \strng{authorfullhash}{e94db3c7796f1a06a284916f0c8d437f}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Isogeometric Analysis and Shape Optimization in Fluid Mechanics}}
+      \field{year}{2012}
+    \endentry
     \entry{Stat_bog2}{book}{}
       \name{author}{1}{}{%
         {{hash=9e29c0a02eac4082be47381460e79132}{%
@@ -118,7 +140,6 @@
       \field{title}{{A Modern Approach to Regression with R}}
     \endentry
   \enddatalist
-  \missing{Splines}
 \endrefsection
 \endinput
 
