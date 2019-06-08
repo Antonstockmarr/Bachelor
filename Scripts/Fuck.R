@@ -47,3 +47,7 @@ for(k in 1:n){
   plot(fitted.temp,plot.points,main=k)#,ylim=c(-1,.7))
 }
 
+
+
+
+rm(day.weather,EndDays,StartDays,tmp.dat,weatherCons,data.key,Datalengths,i,j,k,day.data,day.avg,BBR,m,nas,Wcol,DataChecking,Polarize,Sun)
