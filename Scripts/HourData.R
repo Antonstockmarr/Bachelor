@@ -100,16 +100,19 @@ for(i in 2:n){
 ttavg<-ttavg/n
 
 k=1:24
-plot(k,ttavg,col=Wcol[3],pch=19,ylab ="% of avg consumption each hour",xlab="Hour")
+plot(k[ttavg>=quantile(ttavg)[2] &  ttavg<=quantile(ttavg)[4]],ttavg[ttavg>=quantile(ttavg)[2] & ttavg<=quantile(ttavg)[4]],col=Wcol[3],pch=19,ylab ="average consumption per hour (normalized)",xlab="Hour", xaxt ="n",type='h',xlim=c(0,24),ylim=c(0.035,0.053))
+points(k[ttavg>=quantile(ttavg)[4]],ttavg[ttavg>=quantile(ttavg)[4]],col=Wcol[4],type='h')
+points(k[ttavg<=quantile(ttavg)[2]],ttavg[ttavg<=quantile(ttavg)[2]],col=Wcol[2],type = 'h')
+points(k[ttavg>=quantile(ttavg)[2] &  ttavg<=quantile(ttavg)[4]],ttavg[ttavg>=quantile(ttavg)[2] & ttavg<=quantile(ttavg)[4]],col=Wcol[3],pch=19)
 points(k[ttavg>=quantile(ttavg)[4]],ttavg[ttavg>=quantile(ttavg)[4]],col=Wcol[4],pch=19)
 points(k[ttavg<=quantile(ttavg)[2]],ttavg[ttavg<=quantile(ttavg)[2]],col=Wcol[2],pch=19)
-abline(h=quantile(ttavg)[4],lty=2,col="gray")
-abline(h=quantile(ttavg)[3],lty=2,col="gray")
-abline(h=quantile(ttavg)[2],lty=2,col="gray")
+abline(h=quantile(ttavg)[4],lty=2,col=Wcol[4],lwd=2)
+abline(h=quantile(ttavg)[3],lty=2,col=Wcol[3],lwd=2)
+abline(h=quantile(ttavg)[2],lty=2,col=Wcol[2],lwd=2)
+legend(x="topright",legend = c("75th percentile","50th percentile","25th percentile"),lty = c(2,2,2),col = c(Wcol[4],Wcol[3],Wcol[2]),lwd=2)
+axis(side=1,at=c(0,3,6,9,12,15,18,21,24),labels=c("00","03","06","09","12","15","18","21","24"))
 
-
-
-
+hist()
 # Consumption in the winter period
 for (i in 1:n)
 {
