@@ -1,17 +1,17 @@
 [1] Config.pm:304> INFO - This is Biber 2.12
 [1] Config.pm:307> INFO - Logfile is '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.blg'
-[123] biber-darwin:315> INFO - === Sun Jun  9, 2019, 10:44:44
-[186] Biber.pm:371> INFO - Reading '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bcf'
-[353] Biber.pm:889> INFO - Found 6 citekeys in bib section 0
-[380] Biber.pm:4093> INFO - Processing section 0
-[410] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography/Bibliography.bib' for section 0
-[414] bibtex.pm:1523> INFO - LaTeX decoding ...
-[432] bibtex.pm:1340> INFO - Found BibTeX data source '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/bibliography/Bibliography.bib'
-[465] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/3p/tx8nmwn172zc34bxm71w1gkr0000gn/T/yXtViEC4p3/Bibliography.bib_36913.utf8, line 36, warning: 15 characters of junk seen at toplevel
-[495] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[495] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[495] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[495] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[525] bbl.pm:636> INFO - Writing '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl' with encoding 'UTF-8'
-[528] bbl.pm:739> INFO - Output to /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
-[528] Biber.pm:110> INFO - WARNINGS: 1
+[75] biber-darwin:315> INFO - === Sun Jun  9, 2019, 12:22:37
+[140] Biber.pm:371> INFO - Reading '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bcf'
+[271] Biber.pm:889> INFO - Found 6 citekeys in bib section 0
+[292] Biber.pm:4093> INFO - Processing section 0
+[315] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography/Bibliography.bib' for section 0
+[319] bibtex.pm:1523> INFO - LaTeX decoding ...
+[332] bibtex.pm:1340> INFO - Found BibTeX data source '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/bibliography/Bibliography.bib'
+[368] Utils.pm:193> WARN - BibTeX subsystem: /var/folders/3p/tx8nmwn172zc34bxm71w1gkr0000gn/T/q9cLe0s8C0/Bibliography.bib_37449.utf8, line 36, warning: 15 characters of junk seen at toplevel
+[393] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[393] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[393] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[394] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[423] bbl.pm:636> INFO - Writing '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl' with encoding 'UTF-8'
+[425] bbl.pm:739> INFO - Output to /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
+[425] Biber.pm:110> INFO - WARNINGS: 1
