@@ -96,7 +96,7 @@ for $j=1,2,..,q$ and $i=1,2,...,n+q-j$. When the splines are uniform, the contin
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{../../../figures/SplineBasis.jpeg}
+    \includegraphics[width=1.\textwidth]{../../../figures/SplineBasis.jpeg}
     \caption{The spline basis used to model the wind direction. Each color is a different basis spline, and the vertical lines mark the knots}
     \label{fig:spline_basis}
 \end{figure}
@@ -132,12 +132,9 @@ Now the splines can be used to represent their category in the linear regression
 
 
 \subsection{Results}
-The full multiple regression models are steps of the backward selection which is why they are not validated. The purpose of this step is, as mentioned, to determine which parameters are found to be significant in the majority of the models. Hereafter, these parameters are included in a general regression model that can be used for comparing the houses performance.
+The full multiple regression models are steps of the backward selection which is why they are not validated. The purpose of this step is, as mentioned, to determine which parameters are found to be significant in the majority of the models. Hereafter, these parameters are included in a general regression model that can be used for comparing the houses performance. \\
 
-\noindent When performing the two models given in \cref{eq: multi_L} and \cref{eq: multi_S}, without reduction, the significance of the parameters are determined and can be found in \cref{tab: lmMult_full_L}-\ref{tab: lmMult_full_S}. In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. The tables clearly show that the total of significance of each parameter for the different holidays occurs in less than half of the cases.
-
-\textcolor{red}{Hvis bare én af retningerne har over halvdelen signifikant skal alle retningerne med.}
-
+\noindent When performing the two models given in \cref{eq: multi_L} and \cref{eq: multi_S}, without reduction, the significance of the parameters are determined and can be found in \cref{tab: lmMult_full_L}-\ref{tab: lmMult_full_S}. In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. The tables clearly show that the total of significance of the intercept, temperature, east and west as well as the interaction between temperature and west and the solar radiation occurs in more than half of the models. Thus, these are included in the general regression model. But when the influence of the wind on the consumption is examined, it does not make much sense to exclude some of these parameters. Therefore, both north, south, east and west are included as well as their interaction with the temperature. Each parameter from the different holiday attributes is not significant for enough of the models. There might have been some patterns in when the households vacationed, which the tables also indicate, but the impact on consumption is not large enough for the holidays to be included in the general model. 
 \begin{table}
     \centering
     \resizebox{0.70\textheight}{!}{\begin{tabular}{l|cccccccccccccccccccc}
@@ -171,16 +168,15 @@ The full multiple regression models are steps of the backward selection which is
 \label{tab: lmMult_full_S_sum}
 \end{table}
 
-
 \section{Regression model for comparing houses}
 Based on the tables illustrating the significant parameters for the long and short houses, an updated multiple linear regression model is made. The purpose of this more general model is to compare which parameters influence each house. Furthermore, houses with e.g. same area, construction year etc. can be compared. The comparison model derived from \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum}, becomes
 \begin{align}
         Y_{Q} = \mu & + \beta_{\text{T}}\cdot x_{\text{T}} + \beta_{\text{N}}\cdot x_{\text{N}} + \beta_{\text{E}}\cdot x_{\text{E}}+ \beta_{\text{S}}\cdot x_{\text{S}} + \beta_{\text{W}}\cdot x_{\text{W}} \nonumber \\ & + \beta_{\text{SR}}\cdot x_{\text{SR}} + (\beta_{\text{T:N}} + \beta_{\text{T:E}} + \beta_{\text{T:S}} + \beta_{\text{T:W}}) \cdot x_{\text{T}} + \varepsilon. \label{eq: general_lm}
 \end{align}
-Likewise, the models are validated and if the assumptions are fulfilled \textcolor{red}{Et eller andet her.}
+Likewise, the models are validated and if the assumptions are fulfilled the models can be used for comparison and predictions. The model in \cref{eq: general_lm} is expected to explain the heat consumption of the houses in a more accurate way as it takes several significant parameters into account. As mentioned, the purpose of the general model is to compare the houses for what influences their specific heat consumption and thereby the house's performance. Thus, they are not further reduced. 
 
 \subsection{Validation}
-In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \textcolor{red}{diskussionen}. On the other hand, the diagnostic plots of the residuals from house 18 are definitely improved and the residuals show a randomly behavior. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} is used to determine if the general model is valid.
+In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \textcolor{red}{diskussionen}. On the other hand, the diagnostic plots of the residuals from house 55 are definitely improved and the residuals show a randomly behavior. Overall, the diagnostic plots can be said to be fulfilled. They are not perfect but that is not expected either. There are some houses which residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.pdf}
@@ -193,9 +189,12 @@ In order to determine whether the general model is valid, the diagnostic plots i
     \caption{Diagnostic plot of the general multiple linear regression model for long house 55}
     \label{fig: general_lm55L}
 \end{figure}
-
+\noindent In spite of the abovementioned, the models are concluded to somewhat fulfill the model assumptions. 
 
 \subsection{Results}
+The results of the general regression model performed on each house, are illustrated in \cref{lmMult_gen_L} and \cref{lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative since the increase in the temperature will result in a decrease in the heat consumption \textcolor{red}{...}. The attribute \texttt{SolarRadiation} effects the majority of the houses. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is. 
+
+\noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Anton og Finn bygger videre på dette med inddragelse af plots.} 
 \begin{table}
     \centering
     \begin{tabular}{cccccccccccc}
@@ -250,7 +249,6 @@ In order to determine whether the general model is valid, the diagnostic plots i
     \caption{Significance of parameters for 'long' houses. \textcolor{red}{Punktum betyder, at det er mellem 5 og 10\%}}
     \label{lmMult_gen_L}
 \end{table}
-
 \begin{table}[H]
     \centering
     \begin{tabular}{cccccccccccc}
@@ -290,18 +288,20 @@ In order to determine whether the general model is valid, the diagnostic plots i
     \label{lmMult_gen_S}
 \end{table}
 
+\noindent In addition, the models are used to predict 31 days ahead. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_18L} and \cref{fig: lmpred_55L}. 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.pdf}
-    \caption{}
+    \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model does not capture the behavior of this house at all}
     \label{fig: lmpred_18L}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.pdf}
-    \caption{}
+    \caption{Predictions of the last 31 days of the model data for house 55 including a 95\% prediction interval. The model captures the behavior of this house quite well}
     \label{fig: lmpred_55L}
 \end{figure}
+\noindent \textcolor{red}{Kommentarer til predictions.}
 
 \section{Comparison}
-\textcolor{red}{Noget med at vi forventede den multiple model ville være bedre i tests end den simple.}
+When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. 
