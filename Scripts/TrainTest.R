@@ -4,8 +4,8 @@ TrainTest=function(Dataset,points){
   Test=vector(mode="list", length = n)
   for(i in 1:n){
     ni<-dim(Dataset[[i]])[1]
-    Train[[i]]<-Dataset[[i]][(points+1):ni,]
-    Test[[i]]<-Dataset[[i]][1:points,]
+    Train[[i]]<-Dataset[[i]][1:(ni-points),]
+    Test[[i]]<-Dataset[[i]][(ni-points+1):ni,]
   }
   return(list(Train,Test))
 }

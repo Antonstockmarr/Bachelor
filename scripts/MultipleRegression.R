@@ -12,6 +12,12 @@ k <-1:n
 Long <- k[Datalengths>=360]
 Short <- k[Datalengths<360]
 
+#Flip WeatherCons
+for(i in 1:n){
+  k<-dim(weatherCons[[i]])[1]
+  weatherCons[[i]]<-weatherCons[[i]][k:1,]
+}
+
 # Defining data used for modeling
 model.data <- weatherCons
 # Various attributes are removed
