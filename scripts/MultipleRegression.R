@@ -183,7 +183,7 @@ for (i in 1:n) {
   par(mfrow = c(1,1))
   model.Wind<-data.frame(Consumption=model.tmp$Consumption,Temperature=model.tmp$Temperature,Radiation=model.tmp$Radiation,N=model.tmp$North,E=model.tmp$East,S=model.tmp$South,W=model.tmp$West)
   lmMultipleNoP[[i]] <- lm(Consumption ~ .+Temperature*(N + E + S + W),data = model.Wind)
-  Splinebasis2 <- BSplines(1:360)
+  Splinebasis2 <- BSplines(0:359)
   newData = data.frame(Temperature = rep(0, 360), # 0 grader
                        Radiation = rep(0, 360), # Om natten
                        N = Splinebasis2[,3],
