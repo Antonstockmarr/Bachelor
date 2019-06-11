@@ -112,62 +112,17 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas,houses,xreg)
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'sma2'=0,"Temperature"=0)
 
-model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,2))
+#model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,2))
 
 
 # The second model
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1:10),T)
+model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1:n),T)
 
 
-model2marima <- Marima_model(c(1:10))
-
-i=10
-short.form(model2marima[[i]]$ar.estimates)
-short.form(model2marima[[i]]$ma.estimates)
-model2[[4]][[i]]
-
-# The third model
-two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0, "Temperature"=0)
-
-model3 <- ARIMAX_model(two_sd,three_sd,c(1,0,2),c(1,1,1))
-
-
-# The third model
-two_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
-three_sd <- data.frame("ar1"=0,"ma1"=0,'ma2'=0,'sma1'=0,'sar1'=0,'sma2'=0, "Temperature"=0)
-
-model4 <- ARIMAX_model(two_sd,three_sd,c(1,0,2),c(1,1,2))
-
-for (i in 1:38)
-{
-  Testmodel[[4]][[i]] <- model2_2[[4]][[i]]
-}
-
-for (i in 40:n)
-{
-  Testmodel[[4]][[i]] <- model2[[4]][[i]]
-}
-
-
-for (i in c(1:38,40:n))
-{
-  plot(Testmodel[[4]][[i]])
-}
-
-days = 7
-lagmax = days*24+2
-for (i in c(1:38,40:n))
-{
-  par(mfrow=c(2,1))
-  acf(Testmodel[[4]][[i]]$residuals,panel.first = c(abline(v=(1:days)*24,col=Wcol[4],lty=2)),lag.max=lagmax,main="")
-  title(paste("House ",i))
-  acf(Testmodel[[4]][[i]]$residuals,"partial",lag.max = lagmax,panel.first = c(abline(v=(1:days)*24,col="red",lty=2)),main="")
-  
-}
+model2marima <- Marima_model(c(1:n))
 
 
 # Physical MARIMA
@@ -206,8 +161,6 @@ short.form(m2$ma.stdv)
 
 plot(m2$ar.estimates[1,4,2]*sin1[1:24]+m2$ar.estimates[1,5,2]*sin2[1:24]
      +m2$ar.estimates[1,6,2]*cos1[1:24]+m2$ar.estimates[1,7,2]*cos2[1:24]+m2$ar.estimates[1,8,2]*sin3[1:24]+m2$ar.estimates[1,9,2]*cos3[1:24],type='l',ylab='')
-plot(m2$ar.estimates[1,4,2]*sin1[1:24])
-lines()
 plot(Houravg[,i],type='l')
 
 # marima estimere ma delen p?? en iterativ m??de, normalt skal man bruge kalman filtering
