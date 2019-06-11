@@ -56,7 +56,7 @@ for (i in c(Long,Short)) {
   newData$South <- test.wind[,1]
   newData$West <- test.wind[,2]
   newData$Consumption<-NULL
-  Pred<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
+  Pred<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "prediction", level = 0.95))
   
   if(k>length(Long)){
     mm<-paste("Short house: ",i)
@@ -68,7 +68,7 @@ for (i in c(Long,Short)) {
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
   lines(ttd[[2]][[i]]$Consumption,lty=1,col=2)
-  legend(x = "topright", legend = c("Prediction", "95% CI", "Data"), lty = c(1,2,1), col = c(1,1,2))
+  legend(x = "topright", legend = c("Prediction", "95% PI", "Data"), lty = c(1,2,1), col = c(1,1,2))
 }
 
 # Hourly Predictions ----------------------------------------

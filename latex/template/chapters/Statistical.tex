@@ -64,61 +64,46 @@ In addition, a Shapiro-Wilk test and a sign test is perfomed. The hypothesis tes
 The conclusion that the temperature is highly significant implies that this attribute will be included in the multiple linear regression model.
 
 \section{Multiple linear regression model}
-The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND), the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). This lead to the following two multiple linear regression models:
+The linear regression model is extended to a multiple linear regression model as the inclusion of several independent variables is expected to improve the model. The simple model clearly showed that the heat consumption is affected by other physical factors than temperature. Hence, a full multiple linear regression model containing the attributes given in Table \ref{tab: modeldata} is performed on the model data. The backward selection of the variables are perfomed such that the highly significant parameters from the full multiple regression model are chosen and used to develop an updated model. Since \texttt{Condition} and \texttt{PrecipitationProbability} are not normalised, they are excluded from the model. In addition, it is mentioned in Chapter 2 that the house data consists of house with observations for approximately a year and house with observations for approximately six months. Thus, the two distinct lengths of observations are modeled slighty different. There do not exist observations for winter break and spring break in the data containing the short houses. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND), the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). This lead to the following two multiple linear regression models:
 \begin{align}
     Y_{Q,L} = \mu & + \beta_{\text{T}}\cdot x_{\text{T}} + \beta_{\text{N}}\cdot x_{\text{N}} + \beta_{\text{E}}\cdot x_{\text{E}}+ \beta_{\text{S}}\cdot x_{\text{S}} + \beta_{\text{W}}\cdot x_{\text{W}} + \beta_{\text{MSL}}\cdot x_{\text{MSL}} \nonumber \\ & + \beta_{\text{SR}}\cdot x_{\text{SR}} + \beta_{\text{WB}}\cdot x_{\text{WB}} + \beta_{\text{SB}}\cdot x_{\text{SB}}  + \beta_{\text{AB}}\cdot x_{\text{AB}} + \beta_{\text{CB}}\cdot x_{\text{CB}} \label{eq: multi_L}  \\ & + \beta_{\text{WKND}}\cdot x_{\text{WKND}} + (\beta_{\text{T:N}} + \beta_{\text{T:E}} + \beta_{\text{T:S}} + \beta_{\text{T:W}}) \cdot x_{\text{T}} + \varepsilon \nonumber \\ \nonumber \\
     Y_{Q,S} = \mu & + \beta_{\text{T}}\cdot x_{\text{T}} + \beta_{\text{N}}\cdot x_{\text{N}} + \beta_{\text{E}}\cdot x_{\text{E}}+ \beta_{\text{S}}\cdot x_{\text{S}} + \beta_{\text{W}}\cdot x_{\text{W}} + \beta_{\text{MSL}}\cdot x_{\text{MSL}} \nonumber \\ & + \beta_{\text{SR}}\cdot x_{\text{SR}} + \beta_{\text{AB}}\cdot x_{\text{AB}} + \beta_{\text{CB}}\cdot x_{\text{CB}} + \beta_{\text{WKND}}\cdot x_{\text{WKND}} \label{eq: multi_S} \\ & + (\beta_{\text{T:N}} + \beta_{\text{T:E}} + \beta_{\text{T:S}} + \beta_{\text{T:W}}) \cdot x_{\text{T}} + \varepsilon  \nonumber
 \end{align}
 The models include the interaction between the temperature and the wind since it is expected that this interaction has an influence on the heat consumption. That is, it is expected that the influence of the wind is greater when the temperature is lower. In linear regression, it is desired to have as simple a model as possible, and since the models would be too complex when including all the interactions, only the interaction between the temperature and the wind is included.\\
 
+\noindent The models show that the interactions between the attribute \texttt{Holiday} and the other attributes are chosen to be excluded. The reason is that \texttt{Holiday} is used to investigate how the consumption changes during holiday periods. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND) and the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). The wind directions are not inserted directly into the model. As mentioned in \cref{tab: weatherdata}, the wind directions are given as degrees from $0$ to $360$. Instead of just classifying degree intervals as north, south, east or west, splines are used to model the directions. How this is done is described below.
 \noindent As for the simple model, the multiple models must also be validated by investigating diagnostic plots and testing for normally distributed residuals. Before performing the models, the wind will be modified which the following section explains.
 
-\noindent The models show that the interactions between the attribute \texttt{Holiday} and the other attributes are chosen to be excluded. The reason is that \texttt{Holiday} is used to investigate how the consumption changes during holiday periods. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND) and the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). The wind directions are not inserted directly into the model. As mentioned in \cref{tab: weatherdata}, the wind directions are given as degrees from $0$ to $360$. Instead of just classifying degree intervals as north, south, east or west, splines are used to model the directions. How this is done is described below.
+\noindent The models show that the interactions between the attribute \texttt{Holiday} and the other attributes are chosen to be excluded. The reason is that \texttt{Holiday} is used to investigate how the consumption changes during holiday periods. The parameters will be denoted as follows: Intercept (I), Temperature (T), North (N), East (E), South (S), West (W), Mean Sea Level (MSL), Solar Radiation (SR), Winter Break (WB), Spring Break (SB), Autumn Break (AB), Christmas Break (CB), Weekend (WKND) and the interaction between the temperature and the different wind directions (T:N, T:E, T:S, T:W). The wind directions are not inserted directly into the model. As mentioned in \cref{tab: weatherdata}, the wind directions are given as degrees from $0$ to $360$. But in the model the wind direction is not quantified in this way, rather it should be an effect on each of the four major directions: north, south, east and west. These will in the following be called wind direction categories. One way to classify the wind direction could be to use indicator variables, and assign each possible wind direction to a category. In this project spline functions will be used to determine the effect a certain wind direction has on the categories. As a consequence, a wind direction can have different effects on different categories. For example wind coming directly from north might have a large effect on the north category, but also a lesser effect on east and west. In real life the wind direction is often distorted close to the ground because of turbulence. Also wind directions on the border between two categories should have an effect on both. For these reasons, splines seem like a good choise for modelling the wind.
 
 \subsection{Splines}
-The goal is to describe the wind direction as a two-dimensional spline, $X$. Each major direction is described by a basis spline. Together they form a spline basis, that span the spline space of $X$. $X$ is defined as a linear combination of the basic splines. The theory on splines introduced here is based on \cite{Splines}. A spline basis defined by a knot vector $\Xi$ with $p$ points and a polynomial degree $q\in \mathbb{N}$. For a spline basis with $n$ basis splines of degree $q$ there are $n+q+1$ knots in the knot vector. The i'th basis spline is a function $\mathcal{N}^q_{\Xi,i}: \mathbb{R} \rightarrow \mathbb{R}$. When the knots are equidistant, the spline is uniform. Then the spline is defined by the Cox-de Boor recursion formula:
+Each major direction is described by a basis spline. Together they form a spline basis, that spans the space of the wind direction. The theory on splines introduced here is based on \cite{Splines}. A spline basis is defined by a knot vector $\Xi$ and a polynomial degree $q\in \mathbb{N}$. The i'th basis spline is a function $\mathcal{N}^q_{\Xi,i}: \mathbb{R} \rightarrow \mathbb{R}$. If the spline basis should contain $n$ basic splines, then $\Xi=\{\xi_1, \xi_2,...,\xi_{n+q+1}\}$. When the knots are equidistant, the spline is uniform. Then the spline is defined by the Cox-de Boor recursion formula:
 
 \begin{equation}
-    \mathcal{N}_{\Xi,i}^j (\xi) =
+    \mathcal{N}_{\Xi,i}^0 (\xi) =
     \begin{cases}
     1 \quad \text{if} \ \ \xi_i \leq \xi \leq \xi_{i+1}\\
     0 \quad \text{otherwise}\,,
     \end{cases}
-    \end{equation}
-    for $j = 0$ and $i = p + q$, and
-
+\end{equation}
+for the splines of degree $0$, and for higher degrees
     \begin{equation}
         \mathcal{N}_{\Xi,i}^j(\xi) = \frac{\xi-\xi_i}{\xi_{i+j}-\xi_i}\mathcal{N}_{\Xi,i}^{j-1}(\xi) + \frac{\xi_{i+j+1}-\xi}{\xi_{i+j+1}-\xi_{i+1}} \mathcal{N}_{\Xi, i + 1}^{j-1}(\xi),
     \end{equation}
-    for $j = 1,2,..., q$ and $i = 1,2,..., p + q - j$.
-
-\noindent When the splines are uniform, the continuity of the basis splines across a knot is $q-1$. This means that the $q-1$'th derivative exists and is continuous. In this project splines of degree $2$ is used, meaning that the first derivative is continuous at every point on the spline. The splines used here are periodic, and four knots are used for the knot vector, each associated with a general direction. Here they are defined as $northeast$, $southeats$, $southwest$ and $northwest$. The reason for this will be explained later in this section. For each of these knots there is a basis spline. When the degree of the splines is $2$, it means that the spline for a given knot is zero at the opposite knot. For example, when using four knots the spline peaking in the north would always be zero in the south. Higher degrees would not maintain this property. The spline basis can be seen on \cref{fig:spline_basis}. Notice that the sum of the entire spline basis at a given point always adds up to one. The figure shows how the $i$'th spline, associated with the $i$'th knot does not peak at that knot, but in the following interval. This is the reason why the knots are chosen in this way. By choosing the knots to be between the main directions north, east, south and west, this is where the basic splines peek, making it more transparent to the user when the wind directions are modelled later on.
+for $j=1,2,..,q$ and $i=1,2,...,n+q-j$. When the splines are uniform, the continuity of the basis splines across a knot is $q-1$. This means that the $q-1$'th derivative exists and is continuous. In this project splines of degree $2$ is used, meaning that the first derivative is continuous at every point on the spline. The splines used here are periodic. that means that after the first $n$ knots, the knot sequence starts over. For modelling the wind direction, four knots are used for the knot vector, each associated with a wind direction category.  Here they are defined as $northeast$, $southeats$, $southwest$ and $northwest$. The reason for this will be explained later in this section. For each of these knots there is a basis spline. When the degree of the splines is $2$, it means that the spline for a given knot is zero at the opposite knot. For example, when using four knots the spline peaking in the north would always be zero in the south. Higher degrees would not maintain this property. The spline basis can be seen on \cref{fig:spline_basis}. Notice that the sum of the entire spline basis at a given point always adds up to one. The figure shows how the $i$'th spline, associated with the $i$'th knot does not peak at that knot, but in the following interval. This is the reason why the knots are chosen in this way. By choosing the knots to be between the main directions north, east, south and west, this is where the basic splines peek.
 
 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{../../../figures/SplineBasis.jpeg}
+    \includegraphics[width=1.\textwidth]{../../../figures/SplineBasis.jpeg}
     \caption{The spline basis used to model the wind direction. Each color is a different basis spline, and the vertical lines mark the knots}
     \label{fig:spline_basis}
 \end{figure}
 
+Now the splines can be used to represent their category in the linear regression model. At a given data point, the wind direction is given as input to each basic spline. The result is then weighted by the windspeed. The result is used as the effect of the effect of the category that spline represents. As an example, a windspeed of $2$ from the angle $135$ degrees would give the following result for the variables in the regression model: $x_N=0$, $x_E=0.5$, $x_S=0.5$ and $x_W=0$. These results can be derived from \cref{fig:spline_basis}.
 
 
-
-In the multiple regression model, splines will be used to model the wind direction. It does not make much sence to include the wind direction as it is in the model. It is not useful to know how significant the wind direction is, if it is not connected to the wind speed and if it is not known which directions are important. By modeling the wind direction with splines, each spline will represent a specific general direction.
-
-
-Modellere wind direction
-Lave en parameter om til flere vind retninger.
-2. degree splines
-Knots
-Mellem retningerne
-Giver mere mening for brugeren
-
-\textcolor{red}{Vi vil gerne vægte vores vind i forskellige retninger i vores model, så derfor bruger vi splines til at modellere de forskellige retninger.} \\
-
-\textcolor{red}{Tilføj billede af splines}
 
 %\subsection{Validation}
 %The multiple models has to fulfill several assumptions.
@@ -147,10 +132,9 @@ Giver mere mening for brugeren
 
 
 \subsection{Results}
-\noindent When performing the two models given in \cref{eq: multi_L} and \cref{eq: multi_S}, without reduction, the significance of the parameters are determined and can be found in \cref{tab: lmMult_full_L}-\ref{tab: lmMult_full_S}. In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. The tables clearly show that the total of significance of each parameter for the different holidays occurs in less than half of the cases.
+The full multiple regression models are steps of the backward selection which is why they are not validated. The purpose of this step is, as mentioned, to determine which parameters are found to be significant in the majority of the models. Hereafter, these parameters are included in a general regression model that can be used for comparing the houses performance. \\
 
-\textcolor{red}{Hvis bare én af retningerne har over halvdelen signifikant skal alle retningerne med.}
-
+\noindent When performing the two models given in \cref{eq: multi_L} and \cref{eq: multi_S}, without reduction, the significance of the parameters are determined and can be found in \cref{tab: lmMult_full_L}-\ref{tab: lmMult_full_S}. In addition, \cref{tab: lmMult_full_L_sum} and \cref{tab: lmMult_full_S_sum} are generated in order to determine which parameters are significant for the majority of the houses. The tables clearly show that the total of significance of the intercept, temperature, east and west as well as the interaction between temperature and west and the solar radiation occurs in more than half of the models. Thus, these are included in the general regression model. But when the influence of the wind on the consumption is examined, it does not make much sense to exclude some of these parameters. Therefore, both north, south, east and west are included as well as their interaction with the temperature. Each parameter from the different holiday attributes is not significant for enough of the models. There might have been some patterns in when the households vacationed, which the tables also indicate, but the impact on consumption is not large enough for the holidays to be included in the general model. 
 \begin{table}
     \centering
     \resizebox{0.70\textheight}{!}{\begin{tabular}{l|cccccccccccccccccccc}
@@ -189,10 +173,10 @@ Based on the tables illustrating the significant parameters for the long and sho
 \begin{align}
         Y_{Q} = \mu & + \beta_{\text{T}}\cdot x_{\text{T}} + \beta_{\text{N}}\cdot x_{\text{N}} + \beta_{\text{E}}\cdot x_{\text{E}}+ \beta_{\text{S}}\cdot x_{\text{S}} + \beta_{\text{W}}\cdot x_{\text{W}} \nonumber \\ & + \beta_{\text{SR}}\cdot x_{\text{SR}} + (\beta_{\text{T:N}} + \beta_{\text{T:E}} + \beta_{\text{T:S}} + \beta_{\text{T:W}}) \cdot x_{\text{T}} + \varepsilon. \label{eq: general_lm}
 \end{align}
-Likewise, the models are validated and if the assumptions are fulfilled \textcolor{red}{Et eller andet her.}
+Likewise, the models are validated and if the assumptions are fulfilled the models can be used for comparison and predictions. The model in \cref{eq: general_lm} is expected to explain the heat consumption of the houses in a more accurate way as it takes several significant parameters into account. As mentioned, the purpose of the general model is to compare the houses for what influences their specific heat consumption and thereby the house's performance. Thus, they are not further reduced. 
 
 \subsection{Validation}
-In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \textcolor{red}{diskussionen}. On the other hand, the diagnostic plots of the residuals from house 18 are definitely improved and the residuals show a randomly behavior. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} is used to determine if the general model is valid.
+In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \textcolor{red}{diskussionen}. On the other hand, the diagnostic plots of the residuals from house 55 are definitely improved and the residuals show a randomly behavior. Overall, the diagnostic plots can be said to be fulfilled. They are not perfect but that is not expected either. There are some houses which residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.pdf}
@@ -205,9 +189,12 @@ In order to determine whether the general model is valid, the diagnostic plots i
     \caption{Diagnostic plot of the general multiple linear regression model for long house 55}
     \label{fig: general_lm55L}
 \end{figure}
-
+\noindent In spite of the abovementioned, the models are concluded to somewhat fulfill the model assumptions. 
 
 \subsection{Results}
+The results of the general regression model performed on each house, are illustrated in \cref{lmMult_gen_L} and \cref{lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative since the increase in the temperature will result in a decrease in the heat consumption \textcolor{red}{...}. The attribute \texttt{SolarRadiation} effects the majority of the houses. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is. 
+
+\noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Anton og Finn bygger videre på dette med inddragelse af plots.} 
 \begin{table}
     \centering
     \begin{tabular}{cccccccccccc}
@@ -262,7 +249,6 @@ In order to determine whether the general model is valid, the diagnostic plots i
     \caption{Significance of parameters for 'long' houses. \textcolor{red}{Punktum betyder, at det er mellem 5 og 10\%}}
     \label{lmMult_gen_L}
 \end{table}
-
 \begin{table}[H]
     \centering
     \begin{tabular}{cccccccccccc}
@@ -302,17 +288,20 @@ In order to determine whether the general model is valid, the diagnostic plots i
     \label{lmMult_gen_S}
 \end{table}
 
+\noindent In addition, the models are used to predict 31 days ahead. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_18L} and \cref{fig: lmpred_55L}. 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.pdf}
-    \caption{}
+    \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model does not capture the behavior of this house at all}
     \label{fig: lmpred_18L}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.pdf}
-    \caption{}
+    \caption{Predictions of the last 31 days of the model data for house 55 including a 95\% prediction interval. The model captures the behavior of this house quite well}
     \label{fig: lmpred_55L}
 \end{figure}
+\noindent \textcolor{red}{Kommentarer til predictions.}
 
 \section{Comparison}
+When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. 
