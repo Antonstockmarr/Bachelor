@@ -1,4 +1,5 @@
 source("data.R")
+source("TrainTest.R")
 library("forecast")
 library("marima")
 
@@ -20,6 +21,8 @@ for(i in 1:n){
 k<-dim(weather)[1]
 weather <- weather[k:1,]
 
+ttd<-TrainTest(data,7*24)
+
 Marima_model <- function(houses)
 {
 # (1,0,1)x(1,1,1)
@@ -28,11 +31,11 @@ result <- vector(mode='list', length = n)
 for (i in houses)
 {
   a <- 12
-  tmp.dat <- weather[(weather$ObsTime <= head(data[[i]]$ObsTime,1)),]
-  tmp.dat <- tmp.dat[tmp.dat$ObsTime >= tail(data[[i]]$ObsTime,1),]
+  tmp.dat <- weather[(weather$ObsTime <= head(ttd[[1]][[i]]$ObsTime,1)),]
+  tmp.dat <- tmp.dat[tmp.dat$ObsTime >= tail(ttd[[1]][[i]]$ObsTime,1),]
   tmp <- tmp.dat$Temperature
   Temperature <- (tmp<a)*(a-tmp)
-  arima.dat <- cbind(data[[i]]$CoolingDegree*data[[i]]$Volume,Temperature)
+  arima.dat <- cbind(ttd[[1]][[i]]$CoolingDegree*ttd[[1]][[i]]$Volume,Temperature)
   dd <- define.dif(arima.dat, differencing)
   dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
   dm1$ar.pattern[1,2,25:26] <- 0
@@ -62,11 +65,11 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas,houses,xreg)
     if (xreg)
     {
     a <- 12
-    tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
-    tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
+    tmp.dat <- weather[(weather$ObsTime >= head(ttd[[1]][[i]]$ObsTime,1)),]
+    tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(ttd[[1]][[i]]$ObsTime,1),]
     tmp <- tmp.dat$Temperature
     Temperature <- (tmp<a)*(a-tmp)
-    arima.dat <- data.frame(Temperature = Temperature, Consumption = data[[i]]$CoolingDegree*data[[i]]$Volume)
+    arima.dat <- data.frame(Temperature = Temperature, Consumption = ttd[[1]][[i]]$CoolingDegree*ttd[[1]][[i]]$Volume)
     A <- arima(arima.dat$Consumption, order =nonseas, seasonal = list(order = seas, period = 24),xreg=arima.dat$Temperature)
     }
     else
@@ -119,7 +122,7 @@ three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'sma2'=0,"Temperature"=
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 
-model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1:n),T)
+model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1),T)
 
 
 model2marima <- Marima_model(c(1:n))
