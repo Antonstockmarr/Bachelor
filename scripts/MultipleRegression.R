@@ -193,11 +193,11 @@ for (i in 1:n) {
   
   Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.25))
   
-  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
-  lines(Wind.Pred[[i]]$upr,lty=2)
-  lines(Wind.Pred[[i]]$lwr,lty=2)
-  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
-  
+  # plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
+  # lines(Wind.Pred[[i]]$upr,lty=2)
+  # lines(Wind.Pred[[i]]$lwr,lty=2)
+  # abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
+  # 
   CirclePlot(Wind.Pred[[i]])
 }
 t
