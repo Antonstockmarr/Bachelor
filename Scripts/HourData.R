@@ -112,7 +112,6 @@ abline(h=quantile(ttavg)[2],lty=2,col=Wcol[2],lwd=2)
 legend(x="topright",legend = c("75th percentile","50th percentile","25th percentile"),lty = c(2,2,2),col = c(Wcol[4],Wcol[3],Wcol[2]),lwd=2)
 axis(side=1,at=c(0,3,6,9,12,15,18,21,24),labels=c("00","03","06","09","12","15","18","21","24"))
 
-hist()
 # Consumption in the winter period
 for (i in 1:n)
 {
