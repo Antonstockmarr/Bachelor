@@ -67,5 +67,3 @@ CirclePlot <- function(WindPred){
   plot(x,y,col=CircleCol)
   abline(v=0,h=0)
 }
-
-#CirclePlot(Wind.Pred[[18]])
