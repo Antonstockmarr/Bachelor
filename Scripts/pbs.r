@@ -11,17 +11,17 @@ wd2 <- wd
 wd2[wd2<45] <- wd2[wd2<45]+360
 lasse = pbs(wd2, df = NULL, knots = c(135, 225,315), degree = 2, intercept = T, Boundary.knots = c(45,405))
 
-plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360),xaxt = 'n',xlab = 'Direction in degrees',ylab = 'Spline value',main="Spline Basis")
+plot(wd, lasse[,1], col = 1,ylim=c(0,1),xlim=c(0,360),xaxt = 'n',xlab = 'Direction in degrees',ylab = 'Spline value',main="Spline Basis",type='l',lwd=6)
 axis(1, at=seq(0,360, length=9), labels=c(0,45,90,135,180,225,270,315,360))
 
 for (j in 2:4)
 {
-  points(wd,lasse[,j], col=j)
+  lines(wd,lasse[,j], col=j,lwd = 6)
 }
-abline(v=c(45,135,225,315),col = c(4,1,2,3),lwd=2)
-legend(x='topright',legend = c('i=1','i=2','i=3','i=4'), col = c(4,1,2,3),lty = c(1,1,1,1),cex=1.1)
+abline(v=c(45,135,225,315),lwd=2)
+legend(x='topright',legend = c('East','South','West','North'), col = c(4,1,2,3),lty = c(1,1,1,1),cex=1.1,lwd=2)
 
-points(wd, rowSums(lasse), col = 9)
+#points(wd, rowSums(lasse), col = 9)
 
 ############
 

@@ -51,3 +51,4 @@ for(k in 1:n){
 
 
 rm(day.weather,EndDays,StartDays,tmp.dat,weatherCons,data.key,Datalengths,i,j,k,day.data,day.avg,BBR,m,nas,Wcol,DataChecking,Polarize,Sun)
+rm(tmp.dat,weather,data,a,i,n,tmp)
