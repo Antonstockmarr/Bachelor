@@ -31,8 +31,8 @@ result <- vector(mode='list', length = n)
 for (i in houses)
 {
   a <- 12
-  tmp.dat <- weather[(weather$ObsTime <= head(ttd[[1]][[i]]$ObsTime,1)),]
-  tmp.dat <- tmp.dat[tmp.dat$ObsTime >= tail(ttd[[1]][[i]]$ObsTime,1),]
+  tmp.dat <- weather[(weather$ObsTime >= head(ttd[[1]][[i]]$ObsTime,1)),]
+  tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(ttd[[1]][[i]]$ObsTime,1),]
   tmp <- tmp.dat$Temperature
   Temperature <- (tmp<a)*(a-tmp)
   arima.dat <- cbind(ttd[[1]][[i]]$CoolingDegree*ttd[[1]][[i]]$Volume,Temperature)
@@ -125,7 +125,7 @@ three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 model2 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,1,1),c(1),T)
 
 
-model2marima <- Marima_model(c(1:n))
+model2marima <- Marima_model(c(1))
 
 
 # Physical MARIMA
