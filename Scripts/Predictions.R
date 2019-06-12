@@ -30,6 +30,19 @@ for (i in 1:n)
 }
 
 ttd<-TrainTest(model.data,31)
+ttm<-TrainTest(weatherCons,31)
+
+mondays<-which(weekdays(ttm[[2]][[1]]$Date)=="Monday")-.5
+
+# Weatherplots for daily predictions
+par(mfrow=c(3,1))
+plot(ttd[[2]][[1]]$Temperature,type='o',lwd=3,ylab="Temperature",xlab="January 2019",xaxt='n')
+axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+plot(ttd[[2]][[1]]$Radiation,type='o',lwd=3,ylab="Solar Radiation",xlab="January 2019",xaxt='n')
+axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+plot(ttd[[2]][[1]]$WindDirection,type='o',lwd=3,ylab="Wind Direction",xlab="January 2019",xaxt='n')
+axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+
 
 lmMultipleNoP <- vector(mode = "list", length = n)
 
@@ -45,9 +58,9 @@ for (i in c(Long,Short)) {
   model.tmp <- ttd[[1]][[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
-  
+
   tmp.wind <- Splinebasis*model.tmp$WindSpeed
-  
+
   model.tmp$North <- tmp.wind[,3]
   model.tmp$East <- tmp.wind[,4]
   model.tmp$South <- tmp.wind[,1]
@@ -63,18 +76,32 @@ for (i in c(Long,Short)) {
   newData$West <- test.wind[,2]
   newData$Consumption<-NULL
   Pred<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "prediction", level = 0.95))
-  
+
   if(k>length(Long)){
     mm<-paste("Short house: ",i)
   }else{
     mm<-paste("Long house: ",i)
   }
-  
+
+  # Statistisk plot
   plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm)
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
   lines(ttd[[2]][[i]]$Consumption,lty=1,col=2)
+  abline(v=mondays,lty=2,col="gray")
   legend(x = "topleft", legend = c("Prediction", "95% PI", "Data"), lty = c(1,2,1), col = c(1,1,2))
+
+  # Kundeplot(s)
+  PredK<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "prediction", level = 1/3))
+  plot(PredK$fit,type='n',ylim=range(PredK$lwr,PredK$upr,ttd[[2]][[i]]$Consumption),main=mm,ylab="Consumption",xlab="January 2019",xaxt='n')
+  axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+
+  ylim=c(-100,1000)
+  polygon(c(1:31, 31, 1), y= c(PredK$lwr,ylim[1],ylim[1]), col = Wcol[2], lty=0)
+  polygon(c(1:31, 31, 1), y= c(PredK$upr,ylim[2],ylim[2]), col = Wcol[4], lty=0)
+  polygon(c(1:31, 31:1), y= c(PredK$lwr, rev(PredK$upr)), col = Wcol[3], lty=0)
+  lines(1:31,ttd[[2]][[i]]$Consumption,type='o',col=1,lwd=3)
+
 }
 
 # Hourly Predictions ----------------------------------------
