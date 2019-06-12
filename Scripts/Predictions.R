@@ -1,7 +1,5 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-if(!exists("n")){
-  source("data.R")
-}
+source("data.R")
 source("TrainTest.R")
 source("BSplines.R")
 
@@ -48,7 +46,7 @@ lmMultipleNoP <- vector(mode = "list", length = n)
 
 par(mfrow = c(1,1))
 k<-0
-for (i in c(Long,Short)) {
+for (i in c(18,55)) {
   k<-k+1
   if(k<=length(Long)){
     print(paste('Modeling long house ',i))
@@ -84,24 +82,30 @@ for (i in c(Long,Short)) {
   }
 
   # Statistisk plot
-  plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm)
+  plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm,ylab="Consumption",xlab="January 2019",xaxt='n')
+  axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
   lines(ttd[[2]][[i]]$Consumption,lty=1,col=2)
-  abline(v=mondays,lty=2,col="gray")
-  legend(x = "topleft", legend = c("Prediction", "95% PI", "Data"), lty = c(1,2,1), col = c(1,1,2))
+  abline(v=mondays,lty=3,lwd=2,col=Wcol[3])
+  legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Monday"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 
   # Kundeplot(s)
   PredK<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "prediction", level = 1/3))
   plot(PredK$fit,type='n',ylim=range(PredK$lwr,PredK$upr,ttd[[2]][[i]]$Consumption),main=mm,ylab="Consumption",xlab="January 2019",xaxt='n')
   axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
 
-  ylim=c(-100,1000)
+  ylim=c(-100,1200)
   polygon(c(1:31, 31, 1), y= c(PredK$lwr,ylim[1],ylim[1]), col = Wcol[2], lty=0)
   polygon(c(1:31, 31, 1), y= c(PredK$upr,ylim[2],ylim[2]), col = Wcol[4], lty=0)
   polygon(c(1:31, 31:1), y= c(PredK$lwr, rev(PredK$upr)), col = Wcol[3], lty=0)
   lines(1:31,ttd[[2]][[i]]$Consumption,type='o',col=1,lwd=3)
-
+  
+  cols<-rep(Wcol[3],length(ttd[[2]][[i]]$Consumption))
+  cols[ttd[[2]][[i]]$Consumption<PredK$lwr]<-Wcol[2]
+  cols[ttd[[2]][[i]]$Consumption>PredK$upr]<-Wcol[4]
+  
+  barplot(ttd[[2]][[i]]$Consumption,col=cols)
 }
 
 # Hourly Predictions ----------------------------------------
@@ -128,6 +132,8 @@ tth<-TrainTest(data,14*24)
 
 i<-55
 
+midnight<-which(hour(tth[[2]][[1]]$ObsTime)==0)+length(tth[[1]][[1]]$ObsTime)
+
 a <- 12
 tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
 tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
@@ -143,7 +149,9 @@ Temperature <- (tmp<a)*(a-tmp)
 
 p<-predict(A,n.ahead=length(Temperature),se.fit=TRUE,newxreg = Temperature,interval="prediction")
 
-plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume)))
+plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume)),xaxt='n',xlab="January 2019",ylab="Consumption")
+axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
 lines(p$pred+2*p$se,lty=2)
 lines(p$pred-2*p$se,lty=2)
 lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
+abline(v=midnight,lty=2,col="gray")

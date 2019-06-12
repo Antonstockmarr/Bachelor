@@ -155,7 +155,7 @@ sMultiple.test <- vector(mode = "list", length = n)
 sign.testM <- vector(mode = "list", length = n)
 t<-matrix(rep(0,n*2),ncol=n)
 par(mfrow = c(1,1))
-for (i in 1:n) {
+for (i in c(18,55)) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -197,15 +197,17 @@ for (i in 1:n) {
                        S = Splinebasis2[,1],
                        W = Splinebasis2[,2])
   
-  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.25))
+  Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
+  Wind.PredK<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.25))
   
-  # plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("hus: ",i))
-  # lines(Wind.Pred[[i]]$upr,lty=2)
-  # lines(Wind.Pred[[i]]$lwr,lty=2)
-  # abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
-  # 
-  CirclePlot(Wind.Pred[[i]])
+  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("House: ",i),xlab = "Wind direction in degrees",ylab="Effect on consumption")
+  lines(Wind.Pred[[i]]$upr,lty=2)
+  lines(Wind.Pred[[i]]$lwr,lty=2)
+  abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
+
+  CirclePlot(Wind.PredK)
 }
+
 t
 
 t.est <- as.table(lmSummary_est)
