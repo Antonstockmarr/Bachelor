@@ -114,7 +114,7 @@ tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
 tmp <- tmp.dat$Temperature
 Temperature <- (tmp<a)*(a-tmp)
 
-p<-predict(A,n.ahead=length(tmp),se.fit=TRUE,newxreg = Temperature)
+p<-predict(A,n.ahead=length(Temperature),se.fit=TRUE,newxreg = Temperature,interval="prediction")
 
 plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume)))
 lines(p$pred+2*p$se,lty=2)
