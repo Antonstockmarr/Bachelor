@@ -34,19 +34,19 @@ avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_poi
   geom_smooth(col=Wcol[2], se = T)
 
 # Selected houses based on wether they follow the trend
-day.plot.flot <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+day.plot.gak <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
   ggtitle(paste("Daily consumption for house 18")) + xlab("Time") + 
   ylab("Daily consumption (kwh)") +
   geom_smooth(col=Wcol[2], se = T)
 
-day.plot.gak <- ggplot(data = day.data[[42]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
-  ggtitle(paste("Daily consumption for house 42")) + xlab("Time") + 
+day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+  ggtitle(paste("Daily consumption for house 55")) + xlab("Time") + 
   ylab("Daily consumption (kwh)") +
   geom_smooth(col=Wcol[2], se = T)
 {
   pdf(file = "../figures/daily_cons.pdf",width = 4.5,height = 2.8,pointsize = 9)
   par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
-  grid.arrange(avg.plot1, day.plot.flot, day.plot.gak, nrow = 3)
+  grid.arrange(avg.plot1, day.plot.gak, day.plot.flot, nrow = 3)
   dev.off()
   }
 
