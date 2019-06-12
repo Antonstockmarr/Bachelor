@@ -45,6 +45,32 @@
       \verb http://vejr.tv2.dk/2018-04-03-se-billederne-danmark-igen-ramt-af-vintervejr
       \endverb
     \endentry
+    \entry{iea}{url}{}
+      \name{author}{1}{}{%
+        {{hash=465b82815b27cd8a52e2be2cc108c330}{%
+           family={Agency},
+           familyi={A\bibinitperiod},
+           given={International\bibnamedelima Energy},
+           giveni={I\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{465b82815b27cd8a52e2be2cc108c330}
+      \strng{fullhash}{465b82815b27cd8a52e2be2cc108c330}
+      \strng{bibnamehash}{465b82815b27cd8a52e2be2cc108c330}
+      \strng{authorbibnamehash}{465b82815b27cd8a52e2be2cc108c330}
+      \strng{authornamehash}{465b82815b27cd8a52e2be2cc108c330}
+      \strng{authorfullhash}{465b82815b27cd8a52e2be2cc108c330}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Renewables 2018 - Market analysis and forecast from 2018 to 2023}}
+      \verb{urlraw}
+      \verb https://www.iea.org/renewables2018/heat/
+      \endverb
+      \verb{url}
+      \verb https://www.iea.org/renewables2018/heat/
+      \endverb
+    \endentry
     \entry{Stat_bog}{book}{}
       \name{author}{1}{}{%
         {{hash=2a8833cfe0113cda18436074ded03d1a}{%

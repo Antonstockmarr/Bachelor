@@ -37,7 +37,7 @@ par(mfrow = c(1,1))
 k<-0
 for (i in c(Long,Short)) {
   k<-k+1
-  if(k>length(Long)){
+  if(k<=length(Long)){
     print(paste('Modeling long house ',i))
   }else{
     print(paste('Modeling short house ',i))
@@ -74,7 +74,7 @@ for (i in c(Long,Short)) {
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
   lines(ttd[[2]][[i]]$Consumption,lty=1,col=2)
-  legend(x = "topright", legend = c("Prediction", "95% PI", "Data"), lty = c(1,2,1), col = c(1,1,2))
+  legend(x = "topleft", legend = c("Prediction", "95% PI", "Data"), lty = c(1,2,1), col = c(1,1,2))
 }
 
 # Hourly Predictions ----------------------------------------
