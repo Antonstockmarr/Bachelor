@@ -30,13 +30,13 @@ difftime(EndDays[1],min(StartDays), units ="hours")
 # Average consumption for all houses during a year
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
   ggtitle("Average consumption for all houses during a year ") + xlab("Time") + 
-  ylab("Average consumption (kwh)") +
+  ylab("Avg. consumption (kwh)") +
   geom_smooth(col=Wcol[2], se = T)
 
 # Selected houses based on wether they follow the trend
 day.plot.gak <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
   ggtitle(paste("Daily consumption for house 18")) + xlab("Time") + 
-  ylab("Daily consumption (kwh)") +
+  ylab("Daily consumption (kwh)") + 
   geom_smooth(col=Wcol[2], se = T)
 
 day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
@@ -123,7 +123,7 @@ cor(day.tmp['PrecipitationProbability'],day.tmp['Condition'])
 # Investigating BBR data --------------------------------------------------
 HouseType <- c(BBR$HouseType)
 legend11 <- "Type 1: Industry \n Type 2: Public \n Type 3: Apartment \n Type 4: Parcel \n Type 5: Terrace"
-my_grob = grid.text(legend11, x=0.1,  y=0.8, gp=gpar(col="black", fontsize=12, fontface="bold"), just = "left")
+my_grob = grid.text(legend11, x=0.1,  y=0.8, gp=gpar(col="black", fontsize=8, fontface="bold"), just = "left")
 plot11 <- ggplot(data = data.frame(HouseType), aes(x = HouseType)) + geom_histogram(bins = 15) + theme(legend.position = "topleft",legend.direction = "horizontal") + annotation_custom(my_grob)
 plot12 <- ggplot(data = BBR, aes(x = TotalArea)) + geom_histogram(bins = 15)
 plot13 <- ggplot(data = BBR, aes(x = ConstructionYear)) + geom_histogram(bins = 15)
