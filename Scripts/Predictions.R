@@ -37,7 +37,7 @@ par(mfrow = c(1,1))
 k<-0
 for (i in c(Long,Short)) {
   k<-k+1
-  if(k>length(Long)){
+  if(k<=length(Long)){
     print(paste('Modeling long house ',i))
   }else{
     print(paste('Modeling short house ',i))
@@ -97,14 +97,9 @@ for(i in 1:n){
 k<-dim(weather)[1]
 weather <- weather[k:1,]
 
-tth<-TrainTest(data,7*24)
-load("arimax.Rdata")
-load("marimax.Rdata")
-
-arimax[[4]][[1]]
+tth<-TrainTest(data,14*24)
 
 i<-55
-
 
 a <- 12
 tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
