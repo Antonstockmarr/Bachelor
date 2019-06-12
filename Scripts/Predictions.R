@@ -79,22 +79,49 @@ for (i in c(Long,Short)) {
 
 # Hourly Predictions ----------------------------------------
 
-#tth<-
+for(i in 1:n){
+  nas<-which(!is.na(data[[i]]$Flow))
+  tmp.dat<-data[[i]][nas[1]:tail(nas,1),]
+  nas<-which(is.na(tmp.dat$Flow))
+  m<-dim(tmp.dat)[2]
+  for(j in nas){
+    tmp.dat[j,2:m]<-(data[[i]][j-1,2:m]+data[[i]][j+1,2:m])/2
+  }
+  data[[i]]<-tmp.dat
+}
+
+for(i in 1:n){
+  k<-dim(data[[i]])[1]
+  data[[i]]<-data[[i]][k:1,]
+}
+k<-dim(weather)[1]
+weather <- weather[k:1,]
+
+tth<-TrainTest(data,7*24)
+load("arimax.Rdata")
+load("marimax.Rdata")
+
+arimax[[4]][[1]]
+
+i<-55
 
 
+a <- 12
+tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
+tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
+tmp <- tmp.dat$Temperature
+Temperature <- (tmp<a)*(a-tmp)
+arima.dat <- data.frame(Temperature = Temperature, Consumption = tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume)
+A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1,1), period = 24),xreg=arima.dat$Temperature)
 
+tmp.dat <- weather[(weather$ObsTime >= head(tth[[2]][[i]]$ObsTime,1)),]
+tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
+tmp <- tmp.dat$Temperature
+Temperature <- (tmp<a)*(a-tmp)
 
-(o4<-arima(sqrt(tab$O3[train]), order=c(2,0,0),seasonal = (list(order=c(0,1,1),period=24))))
-po<-predict(o4,n.ahead=48,se.fit=TRUE)
-o.sd<-po$se
-o.pred<-po$pred
+p<-predict(A,n.ahead=length(tmp),se.fit=TRUE,newxreg = Temperature)
 
-o.low<-o.pred-2*o.sd
-o.high<-o.pred+2*o.sd
-plot(time[train[600:703]],tab$O3[train[600:703]],type="l",xlim=c(605,751),ylim = c(0,150), xlab = "Time", ylab = "O3 concentration")
-lines(time[test],tab$O3[test], col = 2)
-lines(time[test],(po$pred)^2, col = 3)
-lines(time[test],(o.low)^2, col = 3, lty = 2)
-lines(time[test],(o.high)^2, col = 3, lty = 2)
-legend("topleft", c("Data", "Prediction", "95% PI"), lty = c(1,1,2), col = c(2,3,3))
-
+plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume)))
+lines(p$pred+2*p$se,lty=2)
+lines(p$pred-2*p$se,lty=2)
+lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
