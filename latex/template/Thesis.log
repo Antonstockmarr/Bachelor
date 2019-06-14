@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  14 JUN 2019 14:11
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  14 JUN 2019 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1531,7 +1531,8 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
+)
+No file Thesis.aux.
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1561,7 +1562,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1585,9 +1586,11 @@ LaTeX Info: Redefining \nameref on input line 8.
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
-(/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.out) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
@@ -1596,11 +1599,10 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `Thesis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Thesis.bbl' found.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl)
+Package biblatex Info: ... file 'Thesis.bbl' not found.
+No file Thesis.bbl.
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
-
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 8.
 
@@ -1693,45 +1695,16 @@ File: graphics/Signature.pdf Graphic file (type pdf)
 ) [5] [6
 
 
-] (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.toc
-Package cleveref Info: loaded `english' language definitions on input line 3.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5.
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [7]) [8]
+] [7] [8
+
+]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
+
+LaTeX Warning: Citation 'iea' on page 1 undefined on input line 3.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -1747,7 +1720,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
 
 
-
 ] [2]
 \openout2 = `chapters/Data.aux'.
 
@@ -1757,36 +1729,82 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \vbox (badness 2503) has occurred while \output is active []
+
+LaTeX Warning: Reference `tab: housedata' on page 3 undefined on input line 13.
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 16.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 16.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 16.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 16.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 16.
+LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
 
  []
 
 
-Overfull \hbox (7.52005pt too wide) in paragraph at lines 42--61
+LaTeX Warning: Reference `tab: weatherdata' on page 4 undefined on input line 41.
+
+
+LaTeX Warning: Citation 'condition' on page 4 undefined on input line 54.
+
+
+Overfull \hbox (49.15005pt too wide) in paragraph at lines 44--63
  [][] 
  []
 
 
-Overfull \hbox (9.66005pt too wide) in paragraph at lines 68--85
+LaTeX Warning: Reference `tab: BBR' on page 4 undefined on input line 67.
+
+
+Overfull \hbox (9.66005pt too wide) in paragraph at lines 70--87
  [][] 
  []
 
 
-Underfull \vbox (badness 3219) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4]
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+ [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-[5]) [6]
+) [6]
 \openout2 = `chapters/Exploratory.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex
@@ -1794,8 +1812,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
+
+LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Citation 'vejr2018' on page 7 undefined on input line 5.
+
 File: graphics/../../../figures/avg_daily.pdf Graphic file (type pdf)
 <use graphics/../../../figures/avg_daily.pdf>
+
+LaTeX Warning: Reference `fig: housepairs' on page 1 undefined on input line 13.
+
+
+LaTeX Warning: Reference `fig: house_attri' on page 1 undefined on input line 13.
+
+
+LaTeX Warning: Reference `eq: Q_heat' on page 1 undefined on input line 13.
+
+
+LaTeX Warning: Reference `tab: housedata' on page 1 undefined on input line 13.
+
 File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
 <use graphics/../../../figures/housepairs.pdf>
 [7
@@ -1803,257 +1839,977 @@ File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
 
 
 ]
+
+LaTeX Warning: Reference `fig: weatherpairs' on page 1 undefined on input line 29.
+
+
+LaTeX Warning: Reference `fig: weather_cons' on page 1 undefined on input line 29.
+
+
+LaTeX Warning: Reference `fig: weatherpairs' on page 1 undefined on input line 29.
+
+
+LaTeX Warning: Reference `fig: weather_cons' on page 1 undefined on input line 29.
+
 File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weatherpairs.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
+
+LaTeX Warning: Reference `fig: bbr_hist' on page 1 undefined on input line 38.
+
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Reference `fig: daily_cons' on page 1 undefined on input line 45.
 
- [9] [10]
+[9] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
+
+LaTeX Warning: Reference `fig: byggeaar' on page 11 undefined on input line 65.
+
 File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
 <graphics/../../../figures/byggeår.eps>
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
-File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
-<graphics/../../../figures/gg_cor.eps>
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--86
-
- []
-
-
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 90--107
- [][] 
- []
-
-[12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13]
-File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
-<graphics/../../../figures/Consumption-PW.eps>
- [14]
-File: graphics/../../../figures/Breakpoint.jpeg Graphic file (type bmp)
-<graphics/../../../figures/Breakpoint.jpeg>
-File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
-<graphics/../../../figures/AlphaHist.jpeg>
-) [15] [16] [17] [18]
-\openout2 = `chapters/Statistical.aux'.
-
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [19
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
-Underfull \vbox (badness 2042) has occurred while \output is active []
-
- [20]
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
-
- []
-
-File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
-<use graphics/../../../figures/simple_lm18.pdf>
-File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
-<use graphics/../../../figures/simple_lm55.pdf>
-
-LaTeX Warning: Reference `fig: ' on page 1 undefined on input line 60.
-
-[21] [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
-
- []
-
-[24] [25]
-File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
-<graphics/../../../figures/SplineBasis.jpeg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26] [27]
-File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/general_lm18L.pdf>
-File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/general_lm55L.pdf>
- [28]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 202--251
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 30.25996pt on input line 253.
-
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 256--289
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29] [30]
-Overfull \vbox (187.618pt too high) has occurred while \output is active []
-
- [31]
-File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/lmpred_55L.pdf>
-File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
-<use graphics/../../../figures/lmpred_18L.pdf>
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--308
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
-
- []
-
-) [32] [33] [34]
-\openout2 = `chapters/HourModels.aux'.
-
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
-File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
-<use graphics/../../../figures/Heatmap_summer.pdf>
-
-
-LaTeX Warning: Float too large for page by 37.5915pt on input line 10.
-
-File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
-<use graphics/../../../figures/Heatmap_winter.pdf>
-
-LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
-
-[35
-
-
-
-] [36] [37]
-File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
-<graphics/../../../figures/Season_distribution.jpeg>
-File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
-<graphics/../../../figures/HourDistribution.jpeg>
- [38] [39] [40]) [41]
-\openout2 = `appendices/AnAppendix.aux'.
-
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [42
-
-
-
-]
-Overfull \hbox (30.64294pt too wide) in paragraph at lines 103--152
- [][] 
- []
-
-[43] [44] [45] [46] [47] [48]
-File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
-<use graphics/../../../figures/house_attri.pdf>
-
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 247--248
- [][] 
- []
-
-File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
-<use graphics/../../../figures/weather_cons.pdf>
-
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 254--255
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 1.81111pt on input line 257.
-
-) [49
-
-] [50] [51] [52
-
-
-]
-
-Package biblatex Warning: No driver for entry type 'sne'.
-(biblatex)                Using fallback driver on input line 42.
-
-
-Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
-
-
-Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
-
-
-Overfull \hbox (45.28pt too wide) in paragraph at lines 43--43
-[][][][][][][][] [] [][][][][][][][][][] [][] [][][][][][][][][] [] [][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][] []
- []
-
-
-Package biblatex Warning: No driver for entry type 'paper'.
-(biblatex)                Using fallback driver on input line 42.
-
-[53
-
-]
-No complaints by nag.
-File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
-<use graphics/DTU-frise-SH-15.pdf>
-[54
-
-]
-\tf@toc=\write7
-\openout7 = `Thesis.toc'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 45.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 45.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux)
-Package cleveref Info: loaded `english' language definitions on input line 25.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CAA304456C9E39E021AA4E2AADBE98B5.
-
-
-LaTeX Warning: There were undefined references.
-
-Package logreq Info: Writing requests to 'Thesis.run.xml'.
-\openout1 = `Thesis.run.xml'.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
- ) 
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Argument of \@tempf has an extra }.
+<inserted text> 
+                \par 
+l.69 ...he better is the insulation of the house}}
+                                                  
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+\@captype {\refstepcounter@optarg }\def \reserved@b {\refstepcounter@noarg \ETC.
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Paragraph ended before \@tempf was complete.
+<to be read again> 
+                   \par 
+l.69 ...he better is the insulation of the house}}
+                                                  
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Improper \prevdepth.
+\@makecaption ...emtempa \relax \ifdim \prevdepth 
+                                                  >-99\p@ \vskip \abovecapti...
+l.69 ...he better is the insulation of the house}}
+                                                  
+You can refer to \spacefactor only in horizontal mode;
+you can refer to \prevdepth only in vertical mode; and
+neither of these is meaningful inside \write. So
+I'm forgetting what you said and using zero instead.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.69 ...he better is the insulation of the house}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.69 ...he better is the insulation of the house}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Missing } inserted.
+<inserted text> 
+                }
+l.69 ...he better is the insulation of the house}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Missing } inserted.
+<inserted text> 
+                }
+l.69 ...he better is the insulation of the house}}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: Undefined control sequence.
+\@@makecaption ...nfont #1\@contdelim }\@memtempa 
+                                                  {\@contcshortstyle \@contt...
+l.69 ...he better is the insulation of the house}}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: LaTeX Error: Command \footnote undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...he better is the insulation of the house}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: LaTeX Error: Command \footnotemark undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...he better is the insulation of the house}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex:69: LaTeX Error: Command \pagenote undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...he better is the insulation of the house}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \vbox (badness 4673) has occurred while \output is active []
+
+ [11])
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:29: Incomplete \ifx; all text was ignored after line 69.
+<inserted text> 
+                \fi 
+l.29 \include{chapters/Exploratory}
+                                   
+The file ended while I was skipping conditional text.
+This kind of error happens when you say `\if...' and forget
+the matching `\fi'. I've inserted a `\fi'; this might work.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Illegal parameter number in definition of \@tempa.
+<to be read again> 
+                   '
+l.37 \appendix
+              
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \MessageBreak 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:37: Missing \endcsname inserted.
+<to be read again> 
+                   \csname\endcsname 
+l.37 \appendix
+              
+(That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 49675 strings out of 492933
- 952958 string characters out of 6133145
- 1662801 words of memory out of 5000000
- 52968 multiletter control sequences out of 15000+600000
- 554124 words of font info for 68 fonts, out of 8000000 for 9000
+ 49366 strings out of 492933
+ 939853 string characters out of 6133145
+ 1521266 words of memory out of 5000000
+ 52752 multiletter control sequences out of 15000+600000
+ 554100 words of font info for 65 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1875b,6207s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,1232b,2925s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (64 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (21 pages).
