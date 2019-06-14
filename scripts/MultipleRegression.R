@@ -267,10 +267,11 @@ coef<-data.frame(ID=paste(1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
 
 for(i in 1:n){
   lmsum <- summary(lmMultipleNoP[[i]])
-  coef$Slope[i] <- lmsum$coefficients[2,1]
-  coef$Lower[i] <- lmsum$coefficients[2,1]-2*lmsum$coefficients[2,2]
-  coef$Upper[i] <- lmsum$coefficients[2,1]+2*lmsum$coefficients[2,2]
+  coef$Slope[i] <- lmsum$coefficients[2,1]/BBR$TotalArea[i]
+  coef$Lower[i] <- (lmsum$coefficients[2,1]-2*lmsum$coefficients[2,2])/BBR$TotalArea[i]
+  coef$Upper[i] <- (lmsum$coefficients[2,1]+2*lmsum$coefficients[2,2])/BBR$TotalArea[i]
 }
+coef<-coef[!is.na(coef$Slope),]
 
 plot.index <- order(coef$Slope, decreasing = TRUE)
 coef <- coef[plot.index,]
@@ -292,8 +293,6 @@ plotgg1 <- ggplot(coef) +
   print(plotgg1)
   dev.off()
 }
-plot.index <- order(coef$Slope, decreasing = TRUE)
-coef.top <- coef[plot.index,]
 
 plotgg2 <- ggplot(coef[plot.index,]) +
   geom_bar(aes(x = reorder(ID,-Slope,sum), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
@@ -316,13 +315,14 @@ coef<-data.frame(ID=paste("House",1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0
 
 for(i in 1:n){
   lmsum <- summary(lmMultipleNoP[[i]])
-  coef$Slope[i] <- lmsum$coefficients[3,1]
-  coef$Lower[i] <- lmsum$coefficients[3,1]-2*lmsum$coefficients[3,2]
-  coef$Upper[i] <- lmsum$coefficients[3,1]+2*lmsum$coefficients[3,2]
+  coef$Slope[i] <- lmsum$coefficients[3,1]/BBR$TotalArea[i]
+  coef$Lower[i] <- (lmsum$coefficients[3,1]-2*lmsum$coefficients[3,2])/BBR$TotalArea[i]
+  coef$Upper[i] <- (lmsum$coefficients[3,1]+2*lmsum$coefficients[3,2])/BBR$TotalArea[i]
 }
+coef<-coef[!is.na(coef$Slope),]
 
-coef<-data.frame(coef[rev(order(coef$Slope)),])
-coef<-data.frame(ID=coef$ID,Slope=coef$Slope,Lower=coef$Lower,Upper=coef$Upper)
+plot.index <- order(coef$Slope, decreasing = TRUE)
+coef <- coef[plot.index,]
 
 
 plotgg1 <- ggplot(coef) +
