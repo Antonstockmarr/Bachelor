@@ -5,6 +5,10 @@ The main focus of this section will be how this data is cleaned and prepared for
 \section{Original data}
 The original house and weather data include hourly observations from the period 31-12-2017 23:00 to 7-02-2019 10:00. The time period varies in the house data, i.e there exists data for houses containing observations for approximately six months and there are also houses that contain observations for about 13 months. This will be taken into account when cleaning the data and in the analysis the two groups of houses will be refered to as the long and short houses. 
 
+\noindent Before the data was provided to this project, it had already been slightly altered. When Aalborg Forsyning, who provided the data, recieve the observations from the hardware installed in the houses of their clients, it is generally not divided into precise one hour intervals. Aalborg Forsyning interprets the time stamps on the observations and changes them to one hour intervals. If observations are missing, an interpolation method is used to simulate the data. The exact procedure is described in \textcolor{red}{ref til artikel om interpolation af data}.
+
+
+
 \noindent Table \ref{tab: housedata} below shows the attributes from the house data set. 
 \begin{table}[H]
     \centering
@@ -93,7 +97,8 @@ In this section, it is described how the raw data is cleaned and prepared for th
 
 \noindent Due to the fact, that \texttt{StartDateTime} and \texttt{EndDateTime} is always one hour apart, it is redundant to use both of the attributes. The obervations of most of the attributes are made at time \texttt{EndDateTime}, and for that reason it is used as \texttt{ObsTime} for the observations. For the weather data set, the observations is made at time \texttt{StartDateTime}, and there is no \texttt{EndDateTime} for this data set. When merging these data sets, \texttt{ObsTime} is alligned with \texttt{StartDateTime}. The format of these attributes is changed to a \texttt{Posixct} value with d-m-Y H:min:sec as the structure.
 
-\noindent Every now and then, one or more data points in a row are missing. When this happen, a data point with NA-values for all of the attributes except \texttt{ObsTime}, is placed in the data set, which makes the data set easier to use in the modelling process. In the data sets there are no indication of whether or not it is weekend. This attribute is added as well as the school holidays.
+\noindent Every now and then, one or more data points in a row are missing. When this happen, a data point with NA-values for all of the attributes except \texttt{ObsTime}, is placed in the data set, which makes the data set easier to use in the modelling process. In some cases, the models that the data set is "complete", i.e. that there are no missing values. This is true for the time series models that will be described in section \textcolor{red}{citer section} In the data sets there are no indication of whether or not it is weekend. This attribute is added as well as the school holidays.
+
 
 \noindent Both weather data and the house data are aggregated with mean values for each day in order to convert hourly values into daily values since there are of interest when modelling in chapter 3, two of the attributes is aggregated in a different way, which is explained later.
 
