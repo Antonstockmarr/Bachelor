@@ -2,7 +2,13 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Contents}{i}{section*.1}% 
+\contentsline {chapter}{Summary}{i}{chapter*.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Resumé}{iii}{chapter*.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Preface}{v}{chapter*.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Contents}{vii}{section*.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}% 
 \defcounter {refsection}{0}\relax 
@@ -14,7 +20,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Original data}{3}{section.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Cleaning and preparation}{4}{section.2.2}% 
+\contentsline {section}{\numberline {2.2}Cleaning and preparation}{5}{section.2.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Missing values}{5}{subsection.2.2.1}% 
 \defcounter {refsection}{0}\relax 
@@ -26,17 +32,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Examination of the Heat Consumption}{7}{section.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Weather data}{8}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Weather data}{9}{subsection.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}BBR data}{9}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.2}BBR data}{10}{subsection.3.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multicollinearity}{10}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Multicollinearity}{12}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Data segmentation}{13}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{14}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{14}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{15}{subsection.3.3.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Models on the Daily Consumption}{19}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
@@ -60,9 +66,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.1}Validation}{28}{subsection.4.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Results}{29}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.2}Results}{28}{subsection.4.4.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.3}Predictions}{32}{subsection.4.4.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.5}Comparison}{32}{section.4.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Visualization of the results}{32}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{35}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
@@ -86,4 +96,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {appendix}{\chapternumberline {B}Figures}{49}{appendix.B}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{53}{section*.3}% 
+\contentsline {chapter}{Bibliography}{53}{section*.6}% 
