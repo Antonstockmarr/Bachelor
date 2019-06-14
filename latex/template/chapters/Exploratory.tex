@@ -10,7 +10,8 @@ First part of the analysis is to explore the different attributes in the data, i
     \label{fig: daily_cons}
 \end{figure}
 
-\noindent The remaining attributes from the house data is examined through a scatterplot shown in \cref{fig: housepairs} and \cref{fig: house_attri}, in order to find possible linear relationships with the consumption. There are clear linear relationships between the consumption and the flow, the volume, the cooling degree and the temperature going in respectively. It is expected that the consumption depends linearly on the volume and cooling degree, cf. the main equation given in \cref{eq: Q_heat}. The relationships between consumption and the flow and volume are quite similar which is in line with the description of the two attributes given in \cref{tab: housedata}. \textcolor{blue}{Det varme vand der kommer ud af systemet afhænger af hvor meget man bruger. Det ses, at hvis det vand der kommer ud er meget varmt, så er det fordi man ikke har brugt det, eller trukket sådan varmeforbrug ud af det.}
+\noindent The remaining attributes from the house data is examined through a scatterplot shown in \cref{fig: housepairs} and \cref{fig: house_attri}, in order to find possible linear relationships with the consumption. There are clear linear relationships between the consumption and the flow, the volume, the cooling degree and the temperature going in respectively. It is expected that the consumption depends linearly on the volume and cooling degree, cf. the main equation given in \cref{eq: Q_heat}. The relationships between consumption and the flow and volume are quite similar which is in line with the description of the two attributes given in \cref{tab: housedata}. It is also seen that the temperature of the water coming out of the system depends on how much is used. So if the return water is quite hot, 
+the house has not fully utilized the heat for the heat consumption. 
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/housepairs.pdf}
@@ -18,12 +19,11 @@ First part of the analysis is to explore the different attributes in the data, i
     \label{fig: housepairs}
 \end{figure}
 
-
 %\noindent Figure \ref{fig: house_attri} clearly shows that the consumption is close to 0 in the summer period.  
 %\textcolor{red}{Pairs af gennemsnitlig house data - vi ser en masse sammenhænge mellem de forskellige attributer. Vi kan se at CoolingDegree skal være over 25, før at varmeforbruget stiger.}
 %\textcolor{red}{CoolingDegree begynder at stige et stykke tid før flowet stiger, hvilket hænger godt sammen med at når man fx tænder en radiator så stiger CoolingDegree. De efterfølgende radiatorer man tænder øger volumnet.} \\
 
-\textcolor{blue}{\noindent It is already known that there is a dependency between the heat consumption and the time of the year. During the summer period there is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature.}
+%\textcolor{blue}{\noindent It is already known that there is a dependency between the heat consumption and the time of the year. During the summer period there is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature.}
 
 \subsection{Weather data}
 The weather data is also examined through scatterplots given in \cref{fig: weatherpairs} and \cref{fig: weather_cons}. in order to detect dependencies between the average consumption of the houses and the weather attributes. It is already known that the outside temperature has a significant influence on the consumption which is in line with the linearly relationship between the temperature and the consumption in \cref{fig: weatherpairs}. Furthermore, consumption is approximately influenced by the dew point which is probably explained by the linear relationship between \texttt{Temperature} and \texttt{DewPoint} illustrated in \cref{fig: weather_cons}.
