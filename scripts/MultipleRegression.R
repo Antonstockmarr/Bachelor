@@ -300,9 +300,8 @@ plotgg2 <- ggplot(coef[plot.index,]) +
   geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
   theme_minimal()+
   theme(axis.text.x = element_text(angle=90,hjust = 0.5)) +
-  ggtitle('Top 15 slope estimates') +
   xlab('Building no.')+
-  ylab('Temp. coefficient [kwh/C^{\circ}]')
+  ylab(bquote("Temp. coefficient [kWh/(C"%.%"day)]"))
 
 {
   pdf(file = "../figures/topslopes.pdf",width = 8.6,height = 4.3,pointsize = 9)
