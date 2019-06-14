@@ -132,30 +132,64 @@ tth<-TrainTest(data,14*24)
 
 i<-55
 
-for(i in Long){
-
-midnight<-which(hour(tth[[2]][[1]]$ObsTime)==0)+length(tth[[1]][[1]]$ObsTime)
+for(i in Short){
+midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)+length(tth[[1]][[i]]$ObsTime)
 
 a <- 12
 tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
 tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
 tmp <- tmp.dat$Temperature
 Temperature <- (tmp<a)*(a-tmp)
-arima.dat <- data.frame(Temperature = Temperature, Consumption = tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume)
-A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1,1), period = 24),xreg=arima.dat$Temperature)
+arima.dat <- data.frame(Temperature = Temperature, Consumption = cc*tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume)
+#A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1,1), period = 24),xreg=arima.dat$Temperature)
 
 tmp.dat <- weather[(weather$ObsTime >= head(tth[[2]][[i]]$ObsTime,1)),]
 tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
 tmp <- tmp.dat$Temperature
-Temperature <- (tmp<a)*(a-tmp)
+TemperatureP <- (tmp<a)*(a-tmp)
 
-p<-predict(A,n.ahead=length(Temperature),se.fit=TRUE,newxreg = Temperature,interval="prediction")
+# p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
 
-plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
-axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
+# plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+# axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
+# lines(p$pred+2*p$se,lty=2)
+# lines(p$pred-2*p$se,lty=2)
+# lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
+# abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
+# legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+
+
+# Smoothing experiment
+Scons1<-tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume*cc
+Scons2<-tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc
+
+print(paste("Antal smoothings for hus",i,": Train:",sum(Scons1==0),"af",length(Scons1),"Test",sum(Scons2==0),"af",length(Scons2)))
+
+# Smoothing (når en værdi er nul, udlignes det med punktet før)
+for(j in rev(which(Scons1==0))){
+  if(j!=1){
+    Scons1[c(j-1,j)]<-Scons1[j-1]/2
+  }
+}
+
+for(j in rev(which(Scons2==0))){
+  if(j!=1){
+    Scons2[c(j-1,j)]<-Scons2[j-1]/2
+  }
+}
+
+arima.dat <- data.frame(Temperature = Temperature, Consumption = Scons1)
+A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1,1), period = 24),xreg=arima.dat$Temperature)
+
+p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP)
+
+plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+axis(1, at=c(length(tth[[1]][[i]]$Obstime),length(tth[[1]][[i]]$Obstime)+170,length(tth[[1]][[i]]$Obstime)+340), labels=c("17th","24th","31st"))
 lines(p$pred+2*p$se,lty=2)
 lines(p$pred-2*p$se,lty=2)
-lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
+lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 }
+
+

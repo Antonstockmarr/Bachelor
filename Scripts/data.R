@@ -28,6 +28,8 @@ Weekend=weekdays(as.POSIXlt(c(as.Date('2019-01-26'),as.Date('2019-01-27')),forma
 sat<-substring(Weekend[1],1:2,1:2)
 sun<-substring(Weekend[2],1:2,1:2)
 
+#Consumption constant
+cc<-4.186/3.6
 
 # Loading a single table to initialize dates
 dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
@@ -222,7 +224,7 @@ for(j in 2:m){
 }
 
 # Adding consumption attribute to daily avg. house data
-day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree
+day.avg$Consumption <- day.avg$Volume*day.avg$CoolingDegree*cc
 
 # Making a dataset with selected attributes for each house
 weatherCons <- vector(mode="list", length = n)
@@ -233,7 +235,7 @@ for (i in 1:n)
   day.tmp$IsHistoricalEstimated<-NULL
   day.tmp$DewPoint<-NULL
   day.tmp$Humidity<-NULL
-  tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree
+  tmpcons <- day.data[[i]]$Volume*day.data[[i]]$CoolingDegree*cc
   weatherCons[[i]]<-cbind(day.tmp,tmpcons)
   names(weatherCons[[i]])[names(weatherCons[[i]])=='tmpcons']<-"Consumption"
   weatherCons[[i]]$Obs <- NULL

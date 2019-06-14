@@ -35,7 +35,7 @@ for (i in houses)
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(ttd[[1]][[i]]$ObsTime,1),]
   tmp <- tmp.dat$Temperature
   Temperature <- (tmp<a)*(a-tmp)
-  arima.dat <- cbind(ttd[[1]][[i]]$CoolingDegree*ttd[[1]][[i]]$Volume,Temperature)
+  arima.dat <- cbind(ttd[[1]][[i]]$CoolingDegree*ttd[[1]][[i]]$Volume*cc,Temperature)
   dd <- define.dif(arima.dat, differencing)
   dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
   dm1$ar.pattern[1,2,25:26] <- 0
@@ -69,7 +69,7 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas,houses,xreg)
     tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(ttd[[1]][[i]]$ObsTime,1),]
     tmp <- tmp.dat$Temperature
     Temperature <- (tmp<a)*(a-tmp)
-    arima.dat <- data.frame(Temperature = Temperature, Consumption = ttd[[1]][[i]]$CoolingDegree*ttd[[1]][[i]]$Volume)
+    arima.dat <- data.frame(Temperature = Temperature, Consumption = cc*ttd[[1]][[i]]$CoolingDegree*ttd[[1]][[i]]$Volume)
     A <- arima(arima.dat$Consumption, order =nonseas, seasonal = list(order = seas, period = 24),xreg=arima.dat$Temperature)
     }
     else

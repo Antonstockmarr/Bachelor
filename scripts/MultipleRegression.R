@@ -155,7 +155,7 @@ sMultiple.test <- vector(mode = "list", length = n)
 sign.testM <- vector(mode = "list", length = n)
 t<-matrix(rep(0,n*2),ncol=n)
 par(mfrow = c(1,1))
-for (i in c(18,55)) {
+for (i in 1:n) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -257,3 +257,88 @@ colSums(star_count_array)/n
 # Counting negative estimates
 sum(lmSummary_est[,3:6] < 0) / sum(lmSummary_est[,3:6] < 1000000)
 sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
+
+
+# GG-plots
+
+library('ggplot2')
+
+coef<-data.frame(ID=paste("House",1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
+
+
+for(i in 1:n){
+  lmsum <- summary(lmMultipleNoP[[i]])
+  coef$Slope[i] <- lmsum$coefficients[2,1]
+  coef$Lower[i] <- lmsum$coefficients[2,1]-2*lmsum$coefficients[2,2]
+  coef$Upper[i] <- lmsum$coefficients[2,1]+2*lmsum$coefficients[2,2]
+}
+
+plot.index <- order(coef$Slope, decreasing = TRUE)
+coef <- coef[plot.index,]
+
+
+plotgg1 <- ggplot(coef) +
+  geom_bar(aes(x = reorder(ID,rev(order(coef$Slope))), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
+  geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle=90),
+        axis.title.x=element_blank()) +
+  ggtitle('Slope estimates for every building') + 
+  coord_flip() + 
+  xlab('Building ID')+
+  ylab('Slope estimate')
+
+{
+  pdf(file = "../figures/allslope.pdf",width = 8.3,height = 11.6,pointsize = 9)
+  print(plotgg1)
+  dev.off()
+}
+plot.index <- order(coef$Slope, decreasing = TRUE)
+coef.top <- coef[plot.index,]
+
+plotgg2 <- ggplot(coef[plot.index,]) +
+  geom_bar(aes(x = reorder(ID,-Slope,sum), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
+  geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle=45,hjust = 1)) +
+  ggtitle('Top 15 slope estimates') +
+  xlab('Building ID')+
+  ylab('Slope estimate')
+
+{
+  pdf(file = "../figures/topslopes.pdf",width = 11.6,height = 8.3,pointsize = 9)
+  print(plotgg2)
+  dev.off()
+  }
+
+#Solar
+coef<-data.frame(ID=paste("House",1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
+
+
+for(i in 1:n){
+  lmsum <- summary(lmMultipleNoP[[i]])
+  coef$Slope[i] <- lmsum$coefficients[3,1]
+  coef$Lower[i] <- lmsum$coefficients[3,1]-2*lmsum$coefficients[3,2]
+  coef$Upper[i] <- lmsum$coefficients[3,1]+2*lmsum$coefficients[3,2]
+}
+
+coef<-data.frame(coef[rev(order(coef$Slope)),])
+coef<-data.frame(ID=coef$ID,Slope=coef$Slope,Lower=coef$Lower,Upper=coef$Upper)
+
+
+plotgg1 <- ggplot(coef) +
+  geom_bar(aes(x = reorder(ID,rev(order(coef$Slope))), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
+  geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle=90),
+        axis.title.x=element_blank()) +
+  ggtitle('Slope estimates for every building') + 
+  coord_flip() + 
+  xlab('Building ID')+
+  ylab('Slope estimate')
+
+{
+  pdf(file = "../figures/Solarslope.pdf",width = 8.3,height = 11.6,pointsize = 9)
+  print(plotgg1)
+  dev.off()
+}
