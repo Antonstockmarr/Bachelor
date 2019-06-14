@@ -110,6 +110,8 @@ for (i in c(18,55)) {
 
 # Hourly Predictions ----------------------------------------
 
+# Arima
+
 for(i in 1:n){
   nas<-which(!is.na(data[[i]]$Flow))
   tmp.dat<-data[[i]][nas[1]:tail(nas,1),]
@@ -192,4 +194,44 @@ abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 }
 
+# Marima
+library("forecast")
+library("marima")
+
+
+load("marimax.Rdata")
+
+i<-55
+
+tmp.dat <- weather[(weather$ObsTime >= head(tth[[2]][[i]]$ObsTime,1)),]
+tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
+tmp <- tmp.dat$Temperature
+TemperatureP <- (tmp<a)*(a-tmp)
+differencing = c(1, 24)
+
+a <- 12
+tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
+tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
+tmp <- tmp.dat$Temperature
+Temperature <- (tmp<a)*(a-tmp)
+arima.dat <- cbind(tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume*cc,Temperature)
+dd <- define.dif(arima.dat, differencing)
+dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
+dm1$ar.pattern[1,2,25:26] <- 0
+m1 <- marima(dd$y.dif, ar.pattern = dm1$ar.pattern, ma.pattern = dm1$ma.pattern, Plot = 'log.det',penalty=0)
+
+NewData<-rbind(arima.dat,cbind(rep(NA,length(tth[[2]][[55]][,1])),TemperatureP))
+
+p<-arma.forecast(series = NewData, marima = m1, nstart = length(tth[[1]][[55]][,1]), nstep = length(tth[[2]][[55]][,1]), dif.poly = NULL, check = TRUE)
+
+#plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+plot(p$forecasts[1,length(tth[[1]][[55]][,1]):(length(tth[[1]][[55]][,1])+length(tth[[2]][[55]][,1]))])
+plot(arima.dat[,1])
+plot(NewData[,2])
+axis(1, at=c(length(tth[[1]][[i]]$Obstime),length(tth[[1]][[i]]$Obstime)+170,length(tth[[1]][[i]]$Obstime)+340), labels=c("17th","24th","31st"))
+lines(p$pred+2*p$se,lty=2)
+lines(p$pred-2*p$se,lty=2)
+lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
+abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
+legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 
