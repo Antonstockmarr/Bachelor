@@ -96,7 +96,7 @@ for $j=1,2,..,q$ and $i=1,2,...,n+q-j$. When the splines are uniform, the contin
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/SplineBasis.jpeg}
+    \includegraphics[width=.8\textwidth]{../../../figures/SplineBasis.jpeg}
     \caption{The spline basis used to model the wind direction. Each color is a different basis spline, and the vertical lines mark the knots}
     \label{fig:spline_basis}
 \end{figure}
@@ -196,7 +196,7 @@ In order to determine whether the general model is valid, the diagnostic plots i
 \subsection{Results}
 The results of the general regression model performed on each house, are illustrated in \cref{lmMult_gen_L} and \cref{lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative since the increase in the temperature will result in a decrease in the heat consumption \textcolor{red}{...}. The attribute \texttt{SolarRadiation} effects the majority of the houses. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is. 
 
-\noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Not done} 
+\noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Not done} \textcolor{red}{Kommentér på tabellerne i forhold til sammenligningen af huse}
 \begin{table}
     \centering
     \begin{tabular}{cccccccccccc}
@@ -290,22 +290,28 @@ The results of the general regression model performed on each house, are illustr
     \label{lmMult_gen_S}
 \end{table}
 
-\noindent In addition, the models are used to predict 31 days ahead. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_18L} and \cref{fig: lmpred_55L}. 
-\begin{figure}
-    \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.pdf}
-    \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model does not capture the behavior of this house at all}
-    \label{fig: lmpred_18L}
-\end{figure}
+\subsection{Predictions}
+\noindent In addition, the models are used to predict 31 days ahead. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}. 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.pdf}
     \caption{Predictions of the last 31 days of the model data for house 55 including a 95\% prediction interval. The model captures the behavior of this house quite well}
     \label{fig: lmpred_55L}
 \end{figure} 
-\textcolor{red}{Not done}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.pdf}
+    \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model does not capture the behavior of this house at all}
+    \label{fig: lmpred_18L}
+\end{figure}
+It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour. The 95\% prediction interval are narrow, which indicates that the standard deviations of this model are fairly small. The general regression model performs as expected. Contrary, the model for house 18 has problems with capturing the oscillating behaviour and the 95\% prediction interval are quite wide, i.e. the corresponding standard deviations are large. But since the actual data lie within the 95\% prediction interval the model can be used for describing the heat consumption in house 18. \\
 
 \section{Comparison}
-When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. This might be explained by the inclusion of the wind in the multiple regression model. The so-called directions are not all significant for all housses. Thus, this can affect the behavior of the residuals. \\
+When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. This might be explained by the inclusion of the wind in the multiple regression model. The so-called directions are not all significant for all houses. Thus, this can affect the behavior of the residuals. \\
 
-\noindent On the other hand, the interpretation of the simple model shows taht the temperature has a great influence on the consumption. But from a physical perspective it is known that the heat consumption is influenced by other physical phenomena as well. Hence, the simple regression model is indeed too simple.   
+\noindent On the other hand, the interpretation of the simple model shows that the temperature has a great influence on the consumption. But from a physical perspective it is known that the heat consumption is influenced by other physical phenomena as well. Hence, the simple regression model is indeed too simple.   
+
+\section{Visualization of the results}
+Part of this project is also to give suggestions on how the results of the analyses can be illustrated to the users of the WATTS app. 
+
+\noindent The wind dependency showed in \textcolor{red}{ref} and \textcolor{red}{ref} can be illustrated in a more user-friendly way by coloring according to the wind's influence on the house. The coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. \textcolor{red}{ref} shows that the heat consumption for house 55 is most affected when the wind comes from west. \textcolor{red}{Kan godt være boys lige skal kommentere lidt på det her.}
