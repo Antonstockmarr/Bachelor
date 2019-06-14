@@ -259,12 +259,11 @@ sum(lmSummary_est[,3:6] < 0) / sum(lmSummary_est[,3:6] < 1000000)
 sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
 
 
-# GG-plots
+# Plotting coefficients
 
 library('ggplot2')
 
-coef<-data.frame(ID=paste("House",1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
-
+coef<-data.frame(ID=paste(1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
 
 for(i in 1:n){
   lmsum <- summary(lmMultipleNoP[[i]])
@@ -300,13 +299,13 @@ plotgg2 <- ggplot(coef[plot.index,]) +
   geom_bar(aes(x = reorder(ID,-Slope,sum), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
   geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
   theme_minimal()+
-  theme(axis.text.x = element_text(angle=45,hjust = 1)) +
+  theme(axis.text.x = element_text(angle=90,hjust = 0.5)) +
   ggtitle('Top 15 slope estimates') +
-  xlab('Building ID')+
-  ylab('Slope estimate')
+  xlab('Building no.')+
+  ylab('Temp. coefficient [kwh/C^{\circ}]')
 
 {
-  pdf(file = "../figures/topslopes.pdf",width = 11.6,height = 8.3,pointsize = 9)
+  pdf(file = "../figures/topslopes.pdf",width = 8.6,height = 4.3,pointsize = 9)
   print(plotgg2)
   dev.off()
   }
