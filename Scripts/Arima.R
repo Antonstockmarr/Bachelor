@@ -117,6 +117,7 @@ three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'intercept'=0,"Temperat
 model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,0,1),c(1:n),T)
 
 
+
 # The second model
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0, "Temperature"=0)
@@ -129,3 +130,4 @@ save(arimax,file="arimax.Rdata")
 marimax <- Marima_model(c(1:n))
 
 save(marimax,file="marimax.Rdata")
+
