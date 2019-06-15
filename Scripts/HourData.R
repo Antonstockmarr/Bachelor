@@ -12,7 +12,7 @@ for (i in 1:n)
   Cons$Date <- day.data[[i]]$Date
   for (j in 0:23)
   {
-    Cons[j+2] <- data[[i]]$Volume[hour(data[[i]]$ObsTime) == j]*data[[i]]$CoolingDegree[hour(data[[i]]$ObsTime) == j]
+    Cons[j+2] <- data[[i]]$Volume[hour(data[[i]]$ObsTime) == j]*data[[i]]$CoolingDegree[hour(data[[i]]$ObsTime) == j]*cc
   }
   # Byt fuck
   HourTmp <- vector("list",length=length(weather))

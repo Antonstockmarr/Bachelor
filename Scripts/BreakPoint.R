@@ -52,7 +52,7 @@ for(k in 1:n){
 alpha<-alpha[alpha>0]
 
 par(mfrow=c(1,1))
-hist(alpha,main = 'Histogram of the alpha values')
+hist(alpha,main = 'Histogram of the breakpoint values',xlab = 'Temperature')
 
 break.point<-round(as.numeric(quantile(alpha, .25)))
 # Breakpointet bestemmes som 25% kvartilet af alphaerne.
@@ -60,3 +60,4 @@ break.point<-round(as.numeric(quantile(alpha, .25)))
 abline(v=break.point,col=Wcol[2],lwd=2)
 
 rm(alpha,i,j,pct.in.sd,q,t,tmp.mu,tmp.q,tmp.sd,tmp.sd.dist,tmp.t)
+

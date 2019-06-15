@@ -192,23 +192,22 @@ for (i in 1:n) {
   Splinebasis2 <- BSplines(0:359)
   newData = data.frame(Temperature = rep(0, 360), # 0 grader
                        Radiation = rep(0, 360), # Om natten
-                       N = Splinebasis2[,3],
-                       E = Splinebasis2[,4],
-                       S = Splinebasis2[,1],
-                       W = Splinebasis2[,2])
-  
+                       N = Splinebasis2[,3]*4.27, # Gennemsnitlig vindstyrke
+                       E = Splinebasis2[,4]*4.27,
+                       S = Splinebasis2[,1]*4.27,
+                       W = Splinebasis2[,2]*4.27)
+
   Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
-  Wind.PredK<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.25))
-  
+  Wind.PredK<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.33))
+
   plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("House: ",i),xlab = "Wind direction in degrees",ylab="Effect on consumption")
   lines(Wind.Pred[[i]]$upr,lty=2)
   lines(Wind.Pred[[i]]$lwr,lty=2)
   abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
 
   CirclePlot(Wind.PredK)
+  title(main=paste("House: ",i))
 }
-
-t
 
 t.est <- as.table(lmSummary_est)
 # Saving estimates in a .csv file
