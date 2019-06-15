@@ -283,11 +283,28 @@ plotgg1 <- ggplot(coef[plot.index,]) +
   xlab('Building no.') +
   ylab(expression(paste("Temp. coefficients [kWh/(",degree,"C",~ m^2 ~ day,")]", sep="")))
 
-{
+  {
   pdf(file = "../figures/Temp_coef.pdf",width = 8.6,height = 4.3,pointsize = 9)
   print(plotgg1)
   dev.off()
   }
+
+
+# Year of construction plot
+# The last year of construction is saved for a plot.
+coef$Construction.Year <- 1:length(coef$ID)
+tmp<-as.numeric(as.character(coef$ID))
+for(i in 1:length(coef$ID)){
+  if(!is.na(BBR$ReconstructionYear[tmp[i]])){
+    coef$Construction.Year[i]<-BBR$ReconstructionYear[tmp[i]]
+  }else{
+    coef$Construction.Year[i]<-BBR$ConstructionYear[tmp[i]]
+  }
+}
+plot(coef$Construction.Year,coef$Slope)
+for(i in 1:length(coef$ID)){
+  lines(c(coef$Construction.Year[i],coef$Construction.Year[i]),c(coef$Lower[i],coef$Upper[i]),col=2)
+}
 
 # Solar
 coef<-data.frame(ID=paste(1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
@@ -316,3 +333,6 @@ plotgg2 <- ggplot(coef[plot.index,]) +
   print(plotgg2)
   dev.off()
 }
+
+
+
