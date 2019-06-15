@@ -18,7 +18,7 @@ for(i in 1:n){
   weatherCons[[i]]<-weatherCons[[i]][k:1,]
 }
 
-# Defining data used for modeling
+# Defining data used for modelling
 model.data <- weatherCons
 # Various attributes are removed
 for (i in 1:n)
@@ -156,7 +156,7 @@ sign.testM <- vector(mode = "list", length = n)
 t<-matrix(rep(0,n*2),ncol=n)
 par(mfrow = c(1,1))
 for (i in 1:n) {
-  print(paste('Modeling house ',i))
+  print(paste('Modelling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   Splinebasis <- BSplines(model.tmp$WindDirection)
@@ -280,8 +280,8 @@ plotgg1 <- ggplot(coef[plot.index,]) +
   geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
   theme_minimal()+
   theme(axis.text.x = element_text(angle=90,hjust = 0.5)) +
-  xlab('Building no.')
-  #ylab(bquote("Temp. coefficient [kWh"(C%.%~"day"~%.% m^2)~"]" ))
+  xlab('Building no.') +
+  ylab(expression(paste("Temp. coefficients [kWh/(",degree,"C",~ m^2 ~ day,")]", sep="")))
 
 {
   pdf(file = "../figures/Temp_coef.pdf",width = 8.6,height = 4.3,pointsize = 9)
@@ -291,7 +291,6 @@ plotgg1 <- ggplot(coef[plot.index,]) +
 
 # Solar
 coef<-data.frame(ID=paste(1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
-
 
 for(i in 1:n){
   lmsum <- summary(lmMultipleNoP[[i]])
@@ -310,7 +309,7 @@ plotgg2 <- ggplot(coef[plot.index,]) +
   theme_minimal()+
   theme(axis.text.x = element_text(angle=90,hjust = 0.5)) +
   xlab('Building no.') +
-  ylab(bquote("Solar rad. coefficient [kWh(C%.%~day~%.% m^2)]" ))
+  ylab(expression(paste("Solar rad. coefficients [",kWh,"]")))
 
 {
   pdf(file = "../figures/Solar_coef.pdf",width = 8.6,height = 4.3,pointsize = 9)

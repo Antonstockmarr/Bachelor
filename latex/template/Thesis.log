@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  15 JUN 2019 13:17
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  15 JUN 2019 14:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1829,27 +1829,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-File: graphics/../../../figures/byggeår.eps Graphic file (type eps)
-<graphics/../../../figures/byggeår.eps>
+File: graphics/../../../figures/byggeaar.eps Graphic file (type eps)
+<graphics/../../../figures/byggeaar.eps>
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
-[11]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 File: graphics/../../../figures/gg_cor.eps Graphic file (type eps)
 <graphics/../../../figures/gg_cor.eps>
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--86
+Underfull \hbox (badness 10000) in paragraph at lines 79--87
 
  []
 
 
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 90--107
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 91--108
  [][] 
  []
 
-[12] [13]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12] [13]
 File: graphics/../../../figures/Consumption-PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption-PW.eps>
  [14]
@@ -1914,43 +1920,35 @@ File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
 File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm55L.pdf>
  [28]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 202--251
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 30.25996pt on input line 253.
-
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 256--289
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29] [30]
-Overfull \vbox (187.618pt too high) has occurred while \output is active []
-
- [31]
+File: graphics/../../../figures/Temp_coef.pdf Graphic file (type pdf)
+<use graphics/../../../figures/Temp_coef.pdf>
+File: graphics/../../../figures/Solar_coef.pdf Graphic file (type pdf)
+<use graphics/../../../figures/Solar_coef.pdf>
 File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_55L.pdf>
 File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_18L.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--308
+Underfull \hbox (badness 10000) in paragraph at lines 216--230
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-) [32] [33] [34]
+ [30] [31]) [32] [33]
 \openout2 = `chapters/HourModels.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex [34
+
+
+
+]
 File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_summer.pdf>
 
@@ -1962,11 +1960,7 @@ File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 
 LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
 
-[35
-
-
-
-] [36] [37]
+[35] [36] [37]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
@@ -1993,27 +1987,49 @@ Overfull \hbox (30.64294pt too wide) in paragraph at lines 103--152
  [][] 
  []
 
-[47] [48] [49] [50] [51] [52]
+
+Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 30.25996pt on input line 298.
+
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47] [48] [49] [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51] [52] [53]
+Overfull \vbox (50.57715pt too high) has occurred while \output is active []
+
+ [54]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 247--248
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 342--343
  [][] 
  []
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 254--255
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 349--350
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 1.81111pt on input line 257.
+LaTeX Warning: Float too large for page by 1.81111pt on input line 352.
 
-) [53
+) [55
 
-] [54] [55] [56
+] [56] [57] [58
 
 
 ]
@@ -2042,13 +2058,13 @@ Overfull \hbox (45.28pt too wide) in paragraph at lines 43--43
 Package biblatex Warning: No driver for entry type 'paper'.
 (biblatex)                Using fallback driver on input line 42.
 
-[57
+[59
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[58
+[60
 
 ]
 \tf@toc=\write7
@@ -2062,7 +2078,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6BC4D44B742FA44EB41733AC475D42F8.
+(rerunfilecheck)             Checksum: B590FAA12D212F07D672168DF8669F53.
 
 
 LaTeX Warning: There were undefined references.
@@ -2073,12 +2089,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49744 strings out of 492933
- 954922 string characters out of 6133145
- 1667113 words of memory out of 5000000
- 53021 multiletter control sequences out of 15000+600000
+ 49759 strings out of 492933
+ 955377 string characters out of 6133145
+ 1704638 words of memory out of 5000000
+ 53034 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,81p,1875b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (68 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (70 pages).

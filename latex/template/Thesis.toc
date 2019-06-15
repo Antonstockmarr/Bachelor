@@ -36,9 +36,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.2}BBR data}{9}{subsection.3.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multicollinearity}{11}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Multicollinearity}{12}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Data segmentation}{12}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Data segmentation}{14}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{14}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 
@@ -68,7 +68,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.2}Results}{28}{subsection.4.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Predictions}{32}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.3}Predictions}{29}{subsection.4.4.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.5}Comparison}{32}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
@@ -90,14 +90,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Future work}{45}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Tables}{47}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {A}Tables}{51}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{47}{section.A.1}% 
+\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{54}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{47}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{54}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{47}{subsection.A.2.1}% 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{54}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{53}{appendix.B}% 
+\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{54}{section.A.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{57}{section*.6}% 
+\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{54}{subsection.A.3.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {B}Figures}{55}{appendix.B}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{59}{section*.6}% 

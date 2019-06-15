@@ -1,5 +1,5 @@
 \chapter{Exploratory Analysis}
-First part of the analysis is to explore the different attributes in the data, in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modeling. \\
+First part of the analysis is to explore the different attributes in the data, in order to detect possible patterns or correlations. The exploratory analysis is also used to get an understanding of data and its behaviour. Hence, this chapter is about visualizing the different attributes focusing on their influence on the heat consumption. As the heat in each house is turned off in the summer period, data is segmented such that the summer period is excluded from the data used for modelling. \\
 
 \section{Examination of the Heat Consumption}
 \noindent To get an overview of the heat consumption for each house, the daily average heat consumption for each house is investigated. \cref{fig: daily_cons} shows the daily average consumption for all the houses and the daily consumption of two houses - one that follows the trend and one that deviates. These two houses are chosen to be visualised throughout the report and their specifications are presented in section \textcolor{red}{3.1.2}. It can be seen that the slopes around the summer months are close to 0. As mentioned, the data in focus in this project is where the heat is turned on, hence the period where the heat consumption is close to 0 needs to be removed. Exactly how this is done will be explained and discussed in the data segmentation section. All three plots show some unusual high data points around April 2018. This can be due to the fact that is was snowing in Denmark at that time which is supported by the article found in \cite{vejr2018}. \\
@@ -65,7 +65,7 @@ Since the two houses, 18 and 55, showed in \cref{fig: daily_cons} will be used t
 \noindent The average of the heat consumption for each house is found/determined for the winter period. By dividing the average consumption with the total area of the house the consumption pr. $m^2$ is calculated. Figure \ref{fig: byggeaar} shows the year of construction and the consumption for each of the houses. The year of construction is here determined by either the year of construction or the year of the latest reconstruction of a house. 
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/byggeår.eps}
+    \includegraphics[width=.8\textwidth]{../../../figures/byggeaar.eps}
     \caption{Plot showing the year of construction and the average consumption pr. $m^2$ for each house. It is seen that there is a tendency that the later a house is built or reconstructed, the better is the insulation of the house}
     \label{fig: byggeaar}
 \end{figure}
@@ -85,7 +85,7 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
 \end{figure}
 \noindent There is a high correlation between \texttt{Radiation} and \texttt{SunHour} at 0.955, thus \texttt{SunHour} is removed from the weather data set. \\
  
-\noindent The complete data set used for modeling in chapter 4 can be seen in table \ref{tab: modeldata}. \textcolor{red}{Not done}
+\noindent The complete data set used for modelling in chapter 4 can be seen in table \ref{tab: modeldata}. \textcolor{red}{Not done}
 \begin{table}
     \centering
     \begin{tabular}{ll}
@@ -105,7 +105,7 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     Holiday & A categorical attribute with 6 levels: Working day, \\ & Weekend, Autumn break, Christmas break, \\ & Winter break and Spring break.\\
     \hline
     \end{tabular}
-    \caption{Attributes used for modeling}
+    \caption{Attributes used for modelling}
     \label{tab: modeldata}
 \end{table}   
 

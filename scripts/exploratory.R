@@ -66,7 +66,7 @@ plot1 <- ggplot(data = day.avg, aes(x = Flow, y= Consumption)) + geom_point() + 
 plot2 <- ggplot(data = day.avg, aes(x = Volume, y= Consumption)) + geom_point() + xlab(expression(paste("Volume [",m^3,"]", sep=""))) + ylab("Consumption [kWh]")
 plot3 <- ggplot(data = day.avg, aes(x = TemperatureIn, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureIn [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
 plot4 <- ggplot(data = day.avg, aes(x = TemperatureOut, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureOut [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
-plot5 <- ggplot(data = day.avg, aes(x = CoolingDegree, y= Consumption)) + geom_point() +xlab(expression(paste("CoolingDegree [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
+plot5 <- ggplot(data = day.avg, aes(x = CoolingDegree, y= Consumption)) + geom_point() + xlab(expression(paste("CoolingDegree [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
 grid.arrange(plot1, plot2, plot3, plot4, plot5, nrow = 3, ncol = 2)
 
 # Weather pairs
@@ -80,7 +80,7 @@ plot9 <- ggplot(data = day.tmp, aes(x = MeanSeaLevelPressure, y= Consumption)) +
 plot10 <- ggplot(data = day.tmp, aes(x = DewPoint, y= Consumption)) + geom_point() + xlab(expression(paste("DewPoint [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
 plot11 <- ggplot(data = day.tmp, aes(x = Radiation, y= Consumption)) + geom_point() + xlab(expression(paste("SolarRadiation [W"/m^2,"]", sep=""))) + ylab("Consumption [kWh]")
 plot12 <- ggplot(data = day.tmp, aes(x = SunHour, y= Consumption)) + geom_point() + xlab(expression(paste("SunHour [",hours,"]", sep=""))) + ylab("Consumption [kWh]")
-grid.arrange(plot6, plot7, plot8, plot9, plot10, plot11, plot12, nrow = 5, ncol = 2)
+grid.arrange(plot6, plot7, plot8, plot9, plot10, plot11, plot12, nrow = 4, ncol = 2)
 
 
 # Sun pairs
@@ -106,14 +106,12 @@ HouseType <- c(BBR$HouseType)
 legend11 <- "Type 1: Industry \n Type 2: Public \n Type 3: Apartment \n Type 4: Parcel \n Type 5: Terrace"
 my_grob = grid.text(legend11, x=0.1,  y=0.8, gp=gpar(col="black", fontsize=8, fontface="bold"), just = "left")
 plot11 <- ggplot(data = data.frame(HouseType), aes(x = HouseType)) + geom_histogram(bins = 15) + theme(legend.position = "topleft",legend.direction = "horizontal") + annotation_custom(my_grob)
-plot12 <- ggplot(data = BBR, aes(x = TotalArea)) + geom_histogram(bins = 15)
+plot12 <- ggplot(data = BBR, aes(x = TotalArea)) + geom_histogram(bins = 15) + xlab(expression(paste("TotalArea [",m^2,"]", sep="")))
 plot13 <- ggplot(data = BBR, aes(x = ConstructionYear)) + geom_histogram(bins = 15)
 plot14 <- ggplot(data = BBR, aes(x = ReconstructionYear)) + geom_histogram(bins = 15)
 grid.arrange(plot11, plot12, plot13, plot14, nrow = 2, ncol = 2)
 
 par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
-plot(Construction.Year,cons.areal,col=Wcol[2],main='Year of Construction Consumption',xlab='Year of Construction',ylab = expression(paste("Consumption pr.  ", m^2, sep = "")))
-points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col=Wcol[3])
-points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break.points[2]],col=Wcol[4])
-legend('topright', legend = c('Highest consumption', 'Middle consumption', 'Lowest consumption'), col = c(Wcol[4],Wcol[3],Wcol[2]), pch = 1, bty = 'n')
-
+plot(Construction.Year,cons.areal,col="hotpink",pch = 19,xlab='Year of Construction',ylab = expression(paste("Consumption [",kWh/m^2,"]", sep = "")))
+points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col="hotpink", pch = 19)
+points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break.points[2]],col="hotpink", pch = 19)
