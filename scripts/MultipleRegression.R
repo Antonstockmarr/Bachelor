@@ -260,7 +260,6 @@ sum(lmSummary_est[,8:11] < 0) / sum(lmSummary_est[,8:11] < 1000000)
 
 
 # Plotting coefficients
-
 library('ggplot2')
 
 coef<-data.frame(ID=paste(1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
@@ -276,67 +275,45 @@ coef<-coef[!is.na(coef$Slope),]
 plot.index <- order(coef$Slope, decreasing = TRUE)
 coef <- coef[plot.index,]
 
-
-plotgg1 <- ggplot(coef) +
-  geom_bar(aes(x = reorder(ID,rev(order(coef$Slope))), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
-  geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
-  theme_minimal()+
-  theme(axis.text.x = element_text(angle=90),
-        axis.title.x=element_blank()) +
-  ggtitle('Slope estimates for every building') + 
-  coord_flip() + 
-  xlab('Building ID')+
-  ylab('Slope estimate')
-
-{
-  pdf(file = "../figures/allslope.pdf",width = 8.3,height = 11.6,pointsize = 9)
-  print(plotgg1)
-  dev.off()
-}
-
-plotgg2 <- ggplot(coef[plot.index,]) +
+plotgg1 <- ggplot(coef[plot.index,]) +
   geom_bar(aes(x = reorder(ID,-Slope,sum), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
   geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
   theme_minimal()+
   theme(axis.text.x = element_text(angle=90,hjust = 0.5)) +
-  xlab('Building no.')+
-  ylab(bquote("Temp. coefficient [kWh/(C"%.%"day)]"))
+  xlab('Building no.')
+  #ylab(bquote("Temp. coefficient [kWh"(C%.%~"day"~%.% m^2)~"]" ))
 
 {
-  pdf(file = "../figures/topslopes.pdf",width = 8.6,height = 4.3,pointsize = 9)
-  print(plotgg2)
+  pdf(file = "../figures/Temp_coef.pdf",width = 8.6,height = 4.3,pointsize = 9)
+  print(plotgg1)
   dev.off()
   }
 
-#Solar
-coef<-data.frame(ID=paste("House",1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
+# Solar
+coef<-data.frame(ID=paste(1:n),Slope=rep(0,n),Lower=rep(0,n),Upper=rep(0,n))
 
 
 for(i in 1:n){
   lmsum <- summary(lmMultipleNoP[[i]])
-  coef$Slope[i] <- lmsum$coefficients[3,1]/BBR$TotalArea[i]
-  coef$Lower[i] <- (lmsum$coefficients[3,1]-2*lmsum$coefficients[3,2])/BBR$TotalArea[i]
-  coef$Upper[i] <- (lmsum$coefficients[3,1]+2*lmsum$coefficients[3,2])/BBR$TotalArea[i]
+  coef$Slope[i] <- lmsum$coefficients[3,1]
+  coef$Lower[i] <- (lmsum$coefficients[3,1]-2*lmsum$coefficients[3,2])
+  coef$Upper[i] <- (lmsum$coefficients[3,1]+2*lmsum$coefficients[3,2])
 }
 coef<-coef[!is.na(coef$Slope),]
 
 plot.index <- order(coef$Slope, decreasing = TRUE)
 coef <- coef[plot.index,]
 
-
-plotgg1 <- ggplot(coef) +
-  geom_bar(aes(x = reorder(ID,rev(order(coef$Slope))), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
+plotgg2 <- ggplot(coef[plot.index,]) +
+  geom_bar(aes(x = reorder(ID,-Slope,sum), y = Slope), stat = 'identity', fill = 'cornflowerblue', color = 'black') + 
   geom_errorbar(aes(x = ID, ymin = Lower, ymax = Upper), width = 0.4, color = 'orangered') +
   theme_minimal()+
-  theme(axis.text.x = element_text(angle=90),
-        axis.title.x=element_blank()) +
-  ggtitle('Slope estimates for every building') + 
-  coord_flip() + 
-  xlab('Building ID')+
-  ylab('Slope estimate')
+  theme(axis.text.x = element_text(angle=90,hjust = 0.5)) +
+  xlab('Building no.') +
+  ylab(bquote("Solar rad. coefficient [kWh(C%.%~day~%.% m^2)]" ))
 
 {
-  pdf(file = "../figures/Solarslope.pdf",width = 8.3,height = 11.6,pointsize = 9)
-  print(plotgg1)
+  pdf(file = "../figures/Solar_coef.pdf",width = 8.6,height = 4.3,pointsize = 9)
+  print(plotgg2)
   dev.off()
 }

@@ -17,31 +17,21 @@ plot(data[[1]]$Flow,col=Wcol[2])
 
 
 # Average consumption -----------------------------------------------------
-avgconsumption<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
-weightavg<-rep(0,difftime(max(EndDays),min(StartDays), units ="hours"))
-
-
-difftime(max(EndDays),min(StartDays), units ="hours")
-avgconsumption[difftime(max(EndDays),min(StartDays), units ="hours")]
-
-difftime(StartDays[1],min(StartDays), units ="hours")
-difftime(EndDays[1],min(StartDays), units ="hours")
-
 # Average consumption for all houses during a year
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
-  ggtitle("Average consumption for all houses during a year ") + xlab("Time") + 
-  ylab("Avg. consumption (kwh)") +
+  ggtitle("Average consumption for all houses during a year ") + xlab("Time [day]") + 
+  ylab("Avg. consumption [kWh]") +
   geom_smooth(col=Wcol[2], se = T)
 
 # Selected houses based on wether they follow the trend
 day.plot.gak <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
-  ggtitle(paste("Daily consumption for house 18")) + xlab("Time") + 
-  ylab("Daily consumption (kwh)") + 
+  ggtitle(paste("Daily consumption for house 18")) + xlab("Time [day]") + 
+  ylab("Daily consumption [kWh]") + 
   geom_smooth(col=Wcol[2], se = T)
 
 day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
-  ggtitle(paste("Daily consumption for house 55")) + xlab("Time") + 
-  ylab("Daily consumption (kwh)") +
+  ggtitle(paste("Daily consumption for house 55")) + xlab("Time [day]") + 
+  ylab("Daily consumption [kWh]") +
   geom_smooth(col=Wcol[2], se = T)
 {
   pdf(file = "../figures/daily_cons.pdf",width = 4.5,height = 2.8,pointsize = 9)
@@ -54,20 +44,11 @@ day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegre
 for (i in 1:n) {
   if (length(day.data[[i]]$Flow) > 365) {
     print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
-            ggtitle(paste("Daily consumption for house ", i)) + xlab("Time") + 
-            ylab("Average consumption (kwh)") +
+            ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [day]") + 
+            ylab("Average consumption [kWh]") +
             geom_smooth(col=Wcol[2], se = T))
   }
 }
-
-#for (i in 1:n) {
-#  avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]<-
-#    avgconsumption[difftime(StartDays[i],min(StartDays), units ="hours"):difftime(EndDays[i],min(StartDays), units ="hours")]+
-#    data[[i]]$Flow*data[[i]]$CoolingDegree
-#  weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]<-
-#    weightavg[difftime(StartDays[i]+1,min(StartDays), units ="hours"):difftime(EndDays[i]+1,min(StartDays), units ="hours")]+
-#    rep(1,length(data[[1]]$Flow))
-#}
 
 
 # Pairs plots -------------------------------------------------------------
@@ -99,7 +80,9 @@ plot7 <- ggplot(data = day.tmp, aes(x = WindSpeed, y= Consumption)) + geom_point
 plot8 <- ggplot(data = day.tmp, aes(x = WindDirection, y= Consumption)) + geom_point() + ylab("Consumption")
 plot9 <- ggplot(data = day.tmp, aes(x = MeanSeaLevelPressure, y= Consumption)) + geom_point() + ylab("Consumption")
 plot10 <- ggplot(data = day.tmp, aes(x = DewPoint, y= Consumption)) + geom_point() + ylab("Consumption")
-grid.arrange(plot6, plot7, plot8, plot9, plot10, nrow = 3, ncol = 2)
+plot11 <- ggplot(data = day.tmp, aes(x = Radiation, y= Consumption)) + geom_point() + ylab("Consumption")
+plot12 <- ggplot(data = day.tmp, aes(x = SunHour, y= Consumption)) + geom_point() + ylab("Consumption")
+grid.arrange(plot6, plot7, plot8, plot9, plot10, plot11, plot12, nrow = 5, ncol = 2)
 
 
 # Sun pairs
