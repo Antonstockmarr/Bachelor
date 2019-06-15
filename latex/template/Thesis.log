@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  15 JUN 2019 18:24
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  15 JUN 2019 19:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1764,7 +1764,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6252) has occurred while \output is active []
 
  [1
 
@@ -1983,17 +1983,25 @@ File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
  [40] [41] [42] [43]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
-) [44] [45]
+File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/Roots_55.pdf>
+File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/Roots_18.pdf>
+File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/ACF_55_short.pdf>
+File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/ACF_18_short.pdf>
+) [44] [45] [46] [47] [48] [49]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [46
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [50
 
 
 
-]) [47]
+]) [51]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [48
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [52
 
 
 
@@ -2018,13 +2026,13 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49] [50] [51] [52]
+ [53] [54] [55] [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53] [54] [55]
+ [57] [58] [59]
 Overfull \vbox (50.57715pt too high) has occurred while \output is active []
 
- [56]
+ [60]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
@@ -2042,9 +2050,13 @@ Overfull \hbox (1.68883pt too wide) in paragraph at lines 349--350
 
 LaTeX Warning: Float too large for page by 1.81111pt on input line 352.
 
-) [57
+File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/ACF_55_long.pdf>
+File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/ACF_18_long.pdf>
+) [61
 
-] [58] [59] [60
+] [62] [63] [64] [65] [66
 
 
 ]
@@ -2073,13 +2085,13 @@ Overfull \hbox (45.28pt too wide) in paragraph at lines 43--43
 Package biblatex Warning: No driver for entry type 'paper'.
 (biblatex)                Using fallback driver on input line 42.
 
-[61
+[67
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[62
+[68
 
 ]
 \tf@toc=\write7
@@ -2100,12 +2112,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49783 strings out of 492933
- 956327 string characters out of 6133145
- 1704989 words of memory out of 5000000
- 53054 multiletter control sequences out of 15000+600000
+ 49821 strings out of 492933
+ 957776 string characters out of 6133145
+ 1706213 words of memory out of 5000000
+ 53086 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,13n,81p,1878b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (72 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (78 pages).
