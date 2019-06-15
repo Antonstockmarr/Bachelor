@@ -1,6 +1,6 @@
 # Physical MARIMA
 i<- 20
-Consumption <- data[[i]]$Volume*data[[i]]$CoolingDegree
+Consumption <- data[[i]]$Volume*data[[i]]$CoolingDegree*cc
 
 a <- 12
 tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
