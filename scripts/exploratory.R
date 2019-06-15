@@ -34,12 +34,12 @@ avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_poi
   geom_smooth(col=Wcol[2], se = T)
 
 # Selected houses based on wether they follow the trend
-day.plot.gak <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+day.plot.gak <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume*cc))) + geom_point() +
   ggtitle(paste("Daily consumption for house 18")) + xlab("Time") + 
   ylab("Daily consumption (kwh)") + 
   geom_smooth(col=Wcol[2], se = T)
 
-day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegree*Volume*cc))) + geom_point() +
   ggtitle(paste("Daily consumption for house 55")) + xlab("Time") + 
   ylab("Daily consumption (kwh)") +
   geom_smooth(col=Wcol[2], se = T)
@@ -53,7 +53,7 @@ day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegre
 # Daily consumption for the n houses
 for (i in 1:n) {
   if (length(day.data[[i]]$Flow) > 365) {
-    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
+    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume*cc),color=Holiday)) + geom_point() +
             ggtitle(paste("Daily consumption for house ", i)) + xlab("Time") + 
             ylab("Average consumption (kwh)") +
             geom_smooth(col=Wcol[2], se = T))
