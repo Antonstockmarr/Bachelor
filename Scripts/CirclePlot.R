@@ -1,4 +1,5 @@
 CirclePlot <- function(WindPred){
+
   WindPred<-WindPred-min(WindPred)
   x<- -cos((1:360)/180*pi+pi/2)*WindPred$fit
   y<- sin((1:360)/180*pi+pi/2)*WindPred$fit
