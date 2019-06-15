@@ -88,6 +88,7 @@ image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE,
            lab.breaks=NULL,main = 'Average consumption of all houses (summer period)')
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
+axis(1, at = 1, xaxp = 'House no.', tick = FALSE, pos = -0.01)
 
 
 mcons_summer <-apply(Houravg,1,mean)
