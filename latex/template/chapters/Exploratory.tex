@@ -5,7 +5,7 @@ First part of the analysis is to explore the different attributes in the data, i
 \noindent To get an overview of the heat consumption for each house, the daily average heat consumption for each house is investigated. \cref{fig: daily_cons} shows the daily average consumption for all the houses and the daily consumption of two houses - one that follows the trend and one that deviates. These two houses are chosen to be visualised throughout the report and their specifications are presented in section \textcolor{red}{3.1.2}. It can be seen that the slopes around the summer months are close to 0. As mentioned, the data in focus in this project is where the heat is turned on, hence the period where the heat consumption is close to 0 needs to be removed. Exactly how this is done will be explained and discussed in the data segmentation section. All three plots show some unusual high data points around April 2018. This can be due to the fact that is was snowing in Denmark at that time which is supported by the article found in \cite{vejr2018}. \\
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/avg_daily.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/daily_cons.pdf}
     \caption{Daily consumption during a year (2018). The top plot shows the average consumption for all the houses. The plot in the middle shows an example of a house that deviates from the trend and the last plot shows a house that follows the trend}
     \label{fig: daily_cons}
 \end{figure}
@@ -70,7 +70,8 @@ Since the two houses, 18 and 55, showed in \cref{fig: daily_cons} will be used t
     \label{fig: byggeaar}
 \end{figure}
 
-\noindent Figure \ref{fig: byggeaar} clearly shows that the later a house is constructed (or reconstructed), the better is the insulation of the house as the consumption decreases with the year of construction. Furthermore, there is a clear outlier in the figure which has a remarkable high consumption pr. $m^2$. When looking up the house in the BBR data, it is seen that the outlier is an apartment of 61 $m^2$ build in 1920.  
+\noindent Figure \ref{fig: byggeaar} shows the relation between the year of construction of a house and its average consumption pr. $m^2$. A single house stands out with a consumption that is remarkably higher than the rest. The house is a simple appartment of $61 m^2$ build in 1920. Other than that, there seems to be a vague tendency that older buildings have a higher consumption. The buildings from after $1990$ all have relatively low consumption, while the older buildings have a higher spread. For houses that have been reconstructed, the reconstruction year has been used instead of the construction year. So some houses in the plot might in fact be older than it is shown here. The nature of the reconstructions is not known, but since they are extensive enough to be registered in BBR, it is assumed to have an effect on the consumption of that house.
+
 
 \section{Multicollinearity}
 Multicollinearity occurs when two or more explanatory variables are highly correlated. In linear regression, multicollinearity \textcolor{red}{\dots} Multicollinearity can be investigated by calculating the correlation using the function \texttt{cor()} in \texttt{R}.\\

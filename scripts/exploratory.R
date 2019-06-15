@@ -19,18 +19,18 @@ plot(data[[1]]$Flow,col=Wcol[2])
 # Average consumption -----------------------------------------------------
 # Average consumption for all houses during a year
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
-  ggtitle("Average consumption for all houses during a year ") + xlab("Time [day]") + 
+  ggtitle("Average consumption for all houses during a year ") + xlab("Time [days]") + 
   ylab("Avg. consumption [kWh]") +
   geom_smooth(col=Wcol[2], se = T)
 
 # Selected houses based on wether they follow the trend
 day.plot.gak <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
-  ggtitle(paste("Daily consumption for house 18")) + xlab("Time [day]") + 
+  ggtitle(paste("Daily consumption for house 18")) + xlab("Time [days]") + 
   ylab("Daily consumption [kWh]") + 
   geom_smooth(col=Wcol[2], se = T)
 
 day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
-  ggtitle(paste("Daily consumption for house 55")) + xlab("Time [day]") + 
+  ggtitle(paste("Daily consumption for house 55")) + xlab("Time [days]") + 
   ylab("Daily consumption [kWh]") +
   geom_smooth(col=Wcol[2], se = T)
 {
@@ -44,7 +44,7 @@ day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegre
 for (i in 1:n) {
   if (length(day.data[[i]]$Flow) > 365) {
     print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
-            ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [day]") + 
+            ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [days]") + 
             ylab("Average consumption [kWh]") +
             geom_smooth(col=Wcol[2], se = T))
   }
@@ -60,28 +60,26 @@ day.tmp$Consumption <- day.avg$Consumption
 # House pairs
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 pairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
-GGally::ggpairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
 pairs(day.avg[c('Consumption', 'Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree')])
 
-plot1 <- ggplot(data = day.avg, aes(x = Flow, y= Consumption)) + geom_point() + ylab("Consumption")
-plot2 <- ggplot(data = day.avg, aes(x = Volume, y= Consumption)) + geom_point() + ylab("Consumption")
-plot3 <- ggplot(data = day.avg, aes(x = TemperatureIn, y= Consumption)) + geom_point() + ylab("Consumption")
-plot4 <- ggplot(data = day.avg, aes(x = TemperatureOut, y= Consumption)) + geom_point() + ylab("Consumption")
-plot5 <- ggplot(data = day.avg, aes(x = CoolingDegree, y= Consumption)) + geom_point() + ylab("Consumption")
+plot1 <- ggplot(data = day.avg, aes(x = Flow, y= Consumption)) + geom_point() + xlab(expression(paste("Flow [",m^3/"hour]", sep=""))) + ylab("Consumption [kWh]")
+plot2 <- ggplot(data = day.avg, aes(x = Volume, y= Consumption)) + geom_point() + xlab(expression(paste("Volume [",m^3,"]", sep=""))) + ylab("Consumption [kWh]")
+plot3 <- ggplot(data = day.avg, aes(x = TemperatureIn, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureIn [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
+plot4 <- ggplot(data = day.avg, aes(x = TemperatureOut, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureOut [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
+plot5 <- ggplot(data = day.avg, aes(x = CoolingDegree, y= Consumption)) + geom_point() +xlab(expression(paste("CoolingDegree [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
 grid.arrange(plot1, plot2, plot3, plot4, plot5, nrow = 3, ncol = 2)
 
 # Weather pairs
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
 pairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
-GGally::ggpairs(c(day.avg['Consumption'], day.tmp[c('Date','Temperature','WindSpeed','WindDirection','SunHour','Condition','MeanSeaLevelPressure','DewPoint','PrecipitationProbability')]))
 
-plot6 <- ggplot(data = day.tmp, aes(x = Temperature, y= Consumption)) + geom_point() + ylab("Consumption")
-plot7 <- ggplot(data = day.tmp, aes(x = WindSpeed, y= Consumption)) + geom_point() + ylab("Consumption")
-plot8 <- ggplot(data = day.tmp, aes(x = WindDirection, y= Consumption)) + geom_point() + ylab("Consumption")
-plot9 <- ggplot(data = day.tmp, aes(x = MeanSeaLevelPressure, y= Consumption)) + geom_point() + ylab("Consumption")
-plot10 <- ggplot(data = day.tmp, aes(x = DewPoint, y= Consumption)) + geom_point() + ylab("Consumption")
-plot11 <- ggplot(data = day.tmp, aes(x = Radiation, y= Consumption)) + geom_point() + ylab("Consumption")
-plot12 <- ggplot(data = day.tmp, aes(x = SunHour, y= Consumption)) + geom_point() + ylab("Consumption")
+plot6 <- ggplot(data = day.tmp, aes(x = Temperature, y= Consumption)) + geom_point() + xlab(expression(paste("Temperature [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
+plot7 <- ggplot(data = day.tmp, aes(x = WindSpeed, y= Consumption)) + geom_point() +  xlab(expression(paste("WindSpeed [",m/"s]", sep=""))) + ylab("Consumption [kWh]")
+plot8 <- ggplot(data = day.tmp, aes(x = WindDirection, y= Consumption)) + geom_point() + xlab(expression(paste("WindDirection [",degrees,"]", sep=""))) + ylab("Consumption [kWh]")
+plot9 <- ggplot(data = day.tmp, aes(x = MeanSeaLevelPressure, y= Consumption)) + geom_point() + xlab(expression(paste("MeanSeaLevelPressure [",mbar,"]", sep=""))) + ylab("Consumption [kWh]")
+plot10 <- ggplot(data = day.tmp, aes(x = DewPoint, y= Consumption)) + geom_point() + xlab(expression(paste("DewPoint [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
+plot11 <- ggplot(data = day.tmp, aes(x = Radiation, y= Consumption)) + geom_point() + xlab(expression(paste("SolarRadiation [W"/m^2,"]", sep=""))) + ylab("Consumption [kWh]")
+plot12 <- ggplot(data = day.tmp, aes(x = SunHour, y= Consumption)) + geom_point() + xlab(expression(paste("SunHour [",hours,"]", sep=""))) + ylab("Consumption [kWh]")
 grid.arrange(plot6, plot7, plot8, plot9, plot10, plot11, plot12, nrow = 5, ncol = 2)
 
 
