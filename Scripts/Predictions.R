@@ -4,12 +4,11 @@ source("TrainTest.R")
 source("BSplines.R")
 
 # Daily predictions ----------------------------------
-
 k <-1:n
 Long <- k[Datalengths>=360]
 Short <- k[Datalengths<360]
 
-#Flip WeatherCons
+#Flipping WeatherCons
 for(i in 1:n){
   k<-dim(weatherCons[[i]])[1]
   weatherCons[[i]]<-weatherCons[[i]][k:1,]
@@ -29,16 +28,15 @@ for (i in 1:n)
 
 ttd<-TrainTest(model.data,31)
 ttm<-TrainTest(weatherCons,31)
-
 mondays<-which(weekdays(ttm[[2]][[1]]$Date)=="Monday")-.5
 
 # Weatherplots for daily predictions
 par(mfrow=c(3,1))
-plot(ttd[[2]][[1]]$Temperature,type='o',lwd=3,ylab="Temperature",xlab="January 2019",xaxt='n')
+plot(ttd[[2]][[1]]$Temperature,type='o',lwd=3,ylab=expression(paste("Temperature [", degree, "C]")),xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
-plot(ttd[[2]][[1]]$Radiation,type='o',lwd=3,ylab="Solar Radiation",xlab="January 2019",xaxt='n')
+plot(ttd[[2]][[1]]$Radiation,type='o',lwd=3,ylab=expression(paste("Solar Radiation [",W/m^2,"]")),xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
-plot(ttd[[2]][[1]]$WindDirection,type='o',lwd=3,ylab="Wind Direction",xlab="January 2019",xaxt='n')
+plot(ttd[[2]][[1]]$WindDirection,type='o',lwd=3,ylab="Wind Direction [degrees]",xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
 
 
@@ -82,7 +80,7 @@ for (i in c(18,55)) {
   }
 
   # Statistisk plot
-  plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm,ylab="Consumption",xlab="January 2019",xaxt='n')
+  plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm,ylab="Consumption [kWh]",xlab="January 2019 [days]",xaxt='n')
   axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
@@ -92,7 +90,7 @@ for (i in c(18,55)) {
 
   # Kundeplot(s)
   PredK<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "prediction", level = 1/3))
-  plot(PredK$fit,type='n',ylim=range(PredK$lwr,PredK$upr,ttd[[2]][[i]]$Consumption),main=mm,ylab="Consumption",xlab="January 2019",xaxt='n')
+  plot(PredK$fit,type='n',ylim=range(PredK$lwr,PredK$upr,ttd[[2]][[i]]$Consumption),main=mm,ylab="Consumption [kWh]",xlab="January 2019 [days]",xaxt='n')
   axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
 
   ylim=c(-100,1200)
@@ -105,7 +103,7 @@ for (i in c(18,55)) {
   cols[ttd[[2]][[i]]$Consumption<PredK$lwr]<-Wcol[2]
   cols[ttd[[2]][[i]]$Consumption>PredK$upr]<-Wcol[4]
   
-  barplot(ttd[[2]][[i]]$Consumption,col=cols)
+  barplot(ttd[[2]][[i]]$Consumption,col=cols,main=mm, ylab="Consumption [kWh]",xlab="January 2019 [days]")
 }
 
 # Hourly Predictions ----------------------------------------

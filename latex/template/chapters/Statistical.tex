@@ -213,6 +213,13 @@ The results of the general regression model performed on each house, are illustr
 \noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Boys skal forklare plots her.} 
 
 \subsection{Predictions}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/weather_pred.pdf}
+    \caption{}
+    \label{fig: weather_pred}
+\end{figure}
+
 \noindent In addition, the models are used to predict 31 days ahead. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}. 
 \begin{figure}
     \centering
@@ -237,3 +244,29 @@ When looking at the results of the different tests in \cref{tab: shapiro_simple_
 Part of this project is also to give suggestions on how the results of the analyses can be illustrated to the users of the WATTS app. 
 
 \noindent The wind dependency showed in \textcolor{red}{ref} and \textcolor{red}{ref} can be illustrated in a more user-friendly way by coloring according to the wind's influence on the house. The coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. \textcolor{red}{ref} shows that the heat consumption for house 55 is most affected when the wind comes from west. \textcolor{red}{Kan godt være boys lige skal kommentere lidt på det her.}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_55L.eps}
+    \caption{}
+    \label{fig: lmpred_col_55L}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_hist_55L.pdf}
+    \caption{}
+    \label{fig: lmpred_hist_55L}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_18L.pdf}
+    \caption{}
+    \label{fig: lmpred_col_18L}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_hist_18L.pdf}
+    \caption{}
+    \label{fig: lmpred_hist_18L}
+\end{figure}
