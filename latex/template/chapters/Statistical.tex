@@ -178,7 +178,8 @@ Based on the tables illustrating the significant parameters for the long and sho
 Likewise, the models are validated and if the assumptions are fulfilled the models can be used for comparison and predictions. The model in \cref{eq: general_lm} is expected to explain the heat consumption of the houses in a more accurate way as it takes several significant parameters into account. As mentioned, the purpose of the general model is to compare the houses for what influences their specific heat consumption and thereby the house's performance. Thus, they are not further reduced. 
 
 \subsection{Validation}
-In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \textcolor{red}{diskussionen}. On the other hand, the diagnostic plots of the residuals from house 55 are definitely improved and the residuals show a randomly behavior. Overall, the diagnostic plots can be said to be fulfilled. They are not perfect but that is not expected either. There are some houses which residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
+In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \ref{chap: discussion}. On the other hand, the diagnostic plots of the residuals from house 55 are definitely improved and the residuals show a randomly behavior. Overall, the diagnostic plots can be said to be fulfilled. They are not perfect but that is not expected either. There are some houses whose residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
+
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.pdf}
@@ -196,99 +197,20 @@ In order to determine whether the general model is valid, the diagnostic plots i
 \subsection{Results}
 The results of the general regression model performed on each house, are illustrated in \cref{lmMult_gen_L} and \cref{lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative since the increase in the temperature will result in a decrease in the heat consumption \textcolor{red}{...}. The attribute \texttt{SolarRadiation} effects the majority of the houses. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is. 
 
-\noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Not done} \textcolor{red}{Kommentér på tabellerne i forhold til sammenligningen af huse}
-\begin{table}
+\begin{figure}
     \centering
-    \begin{tabular}{cccccccccccc}
-     \hline
-     Index & I & T & N & E & S & W & SR & T:N & T:E & T:S & T:W \\
-    \hline
-    1& \Plus *** & \Minus *** &  &  &  & \Plus ** &  &  &  & \Plus . & \Minus ** \\
-2& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** & \Minus *** &  &  &  & \Minus *** \\
-3& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  & \Plus * & \Minus * \\
-4& \Plus *** & \Minus *** & \Plus * &  & \Plus *** &  & \Minus *** &  &  &  &  \\
-5& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** & \Plus * &  & \Plus *** & \Minus ** \\
-7& \Plus *** & \Minus *** & \Minus ** & \Plus *** & \Minus . & \Plus ** & \Plus *** &  & \Minus ** & \Plus * & \Minus ** \\
-11& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  & \Plus * &  \\
-12& \Plus *** & \Minus *** &  & \Plus . &  & \Plus * &  &  &  &  &  \\
-14& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus ** &  &  & \Plus ** &  \\
-18& \Plus *** & \Minus ** &  & \Plus *** & \Minus ** & \Plus ** & \Plus . &  &  & \Plus *** & \Minus *** \\
-21& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** &  &  &  &  & \Minus *** \\
-22& \Plus *** & \Minus *** &  &  & \Plus *** & \Plus ** & \Minus *** &  &  &  & \Minus * \\
-23& \Plus *** & \Minus *** & \Minus . & \Plus * &  & \Plus *** & \Minus *** &  &  & \Plus *** & \Minus *** \\
-28& \Plus *** & \Minus *** &  & \Plus * & \Plus . &  & \Minus ** &  &  &  &  \\
-29& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus ** & \Plus * &  & \Plus ** & \Minus *** \\
-30& \Plus *** & \Minus *** &  & \Plus * & \Plus . & \Plus *** & \Minus *** &  &  &  & \Minus * \\
-31& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** & \Plus ** &  & \Plus *** & \Minus *** \\
-32& \Plus *** & \Minus ** &  &  & \Plus . & \Plus ** &  &  & \Plus . &  & \Minus . \\
-33& \Plus *** & \Minus *** &  & \Plus *** & \Plus ** & \Plus *** & \Minus *** &  &  &  & \Minus ** \\
-34& \Plus *** & \Minus *** &  & \Plus *** & \Plus . & \Plus *** & \Minus ** &  &  & \Plus . & \Minus ** \\
-36& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  & \Plus ** &  \\
-37& \Plus *** & \Minus *** &  & \Plus *** & \Plus ** & \Plus ** & \Minus *** &  &  &  &  \\
-38& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** & \Minus *** &  &  &  & \Minus *** \\
-40& \Plus *** & \Minus *** &  & \Plus . & \Plus ** & \Plus ** & \Minus *** &  & \Plus . & \Plus * & \Minus * \\
-41& \Plus *** & \Minus *** &  & \Plus *** & \Plus . & \Plus *** &  &  & \Plus . & \Plus . & \Minus . \\
-42& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  &  & \Minus * \\
-44& \Plus *** & \Minus *** & \Minus * &  &  &  & \Minus ** &  &  & \Plus * &  \\
-45& \Plus *** & \Minus *** &  &  & \Plus * & \Plus *** & \Minus * &  & \Plus * & \Plus * & \Minus *** \\
-46& \Plus *** & \Minus *** &  & \Plus * & \Plus * & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
-47& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** & \Minus ** &  & \Minus ** &  & \Minus *** \\
-48& \Plus *** & \Minus *** &  & \Plus ** & \Plus * & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
-49& \Plus *** & \Minus *** &  &  &  &  & \Minus ** &  &  &  &  \\
-50& \Plus *** & \Minus *** & \Minus . & \Plus *** & \Minus * & \Plus ** & \Minus *** & \Plus . &  & \Plus *** & \Minus . \\
-52& \Plus *** & \Minus *** & \Minus . &  & \Minus ** & \Minus . & \Minus *** &  &  & \Plus *** &  \\
-54& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus ** & \Minus *** &  &  & \Plus * & \Minus * \\
-55& \Plus *** & \Minus *** &  & \Plus * & \Plus . & \Plus *** & \Minus *** &  &  & \Plus ** & \Minus * \\
-56& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** & \Minus *** &  &  & \Plus ** & \Minus * \\
-57& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** &  &  &  &  & \Minus ** \\
-58& \Plus *** & \Minus *** & \Minus . & \Plus . &  & \Plus *** & \Minus *** & \Plus * &  & \Plus *** & \Minus ** \\
-61& \Plus *** & \Minus *** &  & \Plus * & \Plus . & \Plus * &  & \Minus . &  & \Minus . &  \\
-64& \Plus *** & \Minus *** & \Minus * & \Plus *** &  & \Plus *** & \Minus *** &  & \Minus . & \Plus ** & \Minus ** \\
-65& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** & \Minus *** &  &  & \Plus * & \Minus ** \\
-66& \Plus *** & \Minus *** & \Plus . & \Plus *** & \Plus ** & \Plus *** & \Minus *** &  &  & \Plus ** & \Minus ** \\
-    \hline
-    \end{tabular}
-    \caption{Significance of parameters for 'long' houses}
-    \label{lmMult_gen_L}
-\end{table}
-\begin{table}[H]
+    \includegraphics[width=1.\textwidth]{../../../figures/Temp_coef.pdf}
+    \caption{}
+    \label{fig: Temp_coef}
+\end{figure}
+\begin{figure}
     \centering
-    \begin{tabular}{cccccccccccc}
-     \hline
-     Index & I & T & N & E & S & W & SR & T:N & T:E & T:S & T:W \\
-    \hline
-6& \Plus *** & \Minus *** &  & \Plus . &  & \Plus ** & \Minus * &  &  &  &  \\
-8& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** & \Minus * &  &  & \Plus * & \Minus . \\
-9& \Plus *** & \Minus *** & \Minus . &  &  & \Plus * & \Minus *** & \Plus * &  & \Plus * & \Minus ** \\
-10& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus ** & \Minus ** &  &  &  & \Minus . \\
-13& \Plus *** & \Minus *** &  & \Plus . &  & \Plus ** & \Minus . & \Plus . &  & \Plus ** & \Minus ** \\
-15& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus ** &  &  &  &  &  \\
-16& \Plus *** & \Minus *** &  & \Plus . &  & \Plus *** & \Minus * &  &  &  & \Minus ** \\
-17& \Plus *** & \Minus *** &  & \Plus * & \Plus *** & \Plus *** & \Minus ** &  &  &  & \Minus *** \\
-19& \Plus *** & \Minus *** &  & \Plus * & \Minus . &  &  & \Plus . &  & \Plus ** &  \\
-20& \Plus *** & \Minus *** &  &  & \Plus * &  &  &  &  &  &  \\
-24& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** &  &  &  &  & \Minus *** \\
-25& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** &  &  &  & \Plus * & \Minus * \\
-26& \Plus *** & \Minus *** &  &  &  & \Plus *** & \Minus * & \Plus . &  & \Plus * & \Minus * \\
-27& \Plus *** & \Minus *** &  & \Plus . & \Plus ** & \Plus ** &  &  &  &  & \Minus * \\
-35& \Plus *** & \Minus *** &  & \Plus ** & \Plus . & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
-39& \Plus *** & \Minus *** &  &  &  & \Plus * & \Minus * &  &  & \Plus . &  \\
-43& \Plus *** & \Minus *** &  & \Plus ** & \Plus . & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
-51& \Plus *** & \Minus *** &  &  & \Plus . & \Plus *** & \Minus ** &  &  & \Plus * & \Minus ** \\
-53& \Plus *** & \Minus *** &  & \Plus * &  & \Plus * &  &  &  &  & \Minus . \\
-59& \Plus *** & \Minus *** & \Minus * & \Plus ** & \Plus * & \Plus *** & \Minus * & \Plus * &  & \Plus * & \Minus . \\
-60& \Plus *** & \Minus *** & \Minus * & \Plus ** &  & \Plus *** & \Minus *** & \Plus ** &  & \Plus ** & \Minus *** \\
-62& \Plus *** & \Minus *** &  &  &  & \Plus * & \Minus * &  &  &  &  \\
-63& \Plus *** & \Minus *** &  & \Plus * &  &  &  &  &  & \Plus . &  \\
-67& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  & \Minus * & \Plus . & \Minus ** \\
-68& \Plus *** & \Minus *** &  &  &  & \Plus * & \Minus *** &  &  & \Plus * & \Minus * \\
-69& \Plus *** & \Minus *** &  &  &  & \Plus ** & \Minus * &  & \Plus * &  &  \\
-70& \Plus *** & \Minus *** &  & \Plus . &  & \Plus *** & \Minus *** &  &  &  & \Minus ** \\
-    \hline
-    \end{tabular}
-    \caption{Significance of parameters for 'short' houses}
-    \label{lmMult_gen_S}
-\end{table}
+    \includegraphics[width=1.\textwidth]{../../../figures/Solar_coef.pdf}
+    \caption{}
+    \label{fig: Solar_coef}
+\end{figure}
+
+\noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Boys skal forklare plots her.} 
 
 \subsection{Predictions}
 \noindent In addition, the models are used to predict 31 days ahead. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}. 

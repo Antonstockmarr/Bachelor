@@ -193,6 +193,7 @@
     \label{tab: lmMult_full_S}
 \end{table}
 
+\section{Tests of residuals from multiple linear regression model}
 \begin{table}
     \centering
     \begin{tabular}{c:cc|c:cc}
@@ -238,6 +239,100 @@
     \end{tabular}
     \caption{P-values from Shapiro-Wilk test for normality on the general multiple linear regression model}
     \label{tab: shapiro_multiple_lm}
+\end{table}
+
+\subsection{Significance of parameters for general regression model}
+\begin{table}
+    \centering
+    \begin{tabular}{cccccccccccc}
+     \hline
+     Index & I & T & N & E & S & W & SR & T:N & T:E & T:S & T:W \\
+    \hline
+    1& \Plus *** & \Minus *** &  &  &  & \Plus ** &  &  &  & \Plus . & \Minus ** \\
+2& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** & \Minus *** &  &  &  & \Minus *** \\
+3& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  & \Plus * & \Minus * \\
+4& \Plus *** & \Minus *** & \Plus * &  & \Plus *** &  & \Minus *** &  &  &  &  \\
+5& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** & \Plus * &  & \Plus *** & \Minus ** \\
+7& \Plus *** & \Minus *** & \Minus ** & \Plus *** & \Minus . & \Plus ** & \Plus *** &  & \Minus ** & \Plus * & \Minus ** \\
+11& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  & \Plus * &  \\
+12& \Plus *** & \Minus *** &  & \Plus . &  & \Plus * &  &  &  &  &  \\
+14& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus ** &  &  & \Plus ** &  \\
+18& \Plus *** & \Minus ** &  & \Plus *** & \Minus ** & \Plus ** & \Plus . &  &  & \Plus *** & \Minus *** \\
+21& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** &  &  &  &  & \Minus *** \\
+22& \Plus *** & \Minus *** &  &  & \Plus *** & \Plus ** & \Minus *** &  &  &  & \Minus * \\
+23& \Plus *** & \Minus *** & \Minus . & \Plus * &  & \Plus *** & \Minus *** &  &  & \Plus *** & \Minus *** \\
+28& \Plus *** & \Minus *** &  & \Plus * & \Plus . &  & \Minus ** &  &  &  &  \\
+29& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus ** & \Plus * &  & \Plus ** & \Minus *** \\
+30& \Plus *** & \Minus *** &  & \Plus * & \Plus . & \Plus *** & \Minus *** &  &  &  & \Minus * \\
+31& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** & \Plus ** &  & \Plus *** & \Minus *** \\
+32& \Plus *** & \Minus ** &  &  & \Plus . & \Plus ** &  &  & \Plus . &  & \Minus . \\
+33& \Plus *** & \Minus *** &  & \Plus *** & \Plus ** & \Plus *** & \Minus *** &  &  &  & \Minus ** \\
+34& \Plus *** & \Minus *** &  & \Plus *** & \Plus . & \Plus *** & \Minus ** &  &  & \Plus . & \Minus ** \\
+36& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  & \Plus ** &  \\
+37& \Plus *** & \Minus *** &  & \Plus *** & \Plus ** & \Plus ** & \Minus *** &  &  &  &  \\
+38& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** & \Minus *** &  &  &  & \Minus *** \\
+40& \Plus *** & \Minus *** &  & \Plus . & \Plus ** & \Plus ** & \Minus *** &  & \Plus . & \Plus * & \Minus * \\
+41& \Plus *** & \Minus *** &  & \Plus *** & \Plus . & \Plus *** &  &  & \Plus . & \Plus . & \Minus . \\
+42& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  &  &  & \Minus * \\
+44& \Plus *** & \Minus *** & \Minus * &  &  &  & \Minus ** &  &  & \Plus * &  \\
+45& \Plus *** & \Minus *** &  &  & \Plus * & \Plus *** & \Minus * &  & \Plus * & \Plus * & \Minus *** \\
+46& \Plus *** & \Minus *** &  & \Plus * & \Plus * & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
+47& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** & \Minus ** &  & \Minus ** &  & \Minus *** \\
+48& \Plus *** & \Minus *** &  & \Plus ** & \Plus * & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
+49& \Plus *** & \Minus *** &  &  &  &  & \Minus ** &  &  &  &  \\
+50& \Plus *** & \Minus *** & \Minus . & \Plus *** & \Minus * & \Plus ** & \Minus *** & \Plus . &  & \Plus *** & \Minus . \\
+52& \Plus *** & \Minus *** & \Minus . &  & \Minus ** & \Minus . & \Minus *** &  &  & \Plus *** &  \\
+54& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus ** & \Minus *** &  &  & \Plus * & \Minus * \\
+55& \Plus *** & \Minus *** &  & \Plus * & \Plus . & \Plus *** & \Minus *** &  &  & \Plus ** & \Minus * \\
+56& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** & \Minus *** &  &  & \Plus ** & \Minus * \\
+57& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** &  &  &  &  & \Minus ** \\
+58& \Plus *** & \Minus *** & \Minus . & \Plus . &  & \Plus *** & \Minus *** & \Plus * &  & \Plus *** & \Minus ** \\
+61& \Plus *** & \Minus *** &  & \Plus * & \Plus . & \Plus * &  & \Minus . &  & \Minus . &  \\
+64& \Plus *** & \Minus *** & \Minus * & \Plus *** &  & \Plus *** & \Minus *** &  & \Minus . & \Plus ** & \Minus ** \\
+65& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** & \Minus *** &  &  & \Plus * & \Minus ** \\
+66& \Plus *** & \Minus *** & \Plus . & \Plus *** & \Plus ** & \Plus *** & \Minus *** &  &  & \Plus ** & \Minus ** \\
+    \hline
+    \end{tabular}
+    \caption{Significance of parameters for 'long' houses}
+    \label{lmMult_gen_L}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccccccccccc}
+     \hline
+     Index & I & T & N & E & S & W & SR & T:N & T:E & T:S & T:W \\
+    \hline
+6& \Plus *** & \Minus *** &  & \Plus . &  & \Plus ** & \Minus * &  &  &  &  \\
+8& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** & \Minus * &  &  & \Plus * & \Minus . \\
+9& \Plus *** & \Minus *** & \Minus . &  &  & \Plus * & \Minus *** & \Plus * &  & \Plus * & \Minus ** \\
+10& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus ** & \Minus ** &  &  &  & \Minus . \\
+13& \Plus *** & \Minus *** &  & \Plus . &  & \Plus ** & \Minus . & \Plus . &  & \Plus ** & \Minus ** \\
+15& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus ** &  &  &  &  &  \\
+16& \Plus *** & \Minus *** &  & \Plus . &  & \Plus *** & \Minus * &  &  &  & \Minus ** \\
+17& \Plus *** & \Minus *** &  & \Plus * & \Plus *** & \Plus *** & \Minus ** &  &  &  & \Minus *** \\
+19& \Plus *** & \Minus *** &  & \Plus * & \Minus . &  &  & \Plus . &  & \Plus ** &  \\
+20& \Plus *** & \Minus *** &  &  & \Plus * &  &  &  &  &  &  \\
+24& \Plus *** & \Minus *** &  & \Plus * &  & \Plus *** &  &  &  &  & \Minus *** \\
+25& \Plus *** & \Minus *** &  & \Plus ** &  & \Plus *** &  &  &  & \Plus * & \Minus * \\
+26& \Plus *** & \Minus *** &  &  &  & \Plus *** & \Minus * & \Plus . &  & \Plus * & \Minus * \\
+27& \Plus *** & \Minus *** &  & \Plus . & \Plus ** & \Plus ** &  &  &  &  & \Minus * \\
+35& \Plus *** & \Minus *** &  & \Plus ** & \Plus . & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
+39& \Plus *** & \Minus *** &  &  &  & \Plus * & \Minus * &  &  & \Plus . &  \\
+43& \Plus *** & \Minus *** &  & \Plus ** & \Plus . & \Plus *** & \Minus ** &  &  &  & \Minus ** \\
+51& \Plus *** & \Minus *** &  &  & \Plus . & \Plus *** & \Minus ** &  &  & \Plus * & \Minus ** \\
+53& \Plus *** & \Minus *** &  & \Plus * &  & \Plus * &  &  &  &  & \Minus . \\
+59& \Plus *** & \Minus *** & \Minus * & \Plus ** & \Plus * & \Plus *** & \Minus * & \Plus * &  & \Plus * & \Minus . \\
+60& \Plus *** & \Minus *** & \Minus * & \Plus ** &  & \Plus *** & \Minus *** & \Plus ** &  & \Plus ** & \Minus *** \\
+62& \Plus *** & \Minus *** &  &  &  & \Plus * & \Minus * &  &  &  &  \\
+63& \Plus *** & \Minus *** &  & \Plus * &  &  &  &  &  & \Plus . &  \\
+67& \Plus *** & \Minus *** &  & \Plus *** &  & \Plus *** & \Minus *** &  & \Minus * & \Plus . & \Minus ** \\
+68& \Plus *** & \Minus *** &  &  &  & \Plus * & \Minus *** &  &  & \Plus * & \Minus * \\
+69& \Plus *** & \Minus *** &  &  &  & \Plus ** & \Minus * &  & \Plus * &  &  \\
+70& \Plus *** & \Minus *** &  & \Plus . &  & \Plus *** & \Minus *** &  &  &  & \Minus ** \\
+    \hline
+    \end{tabular}
+    \caption{Significance of parameters for 'short' houses}
+    \label{lmMult_gen_S}
 \end{table}
 
 

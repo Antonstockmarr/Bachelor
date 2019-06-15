@@ -15,7 +15,7 @@ for(i in 1:n){
   weatherCons[[i]]<-weatherCons[[i]][k:1,]
 }
 
-# Defining data used for modeling
+# Defining data used for modelling
 model.data <- weatherCons
 # Various attributes are removed
 for (i in 1:n)
@@ -49,9 +49,9 @@ k<-0
 for (i in c(18,55)) {
   k<-k+1
   if(k<=length(Long)){
-    print(paste('Modeling long house ',i))
+    print(paste('Modelling long house ',i))
   }else{
-    print(paste('Modeling short house ',i))
+    print(paste('Modelling short house ',i))
   }
   model.tmp <- ttd[[1]][[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -167,7 +167,7 @@ Scons2<-tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc
 
 print(paste("Antal smoothings for hus",i,": Train:",sum(Scons1==0),"af",length(Scons1),"Test",sum(Scons2==0),"af",length(Scons2)))
 
-# Smoothing (når en værdi er nul, udlignes det med punktet før)
+# Smoothing (n?r en v?rdi er nul, udlignes det med punktet f?r)
 for(j in rev(which(Scons1==0))){
   if(j!=1){
     Scons1[c(j-1,j)]<-Scons1[j-1]/2
