@@ -83,7 +83,7 @@ for(i in 1:n){
     tmp.dat$Obs <- rep(1,length(tmp.dat$ObsTime))
     tmp.d1 <-aggregate(x=tmp.dat[,-1],by= data.frame(Date = tmp.dat[,1]),FUN = mean)
     tmp.d2 <-aggregate(x=tmp.dat[,9],by= data.frame(Date = tmp.dat[,1]),FUN = sum)
-    tmp.d1[,2:4]<-tmp.d1[,2:4]*24 # Sum instead of mean (when there is 24 points) otherwise weight to 24 points
+    tmp.d1[,c(2,4)]<-tmp.d1[,c(2,4)]*24 # Sum instead of mean (when there is 24 points) otherwise weight to 24 points
     tmp.dat <-data.frame(tmp.d1[,-9],Obs=tmp.d2[,2])
     
     # Fill missing null values.
