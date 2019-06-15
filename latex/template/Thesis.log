@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  15 JUN 2019 15:07
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  15 JUN 2019 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1701,8 +1701,10 @@ LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 
 
 ]
-File: graphics/Signature.pdf Graphic file (type pdf)
-<use graphics/Signature.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
 ) [5] [6
 
 
@@ -1749,19 +1751,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
-(Font)              scaled to size 13.82405pt on input line 8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-) [1
+LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
+(Font)              scaled to size 13.82405pt on input line 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
 
 
-] [2]
+]) [2]
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
@@ -1895,31 +1905,32 @@ File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
 File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm55.pdf>
+[21] [22]
+Underfull \vbox (badness 2573) has occurred while \output is active []
 
-LaTeX Warning: Reference `fig: ' on page 1 undefined on input line 60.
-
-[21] [22] [23]
+ [23]
 Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
-[24] [25]
-File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
-<graphics/../../../figures/SplineBasis.jpeg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
+[24]
+File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
+<graphics/../../../figures/SplineBasis.jpeg>
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ []
 
- [26] [27]
+[26] [27]
 File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm18L.pdf>
 File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm55L.pdf>
- [28]
 File: graphics/../../../figures/Temp_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Temp_coef.pdf>
 File: graphics/../../../figures/Solar_coef.pdf Graphic file (type pdf)
@@ -1931,22 +1942,12 @@ File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
 File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_18L.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--237
+Underfull \vbox (badness 2717) has occurred while \output is active []
 
- []
-
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
-
- []
-
-
+ [28] [29]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30] [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32]
 File: graphics/../../../figures/lmpred_col_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_col_55L.eps>
 File: graphics/../../../figures/lmpred_hist_55L.pdf Graphic file (type pdf)
@@ -1955,7 +1956,7 @@ File: graphics/../../../figures/lmpred_col_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_col_18L.pdf>
 File: graphics/../../../figures/lmpred_hist_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_18L.pdf>
-) [33] [34] [35] [36]
+) [32] [33] [34] [35] [36]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
@@ -2092,23 +2093,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B590FAA12D212F07D672168DF8669F53.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 778FFD8A8A70F79F94C93954E2515DBB.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49788 strings out of 492933
- 956447 string characters out of 6133145
- 1703989 words of memory out of 5000000
- 53058 multiletter control sequences out of 15000+600000
+ 49783 strings out of 492933
+ 956327 string characters out of 6133145
+ 1704989 words of memory out of 5000000
+ 53054 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1875b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,1878b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (72 pages).

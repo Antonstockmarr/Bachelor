@@ -12,9 +12,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.1}Introduction to WATTS app}{1}{section.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Introduction to WATTS app}{1}{section.1.2}% 
+\contentsline {section}{\numberline {1.2}Motivation}{2}{section.1.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}Data}{3}{chapter.2}% 
 \defcounter {refsection}{0}\relax 
@@ -62,7 +62,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.2}Results}{26}{subsection.4.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Regression model for comparing houses}{28}{section.4.4}% 
+\contentsline {section}{\numberline {4.4}Regression model for comparing houses}{27}{section.4.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.1}Validation}{28}{subsection.4.4.1}% 
 \defcounter {refsection}{0}\relax 
@@ -70,9 +70,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.3}Predictions}{29}{subsection.4.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Comparison}{32}{section.4.5}% 
+\contentsline {section}{\numberline {4.5}Comparison}{30}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Visualization of the results}{33}{section.4.6}% 
+\contentsline {section}{\numberline {4.6}Visualization of the results}{32}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{37}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
