@@ -200,13 +200,13 @@ for (i in 1:n) {
   Wind.Pred[[i]]<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.95))
   Wind.PredK<-data.frame(predict(object=lmMultipleNoP[[i]], newdata=newData, interval = "confidence", level = 0.33))
 
-  plot(Wind.Pred[[i]]$fit-Wind.Pred0$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr-Wind.Pred0$fit,Wind.Pred[[i]]$upr-Wind.Pred0$fit),main=paste("House: ",i),xlab = "Wind direction in degrees",ylab="Effect on consumption")
-  lines(Wind.Pred[[i]]$upr-Wind.Pred0$fit,lty=2)
-  lines(Wind.Pred[[i]]$lwr-Wind.Pred0$fit,lty=2)
+  plot(Wind.Pred[[i]]$fit,type='l',ylim=range(Wind.Pred[[i]]$lwr,Wind.Pred[[i]]$upr),main=paste("House: ",i),xlab = "Wind direction in degrees",ylab="Effect on consumption")
+  lines(Wind.Pred[[i]]$upr,lty=2)
+  lines(Wind.Pred[[i]]$lwr,lty=2)
   abline(v=c(0,90,180,270,360), col="gray", lty=2, lwd=1)
 
   CirclePlot(Wind.PredK)
-  
+  title(main=paste("House: ",i))
 }
 
 t.est <- as.table(lmSummary_est)
