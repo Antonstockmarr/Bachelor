@@ -80,11 +80,11 @@ This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\t
 where $X_t$ is the exogenous variable and $\omega(B)$ is a polynomial in $B$. The exogenous part can also be differenced or have seasonal components, but in this project those extensions will not be explored. In fact only $\omega(B)=\omega_0$ will be used in the modelling process. The software used for the arima processes is of course $R$, but in particular the $arima$ function. This function does not estimate the exogenous parameters according to \cref{eq:ARIMAX}. It actually starts out by making a regression of the series $\{Y_t\}$ on the exogenous variable $\{X_t\}$. Then this fit is substituted for $Y_t$ in \cref{eq:ARIMA}. This approach is less precise, since it executes the parameter estimation in two steps, first for the exogenuous variable, then for the rest of the variables. An alternative method is to use the $MARIMA$ package in $R$. This package computes the estimates in \cref{eq:ARIMAX} by using different approximation methods than the $arima$ function. Neither methods should be considered "correct", but they produce different results.
 
 \section{Applying the models}
-In this section, different ARIMAX models will be applied to the data. First the $arima$ function in $R$ will be used to test different models. The models will include a season of 24 hours. Then the chosen model will be compared with the $MARIMA$ function. In the end a model will be developed that relies only on the physical dependencies of the consumption, and does not have any seasonal component.
+In this section, different ARIMAX models will be applied to the data. First the $arima$ function in $R$ will be used to test different models. The models will include a season of 24 hours. Then the chosen model will be compared with the $MARIMA$ function. In the next section the models will be used to make predictions on the data.
 
 \textcolor{red}{Vi bruger både sommer og vinter. Temperaturen er lavet om til antal grader under 12.}
 
-\subsection{Seasonal model}
+\subsection{Modelling with the $arima$ Function}
 To generate a model, one must decide a model order. It is important that the model is not too complex. With the amount of data available for each house, too many parameters in the model causes the running time to increase drastically. More importantly, sometimes the optimization method used in the $arima$ function does not converge. This happens more often when there are more parameters, and the model should be applicaple to as many different houses as possible. As mentioned in the section above, stationarity is an important property. If the order of the autoregressive part (both non-seasonal and seasonal) is too high, the model will not be stationary unless differencing is used. Differencing on the other hand makes the model more obscure and harder to interpret. If the model is only differenced once, it means that it models the difference between one hour and the one before that. If the seasonal part is differenced, it models the difference between an hour and the same hour the day before.
 
 \noindent These considerations have led to the conclusion that a $(1,0,1)\times (1,0,1)$ model is a good starting point. Written in the form of \cref{eq:ARIMA} it is
@@ -202,12 +202,10 @@ This is again after the regression fit with the temperature has been substituted
 
 
 
-\subsection{Physical model}
+\subsection{Modelling with the $MARIMA$ Function}
 
 
 
-% Noter til marima
-Fysisk model. Ingen season. En del AR og lidt MA. Fx (3,0,1). Så med reg.var temperatur + sin, cos, sin med ny periode, cos med ny periode
 
-
+\section{Making Predictions}
 
