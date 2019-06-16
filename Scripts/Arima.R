@@ -137,5 +137,14 @@ save(marimax,file="marimax.Rdata")
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sma2'=0,"intercept"=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sma2'=0,"intercept"=0, "Temperature"=0)
 
-arimax <- ARIMAX_model(two_sd,three_sd,c(1,1,1),c(0,0,2),c(1:n),T)
+arima2 <- ARIMAX_model(two_sd,three_sd,c(1,1,1),c(0,0,2),c(1:n),T)
 
+save(arima2,file="arima2.Rdata")
+
+
+two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'ma2'=0,"intercept"=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'ma2'=0,"intercept"=0, "Temperature"=0)
+
+arima3 <- ARIMAX_model(two_sd,three_sd,c(1,1,2),c(0,0,1),c(1:n),T)
+
+save(arima3,file="arima3.Rdata")
