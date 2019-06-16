@@ -131,3 +131,11 @@ marimax <- Marima_model(c(1:n))
 
 save(marimax,file="marimax.Rdata")
 
+
+
+# The second model
+two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sma2'=0,"intercept"=0, "Temperature"=0)
+three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sma2'=0,"intercept"=0, "Temperature"=0)
+
+arimax <- ARIMAX_model(two_sd,three_sd,c(1,1,1),c(0,0,2),c(1:n),T)
+
