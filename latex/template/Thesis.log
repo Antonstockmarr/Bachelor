@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  15 JUN 2019 19:24
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  16 JUN 2019 19:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1775,30 +1775,29 @@ Underfull \vbox (badness 6252) has occurred while \output is active []
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--4
-
- []
-
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--11
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
-[3
+
+Underfull \vbox (badness 2529) has occurred while \output is active []
+
+ [3
 
 
 
 ]
-Overfull \hbox (7.52005pt too wide) in paragraph at lines 43--62
+Overfull \hbox (87.80006pt too wide) in paragraph at lines 42--61
  [][] 
  []
 
 
-Overfull \hbox (9.66005pt too wide) in paragraph at lines 67--84
+Overfull \hbox (9.66005pt too wide) in paragraph at lines 66--83
  [][] 
  []
 
@@ -1806,7 +1805,7 @@ Overfull \hbox (9.66005pt too wide) in paragraph at lines 67--84
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
@@ -1832,7 +1831,7 @@ File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
 
-Underfull \vbox (badness 7925) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 63--64
@@ -1858,7 +1857,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--87
  []
 
 
-Overfull \hbox (8.14005pt too wide) in paragraph at lines 91--108
+Overfull \hbox (32.79005pt too wide) in paragraph at lines 91--108
  [][] 
  []
 
@@ -1937,17 +1936,45 @@ File: graphics/../../../figures/Solar_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Solar_coef.pdf>
 File: graphics/../../../figures/weather_pred.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_pred.pdf>
+
+Underfull \vbox (badness 1019) has occurred while \output is active []
+
+ [28]
 File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_55L.pdf>
 File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_18L.pdf>
 
-Underfull \vbox (badness 2717) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 222--236
 
- [28] [29]
+ []
+
+[29]
+File: graphics/../../../figures/Wplot55.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Wplot55.jpeg>
+File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
+<graphics/../../../figures/Wplot18.jpeg>
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [30] [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+File: graphics/../../../figures/WKplot55.jpeg Graphic file (type bmp)
+<graphics/../../../figures/WKplot55.jpeg>
+File: graphics/../../../figures/WKplot18.jpeg Graphic file (type bmp)
+<graphics/../../../figures/WKplot18.jpeg>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
+Overfull \vbox (28.63037pt too high) has occurred while \output is active []
+
+ [34]
+Overfull \vbox (14.81992pt too high) has occurred while \output is active []
+
+ [35]
 File: graphics/../../../figures/lmpred_col_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_col_55L.eps>
 File: graphics/../../../figures/lmpred_hist_55L.pdf Graphic file (type pdf)
@@ -1956,7 +1983,7 @@ File: graphics/../../../figures/lmpred_col_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_col_18L.pdf>
 File: graphics/../../../figures/lmpred_hist_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_18L.pdf>
-) [32] [33] [34] [35] [36]
+) [36] [37] [38]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
@@ -1971,37 +1998,74 @@ File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 
 LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
 
-[37
+[39
 
 
 
-] [38] [39]
+] [40] [41]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/HourDistribution.jpeg>
- [40] [41] [42] [43]
+ [42] [43] [44]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 87.
+
+[45]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
 File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_55.pdf>
 File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_18.pdf>
+ [46] [47] [48] [49]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 141.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 153.
+
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
+
+Underfull \vbox (badness 1377) has occurred while \output is active []
+
+ [50] [51]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 179.
+
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
-) [44] [45] [46] [47] [48] [49]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 205.
+
+) [52] [53]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [50
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [54
 
 
 
-]) [51]
+]) [55]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [52
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [56
 
 
 
@@ -2026,13 +2090,13 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53] [54] [55] [56]
+ [57] [58] [59] [60]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57] [58] [59]
+ [61] [62] [63]
 Overfull \vbox (50.57715pt too high) has occurred while \output is active []
 
- [60]
+ [64]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
@@ -2054,9 +2118,9 @@ File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [61
+) [65
 
-] [62] [63] [64] [65] [66
+] [66] [67] [68] [69] [70
 
 
 ]
@@ -2085,13 +2149,13 @@ Overfull \hbox (45.28pt too wide) in paragraph at lines 43--43
 Package biblatex Warning: No driver for entry type 'paper'.
 (biblatex)                Using fallback driver on input line 42.
 
-[67
+[71
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[68
+[72
 
 ]
 \tf@toc=\write7
@@ -2105,19 +2169,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 778FFD8A8A70F79F94C93954E2515DBB.
+(rerunfilecheck)             Checksum: 68772602F32B4903415C83BEF95B5CAC.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49821 strings out of 492933
- 957776 string characters out of 6133145
- 1706213 words of memory out of 5000000
- 53086 multiletter control sequences out of 15000+600000
- 554124 words of font info for 68 fonts, out of 8000000 for 9000
+ 49868 strings out of 492933
+ 958916 string characters out of 6133145
+ 1709905 words of memory out of 5000000
+ 53127 multiletter control sequences out of 15000+600000
+ 558141 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,1878b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2056b,6209s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (78 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (82 pages).

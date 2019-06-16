@@ -21,7 +21,7 @@ In this section, a more detailed look at the hourly consumption will be provided
 \section{Description of the Hourly Consumption}
 \noindent \cref{fig: Hourcons_summer} and \cref{fig: Hourcons_winter} show the average consumption of each house during the day for the summer period and the winter period respectively. The different hours can be seen on the y-axis, and the colour coding show the fraction of that house's consumption in that hour interval. Each vertical strip of colours is a single house. Each strip sum up to $1$. Looking at the summer period in \cref{fig: Hourcons_summer}, a generel trend is apparent: the consumption is usually larger around $7$ AM and to some degree around $7$ PM. Almost every house peaks in one of these periods, and some peaks go up to $12\%$ of the daily consumption. On the other hand, there is almost no consumption between $11$ PM and $5$ AM. The same goes for the afternoon between $1$ PM and $4$ PM. \cref{fig:HourDistribution} shows the average distribution of all houses together with lines indicating the quantiles. On the figure it can be seen that the intervals $06-11$ and $18-19$ are in the top quantile. $00-05$ and $15-16$ is where the consumption is lowest.
 
-These trends make sence. In the summer period, not much energy is used for heating the house. There is usually a significant amount of tap water consumption in the morning, when people take warm baths and make breakfast. Sometimes a dishwasher might be running as well. Then there is not much consumption while people are at work or school. When they get home in the late afternoon the consumption rises again as they prepare for dinner or use hot water in other ways. During the night time the consumption becomes low again.
+\noindent These trends make sence. In the summer period, not much energy is used for heating the house. There is usually a significant amount of tap water consumption in the morning, when people take warm baths and make breakfast. Sometimes a dishwasher might be running as well. Then there is not much consumption while people are at work or school. When they get home in the late afternoon the consumption rises again as they prepare for dinner or use hot water in other ways. During the night time the consumption becomes low again.
 
 
 
@@ -30,7 +30,7 @@ These trends make sence. In the summer period, not much energy is used for heati
 
 \noindent These figures illustrate the general trend of the houses, but it is hard to compare them in a meaningful way. But \cref{fig: Season_dist} shows the average distribution of all houses during the day. Both the winter season and the summer season show the same trends that was discussed above. But this plot also shows how the winter period is more smoothed out than the summer period. Keep in mind that the lines only show the relative distribution, and they do not take into account that the consumption in the winter period is significantly higher. As one can see on the y-axis, the difference between the two curves is very small. A night time period can be defined as the hours $23-05$. This is the period after the consumption drops in the evening, and before it rises in the morning. In this period, the houses on average use $21,9\%$ of their daily consumption in the summer period, and $23,7\%$ in the winter period. A completely uniform consumption would be $25\%$. It is not surpricing that the consumption in the night hours is lower than the average. Neither is it surpricing that the consumption at night in the summer period is relatively smaller than in the winter period. The extra cost of heating the house makes the consumption more spread out on the 24 hours of the day. But it is surpricing that the difference between the summer period and the winter period is only $1.8$ percentage points. With this in mind, the time series modelling will now be introduced. 
 
-In addition, \cref{fig:HourDistribution} is used to detect the significant intervals during a day in relation to the consumption. It is clearly seen that the time interval with highest consumption is 06-11 am and around 6 pm. \textcolor{red}{Not done}
+\noindent In addition, \cref{fig:HourDistribution} is used to detect the significant intervals during a day in relation to the consumption. It is clearly seen that the time interval with highest consumption is 06-11 am and around 6 pm. \textcolor{red}{Not done}
 
 \begin{figure}
     \centering
@@ -58,7 +58,7 @@ where $\mu$ is the mean of the process, $\{\epsilon_i\}$ is white noise and $\{\
 \end{equation}
 where $\phi$ and $\theta$ are polynomials on the shift operator B with degree $p$ and $q$ respectively. $\theta(B)$ is the autoregressive part and $\phi(B)$ is the moving average part. The process is denoted as an $ARMA(p,q)$ process. ARMA processes are linear. If one applies $\psi(B)$ to $Y_t$ and substitutes $Y_{t-1}$, then $Y_{t-2}$ and so forth, the form in \cref{linearProcess} is obtained.
 
-\noindent An ARMA process is stationary if all the roots of $\phi(z^{-1})$ are within the unit circle. Stationarity is a very desirable property. In a stationary process, the mean and variance does not change over time. But often, processes will not be stationary due to long term trends. For example the mean consumption of a house has a periodic trend during the year. This was clearly illustrated on \cref{fig: daily_cons}. But long term trends can be eliminated by introducing differencing. Instead of modelling the process $\{Y_t\}$, one can model the process $\{Y_t - Y_{t-1}\}$, i.e. the difference between observations. This is formalized with the difference operator $\Delta = (1-B)$. The differenced ARMA model is called the $ARIMA(p,d,q)$ model, or the autoregressive \texttt{integrated} moving average model. It has the form
+\noindent An ARMA process is stationary if all the roots of $\phi(z^{-1})$ are within the unit circle. Stationarity is a very desirable property. In a stationary process, the mean and variance does not change over time. But often, processes will not be stationary due to long term trends. For example the mean consumption of a house has a periodic trend during the year. This was clearly illustrated on \cref{fig: daily_cons}. But long term trends can be eliminated by introducing differencing. Instead of modelling the process $\{Y_t\}$, one can model the process $\{Y_t - Y_{t-1}\}$, i.e. the difference between observations. This is formalized with the difference operator $\Delta = (1-B)$. The differenced ARMA model is called the $ARIMA(p,d,q)$ model, or the autoregressive \textit{integrated} moving average model. It has the form
 \begin{equation}
     \phi (B) \Delta^d Y_t = \theta (B) \epsilon_t,
     \label{ARIMA}
@@ -77,10 +77,10 @@ This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\t
     \phi (B) \Phi (B^s) \Delta^d \Delta_s^D Y_t = \theta (B) \Theta (B^s) \epsilon_t + \omega(B) X_t,
     \label{eq:ARIMAX}
 \end{equation}
-where $X_t$ is the exogenous variable and $\omega(B)$ is a polynomial in $B$. The exogenous part can also be differenced or have seasonal components, but in this project those extensions will not be explored. In fact only $\omega(B)=\omega_0$ will be used in the modelling process. The software used for the arima processes is of course $R$, but in particular the $arima$ function. This function does not estimate the exogenous parameters according to \cref{eq:ARIMAX}. It actually starts out by making a regression of the series $\{Y_t\}$ on the exogenous variable $\{X_t\}$. Then this fit is substituted for $Y_t$ in \cref{eq:ARIMA}. This approach is less precise, since it executes the parameter estimation in two steps, first for the exogenuous variable, then for the rest of the variables. An alternative method is to use the $MARIMA$ package in $R$. This package computes the estimates in \cref{eq:ARIMAX} by using different approximation methods than the $arima$ function. Neither methods should be considered "correct", but they produce different results.
+where $X_t$ is the exogenous variable and $\omega(B)$ is a polynomial in $B$. The exogenous part can also be differenced or have seasonal components, but in this project those extensions will not be explored. In fact only $\omega(B)=\omega_0$ will be used in the modelling process. The software used for the arima processes is of course $R$, but in particular the $arima$ function. This function does not estimate the exogenous parameters according to \cref{eq:ARIMAX}. It actually starts out by making a regression of the series $\{Y_t\}$ on the exogenous variable $\{X_t\}$. Then this fit is substituted for $Y_t$ in \cref{eq:ARIMA}. This approach is less precise, since it executes the parameter estimation in two steps, first for the exogenuous variable, then for the rest of the variables. An alternative method is to use the \texttt{MARIMA} package in \texttt{R}. This package computes the estimates in \cref{eq:ARIMAX} by using different approximation methods than the \texttt{arima} function. Neither methods should be considered "correct", but they produce different results.
 
 \section{Applying the models}
-In this section, different ARIMAX models will be applied to the data. First the $arima$ function in $R$ will be used to test different models. The models will include a season of 24 hours. Then the chosen model will be compared with the $MARIMA$ function. In the next section the models will be used to make predictions on the data.
+In this section, different ARIMAX models will be applied to the data. First the \texttt{arima} function in \texttt{R} will be used to test different models. The models will include a season of 24 hours. Then the chosen model will be compared with the /\texttt{MARIMA} function. In the next section the models will be used to make predictions on the data.
 
 \textcolor{red}{Vi bruger både sommer og vinter. Temperaturen er lavet om til antal grader under 12.}
 
@@ -96,7 +96,7 @@ The negative sign of the $\phi$ values is due to the convention of the $arima$ f
     Y_t = &\phi_1 Y_{t-1} + \Phi_1 Y_{t-24} + \phi_1 \cdot \Phi_1  Y_{t-25}\\  &+ \theta_1 \epsilon_{t-1} + \Theta_1 \epsilon_{t-24} + \theta_1 \cdot \Theta_1 \cdot \epsilon_{t-25} + \epsilon_t. \nonumber
 \end{align}
 
-For most houses this model is not stationary and the optimization does not converge. \cref{fig:Model1_stationarity} shows the roots of the model when applied to house 55. On the left the AR roots are illustrated, on the right the MA roots are illustrated. When considering stationarity, only the AR roots are of interest. Here it can be seen how every inverse AR root is on the edge of the unit circle. This model introduces $25$ roots in $\phi$, $1$ from the non-seasonal part, and $24$ from the seasonal part. As many of the inverses of these roots as possible should be inside the unit circle. For this reason, it makes the most sence to difference the seasonal part of the model. The one root from the non-seasonal part might still be on the edge of the unit circle, but the rest will most likely not be.
+\noindent For most houses this model is not stationary and the optimization does not converge. \cref{fig:Model1_stationarity} shows the roots of the model when applied to house 55. On the left the AR roots are illustrated, on the right the MA roots are illustrated. When considering stationarity, only the AR roots are of interest. Here it can be seen how every inverse AR root is on the edge of the unit circle. This model introduces $25$ roots in $\phi$, $1$ from the non-seasonal part, and $24$ from the seasonal part. As many of the inverses of these roots as possible should be inside the unit circle. For this reason, it makes the most sence to difference the seasonal part of the model. The one root from the non-seasonal part might still be on the edge of the unit circle, but the rest will most likely not be.
 
 \begin{figure}
     \centering
@@ -140,10 +140,10 @@ This is after regression with the temperature has been substituted for the $Y_t$
 
 \begin{table}[]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|}
+    \begin{tabular}{l|ccccc}
     \hline
-    Parameters & AR1 & MA1 & SAR1 & SMA1 & Temperature \\ \hline
-    Below 2 sd & 0   & 3   & 36   & 0    & 6           \\ \hline
+    \textbf{Parameters} & \textbf{AR1} & \textbf{MA1} & \textbf{SAR1} & \textbf{SMA1} & \textbf{Temperature} \\ \hline \hline
+    Below 2 sd & 0   & 3   & 36   & 0    & 6           \\ 
     Below 3 sd & 0   & 3   & 50   & 0    & 14          \\ \hline
     \end{tabular}
     \caption{The number of houses where each parameter is below two standard deviations and three standard deviations respectively. The $(1,0,1)\times (1,1,1)$ model was applied to $70$ houses in total. The average log likelihood of the model is $-6999$}
@@ -152,10 +152,10 @@ This is after regression with the temperature has been substituted for the $Y_t$
 
 \begin{table}[]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|}
+    \begin{tabular}{l|ccccc}
     \hline
-    House 55           & AR1    & MA1     & SAR1    & SMA1    & Temperature \\ \hline
-    Estimate           & 0.9949 & -0.9124 & -0.0122 & -0.9572 & 0.0288      \\ \hline
+    \textbf{House 55} & \textbf{AR1} & \textbf{MA1} & \textbf{SAR1} & \textbf{SMA1} & \textbf{Temperature} \\ \hline \hline
+    Estimate           & 0.9949 & -0.9124 & -0.0122 & -0.9572 & 0.0288      \\ 
     Standard deviation & 0.0013 & 0.0048  & 0.0111  & 0.0043  & 0.0045      \\ \hline
     \end{tabular}
     \caption{The estimates of the parameters for the $(1,0,1)\times (1,1,1)$ model together with their standard deviations for house 55. The log likelihood of the model is $-5791$}
@@ -178,10 +178,10 @@ This is again after the regression fit with the temperature has been substituted
 
  \begin{table}[]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|}
+    \begin{tabular}{l|ccccc}
     \hline
-    House 18           & AR1    & MA1    & SAR1  & SMA1    & Temperature \\ \hline
-    Estimate           & 0.3751 & 0.2672 & 0.008 & -0.9559 & 0.0825      \\ \hline
+    \textbf{House 18} & \textbf{AR1} & \textbf{MA1} & \textbf{SAR1} & \textbf{SMA1} & \textbf{Temperature} \\ \hline \hline
+    Estimate           & 0.3751 & 0.2672 & 0.008 & -0.9559 & 0.0825      \\ 
     Standard deviation & 0.0171 & 0.0175 & 0.011 & 0.0040  & 0.0078      \\ \hline
     \end{tabular}
     \caption{The estimates of the parameters for the $(1,0,1)\times (1,1,1)$ model together with their standard deviations for house 18. The log likelihood of the model is $-12780$}

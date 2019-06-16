@@ -199,23 +199,23 @@ The results of the general regression model performed on each house, are illustr
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/Temp_coef.pdf}
-    \caption{}
+    \caption{The temperature coeffients from the general regression model. The consumption in house 63 is influenced by the temperature in a higher degree than the other houses, since the consumption decreases with 0.27 $kWh/m^2$ when the temperature increases with 1 $^{\circ}$C}
     \label{fig: Temp_coef}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/Solar_coef.pdf}
-    \caption{}
+    \caption{The coeffients of the solar radiation from the general regression model.}
     \label{fig: Solar_coef}
 \end{figure}
 
-\noindent The wind directed from East and West also have great influence on the consumption of most houses. \textcolor{red}{Boys skal forklare plots her.} 
+\noindent The wind directed from East and West also have great influence on the consumption of most houses. How the exact wind dependency is determined and illustrated is explained in the following about predictions.
 
 \subsection{Predictions}
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/weather_pred.pdf}
-    \caption{}
+    \caption{\textcolor{red}{Missing}}
     \label{fig: weather_pred}
 \end{figure}
 
@@ -232,38 +232,67 @@ The results of the general regression model performed on each house, are illustr
     \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model does not capture the behavior of this house at all}
     \label{fig: lmpred_18L}
 \end{figure}
-\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour. The 95\% prediction interval are narrow, which indicates that the standard deviations of this model are fairly small. The general regression model performs as expected. Contrary, the model for house 18 has problems with capturing the oscillating behaviour and the 95\% prediction interval are quite wide, i.e. the corresponding standard deviations are large. But since the actual data lie within the 95\% prediction interval the model can be used for describing the heat consumption in house 18. 
+\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour. The 95\% prediction interval are narrow, which indicates that the standard deviations of this model are fairly small. The general regression model performs as expected. Contrary, the model for house 18 has problems with capturing the oscillating behaviour and the 95\% prediction interval are quite wide, i.e. the corresponding standard deviations are large. But since the actual data lie within the 95\% prediction interval the model can be used for describing the heat consumption in house 18. \\
+
+\noindent The effect of the wind direction on the consumption is investigated by estimating the daily consumption for the house, for a fixed setting, where only the wind direction is changed. The setting used is a day with a temperature of $0 \degree$C, without any solar radiation, and with a wind speed of $4.27 m/s$, which is the average wind speed throughout the year. A prediction of the daily consumption is made for each wind direction and plotted with a 95\% prediction interval. \cref{fig: Wplot55} shows the wind dependency for house 55. The consumption of house 55 is by far most affected by wind from west.
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/Wplot55.jpeg}
+    \caption{Wind direction dependency for the consumption for house 55}
+    \label{fig: Wplot55}
+\end{figure}
+As well as for house 55, the wind dependency is also illustrated for house 18 in \cref{fig: Wplot18}. It shows that the consumption is high when the wind comes from west and east, and low from north and south.
+\begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/Wplot18.jpeg}
+    \caption{Wind direction dependency for the consumption for house 18}
+    \label{fig: Wplot18}
+\end{figure}
 
 \section{Comparison}
-When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. This might be explained by the inclusion of the wind in the multiple regression model. The so-called directions are not all significant for all houses. Thus, this can affect the behavior of the residuals. On the other hand, the interpretation of the simple model shows that the temperature has a great influence on the consumption. But from a physical perspective it is known that the heat consumption is influenced by other physical phenomena as well. Hence, the simple regression model is indeed too simple.   
+When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. This might be explained by the inclusion of the wind in the multiple regression model. The so-called directions are not all significant for all houses. Thus, this can affect the behavior of the residuals. On the other hand, the interpretation of the simple model shows that the temperature has a great influence on the consumption. But from a physical perspective it is known that the heat consumption is influenced by other physical phenomena as well. Hence, the simple regression model is indeed too simple. \textcolor{red}{Not quite done yet}
 
 \section{Visualization of the results}
 Part of this project is also to give suggestions on how the results of the analyses can be illustrated to the users of the WATTS app. 
 
-\noindent The wind dependency showed in \textcolor{red}{ref} and \textcolor{red}{ref} can be illustrated in a more user-friendly way by coloring according to the wind's influence on the house. The coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. \textcolor{red}{ref} shows that the heat consumption for house 55 is most affected when the wind comes from west. \textcolor{red}{Kan godt være boys lige skal kommentere lidt på det her.}
+\noindent The wind dependency showed in \cref{fig: Wplot55} and \cref{fig: Wplot18} can be converting to understandable plots for the users of the WATTS app. Each degree get one of the 3 colours, green, yellow and red, based on the 33.3\% prediction interval.  After subtracting the mean of the fit, if 0 is contained in thisinterval, the degree is coloured yellow.  If the entire interval is positive, the degree is coloured red.  likewise ifthe entire interval is negative, the colour is green.  For the users of the app, the wind direction is more intuitiveas a compas on their phone.  Therefore the minimum of the lower bound of the 33.3\% prediction interval issubtracted from the fit, and then plottet as a coloured shape.  The app graph for the wind dependency of theconsumption of house 55 then looks as follows:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/WKplot55.jpeg}
+    \caption{Relative wind direction dependency for the consumption for house 55}
+    \label{fig: WKplot55}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{../../../figures/WKplot18.jpeg}
+    \caption{Relative wind direction dependency for the consumption for house 18}
+    \label{fig: WKplot18}
+\end{figure}
 
+%The coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. \textcolor{red}{ref} shows that the heat consumption for house 55 is most affected when the wind comes from west. \textcolor{red}{Kan godt være boys lige skal kommentere lidt på det her.}
+\noindent \textcolor{red}{Not done}
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_55L.eps}
-    \caption{}
+    \caption{\textcolor{red}{Missing}}
     \label{fig: lmpred_col_55L}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_hist_55L.pdf}
-    \caption{}
+    \caption{\textcolor{red}{Missing}}
     \label{fig: lmpred_hist_55L}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_18L.pdf}
-    \caption{}
+    \caption{\textcolor{red}{Missing}}
     \label{fig: lmpred_col_18L}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_hist_18L.pdf}
-    \caption{}
+    \caption{\textcolor{red}{Missing}}
     \label{fig: lmpred_hist_18L}
 \end{figure}
