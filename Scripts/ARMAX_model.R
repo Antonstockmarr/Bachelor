@@ -2,6 +2,7 @@
 ## Init
 ##----------------------------------------------------------------
 rm(list=ls())
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ## Source the scripts with functions in the "functions" folder. Just a neat way of arranging helping functions in R
 source("data.R")
