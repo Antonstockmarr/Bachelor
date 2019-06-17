@@ -2,14 +2,21 @@
 ## Init
 ##----------------------------------------------------------------
 rm(list=ls())
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ## Source the scripts with functions in the "functions" folder. Just a neat way of arranging helping functions in R
+source("data.R")
 files <- dir("functions", full.names=TRUE)
 for(i in 1:length(files)) source(files[i])
-source("data.R")
+for(i in 1:n){
+  k<-dim(data[[i]])[1]
+  data[[i]]<-data[[i]][k:1,]
+}
+k<-dim(weather)[1]
+weather <- weather[k:1,]
 ## Read the data
 
-i<-20
+i<-6
 
 tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
 tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
