@@ -16,12 +16,7 @@ for(k in 1:n){
     # Hvis der ikke er en standard deviation bruges data ikke.
     if(tmp.sd!=0){
       
-      tmp.sd.dist <-(q-tmp.mu)/tmp.sd
-      
-      par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
-      plot(t,q,xlab='Temperature',ylab='Standard deviations',col=Wcol[2])#,xlim=c(5,25))
-      abline(h=tmp.mu+tmp.sd*2)
-      mtext(paste("Breakpoint for house number ",k), outer = TRUE, cex = 1.5)
+
       pct.in.sd <- rep(0,length(min(t):(max(t)-1)))
       
       # For hver grad tjekkes hvilken andel af datapunkterne der ligger indenfor 2 sd fra mean i normalfordelingen.
@@ -35,10 +30,20 @@ for(k in 1:n){
         
       }
       alpha[j]<-min(which(pct.in.sd<0.8))+floor(min(t))
+      
+      
+      par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
+      colour <- rep(Wcol[2],length(t))
+      colour[t>=alpha[j]]<-Wcol[4]
+      plot(t,q,xlab=expression(paste('Temperature [',degree, 'C]')),ylab='Consumption [kWh]',col=colour)#,xlim=c(5,25))
+      abline(h=tmp.mu+tmp.sd*2,col=Wcol[1])
+      mtext(paste("Breakpoint for house ",k), outer = TRUE, cex = 1.5)
       abline(v=alpha[j],col=Wcol[3])
-      plot(min(t):(max(t)-1),pct.in.sd,xlab='Temperature',ylab='Proportion outside interval',col=Wcol[2])
+      colour <- rep(Wcol[2],length(pct.in.sd))
+      colour[pct.in.sd <= 0.8] <- Wcol[4]
+      plot(min(t):(max(t)-1),pct.in.sd,xlab=expression(paste('Temperature [',degree, 'C]')),ylab='Proportion outside interval',col=colour)
       # Alpha for det p?g?ldende hus er den koldeste grad hvor 80% eller mere er indenfor 2 sd i normalfordelingen
-      lines(t,rep(0.8,length(t)),col=Wcol[4])
+      abline(h=0.8,col=Wcol[4])
       abline(v=alpha[j],col=Wcol[3])
       j=j+1
       }
