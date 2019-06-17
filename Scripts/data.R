@@ -13,7 +13,6 @@ library(solaR)
 # Watts colorscheme
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
 
-
 # Loading all data
 data.path = "../Consumption data/"
 file.names <- dir(data.path, pattern =".csv")
@@ -33,7 +32,7 @@ cc<-4.186/3.6
 
 # Loading a single table to initialize dates
 dt.tmp <- read.table(paste(data.path,file.names[1], sep = ""), sep=";", stringsAsFactors=FALSE, header = TRUE, dec=',')
-names(dt.tmp)[1] = 'StartDateTime'
+# Initializing start time and end time as random psicxt values.
 StartDays <- strptime(dt.tmp$EndDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
 EndDays <- strptime(dt.tmp$EndDateTime[1:n], format = "%d-%m-%Y %H:%M:%S", tz = "GMT")
 

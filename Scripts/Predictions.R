@@ -132,6 +132,12 @@ tth<-TrainTest(data,14*24)
 
 i<-55
 
+tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
+tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
+tmp <- tmp.dat$Temperature
+
+
+
 for(i in Short){
 midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)+length(tth[[1]][[i]]$ObsTime)
 
@@ -148,15 +154,15 @@ tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
 tmp <- tmp.dat$Temperature
 TemperatureP <- (tmp<a)*(a-tmp)
 
-# p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
+p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
 
-# plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
-# axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
-# lines(p$pred+2*p$se,lty=2)
-# lines(p$pred-2*p$se,lty=2)
-# lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
-# abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
-# legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
+lines(p$pred+2*p$se,lty=2)
+lines(p$pred-2*p$se,lty=2)
+lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
+abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
+legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 
 
 # Smoothing experiment
