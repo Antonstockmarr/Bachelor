@@ -2,8 +2,10 @@ rm(list=ls())
 source("data.R")
 source("Piecewise-opti.R")
 
+
+par(mfrow=c(1,2))
 # Plotting the first house
-AnalyzeConsumption(houselist=41,makeplot=TRUE)
+AnalyzeConsumption(houselist=18,makeplot=TRUE)
 
 # Plotting ALL houses
 AnalyzeConsumption(houselist=1:n,makeplot=TRUE)
