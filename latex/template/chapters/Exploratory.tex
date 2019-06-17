@@ -110,32 +110,23 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
 \end{table}   
 
 \section{Data segmentation}
-Since one of the focuses of this paper is to estimate how much energy a house uses for heating
-depending on different outside temperatures, it is important to distinguish between when the house
-is actually being heated, and when the water is just being used for tap water consumption. If the
-inhabitants are not home for a longer period, there will probably be low consumption, even though
-it might be cold outside. This does not necessarily mean that the house is well isolated. And if
-there is consumption in warm periods, it is likely to be tap water consumption, and not heating
-The data can be seen as part of two different distributions. One where the heating is turned off,
- and one where it is turned on. In this section different approaches will be examined on how to
- distinguish between the two distributions.
-The goal is to find some temperature, where it can be assumed that all data points below it belongs
-to the distribution with heating turned on. Two approaches will be described below, together with
-their pros and cons.
+All the models used in this project assume that there is a linear relationship between the outside temperature and the heat consumption of a house. It would make sence that the heat consumption of a house increases as the temperature decreases. But this is mostly true when it is actually cold. In the summer time the heat consumption is generally not dependent on the outside temperature. \cref{fig: Consumption-PW} shows two examples of the relationship between temperature and consumption. It can be seen that some houses have a very linear relationship between temperature and consumption, and others less so. Most have in common that for high temperatures, the consumption reaches a more or less constant low level. This relationship most likely shows that when the heating is turned on, the consumption rises and falls with the outside temperature. When the heating is not turned on, the only consumption is the tap water consumption. One of the main challenges of this project is that the data does not provide a simple way of distinguishing between tap water consumption and heating consumption. If the inhabitants are not home for a longer period, there will probably be low consumption, even though it might be cold outside. This does not necessarily mean that the house is well isolated. And if
+there is consumption in warm periods, it is likely to be tap water consumption, and not heating.
+
+\noindent To minimize the effect of tap water consumption this section will explore different ways of extracting the period where the consumption is dominated by heating, and not by tap water. This period will be denoted the winter period for obvious reasons. By only applying the regression models described in chapter \textcolor{red}{ref til reg model chapter} to the period dominated by heating, deviations caused by tap water consumption will hopefully be less significant. If a linear model was used on the entire data, the variation of the relation between temperature and consumption would be far from constant during the year, violating a key assumption of the model. The approach used in this section is to search for a temperature that can be used as a threshold. All days with average temperatures below the threshold will be classified as belonging to the winter period. Two ways of finding this threshold will be described below. Other more sophisticated ways to make the classification of the winter period might be applied, but they will not be considered in this project.
+
 
 \subsection{Segmentation by piece-wise optimization}
 The first approach is to make a linear regression on the data with two segments. A breakpoint
 $\alpha$ is found, such that the SSE is as small as possible. The second segment is restricted to
-being constant. This way the breakpoint illustrates when the consumption goes from being linearly
-dependent on the temperature, to having a constant value. This method was tested on every available
+being constant. This way the breakpoint can be used as the threshold seperating the winter period from the rest of the data. This method was tested on every available
 house, where a new breakpoint was found for each house.
 
 \noindent Figure \ref{fig: Consumption-PW} shows the regression for two different houses. On both houses the
 line fits rather well with the low-temperature data points. But it is not very accurate around the breakpoint.
-The house on the left shows very clearly, that the assumption that all points below the breakpoint belong to 
-the distribution without heating, is not accurate. Even though this approach can easily take out a lot of data
-where there is clearly no heating, it will in many cases set the breakpoint too high. The "tail" of the low
-consumption distribution might still be included, causing a bias in the model, and some variation that is not
+The house on the left shows very clearly that the assumption that all points below the breakpoint belong to 
+the period without heating is not accurate. Even though this approach can easily take out a lot of data
+where there is clearly no heating, it will in many cases set the breakpoint too high. The "tail" of the period without heating might still be included, causing a bias in the model, and some variation that is not
 accounted for. The method is also not very robust. Depending on how the points are spread out, the breakpoint
 is sometimes as high as 20 degrees, which is not desirable.
 \begin{figure}
@@ -147,13 +138,11 @@ is sometimes as high as 20 degrees, which is not desirable.
 
 
 \subsection{Segmentation by significant deviations}
-In the second approach, the data points are examined from high temperatures to low. First, all data points from
-above 20 degrees are assumed to belong to the distribution without heating. If a data point is more than two
-standard deviations above from the mean of this distribution, it is assumed to belong to the distribution with
-heating. Now the data points are divided by temperature into one degree intervals. For each interval, starting
-from above and moving down, all data points in that interval are examined. The last interval where at least
+In the second approach, all data points with a temperature
+above 20 degrees are assumed to belong to the period without heating. Then the mean and standard deviation of a normal distribution containing those points is calculated.
+For each degree interval below 20 degrees, if 80\% of the points in that interval are above the confidence interval of the normal distribution, then that degree interval should be included in the winter period. The threshold is set accordingly.. The last interval where at least
 20\% of the data points are less than two standard deviations away, is chosen as the breakpoint of that house.
-An example of the approach is seen on figure \ref{fig: Breakpoint}. On the left the data points are plotted with
+An example of the approach is seen on figure \ref{fig: Consumption-PW}. On the left the data points are plotted with
 standard deviations on the y-axis. The red line highlights the two standard devations. On the right there is a plot
 showing how many of the data points that are outside the interval. Here, the red line shows the 80\% that determine
 the breakpoint. The orange line shows the breakpoint.
