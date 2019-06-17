@@ -26,7 +26,7 @@ the house has not fully utilized the heat for the heat consumption.
 %\textcolor{blue}{\noindent It is already known that there is a dependency between the heat consumption and the time of the year. During the summer period there is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature.}
 
 \subsection{Weather data}
-The weather data is also examined through scatterplots given in \cref{fig: weatherpairs} and \cref{fig: weather_cons} in order to detect dependencies between the average consumption of the houses and the weather attributes. It is already known that the outside temperature has a significant influence on the consumption which is in line with the linearly relationship between the temperature and the consumption in \cref{fig: weatherpairs}. Furthermore, consumption is approximately influenced by the dew point which is probably explained by the linear relationship between \texttt{Temperature} and \texttt{DewPoint} illustrated in \cref{fig: weather_cons}. The scatterplots show that the consumption overall is independent of the attributes \texttt{WindSpeed}, \texttt{WindDirection} and \texttt{MeanSeaLevelPressure}. \textcolor{red}{Synes I der mangler noget her?} 
+The weather data is also examined through scatterplots given in \cref{fig: weatherpairs} and \cref{fig: weather_cons} in order to detect dependencies between the average consumption of the houses and the weather attributes. It is already known that the outside temperature has a significant influence on the consumption which is in line with the linearly relationship between the temperature and the consumption in \cref{fig: weatherpairs}. Furthermore, consumption is approximately influenced by the dew point which is probably explained by the linear relationship between \texttt{Temperature} and \texttt{DewPoint} illustrated in \cref{fig: weather_cons}. The scatterplots show that the consumption overall is independent of the attributes \texttt{WindSpeed}, \texttt{WindDirection} and \texttt{MeanSeaLevelPressure}. 
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/weatherpairs.pdf}
@@ -35,7 +35,7 @@ The weather data is also examined through scatterplots given in \cref{fig: weath
 \end{figure}
 
 \subsection{BBR data}
-Presumably, the BBR data has influence on the heat consumption in particular the total area and year of construction. Hence, \cref{fig: bbr_hist} illustrates the house specifications of all houses focusing on the type of house, the total area, the year of construction and reconstruction. \textcolor{red}{Lige knytte nogle kommentarer til histogrammerne.}
+Presumably, the BBR data has influence on the heat consumption in particular the total area and year of construction. Hence, \cref{fig: bbr_hist} illustrates the house specifications of all houses focusing on the type of house, the total area, the year of construction and reconstruction. \textcolor{red}{Not quite done}
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/bbr_hist.pdf}
@@ -93,11 +93,11 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
      \textbf{Variable} & \textbf{Description} \\
     \hline
     \hline
-    Date  &  End time and date for measurements. Hourly values.\\
-    Temperature  &  Temperature outside in Degrees/C. \\
-    WindSpeed  &  \\ 
-    WindDirection  &  \\
-    Condition  & \\
+    Date  &  End time and date for measurements. Hourly values\\
+    Temperature  &  Temperature outside in Degrees/C \\
+    WindSpeed  &  In $m/s$\\ 
+    WindDirection  &  In degrees\\
+    Condition  & The condition of the weather given in integers described in \cite{condition}\\
     MeanSeaLevelPressure & Avg. atmospheric pressure at mean sea level in mbar.\\
     PrecipitationProbability & Measure of the probability that precipitation will occur. \\
     Observation & The number of observations for each day for each house.\\

@@ -1,6 +1,5 @@
 \chapter{Data}
-\textcolor{red}{Idas far kan lige skrive her om fjernvarmesystemet.} \textcolor{red}{tilføj hvordan fjernvarmesystemet er opbygget og hvordan målingerne er foretaget.}
-når vandet kommer ind i huset, sidder der en måler, som måler Temperaturen på det der kommer ind og det der kommer ud igen samt mængden af det. \\
+%\textcolor{red}{Idas far kan lige skrive her om fjernvarmesystemet.} \textcolor{red}{tilføj hvordan fjernvarmesystemet er opbygget og hvordan målingerne er foretaget.} når vandet kommer ind i huset, sidder der en måler, som måler Temperaturen på det der kommer ind og det der kommer ud igen samt mængden af det. \\
 
 \noindent The data is provided by SEAS-NVE in three data sets. The house data consists of 71 \texttt{.csv}-files containing 8 attributes for each house which is 513877 data points in all. The second data set includes weather data containing 10,140 observations and predictions of the next 2283 data points, all with 11 attributes. Furthermore, the third data set is from Bygnings- og Boligregistret (BBR) and contain details for each of the houses e.g. total area, year of construction and type of house. 
 The main focus of this section will be how this data is cleaned and prepared for the further analysis. 
@@ -48,14 +47,14 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     StartDateTime  &  Start time and date for measurements. Hourly values.\\
     Temperature  &  Temperature outside in Degrees/C. \\
     WindSpeed  & Wind speed in $m/s$\\
-    WindDirection  & Wind direction i degrees from 0 to 360, 0 being North \\
+    WindDirection  & Wind direction in degrees from 0 to 360, 0 being North \\
     SunHour  & The level of sunshine in the hour in a scale from 0 to 1 \\
     Condition  & The weather condition given in numbers described in \cite{condition} \\
     UltravioletIndex  & The UV index level \\
-    MeanSeaLevelPressure  &  \\
-    DewPoint  &  \\
-    Humidity  &  \\
-    PrecipitationProbability & \\
+    MeanSeaLevelPressure  & The average atmospheric pressure at mean sea level in $mbar$ \\
+    DewPoint  &  The temperature to which air must be cooled to become saturated \\ & with water steam (Degrees/C)\\
+    Humidity  & The amount of water steam present in the air \\
+    PrecipitationProbability & The probability that some quantify precipitation will occur (logical factor)\\
     IsHistoricalEstimated & Binary variable, true if the datapoint is a prediction \\
     \hline
     \end{tabular}

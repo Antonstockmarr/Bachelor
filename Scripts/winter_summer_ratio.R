@@ -29,3 +29,11 @@ tapwater_ratio_winter <- summeravg/winteravg
 
 plot(data[[18]]$Volume*data[[18]]$CoolingDegree)
 plot(weatherCons[[18]]$Consumption)
+
+warmt <-weatherCons[[55]]$Temperature[weatherCons[[55]]$Temperature>=12]
+warm <-weatherCons[[55]]$Consumption[weatherCons[[55]]$Temperature>=12]
+coldt <-weatherCons[[55]]$Temperature[weatherCons[[55]]$Temperature<12]
+cold <-weatherCons[[55]]$Consumption[weatherCons[[55]]$Temperature<12]
+plot(coldt,cold,xlab='Temperature',ylab='Consumption', main='Consumption vs. Temperature (house 55)',ylim=c(0,90),xlim=c(-10,27),col=Wcol[2])
+points(warmt,warm,col=Wcol[4])
+abline(v=c(12),col=Wcol[3])
