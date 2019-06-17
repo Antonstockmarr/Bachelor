@@ -194,7 +194,7 @@ In order to determine whether the general model is valid, the diagnostic plots i
 \noindent In spite of the abovementioned, the models are concluded to somewhat fulfill the model assumptions. 
 
 \subsection{Results}
-The results of the general regression model performed on each house, are illustrated in \cref{lmMult_gen_L} and \cref{lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative since the increase in the temperature will result in a decrease in the heat consumption \textcolor{red}{...}. The attribute \texttt{SolarRadiation} effects the majority of the houses. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is. 
+The results of the general regression model performed on each house, are illustrated in \cref{lmMult_gen_L} and \cref{lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative since the increase in the temperature will result in a decrease in the heat consumption \textcolor{red}{...}. The attribute \texttt{SolarRadiation} effects the majority of the houses. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is.
 
 \begin{figure}
     \centering
@@ -219,7 +219,7 @@ The results of the general regression model performed on each house, are illustr
     \label{fig: weather_pred}
 \end{figure}
 
-\noindent In addition, the models are used to predict 31 days ahead. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}. 
+\noindent In addition, the models are used to predict 31 days ahead in order to verify that the temperature coefficients \textcolor{red}{er gode}. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}. 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.pdf}

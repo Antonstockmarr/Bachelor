@@ -79,8 +79,8 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
 \noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} shows a plot of the correlation matrix between the abovementioned attributes.
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/gg_cor.eps}
-    \caption{Scatterplot showing the correlations between the three attributes \texttt{Condition}, \texttt{Radiation} and \texttt{SunHour}. It is clearly seen that the radiation and the sun hour are highly correlated}
+    \includegraphics[width=1.\textwidth]{../../../figures/gg_cor.pdf}
+    \caption{Scatterplot showing the correlations between the thwo attributes \texttt{Temperature}, \texttt{DewPoint}. It is clearly seen that the temperature and dew point are highly correlated}
     \label{fig: gg_cor}
 \end{figure}
 \noindent There is a high correlation between \texttt{Radiation} and \texttt{SunHour} at 0.955, thus \texttt{SunHour} is removed from the weather data set. \\

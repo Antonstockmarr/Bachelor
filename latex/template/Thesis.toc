@@ -34,13 +34,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Weather data}{8}{subsection.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}BBR data}{9}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.2}BBR data}{8}{subsection.3.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multicollinearity}{12}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Multicollinearity}{11}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Data segmentation}{14}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Data segmentation}{12}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{14}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{13}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{14}{subsection.3.3.2}% 
 \defcounter {refsection}{0}\relax 
@@ -84,9 +84,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3.1}Modelling with the $arima$ Function}{45}{subsection.5.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Modelling with the $MARIMA$ Function}{52}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.2}Modelling with the $MARIMA$ Function}{54}{subsection.5.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Making Predictions}{52}{section.5.4}% 
+\contentsline {section}{\numberline {5.4}Making Predictions}{54}{section.5.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.5}Visualization of the results}{54}{section.5.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Discussion}{55}{chapter.6}% 
 \defcounter {refsection}{0}\relax 

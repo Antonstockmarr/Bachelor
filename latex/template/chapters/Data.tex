@@ -1,8 +1,6 @@
 \chapter{Data}
-%\textcolor{red}{Idas far kan lige skrive her om fjernvarmesystemet.} \textcolor{red}{tilføj hvordan fjernvarmesystemet er opbygget og hvordan målingerne er foretaget.} når vandet kommer ind i huset, sidder der en måler, som måler Temperaturen på det der kommer ind og det der kommer ud igen samt mængden af det. \\
-
-
-\noindent The data is provided by SEAS-NVE in three data sets. The house data consists of 71 \texttt{.csv}-files containing 8 attributes for each house which is 513877 data points in all. The second data set includes weather data containing 10,140 observations and predictions of the next 2283 data points, all with 11 attributes. Furthermore, the third data set is from Bygnings- og Boligregistret (BBR) and contain details for each of the houses e.g. total area, year of construction and type of house. 
+ The data is provided by SEAS-NVE with measurements from Aalborg Forsyning. The measurements are made with a smart meter from Kamstrup (\cite{Kamstrup}). The smart meter measures the flow temperature of the water and the return temperature and the total flow in $m^3/hour$. The process for the supply of heat from Aalborg Forsyning to houses is described in more detail in \cite{Aalborg}.
+ Data are given in three data sets. The house data consists of 71 \texttt{.csv}-files containing 8 attributes for each house which is 513877 data points in all. The second data set includes weather data containing 10,140 observations and predictions of the next 2283 data points, all with 11 attributes. Furthermore, the third data set is from Bygnings- og Boligregistret (BBR) and contain details for each of the houses e.g. total area, year of construction and type of house. 
 The main focus of this section will be how this data is cleaned and prepared for the further analysis. 
 
 \section{Original data}
@@ -15,7 +13,7 @@ The original house and weather data include hourly observations from the period 
     Q = c\cdot m \cdot \Delta T,
     \label{eq: Q_heat}
 \end{equation}
-where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^{\circ}C$, $m$ is the water density in $kg$ and is calculated from the volume as $1m^3 = 1000 \ kg$ and $\Delta T$ is the cooling degree in $^{\circ}C$. In this way, the heat consumption is converted from $kJ$ to $kWh$ (since $1 \ kWh = 3600 \ kJ$) which is the desired unit for the heat consumption.
+where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^{\circ}C$, $m$ is the water density in $kg$ and is calculated from the volume as $1m^3 = 1000 \ kg$ and $\Delta T$ is the cooling degree in $^{\circ}C$. In this way, the heat consumption is converted from $kJ$ to $kWh$ (since $1 \ kWh = 3600 \ kJ$) which is the desired unit for the heat consumption. \textcolor{red}{Synes der mangler lidt her.}
 \begin{table}[H]
     \centering
     \begin{tabular}{ll}
@@ -116,7 +114,7 @@ The purpose of filling out the missing values with interpolation of data, is to 
 
 
 \subsection{The sun and the wind}
-\noindent A physical factor that could possibly affect the heat consumption is the sun. In raw data, the attributes \texttt{Condition}, \texttt{SunHour},  and \texttt{UltraVioletIndex} can be seen as explanatory variables for the sun. Instead, an attribute, \texttt{Radiation}, is added to calculate the solar radiation for a given day. This attribute is determined with use of the \texttt{R} function \texttt{calcSol} from the library \texttt{solaR}. The ultraviolet index is a measurement of the strength of ultraviolet radiation and since the attribute \texttt{Radiation} is more exact, \texttt{UltravioletIndex} is removed from the weather data set. \\
+\noindent A physical factor that could possibly affect the heat consumption is the sun. In raw data, the attributes \texttt{Condition}, \texttt{SunHour},  and \texttt{UltraVioletIndex} can be seen as explanatory variables for the sun. Instead, an attribute, \texttt{SolarRadiation}, is added to calculate the solar radiation for a given day. This attribute is determined with use of the \texttt{R} function \texttt{calcSol} from the library \texttt{solaR}. The ultraviolet index is a measurement of the strength of ultraviolet radiation and since the attribute \texttt{SolarRadiation} is more exact, \texttt{UltravioletIndex} is removed from the weather data set. \\
 
 \noindent Another physical factor that might be of importance is the wind. There are data available for both the wind direction in degrees and the wind speed. When the data is aggregated into daily values, it is important to pay special attention to the wind attributes, since it is not logical to take the average of degree values. For example, the average wind direction of $359$ degrees and $0$ degrees is not $179.5$ degrees. Instead the wind direction and wind speed are interpreted as polar coordinates in a coordinate system. They are converted to rectangular coordinates. Then they are aggregated from hourly values into daily values, and returned to polar coordinates.  When the wind is aggregated this way, wind directions with high wind speeds are weighted higher than wind directions with low wind speeds. Also the problem with the periodicity of the wind direction is solved.
 

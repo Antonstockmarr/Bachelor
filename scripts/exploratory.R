@@ -84,15 +84,13 @@ grid.arrange(plot6, plot7, plot8, plot9, plot10, plot11, plot12, nrow = 4, ncol 
 
 
 # Sun pairs
-GGally::ggpairs(day.weather[c('SunHour','Condition','Radiation')])
-# Removing SunHour
+# Removing SunHour because it is a part of the radiation attribute
 weather$SunHour <- NULL
 day.weather$SunHour <- NULL
 
 # Possible multicolinarity between Temperature and DewPoint
+GGally::ggpairs(day.tmp[c('Temperature','DewPoint')])
 cor(day.tmp['Temperature'],day.tmp['DewPoint'])
-# = 0.936
-# Removing DewPoint
 weather$DewPoint <- NULL
 day.weather$DewPoint <- NULL
 
