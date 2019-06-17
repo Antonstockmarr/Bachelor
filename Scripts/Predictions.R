@@ -98,11 +98,11 @@ for (i in c(18,55)) {
   polygon(c(1:31, 31, 1), y= c(PredK$upr,ylim[2],ylim[2]), col = Wcol[4], lty=0)
   polygon(c(1:31, 31:1), y= c(PredK$lwr, rev(PredK$upr)), col = Wcol[3], lty=0)
   lines(1:31,ttd[[2]][[i]]$Consumption,type='o',col=1,lwd=3)
-  
+
   cols<-rep(Wcol[3],length(ttd[[2]][[i]]$Consumption))
   cols[ttd[[2]][[i]]$Consumption<PredK$lwr]<-Wcol[2]
   cols[ttd[[2]][[i]]$Consumption>PredK$upr]<-Wcol[4]
-  
+
   barplot(ttd[[2]][[i]]$Consumption,col=cols,main=mm, ylab="Consumption [kWh]",xlab="January 2019 [days]")
 }
 
@@ -148,15 +148,15 @@ tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
 tmp <- tmp.dat$Temperature
 TemperatureP <- (tmp<a)*(a-tmp)
 
-# p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
+p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
 
-# plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
-# axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
-# lines(p$pred+2*p$se,lty=2)
-# lines(p$pred-2*p$se,lty=2)
-# lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
-# abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
-# legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
+lines(p$pred+2*p$se,lty=2)
+lines(p$pred-2*p$se,lty=2)
+lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
+abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
+legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 
 
 # Smoothing experiment
@@ -236,4 +236,3 @@ lines(p$pred-2*p$se,lty=2)
 lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
-
