@@ -132,7 +132,7 @@ tth<-TrainTest(data,14*24)
 
 i<-55
 
-for(i in Short){
+for(i in 55){
 midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)+length(tth[[1]][[i]]$ObsTime)
 
 a <- 12
@@ -216,11 +216,15 @@ arima.dat <- cbind(tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume*cc,Temperatu
 dd <- define.dif(arima.dat, differencing)
 dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
 dm1$ar.pattern[1,2,25:26] <- 0
+
 m1 <- marima(dd$y.dif, ar.pattern = dm1$ar.pattern, ma.pattern = dm1$ma.pattern, Plot = 'log.det',penalty=0)
+
 
 NewData<-rbind(arima.dat,cbind(rep(NA,length(tth[[2]][[55]][,1])),TemperatureP))
 
 p<-arma.forecast(series = NewData, marima = m1, nstart = length(tth[[1]][[55]][,1]), nstep = length(tth[[2]][[55]][,1]), dif.poly = NULL, check = TRUE)
+
+
 
 #plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
 plot(p$forecasts[1,length(tth[[1]][[55]][,1]):(length(tth[[1]][[55]][,1])+length(tth[[2]][[55]][,1]))])

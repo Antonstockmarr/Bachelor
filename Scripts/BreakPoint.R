@@ -7,11 +7,8 @@ j=1
 # Hvis der er mindst 1 ?rs data, kigger vi p? det hus.
 for(k in 1:n){
   if (length(day.data[[k]]$Flow)>=365){
-    day.tmp <- day.weather[(day.weather$Date <= as.Date(EndDays[k],tz="GMT")),]
-    day.tmp <- day.tmp[day.tmp$Date >= as.Date(StartDays[k],tz="GMT"),] 
-    t <- day.tmp$Temperature
-    q <- day.data[[k]]$CoolingDegree*day.data[[k]]$Volume
-    
+    t <- weatherCons[[k]]$Temperature
+    q <- weatherCons[[k]]$Consumption  
     #Vi antager normalfordeling i consumption p? dage over 20 grader, og ser p? resten af data i forhold til denne normalfordeling.
     tmp.mu <- mean(q[t>=20])
     tmp.sd <- sd(q[t>=20])
@@ -22,9 +19,8 @@ for(k in 1:n){
       tmp.sd.dist <-(q-tmp.mu)/tmp.sd
       
       par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
-      plot(t,tmp.sd.dist,xlab='Temperature',ylab='Standard deviations',col=Wcol[2])#,xlim=c(5,25))
-      lines(t,rep((2),length(t)),col=Wcol[4])
-      lines(t,rep((2),length(t)),col=Wcol[4])
+      plot(t,q,xlab='Temperature',ylab='Standard deviations',col=Wcol[2])#,xlim=c(5,25))
+      abline(h=tmp.mu+tmp.sd*2)
       mtext(paste("Breakpoint for house number ",k), outer = TRUE, cex = 1.5)
       pct.in.sd <- rep(0,length(min(t):(max(t)-1)))
       
