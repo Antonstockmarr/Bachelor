@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  16 JUN 2019 19:25
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  17 JUN 2019 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1780,7 +1780,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--10
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
@@ -1792,12 +1792,12 @@ Underfull \vbox (badness 2529) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (87.80006pt too wide) in paragraph at lines 42--61
+Overfull \hbox (87.80006pt too wide) in paragraph at lines 43--62
  [][] 
  []
 
 
-Overfull \hbox (9.66005pt too wide) in paragraph at lines 66--83
+Overfull \hbox (9.66005pt too wide) in paragraph at lines 67--84
  [][] 
  []
 
@@ -1805,7 +1805,7 @@ Overfull \hbox (9.66005pt too wide) in paragraph at lines 66--83
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
