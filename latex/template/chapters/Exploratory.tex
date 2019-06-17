@@ -138,11 +138,9 @@ is sometimes as high as 20 degrees, which is not desirable.
 
 
 \subsection{Segmentation by significant deviations}
-In the second approach, the data points are examined from high temperatures to low. First, all data points from
-above 20 degrees are assumed to belong to the distribution without heating. If a data point is more than two
-standard deviations above from the mean of this distribution, it is assumed to belong to the distribution with
-heating. Now the data points are divided by temperature into one degree intervals. For each interval, starting
-from above and moving down, all data points in that interval are examined. The last interval where at least
+In the second approach, all data points with a temperature
+above 20 degrees are assumed to belong to the period without heating. Then the mean and standard deviation of a normal distribution containing those points is calculated.
+For each degree interval below 20 degrees, if 80\% of the points in that interval are above the confidence interval of the normal distribution, then that degree interval should be included in the winter period. The threshold is set accordingly.. The last interval where at least
 20\% of the data points are less than two standard deviations away, is chosen as the breakpoint of that house.
 An example of the approach is seen on figure \ref{fig: Consumption-PW}. On the left the data points are plotted with
 standard deviations on the y-axis. The red line highlights the two standard devations. On the right there is a plot
