@@ -1996,15 +1996,17 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">iea</bcf:citekey>
-    <bcf:citekey order="2">interpolation</bcf:citekey>
-    <bcf:citekey order="3">condition</bcf:citekey>
-    <bcf:citekey order="4">vejr2018</bcf:citekey>
+    <bcf:citekey order="2">Kamstrup</bcf:citekey>
+    <bcf:citekey order="3">Aalborg</bcf:citekey>
+    <bcf:citekey order="4">interpolation</bcf:citekey>
     <bcf:citekey order="5">condition</bcf:citekey>
-    <bcf:citekey order="6">Stat_bog</bcf:citekey>
-    <bcf:citekey order="7">Stat_bog2</bcf:citekey>
-    <bcf:citekey order="8">Splines</bcf:citekey>
-    <bcf:citekey order="9">Time_Series_Analysis</bcf:citekey>
-    <bcf:citekey order="10">Time_Series_Analysis</bcf:citekey>
+    <bcf:citekey order="6">vejr2018</bcf:citekey>
+    <bcf:citekey order="7">condition</bcf:citekey>
+    <bcf:citekey order="8">Stat_bog</bcf:citekey>
+    <bcf:citekey order="9">Stat_bog2</bcf:citekey>
+    <bcf:citekey order="10">Splines</bcf:citekey>
+    <bcf:citekey order="11">Time_Series_Analysis</bcf:citekey>
+    <bcf:citekey order="12">Time_Series_Analysis</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

@@ -122,6 +122,56 @@
       \verb https://www.wunderground.com/weather/api/d/docs?d=resources%2Fphrase-glossary&_ga=2.166768631.87242339.1555497846-195014723.1555497846&fbclid=IwAR3NANmRzhGE0uS4m5YqMu06_qJDJFQ7-Wd3xWjKPV68Njtso_4PSVuVk9o
       \endverb
     \endentry
+    \entry{Aalborg}{url}{}
+      \name{author}{1}{}{%
+        {{hash=0d23fe0d192e3bbe7387ad4fdd77c803}{%
+           family={Forsyning},
+           familyi={F\bibinitperiod},
+           given={Aalborg},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0d23fe0d192e3bbe7387ad4fdd77c803}
+      \strng{fullhash}{0d23fe0d192e3bbe7387ad4fdd77c803}
+      \strng{bibnamehash}{0d23fe0d192e3bbe7387ad4fdd77c803}
+      \strng{authorbibnamehash}{0d23fe0d192e3bbe7387ad4fdd77c803}
+      \strng{authornamehash}{0d23fe0d192e3bbe7387ad4fdd77c803}
+      \strng{authorfullhash}{0d23fe0d192e3bbe7387ad4fdd77c803}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Aalborg Forsynings hjemmeside}}
+      \verb{urlraw}
+      \verb https://www.aalborgforsyning.dk/
+      \endverb
+      \verb{url}
+      \verb https://www.aalborgforsyning.dk/
+      \endverb
+    \endentry
+    \entry{Kamstrup}{url}{}
+      \name{author}{1}{}{%
+        {{hash=134d65c3135376870482f3020231f44a}{%
+           family={Kamstrup},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{134d65c3135376870482f3020231f44a}
+      \strng{fullhash}{134d65c3135376870482f3020231f44a}
+      \strng{bibnamehash}{134d65c3135376870482f3020231f44a}
+      \strng{authorbibnamehash}{134d65c3135376870482f3020231f44a}
+      \strng{authornamehash}{134d65c3135376870482f3020231f44a}
+      \strng{authorfullhash}{134d65c3135376870482f3020231f44a}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Kamstrups hjemmeside}}
+      \verb{urlraw}
+      \verb https://www.kamstrup.com/da-dk
+      \endverb
+      \verb{url}
+      \verb https://www.kamstrup.com/da-dk
+      \endverb
+    \endentry
     \entry{Time_Series_Analysis}{book}{}
       \name{author}{1}{}{%
         {{hash=ac5d1263fca18a1f2d85317607e7d734}{%

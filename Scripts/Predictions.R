@@ -98,11 +98,11 @@ for (i in c(18,55)) {
   polygon(c(1:31, 31, 1), y= c(PredK$upr,ylim[2],ylim[2]), col = Wcol[4], lty=0)
   polygon(c(1:31, 31:1), y= c(PredK$lwr, rev(PredK$upr)), col = Wcol[3], lty=0)
   lines(1:31,ttd[[2]][[i]]$Consumption,type='o',col=1,lwd=3)
-  
+
   cols<-rep(Wcol[3],length(ttd[[2]][[i]]$Consumption))
   cols[ttd[[2]][[i]]$Consumption<PredK$lwr]<-Wcol[2]
   cols[ttd[[2]][[i]]$Consumption>PredK$upr]<-Wcol[4]
-  
+
   barplot(ttd[[2]][[i]]$Consumption,col=cols,main=mm, ylab="Consumption [kWh]",xlab="January 2019 [days]")
 }
 
@@ -132,13 +132,7 @@ tth<-TrainTest(data,14*24)
 
 i<-55
 
-tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
-tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
-tmp <- tmp.dat$Temperature
-
-
-
-for(i in Short){
+for(i in 55){
 midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)+length(tth[[1]][[i]]$ObsTime)
 
 a <- 12
@@ -222,11 +216,15 @@ arima.dat <- cbind(tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume*cc,Temperatu
 dd <- define.dif(arima.dat, differencing)
 dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
 dm1$ar.pattern[1,2,25:26] <- 0
+
 m1 <- marima(dd$y.dif, ar.pattern = dm1$ar.pattern, ma.pattern = dm1$ma.pattern, Plot = 'log.det',penalty=0)
+
 
 NewData<-rbind(arima.dat,cbind(rep(NA,length(tth[[2]][[55]][,1])),TemperatureP))
 
 p<-arma.forecast(series = NewData, marima = m1, nstart = length(tth[[1]][[55]][,1]), nstep = length(tth[[2]][[55]][,1]), dif.poly = NULL, check = TRUE)
+
+
 
 #plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
 plot(p$forecasts[1,length(tth[[1]][[55]][,1]):(length(tth[[1]][[55]][,1])+length(tth[[2]][[55]][,1]))])
@@ -238,4 +236,3 @@ lines(p$pred-2*p$se,lty=2)
 lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
-
