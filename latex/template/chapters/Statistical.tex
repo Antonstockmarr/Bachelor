@@ -212,14 +212,15 @@ The results of the general regression model performed on each house, are illustr
 \noindent The wind directed from East and West also have great influence on the consumption of most houses. How the exact wind dependency is determined and illustrated is explained in the following about predictions.
 
 \subsection{Predictions}
-\noindent In addition, the models are used to predict 31 days ahead in order to verify that the models capture the overall behaviour of data. It must be known that the model data has been divided into training and test sets in order to make predictions. The test set consists of the last 31 days and the remaining observations constitute the training set. The predictions are made using the function \texttt{predict} in \texttt{R}. \cref{fig: weather_pred} shows the input values used for the predictions. It is expected that 
+\noindent To see how well the model captures the overall behaviour of the data, it is used to make predictions for unknown data. This is done by dividing the data into a training set and a test set. Here a test set will be used containing January 2019 (31 days). The available weather data for that period is used to make predictions, which are then compared to the actual consumption. These are not one-step predictions, but 31 step predictions. This means that the model for time $t$ updates based on the prediction at time $t-1$, not the actual data. In other words, one-step predictions would be the same as predicting one step ahead 31 times and updating the available observations. The predictions are made using the function \texttt{predict} in \texttt{R}. \cref{fig: weather_pred} shows the input values used for the predictions. 
+
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/weather_pred.pdf}
     \caption{The input values used for predictions of the general linear regression model}
     \label{fig: weather_pred}
 \end{figure}
-In consistency with the other results, it is the two houses, 18 and 55, whose predictions are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}. 
+In consistency with the other results, house 18 and 55 are used for predictions. They are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}. 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.pdf}
@@ -232,7 +233,10 @@ In consistency with the other results, it is the two houses, 18 and 55, whose pr
     \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model does not capture the behavior of this house at all}
     \label{fig: lmpred_18L}
 \end{figure}
-\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour. The 95\% prediction interval are narrow, which indicates that the standard deviations of this model are fairly small. The general regression model performs as expected. Contrary, the model for house 18 has problems with capturing the oscillating behaviour and the 95\% prediction interval are quite wide, i.e. the corresponding standard deviations are large. But since the actual data lie within the 95\% prediction interval the model can be used for describing the heat consumption in house 18. \\
+
+\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour.  The 95\% prediction interval is narrow, which indicates that the standard deviations of this model are fairly small. Comparing the predictions to the actual consumption, the actual data is mostly inside the prediction interval. In the last couple of days the model predict spikes in the temperature that are not reflected in the observations. \cref{fig: weather_pred} indicate why the spikes occour. It seems that there are two days with particularily low temperatures coinciding with the spikes in the predictions. Low temperatures causes the model to expect higher consumption. There can be many reasons why the consumption did not spike as expected, for example the inhabitants of the house might not have been home that day to notice the temperature difference. Such things can be very hard to predict. In general, the model performs well on this house.
+
+\noindent House 18, on the other hand, does not behave quite as expected. The model has problems capturing the and the 95\% prediction interval much wider than for house 55. There is more unexplained variation in this model. The deviations in the observations cannot be explained by the input from the weather data. So even though all the observations are within the prediction interval, the model is not of much use on this house. There are other factors affecting the consumption that are not captured in the model, which is reflected in the high uncertainty.\\
 
 \noindent The effect of the wind direction on the consumption is investigated by estimating the daily consumption for the house, for a fixed setting, where only the wind direction is changed. The setting used is a day with a temperature of $0 \degree$C, without any solar radiation, and with a wind speed of $4.27 m/s$, which is the average wind speed throughout the year. A prediction of the daily consumption is made for each wind direction and plotted with a 95\% prediction interval. \cref{fig: Wplot55} shows the wind dependency for house 55. The consumption of house 55 is by far most affected by wind from west.
 \begin{figure}

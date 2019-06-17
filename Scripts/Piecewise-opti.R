@@ -19,7 +19,7 @@ PiecewiseOpti <- function(i,t,q,makeplot=FALSE)
   
   if (makeplot==TRUE)
     {
-      plot(newdata,conf_interval[,1],ylab='Consumption',xlab='Temperature', lwd=2,
+      plot(newdata,conf_interval[,1],ylab='Daily consumption [kWh]',xlab=expression(paste('Temperature [',degree, 'C]')), lwd=2,
            main = paste('House number', i),col='red',type='l',ylim=c(0,max(q)))
       points(q~t)
       lines(newdata,conf_interval[,2],col="green",lwd=2,lty='dashed')

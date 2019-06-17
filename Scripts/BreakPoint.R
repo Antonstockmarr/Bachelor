@@ -26,7 +26,7 @@ for(k in 1:n){
         tmp.q <- tmp.q[tmp.t>i]
         tmp.t <- tmp.t[tmp.t>i]
         
-        pct.in.sd[i-round(min(t))+1] <- (sum(tmp.q>=tmp.mu+2*tmp.sd)+sum(tmp.q<=tmp.mu-2*tmp.sd))/length(tmp.q)
+        pct.in.sd[i-round(min(t))+1] <- (sum(tmp.q>=tmp.mu+1.96*tmp.sd)+sum(tmp.q<=tmp.mu-1.96*tmp.sd))/length(tmp.q)
         
       }
       alpha[j]<-min(which(pct.in.sd<0.8))+floor(min(t))
@@ -36,7 +36,7 @@ for(k in 1:n){
       colour <- rep(Wcol[2],length(t))
       colour[t>=alpha[j]]<-Wcol[4]
       plot(t,q,xlab=expression(paste('Temperature [',degree, 'C]')),ylab='Consumption [kWh]',col=colour)#,xlim=c(5,25))
-      abline(h=tmp.mu+tmp.sd*2,col=Wcol[1])
+      abline(h=tmp.mu+tmp.sd*1.96,col=Wcol[1])
       mtext(paste("Breakpoint for house ",k), outer = TRUE, cex = 1.5)
       abline(v=alpha[j],col=Wcol[3])
       colour <- rep(Wcol[2],length(pct.in.sd))
@@ -60,5 +60,5 @@ break.point<-round(as.numeric(quantile(alpha, .25)))
 
 abline(v=break.point,col=Wcol[2],lwd=2)
 
-rm(alpha,i,j,pct.in.sd,q,t,tmp.mu,tmp.q,tmp.sd,tmp.sd.dist,tmp.t)
+rm(alpha,i,j,pct.in.sd,q,t,tmp.mu,tmp.q,tmp.sd,tmp.t)
 
