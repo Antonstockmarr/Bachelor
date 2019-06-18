@@ -31,12 +31,14 @@ ttm<-TrainTest(weatherCons,31)
 mondays<-which(weekdays(ttm[[2]][[1]]$Date)=="Monday")-.5
 
 # Weatherplots for daily predictions
-par(mfrow=c(3,1))
+par(mfrow=c(4,1))
 plot(ttd[[2]][[1]]$Temperature,type='o',lwd=3,ylab=expression(paste("Temperature [", degree, "C]")),xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
 plot(ttd[[2]][[1]]$Radiation,type='o',lwd=3,ylab=expression(paste("Solar Radiation [",W/m^2,"]")),xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
 plot(ttd[[2]][[1]]$WindDirection,type='o',lwd=3,ylab="Wind Direction [degrees]",xlab="January 2019 [days]",xaxt='n')
+axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+plot(ttd[[2]][[1]]$WindSpeed,type='o',lwd=3,ylab="Wind Speed [m/s]",xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
 
 
@@ -130,10 +132,10 @@ weather <- weather[k:1,]
 
 tth<-TrainTest(data,14*24)
 
-i<-55
+i<-6
 
-for(i in c(55,18)){
-midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)+length(tth[[1]][[i]]$ObsTime)
+for(i in 55){
+midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)
 
 a <- 12
 tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
@@ -150,13 +152,31 @@ TemperatureP <- (tmp<a)*(a-tmp)
 
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
 
-plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Hourly consumption, [kWh]",main=paste("Predictions for house ",i))
-axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
-lines(p$pred+2*p$se,lty=2)
-lines(p$pred-2*p$se,lty=2)
-lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
+plot(1:length(p$pred),p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i),type="l")
+axis(1, at=c(12,156,320), labels=c("18th","24th","31st"))
+lines(1:length(p$pred),p$pred+2*p$se,lty=2)
+lines(1:length(p$pred),p$pred-2*p$se,lty=2)
+lines((1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+
+
+# Kundeplot(s)
+pk<-data.frame(lwr=p$pred-0.43*p$se, upr=p$pred+0.43*p$se)
+plot(1:length(pk$lwr),pk$lwr,type='n',ylim=range(pk$lwr,pk$upr,cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume),main=mm,ylab="Consumption [kWh]",xlab="January 2019 [hours]",xaxt='n')
+axis(1, at=c(12,156,320), labels=c("18th","24th","31st"))
+
+ylim=c(-100,1200)
+polygon(c(1:31, 31, 1), y= c(PredK$lwr,ylim[1],ylim[1]), col = Wcol[2], lty=0)
+polygon(c(1:31, 31, 1), y= c(PredK$upr,ylim[2],ylim[2]), col = Wcol[4], lty=0)
+polygon(c(1:31, 31:1), y= c(PredK$lwr, rev(PredK$upr)), col = Wcol[3], lty=0)
+lines(1:31,ttd[[2]][[i]]$Consumption,type='o',col=1,lwd=3)
+
+cols<-rep(Wcol[3],length(ttd[[2]][[i]]$Consumption))
+cols[ttd[[2]][[i]]$Consumption<PredK$lwr]<-Wcol[2]
+cols[ttd[[2]][[i]]$Consumption>PredK$upr]<-Wcol[4]
+
+barplot(ttd[[2]][[i]]$Consumption,col=cols,main=mm, ylab="Consumption [kWh]",xlab="January 2019 [days]")
 
 
 # Smoothing experiment
@@ -192,47 +212,16 @@ abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 }
 
-# Marima
-library("forecast")
-library("marima")
-
-
-load("marimax.Rdata")
-
-i<-55
-
+#weather from test period:
 tmp.dat <- weather[(weather$ObsTime >= head(tth[[2]][[i]]$ObsTime,1)),]
 tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
-tmp <- tmp.dat$Temperature
-TemperatureP <- (tmp<a)*(a-tmp)
-differencing = c(1, 24)
 
-a <- 12
-tmp.dat <- weather[(weather$ObsTime >= head(tth[[1]][[i]]$ObsTime,1)),]
-tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
-tmp <- tmp.dat$Temperature
-Temperature <- (tmp<a)*(a-tmp)
-arima.dat <- cbind(tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume*cc,Temperature)
-dd <- define.dif(arima.dat, differencing)
-dm1 <-define.model(kvar=2, ar = c(1,24,25), ma = c(1,24,25),reg.var = 2)
-dm1$ar.pattern[1,2,25:26] <- 0
-
-m1 <- marima(dd$y.dif, ar.pattern = dm1$ar.pattern, ma.pattern = dm1$ma.pattern, Plot = 'log.det',penalty=0)
-
-
-NewData<-rbind(arima.dat,cbind(rep(NA,length(tth[[2]][[55]][,1])),TemperatureP))
-
-p<-arma.forecast(series = NewData, marima = m1, nstart = length(tth[[1]][[55]][,1]), nstep = length(tth[[2]][[55]][,1]), dif.poly = NULL, check = TRUE)
-
-
-
-#plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
-plot(p$forecasts[1,length(tth[[1]][[55]][,1]):(length(tth[[1]][[55]][,1])+length(tth[[2]][[55]][,1]))])
-plot(arima.dat[,1])
-plot(NewData[,2])
-axis(1, at=c(length(tth[[1]][[i]]$Obstime),length(tth[[1]][[i]]$Obstime)+170,length(tth[[1]][[i]]$Obstime)+340), labels=c("17th","24th","31st"))
-lines(p$pred+2*p$se,lty=2)
-lines(p$pred-2*p$se,lty=2)
-lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
-abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
-legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+par(mfrow=c(4,1))
+plot(tmp.dat$Temperature,type='o',lwd=1,ylab=expression(paste("Temperature [", degree, "C]")),xlab="January 2019 [hours]",xaxt='n')
+axis(1, at=c(5,173,340), labels=c("17th","24th","31st"))
+plot(tmp.dat$Radiation*tmp.dat$SunHour,type='o',lwd=1,ylab=expression(paste("Solar Radiation [",W/m^2,"]")),xlab="January 2019 [hours]",xaxt='n')
+axis(1, at=c(5,173,340), labels=c("17th","24th","31st"))
+plot(tmp.dat$WindDirection,type='o',lwd=1,ylab="Wind Direction [degrees]",xlab="January 2019 [hours]",xaxt='n')
+axis(1, at=c(5,173,340), labels=c("17th","24th","31st"))
+plot(tmp.dat$WindSpeed,type='o',lwd=1,ylab="Wind Speed [m/s]",xlab="January 2019 [hours]",xaxt='n')
+axis(1, at=c(5,173,340), labels=c("17th","24th","31st"))

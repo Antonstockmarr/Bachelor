@@ -205,8 +205,7 @@ This is again after the regression fit with the temperature has been substituted
 
 
 \subsection{Predicting with the ARIMA model}
-Now the model found above will be used for predictions. The test data used is two weeks in January 2019. The predictions are made using the \texttt{R} function \texttt{predict}. The  weather data used as input can be seen in figure
-\textcolor{red}{ref til weatherpred her}. Just as in the linear regression model, the input series is assumed to be a perfect prediction without measuring errors. The predictions are not one-step predictions, but 14 step predictions. The results of applying the predictions to house 55 can be seen in figure \cref{fig:arima1_pred_55}. It very quickly becomes clear that the data behaves very differently than the model predicts. There are a lot of very high spikes, each followed by an hour with zero consumption. This tendency is not captured at all in the model, and it is clear that the time series models cannot be used for anything useful for this house unless the data is altered in some way. House 18 in figure \cref{fig:arima1_pred_18} shows the same unexpected behavior. There seems to be no connection between the time of day and the massive spikes for either of the houses. And since the spikes are usually followed by a consumption of precisely zero, the behavior seems to be linked to how the data is collected and pre-processed by Aalborg Forsyning. Given that the anomalities come in pairs of measurements that are two or three times higher than the neighbours and than measurements of zero, the most plausible explanation is that several measurements are accidentially grouped into a single hour interval, leaving the next interval with no consumption. The phenomenon with a high spike followed by a zero happens in almost every \textcolor{red}{snak med Finn om hvor tit det sker}
+Now the model found above will be used for predictions. The test data used is two weeks in January 2019. The predictions are made using the \texttt{R} function \texttt{predict}. The  weather data used as input can be seen in \cref{fig: weather_pred}. Just as in the linear regression model, the input series is assumed to be a perfect prediction without measuring errors. The predictions are not one-step predictions, but 14 step predictions. The results of applying the predictions to house 55 can be seen in figure \cref{fig:arima1_pred_55}. It very quickly becomes clear that the data behaves very differently than the model predicts. There are a lot of very high spikes, each followed by an hour with zero consumption. This tendency is not captured at all in the model, and it is clear that the time series models cannot be used for anything useful for this house unless the data is altered in some way. House 18 in figure \cref{fig:arima1_pred_18} shows the same unexpected behavior. There seems to be no connection between the time of day and the massive spikes for either of the houses. And since the spikes are usually followed by a consumption of precisely zero, the behavior seems to be linked to how the data is collected and pre-processed by Aalborg Forsyning. Given that the anomalities come in pairs of measurements that are two or three times higher than the neighbours and than measurements of zero, the most plausible explanation is that several measurements are accidentially grouped into a single hour interval, leaving the next interval with no consumption. The phenomenon with a high spike followed by a zero happens in almost every \textcolor{red}{snak med Finn om hvor tit det sker}
 
 
 \begin{figure}
@@ -226,9 +225,6 @@ Now the model found above will be used for predictions. The test data used is tw
 
 \noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data. The results are shown in \cref{fig: fig:arima1_pred_55} and \cref{fig:arima1_pred_18}.
 
-
-
-
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/arimax/arima2_pred_55.pdf}
@@ -242,6 +238,11 @@ Now the model found above will be used for predictions. The test data used is tw
     \caption{Predictions of the arima model for house 18 on the modified data.}
     \label{fig:arima1_pred_18}
 \end{figure}
+
+
+\subsection{Modelling with the MARIMA Function}
+
+
 
 
 
