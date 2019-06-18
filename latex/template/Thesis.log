@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 10:03
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1909,17 +1909,11 @@ File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
 File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm55L.pdf>
  [29]
-
-LaTeX Warning: Reference `lmMult_gen_L' on page 1 undefined on input line 191.
-
-
-LaTeX Warning: Reference `lmMult_gen_S' on page 1 undefined on input line 191.
-
 File: graphics/../../../figures/Temp_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Temp_coef.pdf>
 File: graphics/../../../figures/Solar_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Solar_coef.pdf>
-[30]
+ [30]
 File: graphics/../../../figures/weather_pred.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_pred.pdf>
 File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
@@ -1987,19 +1981,7 @@ File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/HourDistribution.jpeg>
- [46] [47] [48]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 87.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 87.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 87.
-
-[49]
+ [46] [47] [48] [49]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
 File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
@@ -2055,7 +2037,7 @@ Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
  []
 
 
-LaTeX Warning: Float too large for page by 30.25996pt on input line 298.
+LaTeX Warning: Float too large for page by 54.25996pt on input line 298.
 
 
 Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
@@ -2069,7 +2051,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [65] [66] [67]
-Overfull \vbox (50.57715pt too high) has occurred while \output is active []
+Overfull \vbox (74.57715pt too high) has occurred while \output is active []
 
  [68]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
@@ -2157,23 +2139,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7D1115655DC7533787DB0C8F1A363520.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 778D166A9BDC74AC1FEE650FE7FA9353.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49882 strings out of 492933
- 959493 string characters out of 6133145
- 1709832 words of memory out of 5000000
- 53140 multiletter control sequences out of 15000+600000
- 558141 words of font info for 73 fonts, out of 8000000 for 9000
+ 49866 strings out of 492933
+ 959197 string characters out of 6133145
+ 1711953 words of memory out of 5000000
+ 53126 multiletter control sequences out of 15000+600000
+ 554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2653b,6211s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2664b,6211s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (86 pages).
