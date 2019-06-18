@@ -44,68 +44,70 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{15}{subsection.3.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Models on the Daily Consumption}{21}{chapter.4}% 
+\contentsline {chapter}{\chapternumberline {4}Models on the Daily Consumption}{23}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Linear regression}{21}{section.4.1}% 
+\contentsline {section}{\numberline {4.1}Linear regression}{23}{section.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Model assumptions}{21}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Model assumptions}{23}{subsection.4.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Simple linear regression model}{23}{section.4.2}% 
+\contentsline {section}{\numberline {4.2}Simple linear regression model}{25}{section.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Validation}{23}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.1}Validation}{25}{subsection.4.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Results}{24}{subsection.4.2.2}% 
+\contentsline {subsection}{\numberline {4.2.2}Results}{26}{subsection.4.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Multiple linear regression model}{24}{section.4.3}% 
+\contentsline {section}{\numberline {4.3}Multiple linear regression model}{26}{section.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Splines}{27}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.1}Splines}{29}{subsection.4.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Results}{28}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.2}Results}{30}{subsection.4.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Regression model for comparing houses}{29}{section.4.4}% 
+\contentsline {section}{\numberline {4.4}Regression model for comparing houses}{31}{section.4.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Validation}{29}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Validation}{31}{subsection.4.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Results}{30}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.2}Results}{32}{subsection.4.4.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Predictions}{31}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.3}Predictions}{34}{subsection.4.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Comparison}{35}{section.4.5}% 
+\contentsline {section}{\numberline {4.5}Comparison}{38}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Visualization of the results}{36}{section.4.6}% 
+\contentsline {section}{\numberline {4.6}Visualization of the results}{38}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{43}{chapter.5}% 
+\contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{45}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{43}{section.5.1}% 
+\contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{45}{section.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}The ARMA Models and Their Extensions}{46}{section.5.2}% 
+\contentsline {section}{\numberline {5.2}The ARMA Models and Their Extensions}{48}{section.5.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Applying the models}{49}{section.5.3}% 
+\contentsline {section}{\numberline {5.3}Applying the models}{51}{section.5.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Modelling with the ARIMA Function}{49}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.1}Modelling with the ARIMA Function}{52}{subsection.5.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Modelling with the MARIMA Function}{58}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.2}Predicting with the \texttt {arima} model}{59}{subsection.5.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Making Predictions}{58}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.3.3}Modelling with the MARIMA Function}{61}{subsection.5.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Visualization of the results}{58}{section.5.5}% 
+\contentsline {section}{\numberline {5.4}Making Predictions}{61}{section.5.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Discussion}{59}{chapter.6}% 
+\contentsline {section}{\numberline {5.5}Visualization of the results}{61}{section.5.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Future work}{59}{section.6.1}% 
+\contentsline {chapter}{\chapternumberline {6}Discussion}{63}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Tables}{65}{appendix.A}% 
+\contentsline {section}{\numberline {6.1}Future work}{63}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{68}{section.A.1}% 
+\contentsline {appendix}{\chapternumberline {A}Tables}{69}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{68}{section.A.2}% 
+\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{72}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{68}{subsection.A.2.1}% 
+\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{72}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{68}{section.A.3}% 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{72}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{68}{subsection.A.3.1}% 
+\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{72}{section.A.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{69}{appendix.B}% 
+\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{72}{subsection.A.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{75}{section*.6}% 
+\contentsline {appendix}{\chapternumberline {B}Figures}{73}{appendix.B}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{79}{section*.6}% 
