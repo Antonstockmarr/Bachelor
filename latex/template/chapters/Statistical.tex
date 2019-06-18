@@ -252,7 +252,7 @@ When looking at the results of the different tests in \cref{tab: shapiro_simple_
 \section{Visualization of the results}
 Part of this project is also to give suggestions on how the results of the analyzes can be illustrated to the users of the WATTS app. \\
 
-\noindent The wind dependency showed in \cref{fig: Wplot55} and \cref{fig: Wplot18} can be converted to understandable plots in the following way: Each degree get one of the 3 colours, green, yellow and red, based on the 33.3\% prediction interval.  After subtracting the mean of the fit, if 0 is contained in thisinterval, the degree is coloured yellow.  If the entire interval is positive, the degree is coloured red.  Likewise if the entire interval is negative, the colour is green. Thus, the coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. For the users of the app, the wind direction is more intuitive as a compas on their phone.  Therefore the minimum of the lower bound of the 33.3\% prediction interval is subtracted from the fit, and then plotted as a coloured shape. The graph for the wind dependency on the consumption of house 55 and house 18 will look as follows:
+\noindent The wind dependency showed in \cref{fig: Wplot55} and \cref{fig: Wplot18} can be converted to understandable plots in the following way: Each degree get one of the 3 colours, green, yellow and red, based on the 33.3\% prediction interval.  After subtracting the mean of the fit, if 0 is contained in thisinterval, the degree is coloured yellow.  If the entire interval is positive, the degree is coloured red.  Likewise if the entire interval is negative, the colour is green. Thus, the coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. For the users of the app, the wind direction is more intuitive as a compas on their phone.  Therefore the minimum of the lower bound of the 33.3\% prediction interval is subtracted from the fit, and then plotted as a coloured shape. The graph for the wind dependency on the consumption of house 55 and house 18 will look as follows: 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/WKplot55.jpeg}
@@ -265,9 +265,9 @@ Part of this project is also to give suggestions on how the results of the analy
     \caption{Relative wind direction dependency for the consumption for house 18}
     \label{fig: WKplot18}
 \end{figure}
-\noindent 
+The red colour indicates where the house is most influential where the consumer must be most attentive in relation to e.g. replacement of windows or better insulation. \cref{fig: WKplot55} shows that the heat consumption in house 55 increases when the wind is coming from the west. 
 %The coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. \textcolor{red}{ref} shows that the heat consumption for house 55 is most affected when the wind comes from west. \textcolor{red}{Kan godt være boys lige skal kommentere lidt på det her.}
-\noindent \textcolor{red}{Not done}
+\noindent
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_55L.eps}
