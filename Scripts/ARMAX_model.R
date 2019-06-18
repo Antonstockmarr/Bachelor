@@ -36,10 +36,12 @@ names(Hus)
 Xor <- Hus[ ,c("ObsTime","Energy","Temperature","Radiation")]
 names(Xor) <- c("t","Qi","Te","G")
 
+plotpoints<-matrix(rep(0,15),nrow = 3)
+
 ## Do daily values
 Xday <- resample(Xor, 24*3600, tstart=trunc(Xor$t[1],"days"))
-summary(lm(Qi ~ Te + G, Xday))
-
+(pd<-summary(lm(Qi ~ Te + G, Xday)))
+plotpoints[,1]<-(pd$coefficients[2,1]+1.96*c(0,pd$coefficients[2,2],-pd$coefficients[2,2]))
 
 ## Maybe take only a period and resample
 ## X <- Xor[period("2019-01-01",Xor$t,"2019-01-31"), ]
@@ -85,9 +87,20 @@ summary(fit1)
 summary(fit2)
 summary(fit3)
 
-HLC.Qi.ARX(fit1)
-HLC.Qi.ARX(fit2)
-HLC.Qi.ARX(fit3)
+(h1<-HLC.Qi.ARX(fit1))
+(h2<-HLC.Qi.ARX(fit2))
+(h3<-HLC.Qi.ARX(fit3))
+(h4<-HLC.Qi.ARX(fit4))
+
+plotpoints[,2]<--1*(h1$HLC.Ta+1.96*c(0,sqrt(h1$VarHLC.Ta),-sqrt(h1$VarHLC.Ta)))
+plotpoints[,3]<--1*(h2$HLC.Ta+1.96*c(0,sqrt(h2$VarHLC.Ta),-sqrt(h2$VarHLC.Ta)))
+plotpoints[,4]<--1*(h3$HLC.Ta+1.96*c(0,sqrt(h3$VarHLC.Ta),-sqrt(h3$VarHLC.Ta)))
+plotpoints[,5]<--1*(h4$HLC.Ta+1.96*c(0,sqrt(h4$VarHLC.Ta),-sqrt(h4$VarHLC.Ta)))
+
+plot(plotpoints[1,],ylim=range(plotpoints))
+for(i in 1:5){
+  lines(c(i,i),c(plotpoints[2,i],plotpoints[3,i]),col=2)
+}
 
 acfccfPlot(fit2, X)
 val <- HLC.Qi.ARX(fit2)
@@ -158,17 +171,21 @@ pNoLag <- 1
 fit1 <- estimateARMAX(outName, inNames, pAR=1, pMA=1, noLagPattern, pNoLag)
 fit2 <- estimateARMAX(outName, inNames, pAR=2, pMA=1, noLagPattern, pNoLag)
 fit3 <- estimateARMAX(outName, inNames, pAR=3, pMA=1, noLagPattern, pNoLag)
+fit4 <- estimateARMAX(outName, inNames, pAR=4, pMA=1, noLagPattern, pNoLag)
 
 BIC(fit1)
 BIC(fit2)
 BIC(fit3)
+BIC(fit4)
 
 summary(fit1)
 summary(fit2)
 summary(fit3)
+summary(fit4)
 
 HLC.Qi.ARX(fit1)
 HLC.Qi.ARX(fit2)
 HLC.Qi.ARX(fit3)
+HLC.Qi.ARX(fit4)
 
 acfccfPlot(fit2, X)
