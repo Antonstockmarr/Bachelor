@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 20:13
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1756,7 +1756,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [7]) [8]
+) [7]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
@@ -1783,11 +1788,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
@@ -1976,11 +1976,15 @@ File: graphics/../../../figures/lmpred_col_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_col_55L.eps>
 File: graphics/../../../figures/lmpred_hist_55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_55L.pdf>
+ [39]
+Underfull \vbox (badness 2181) has occurred while \output is active []
+
+ [40]
 File: graphics/../../../figures/lmpred_col_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_col_18L.pdf>
 File: graphics/../../../figures/lmpred_hist_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_18L.pdf>
-) [39] [40] [41] [42] [43] [44] [45] [46]
+) [41] [42] [43] [44] [45] [46]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
@@ -2023,25 +2027,25 @@ LaTeX Warning: No positions in optional float specifier.
 
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
+File: graphics/../../../figures/TestWeatherDay.eps Graphic file (type eps)
+<graphics/../../../figures/TestWeatherDay.eps>
 File: graphics/../../../figures/arimax/arima1_pred_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima1_pred_55.pdf>
 File: graphics/../../../figures/arimax/arima1_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima1_pred_18.pdf>
+[61] [62]
 File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima2_pred_55.pdf>
 File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima2_pred_18.pdf>
-)
-Underfull \vbox (badness 1484) has occurred while \output is active []
-
- [61] [62] [63] [64] [65] [66] [67]
+ [63] [64] [65] [66] [67]) [68]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [68
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex) [69
 
 
 
-]) [69]
+]
 \openout2 = `appendices/AnAppendix.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [70
@@ -2151,20 +2155,22 @@ Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
  []
 
 
-Package biblatex Warning: Type 'package' not found on input line 45.
-
-
-LaTeX Warning: Empty bibliography on input line 45.
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
 
 [85
 
 ]
-No complaints by nag.
-File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
-<use graphics/DTU-frise-SH-15.pdf>
-[86
 
-]
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+No complaints by nag.
+[86]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
@@ -2176,7 +2182,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 74F17680E7C640D2E9CBC8D794FABCE7.
+(rerunfilecheck)             Checksum: C3AA775601ED087FF62A539C7FC25786.
 
 
 LaTeX Warning: There were undefined references.
@@ -2195,12 +2201,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 49905 strings out of 492933
- 960730 string characters out of 6133145
- 1715636 words of memory out of 5000000
- 53160 multiletter control sequences out of 15000+600000
- 554124 words of font info for 68 fonts, out of 8000000 for 9000
+ 49921 strings out of 492933
+ 961224 string characters out of 6133145
+ 1716019 words of memory out of 5000000
+ 53173 multiletter control sequences out of 15000+600000
+ 554132 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2745b,6240s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2745b,7984s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (96 pages).

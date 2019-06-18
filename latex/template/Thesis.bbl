@@ -19,6 +19,39 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{xts}{package}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
+      \endverb
+    \endentry
+    \entry{solaR}{package}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
+      \endverb
+    \endentry
+    \entry{forecast}{package}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
+      \endverb
+    \endentry
     \entry{vejr2018}{url}{}
       \name{author}{1}{}{%
         {{hash=a369368e07f40aa8fc35de01b87fa9c5}{%
