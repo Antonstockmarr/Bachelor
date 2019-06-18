@@ -158,7 +158,7 @@ lines(1:length(p$pred),p$pred+2*p$se,lty=2)
 lines(1:length(p$pred),p$pred-2*p$se,lty=2)
 lines((1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
-legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 
 
 # Kundeplot(s)
@@ -203,13 +203,13 @@ A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1
 
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP)
 
-plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Hourly consumption, [kWh]",main=paste("Predictions for house ",i))
 axis(1, at=c(length(tth[[1]][[i]]$Obstime),length(tth[[1]][[i]]$Obstime)+170,length(tth[[1]][[i]]$Obstime)+340), labels=c("17th","24th","31st"))
 lines(p$pred+2*p$se,lty=2)
 lines(p$pred-2*p$se,lty=2)
 lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
-legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 }
 
 #weather from test period:
@@ -225,4 +225,3 @@ plot(tmp.dat$WindDirection,type='o',lwd=1,ylab="Wind Direction [degrees]",xlab="
 axis(1, at=c(5,173,340), labels=c("17th","24th","31st"))
 plot(tmp.dat$WindSpeed,type='o',lwd=1,ylab="Wind Speed [m/s]",xlab="January 2019 [hours]",xaxt='n')
 axis(1, at=c(5,173,340), labels=c("17th","24th","31st"))
-

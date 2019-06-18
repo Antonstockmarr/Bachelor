@@ -38,10 +38,10 @@
 \BOOKMARK [1][]{section.5.1}{5.1\040Description\040of\040the\040Hourly\040Consumption}{chapter.5}% 38
 \BOOKMARK [1][]{section.5.2}{5.2\040The\040ARMA\040Models\040and\040Their\040Extensions}{chapter.5}% 39
 \BOOKMARK [1][]{section.5.3}{5.3\040Applying\040the\040models}{chapter.5}% 40
-\BOOKMARK [2][]{subsection.5.3.1}{5.3.1\040Modelling\040with\040the\040arima\040Function}{section.5.3}% 41
-\BOOKMARK [2][]{subsection.5.3.2}{5.3.2\040Modelling\040with\040the\040MARIMA\040Function}{section.5.3}% 42
-\BOOKMARK [1][]{section.5.4}{5.4\040Making\040Predictions}{chapter.5}% 43
-\BOOKMARK [1][]{section.5.5}{5.5\040Visualization\040of\040the\040results}{chapter.5}% 44
+\BOOKMARK [2][]{subsection.5.3.1}{5.3.1\040Modelling\040with\040the\040ARIMA\040Function}{section.5.3}% 41
+\BOOKMARK [2][]{subsection.5.3.2}{5.3.2\040Predicting\040with\040the\040ARIMA\040model}{section.5.3}% 42
+\BOOKMARK [2][]{subsection.5.3.3}{5.3.3\040Visualization\040of\040the\040results}{section.5.3}% 43
+\BOOKMARK [2][]{subsection.5.3.4}{5.3.4\040Modelling\040with\040the\040MARIMA\040Function}{section.5.3}% 44
 \BOOKMARK [0][]{chapter.6}{6\040Discussion}{}% 45
 \BOOKMARK [1][]{section.6.1}{6.1\040Future\040work}{chapter.6}% 46
 \BOOKMARK [0][]{appendix.A}{A\040Tables}{}% 47

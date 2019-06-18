@@ -13,7 +13,7 @@ library(grid)
 # Watts colors
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
 # Example using Watts colors
-plot(data[[1]]$Flow,col=Wcol[2])
+plot(data[[1]]$Flow,col=Wcol[4])
 
 
 # Average consumption -----------------------------------------------------
@@ -113,3 +113,23 @@ par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
 plot(Construction.Year,cons.areal,col="hotpink",pch = 19,xlab='Year of Construction',ylab = expression(paste("Consumption [",kWh/m^2,"]", sep = "")))
 points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col="hotpink", pch = 19)
 points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break.points[2]],col="hotpink", pch = 19)
+
+
+# Data segmentation -------------------------------------------------------
+weathertmp <- day.weather[day.weather$Date >= tail(day.avg$Date,1),]
+weathertmp <- weathertmp[weathertmp$Date <= head(day.avg$Date,1),]
+plot(day.avg$Volume*day.avg$CoolingDegree*cc, col = 1+c(weathertmp$Temperature>=15)+2*c(weathertmp$Temperature<12))
+weathertmp$col <- cut(weathertmp$Temperature, breaks = c(-Inf, 12, 15, Inf), labels = c("Summer period","]12;15] in Degrees/C", "Winter period"))
+legend_title <- "Classification"
+
+break.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Volume*CoolingDegree*cc, color = weathertmp$col)) +
+  geom_point(shape = 1, size = 2) + scale_color_manual(legend_title, values = c(Wcol[2], Wcol[1], Wcol[4])) + 
+  ggtitle("Classification of summer and winter periods") + xlab("Time [days]") + 
+  ylab("Avg. consumption [kWh]")
+
+{
+  pdf(file = "../figures/daily_cons.pdf",width = 4.5,height = 2.8,pointsize = 9)
+  par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
+  grid.arrange(avg.plot1, day.plot.gak, day.plot.flot, nrow = 3)
+  dev.off()
+  }

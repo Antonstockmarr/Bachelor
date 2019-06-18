@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  17 JUN 2019 20:19
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 15:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1533,14 +1533,7 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux
-
-LaTeX Warning: Label `fig: weather_pred' multiply defined.
-
-
-LaTeX Warning: Label `fig: weather_pred@cref' multiply defined.
-
-))
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1617,7 +1610,15 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl)
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                chap: daily
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
 
@@ -1782,7 +1783,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--9
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
@@ -1791,12 +1792,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
 
 ]
-Overfull \hbox (87.80006pt too wide) in paragraph at lines 41--60
+Overfull \hbox (87.80006pt too wide) in paragraph at lines 42--61
  [][] 
  []
 
 
-Overfull \hbox (9.66005pt too wide) in paragraph at lines 65--82
+Overfull \hbox (9.66005pt too wide) in paragraph at lines 66--83
  [][] 
  []
 
@@ -1807,7 +1808,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `chapters/Exploratory.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--3
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
@@ -1825,7 +1826,7 @@ File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
  [8]
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
@@ -1833,63 +1834,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 File: graphics/../../../figures/byggeaar.eps Graphic file (type eps)
 <graphics/../../../figures/byggeaar.eps>
  [10]
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
 File: graphics/../../../figures/gg_cor.pdf Graphic file (type pdf)
 <use graphics/../../../figures/gg_cor.pdf>
 
-Underfull \hbox (badness 1038) in paragraph at lines 83--83
+Underfull \hbox (badness 1038) in paragraph at lines 84--84
 [][]\TU/lmr/m/n/10 Scatterplot showing the correlations between the thwo attributes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--87
+Underfull \hbox (badness 10000) in paragraph at lines 80--88
 
  []
 
 [11]
-Overfull \hbox (32.79005pt too wide) in paragraph at lines 91--108
+Overfull \hbox (32.79005pt too wide) in paragraph at lines 92--109
  [][] 
  []
 
 [12] [13]
 File: graphics/../../../figures/Consumption_PW.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Consumption_PW.pdf>
-
-
-LaTeX Warning: Reference `fig: Breakpoint' on page 14 undefined on input line 156.
-
-[14] [15]
-
-LaTeX Warning: Reference `fig: Breakpoint' on page 16 undefined on input line 163.
-
+ [14]
+File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
+<graphics/../../../figures/class_breakpoint.eps>
 File: graphics/../../../figures/Breakpoint_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_55.pdf>
 File: graphics/../../../figures/Breakpoint_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_18.pdf>
 File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
 <graphics/../../../figures/AlphaHist.jpeg>
-) [16] [17] [18] [19]
+) [15] [16] [17] [18] [19] [20] [21]
 \openout2 = `chapters/Statistical.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [20
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [22
 
 
 
-] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
+] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
@@ -1897,36 +1893,37 @@ File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
 File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm55.pdf>
-[23] [24]
-Underfull \vbox (badness 2573) has occurred while \output is active []
+[25] [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+ [27]
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
 
  []
 
-[26]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
 File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
 <graphics/../../../figures/SplineBasis.jpeg>
- [27]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
- []
+Underfull \vbox (badness 2564) has occurred while \output is active []
 
-[28] [29]
+ [29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
 File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm18L.pdf>
 File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm55L.pdf>
+ [31]
 File: graphics/../../../figures/Temp_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Temp_coef.pdf>
 File: graphics/../../../figures/Solar_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Solar_coef.pdf>
+ [32]
 File: graphics/../../../figures/weather_pred.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_pred.pdf>
 File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
@@ -1934,14 +1931,17 @@ File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
 File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_18L.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--236
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33] [34] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
 
-Underfull \vbox (badness 1019) has occurred while \output is active []
+Underfull \vbox (badness 1137) has occurred while \output is active []
 
- [30] [31]
+ [36]
 File: graphics/../../../figures/Wplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot55.jpeg>
 File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
@@ -1949,24 +1949,19 @@ File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32] [33]
+ [37]
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
+
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
+ [38]
 File: graphics/../../../figures/WKplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/WKplot55.jpeg>
 File: graphics/../../../figures/WKplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/WKplot18.jpeg>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-Overfull \vbox (28.63037pt too high) has occurred while \output is active []
-
- [36]
-Overfull \vbox (14.81992pt too high) has occurred while \output is active []
-
- [37]
 File: graphics/../../../figures/lmpred_col_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_col_55L.eps>
 File: graphics/../../../figures/lmpred_hist_55L.pdf Graphic file (type pdf)
@@ -1975,84 +1970,67 @@ File: graphics/../../../figures/lmpred_col_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_col_18L.pdf>
 File: graphics/../../../figures/lmpred_hist_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_18L.pdf>
-) [38] [39] [40]
+) [39] [40] [41] [42] [43] [44]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
 File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_summer.pdf>
-
-
-LaTeX Warning: Float too large for page by 37.5915pt on input line 10.
-
 File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_winter.pdf>
-
-LaTeX Warning: Float too large for page by 1.5915pt on input line 18.
-
-[41
+ [45
 
 
 
-] [42] [43]
+] [46] [47]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/HourDistribution.jpeg>
- [44] [45] [46]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 87.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 87.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 87.
-
-[47]
+ [48] [49] [50] [51]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
+ [52] [53]
 File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_55.pdf>
 File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_18.pdf>
- [48] [49] [50] [51]
+ [54] [55] [56]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 141.
+               Default added (so using `tbp') on input line 148.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 153.
+               Default added (so using `tbp') on input line 160.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
-
-Underfull \vbox (badness 1377) has occurred while \output is active []
-
- [52] [53]
+[57] [58]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 179.
+               Default added (so using `tbp') on input line 186.
 
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
+File: graphics/../../../figures/arimax/arima1_pred_55.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/arima1_pred_55.pdf>
+File: graphics/../../../figures/arimax/arima1_pred_18.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/arima1_pred_18.pdf>
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1484) has occurred while \output is active []
 
- [54] [55] [56]
+ [59] [60] [61] [62] [63]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex) [57
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [64
 
 
 
-]
+]) [65]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [58
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [66
 
 
 
@@ -2067,7 +2045,7 @@ Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
  []
 
 
-LaTeX Warning: Float too large for page by 30.25996pt on input line 298.
+LaTeX Warning: Float too large for page by 54.25996pt on input line 298.
 
 
 Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
@@ -2077,13 +2055,13 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [59] [60] [61] [62]
+ [67] [68] [69] [70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63] [64] [65]
-Overfull \vbox (50.57715pt too high) has occurred while \output is active []
+ [71] [72] [73]
+Overfull \vbox (74.57715pt too high) has occurred while \output is active []
 
- [66]
+ [74]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
@@ -2101,15 +2079,16 @@ Overfull \hbox (1.68883pt too wide) in paragraph at lines 349--350
 
 LaTeX Warning: Float too large for page by 1.81111pt on input line 352.
 
-File: graphics/../../../figures/weather_pred.pdf Graphic file (type pdf)
-<use graphics/../../../figures/weather_pred.pdf>
 File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [67
+) [75
 
-] [68] [69] [70] [71] [72]
+] [76] [77] [78] [79] [80
+
+
+]
 
 Package biblatex Warning: No driver for entry type 'sne'.
 (biblatex)                Using fallback driver on input line 42.
@@ -2148,15 +2127,13 @@ Package biblatex Warning: No driver for entry type 'url'.
 Package biblatex Warning: No driver for entry type 'paper'.
 (biblatex)                Using fallback driver on input line 42.
 
-[73
-
-
+[81
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[74
+[82
 
 ]
 \tf@toc=\write7
@@ -2170,26 +2147,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7D1115655DC7533787DB0C8F1A363520.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: B2F78D97A60026F8290ED41E8BE5D1B6.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49881 strings out of 492933
- 959452 string characters out of 6133145
- 1710305 words of memory out of 5000000
- 53139 multiletter control sequences out of 15000+600000
- 558141 words of font info for 73 fonts, out of 8000000 for 9000
+ 49891 strings out of 492933
+ 959999 string characters out of 6133145
+ 1714251 words of memory out of 5000000
+ 53148 multiletter control sequences out of 15000+600000
+ 554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2056b,6211s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2745b,6213s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (84 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (92 pages).

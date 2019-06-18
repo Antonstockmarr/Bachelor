@@ -1,10 +1,11 @@
 \chapter{Models on the Hourly Consumption}
-In this section, a more detailed look at the hourly consumption will be provided. One of the goals is to get a better understanding of the tap-water consumption during the summer period, such that it can be used when looking at the winter period. This can be done by looking at the distributions of the consumption during the day in the two periods. Another goal of this section is to model the hourly consumption as a time series. An ARIMAX model will be applied to give a better understanding of the data. The ARIMAX model can also be used to give short term predictions of the consumption. These predictions will be compared to the ones provided by the multiple regression model.
+\label{chap: hourly}
+In this section, a more detailed look at the hourly consumption will be provided. One of the goals is to get a better understanding of the tap-water consumption during the summer period, such that it can be used when looking at the winter period. This can be done by looking at the distributions of the consumption during the day in the two periods. Another goal of this section is to model the hourly consumption as a time series. An ARIMAX model will be applied to give a better understanding of the data. The ARIMAX model can also be used to give short term predictions of the consumption, and to give a alternative way of estimating the temperature dependency. These estimates will later be compared to the ones found with the linear regression models.
 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{../../../figures/Heatmap_summer.pdf}
+    \includegraphics[width=0.9\textwidth]{../../../figures/Heatmap_summer.pdf}
     \caption{The normalized average consumption of every house during the day in the summer period. This is characterized by the days where the average outside temperature is above 15 degrees. The horizontal lines indicate the hours and each vertical strip is a house. The scale indicates the fraction of the total consumption during the day}
     \label{fig: Hourcons_summer}
 \end{figure}
@@ -12,7 +13,7 @@ In this section, a more detailed look at the hourly consumption will be provided
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{../../../figures/Heatmap_winter.pdf}
+    \includegraphics[width=0.9\textwidth]{../../../figures/Heatmap_winter.pdf}
     \caption{This figure shows the same as \cref{fig: daily_cons}, but only in the winter period, characterized by an outside temperature below 12 degrees}
     \label{fig: Hourcons_winter}
 \end{figure}
@@ -28,7 +29,7 @@ In this section, a more detailed look at the hourly consumption will be provided
 \noindent The winter period on \cref{fig: Hourcons_winter} is a bit different. There are still significant peaks in the morning, and to some extent in the evening as well, but in general the consumption is more spread out on the entire day. This is mostly because of the heating consumption in the winter period. While people are not at home or while they are sleeping, the heating is still turned on. The highest peaks only go to $8\%$ of the daily consumption here. One house stands out in this plot. A bit to the left of the middle there is a house where the consumption is several times higher between $8$ AM and $12$ noon. This house has almost no consumption during the night. But the house is not a commercial building and its area is only 138 $m^2$. So this house appears to have an efficient night time drop for their thermostat.
 
 
-\noindent These figures illustrate the general trend of the houses, but it is hard to compare them in a meaningful way. But \cref{fig: Season_dist} shows the average distribution of all houses during the day. Both the winter season and the summer season show the same trends that was discussed above. But this plot also shows how the winter period is more smoothed out than the summer period. Keep in mind that the lines only show the relative distribution, and they do not take into account that the consumption in the winter period is significantly higher. As one can see on the y-axis, the difference between the two curves is very small. A night time period can be defined as the hours $23-05$. This is the period after the consumption drops in the evening, and before it rises in the morning. In this period, the houses on average use $21,9\%$ of their daily consumption in the summer period, and $23,7\%$ in the winter period. A completely uniform consumption would be $25\%$. It is not surpricing that the consumption in the night hours is lower than the average. Neither is it surpricing that the consumption at night in the summer period is relatively smaller than in the winter period. The extra cost of heating the house makes the consumption more spread out on the 24 hours of the day. But it is surpricing that the difference between the summer period and the winter period is only $1.8$ percentage points. With this in mind, the time series modelling will now be introduced. 
+\noindent These figures illustrate the general trend of the houses, but it is hard to compare them in a meaningful way. But \cref{fig: Season_dist} shows the average distribution of all houses during the day. Both the winter season and the summer season show the same trends that was discussed above. But this plot also shows how the winter period is more smoothed out than the summer period. Keep in mind that the lines only show the relative distribution, and they do not take into account that the consumption in the winter period is significantly higher. As one can see on the y-axis, the difference between the two curves is very small. A night time period can be defined as the hours $23-05$. This is the period after the consumption drops in the evening, and before it rises in the morning. In this period, the houses on average use $21,9\%$ of their daily consumption in the summer period, and $23,7\%$ in the winter period. A completely uniform consumption would be $25\%$. It is not surpricing that the consumption in the night hours is lower than the average. Neither is it surpricing that the consumption at night in the summer period is relatively smaller than in the winter period. The extra cost of heating the house makes the consumption more spread out on the 24 hours of the day. But it is surpricing that the difference between the summer period and the winter period is only $1.8$ percentage points. With this in mind, the time series modelling will now be introduced.
 
 \noindent In addition, \cref{fig:HourDistribution} is used to detect the significant intervals during a day in relation to the consumption. It is clearly seen that the time interval with highest consumption is 06-11 am and around 6 pm. \textcolor{red}{Not done}
 
@@ -68,7 +69,7 @@ where $d\in \mathbb{N}$ is the differencing factor. Apart from the long term tre
     \phi (B) \Phi (B^s) \Delta^d \Delta_s^D Y_t = \theta (B) \Theta (B^s) \epsilon_t.
     \label{eq:ARIMA}
 \end{equation}
-This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\theta$ are defined as in \cref{ARIMA}. But here $\Phi$ and $\Theta$ are also included. They are polynomials in $B^s$ of degree $P$ and $Q$ respectively. $D$ is the differencing of the seasonal component of the model. 
+This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\theta$ are defined as in \cref{ARIMA}. But here $\Phi$ and $\Theta$ are also included. They are polynomials in $B^s$ of degree $P$ and $Q$ respectively. $D$ is the differencing of the seasonal component of the model.
 
 \noindent In this particular project we have access to the consumption, but also to the weather data. The exploratory analysis showed that there was a significant correlation between consumption and temperature. The temperature is also a time series, and it can be used as input to the ARIMA model to make a better fit. This is called using an exogenous variable. When an exogenous variable is used, the model is called an ARIMAX model. The following part is based on chapter $8$ in \cite{Time_Series_Analysis} and the $R$ documentation. The model looks like this
 
@@ -80,18 +81,24 @@ This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\t
 where $X_t$ is the exogenous variable and $\omega(B)$ is a polynomial in $B$. The exogenous part can also be differenced or have seasonal components, but in this project those extensions will not be explored. In fact only $\omega(B)=\omega_0$ will be used in the modelling process. The software used for the arima processes is of course $R$, but in particular the $arima$ function. This function does not estimate the exogenous parameters according to \cref{eq:ARIMAX}. It actually starts out by making a regression of the series $\{Y_t\}$ on the exogenous variable $\{X_t\}$. Then this fit is substituted for $Y_t$ in \cref{eq:ARIMA}. This approach is less precise, since it executes the parameter estimation in two steps, first for the exogenuous variable, then for the rest of the variables. An alternative method is to use the \texttt{MARIMA} package in \texttt{R}. This package computes the estimates in \cref{eq:ARIMAX} by using different approximation methods than the \texttt{arima} function. Neither methods should be considered "correct", but they produce different results.
 
 \section{Applying the models}
-In this section, different ARIMAX models will be applied to the data. First the \texttt{arima} function in \texttt{R} will be used to test different models. The models will include a season of 24 hours. Then the chosen model will be compared with the /\texttt{MARIMA} function. In the next section the models will be used to make predictions on the data.
+In this section, different ARIMAX models will be applied to the data. First the \texttt{arima} function in \texttt{R} will be used to test different models. The models will include a season of 24 hours. The \texttt{arima} models will then be used to make predictions on data not used for training, to see how well the ARIMAX model performs in general on the data set. Examples will be given on how such predictions could be visualized in WATTS. After that, new models will be generated using the \texttt{marima} package in \texttt{R}. These models will be used to calculate the impulse response of the temperature, which can be compared to the temperature estimates in the linear regression models. To apply time series models, the data has to be complete without gaps. For this reason the entire data set is used, not only the winter period. Two weeks in january 2019 are left out for testing. But the temperature $T$ used as regression variable in the model is altered to $T'$, such that
+\begin{equation}
+    T' = \begin{cases}
+        \alpha - T & \text{if } T\leq \alpha\\
+        0 & \text{Otherwise}
+    \end{cases},
+\end{equation}
+where $\alpha$ is the threshold of 12 degrees found in the exploratory analysis.
 
-\textcolor{red}{Vi bruger både sommer og vinter. Temperaturen er lavet om til antal grader under 12.}
 
-\subsection{Modelling with the $arima$ Function}
+\subsection{Modelling with the ARIMA Function}
 To generate a model, one must decide a model order. It is important that the model is not too complex. With the amount of data available for each house, too many parameters in the model causes the running time to increase drastically. More importantly, sometimes the optimization method used in the $arima$ function does not converge. This happens more often when there are more parameters, and the model should be applicaple to as many different houses as possible. As mentioned in the section above, stationarity is an important property. If the order of the autoregressive part (both non-seasonal and seasonal) is too high, the model will not be stationary unless differencing is used. Differencing on the other hand makes the model more obscure and harder to interpret. If the model is only differenced once, it means that it models the difference between one hour and the one before that. If the seasonal part is differenced, it models the difference between an hour and the same hour the day before.
 
 \noindent These considerations have led to the conclusion that a $(1,0,1)\times (1,0,1)$ model is a good starting point. Written in the form of \cref{eq:ARIMA} it is
 \begin{equation}
     (1-\phi_1 B)(1-\Phi_1 B^{24})Y_t = (1+\theta_1 B)(1+\Theta_1 B^{24}) \epsilon_t. \label{eq:model1}
 \end{equation}
-The negative sign of the $\phi$ values is due to the convention of the $arima$ function, where $Y_t$ is isolated to one side of the equation. The model can also be formulated as
+The negative sign of the $\phi$ values is due to the convention of the \texttt{arima} function, where $Y_t$ is isolated to one side of the equation. The model can also be formulated as
 \begin{align}
     Y_t = &\phi_1 Y_{t-1} + \Phi_1 Y_{t-24} + \phi_1 \cdot \Phi_1  Y_{t-25}\\  &+ \theta_1 \epsilon_{t-1} + \Theta_1 \epsilon_{t-24} + \theta_1 \cdot \Theta_1 \cdot \epsilon_{t-25} + \epsilon_t. \nonumber
 \end{align}
@@ -121,7 +128,7 @@ This shows clearly how the model now operates on the difference between a value 
     \includegraphics[width=0.8\textwidth]{../../../figures/arimax/Roots_55.pdf}
     \caption{The roots of the second model when applied to house 55.}
     \label{fig:Model2_stationarity55}
-\end{figure}    
+\end{figure}
 
 
 \begin{figure}
@@ -129,7 +136,7 @@ This shows clearly how the model now operates on the difference between a value 
     \includegraphics[width=0.8\textwidth]{../../../figures/arimax/Roots_18.pdf}
     \caption{The roots of the second model when applied to house 18.}
     \label{fig:Model2_stationarity18}
-\end{figure}    
+\end{figure}
 
 \noindent After considering the stationarity of the model, the significance of the parameters is examined. The model is applied to $70$ houses, making it hard to evaluate based on a few houses. \cref{tab:ParamSig_Model1} gives an overview of how many models have significant parameters. It shows how many of the houses have parameters below two and three standard deviations respectively. It can be seen that the seasonal AR1 is the parameter that is most often not significant. For $36$ of the houses the parameter value is below two standard deviations, which is about half of the houses. For $50$ of the houses, the parameter is below three standard deviations, so most of them are not significant, or barely significant. Looking specifically at house 55, the parameter values and standard deviations are listed in \cref{tab:ParamSig_House55}. Here the seasonal AR is only just a little bit bigger than the standard deviation, making it insignificant. If the estimates were inserted into \cref{model101111}, one would get the equation
 \begin{align}
@@ -143,7 +150,7 @@ This is after regression with the temperature has been substituted for the $Y_t$
     \begin{tabular}{l|ccccc}
     \hline
     \textbf{Parameters} & \textbf{AR1} & \textbf{MA1} & \textbf{SAR1} & \textbf{SMA1} & \textbf{Temperature} \\ \hline \hline
-    Below 2 sd & 0   & 3   & 36   & 0    & 6           \\ 
+    Below 2 sd & 0   & 3   & 36   & 0    & 6           \\
     Below 3 sd & 0   & 3   & 50   & 0    & 14          \\ \hline
     \end{tabular}
     \caption{The number of houses where each parameter is below two standard deviations and three standard deviations respectively. The $(1,0,1)\times (1,1,1)$ model was applied to $70$ houses in total. The average log likelihood of the model is $-6999$}
@@ -155,7 +162,7 @@ This is after regression with the temperature has been substituted for the $Y_t$
     \begin{tabular}{l|ccccc}
     \hline
     \textbf{House 55} & \textbf{AR1} & \textbf{MA1} & \textbf{SAR1} & \textbf{SMA1} & \textbf{Temperature} \\ \hline \hline
-    Estimate           & 0.9949 & -0.9124 & -0.0122 & -0.9572 & 0.0288      \\ 
+    Estimate           & 0.9949 & -0.9124 & -0.0122 & -0.9572 & 0.0288      \\
     Standard deviation & 0.0013 & 0.0048  & 0.0111  & 0.0043  & 0.0045      \\ \hline
     \end{tabular}
     \caption{The estimates of the parameters for the $(1,0,1)\times (1,1,1)$ model together with their standard deviations for house 55. The log likelihood of the model is $-5791$}
@@ -167,7 +174,7 @@ This is after regression with the temperature has been substituted for the $Y_t$
     \includegraphics[width=0.8\textwidth]{../../../figures/arimax/ACF_55_short.pdf}
     \caption{The acf and pacf of the second model when applied to house 55. The 24 hour seasons are highlighted with red dashed lines. The blue lines indicate the 95\% confidence interval}
     \label{fig:Model2_acf_55}
-\end{figure}    
+\end{figure}
 
 
 \noindent Now the model will be evaluated for house 18. The estimates for the model are listed in \cref{tab:ParamSig_House18}. Here the seasonal AR1 is even more insignificant than it was for house 55, being less than the standard deviation. The log likelihood of the model for this house $(-12780)$ is also much lower than for house 55 $(-5791)$, or than the average of the model $(-6999)$. After insertion into \cref{model101111} the model for house 18 is
@@ -181,7 +188,7 @@ This is again after the regression fit with the temperature has been substituted
     \begin{tabular}{l|ccccc}
     \hline
     \textbf{House 18} & \textbf{AR1} & \textbf{MA1} & \textbf{SAR1} & \textbf{SMA1} & \textbf{Temperature} \\ \hline \hline
-    Estimate           & 0.3751 & 0.2672 & 0.008 & -0.9559 & 0.0825      \\ 
+    Estimate           & 0.3751 & 0.2672 & 0.008 & -0.9559 & 0.0825      \\
     Standard deviation & 0.0171 & 0.0175 & 0.011 & 0.0040  & 0.0078      \\ \hline
     \end{tabular}
     \caption{The estimates of the parameters for the $(1,0,1)\times (1,1,1)$ model together with their standard deviations for house 18. The log likelihood of the model is $-12780$}
@@ -194,12 +201,43 @@ This is again after the regression fit with the temperature has been substituted
     \includegraphics[width=0.8\textwidth]{../../../figures/arimax/ACF_18_short.pdf}
     \caption{The acf and pacf of the second model when applied to house 18. The 24 hour seasons are highlighted with red dashed lines. The blue lines indicate the 95\% confidence interval}
     \label{fig:Model2_acf_18}
-\end{figure}    
+\end{figure}
 
 
+\subsection{Predicting with the ARIMA model}
+Now the model found above will be used for predictions. The test data used is two weeks in January 2019. The predictions are made using the \texttt{R} function \texttt{predict}. The  weather data used as input can be seen in \cref{fig: weather_pred}. Just as in the linear regression model, the input series is assumed to be a perfect prediction without measuring errors. The predictions are not one-step predictions, but 14 step predictions. The results of applying the predictions to house 55 can be seen in figure \cref{fig:arima1_pred_55}. It very quickly becomes clear that the data behaves very differently than the model predicts. There are a lot of very high spikes, each followed by an hour with zero consumption. This tendency is not captured at all in the model, and it is clear that the time series models cannot be used for anything useful for this house unless the data is altered in some way. House 18 in figure \cref{fig:arima1_pred_18} shows the same unexpected behavior. There seems to be no connection between the time of day and the massive spikes for either of the houses. And since the spikes are usually followed by a consumption of precisely zero, the behavior seems to be linked to how the data is collected and pre-processed by Aalborg Forsyning. Given that the anomalities come in pairs of measurements that are two or three times higher than the neighbours and than measurements of zero, the most plausible explanation is that several measurements are accidentially grouped into a single hour interval, leaving the next interval with no consumption. The phenomenon with a high spike followed by a zero happens in almost every \textcolor{red}{snak med Finn om hvor tit det sker}
 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/arimax/arima1_pred_55.pdf}
+    \caption{Predictions of the arima model for house 55. The data is so far from the predictions and oscillerate so much that the model should not be relied upon}
+    \label{fig:arima1_pred_55}
+\end{figure}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/arimax/arima1_pred_18.pdf}
+    \caption{Predictions of the arima model for house 18. This is just as bad as for house 18}
+    \label{fig:arima1_pred_18}
+\end{figure}
+
+
+\noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/arimax/arima2_pred_55.pdf}
+    \caption{Predictions of the arima model for house 55 on the modified data. There are still a few spikes, but the model performs reasonable on this data set}
+    \label{fig:arima1_pred_55}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/arimax/arima2_pred_18.pdf}
+    \caption{Predictions of the arima model for house 18 on the modified data.}
+    \label{fig:arima1_pred_18}
+\end{figure}
 
 
 \subsection{Modelling with the MARIMA Function}
@@ -207,7 +245,9 @@ This is again after the regression fit with the temperature has been substituted
 
 
 
-\section{Making Predictions}
 
-\section{Visualization of the results} 
 
+
+\subsection{Visualization of the results}
+
+\subsection{Modelling with the MARIMA Function}
