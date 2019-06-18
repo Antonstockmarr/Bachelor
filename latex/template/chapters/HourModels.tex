@@ -80,7 +80,7 @@ This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\t
 where $X_t$ is the exogenous variable and $\omega(B)$ is a polynomial in $B$. The exogenous part can also be differenced or have seasonal components, but in this project those extensions will not be explored. In fact only $\omega(B)=\omega_0$ will be used in the modelling process. The software used for the arima processes is of course $R$, but in particular the $arima$ function. This function does not estimate the exogenous parameters according to \cref{eq:ARIMAX}. It actually starts out by making a regression of the series $\{Y_t\}$ on the exogenous variable $\{X_t\}$. Then this fit is substituted for $Y_t$ in \cref{eq:ARIMA}. This approach is less precise, since it executes the parameter estimation in two steps, first for the exogenuous variable, then for the rest of the variables. An alternative method is to use the \texttt{MARIMA} package in \texttt{R}. This package computes the estimates in \cref{eq:ARIMAX} by using different approximation methods than the \texttt{arima} function. Neither methods should be considered "correct", but they produce different results.
 
 \section{Applying the models}
-In this section, different ARIMAX models will be applied to the data. First the \texttt{arima} function in \texttt{R} will be used to test different models. The models will include a season of 24 hours. The \texttt{arima} models will then be used to make predictions on data not used for training, to see how well the ARIMAX model performs in general on the data set. Examples will be given on how such predictions could be visualized in WATTS. After that, new models will be generated using the \texttt{marima} package in \texttt{R}. These models will be used to calculate the impulse response of the temperature, which can be compared to the temperature estimates in the linear regression models. To apply time series models, the data has to be complete without gaps. For this reason the entire data set is used, not only the winter period. A month in january 2019 is left out for testing. But the temperature $T$ used as regression variable in the model is altered to $T'$, such that
+In this section, different ARIMAX models will be applied to the data. First the \texttt{arima} function in \texttt{R} will be used to test different models. The models will include a season of 24 hours. The \texttt{arima} models will then be used to make predictions on data not used for training, to see how well the ARIMAX model performs in general on the data set. Examples will be given on how such predictions could be visualized in WATTS. After that, new models will be generated using the \texttt{marima} package in \texttt{R}. These models will be used to calculate the impulse response of the temperature, which can be compared to the temperature estimates in the linear regression models. To apply time series models, the data has to be complete without gaps. For this reason the entire data set is used, not only the winter period. Two weeks in january 2019 are left out for testing. But the temperature $T$ used as regression variable in the model is altered to $T'$, such that
 \begin{equation}
     T' = \begin{cases}
         \alpha - T & \text{if } T\leq \alpha\\
@@ -203,7 +203,8 @@ This is again after the regression fit with the temperature has been substituted
 \end{figure}    
 
 
-
+\subsection{Predicting with the \texttt{arima} model}
+Now the model found above will be used for predictions. The test data used is two weeks in January 2019
 
 
 
