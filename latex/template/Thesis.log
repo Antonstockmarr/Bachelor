@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 12:27
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1950,18 +1950,18 @@ File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [37]
-File: graphics/../../../figures/WKplot55.jpeg Graphic file (type bmp)
-<graphics/../../../figures/WKplot55.jpeg>
- [38]
-File: graphics/../../../figures/WKplot18.jpeg Graphic file (type bmp)
-<graphics/../../../figures/WKplot18.jpeg>
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
+
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39]
-Overfull \vbox (14.81992pt too high) has occurred while \output is active []
-
- [40]
+ [38]
+File: graphics/../../../figures/WKplot55.jpeg Graphic file (type bmp)
+<graphics/../../../figures/WKplot55.jpeg>
+File: graphics/../../../figures/WKplot18.jpeg Graphic file (type bmp)
+<graphics/../../../figures/WKplot18.jpeg>
 File: graphics/../../../figures/lmpred_col_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_col_55L.eps>
 File: graphics/../../../figures/lmpred_hist_55L.pdf Graphic file (type pdf)
@@ -1970,19 +1970,19 @@ File: graphics/../../../figures/lmpred_col_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_col_18L.pdf>
 File: graphics/../../../figures/lmpred_hist_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_18L.pdf>
-) [41] [42] [43]
+) [39] [40] [41] [42] [43] [44]
 \openout2 = `chapters/HourModels.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex [44
-
-
-
-]
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
 File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_summer.pdf>
 File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_winter.pdf>
- [45] [46] [47]
+ [45
+
+
+
+] [46] [47]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
@@ -2144,18 +2144,22 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 096C787811233735FB977105BCAF5B64.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49884 strings out of 492933
- 959598 string characters out of 6133145
+ 49883 strings out of 492933
+ 959588 string characters out of 6133145
  1713730 words of memory out of 5000000
- 53141 multiletter control sequences out of 15000+600000
+ 53140 multiletter control sequences out of 15000+600000
  554132 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2722b,6213s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2745b,6213s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (90 pages).
