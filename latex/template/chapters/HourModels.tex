@@ -1,6 +1,6 @@
 \chapter{Models on the Hourly Consumption}
 \label{chap: hourly}
-In this section, a more detailed look at the hourly consumption will be provided. One of the goals is to get a better understanding of the tap-water consumption during the summer period, such that it can be used when looking at the winter period. This can be done by looking at the distributions of the consumption during the day in the two periods. Another goal of this section is to model the hourly consumption as a time series. An ARIMAX model will be applied to give a better understanding of the data. The ARIMAX model can also be used to give short term predictions of the consumption, and to give a alternative way of estimating the temperature dependency. These estimates will later be compared to the ones found with the linear regression models. \textcolor{red}{Vi skal nok lige tilføje her at main goalet er at undersøge hvorvidt estimaterne fra regressionsmodellerne kan forbedres ved at undersøge timeværdierne.}
+In this section, a more detailed look at the hourly consumption will be provided. One of the goals is to get a better understanding of the tap-water consumption during the summer period, such that it can be used when looking at the winter period. This can be done by looking at the distributions of the consumption during the day in the two periods. Another goal of this section is to model the hourly consumption as a time series. An ARIMAX model will be applied to give a better understanding of the data. The ARIMAX model can also be used to give short term predictions of the consumption, and to give a alternative way of estimating the temperature dependency. These estimates will later be compared to the ones found with the linear regression models. 
 
 
 \begin{figure}
@@ -226,6 +226,22 @@ Now the model found above will be used for predictions. The test data used is tw
 
 \noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data. 
 
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/arimax/arima2_pred_55.pdf}
+    \caption{Predictions of the arima model for house 55 on the modified data. There are still a few spikes, but the model performs reasonable on this data set}
+    \label{fig:arima1_pred_55}
+\end{figure}    
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/arimax/arima2_pred_18.pdf}
+    \caption{Predictions of the arima model for house 18 on the modified data.}
+    \label{fig:arima1_pred_18}
+\end{figure}    
 
 
 

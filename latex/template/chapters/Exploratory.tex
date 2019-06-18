@@ -142,13 +142,7 @@ For each degree interval below 20 degrees, if 80\% of the points in that interva
 \noindent In general, this model is more robust than the first. It is more selective, and provides a good way to set the threshold on the correct side of the mentioned "tail" that may occur at temperatures both with and without heating.
 When comparing \cref{fig: Breakpoint55} and \cref{fig: Breakpoint18} to \cref{fig: Consumption-PW}, one can see that this method sets the breakpoint a bit lower, removing more points without heating. If the consumption data behaves badly, and chunks of datapoints are low enough to be within the confidence interval, then a lot of data can potentially be removed, and there might be too little data left.
 
-Until now the focus has been to find a threshold for every individual house. But the goal is to have a general classification of the winter period. Figure \ref{fig: AlphaHist} shows a histogram of the breakpoint values for every house in the data set. The global breakpoint should be in the low end of the scale. It is better to remove data points that could have been used, than to include too many points that belong to a different distribution with a different variation, which could make the assumptions of the model worse. It would not be good to choose the minimum breakpoint, since that would be very vulnerable. A single house with a very low breakpoint might make the model bad for all the other houses. So the breakpoint that is chosen is the first quantile. As it is shown on the figure, this is 12 degrees. All models in the following sections will only be considering data where the temperature less than or equal to 12 degrees. At some point it will also be of interest to look at the summer period. This will be defined as the data with temperatures above 15, as that is the third quantile in \cref{fig: AlphaHist}. This way there is a temperature gap between the summer and winter period, that is not included in any of them. Out of the total 396 days covered by the house data, 239 are classified as winter days, 126 as summer days, and 31 days are neither summer nor winter days. \cref{fig: class_breakpoint} shows how the days are distributed. It can be seen that the winter days are a continuuos period\textcolor{red}{\dots}
-\begin{figure}
-    \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/class_breakpoint.eps}
-    \caption{}
-    \label{fig: class_breakpoint}
-\end{figure}
+Until now the focus has been to find a threshold for every individual house. But the goal is to have a general classification of the winter period. Figure \ref{fig: AlphaHist} shows a histogram of the breakpoint values for every house in the data set. The global breakpoint should be in the low end of the scale. It is better to remove data points that could have been used, than to include too many points that belong to a different distribution with a different variation, which could make the assumptions of the model worse. It would not be good to choose the minimum breakpoint, since that would be very vulnerable. A single house with a very low breakpoint might make the model bad for all the other houses. So the breakpoint that is chosen is the first quantile. As it is shown on the figure, this is 12 degrees. All models in the following sections will only be considering data where the temperature less than or equal to 12 degrees. At some point it will also be of interest to look at the summer period. This will be defined as the data with temperatures above 15, as that is the third quantile in \cref{fig: AlphaHist}. This way there is a temperature gap between the summer and winter period, that is not included in any of them. Out of the total 396 days covered by the house data, 239 are classified as winter days, 126 as summer days, and 31 days are neither summer nor winter days. \cref{fig: class_breakpoint} shows how the days are distributed. It can be seen that the winter days are a continouos period from January to August 2018 and again from November 2019
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/Breakpoint_55.pdf}
@@ -166,4 +160,11 @@ Until now the focus has been to find a threshold for every individual house. But
     \includegraphics[width=0.8\textwidth]{../../../figures/AlphaHist.jpeg}
     \caption{A histogram of the alpha values for every house in the third segmentation method. The first quantile is chosen as the overall breakpoint. It is 12 degrees, illustrated by the green line}
     \label{fig: AlphaHist}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.\textwidth]{../../../figures/class_breakpoint.eps}
+    \caption{}
+    \label{fig: class_breakpoint}
 \end{figure}
