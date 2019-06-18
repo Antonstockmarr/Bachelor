@@ -132,7 +132,7 @@ tth<-TrainTest(data,14*24)
 
 i<-55
 
-for(i in 55){
+for(i in c(55,18)){
 midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)+length(tth[[1]][[i]]$ObsTime)
 
 a <- 12
@@ -141,7 +141,7 @@ tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[1]][[i]]$ObsTime,1),]
 tmp <- tmp.dat$Temperature
 Temperature <- (tmp<a)*(a-tmp)
 arima.dat <- data.frame(Temperature = Temperature, Consumption = cc*tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume)
-#A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1,1), period = 24),xreg=arima.dat$Temperature)
+A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1,1), period = 24),xreg=arima.dat$Temperature)
 
 tmp.dat <- weather[(weather$ObsTime >= head(tth[[2]][[i]]$ObsTime,1)),]
 tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
@@ -150,13 +150,13 @@ TemperatureP <- (tmp<a)*(a-tmp)
 
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
 
-plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+plot(p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Hourly consumption, [kWh]",main=paste("Predictions for house ",i))
 axis(1, at=c(9150,(9150+9490)/2,9490), labels=c("17th","24th","31st"))
 lines(p$pred+2*p$se,lty=2)
 lines(p$pred-2*p$se,lty=2)
 lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
-legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 
 
 # Smoothing experiment
@@ -183,13 +183,13 @@ A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1
 
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP)
 
-plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i))
+plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Hourly consumption, [kWh]",main=paste("Predictions for house ",i))
 axis(1, at=c(length(tth[[1]][[i]]$Obstime),length(tth[[1]][[i]]$Obstime)+170,length(tth[[1]][[i]]$Obstime)+340), labels=c("17th","24th","31st"))
 lines(p$pred+2*p$se,lty=2)
 lines(p$pred-2*p$se,lty=2)
 lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
-legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 }
 
 # Marima
