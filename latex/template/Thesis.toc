@@ -56,7 +56,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.2}Results}{24}{subsection.4.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Multiple linear regression model}{25}{section.4.3}% 
+\contentsline {section}{\numberline {4.3}Multiple linear regression model}{24}{section.4.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.1}Splines}{27}{subsection.4.3.1}% 
 \defcounter {refsection}{0}\relax 
@@ -64,7 +64,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Regression model for comparing houses}{29}{section.4.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Validation}{30}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.1}Validation}{29}{subsection.4.4.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.2}Results}{30}{subsection.4.4.2}% 
 \defcounter {refsection}{0}\relax 
@@ -72,7 +72,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.5}Comparison}{35}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Visualization of the results}{35}{section.4.6}% 
+\contentsline {section}{\numberline {4.6}Visualization of the results}{36}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{43}{chapter.5}% 
 \defcounter {refsection}{0}\relax 

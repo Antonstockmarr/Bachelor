@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  17 JUN 2019 21:19
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 10:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1533,14 +1533,7 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux
-
-LaTeX Warning: Label `fig: weather_pred' multiply defined.
-
-
-LaTeX Warning: Label `fig: weather_pred@cref' multiply defined.
-
-))
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1857,24 +1850,21 @@ Overfull \hbox (32.79005pt too wide) in paragraph at lines 91--108
 [12] [13]
 File: graphics/../../../figures/Consumption_PW.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Consumption_PW.pdf>
- [14]
-
-LaTeX Warning: Reference `fig: Breakpoint' on page 15 undefined on input line 152.
-
+ [14] [15] [16]
 File: graphics/../../../figures/Breakpoint_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_55.pdf>
 File: graphics/../../../figures/Breakpoint_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_18.pdf>
 File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
 <graphics/../../../figures/AlphaHist.jpeg>
-) [15] [16] [17] [18] [19]
+) [17] [18] [19] [20]
 \openout2 = `chapters/Statistical.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [20
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [21
 
 
 
-] [21]
+]
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
@@ -1894,39 +1884,42 @@ File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm55.pdf>
 [23] [24]
-Underfull \vbox (badness 2573) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25]
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
+Underfull \hbox (badness 10000) in paragraph at lines 68--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-[26]
+ [26]
 File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
 <graphics/../../../figures/SplineBasis.jpeg>
+
+Underfull \vbox (badness 2564) has occurred while \output is active []
+
  [27]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- []
-
-[28] [29]
+ [28]
 File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm18L.pdf>
 File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm55L.pdf>
+ [29]
+
+LaTeX Warning: Reference `lmMult_gen_L' on page 1 undefined on input line 191.
+
+
+LaTeX Warning: Reference `lmMult_gen_S' on page 1 undefined on input line 191.
+
 File: graphics/../../../figures/Temp_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Temp_coef.pdf>
 File: graphics/../../../figures/Solar_coef.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Solar_coef.pdf>
-
-Underfull \vbox (badness 1019) has occurred while \output is active []
-
- [30]
+[30]
 File: graphics/../../../figures/weather_pred.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_pred.pdf>
 File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
@@ -1934,32 +1927,29 @@ File: graphics/../../../figures/lmpred_55L.pdf Graphic file (type pdf)
 File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_18L.pdf>
  [31]
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \vbox (badness 1082) has occurred while \output is active []
+
+ [32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
 
-Underfull \vbox (badness 1082) has occurred while \output is active []
+Underfull \vbox (badness 1137) has occurred while \output is active []
 
- [32] [33]
+ [34]
 File: graphics/../../../figures/Wplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot55.jpeg>
 File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot18.jpeg>
-
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
- [34]
+ [35]
 File: graphics/../../../figures/WKplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/WKplot55.jpeg>
- [35]
+ [36]
 File: graphics/../../../figures/WKplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/WKplot18.jpeg>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36]
-Overfull \vbox (14.81992pt too high) has occurred while \output is active []
 
  [37]
 Overfull \vbox (14.81992pt too high) has occurred while \output is active []
@@ -2099,15 +2089,16 @@ Overfull \hbox (1.68883pt too wide) in paragraph at lines 349--350
 
 LaTeX Warning: Float too large for page by 1.81111pt on input line 352.
 
-File: graphics/../../../figures/weather_pred.pdf Graphic file (type pdf)
-<use graphics/../../../figures/weather_pred.pdf>
 File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
 ) [69
 
-] [70] [71] [72] [73] [74]
+] [70] [71] [72] [73] [74
+
+
+]
 
 Package biblatex Warning: No driver for entry type 'sne'.
 (biblatex)                Using fallback driver on input line 42.
@@ -2148,8 +2139,6 @@ Package biblatex Warning: No driver for entry type 'paper'.
 
 [75
 
-
-
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
@@ -2173,21 +2162,18 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
  ) 
 Here is how much of TeX's memory you used:
- 49881 strings out of 492933
- 959452 string characters out of 6133145
- 1709305 words of memory out of 5000000
- 53139 multiletter control sequences out of 15000+600000
+ 49882 strings out of 492933
+ 959493 string characters out of 6133145
+ 1709832 words of memory out of 5000000
+ 53140 multiletter control sequences out of 15000+600000
  558141 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2056b,6211s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2653b,6211s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (86 pages).
