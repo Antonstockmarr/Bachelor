@@ -72,7 +72,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.5}Comparison}{38}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Visualization of the results}{38}{section.4.6}% 
+\contentsline {section}{\numberline {4.6}Visualization of the results}{39}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{45}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
