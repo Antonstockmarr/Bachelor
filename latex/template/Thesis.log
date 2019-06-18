@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 15:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 20:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1533,7 +1533,20 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux
+
+LaTeX Warning: Label `fig:arima1_pred_55' multiply defined.
+
+
+LaTeX Warning: Label `fig:arima1_pred_55@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:arima1_pred_18' multiply defined.
+
+
+LaTeX Warning: Label `fig:arima1_pred_18@cref' multiply defined.
+
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1610,15 +1623,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                chap: daily
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
 
@@ -1855,19 +1860,24 @@ Overfull \hbox (32.79005pt too wide) in paragraph at lines 92--109
  [][] 
  []
 
-[12] [13]
+[12]
+
+LaTeX Warning: Citation 'chap: daily' on page 13 undefined on input line 117.
+
+[13]
 File: graphics/../../../figures/Consumption_PW.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Consumption_PW.pdf>
  [14]
-File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
-<graphics/../../../figures/class_breakpoint.eps>
 File: graphics/../../../figures/Breakpoint_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_55.pdf>
 File: graphics/../../../figures/Breakpoint_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_18.pdf>
 File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
 <graphics/../../../figures/AlphaHist.jpeg>
-) [15] [16] [17] [18] [19] [20] [21]
+ [15] [16]
+File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
+<graphics/../../../figures/class_breakpoint.eps>
+) [17] [18] [19] [20] [21]
 \openout2 = `chapters/Statistical.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [22
@@ -1970,7 +1980,7 @@ File: graphics/../../../figures/lmpred_col_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_col_18L.pdf>
 File: graphics/../../../figures/lmpred_hist_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_18L.pdf>
-) [39] [40] [41] [42] [43] [44]
+) [39] [40] [41] [42] [43] [44] [45] [46]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
@@ -1978,24 +1988,24 @@ File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_summer.pdf>
 File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Heatmap_winter.pdf>
- [45
+ [47
 
 
 
-] [46] [47]
+] [48] [49]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/HourDistribution.jpeg>
- [48] [49] [50] [51]
+ [50] [51] [52] [53]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
- [52] [53]
+ [54] [55]
 File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_55.pdf>
 File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_18.pdf>
- [54] [55] [56]
+ [56] [57] [58]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 148.
@@ -2006,7 +2016,7 @@ LaTeX Warning: No positions in optional float specifier.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
-[57] [58]
+[59] [60]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 186.
@@ -2017,20 +2027,24 @@ File: graphics/../../../figures/arimax/arima1_pred_55.pdf Graphic file (type pdf
 <use graphics/../../../figures/arimax/arima1_pred_55.pdf>
 File: graphics/../../../figures/arimax/arima1_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima1_pred_18.pdf>
+File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/arima2_pred_55.pdf>
+File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/arima2_pred_18.pdf>
 )
 Underfull \vbox (badness 1484) has occurred while \output is active []
 
- [59] [60] [61] [62] [63]
+ [61] [62] [63] [64] [65] [66] [67]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [64
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [68
 
 
 
-]) [65]
+]) [69]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [66
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [70
 
 
 
@@ -2055,13 +2069,13 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67] [68] [69] [70]
+ [71] [72] [73] [74]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71] [72] [73]
+ [75] [76] [77]
 Overfull \vbox (74.57715pt too high) has occurred while \output is active []
 
- [74]
+ [78]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
@@ -2083,83 +2097,110 @@ File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [75
+) [79
 
-] [76] [77] [78] [79] [80
+] [80] [81] [82] [83] [84
 
 
 ]
 
-Package biblatex Warning: No driver for entry type 'sne'.
-(biblatex)                Using fallback driver on input line 42.
-
-
-Package biblatex Warning: No driver for entry type 'paper'.
-(biblatex)                Using fallback driver on input line 42.
+Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer supported.
+(biblatex)                Please use 'sorting' option to '\newrefcontext'.
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
-Overfull \hbox (50.28pt too wide) in paragraph at lines 43--43
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
+
+
+Overfull \hbox (50.28pt too wide) in paragraph at lines 44--44
 [][][][][][][][] [] [][][][][][][][][][] [][] [][][][][][][][][] [] [][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][] []
  []
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
-Overfull \hbox (51.95215pt too wide) in paragraph at lines 43--43
+Overfull \hbox (51.95215pt too wide) in paragraph at lines 44--44
 []\TU/lmr/m/n/10 Aalborg Forsyning. \TU/lmr/m/it/10 Aalborg Forsynings hjemmeside\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][] []
  []
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
-Package biblatex Warning: No driver for entry type 'paper'.
-(biblatex)                Using fallback driver on input line 42.
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
 
-[81
+
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
+
+
+Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
+[]\TU/lmr/m/n/10 Wikipedia. \TU/lmr/m/it/10 Multicollinearity\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][][][][][][][]$[]. 
+ []
+
+
+Package biblatex Warning: Type 'package' not found on input line 45.
+
+
+LaTeX Warning: Empty bibliography on input line 45.
+
+[85
 
 ]
 No complaints by nag.
 File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
 <use graphics/DTU-frise-SH-15.pdf>
-[82
+[86
 
 ]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 45.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 45.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux)
 Package cleveref Info: loaded `english' language definitions on input line 25.
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B2F78D97A60026F8290ED41E8BE5D1B6.
+(rerunfilecheck)             Checksum: 74F17680E7C640D2E9CBC8D794FABCE7.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Thesis
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 49891 strings out of 492933
- 959999 string characters out of 6133145
- 1714251 words of memory out of 5000000
- 53148 multiletter control sequences out of 15000+600000
+ 49905 strings out of 492933
+ 960730 string characters out of 6133145
+ 1715636 words of memory out of 5000000
+ 53160 multiletter control sequences out of 15000+600000
  554124 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2745b,6213s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2745b,6240s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (92 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (96 pages).

@@ -38,8 +38,11 @@
 \include{appendices/AnAppendix}
 
 \backmatter
-%\nocite{*}
-\printbibliography
+\nocite{*}
+\printbibheading[title={Bibliography},heading=bibnumbered]
+\printbibliography[heading=subbibintoc,type=book,title={Books and papers}, sorting=nty]
+\printbibliography[heading=subbibintoc,type=url,title={Websites}]
+\printbibliography[heading=subbibintoc,type=package,title={R-packages}]
 
 
 \end{document}
