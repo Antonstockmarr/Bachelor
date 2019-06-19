@@ -106,15 +106,15 @@ for(i in c(55,18,6,20)){
   
   plot(c(.5,2,3.5),plotpoints[1,c(1,BestIndex,BestIndex2)],ylim=range(plotpoints),xlim=c(0,4),ylab="HCL incl. 95% CI",xaxt='n',xlab=paste("House:",i))
   
-  lines(c(.5,.5),c(plotpoints[2,1],plotpoints[3,1]),col=2)
-  lines(c(2,2),c(plotpoints[2,BestIndex],plotpoints[3,BestIndex]),col=2)
-  lines(c(3.5,3.5),c(plotpoints[2,BestIndex2],plotpoints[3,BestIndex2]),col=2)
+  lines(c(.5,.5),c(plotpoints[2,1],plotpoints[3,1]),col=Wcol[2])
+  lines(c(2,2),c(plotpoints[2,BestIndex],plotpoints[3,BestIndex]),col=Wcol[2])
+  lines(c(3.5,3.5),c(plotpoints[2,BestIndex2],plotpoints[3,BestIndex2]),col=Wcol[2])
   axis(1, at=c(.5,2,3.5), labels=c("Day","BIC","CI"))
   print(paste(i,bics[2],bics[3],bics[4],bics[5]))
 }
 
 
-# Med Foyuer
+# Med Fourier
 for(i in c(55,18,6,20)){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
@@ -211,9 +211,9 @@ for(i in c(55,18,6,20)){
   
   plot(c(.5,2,3.5),plotpoints[1,c(1,BestIndex,BestIndex2)],ylim=range(plotpoints),xlim=c(0,4),ylab="HCL incl. 95% CI",xaxt='n',xlab=paste("House:",i))
   
-  lines(c(.5,.5),c(plotpoints[2,1],plotpoints[3,1]),col=4)
-  lines(c(2,2),c(plotpoints[2,BestIndex],plotpoints[3,BestIndex]),col=4)
-  lines(c(3.5,3.5),c(plotpoints[2,BestIndex2],plotpoints[3,BestIndex2]),col=4)
+  lines(c(.5,.5),c(plotpoints[2,1],plotpoints[3,1]),col=Wcol[4])
+  lines(c(2,2),c(plotpoints[2,BestIndex],plotpoints[3,BestIndex]),col=Wcol[4])
+  lines(c(3.5,3.5),c(plotpoints[2,BestIndex2],plotpoints[3,BestIndex2]),col=Wcol[4])
   axis(1, at=c(.5,2,3.5), labels=c("Day","BIC","CI"))
   axis(1, at=c(1,2), labels=c("D","H"))
   

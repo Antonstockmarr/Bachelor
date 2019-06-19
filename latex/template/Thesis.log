@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 14:55
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 17:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -930,27 +930,34 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip194
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen300
+\WF@size=\dimen301
+\c@WF@wrappedlines=\count291
+\WF@box=\box75
+\WF@everypar=\toks43
+Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2019-02-15 L3 programming layer (loader) 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2019-02-15 L3 programming layer (code)
-\c_max_int=\count291
-\l_tmpa_int=\count292
-\l_tmpb_int=\count293
-\g_tmpa_int=\count294
-\g_tmpb_int=\count295
-\g__kernel_prg_map_int=\count296
-\c_log_iow=\count297
-\l_iow_line_count_int=\count298
-\l__iow_line_target_int=\count299
-\l__iow_one_indent_int=\count300
-\l__iow_indent_int=\count301
-\c_zero_dim=\dimen300
-\c_max_dim=\dimen301
-\l_tmpa_dim=\dimen302
-\l_tmpb_dim=\dimen303
-\g_tmpa_dim=\dimen304
-\g_tmpb_dim=\dimen305
+\c_max_int=\count292
+\l_tmpa_int=\count293
+\l_tmpb_int=\count294
+\g_tmpa_int=\count295
+\g_tmpb_int=\count296
+\g__kernel_prg_map_int=\count297
+\c_log_iow=\count298
+\l_iow_line_count_int=\count299
+\l__iow_line_target_int=\count300
+\l__iow_one_indent_int=\count301
+\l__iow_indent_int=\count302
+\c_zero_dim=\dimen302
+\c_max_dim=\dimen303
+\l_tmpa_dim=\dimen304
+\l_tmpb_dim=\dimen305
+\g_tmpa_dim=\dimen306
+\g_tmpb_dim=\dimen307
 \c_zero_skip=\skip256
 \c_max_skip=\skip257
 \l_tmpa_skip=\skip258
@@ -963,130 +970,130 @@ Package: expl3 2019-02-15 L3 programming layer (code)
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count302
-\l__intarray_loop_int=\count303
-\c__intarray_sp_dim=\dimen306
-\g__intarray_font_int=\count304
-\c__fp_leading_shift_int=\count305
-\c__fp_middle_shift_int=\count306
-\c__fp_trailing_shift_int=\count307
-\c__fp_big_leading_shift_int=\count308
-\c__fp_big_middle_shift_int=\count309
-\c__fp_big_trailing_shift_int=\count310
-\c__fp_Bigg_leading_shift_int=\count311
-\c__fp_Bigg_middle_shift_int=\count312
-\c__fp_Bigg_trailing_shift_int=\count313
-\g__fp_array_int=\count314
-\l__fp_array_loop_int=\count315
-\l__sort_length_int=\count316
-\l__sort_min_int=\count317
-\l__sort_top_int=\count318
-\l__sort_max_int=\count319
-\l__sort_true_max_int=\count320
-\l__sort_block_int=\count321
-\l__sort_begin_int=\count322
-\l__sort_end_int=\count323
-\l__sort_A_int=\count324
-\l__sort_B_int=\count325
-\l__sort_C_int=\count326
-\l__tl_analysis_normal_int=\count327
-\l__tl_analysis_index_int=\count328
-\l__tl_analysis_nesting_int=\count329
-\l__tl_analysis_type_int=\count330
-\l__regex_internal_a_int=\count331
-\l__regex_internal_b_int=\count332
-\l__regex_internal_c_int=\count333
-\l__regex_balance_int=\count334
-\l__regex_group_level_int=\count335
-\l__regex_mode_int=\count336
-\c__regex_cs_in_class_mode_int=\count337
-\c__regex_cs_mode_int=\count338
-\l__regex_catcodes_int=\count339
-\l__regex_default_catcodes_int=\count340
-\c__regex_catcode_L_int=\count341
-\c__regex_catcode_O_int=\count342
-\c__regex_catcode_A_int=\count343
-\c__regex_all_catcodes_int=\count344
-\l__regex_show_lines_int=\count345
-\l__regex_min_state_int=\count346
-\l__regex_max_state_int=\count347
-\l__regex_left_state_int=\count348
-\l__regex_right_state_int=\count349
-\l__regex_capturing_group_int=\count350
-\l__regex_min_pos_int=\count351
-\l__regex_max_pos_int=\count352
-\l__regex_curr_pos_int=\count353
-\l__regex_start_pos_int=\count354
-\l__regex_success_pos_int=\count355
-\l__regex_curr_char_int=\count356
-\l__regex_curr_catcode_int=\count357
-\l__regex_last_char_int=\count358
-\l__regex_case_changed_char_int=\count359
-\l__regex_curr_state_int=\count360
-\l__regex_step_int=\count361
-\l__regex_min_active_int=\count362
-\l__regex_max_active_int=\count363
-\l__regex_replacement_csnames_int=\count364
-\l__regex_match_count_int=\count365
-\l__regex_min_submatch_int=\count366
-\l__regex_submatch_int=\count367
-\l__regex_zeroth_submatch_int=\count368
-\g__regex_trace_regex_int=\count369
-\c_empty_box=\box75
-\l_tmpa_box=\box76
-\l_tmpb_box=\box77
-\g_tmpa_box=\box78
-\g_tmpb_box=\box79
-\l__box_top_dim=\dimen307
-\l__box_bottom_dim=\dimen308
-\l__box_left_dim=\dimen309
-\l__box_right_dim=\dimen310
-\l__box_top_new_dim=\dimen311
-\l__box_bottom_new_dim=\dimen312
-\l__box_left_new_dim=\dimen313
-\l__box_right_new_dim=\dimen314
-\l__box_internal_box=\box80
-\l__coffin_internal_box=\box81
-\l__coffin_internal_dim=\dimen315
-\l__coffin_offset_x_dim=\dimen316
-\l__coffin_offset_y_dim=\dimen317
-\l__coffin_x_dim=\dimen318
-\l__coffin_y_dim=\dimen319
-\l__coffin_x_prime_dim=\dimen320
-\l__coffin_y_prime_dim=\dimen321
-\c_empty_coffin=\box82
-\l__coffin_aligned_coffin=\box83
-\l__coffin_aligned_internal_coffin=\box84
-\l_tmpa_coffin=\box85
-\l_tmpb_coffin=\box86
-\g_tmpa_coffin=\box87
-\g_tmpb_coffin=\box88
-\c__coffin_empty_coffin=\box89
-\l__coffin_display_coffin=\box90
-\l__coffin_display_coord_coffin=\box91
-\l__coffin_display_pole_coffin=\box92
-\l__coffin_display_offset_dim=\dimen322
-\l__coffin_display_x_dim=\dimen323
-\l__coffin_display_y_dim=\dimen324
+\l_keys_choice_int=\count303
+\l__intarray_loop_int=\count304
+\c__intarray_sp_dim=\dimen308
+\g__intarray_font_int=\count305
+\c__fp_leading_shift_int=\count306
+\c__fp_middle_shift_int=\count307
+\c__fp_trailing_shift_int=\count308
+\c__fp_big_leading_shift_int=\count309
+\c__fp_big_middle_shift_int=\count310
+\c__fp_big_trailing_shift_int=\count311
+\c__fp_Bigg_leading_shift_int=\count312
+\c__fp_Bigg_middle_shift_int=\count313
+\c__fp_Bigg_trailing_shift_int=\count314
+\g__fp_array_int=\count315
+\l__fp_array_loop_int=\count316
+\l__sort_length_int=\count317
+\l__sort_min_int=\count318
+\l__sort_top_int=\count319
+\l__sort_max_int=\count320
+\l__sort_true_max_int=\count321
+\l__sort_block_int=\count322
+\l__sort_begin_int=\count323
+\l__sort_end_int=\count324
+\l__sort_A_int=\count325
+\l__sort_B_int=\count326
+\l__sort_C_int=\count327
+\l__tl_analysis_normal_int=\count328
+\l__tl_analysis_index_int=\count329
+\l__tl_analysis_nesting_int=\count330
+\l__tl_analysis_type_int=\count331
+\l__regex_internal_a_int=\count332
+\l__regex_internal_b_int=\count333
+\l__regex_internal_c_int=\count334
+\l__regex_balance_int=\count335
+\l__regex_group_level_int=\count336
+\l__regex_mode_int=\count337
+\c__regex_cs_in_class_mode_int=\count338
+\c__regex_cs_mode_int=\count339
+\l__regex_catcodes_int=\count340
+\l__regex_default_catcodes_int=\count341
+\c__regex_catcode_L_int=\count342
+\c__regex_catcode_O_int=\count343
+\c__regex_catcode_A_int=\count344
+\c__regex_all_catcodes_int=\count345
+\l__regex_show_lines_int=\count346
+\l__regex_min_state_int=\count347
+\l__regex_max_state_int=\count348
+\l__regex_left_state_int=\count349
+\l__regex_right_state_int=\count350
+\l__regex_capturing_group_int=\count351
+\l__regex_min_pos_int=\count352
+\l__regex_max_pos_int=\count353
+\l__regex_curr_pos_int=\count354
+\l__regex_start_pos_int=\count355
+\l__regex_success_pos_int=\count356
+\l__regex_curr_char_int=\count357
+\l__regex_curr_catcode_int=\count358
+\l__regex_last_char_int=\count359
+\l__regex_case_changed_char_int=\count360
+\l__regex_curr_state_int=\count361
+\l__regex_step_int=\count362
+\l__regex_min_active_int=\count363
+\l__regex_max_active_int=\count364
+\l__regex_replacement_csnames_int=\count365
+\l__regex_match_count_int=\count366
+\l__regex_min_submatch_int=\count367
+\l__regex_submatch_int=\count368
+\l__regex_zeroth_submatch_int=\count369
+\g__regex_trace_regex_int=\count370
+\c_empty_box=\box76
+\l_tmpa_box=\box77
+\l_tmpb_box=\box78
+\g_tmpa_box=\box79
+\g_tmpb_box=\box80
+\l__box_top_dim=\dimen309
+\l__box_bottom_dim=\dimen310
+\l__box_left_dim=\dimen311
+\l__box_right_dim=\dimen312
+\l__box_top_new_dim=\dimen313
+\l__box_bottom_new_dim=\dimen314
+\l__box_left_new_dim=\dimen315
+\l__box_right_new_dim=\dimen316
+\l__box_internal_box=\box81
+\l__coffin_internal_box=\box82
+\l__coffin_internal_dim=\dimen317
+\l__coffin_offset_x_dim=\dimen318
+\l__coffin_offset_y_dim=\dimen319
+\l__coffin_x_dim=\dimen320
+\l__coffin_y_dim=\dimen321
+\l__coffin_x_prime_dim=\dimen322
+\l__coffin_y_prime_dim=\dimen323
+\c_empty_coffin=\box83
+\l__coffin_aligned_coffin=\box84
+\l__coffin_aligned_internal_coffin=\box85
+\l_tmpa_coffin=\box86
+\l_tmpb_coffin=\box87
+\g_tmpa_coffin=\box88
+\g_tmpb_coffin=\box89
+\c__coffin_empty_coffin=\box90
+\l__coffin_display_coffin=\box91
+\l__coffin_display_coord_coffin=\box92
+\l__coffin_display_pole_coffin=\box93
+\l__coffin_display_offset_dim=\dimen324
+\l__coffin_display_x_dim=\dimen325
+\l__coffin_display_y_dim=\dimen326
 \g__file_internal_ior=\read3
-\l__coffin_bounding_shift_dim=\dimen325
-\l__coffin_left_corner_dim=\dimen326
-\l__coffin_right_corner_dim=\dimen327
-\l__coffin_bottom_corner_dim=\dimen328
-\l__coffin_top_corner_dim=\dimen329
-\l__coffin_scaled_total_height_dim=\dimen330
-\l__coffin_scaled_width_dim=\dimen331
+\l__coffin_bounding_shift_dim=\dimen327
+\l__coffin_left_corner_dim=\dimen328
+\l__coffin_right_corner_dim=\dimen329
+\l__coffin_bottom_corner_dim=\dimen330
+\l__coffin_top_corner_dim=\dimen331
+\l__coffin_scaled_total_height_dim=\dimen332
+\l__coffin_scaled_width_dim=\dimen333
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
 File: l3xdvipdfmx.def 2019-02-15 v L3 Experimental driver: xdvipdfmx
-\g__driver_image_int=\count370
-\g__driver_pdf_object_int=\count371
+\g__driver_image_int=\count371
+\g__driver_pdf_object_int=\count372
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2018-10-17 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count372
-\g__xparse_grabber_int=\count373
-\l__xparse_m_args_int=\count374
-\l__xparse_mandatory_args_int=\count375
-\l__xparse_v_nesting_int=\count376
+\l__xparse_current_arg_int=\count373
+\g__xparse_grabber_int=\count374
+\l__xparse_m_args_int=\count375
+\l__xparse_mandatory_args_int=\count376
+\l__xparse_v_nesting_int=\count377
 )
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
  (/usr/local/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
@@ -1102,53 +1109,54 @@ Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen332
-\captionmargin@=\dimen333
-\captionwidth=\dimen334
-\caption@tempdima=\dimen335
-\caption@indent=\dimen336
-\caption@parindent=\dimen337
-\caption@hangindent=\dimen338
+\captionmargin=\dimen334
+\captionmargin@=\dimen335
+\captionwidth=\dimen336
+\caption@tempdima=\dimen337
+\caption@indent=\dimen338
+\caption@parindent=\dimen339
+\caption@hangindent=\dimen340
 )
-\c@caption@flags=\count377
-\c@ContinuedFloat=\count378
+\c@caption@flags=\count378
+\c@ContinuedFloat=\count379
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 ) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/preamble/dtucolors.sty) (/usr/local/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
 Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count379
+\etb@tempcnta=\count380
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/makecmds/makecmds.sty
 Package: makecmds 2009/09/03 v1.0a extra command making commands
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
  (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks43
-\XKV@tempa@toks=\toks44
+\XKV@toks=\toks44
+\XKV@tempa@toks=\toks45
 )
-\XKV@depth=\count380
+\XKV@depth=\count381
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2019/02/12 v2.7b Font selection for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2019/02/12 v2.7b Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count381
-\l__fontspec_language_int=\count382
-\l__fontspec_strnum_int=\count383
-\l__fontspec_tmp_int=\count384
-\l__fontspec_tmpa_int=\count385
-\l__fontspec_tmpb_int=\count386
-\l__fontspec_tmpc_int=\count387
-\l__fontspec_em_int=\count388
-\l__fontspec_emdef_int=\count389
-\l__fontspec_strong_int=\count390
-\l__fontspec_strongdef_int=\count391
-\l__fontspec_tmpa_dim=\dimen339
-\l__fontspec_tmpb_dim=\dimen340
-\l__fontspec_tmpc_dim=\dimen341
+\l__fontspec_script_int=\count382
+\l__fontspec_language_int=\count383
+\l__fontspec_strnum_int=\count384
+\l__fontspec_tmp_int=\count385
+\l__fontspec_tmpa_int=\count386
+\l__fontspec_tmpb_int=\count387
+\l__fontspec_tmpc_int=\count388
+\l__fontspec_em_int=\count389
+\l__fontspec_emdef_int=\count390
+\l__fontspec_strong_int=\count391
+\l__fontspec_strongdef_int=\count392
+\l__fontspec_tmpa_dim=\dimen341
+\l__fontspec_tmpb_dim=\dimen342
+\l__fontspec_tmpc_dim=\dimen343
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/tuenc.def
@@ -1169,13 +1177,13 @@ File: gloss-english.ldf polyglossia: module for english
 Package polyglossia Info: Default language is english.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
-\csq@reset=\count392
-\csq@gtype=\count393
-\csq@glevel=\count394
-\csq@qlevel=\count395
-\csq@maxlvl=\count396
-\csq@tshold=\count397
-\csq@ltx@everypar=\toks45
+\csq@reset=\count393
+\csq@gtype=\count394
+\csq@glevel=\count395
+\csq@qlevel=\count396
+\csq@maxlvl=\count397
+\csq@tshold=\count398
+\csq@ltx@everypar=\toks46
  (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
 )
@@ -1195,53 +1203,53 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count398
+\lrq@indent=\count399
  (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count399
-\c@listtotal=\count400
-\c@listcount=\count401
-\c@liststart=\count402
-\c@liststop=\count403
-\c@citecount=\count404
-\c@citetotal=\count405
-\c@multicitecount=\count406
-\c@multicitetotal=\count407
-\c@instcount=\count408
-\c@maxnames=\count409
-\c@minnames=\count410
-\c@maxitems=\count411
-\c@minitems=\count412
-\c@citecounter=\count413
-\c@maxcitecounter=\count414
-\c@savedcitecounter=\count415
-\c@uniquelist=\count416
-\c@uniquename=\count417
-\c@refsection=\count418
-\c@refsegment=\count419
-\c@maxextratitle=\count420
-\c@maxextratitleyear=\count421
-\c@maxextraname=\count422
-\c@maxextradate=\count423
-\c@maxextraalpha=\count424
-\c@abbrvpenalty=\count425
-\c@highnamepenalty=\count426
-\c@lownamepenalty=\count427
-\c@maxparens=\count428
-\c@parenlevel=\count429
-\blx@tempcnta=\count430
-\blx@tempcntb=\count431
-\blx@tempcntc=\count432
-\blx@maxsection=\count433
-\blx@maxsegment@0=\count434
-\blx@notetype=\count435
-\blx@parenlevel@text=\count436
-\blx@parenlevel@foot=\count437
-\blx@sectionciteorder@0=\count438
-\blx@entrysetcounter=\count439
+\c@tabx@nest=\count400
+\c@listtotal=\count401
+\c@listcount=\count402
+\c@liststart=\count403
+\c@liststop=\count404
+\c@citecount=\count405
+\c@citetotal=\count406
+\c@multicitecount=\count407
+\c@multicitetotal=\count408
+\c@instcount=\count409
+\c@maxnames=\count410
+\c@minnames=\count411
+\c@maxitems=\count412
+\c@minitems=\count413
+\c@citecounter=\count414
+\c@maxcitecounter=\count415
+\c@savedcitecounter=\count416
+\c@uniquelist=\count417
+\c@uniquename=\count418
+\c@refsection=\count419
+\c@refsegment=\count420
+\c@maxextratitle=\count421
+\c@maxextratitleyear=\count422
+\c@maxextraname=\count423
+\c@maxextradate=\count424
+\c@maxextraalpha=\count425
+\c@abbrvpenalty=\count426
+\c@highnamepenalty=\count427
+\c@lownamepenalty=\count428
+\c@maxparens=\count429
+\c@parenlevel=\count430
+\blx@tempcnta=\count431
+\blx@tempcntb=\count432
+\blx@tempcntc=\count433
+\blx@maxsection=\count434
+\blx@maxsegment@0=\count435
+\blx@notetype=\count436
+\blx@parenlevel@text=\count437
+\blx@parenlevel@foot=\count438
+\blx@sectionciteorder@0=\count439
+\blx@entrysetcounter=\count440
 \labelnumberwidth=\skip262
 \labelalphawidth=\skip263
 \biblabelsep=\skip264
@@ -1251,9 +1259,9 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip268
 \blx@bcfin=\read4
 \blx@bcfout=\write5
-\c@mincomprange=\count440
-\c@maxcomprange=\count441
-\c@mincompwidth=\count442
+\c@mincomprange=\count441
+\c@maxcomprange=\count442
+\c@mincompwidth=\count443
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -1263,74 +1271,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count443
-\c@savedafterword=\count444
-\c@annotator=\count445
-\c@savedannotator=\count446
-\c@author=\count447
-\c@savedauthor=\count448
-\c@bookauthor=\count449
-\c@savedbookauthor=\count450
-\c@commentator=\count451
-\c@savedcommentator=\count452
-\c@editor=\count453
-\c@savededitor=\count454
-\c@editora=\count455
-\c@savededitora=\count456
-\c@editorb=\count457
-\c@savededitorb=\count458
-\c@editorc=\count459
-\c@savededitorc=\count460
-\c@foreword=\count461
-\c@savedforeword=\count462
-\c@holder=\count463
-\c@savedholder=\count464
-\c@introduction=\count465
-\c@savedintroduction=\count466
-\c@namea=\count467
-\c@savednamea=\count468
-\c@nameb=\count469
-\c@savednameb=\count470
-\c@namec=\count471
-\c@savednamec=\count472
-\c@translator=\count473
-\c@savedtranslator=\count474
-\c@shortauthor=\count475
-\c@savedshortauthor=\count476
-\c@shorteditor=\count477
-\c@savedshorteditor=\count478
-\c@labelname=\count479
-\c@savedlabelname=\count480
-\c@institution=\count481
-\c@savedinstitution=\count482
-\c@lista=\count483
-\c@savedlista=\count484
-\c@listb=\count485
-\c@savedlistb=\count486
-\c@listc=\count487
-\c@savedlistc=\count488
-\c@listd=\count489
-\c@savedlistd=\count490
-\c@liste=\count491
-\c@savedliste=\count492
-\c@listf=\count493
-\c@savedlistf=\count494
-\c@location=\count495
-\c@savedlocation=\count496
-\c@organization=\count497
-\c@savedorganization=\count498
-\c@origlocation=\count499
-\c@savedoriglocation=\count500
-\c@origpublisher=\count501
-\c@savedorigpublisher=\count502
-\c@publisher=\count503
-\c@savedpublisher=\count504
-\c@language=\count505
-\c@savedlanguage=\count506
-\c@origlanguage=\count507
-\c@savedoriglanguage=\count508
-\c@pageref=\count509
-\c@savedpageref=\count510
+\c@afterword=\count444
+\c@savedafterword=\count445
+\c@annotator=\count446
+\c@savedannotator=\count447
+\c@author=\count448
+\c@savedauthor=\count449
+\c@bookauthor=\count450
+\c@savedbookauthor=\count451
+\c@commentator=\count452
+\c@savedcommentator=\count453
+\c@editor=\count454
+\c@savededitor=\count455
+\c@editora=\count456
+\c@savededitora=\count457
+\c@editorb=\count458
+\c@savededitorb=\count459
+\c@editorc=\count460
+\c@savededitorc=\count461
+\c@foreword=\count462
+\c@savedforeword=\count463
+\c@holder=\count464
+\c@savedholder=\count465
+\c@introduction=\count466
+\c@savedintroduction=\count467
+\c@namea=\count468
+\c@savednamea=\count469
+\c@nameb=\count470
+\c@savednameb=\count471
+\c@namec=\count472
+\c@savednamec=\count473
+\c@translator=\count474
+\c@savedtranslator=\count475
+\c@shortauthor=\count476
+\c@savedshortauthor=\count477
+\c@shorteditor=\count478
+\c@savedshorteditor=\count479
+\c@labelname=\count480
+\c@savedlabelname=\count481
+\c@institution=\count482
+\c@savedinstitution=\count483
+\c@lista=\count484
+\c@savedlista=\count485
+\c@listb=\count486
+\c@savedlistb=\count487
+\c@listc=\count488
+\c@savedlistc=\count489
+\c@listd=\count490
+\c@savedlistd=\count491
+\c@liste=\count492
+\c@savedliste=\count493
+\c@listf=\count494
+\c@savedlistf=\count495
+\c@location=\count496
+\c@savedlocation=\count497
+\c@organization=\count498
+\c@savedorganization=\count499
+\c@origlocation=\count500
+\c@savedoriglocation=\count501
+\c@origpublisher=\count502
+\c@savedorigpublisher=\count503
+\c@publisher=\count504
+\c@savedpublisher=\count505
+\c@language=\count506
+\c@savedlanguage=\count507
+\c@origlanguage=\count508
+\c@savedoriglanguage=\count509
+\c@pageref=\count510
+\c@savedpageref=\count511
 \shorthandwidth=\skip269
 \shortjournalwidth=\skip270
 \shortserieswidth=\skip271
@@ -1357,13 +1365,13 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count511
-\c@textcitetotal=\count512
-\c@textcitemaxnames=\count513
-\c@biburlnumpenalty=\count514
-\c@biburlucpenalty=\count515
-\c@biburllcpenalty=\count516
-\c@smartand=\count517
+\c@textcitecount=\count512
+\c@textcitetotal=\count513
+\c@textcitemaxnames=\count514
+\c@biburlnumpenalty=\count515
+\c@biburlucpenalty=\count516
+\c@biburllcpenalty=\count517
+\c@smartand=\count518
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1373,8 +1381,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count518
-\c@bbx:relatedtotal=\count519
+\c@bbx:relatedcount=\count519
+\c@bbx:relatedtotal=\count520
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1421,11 +1429,11 @@ Package cleveref Info: no abbreviation of names on input line 7852.
 Package cleveref Info: include cross-reference names in hyperlinks on input line 7852.
 Package cleveref Info: always capitalise cross-reference names on input line 7852.
 )
-\c@subfigure=\count520
+\c@subfigure=\count521
 \cftbeforesubfigureskip=\skip283
 \cftsubfigureindent=\skip284
 \cftsubfigurenumwidth=\skip285
-\c@subtable=\count521
+\c@subtable=\count522
 \cftbeforesubtableskip=\skip286
 \cftsubtableindent=\skip287
 \cftsubtablenumwidth=\skip288
@@ -1443,29 +1451,29 @@ File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
  (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
 )))
-\c@@todonotes@numberoftodonotes=\count522
+\c@@todonotes@numberoftodonotes=\count523
 )
-\c@todocounter=\count523
-\c@todocounter@totc=\count524
+\c@todocounter=\count524
+\c@todocounter@totc=\count525
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 255.
+(hyperref)                removing `\\' on input line 256.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 255.
+(hyperref)                removing `\\' on input line 256.
 
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 255.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 255.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 255.
-Package hyperref Info: Option `breaklinks' set `true' on input line 255.
-Package hyperref Info: Option `plainpages' set `false' on input line 255.
-Package hyperref Info: Option `unicode' set `true' on input line 255.
-Package hyperref Info: Option `colorlinks' set `false' on input line 255.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 256.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 256.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 256.
+Package hyperref Info: Option `breaklinks' set `true' on input line 256.
+Package hyperref Info: Option `plainpages' set `false' on input line 256.
+Package hyperref Info: Option `unicode' set `true' on input line 256.
+Package hyperref Info: Option `colorlinks' set `false' on input line 256.
 ) (./preamble/fonts.tex
 
 Package fontspec Info: Font family 'texgyreadventor(0)' created for font
@@ -1498,63 +1506,63 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count525
-\c@Blindtext=\count526
-\c@blind@countparstart=\count527
-\blind@countxx=\count528
-\blindtext@numBlindtext=\count529
-\blind@countyy=\count530
-\c@blindlist=\count531
-\c@blindlistlevel=\count532
-\c@blindlist@level=\count533
-\blind@listitem=\count534
-\c@blind@listcount=\count535
-\c@blind@levelcount=\count536
-\blind@mathformula=\count537
-\blind@Mathformula=\count538
-\c@blind@randomcount=\count539
-\c@blind@randommax=\count540
-\c@blind@pangramcount=\count541
-\c@blind@pangrammax=\count542
+\c@blindtext=\count526
+\c@Blindtext=\count527
+\c@blind@countparstart=\count528
+\blind@countxx=\count529
+\blindtext@numBlindtext=\count530
+\blind@countyy=\count531
+\c@blindlist=\count532
+\c@blindlistlevel=\count533
+\c@blindlist@level=\count534
+\blind@listitem=\count535
+\c@blind@listcount=\count536
+\c@blind@levelcount=\count537
+\blind@mathformula=\count538
+\blind@Mathformula=\count539
+\c@blind@randomcount=\count540
+\c@blind@randommax=\count541
+\c@blind@pangramcount=\count542
+\c@blind@pangrammax=\count543
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
 Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
  (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count543
-\float@exts=\toks46
-\float@box=\box93
-\@float@everytoks=\toks47
-\@floatcapt=\box94
+\c@float@type=\count544
+\float@exts=\toks47
+\float@box=\box94
+\@float@everytoks=\toks48
+\@floatcapt=\box95
 )
-\@float@every@algorithm=\toks48
-\c@algorithm=\count544
+\@float@every@algorithm=\toks49
+\c@algorithm=\count545
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count545
-\c@ALG@rem=\count546
-\c@ALG@nested=\count547
+\c@ALG@line=\count546
+\c@ALG@rem=\count547
+\c@ALG@nested=\count548
 \ALG@tlm=\skip289
 \ALG@thistlm=\skip290
-\c@ALG@Lnr=\count548
-\c@ALG@blocknr=\count549
-\c@ALG@storecount=\count550
-\c@ALG@tmpcounter=\count551
+\c@ALG@Lnr=\count549
+\c@ALG@blocknr=\count550
+\c@ALG@storecount=\count551
+\c@ALG@tmpcounter=\count552
 \ALG@tmplength=\skip291
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/02/04 v3.8 Customized lists
 \labelindent=\skip292
-\enit@outerparindent=\dimen342
-\enit@toks=\toks49
-\enit@inbox=\box95
-\enit@count@id=\count552
-\enitdp@description=\count553
+\enit@outerparindent=\dimen344
+\enit@toks=\toks50
+\enit@inbox=\box96
+\enit@count@id=\count553
+\enitdp@description=\count554
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 ))
@@ -1616,7 +1624,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\c@lstlisting=\count554
+\c@lstlisting=\count555
  ABD: EveryShipout initializing macros
 LaTeX Info: Redefining \celsius on input line 8.
 Package gensymb Info: Faking symbols for \degree and \celsius on input line 8.
@@ -1629,14 +1637,14 @@ Package gensymb Info: Using \Omega for \ohm on input line 8.
 
 Package gensymb Warning: Not defining \micro.
 
-\AtBeginShipoutBox=\box96
+\AtBeginShipoutBox=\box97
 Package hyperref Info: Link coloring OFF on input line 8.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count555
+\c@section@level=\count556
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -1791,7 +1799,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [7]) [8]
+) [7]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
@@ -1800,29 +1813,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
-(Font)              scaled to size 13.82405pt on input line 7.
+(Font)              scaled to size 13.82405pt on input line 8.
+File: graphics/../../../figures/Watts.png Graphic file (type bmp)
+<graphics/../../../figures/Watts.png>
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
-
-
-
-
-]) [2]
+) [2]
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
@@ -1896,9 +1903,6 @@ Overfull \hbox (32.79005pt too wide) in paragraph at lines 92--109
  []
 
 [12] [13]
-
-LaTeX Warning: Citation 'chap: daily' on page 14 undefined on input line 117.
-
 File: graphics/../../../figures/Consumption_PW.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Consumption_PW.pdf>
 
@@ -2103,19 +2107,16 @@ File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf
 File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima2_pred_18.pdf>
  [61] [62] [63] [64] [65]
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--263
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
-
-Underfull \vbox (badness 6396) has occurred while \output is active []
-
- [66]) [67]
+[66]) [67]
 \openout2 = `chapters/Discussion.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [68
@@ -2264,18 +2265,10 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C20C4AAA81306D3A76FA77FAEEB2D9E6.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 9BEBEAFA75C3AD3EBEA27A6B88ADB839.
 
 
 LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Thesis
-(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
@@ -2283,12 +2276,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51215 strings out of 492933
- 985832 string characters out of 6133145
- 1825971 words of memory out of 5000000
- 54443 multiletter control sequences out of 15000+600000
- 564913 words of font info for 77 fonts, out of 8000000 for 9000
+ 51280 strings out of 492933
+ 986825 string characters out of 6133145
+ 1827416 words of memory out of 5000000
+ 54501 multiletter control sequences out of 15000+600000
+ 564921 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,17n,81p,2745b,7955s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,16n,81p,2745b,7955s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (96 pages).
