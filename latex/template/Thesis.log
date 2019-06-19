@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 09:32
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 10:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1830,19 +1830,25 @@ File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
 ]
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
- [8]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[9]
 File: graphics/../../../figures/byggeaar.eps Graphic file (type eps)
 <graphics/../../../figures/byggeaar.eps>
- [10]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 File: graphics/../../../figures/gg_cor.pdf Graphic file (type pdf)
 <use graphics/../../../figures/gg_cor.pdf>
 
@@ -1855,19 +1861,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--88
 
  []
 
-[11]
+
 Overfull \hbox (32.79005pt too wide) in paragraph at lines 92--109
  [][] 
  []
 
-[12]
 
-LaTeX Warning: Citation 'chap: daily' on page 13 undefined on input line 117.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[13]
+ [12]
+Underfull \vbox (badness 1173) has occurred while \output is active []
+
+ [13]
+
+LaTeX Warning: Citation 'chap: daily' on page 14 undefined on input line 117.
+
+[14]
 File: graphics/../../../figures/Consumption_PW.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Consumption_PW.pdf>
- [14]
 File: graphics/../../../figures/Breakpoint_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_55.pdf>
 File: graphics/../../../figures/Breakpoint_18.pdf Graphic file (type pdf)
