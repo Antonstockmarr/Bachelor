@@ -48,7 +48,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Linear regression}{23}{section.4.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Model assumptions}{23}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Model assumptions}{24}{subsection.4.1.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}Simple linear regression model}{25}{section.4.2}% 
 \defcounter {refsection}{0}\relax 
