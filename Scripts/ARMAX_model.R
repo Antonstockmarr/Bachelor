@@ -215,11 +215,8 @@ for(i in c(55,18,6,20)){
   lines(c(2,2),c(plotpoints[2,BestIndex],plotpoints[3,BestIndex]),col=Wcol[4])
   lines(c(3.5,3.5),c(plotpoints[2,BestIndex2],plotpoints[3,BestIndex2]),col=Wcol[4])
   axis(1, at=c(.5,2,3.5), labels=c("Day","BIC","CI"))
-  axis(1, at=c(1,2), labels=c("D","H"))
   
 }
-
-
 
 
 acfccfPlot(fit2, X)
