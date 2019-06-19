@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 17:22
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 17:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1799,12 +1799,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [7]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-) [8]
+) [7]) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
@@ -1830,6 +1825,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--21
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
@@ -2024,12 +2024,12 @@ File: graphics/../../../figures/Heatmap_summer.eps Graphic file (type eps)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 6.
+(caption)                particular \caption on input line 7.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (21.76266pt too wide) in paragraph at lines 3--6
-[] 
+Overfull \hbox (36.76266pt too wide) in paragraph at lines 6--7
+[][] 
  []
 
 
@@ -2045,11 +2045,11 @@ File: graphics/../../../figures/Heatmap_winter.eps Graphic file (type eps)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 11.
+(caption)                particular \caption on input line 12.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (21.76266pt too wide) in paragraph at lines 9--11
+Overfull \hbox (21.76266pt too wide) in paragraph at lines 10--12
  [][] 
  []
 
@@ -2075,23 +2075,23 @@ File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
  [54] [55] [56]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 141.
+               Default added (so using `tbp') on input line 142.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 153.
+               Default added (so using `tbp') on input line 154.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
 
-Overfull \hbox (1.56888pt too wide) detected at line 176
+Overfull \hbox (1.56888pt too wide) detected at line 177
 []
  []
 
 [57] [58]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 179.
+               Default added (so using `tbp') on input line 180.
 
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
@@ -2107,12 +2107,12 @@ File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf
 File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima2_pred_18.pdf>
  [61] [62] [63] [64] [65]
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--268
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
 
  []
 
@@ -2276,11 +2276,11 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51280 strings out of 492933
- 986825 string characters out of 6133145
- 1827416 words of memory out of 5000000
- 54501 multiletter control sequences out of 15000+600000
- 564921 words of font info for 78 fonts, out of 8000000 for 9000
+ 51276 strings out of 492933
+ 986746 string characters out of 6133145
+ 1828410 words of memory out of 5000000
+ 54499 multiletter control sequences out of 15000+600000
+ 564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2745b,7955s stack positions out of 5000i,500n,10000p,200000b,80000s
 

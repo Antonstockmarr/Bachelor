@@ -90,7 +90,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3.3}Visualization of the results}{61}{subsection.5.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.4}Modelling with the \texttt {MARIMA} Function}{66}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.4}Modelling with the MARIMA Function}{66}{subsection.5.3.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Discussion}{69}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
