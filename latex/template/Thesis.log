@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  18 JUN 2019 15:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -923,38 +923,21 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip194
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/eso-pic/eso-pic.sty
-Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/preamble/dtucolors.sty) (/usr/local/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaLaTeX
- (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count291
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/makecmds/makecmds.sty
-Package: makecmds 2009/09/03 v1.0a extra command making commands
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
- (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks43
-\XKV@tempa@toks=\toks44
-)
-\XKV@depth=\count292
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/local/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2019-02-15 L3 programming layer (loader) 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2019-02-15 L3 programming layer (code)
-\c_max_int=\count293
-\l_tmpa_int=\count294
-\l_tmpb_int=\count295
-\g_tmpa_int=\count296
-\g_tmpb_int=\count297
-\g__kernel_prg_map_int=\count298
-\c_log_iow=\count299
-\l_iow_line_count_int=\count300
-\l__iow_line_target_int=\count301
-\l__iow_one_indent_int=\count302
-\l__iow_indent_int=\count303
+\c_max_int=\count291
+\l_tmpa_int=\count292
+\l_tmpb_int=\count293
+\g_tmpa_int=\count294
+\g_tmpb_int=\count295
+\g__kernel_prg_map_int=\count296
+\c_log_iow=\count297
+\l_iow_line_count_int=\count298
+\l__iow_line_target_int=\count299
+\l__iow_one_indent_int=\count300
+\l__iow_indent_int=\count301
 \c_zero_dim=\dimen300
 \c_max_dim=\dimen301
 \l_tmpa_dim=\dimen302
@@ -973,75 +956,75 @@ Package: expl3 2019-02-15 L3 programming layer (code)
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count304
-\l__intarray_loop_int=\count305
+\l_keys_choice_int=\count302
+\l__intarray_loop_int=\count303
 \c__intarray_sp_dim=\dimen306
-\g__intarray_font_int=\count306
-\c__fp_leading_shift_int=\count307
-\c__fp_middle_shift_int=\count308
-\c__fp_trailing_shift_int=\count309
-\c__fp_big_leading_shift_int=\count310
-\c__fp_big_middle_shift_int=\count311
-\c__fp_big_trailing_shift_int=\count312
-\c__fp_Bigg_leading_shift_int=\count313
-\c__fp_Bigg_middle_shift_int=\count314
-\c__fp_Bigg_trailing_shift_int=\count315
-\g__fp_array_int=\count316
-\l__fp_array_loop_int=\count317
-\l__sort_length_int=\count318
-\l__sort_min_int=\count319
-\l__sort_top_int=\count320
-\l__sort_max_int=\count321
-\l__sort_true_max_int=\count322
-\l__sort_block_int=\count323
-\l__sort_begin_int=\count324
-\l__sort_end_int=\count325
-\l__sort_A_int=\count326
-\l__sort_B_int=\count327
-\l__sort_C_int=\count328
-\l__tl_analysis_normal_int=\count329
-\l__tl_analysis_index_int=\count330
-\l__tl_analysis_nesting_int=\count331
-\l__tl_analysis_type_int=\count332
-\l__regex_internal_a_int=\count333
-\l__regex_internal_b_int=\count334
-\l__regex_internal_c_int=\count335
-\l__regex_balance_int=\count336
-\l__regex_group_level_int=\count337
-\l__regex_mode_int=\count338
-\c__regex_cs_in_class_mode_int=\count339
-\c__regex_cs_mode_int=\count340
-\l__regex_catcodes_int=\count341
-\l__regex_default_catcodes_int=\count342
-\c__regex_catcode_L_int=\count343
-\c__regex_catcode_O_int=\count344
-\c__regex_catcode_A_int=\count345
-\c__regex_all_catcodes_int=\count346
-\l__regex_show_lines_int=\count347
-\l__regex_min_state_int=\count348
-\l__regex_max_state_int=\count349
-\l__regex_left_state_int=\count350
-\l__regex_right_state_int=\count351
-\l__regex_capturing_group_int=\count352
-\l__regex_min_pos_int=\count353
-\l__regex_max_pos_int=\count354
-\l__regex_curr_pos_int=\count355
-\l__regex_start_pos_int=\count356
-\l__regex_success_pos_int=\count357
-\l__regex_curr_char_int=\count358
-\l__regex_curr_catcode_int=\count359
-\l__regex_last_char_int=\count360
-\l__regex_case_changed_char_int=\count361
-\l__regex_curr_state_int=\count362
-\l__regex_step_int=\count363
-\l__regex_min_active_int=\count364
-\l__regex_max_active_int=\count365
-\l__regex_replacement_csnames_int=\count366
-\l__regex_match_count_int=\count367
-\l__regex_min_submatch_int=\count368
-\l__regex_submatch_int=\count369
-\l__regex_zeroth_submatch_int=\count370
-\g__regex_trace_regex_int=\count371
+\g__intarray_font_int=\count304
+\c__fp_leading_shift_int=\count305
+\c__fp_middle_shift_int=\count306
+\c__fp_trailing_shift_int=\count307
+\c__fp_big_leading_shift_int=\count308
+\c__fp_big_middle_shift_int=\count309
+\c__fp_big_trailing_shift_int=\count310
+\c__fp_Bigg_leading_shift_int=\count311
+\c__fp_Bigg_middle_shift_int=\count312
+\c__fp_Bigg_trailing_shift_int=\count313
+\g__fp_array_int=\count314
+\l__fp_array_loop_int=\count315
+\l__sort_length_int=\count316
+\l__sort_min_int=\count317
+\l__sort_top_int=\count318
+\l__sort_max_int=\count319
+\l__sort_true_max_int=\count320
+\l__sort_block_int=\count321
+\l__sort_begin_int=\count322
+\l__sort_end_int=\count323
+\l__sort_A_int=\count324
+\l__sort_B_int=\count325
+\l__sort_C_int=\count326
+\l__tl_analysis_normal_int=\count327
+\l__tl_analysis_index_int=\count328
+\l__tl_analysis_nesting_int=\count329
+\l__tl_analysis_type_int=\count330
+\l__regex_internal_a_int=\count331
+\l__regex_internal_b_int=\count332
+\l__regex_internal_c_int=\count333
+\l__regex_balance_int=\count334
+\l__regex_group_level_int=\count335
+\l__regex_mode_int=\count336
+\c__regex_cs_in_class_mode_int=\count337
+\c__regex_cs_mode_int=\count338
+\l__regex_catcodes_int=\count339
+\l__regex_default_catcodes_int=\count340
+\c__regex_catcode_L_int=\count341
+\c__regex_catcode_O_int=\count342
+\c__regex_catcode_A_int=\count343
+\c__regex_all_catcodes_int=\count344
+\l__regex_show_lines_int=\count345
+\l__regex_min_state_int=\count346
+\l__regex_max_state_int=\count347
+\l__regex_left_state_int=\count348
+\l__regex_right_state_int=\count349
+\l__regex_capturing_group_int=\count350
+\l__regex_min_pos_int=\count351
+\l__regex_max_pos_int=\count352
+\l__regex_curr_pos_int=\count353
+\l__regex_start_pos_int=\count354
+\l__regex_success_pos_int=\count355
+\l__regex_curr_char_int=\count356
+\l__regex_curr_catcode_int=\count357
+\l__regex_last_char_int=\count358
+\l__regex_case_changed_char_int=\count359
+\l__regex_curr_state_int=\count360
+\l__regex_step_int=\count361
+\l__regex_min_active_int=\count362
+\l__regex_max_active_int=\count363
+\l__regex_replacement_csnames_int=\count364
+\l__regex_match_count_int=\count365
+\l__regex_min_submatch_int=\count366
+\l__regex_submatch_int=\count367
+\l__regex_zeroth_submatch_int=\count368
+\g__regex_trace_regex_int=\count369
 \c_empty_box=\box75
 \l_tmpa_box=\box76
 \l_tmpb_box=\box77
@@ -1088,33 +1071,77 @@ Package: expl3 2019-02-15 L3 programming layer (code)
 \l__coffin_scaled_width_dim=\dimen331
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
 File: l3xdvipdfmx.def 2019-02-15 v L3 Experimental driver: xdvipdfmx
-\g__driver_image_int=\count372
-\g__driver_pdf_object_int=\count373
-))
+\g__driver_image_int=\count370
+\g__driver_pdf_object_int=\count371
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2018-10-17 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count374
-\g__xparse_grabber_int=\count375
-\l__xparse_m_args_int=\count376
-\l__xparse_mandatory_args_int=\count377
-\l__xparse_v_nesting_int=\count378
+\l__xparse_current_arg_int=\count372
+\g__xparse_grabber_int=\count373
+\l__xparse_m_args_int=\count374
+\l__xparse_mandatory_args_int=\count375
+\l__xparse_v_nesting_int=\count376
 )
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+
+Class memoir Warning: You are using the caption package with the memoir class. To prepare we will now reset all captioning macros and configurations to kernel defaults, and then let the caption package take over. Please remember to use
+ the caption package interfaces in order to
+ configure your captions.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen332
+\captionmargin@=\dimen333
+\captionwidth=\dimen334
+\caption@tempdima=\dimen335
+\caption@indent=\dimen336
+\caption@parindent=\dimen337
+\caption@hangindent=\dimen338
+)
+\c@caption@flags=\count377
+\c@ContinuedFloat=\count378
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/preamble/dtucolors.sty) (/usr/local/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaLaTeX
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count379
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/makecmds/makecmds.sty
+Package: makecmds 2009/09/03 v1.0a extra command making commands
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks43
+\XKV@tempa@toks=\toks44
+)
+\XKV@depth=\count380
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2019/02/12 v2.7b Font selection for XeLaTeX and LuaLaTeX
  (/usr/local/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2019/02/12 v2.7b Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count379
-\l__fontspec_language_int=\count380
-\l__fontspec_strnum_int=\count381
-\l__fontspec_tmp_int=\count382
-\l__fontspec_tmpa_int=\count383
-\l__fontspec_tmpb_int=\count384
-\l__fontspec_tmpc_int=\count385
-\l__fontspec_em_int=\count386
-\l__fontspec_emdef_int=\count387
-\l__fontspec_strong_int=\count388
-\l__fontspec_strongdef_int=\count389
-\l__fontspec_tmpa_dim=\dimen332
-\l__fontspec_tmpb_dim=\dimen333
-\l__fontspec_tmpc_dim=\dimen334
+\l__fontspec_script_int=\count381
+\l__fontspec_language_int=\count382
+\l__fontspec_strnum_int=\count383
+\l__fontspec_tmp_int=\count384
+\l__fontspec_tmpa_int=\count385
+\l__fontspec_tmpb_int=\count386
+\l__fontspec_tmpc_int=\count387
+\l__fontspec_em_int=\count388
+\l__fontspec_emdef_int=\count389
+\l__fontspec_strong_int=\count390
+\l__fontspec_strongdef_int=\count391
+\l__fontspec_tmpa_dim=\dimen339
+\l__fontspec_tmpb_dim=\dimen340
+\l__fontspec_tmpc_dim=\dimen341
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/tuenc.def
@@ -1135,12 +1162,12 @@ File: gloss-english.ldf polyglossia: module for english
 Package polyglossia Info: Default language is english.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
-\csq@reset=\count390
-\csq@gtype=\count391
-\csq@glevel=\count392
-\csq@qlevel=\count393
-\csq@maxlvl=\count394
-\csq@tshold=\count395
+\csq@reset=\count392
+\csq@gtype=\count393
+\csq@glevel=\count394
+\csq@qlevel=\count395
+\csq@maxlvl=\count396
+\csq@tshold=\count397
 \csq@ltx@everypar=\toks45
  (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
@@ -1161,53 +1188,53 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count396
+\lrq@indent=\count398
  (/usr/local/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count397
-\c@listtotal=\count398
-\c@listcount=\count399
-\c@liststart=\count400
-\c@liststop=\count401
-\c@citecount=\count402
-\c@citetotal=\count403
-\c@multicitecount=\count404
-\c@multicitetotal=\count405
-\c@instcount=\count406
-\c@maxnames=\count407
-\c@minnames=\count408
-\c@maxitems=\count409
-\c@minitems=\count410
-\c@citecounter=\count411
-\c@maxcitecounter=\count412
-\c@savedcitecounter=\count413
-\c@uniquelist=\count414
-\c@uniquename=\count415
-\c@refsection=\count416
-\c@refsegment=\count417
-\c@maxextratitle=\count418
-\c@maxextratitleyear=\count419
-\c@maxextraname=\count420
-\c@maxextradate=\count421
-\c@maxextraalpha=\count422
-\c@abbrvpenalty=\count423
-\c@highnamepenalty=\count424
-\c@lownamepenalty=\count425
-\c@maxparens=\count426
-\c@parenlevel=\count427
-\blx@tempcnta=\count428
-\blx@tempcntb=\count429
-\blx@tempcntc=\count430
-\blx@maxsection=\count431
-\blx@maxsegment@0=\count432
-\blx@notetype=\count433
-\blx@parenlevel@text=\count434
-\blx@parenlevel@foot=\count435
-\blx@sectionciteorder@0=\count436
-\blx@entrysetcounter=\count437
+\c@tabx@nest=\count399
+\c@listtotal=\count400
+\c@listcount=\count401
+\c@liststart=\count402
+\c@liststop=\count403
+\c@citecount=\count404
+\c@citetotal=\count405
+\c@multicitecount=\count406
+\c@multicitetotal=\count407
+\c@instcount=\count408
+\c@maxnames=\count409
+\c@minnames=\count410
+\c@maxitems=\count411
+\c@minitems=\count412
+\c@citecounter=\count413
+\c@maxcitecounter=\count414
+\c@savedcitecounter=\count415
+\c@uniquelist=\count416
+\c@uniquename=\count417
+\c@refsection=\count418
+\c@refsegment=\count419
+\c@maxextratitle=\count420
+\c@maxextratitleyear=\count421
+\c@maxextraname=\count422
+\c@maxextradate=\count423
+\c@maxextraalpha=\count424
+\c@abbrvpenalty=\count425
+\c@highnamepenalty=\count426
+\c@lownamepenalty=\count427
+\c@maxparens=\count428
+\c@parenlevel=\count429
+\blx@tempcnta=\count430
+\blx@tempcntb=\count431
+\blx@tempcntc=\count432
+\blx@maxsection=\count433
+\blx@maxsegment@0=\count434
+\blx@notetype=\count435
+\blx@parenlevel@text=\count436
+\blx@parenlevel@foot=\count437
+\blx@sectionciteorder@0=\count438
+\blx@entrysetcounter=\count439
 \labelnumberwidth=\skip262
 \labelalphawidth=\skip263
 \biblabelsep=\skip264
@@ -1217,9 +1244,9 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip268
 \blx@bcfin=\read4
 \blx@bcfout=\write5
-\c@mincomprange=\count438
-\c@maxcomprange=\count439
-\c@mincompwidth=\count440
+\c@mincomprange=\count440
+\c@maxcomprange=\count441
+\c@mincompwidth=\count442
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
@@ -1229,74 +1256,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count441
-\c@savedafterword=\count442
-\c@annotator=\count443
-\c@savedannotator=\count444
-\c@author=\count445
-\c@savedauthor=\count446
-\c@bookauthor=\count447
-\c@savedbookauthor=\count448
-\c@commentator=\count449
-\c@savedcommentator=\count450
-\c@editor=\count451
-\c@savededitor=\count452
-\c@editora=\count453
-\c@savededitora=\count454
-\c@editorb=\count455
-\c@savededitorb=\count456
-\c@editorc=\count457
-\c@savededitorc=\count458
-\c@foreword=\count459
-\c@savedforeword=\count460
-\c@holder=\count461
-\c@savedholder=\count462
-\c@introduction=\count463
-\c@savedintroduction=\count464
-\c@namea=\count465
-\c@savednamea=\count466
-\c@nameb=\count467
-\c@savednameb=\count468
-\c@namec=\count469
-\c@savednamec=\count470
-\c@translator=\count471
-\c@savedtranslator=\count472
-\c@shortauthor=\count473
-\c@savedshortauthor=\count474
-\c@shorteditor=\count475
-\c@savedshorteditor=\count476
-\c@labelname=\count477
-\c@savedlabelname=\count478
-\c@institution=\count479
-\c@savedinstitution=\count480
-\c@lista=\count481
-\c@savedlista=\count482
-\c@listb=\count483
-\c@savedlistb=\count484
-\c@listc=\count485
-\c@savedlistc=\count486
-\c@listd=\count487
-\c@savedlistd=\count488
-\c@liste=\count489
-\c@savedliste=\count490
-\c@listf=\count491
-\c@savedlistf=\count492
-\c@location=\count493
-\c@savedlocation=\count494
-\c@organization=\count495
-\c@savedorganization=\count496
-\c@origlocation=\count497
-\c@savedoriglocation=\count498
-\c@origpublisher=\count499
-\c@savedorigpublisher=\count500
-\c@publisher=\count501
-\c@savedpublisher=\count502
-\c@language=\count503
-\c@savedlanguage=\count504
-\c@origlanguage=\count505
-\c@savedoriglanguage=\count506
-\c@pageref=\count507
-\c@savedpageref=\count508
+\c@afterword=\count443
+\c@savedafterword=\count444
+\c@annotator=\count445
+\c@savedannotator=\count446
+\c@author=\count447
+\c@savedauthor=\count448
+\c@bookauthor=\count449
+\c@savedbookauthor=\count450
+\c@commentator=\count451
+\c@savedcommentator=\count452
+\c@editor=\count453
+\c@savededitor=\count454
+\c@editora=\count455
+\c@savededitora=\count456
+\c@editorb=\count457
+\c@savededitorb=\count458
+\c@editorc=\count459
+\c@savededitorc=\count460
+\c@foreword=\count461
+\c@savedforeword=\count462
+\c@holder=\count463
+\c@savedholder=\count464
+\c@introduction=\count465
+\c@savedintroduction=\count466
+\c@namea=\count467
+\c@savednamea=\count468
+\c@nameb=\count469
+\c@savednameb=\count470
+\c@namec=\count471
+\c@savednamec=\count472
+\c@translator=\count473
+\c@savedtranslator=\count474
+\c@shortauthor=\count475
+\c@savedshortauthor=\count476
+\c@shorteditor=\count477
+\c@savedshorteditor=\count478
+\c@labelname=\count479
+\c@savedlabelname=\count480
+\c@institution=\count481
+\c@savedinstitution=\count482
+\c@lista=\count483
+\c@savedlista=\count484
+\c@listb=\count485
+\c@savedlistb=\count486
+\c@listc=\count487
+\c@savedlistc=\count488
+\c@listd=\count489
+\c@savedlistd=\count490
+\c@liste=\count491
+\c@savedliste=\count492
+\c@listf=\count493
+\c@savedlistf=\count494
+\c@location=\count495
+\c@savedlocation=\count496
+\c@organization=\count497
+\c@savedorganization=\count498
+\c@origlocation=\count499
+\c@savedoriglocation=\count500
+\c@origpublisher=\count501
+\c@savedorigpublisher=\count502
+\c@publisher=\count503
+\c@savedpublisher=\count504
+\c@language=\count505
+\c@savedlanguage=\count506
+\c@origlanguage=\count507
+\c@savedoriglanguage=\count508
+\c@pageref=\count509
+\c@savedpageref=\count510
 \shorthandwidth=\skip269
 \shortjournalwidth=\skip270
 \shortserieswidth=\skip271
@@ -1323,25 +1350,24 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count509
-\c@textcitetotal=\count510
-\c@textcitemaxnames=\count511
-\c@biburlnumpenalty=\count512
-\c@biburlucpenalty=\count513
-\c@biburllcpenalty=\count514
-\c@smartand=\count515
+\c@textcitecount=\count511
+\c@textcitetotal=\count512
+\c@textcitemaxnames=\count513
+\c@biburlnumpenalty=\count514
+\c@biburlucpenalty=\count515
+\c@biburllcpenalty=\count516
+\c@smartand=\count517
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
 File: numeric.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count516
-\c@bbx:relatedtotal=\count517
+\c@bbx:relatedcount=\count518
+\c@bbx:relatedtotal=\count519
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1388,11 +1414,11 @@ Package cleveref Info: no abbreviation of names on input line 7852.
 Package cleveref Info: include cross-reference names in hyperlinks on input line 7852.
 Package cleveref Info: always capitalise cross-reference names on input line 7852.
 )
-\c@subfigure=\count518
+\c@subfigure=\count520
 \cftbeforesubfigureskip=\skip283
 \cftsubfigureindent=\skip284
 \cftsubfigurenumwidth=\skip285
-\c@subtable=\count519
+\c@subtable=\count521
 \cftbeforesubtableskip=\skip286
 \cftsubtableindent=\skip287
 \cftsubtablenumwidth=\skip288
@@ -1410,29 +1436,29 @@ File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
  (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
 )))
-\c@@todonotes@numberoftodonotes=\count520
+\c@@todonotes@numberoftodonotes=\count522
 )
-\c@todocounter=\count521
-\c@todocounter@totc=\count522
+\c@todocounter=\count523
+\c@todocounter@totc=\count524
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 253.
+(hyperref)                removing `\\' on input line 254.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 253.
+(hyperref)                removing `\\' on input line 254.
 
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 253.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 253.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 253.
-Package hyperref Info: Option `breaklinks' set `true' on input line 253.
-Package hyperref Info: Option `plainpages' set `false' on input line 253.
-Package hyperref Info: Option `unicode' set `true' on input line 253.
-Package hyperref Info: Option `colorlinks' set `false' on input line 253.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 254.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 254.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 254.
+Package hyperref Info: Option `breaklinks' set `true' on input line 254.
+Package hyperref Info: Option `plainpages' set `false' on input line 254.
+Package hyperref Info: Option `unicode' set `true' on input line 254.
+Package hyperref Info: Option `colorlinks' set `false' on input line 254.
 ) (./preamble/fonts.tex
 
 Package fontspec Info: Font family 'texgyreadventor(0)' created for font
@@ -1465,63 +1491,63 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count523
-\c@Blindtext=\count524
-\c@blind@countparstart=\count525
-\blind@countxx=\count526
-\blindtext@numBlindtext=\count527
-\blind@countyy=\count528
-\c@blindlist=\count529
-\c@blindlistlevel=\count530
-\c@blindlist@level=\count531
-\blind@listitem=\count532
-\c@blind@listcount=\count533
-\c@blind@levelcount=\count534
-\blind@mathformula=\count535
-\blind@Mathformula=\count536
-\c@blind@randomcount=\count537
-\c@blind@randommax=\count538
-\c@blind@pangramcount=\count539
-\c@blind@pangrammax=\count540
+\c@blindtext=\count525
+\c@Blindtext=\count526
+\c@blind@countparstart=\count527
+\blind@countxx=\count528
+\blindtext@numBlindtext=\count529
+\blind@countyy=\count530
+\c@blindlist=\count531
+\c@blindlistlevel=\count532
+\c@blindlist@level=\count533
+\blind@listitem=\count534
+\c@blind@listcount=\count535
+\c@blind@levelcount=\count536
+\blind@mathformula=\count537
+\blind@Mathformula=\count538
+\c@blind@randomcount=\count539
+\c@blind@randommax=\count540
+\c@blind@pangramcount=\count541
+\c@blind@pangrammax=\count542
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
 Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
  (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count541
+\c@float@type=\count543
 \float@exts=\toks46
 \float@box=\box93
 \@float@everytoks=\toks47
 \@floatcapt=\box94
 )
 \@float@every@algorithm=\toks48
-\c@algorithm=\count542
+\c@algorithm=\count544
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count543
-\c@ALG@rem=\count544
-\c@ALG@nested=\count545
+\c@ALG@line=\count545
+\c@ALG@rem=\count546
+\c@ALG@nested=\count547
 \ALG@tlm=\skip289
 \ALG@thistlm=\skip290
-\c@ALG@Lnr=\count546
-\c@ALG@blocknr=\count547
-\c@ALG@storecount=\count548
-\c@ALG@tmpcounter=\count549
+\c@ALG@Lnr=\count548
+\c@ALG@blocknr=\count549
+\c@ALG@storecount=\count550
+\c@ALG@tmpcounter=\count551
 \ALG@tmplength=\skip291
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/02/04 v3.8 Customized lists
 \labelindent=\skip292
-\enit@outerparindent=\dimen335
+\enit@outerparindent=\dimen342
 \enit@toks=\toks49
 \enit@inbox=\box95
-\enit@count@id=\count550
-\enitdp@description=\count551
+\enit@count@id=\count552
+\enitdp@description=\count553
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 ))
@@ -1533,7 +1559,20 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux
+
+LaTeX Warning: Label `fig:arima1_pred_55' multiply defined.
+
+
+LaTeX Warning: Label `fig:arima1_pred_55@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:arima1_pred_18' multiply defined.
+
+
+LaTeX Warning: Label `fig:arima1_pred_18@cref' multiply defined.
+
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -1570,7 +1609,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-\c@lstlisting=\count552
+\c@lstlisting=\count554
  ABD: EveryShipout initializing macros
 LaTeX Info: Redefining \celsius on input line 8.
 Package gensymb Info: Faking symbols for \degree and \celsius on input line 8.
@@ -1590,7 +1629,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count553
+\c@section@level=\count555
 )
 Redoing nameref's sectioning
 Redoing nameref's label
@@ -1602,6 +1641,9 @@ LaTeX Info: Redefining \nameref on input line 8.
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -1610,22 +1652,13 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' found.
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                chap: daily
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 8.
 Package biblatex Info: Reference segment=0 on input line 8.
 
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 8.
 
-Package nag Info: Command \caption@xlabel not defined, skipping amendment on input line 8.
 Package nag Info: Command \captionabove not defined, skipping amendment on input line 8.
 Package nag Info: Command \captionbelow not defined, skipping amendment on input line 8.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input line 8.
@@ -1751,7 +1784,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [7]) [8]
+) [7]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
@@ -1778,11 +1816,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
@@ -1792,7 +1825,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
 
 ]
-Overfull \hbox (87.80006pt too wide) in paragraph at lines 42--61
+Overfull \hbox (52.79005pt too wide) in paragraph at lines 42--61
  [][] 
  []
 
@@ -1825,14 +1858,19 @@ File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
 ]
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
- [8]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
-[9]
 File: graphics/../../../figures/byggeaar.eps Graphic file (type eps)
 <graphics/../../../figures/byggeaar.eps>
+
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
  [10]
 Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
@@ -1840,11 +1878,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
 File: graphics/../../../figures/gg_cor.pdf Graphic file (type pdf)
 <use graphics/../../../figures/gg_cor.pdf>
-
-Underfull \hbox (badness 1038) in paragraph at lines 84--84
-[][]\TU/lmr/m/n/10 Scatterplot showing the correlations between the thwo attributes
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 80--88
 
@@ -1856,18 +1889,25 @@ Overfull \hbox (32.79005pt too wide) in paragraph at lines 92--109
  []
 
 [12] [13]
+
+LaTeX Warning: Citation 'chap: daily' on page 14 undefined on input line 117.
+
 File: graphics/../../../figures/Consumption_PW.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Consumption_PW.pdf>
- [14]
-File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
-<graphics/../../../figures/class_breakpoint.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14] [15]
 File: graphics/../../../figures/Breakpoint_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_55.pdf>
 File: graphics/../../../figures/Breakpoint_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Breakpoint_18.pdf>
 File: graphics/../../../figures/AlphaHist.jpeg Graphic file (type bmp)
 <graphics/../../../figures/AlphaHist.jpeg>
-) [15] [16] [17] [18] [19] [20] [21]
+ [16]
+File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
+<graphics/../../../figures/class_breakpoint.eps>
+) [17] [18] [19] [20] [21]
 \openout2 = `chapters/Statistical.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [22
@@ -1939,25 +1979,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--233
  []
 
 
-Underfull \vbox (badness 1137) has occurred while \output is active []
+Underfull \vbox (badness 2573) has occurred while \output is active []
 
  [36]
 File: graphics/../../../figures/Wplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot55.jpeg>
 File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot18.jpeg>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [37]
 Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
 File: graphics/../../../figures/WKplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/WKplot55.jpeg>
 File: graphics/../../../figures/WKplot18.jpeg Graphic file (type bmp)
@@ -1966,27 +1999,63 @@ File: graphics/../../../figures/lmpred_col_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_col_55L.eps>
 File: graphics/../../../figures/lmpred_hist_55L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_55L.pdf>
+[38] [39]
+Underfull \vbox (badness 5431) has occurred while \output is active []
+
+ [40]
 File: graphics/../../../figures/lmpred_col_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_col_18L.pdf>
 File: graphics/../../../figures/lmpred_hist_18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/lmpred_hist_18L.pdf>
-) [39] [40] [41] [42] [43] [44]
+) [41] [42] [43] [44]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
-File: graphics/../../../figures/Heatmap_summer.pdf Graphic file (type pdf)
-<use graphics/../../../figures/Heatmap_summer.pdf>
-File: graphics/../../../figures/Heatmap_winter.pdf Graphic file (type pdf)
-<use graphics/../../../figures/Heatmap_winter.pdf>
+File: graphics/../../../figures/Heatmap_summer.eps Graphic file (type eps)
+<graphics/../../../figures/Heatmap_summer.eps>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 6.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (21.76266pt too wide) in paragraph at lines 3--6
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [45
 
 
 
-] [46] [47]
+]
+File: graphics/../../../figures/Heatmap_winter.eps Graphic file (type eps)
+<graphics/../../../figures/Heatmap_winter.eps>
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 11.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (21.76266pt too wide) in paragraph at lines 9--11
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [46] [47]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/HourDistribution.jpeg>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [48] [49] [50] [51]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
@@ -1998,39 +2067,43 @@ File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
  [54] [55] [56]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 148.
+               Default added (so using `tbp') on input line 141.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 160.
+               Default added (so using `tbp') on input line 153.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
 [57] [58]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 186.
+               Default added (so using `tbp') on input line 179.
 
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
+File: graphics/../../../figures/TestWeatherDay.eps Graphic file (type eps)
+<graphics/../../../figures/TestWeatherDay.eps>
 File: graphics/../../../figures/arimax/arima1_pred_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima1_pred_55.pdf>
 File: graphics/../../../figures/arimax/arima1_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima1_pred_18.pdf>
-)
-Underfull \vbox (badness 1484) has occurred while \output is active []
-
- [59] [60] [61] [62] [63]
+[59] [60]
+File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/arima2_pred_55.pdf>
+File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/arima2_pred_18.pdf>
+ [61] [62] [63] [64] [65]) [66]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [64
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex) [67
 
 
 
-]) [65]
+]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [66
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [68
 
 
 
@@ -2045,7 +2118,7 @@ Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
  []
 
 
-LaTeX Warning: Float too large for page by 54.25996pt on input line 298.
+LaTeX Warning: Float too large for page by 49.19998pt on input line 298.
 
 
 Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
@@ -2055,13 +2128,13 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [67] [68] [69] [70]
+ [69] [70] [71] [72]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71] [72] [73]
-Overfull \vbox (74.57715pt too high) has occurred while \output is active []
+ [73] [74] [75]
+Overfull \vbox (69.51717pt too high) has occurred while \output is active []
 
- [74]
+ [76]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
@@ -2076,90 +2149,120 @@ Overfull \hbox (1.68883pt too wide) in paragraph at lines 349--350
  [][] 
  []
 
-
-LaTeX Warning: Float too large for page by 1.81111pt on input line 352.
-
 File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [75
+) [77
 
-] [76] [77] [78] [79] [80
+] [78] [79] [80] [81] [82
 
 
 ]
 
-Package biblatex Warning: No driver for entry type 'sne'.
-(biblatex)                Using fallback driver on input line 42.
-
-
-Package biblatex Warning: No driver for entry type 'paper'.
-(biblatex)                Using fallback driver on input line 42.
+Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer supported.
+(biblatex)                Please use 'sorting' option to '\newrefcontext'.
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
-Overfull \hbox (50.28pt too wide) in paragraph at lines 43--43
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
+
+
+Overfull \hbox (50.28pt too wide) in paragraph at lines 44--44
 [][][][][][][][] [] [][][][][][][][][][] [][] [][][][][][][][][] [] [][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][] []
  []
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
-Overfull \hbox (51.95215pt too wide) in paragraph at lines 43--43
+Overfull \hbox (51.95215pt too wide) in paragraph at lines 44--44
 []\TU/lmr/m/n/10 Aalborg Forsyning. \TU/lmr/m/it/10 Aalborg Forsynings hjemmeside\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][] []
  []
 
 
 Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 42.
+(biblatex)                Using fallback driver on input line 44.
 
 
-Package biblatex Warning: No driver for entry type 'paper'.
-(biblatex)                Using fallback driver on input line 42.
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
 
-[81
+
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
+
+
+Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
+[]\TU/lmr/m/n/10 Wikipedia. \TU/lmr/m/it/10 Multicollinearity\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][][][][][][][]$[]. 
+ []
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+[83
 
 ]
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
 No complaints by nag.
-File: graphics/DTU-frise-SH-15.pdf Graphic file (type pdf)
-<use graphics/DTU-frise-SH-15.pdf>
-[82
-
-]
+[84]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 45.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 45.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux)
 Package cleveref Info: loaded `english' language definitions on input line 25.
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 45.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 45.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B2F78D97A60026F8290ED41E8BE5D1B6.
+(rerunfilecheck)             Checksum: 40EFCC62215765DB9A9D539F84ECB66C.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Thesis
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 45.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 49891 strings out of 492933
- 959999 string characters out of 6133145
- 1714251 words of memory out of 5000000
- 53148 multiletter control sequences out of 15000+600000
- 554124 words of font info for 68 fonts, out of 8000000 for 9000
+ 51117 strings out of 492933
+ 984596 string characters out of 6133145
+ 1824275 words of memory out of 5000000
+ 54355 multiletter control sequences out of 15000+600000
+ 554132 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2745b,6213s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,81p,2745b,7984s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (92 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (94 pages).

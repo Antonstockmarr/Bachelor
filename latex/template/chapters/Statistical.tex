@@ -5,7 +5,7 @@ Now that data is cleaned and prepared, a statistical analysis consisting of data
 \section{Linear regression}
 Linear regression is a method to model the relationship between a dependent variable and one or more independent variables, where the unknown model parameters are estimated from the data. With the dependent variable $Y$ and the independent variables $x_1, \dots, x_n$, the linear regression model is formulated as
 \begin{equation}
-    Y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \cdots + \beta_p x_{i,p} + \varepsilon_i, \quad \varepsilon_i ~ \mathcal{N}(0,\sigma^2), \quad i = 1,\dots, n. \label{lm}
+    Y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \cdots + \beta_p x_{i,p} + \varepsilon_i, \quad \varepsilon_i \sim \mathcal{N}(0,\sigma^2), \quad i = 1,\dots, n. \label{lm}
 \end{equation}
 The variables $\varepsilon_i$ are errors which are assumed to be white noise while also being i.i.d (independent and identically distributed). Equation \eqref{lm} shows a multiple linear regression model as it contains more than one explanatory variable. In this section both a simple linear model and a multiple linear model has been fitted to data given in table \ref{tab: modeldata}.
 
@@ -173,11 +173,11 @@ Based on the tables illustrating the significant parameters for the long and sho
 Likewise, the models are validated and if the assumptions are fulfilled the models can be used for comparison and predictions. The model in \cref{eq: general_lm} is expected to explain the heat consumption of the houses in a more accurate way as it takes several significant parameters into account. As mentioned, the purpose of the general model is to compare the houses for what influences their specific heat consumption and thereby the house's performance. Thus, they are not further reduced.
 
 \subsection{Validation}
-In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \ref{chap: discussion}. On the other hand, the diagnostic plots of the residuals from house 55 are definitely improved compared to the simple model and the residuals show a randomly behavior. Overall, the diagnostic plots for the general models can be said to be fulfilled. They are not perfect but that is not expected either. There are some houses whose residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
+In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. More precisely, some of the residuals lie on a straight line, as seen in the residuals vs fitted plot. The reason for this is that the heat consumption for the house is 0 at the end of autumn, as seen in \cref{fig: daily_cons}. This results in that the estimates of the consumption for these specific points are equal to the corresponding residuals with reversed sign. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \ref{chap: discussion}. On the other hand, the diagnostic plots of the residuals from house 55 are definitely improved compared to the simple model and the residuals show a randomly behavior. Overall, the diagnostic plots for the general models can be said to be fulfilled. They are not perfect but that is not expected either. There are some houses whose residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
 \begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.pdf}
-    \caption{Diagnostic plot of the general multiple linear regression model for long house 18}
+    \caption{Diagnostic plot of the general multiple linear regression model for long house 18. }
     \label{fig: general_lm18L}
 \end{figure}
 \begin{figure}
@@ -247,7 +247,7 @@ As well as for house 55, the wind dependency is also illustrated for house 18 in
 \end{figure}
 
 \section{Comparison}
-When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. This might be explained by the inclusion of the wind in the multiple regression model. The so-called directions are not all significant for all houses. Thus, this can affect the behavior of the residuals. On the other hand, the interpretation of the simple model shows that the temperature has a great influence on the consumption. But from a physical perspective it is known that the heat consumption is influenced by other physical phenomena as well. Hence, the simple regression model is indeed too simple. \textcolor{red}{Not quite done yet.} \textcolor{blue}{Den generelle regressionsmodel gør det den skal. Den kan sige noget om hvilke fysiske fænomener, der påvirker hvert hus' varmeforbrug. Den kan også forudsige hvordan det forventede forbrug vil se ud en måned frem. Dette er dog under antagelsen om at vejrprognoserne er eksakte.}
+When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. This might be explained by the inclusion of the wind in the multiple regression model. The so-called directions are not all significant for all houses. Thus, this can affect the behavior of the residuals. On the other hand, the interpretation of the simple model shows that the temperature has a great influence on the consumption. But from a physical perspective it is known that the heat consumption is influenced by other physical phenomena as well. Hence, the simple regression model is indeed too simple. The general regression model performs as expected. It can say something about which physical phenomena affect the heat consumption of each house. The model can also predict how the expected consumption will look a month ahead. However, this is under the assumption that the weather forecasts are exact. \textcolor{red}{Ved ikke om der muligvis mangler noget her.} 
 
 \section{Visualization of the results}
 Part of this project is also to give suggestions on how the results of the analyzes can be illustrated to the users of the WATTS app. \\
@@ -265,13 +265,13 @@ Part of this project is also to give suggestions on how the results of the analy
     \caption{Relative wind direction dependency for the consumption for house 18}
     \label{fig: WKplot18}
 \end{figure}
-The red colour indicates where the house is most influential where the consumer must be most attentive in relation to e.g. replacement of windows or better insulation. \cref{fig: WKplot55} shows that the heat consumption in house 55 increases when the wind is coming from the west. 
+The red colour indicates where the house is most influential where the consumer must be most attentive in relation to e.g. replacement of windows or better insulation. \cref{fig: WKplot55} shows that the heat consumption in house 55 increases when the wind is coming from the west. Likewise, \cref{fig: WKplot18} shows that the heat consumption increases when the wind is blowing from west and also east. These illustrations are relative to the performance of each house. It is difficult to weigh the wind directions precisely when the data does not contain information about the location of the houses which is discussed in Chapter \ref{chap: discussion}. 
 %The coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. \textcolor{red}{ref} shows that the heat consumption for house 55 is most affected when the wind comes from west. \textcolor{red}{Kan godt være boys lige skal kommentere lidt på det her.}
-\noindent
+\noindent \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L} are also colorized with red, yellow and green. This coloring is distributed so that there is an equal probability that the heat consumption lies in one of the three areas, ie. the areas are weighted $\frac{1}{3}$ each. The red area indicates that the heat consumption exceeds the expected consumption which will result in the consumer having to pay more. If, on the other hand, the consumption is in the green area, the customer consumes less than expected and thus has to pay less than the budget. As can be seen in \cref{fig: lmpred_col_55L} for house 55, it is only in early January that the consumption exceeds the expected. Otherwise, the consumption is around the expected and for most days it is below. To be able to clarify the daily consumption even more,every day in January 2019 can be represented as a pillar, resulting in \cref{fig: lmpred_hist_55L}. As mentioned, the consumption for house 55 is most often below the expected consumption, as the bar graph clearly shows with the majority of the pillars colored green. These two suggestions for the WATTS app have also been tried on house 18. The previously mentioned oscillating behavior is clearly seen in \cref{fig: lmpred_col_18L}. This shows the consumer that they should probably have an expert investigating the house further. The bar graph in \cref{fig: lmpred_hist_18L} shows that the pillars changes colors almost every day. Once again,it can be seen that the heat consumption in house 18 has a very strange behavior.
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_55L.eps}
-    \caption{This is another way of visualizing \cref{fig: lmpred_55L}. The data is the black line, and the colours show how the house performs compared to the predictions.}
+    \caption{This is another way of visualizing \cref{fig: lmpred_55L}. The data is the black line, and the colours show how the house performs compared to the predictions}
     \label{fig: lmpred_col_55L}
 \end{figure}
 \begin{figure}
@@ -284,12 +284,12 @@ The red colour indicates where the house is most influential where the consumer 
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_18L.pdf}
-    \caption{\textcolor{red}{Missing}}
+    \caption{This is another way of visualizing \cref{fig: lmpred_18L}. The data is the black line, and the colours show how the house performs compared to the predictions}
     \label{fig: lmpred_col_18L}
 \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=.8\textwidth]{../../../figures/lmpred_hist_18L.pdf}
-    \caption{\textcolor{red}{Missing}}
+    \caption{This plot visualizes the consumption of house 18. Each bar is coloured based on where the observation is on \cref{fig: lmpred_col_18L}}
     \label{fig: lmpred_hist_18L}
 \end{figure}

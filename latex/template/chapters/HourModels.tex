@@ -1,22 +1,15 @@
 \chapter{Models on the Hourly Consumption}
 \label{chap: hourly}
 In this section, a more detailed look at the hourly consumption will be provided. One of the goals is to get a better understanding of the tap-water consumption during the summer period, such that it can be used when looking at the winter period. This can be done by looking at the distributions of the consumption during the day in the two periods. Another goal of this section is to model the hourly consumption as a time series. An ARIMAX model will be applied to give a better understanding of the data. The ARIMAX model can also be used to give short term predictions of the consumption, and to give a alternative way of estimating the temperature dependency. These estimates will later be compared to the ones found with the linear regression models.
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{../../../figures/Heatmap_summer.pdf}
-    \caption{The normalized average consumption of every house during the day in the summer period. This is characterized by the days where the average outside temperature is above 15 degrees. The horizontal lines indicate the hours and each vertical strip is a house. The scale indicates the fraction of the total consumption during the day}
-    \label{fig: Hourcons_summer}
-\end{figure}
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{../../../figures/Heatmap_winter.pdf}
-    \caption{This figure shows the same as \cref{fig: daily_cons}, but only in the winter period, characterized by an outside temperature below 12 degrees}
-    \label{fig: Hourcons_winter}
-\end{figure}
+{\centering
+    \includegraphics[scale=0.85]{../../../figures/Heatmap_summer.eps}
+    \captionof{figure}{The normalized average consumption of every house during the day in the summer period. This is characterized by the days where the average outside temperature is above 15 degrees. The horizontal lines indicate the hours and each vertical strip is a house. The scale indicates the fraction of the total consumption during the day \label{fig: Hourcons_summer}}
+}
+{\centering
+    \includegraphics[scale=0.85]{../../../figures/Heatmap_winter.eps}
+    \captionof{figure}{This figure shows the same as \cref{fig: daily_cons}, but only in the winter period, characterized by an outside temperature below 12 degrees
+    \label{fig: Hourcons_winter}}
+}
 
 %
 \section{Description of the Hourly Consumption}
@@ -205,7 +198,14 @@ This is again after the regression fit with the temperature has been substituted
 
 
 \subsection{Predicting with the ARIMA model}
-Now the model found above will be used for predictions. The test data used is two weeks in January 2019. The predictions are made using the \texttt{R} function \texttt{predict}. The  weather data used as input can be seen in \cref{fig: weather_pred}. Just as in the linear regression model, the input series is assumed to be a perfect prediction without measuring errors. The predictions are not one-step predictions, but 14 step predictions. The results of applying the predictions to house 55 can be seen in figure \cref{fig:arima1_pred_55}. It very quickly becomes clear that the data behaves very differently than the model predicts. There are a lot of very high spikes, each followed by an hour with zero consumption. This tendency is not captured at all in the model, and it is clear that the time series models cannot be used for anything useful for this house unless the data is altered in some way. House 18 in figure \cref{fig:arima1_pred_18} shows the same unexpected behavior. There seems to be no connection between the time of day and the massive spikes for either of the houses. And since the spikes are usually followed by a consumption of precisely zero, the behavior seems to be linked to how the data is collected and pre-processed by Aalborg Forsyning. Given that the anomalities come in pairs of measurements that are two or three times higher than the neighbours and than measurements of zero, the most plausible explanation is that several measurements are accidentially grouped into a single hour interval, leaving the next interval with no consumption. The phenomenon with a high spike followed by a zero happens in almost every \textcolor{red}{snak med Finn om hvor tit det sker}
+Now the model found above will be used for predictions. The test data used is two weeks in January 2019. The predictions are made using the \texttt{R} function \texttt{predict}. The  weather data used as input can be seen in \cref{fig:weather_pred_hour}. Just as in the linear regression model, the input series is assumed to be a perfect prediction without measuring errors. The predictions are not one-step predictions, but 14 step predictions. The results of applying the predictions to house 55 can be seen in figure \cref{fig:arima1_pred_55}. It very quickly becomes clear that the data behaves very differently than the model predicts. There are a lot of very high spikes, each followed by an hour with zero consumption. This tendency is not captured at all in the model, and it is clear that the time series models cannot be used for anything useful for this house unless the data is altered in some way. House 18 in figure \cref{fig:arima1_pred_18} shows the same unexpected behavior. There seems to be no connection between the time of day and the massive spikes for either of the houses. And since the spikes are usually followed by a consumption of precisely zero, the behavior seems to be linked to how the data is collected and pre-processed by Aalborg Forsyning. Given that the anomalities come in pairs of measurements that are two or three times higher than the neighbours and than measurements of zero, the most plausible explanation is that several measurements are accidentially grouped into a single hour interval, leaving the next interval with no consumption. The phenomenon with a high spike followed by a zero happens in almost every \textcolor{red}{snak med Finn om hvor tit det sker}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/TestWeatherDay.eps}
+    \caption{The input series of the temperature used for predictions made with the arima model.}
+    \label{fig:weather_pred_hour}
+\end{figure}
 
 
 \begin{figure}
@@ -223,7 +223,9 @@ Now the model found above will be used for predictions. The test data used is tw
 \end{figure}
 
 
-\noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data.
+
+\noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data. The results are shown in \cref{fig:arima1_pred_55} and \cref{fig:arima1_pred_18}. For house 55 the data still have some significant spikes in the first part, but it is more well-behaved in the rest of the test period. Here it is mostly within the prediction interval, but the prediction interval is rather wide. In generel the model shows that there is a lot of variance in the data that is not captured by the model. The model could be applied, but it will not perform very well. As for house 18, the data is still way off compared to the predictions. The smoothing did not change the way the data behaved, and there are still a lot of spikes that are so far from the prediction interval, that the model does not say anything useful about this house.
+
 
 \begin{figure}
     \centering
@@ -242,12 +244,12 @@ Now the model found above will be used for predictions. The test data used is tw
 
 \subsection{Modelling with the MARIMA Function}
 
-
-
-
-
-
-
 \subsection{Visualization of the results}
+For the houses that only had data between something and something \textcolor{red}{mangler short period}, it turned out that there were no anomalities of the type described earlier in this section. This could mean that the data from these houses is collected in a more reliant way. Therefore predictions for one of these houses will also be included. The predictions for one of these houses is illustrated in figure \textcolor{red}{ref til short}
 
-\subsection{Modelling with the MARIMA Function}
+
+\noindent The results recieved from the time series models so far have not been very reliant, and in general the model should not be used for predictions at this stage. But if one were to visualize the predictions found in for example \textcolor{red}{short}, it could be done by making a colouring similar to that of the regression model.
+
+
+\subsection{Modelling with the \texttt{MARIMA} Function}
+It has been mentioned earlier that \texttt{MARIMA} works in a fundamentally different way than the \texttt{arima} function.

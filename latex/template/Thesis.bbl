@@ -19,7 +19,51 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{vejr2018}{sne}{}
+    \entry{xts}{package}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
+      \endverb
+    \endentry
+    \entry{solaR}{package}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
+      \endverb
+    \endentry
+    \entry{forecast}{package}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
+      \endverb
+    \endentry
+    \entry{fields}{package}{}
+      \field{sortinit}{}
+      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/fields/index.html
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/fields/index.html
+      \endverb
+    \endentry
+    \entry{vejr2018}{url}{}
       \name{author}{1}{}{%
         {{hash=a369368e07f40aa8fc35de01b87fa9c5}{%
            family={2},
@@ -38,6 +82,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Se billederne - Danmark igen ramt af vintervejr}}
+      \true{nocite}
       \verb{urlraw}
       \verb http://vejr.tv2.dk/2018-04-03-se-billederne-danmark-igen-ramt-af-vintervejr
       \endverb
@@ -45,7 +90,7 @@
       \verb http://vejr.tv2.dk/2018-04-03-se-billederne-danmark-igen-ramt-af-vintervejr
       \endverb
     \endentry
-    \entry{interpolation}{paper}{}
+    \entry{interpolation}{book}{}
       \name{author}{1}{}{%
         {{hash=d8de92f26ebd856f8e8906ccf6b7552f}{%
            family={{Aalborg Forsyning}},
@@ -63,6 +108,7 @@
       \field{labeltitlesource}{title}
       \field{title}{{Udfyldning af huller i tidsserier og udglatning af Kamstrup time aflæsninger }}
       \field{year}{2019}
+      \true{nocite}
     \endentry
     \entry{iea}{url}{}
       \name{author}{1}{}{%
@@ -83,6 +129,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Renewables 2018 - Market analysis and forecast from 2018 to 2023}}
+      \true{nocite}
       \verb{urlraw}
       \verb https://www.iea.org/renewables2018/heat/
       \endverb
@@ -109,12 +156,14 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Statistics: An introduction using R}}
+      \true{nocite}
     \endentry
     \entry{condition}{url}{}
       \field{sortinit}{D}
       \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
       \field{labeltitlesource}{title}
       \field{title}{{Description of the attribute Condition}}
+      \true{nocite}
       \verb{urlraw}
       \verb https://www.wunderground.com/weather/api/d/docs?d=resources%2Fphrase-glossary&_ga=2.166768631.87242339.1555497846-195014723.1555497846&fbclid=IwAR3NANmRzhGE0uS4m5YqMu06_qJDJFQ7-Wd3xWjKPV68Njtso_4PSVuVk9o
       \endverb
@@ -141,12 +190,34 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Aalborg Forsynings hjemmeside}}
+      \true{nocite}
       \verb{urlraw}
       \verb https://www.aalborgforsyning.dk/
       \endverb
       \verb{url}
       \verb https://www.aalborgforsyning.dk/
       \endverb
+    \endentry
+    \entry{Guidelines}{book}{}
+      \name{author}{1}{}{%
+        {{hash=cce857f24d51e12b9410583b5dfe3168}{%
+           family={Henrik\bibnamedelima Madsen},
+           familyi={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Peder\bibnamedelimb Bacher\bibnamedelimb et\bibnamedelima al.},
+           giveni={P\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim e\bibinitperiod\bibinitdelim a\bibinitperiod}}}%
+      }
+      \strng{namehash}{cce857f24d51e12b9410583b5dfe3168}
+      \strng{fullhash}{cce857f24d51e12b9410583b5dfe3168}
+      \strng{bibnamehash}{cce857f24d51e12b9410583b5dfe3168}
+      \strng{authorbibnamehash}{cce857f24d51e12b9410583b5dfe3168}
+      \strng{authornamehash}{cce857f24d51e12b9410583b5dfe3168}
+      \strng{authorfullhash}{cce857f24d51e12b9410583b5dfe3168}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Thermal Performance Characterization using Time Series Data - IEA EBC Annex 58 Guidelines}}
+      \true{nocite}
     \endentry
     \entry{Kamstrup}{url}{}
       \name{author}{1}{}{%
@@ -165,6 +236,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Kamstrups hjemmeside}}
+      \true{nocite}
       \verb{urlraw}
       \verb https://www.kamstrup.com/da-dk
       \endverb
@@ -191,8 +263,9 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Time Series Analysis}}
+      \true{nocite}
     \endentry
-    \entry{Splines}{paper}{}
+    \entry{Splines}{book}{}
       \name{author}{1}{}{%
         {{hash=e94db3c7796f1a06a284916f0c8d437f}{%
            family={{Nielsen, P. N., Gravesen, J., Gersborg, A. R., \& Pedersen, N. L.}},
@@ -213,6 +286,7 @@
       \field{labeltitlesource}{title}
       \field{title}{{Isogeometric Analysis and Shape Optimization in Fluid Mechanics}}
       \field{year}{2012}
+      \true{nocite}
     \endentry
     \entry{Stat_bog2}{book}{}
       \name{author}{1}{}{%
@@ -233,9 +307,82 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{A Modern Approach to Regression with R}}
+      \true{nocite}
+    \endentry
+    \entry{marima}{book}{}
+      \name{author}{1}{}{%
+        {{hash=916b60720e2c67ea7671a45e4537eb0c}{%
+           family={Spliid},
+           familyi={S\bibinitperiod},
+           given={Henrik},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{fullhash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{bibnamehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{authorbibnamehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{authornamehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{authorfullhash}{916b60720e2c67ea7671a45e4537eb0c}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Multivariate Time Series Estimation using marima}}
+      \true{nocite}
+    \endentry
+    \entry{linearregression}{url}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={{Wikipedia}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Linear regression}}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Linear_regression
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Linear_regression
+      \endverb
+    \endentry
+    \entry{Multicollinearity}{url}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={{Wikipedia}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Multicollinearity}}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Multicollinearity
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Multicollinearity
+      \endverb
     \endentry
   \enddatalist
-  \missing{chap: daily}
 \endrefsection
 \endinput
 
