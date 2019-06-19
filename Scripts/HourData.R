@@ -62,6 +62,7 @@ colnames(Houravg) <- c(1:n)
 tt <- Houravg
 library('fields')
 
+par(mar = c(2, 2, 2, 1) + 0.1)
 image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
            lab.breaks=NULL,main = 'Average consumption of all houses during the day')
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
@@ -84,11 +85,11 @@ summeravg <- Houravg
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
 tt <- Houravg
+par(mar = c(2, 2, 2, 1) + 0.1)
 image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
            lab.breaks=NULL,main = 'Average consumption of all houses (summer period)')
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
 abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
-axis(1, at = 1, xaxp = 'House no.', tick = FALSE, pos = -0.01)
 
 
 mcons_summer <-apply(Houravg,1,mean)
@@ -128,6 +129,7 @@ winteravg <- Houravg
 rownames(Houravg) <- c('00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23')
 colnames(Houravg) <- c(1:n)
 tt <- Houravg
+par(mar = c(2, 2, 2, 1) + 0.1)
 image.plot(t(tt[rev(order(row.names(tt))),]), axes=FALSE, 
            lab.breaks=NULL,main = 'Average consumption of all houses (winter period)')
 axis(2, at=seq(1+1/48,0-1/48, length=13), labels=c('00','02','04','06','08','10','12','14','16','18','20','22','24'), lwd=0.1, pos=-0.01,las=1)
