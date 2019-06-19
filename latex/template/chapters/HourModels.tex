@@ -1,6 +1,7 @@
 \chapter{Models on the Hourly Consumption}
 \label{chap: hourly}
 In this section, a more detailed look at the hourly consumption will be provided. One of the goals is to get a better understanding of the tap-water consumption during the summer period, such that it can be used when looking at the winter period. This can be done by looking at the distributions of the consumption during the day in the two periods. Another goal of this section is to model the hourly consumption as a time series. An ARIMAX model will be applied to give a better understanding of the data. The ARIMAX model can also be used to give short term predictions of the consumption, and to give a alternative way of estimating the temperature dependency. These estimates will later be compared to the ones found with the linear regression models.
+
 {
     \includegraphics[scale=0.85]{../../../figures/Heatmap_summer.eps}
     \captionof{figure}{The normalized average consumption of every house during the day in the summer period. This is characterized by the days where the average outside temperature is above 15 degrees. The horizontal lines indicate the hours and each vertical strip is a house. The scale indicates the fraction of the total consumption during the day \label{fig: Hourcons_summer}}
@@ -79,6 +80,7 @@ In this section, different ARIMAX models will be applied to the data. First the 
         \alpha - T & \text{if } T\leq \alpha\\
         0 & \text{Otherwise}
     \end{cases},
+    \label{eq:Ttilde}
 \end{equation}
 where $\alpha$ is the threshold of 12 degrees found in the exploratory analysis.
 
@@ -250,13 +252,20 @@ For the houses that only had data between something and something \textcolor{red
 \noindent The results recieved from the time series models so far have not been very reliant, and in general the model should not be used for predictions at this stage. But if one were to visualize the predictions found in for example \textcolor{red}{short}, it could be done by making a colouring similar to that of the regression model.
 
 
-\subsection{Modelling with the \texttt{MARIMA} Function}
-It has been mentioned earlier that \texttt{MARIMA} works in a fundamentally different way than the \texttt{arima} function. It uses an iterative method to estimate the parameters, including all the regression variables. The exact procedure can be seen in \cite{marima}. The goal is to make a model that can be compared to the linear regression model. This model will be more focused on the physical factors affecting the consumption. This means that there will be no differencing and no seasonal component. The model will seek to compute the consumption based on some weather data as exogenous variables, the consumption of the previous couple of hours and a moving average of the residuals. The exogenous variables will be the temperature and the solar radiation, since these are the variables that are the most significant in the linear regression model. Some of the wind directions were not very significant, so the wind is not included in the model. The overall formulation of the model that will be estimated is
+\subsection{Modelling with the MARIMA Function}
+It has been mentioned earlier that MARIMA works in a fundamentally different way than the ARIMA function. It uses an iterative method to estimate the parameters, including all the regression variables. The exact procedure can be seen in \cite{marima}. The goal is to make a model that can be compared to the linear regression model. This model will be more focused on the physical factors affecting the consumption. This means that there will be no differencing and no seasonal component. The model will seek to compute the consumption based on some weather data as exogenous variables, the consumption of the previous couple of hours and a moving average of the residuals. The exogenous variables will be the temperature and the solar radiation, since these are the variables that are the most significant in the linear regression model. Some of the wind directions were not very significant, so the wind is not included in the model. The overall formulation of the model that will be estimated is
+\begin{align}
+    \phi (B) Y_t =  \omega_{T'}(B)T'_t + \omega_{SR}(B)SR_t + \theta (B) \epsilon_t,
+    \label{eq:MARIMA1}
+\end{align}
+where $Y_t$ is the consumption at time $t$, $T'_t$ is the modified temperature (see \cref{eq:Ttilde}), $SR_t$ is the solar radiation, $\epsilon_t$ is the error, and $\phi(B), \omega_{T'}(B), \omega_{SR}(B)$, and $\theta(B)$ are all polynomials of the shift operator $B$. The moving average ($\theta(B)$) is included to make the model compensate for measuring errors made along the way. The degree of $\omega_{T'}(B)$, $\omega_{SR}(B)$, and $\theta(B)$ will be one in models considered in this paper. One could argue that the temperature or solar radiation could have an influence on more than one lag. \dots The model evaluation will decide which order of $\phi(B)$ that provides the best estimates. This degree is a measure of how many of the previous hours have an influence on the current consumption. The degrees that will be tested are one, two, three and four. Most of the tested houses give optimal results for these degrees, and higher degrees would result in a model that is too complex.
+
+\noindent If the inside temperature had been included in the data, it would have been present in \cref{eq:MARIMA1} together with the outside temperature and the solar radiation. But since it is assumed to be constant, the inside temperature is included in the mean of the model, which has been omitted in the equation. There is a way to allow the inside temperature to vary over the course of the day that will be tested here. That is to make a fourier series with a certain number of terms that can describe the variations. The period of the series is 24 hours. Each sine and cosine function in the series will be assigned a parameter in the model. By taking the sum of the trigonometrical functions and their weights, a "mean" that is dependent on the hour of the day is obtained. The expanded model is
 \begin{align}
     \phi (B) Y_t = &\sum_{i=1}^n \left(\omega^{sin}_i sin\left(2\pi\cdot t \cdot \frac{24}{i}\right) + \omega^{cos}_i cos\left(2\pi\cdot t \cdot \frac{24}{i}\right)\right) \nonumber\\ & + \omega_{T'}(B)T'_t + \omega_{SR}(B)SR_t + \theta (B) \epsilon_t ,
-    \label{eq:MARIMA}
+    \label{eq:MARIMA2}
 \end{align}
-
+where $\omega^{sin}_i$ and $\omega^{cos}_i$ are the parameters for the sine and cosine function of the $i'th$ term of the Fourier series. To limit the number of variables in the model, a Fourier series with $n=2$ is used for modelling.
 
 teori (skriv modellen op) \\
 
