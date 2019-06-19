@@ -252,10 +252,10 @@ For the houses that only had data between something and something \textcolor{red
 
 \subsection{Modelling with the \texttt{MARIMA} Function}
 It has been mentioned earlier that \texttt{MARIMA} works in a fundamentally different way than the \texttt{arima} function. It uses an iterative method to estimate the parameters, including all the regression variables. The exact procedure can be seen in \cite{marima}. The goal is to make a model that can be compared to the linear regression model. This model will be more focused on the physical factors affecting the consumption. This means that there will be no differencing and no seasonal component. The model will seek to compute the consumption based on some weather data as exogenous variables, the consumption of the previous couple of hours and a moving average of the residuals. The exogenous variables will be the temperature and the solar radiation, since these are the variables that are the most significant in the linear regression model. Some of the wind directions were not very significant, so the wind is not included in the model. The overall formulation of the model that will be estimated is
-\begin{equation}
-    \phi (B) Y_t = \bm{\alpha}\bm{F_n} + \omega_{T'}T'_t + \omega_{SR}SR_t + \theta (B) \epsilon_t ,
+\begin{align}
+    \phi (B) Y_t = &\sum_{i=1}^n \left(\omega^{sin}_i sin\left(2\pi\cdot t \cdot \frac{24}{i}\right) + \omega^{cos}_i cos\left(2\pi\cdot t \cdot \frac{24}{i}\right)\right) \nonumber\\ & + \omega_{T'}(B)T'_t + \omega_{SR}(B)SR_t + \theta (B) \epsilon_t ,
     \label{eq:MARIMA}
-\end{equation}
+\end{align}
 
 
 teori (skriv modellen op) \\
