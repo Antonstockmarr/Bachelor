@@ -34,12 +34,16 @@ mondays<-which(weekdays(ttm[[2]][[1]]$Date)=="Monday")-.5
 par(mfrow=c(4,1))
 plot(ttd[[2]][[1]]$Temperature,type='o',lwd=3,ylab=expression(paste("Temperature [", degree, "C]")),xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+abline(v=mondays,lty=3,lwd=2,col=Wcol[3])
 plot(ttd[[2]][[1]]$Radiation,type='o',lwd=3,ylab=expression(paste("Solar Radiation [",W/m^2,"]")),xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+abline(v=mondays,lty=3,lwd=2,col=Wcol[3])
 plot(ttd[[2]][[1]]$WindDirection,type='o',lwd=3,ylab="Wind Direction [degrees]",xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+abline(v=mondays,lty=3,lwd=2,col=Wcol[3])
 plot(ttd[[2]][[1]]$WindSpeed,type='o',lwd=3,ylab="Wind Speed [m/s]",xlab="January 2019 [days]",xaxt='n')
 axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
+abline(v=mondays,lty=3,lwd=2,col=Wcol[3])
 
 
 lmMultipleNoP <- vector(mode = "list", length = n)
@@ -129,7 +133,7 @@ weather <- weather[k:1,]
 
 tth<-TrainTest(data,14*24)
 
-for(i in 6){
+for(i in c(6,20)){
 midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)
 
 a <- 12
@@ -147,6 +151,7 @@ TemperatureP <- (tmp<a)*(a-tmp)
 
 mm<-paste("House: ",i)
 
+par(mfrow=c(1,1))
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
 
 plot(1:length(p$pred),p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i),type="l")
@@ -157,7 +162,7 @@ lines((1:length(tth[[2]][[i]]$ObsTime)),cc*tth[[2]][[i]]$CoolingDegree*tth[[2]][
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 
-
+par(mfrow=c(2,1))
 # Kundeplot(s)
 par(mfrow=c(2,1))
 ShowIndex<-1:48
@@ -218,4 +223,5 @@ tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(tth[[2]][[i]]$ObsTime,1),]
 
 par(mfrow=c(1,1))
 plot(tmp.dat$Temperature,type='o',lwd=1,ylab=expression(paste("Temperature [", degree, "C]")),xlab="January 2019 [hours]",xaxt='n')
-axis(1, at=c(5,173,340), labels=c("17th","24th","31st"))
+abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
+axis(1, at=c(12,156,320), labels=c("18th","24th","31st"))
