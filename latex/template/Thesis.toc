@@ -34,11 +34,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Weather data}{8}{subsection.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}BBR data}{8}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.2}BBR data}{9}{subsection.3.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multicollinearity}{11}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Multicollinearity}{12}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Data segmentation}{12}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Data segmentation}{13}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{14}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 

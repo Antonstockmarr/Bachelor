@@ -20,33 +20,25 @@ plot(data[[1]]$Flow,col=Wcol[4])
 # Average consumption for all houses during a year
 avg.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Consumption)) + geom_point() +
   ggtitle("Average consumption for all houses during a year ") + xlab("Time [days]") + 
-  ylab("Avg. consumption [kWh]") +
-  geom_smooth(col=Wcol[2], se = T)
+  ylab("Avg. consumption [kWh]")
 
 # Selected houses based on wether they follow the trend
 day.plot.gak <- ggplot(data = day.data[[18]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
   ggtitle(paste("Daily consumption for house 18")) + xlab("Time [days]") + 
-  ylab("Daily consumption [kWh]") + 
-  geom_smooth(col=Wcol[2], se = T)
+  ylab("Daily consumption [kWh]")
 
 day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
   ggtitle(paste("Daily consumption for house 55")) + xlab("Time [days]") + 
-  ylab("Daily consumption [kWh]") +
-  geom_smooth(col=Wcol[2], se = T)
-{
-  pdf(file = "../figures/daily_cons.pdf",width = 4.5,height = 2.8,pointsize = 9)
-  par(mar=c(3,3,2,1), mgp=c(2,0.7,0)) 
-  grid.arrange(avg.plot1, day.plot.gak, day.plot.flot, nrow = 3)
-  dev.off()
-  }
+  ylab("Daily consumption [kWh]")
+
+grid.arrange(avg.plot1, day.plot.gak, day.plot.flot, nrow = 3)
 
 # Daily consumption for the n houses
 for (i in 1:n) {
   if (length(day.data[[i]]$Flow) > 365) {
     print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
             ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [days]") + 
-            ylab("Average consumption [kWh]") +
-            geom_smooth(col=Wcol[2], se = T))
+            ylab("Average consumption [kWh]"))
   }
 }
 
@@ -62,11 +54,11 @@ par(mar=c(3,3,2,1), mgp=c(2,0.7,0))
 pairs(day.avg[c('Date','Energy','Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree','Consumption')])
 pairs(day.avg[c('Consumption', 'Flow','Volume','TemperatureIn','TemperatureOut','CoolingDegree')])
 
-plot1 <- ggplot(data = day.avg, aes(x = Flow, y= Consumption)) + geom_point() + xlab(expression(paste("Flow [",m^3/"hour]", sep=""))) + ylab("Consumption [kWh]")
-plot2 <- ggplot(data = day.avg, aes(x = Volume, y= Consumption)) + geom_point() + xlab(expression(paste("Volume [",m^3,"]", sep=""))) + ylab("Consumption [kWh]")
-plot3 <- ggplot(data = day.avg, aes(x = TemperatureIn, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureIn [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
-plot4 <- ggplot(data = day.avg, aes(x = TemperatureOut, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureOut [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
-plot5 <- ggplot(data = day.avg, aes(x = CoolingDegree, y= Consumption)) + geom_point() + xlab(expression(paste("CoolingDegree [",degree,"C]", sep=""))) + ylab("Consumption [kWh]")
+plot1 <- ggplot(data = day.avg, aes(x = Flow, y= Consumption)) + geom_point() + xlab(expression(paste("Flow [",m^3/"hour]", sep=""))) + ylab("Average consumption [kWh]")
+plot2 <- ggplot(data = day.avg, aes(x = Volume, y= Consumption)) + geom_point() + xlab(expression(paste("Volume [",m^3,"]", sep=""))) + ylab("Average consumption [kWh]")
+plot3 <- ggplot(data = day.avg, aes(x = TemperatureIn, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureIn [",degree,"C]", sep=""))) + ylab("Average consumption [kWh]")
+plot4 <- ggplot(data = day.avg, aes(x = TemperatureOut, y= Consumption)) + geom_point() + xlab(expression(paste("TemperatureOut [",degree,"C]", sep=""))) + ylab("Average consumption [kWh]")
+plot5 <- ggplot(data = day.avg, aes(x = CoolingDegree, y= Consumption)) + geom_point() + xlab(expression(paste("CoolingDegree [",degree,"C]", sep=""))) + ylab("Average consumption [kWh]")
 grid.arrange(plot1, plot2, plot3, plot4, plot5, nrow = 3, ncol = 2)
 
 # Weather pairs
