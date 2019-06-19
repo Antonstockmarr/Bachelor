@@ -1,11 +1,11 @@
 \chapter{Data}
 \label{chap: data}
  The data is provided by SEAS-NVE with measurements from Aalborg Forsyning. The measurements are made with a smart meter from Kamstrup (\cite{Kamstrup}). The smart meter measures the flow temperature of the water and the return temperature and the total flow in $m^3/hour$. The process for the supply of heat from Aalborg Forsyning to houses is described in more detail in \cite{Aalborg}.
- Data are given in three data sets. The house data consists of 71 \texttt{.csv}-files containing 8 attributes for each house which is 513877 data points in all. The second data set includes weather data containing 10,140 observations and predictions of the next 2283 data points, all with 11 attributes. Furthermore, the third data set is from Bygnings- og Boligregistret (BBR) and contain details for each of the houses e.g. total area, year of construction and type of house. 
-The main focus of this section will be how this data is cleaned and prepared for the further analysis. 
+ Data are given in three data sets. The house data consists of 71 \texttt{.csv}-files containing 8 attributes for each house which is 513877 data points in all. The second data set includes weather data containing 10,140 observations and predictions of the next 2283 data points, all with 11 attributes. Furthermore, the third data set is from Bygnings- og Boligregistret (BBR) and contain details for each of the houses e.g. total area, year of construction and type of house.
+The main focus of this section will be how this data is cleaned and prepared for the further analysis.
 
 \section{Original data}
-The original house and weather data include hourly observations from the period 31-12-2017 23:00 to 7-02-2019 10:00. The time period varies in the house data, i.e there exists data for houses containing observations for approximately six months and there are also houses that contain observations for about 13 months. This will be taken into account when cleaning the data and in the analysis the two groups of houses will be refered to as the long and short houses. 
+The original house and weather data include hourly observations from the period 31-12-2017 23:00 to 7-02-2019 10:00. The time period varies in the house data, i.e there exists data for houses containing observations for approximately six months and there are also houses that contain observations for about 13 months. This will be taken into account when cleaning the data and in the analysis the two groups of houses will be refered to as the long and short houses.
 \noindent Before the data was provided to this project, it had already been slightly altered. When Aalborg Forsyning, who provided the data, recieve the observations from the hardware installed in the houses of their clients, it is generally not divided into precise one hour intervals. Aalborg Forsyning interprets the time stamps on the observations and changes them to one hour intervals. If observations are missing, an interpolation method is used to simulate the data. The exact procedure is described in \cite{interpolation}. \\
 
 
@@ -51,7 +51,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     SunHour  & The level of sunshine in the hour in a scale from 0 to 1 \\
     Condition  & The weather condition given in numbers described in \cite{condition} \\
     UltravioletIndex  & The UV index level \\
-    MeanSeaLevelPressure  & The average atmospheric pressure at mean sea level in $mbar$ \\
+    MeanSeaLevelPressure  & The average atmospheric pressure at mean sea level in $hPa$ \\
     DewPoint  &  The temperature to which air must be cooled to become saturated \\ & with water steam (Degrees/C)\\
     Humidity  & The amount of water steam present in the air \\
     PrecipitationProbability & The probability that some quantify precipitation will occur \\ & (logical factor)\\
@@ -60,7 +60,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     \end{tabular}
     \caption{Attributes from the original weather data.}
     \label{tab: weatherdata}
-\end{table}   
+\end{table}
 \begin{table}[H]
     \centering
     \begin{tabular}{ll}
@@ -82,7 +82,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     \end{tabular}
     \caption{Attributes from the BBR data.}
     \label{tab: BBR}
-\end{table}   
+\end{table}
 
 
 %\textcolor{blue}{StartDateTime and EndDateTime are always one hour apart. When there are missing observations the following the next StartDateTime is simply delayed. Energy is the measured energy consumption on the meter in the houses.}
@@ -90,7 +90,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
 %\noindent \textcolor{red}{Noget med at vi også har BBR data.}
 
 \section{Cleaning and preparation}
-In this section, it is described how the raw data is cleaned and prepared for the statistical analysis. 
+In this section, it is described how the raw data is cleaned and prepared for the statistical analysis.
 
 \noindent Due to the fact, that \texttt{StartDateTime} and \texttt{EndDateTime} is always one hour apart, it is redundant to use both of the attributes. The obervations of most of the attributes are made at time \texttt{EndDateTime}, and for that reason it is used as \texttt{ObsTime} for the observations. For the weather data set, the observations is made at time \texttt{StartDateTime}, and there is no \texttt{EndDateTime} for this data set. When merging these data sets, \texttt{ObsTime} is alligned with \texttt{StartDateTime}. The format of these attributes is changed to a \texttt{Posixct} value with d-m-Y H:min:sec as the structure.
 
@@ -100,15 +100,15 @@ In this section, it is described how the raw data is cleaned and prepared for th
 
 %\textcolor{red}{Loader en temporary data ind, som vi modificerer indtil vi putter den ind i vores endelige data.}
 
-%enddays og startdays sættes for hvert hus - hvornår starter målingerne og hvornår slutter målinger. Tidspunkterne for aller første og aller sidste måling. 
+%enddays og startdays sættes for hvert hus - hvornår starter målingerne og hvornår slutter målinger. Tidspunkterne for aller første og aller sidste måling.
 
-%Vi laver så temp. weather data så vi kan merge det med house data. 
+%Vi laver så temp. weather data så vi kan merge det med house data.
 %Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weather data på house data i model processen. \textcolor{blue}{Gør vi? Vi laver weatherCons i data.R, så det for daily data er dette i hvert fald ikke sandt :)}
 
 
 \subsection{Missing values}
-In the vast majority of our houses, the data is consistent with data every hour from a given starttime until the end of January 2019. Then for many of the houses, there is a gap of 6 whole days in the start of February, and then 2 more days of data. For this reason, the February data is cut out completely. The rest of the missing readings are handled so that they are based on the values of readings around the gap, i.e. they are interpolated by calculating the average of the readings around the missing reading. 
-The purpose of filling out the missing values with interpolation of data, is to ensure that there exist observations for every hour. This makes it possible to develop time series models to describe data and also predict customers' consumption on an hourly basis. 
+In the vast majority of our houses, the data is consistent with data every hour from a given starttime until the end of January 2019. Then for many of the houses, there is a gap of 6 whole days in the start of February, and then 2 more days of data. For this reason, the February data is cut out completely. The rest of the missing readings are handled so that they are based on the values of readings around the gap, i.e. they are interpolated by calculating the average of the readings around the missing reading.
+The purpose of filling out the missing values with interpolation of data, is to ensure that there exist observations for every hour. This makes it possible to develop time series models to describe data and also predict customers' consumption on an hourly basis.
 
 %\noindent \textcolor{red}{Vi tilføjer en binær attribute for hver ferie, og endnu en for weekender. De forskellige ferier vi tager med er christmas break, winter break, spring break, autumn break} \\
 
@@ -121,4 +121,4 @@ The purpose of filling out the missing values with interpolation of data, is to 
 
 
 \subsection{Data checking}
-As mentioned, there are some measurements missing in the house data and it can therefore be difficult to do modelling for the houses in question. To avoid these difficulties, a so called "Data Checking" function has been made in order to check whether several constraints for the data are fulfilled. There must be a certain number of observations and the amount of missing data should not exceed a certain fraction of the data observation period. 
+As mentioned, there are some measurements missing in the house data and it can therefore be difficult to do modelling for the houses in question. To avoid these difficulties, a so called "Data Checking" function has been made in order to check whether several constraints for the data are fulfilled. There must be a certain number of observations and the amount of missing data should not exceed a certain fraction of the data observation period.
