@@ -250,14 +250,62 @@ For the houses that only had data between something and something \textcolor{red
 \noindent The results recieved from the time series models so far have not been very reliant, and in general the model should not be used for predictions at this stage. But if one were to visualize the predictions found in for example \textcolor{red}{short}, it could be done by making a colouring similar to that of the regression model.
 
 
-\subsection{Modelling with the \texttt{MARIMA} Function}
-It has been mentioned earlier that \texttt{MARIMA} works in a fundamentally different way than the \texttt{arima} function. It uses an iterative method to estimate the parameters, including all the regression variables. The exact procedure can be seen in \cite{marima}
+\subsection{Modelling with the MARIMA Function}
+It has been mentioned earlier that MARIMA works in a fundamentally different way than the ARIMA function. It uses an iterative method to estimate the parameters, including all the regression variables. The exact procedure can be seen in \cite{marima}
 
-teori (skriv modellen op)
+teori (skriv modellen op) \\
 
-BIC
+\noindent For model selection the Bayesian information criterion (BIC) is used where the model with the lowest BIC is preferred \cite{BIC}. This criterion is chosen, as the penalty term for resolving overfitting problems is larger for BIC than AIC. The criterion is formulated as
+\begin{equation}
+    \text{BIC} = \text{ln}(n)k - 2\text{ln}(\widehat{L}),
+\end{equation}
+where $\Hat{L}$ is the maximized value of the likelihood function \textcolor{red}{skal der mere på her?}, $n$ is the number of observations and $k$ is the number of parameters estimated by the model. \\
+
+\noindent The following models are investigated and computed for house 55, 18, 6 and 20: MARIMA$(1,0,1)$, MARIMA$(2,0,1)$, MARIMA$(3,0,1)$ and MARIMA$(4,0,1)$. The BIC values for each of the models can be seen in \cref{tab: BIC}. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|cccc}
+    \hline
+    \textbf{BIC} & House 55 & House 18 & House 6 & House 20 \\ \hline \hline
+    MARIMA($1,0,1$) & & & & \\
+    MARIMA($2,0,1$) & & & & \\
+    MARIMA($3,0,1$) & & & & \\
+    MARIMA($4,0,1$) & & & & \\ 
+    \hline
+    \end{tabular}
+    \caption{}
+    \label{tab: BIC}
+ \end{table}
 
 Lav modeller + resultater (tabel)
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|cccc}
+    \hline
+     & $\bm{\omega_{T'}}$ & \textbf{Std. errors} & $\bm{2.5\%}$ & $\bm{97.5\%}$ \\ \hline \hline
+    House 55 & & & & \\
+    House 18 & & & & \\
+    House 6 & & & & \\
+    House 20 & & & & \\ 
+    \hline
+    \end{tabular}
+    \caption{}
+    \label{tab: result_temp}
+ \end{table}
 
+ \begin{table}[H]
+    \centering
+    \begin{tabular}{l|cccc}
+    \hline
+     & $\bm{\omega_S}$ & \textbf{Std. errors} & $\bm{2.5\%}$ & $\bm{97.5\%}$ \\ \hline \hline
+    House 55 & & & & \\
+    House 18 & & & & \\
+    House 6 & & & & \\
+    House 20 & & & & \\ 
+    \hline
+    \end{tabular}
+    \caption{}
+    \label{tab: result_solar}
+ \end{table}
 Step response (tabel + plot sd interval)
 sammenlign med ny lm model.
