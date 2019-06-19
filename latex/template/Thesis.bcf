@@ -2008,6 +2008,8 @@
     <bcf:citekey order="11">Splines</bcf:citekey>
     <bcf:citekey order="12">Time_Series_Analysis</bcf:citekey>
     <bcf:citekey order="13">Time_Series_Analysis</bcf:citekey>
+    <bcf:citekey order="14">marima</bcf:citekey>
+    <bcf:citekey order="15">BIC</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->

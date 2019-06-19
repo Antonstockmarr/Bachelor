@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 12:56
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -811,6 +811,13 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \mc@col@check@num=\count276
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -1180,8 +1187,8 @@ File: csquotes.cfg
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
+\symAMSa=\mathgroup7
+\symAMSb=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
@@ -1443,22 +1450,22 @@ File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 254.
+(hyperref)                removing `\\' on input line 255.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 254.
+(hyperref)                removing `\\' on input line 255.
 
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 )
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 254.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 254.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 254.
-Package hyperref Info: Option `breaklinks' set `true' on input line 254.
-Package hyperref Info: Option `plainpages' set `false' on input line 254.
-Package hyperref Info: Option `unicode' set `true' on input line 254.
-Package hyperref Info: Option `colorlinks' set `false' on input line 254.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 255.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 255.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 255.
+Package hyperref Info: Option `breaklinks' set `true' on input line 255.
+Package hyperref Info: Option `plainpages' set `false' on input line 255.
+Package hyperref Info: Option `unicode' set `true' on input line 255.
+Package hyperref Info: Option `colorlinks' set `false' on input line 255.
 ) (./preamble/fonts.tex
 
 Package fontspec Info: Font family 'texgyreadventor(0)' created for font
@@ -1784,12 +1791,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [7]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-) [8]
+) [7]) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.tex
@@ -1816,6 +1818,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
@@ -1914,7 +1921,10 @@ File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
 
 
 
-] [23]
+]
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+ [23]
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
@@ -2061,18 +2071,23 @@ File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
  [54] [55] [56]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 140.
+               Default added (so using `tbp') on input line 141.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 152.
+               Default added (so using `tbp') on input line 153.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
+
+Overfull \hbox (1.56888pt too wide) detected at line 176
+[]
+ []
+
 [57] [58]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 178.
+               Default added (so using `tbp') on input line 179.
 
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
@@ -2087,17 +2102,30 @@ File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf
 <use graphics/../../../figures/arimax/arima2_pred_55.pdf>
 File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima2_pred_18.pdf>
- [61] [62] [63] [64] [65]) [66]
+ [61] [62] [63] [64] [65]
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
+
+ []
+
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+ [66]) [67]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex) [67
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [68
 
 
 
-]
+]) [69]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [68
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [70
 
 
 
@@ -2122,13 +2150,13 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69] [70] [71] [72]
+ [71] [72] [73] [74]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73] [74] [75]
+ [75] [76] [77]
 Overfull \vbox (69.51717pt too high) has occurred while \output is active []
 
- [76]
+ [78]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
@@ -2147,9 +2175,9 @@ File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [77
+) [79
 
-] [78] [79] [80] [81] [82
+] [80] [81] [82] [83] [84
 
 
 ]
@@ -2196,15 +2224,15 @@ Package biblatex Warning: No driver for entry type 'url'.
 (biblatex)                Using fallback driver on input line 44.
 
 
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
+
+
 Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
 []\TU/lmr/m/n/10 Wikipedia. \TU/lmr/m/it/10 Multicollinearity\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][][][][][][][]$[]. 
  []
 
-
-Package biblatex Warning: No driver for entry type 'package'.
-(biblatex)                Using fallback driver on input line 45.
-
-[83
+[85
 
 ]
 
@@ -2219,8 +2247,12 @@ Package biblatex Warning: No driver for entry type 'package'.
 Package biblatex Warning: No driver for entry type 'package'.
 (biblatex)                Using fallback driver on input line 45.
 
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
 No complaints by nag.
-[84]
+[86]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
@@ -2232,7 +2264,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 792B3762C1A58A10214FAC8A5CF04080.
+(rerunfilecheck)             Checksum: C20C4AAA81306D3A76FA77FAEEB2D9E6.
 
 
 LaTeX Warning: There were undefined references.
@@ -2251,12 +2283,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51117 strings out of 492933
- 984596 string characters out of 6133145
- 1824273 words of memory out of 5000000
- 54355 multiletter control sequences out of 15000+600000
- 554132 words of font info for 69 fonts, out of 8000000 for 9000
+ 51215 strings out of 492933
+ 985832 string characters out of 6133145
+ 1825971 words of memory out of 5000000
+ 54443 multiletter control sequences out of 15000+600000
+ 564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,13n,81p,2745b,7984s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,17n,81p,2745b,7955s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (94 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (96 pages).
