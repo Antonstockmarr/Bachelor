@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.5.13)  19 JUN 2019 20:27
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 17:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -730,7 +730,7 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
  (/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 ))) (/usr/local/texlive/2018/texmf-dist/tex/latex/arydshln/arydshln.sty
-Package: arydshln 2016/04/28 v1.73 
+Package: arydshln 2016/04/28 v1.73
 \dashlinedash=\dimen279
 \dashlinegap=\dimen280
 \adl@box=\box44
@@ -971,7 +971,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@depth=\count294
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2018-04-30 L3 programming layer (loader) 
+Package: expl3 2018-04-30 L3 programming layer (loader)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2018-04-30 L3 programming layer (code)
 \c_max_int=\count295
@@ -1143,172 +1143,172 @@ LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
 ))
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \fontspec with sig. 'O{}mO{}' on line 542.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmainfont with sig. 'O{}mO{}' on line 546.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setsansfont with sig. 'O{}mO{}' on line 550.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmonofont with sig. 'O{}mO{}' on line 554.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmathrm with sig. 'O{}mO{}' on line 558.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setboldmathrm with sig. 'O{}mO{}' on line 562.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmathsf with sig. 'O{}mO{}' on line 566.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setmathtt with sig. 'O{}mO{}' on line 570.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \setromanfont with sig. 'O{}mO{}' on line 574.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontfamily with sig. 'mO{}mO{}' on line 578.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontface with sig. 'mO{}mO{}' on line 582.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \defaultfontfeatures with sig. 't+om' on line 586.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \addfontfeatures with sig. 'm' on line 590.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \addfontfeature with sig. 'm' on line 594.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontfeature with sig. 'mm' on line 598.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newAATfeature with sig. 'mmmm' on line 602.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newopentypefeature with sig. 'mmm' on line 606.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newICUfeature with sig. 'mmm' on line 610.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \aliasfontfeature with sig. 'mm' on line 614.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \aliasfontfeatureoption with sig. 'mmm' on line 618.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontscript with sig. 'mm' on line 622.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \newfontlanguage with sig. 'mm' on line 626.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \DeclareFontsExtensions with sig. 'm' on line 630.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 634.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingCommand with sig. 'mO{}m' on line 3632.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingAccent with sig. 'mm' on line 3638.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingSymbol with sig. 'mm' on line 3644.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingComposite with sig. 'mmm' on line 3650.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3656.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3681.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \UndeclareSymbol with sig. 'm' on line 3687.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \UndeclareAccent with sig. 'm' on line 3693.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \UndeclareCommand with sig. 'm' on line 3699.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \UndeclareComposite with sig. 'mm' on line 3706.
 .................................................
  (/usr/local/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.cfg)
@@ -1321,12 +1321,12 @@ LaTeX Info: Redefining \emph on input line 3961.
 LaTeX Info: Redefining \- on input line 4015.
 .................................................
 . LaTeX info: "xparse/redefine-command"
-. 
+.
 . Redefining command \oldstylenums with sig. 'm' on line 4110.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
-. 
+.
 . Defining command \liningnums with sig. 'm' on line 4114.
 .................................................
 ))
@@ -1350,7 +1350,7 @@ File: csquotes.def 2018/04/13 v5.2d csquotes generic definitions (JAW)
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.cfg
-File: csquotes.cfg 
+File: csquotes.cfg
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -1566,7 +1566,7 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
-File: biblatex.cfg 
+File: biblatex.cfg
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/flafter.sty
 Package: flafter 2018/01/08 v1.4c Standard LaTeX floats after reference (FMi)
 Applying: [2015/01/01] float order in 2-column on input line 49.
@@ -1635,13 +1635,13 @@ Package hyperref Info: Option `colorlinks' set `false' on input line 256.
 \g__fontspec_family_texgyreadventor_int=\count517
 .................................................
 . fontspec info: "defining-font"
-. 
+.
 . Font family 'texgyreadventor(0)' created for font 'texgyreadventor' with
 . options
 . [Ligatures=TeX,Ligatures=TeX,Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Scale=0.8].
-.  
+.
 .  This font family consists of the following NFSS series/shapes:
-.  
+.
 . - 'normal' (m/n) with NFSS spec.:
 . <->s*[0.8]"[texgyreadventor-regular.otf]/OT:script=latn;language=DFLT;mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.:
@@ -1697,7 +1697,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks49
 \c@algorithm=\count537
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
-Package: algpseudocode 
+Package: algpseudocode
  (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
@@ -1953,12 +1953,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [7]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-) [8]
+) [7]) [8]
 \openout2 = `chapters/Introduction.aux'.
 
  (/Users/anton/Google Drev/Skolerelateret/DTU/Bachelor Project/Bachelor-F19/latex/template/chapters/Introduction.tex
@@ -1994,12 +1989,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
 ]
 Overfull \hbox (52.79005pt too wide) in paragraph at lines 42--61
- [][] 
+ [][]
  []
 
 
 Overfull \hbox (9.66005pt too wide) in paragraph at lines 66--83
- [][] 
+ [][]
  []
 
 
@@ -2053,7 +2048,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--88
 
 [11]
 Overfull \hbox (32.79005pt too wide) in paragraph at lines 92--109
- [][] 
+ [][]
  []
 
 [12] [13]
@@ -2178,12 +2173,12 @@ File: graphics/../../../figures/Heatmap_summer.eps Graphic file (type eps)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 6.
+(caption)                particular \caption on input line 7.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (21.76266pt too wide) in paragraph at lines 3--6
-[] 
+Overfull \hbox (36.76266pt too wide) in paragraph at lines 6--7
+[][]
  []
 
 
@@ -2199,12 +2194,12 @@ File: graphics/../../../figures/Heatmap_winter.eps Graphic file (type eps)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 11.
+(caption)                particular \caption on input line 12.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (21.76266pt too wide) in paragraph at lines 9--11
- [][] 
+Overfull \hbox (21.76266pt too wide) in paragraph at lines 10--12
+ [][]
  []
 
 
@@ -2286,12 +2281,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 274--276
 
 ]
 Overfull \hbox (30.64294pt too wide) in paragraph at lines 103--152
- [][] 
+ [][]
  []
 
 
 Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
- [][] 
+ [][]
  []
 
 
@@ -2299,7 +2294,7 @@ LaTeX Warning: Float too large for page by 49.19998pt on input line 298.
 
 
 Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
- [][] 
+ [][]
  []
 
 
@@ -2316,14 +2311,14 @@ File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
 Overfull \hbox (1.68883pt too wide) in paragraph at lines 342--343
- [][] 
+ [][]
  []
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
 Overfull \hbox (1.68883pt too wide) in paragraph at lines 349--350
- [][] 
+ [][]
  []
 
 File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
@@ -2384,7 +2379,7 @@ Package biblatex Warning: No driver for entry type 'url'.
 
 
 Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
-[]\TU/lmr/m/n/10 Wikipedia. \TU/lmr/m/it/10 Multicollinearity\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][][][][][][][]$[]. 
+[]\TU/lmr/m/n/10 Wikipedia. \TU/lmr/m/it/10 Multicollinearity\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][][][][][][][]$[].
  []
 
 [85
@@ -2428,7 +2423,7 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
- ) 
+ )
 Here is how much of TeX's memory you used:
  49577 strings out of 492970
  949328 string characters out of 6133938
