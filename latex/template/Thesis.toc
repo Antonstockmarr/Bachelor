@@ -36,13 +36,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.2}BBR data}{9}{subsection.3.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multicollinearity}{12}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Multicollinearity}{11}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Data segmentation}{13}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Data segmentation}{12}{section.3.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.1}Segmentation by piece-wise optimization}{14}{subsection.3.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{15}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.2}Segmentation by significant deviations}{16}{subsection.3.3.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {4}Models on the Daily Consumption}{23}{chapter.4}% 
 \defcounter {refsection}{0}\relax 
@@ -70,50 +70,50 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.3}Predictions}{34}{subsection.4.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Comparison}{38}{section.4.5}% 
+\contentsline {section}{\numberline {4.5}Comparison}{37}{section.4.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Visualization of the results}{39}{section.4.6}% 
+\contentsline {section}{\numberline {4.6}Visualization of the results}{38}{section.4.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{47}{chapter.5}% 
+\contentsline {chapter}{\chapternumberline {5}Models on the Hourly Consumption}{45}{chapter.5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{47}{section.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}The ARMA Models and Their Extensions}{50}{section.5.2}% 
+\contentsline {section}{\numberline {5.2}The ARMA Models and Their Extensions}{49}{section.5.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Applying the models}{53}{section.5.3}% 
+\contentsline {section}{\numberline {5.3}Applying the models}{51}{section.5.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Modelling with the ARIMA Function}{54}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.1}Modelling with the ARIMA Function}{52}{subsection.5.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Predicting with the ARIMA model}{61}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.2}Predicting with the ARIMA model}{59}{subsection.5.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.3}Modelling with the MARIMA Function}{63}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.3}Modelling with the MARIMA Function}{61}{subsection.5.3.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.4}Visualization of the results}{63}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.4}Visualization of the results}{61}{subsection.5.3.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.5}Modelling with the \texttt {MARIMA} Function}{68}{subsection.5.3.5}% 
+\contentsline {subsection}{\numberline {5.3.5}Modelling with the \texttt {MARIMA} Function}{66}{subsection.5.3.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {6}Discussion}{69}{chapter.6}% 
+\contentsline {chapter}{\chapternumberline {6}Discussion}{67}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Future work}{69}{section.6.1}% 
+\contentsline {section}{\numberline {6.1}Future work}{67}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Tables}{75}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {A}Tables}{73}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{78}{section.A.1}% 
+\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{76}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{78}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{76}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{78}{subsection.A.2.1}% 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{76}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{78}{section.A.3}% 
+\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{76}{section.A.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{78}{subsection.A.3.1}% 
+\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{76}{subsection.A.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{79}{appendix.B}% 
+\contentsline {appendix}{\chapternumberline {B}Figures}{77}{appendix.B}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{85}{appendix*.5}% 
+\contentsline {chapter}{Bibliography}{83}{appendix*.66}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books and papers}{85}{section*.7}% 
+\contentsline {section}{Books and papers}{83}{section*.68}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Websites}{85}{section*.9}% 
+\contentsline {section}{Websites}{83}{section*.70}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{R-packages}{86}{section*.11}% 
+\contentsline {section}{R-packages}{84}{section*.72}% 

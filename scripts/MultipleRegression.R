@@ -155,7 +155,7 @@ sMultiple.test <- vector(mode = "list", length = n)
 sign.testM <- vector(mode = "list", length = n)
 t<-matrix(rep(0,n*2),ncol=n)
 par(mfrow = c(1,1))
-for (i in 1:n) {
+for (i in c(18,55)) {
   print(paste('Modelling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]

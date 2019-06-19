@@ -6,6 +6,6 @@ CirclePlot <- function(WindPred){
   WindPredC<-WindPred-mean(WindPred$fit)
   CircleCol[WindPredC$upr<0]<-Wcol[2]
   CircleCol[WindPredC$lwr>0]<-Wcol[4]
-  plot(x,y,col=CircleCol,yaxt='n',xaxt='n',xlab='',ylab='')
+  plot(x,y,col=CircleCol,yaxt='n',xaxt='n',xlab='',ylab='',pch=19)
   abline(v=0,h=0)
 }
