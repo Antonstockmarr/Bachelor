@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 11:28
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  19 JUN 2019 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1914,7 +1914,10 @@ File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
 
 
 
-] [23]
+]
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+ [23]
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
@@ -1933,27 +1936,21 @@ File: graphics/../../../figures/simple_lm18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm18.pdf>
 File: graphics/../../../figures/simple_lm55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/simple_lm55.pdf>
-[25] [26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
-Underfull \hbox (badness 10000) in paragraph at lines 69--72
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
 
  []
 
-
+[26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
+ [27]
 File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
 <graphics/../../../figures/SplineBasis.jpeg>
-
-Underfull \vbox (badness 2564) has occurred while \output is active []
-
- [29]
+ [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
+ [29] [30]
 File: graphics/../../../figures/general_lm18L.pdf Graphic file (type pdf)
 <use graphics/../../../figures/general_lm18L.pdf>
 File: graphics/../../../figures/general_lm55L.pdf Graphic file (type pdf)
@@ -1974,7 +1971,7 @@ File: graphics/../../../figures/lmpred_18L.pdf Graphic file (type pdf)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33] [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
@@ -1987,7 +1984,7 @@ File: graphics/../../../figures/Wplot55.jpeg Graphic file (type bmp)
 File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot18.jpeg>
  [37]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
@@ -2075,6 +2072,11 @@ LaTeX Warning: No positions in optional float specifier.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
+
+Overfull \hbox (1.56888pt too wide) detected at line 176
+[]
+ []
+
 [57] [58]
 
 LaTeX Warning: No positions in optional float specifier.
@@ -2238,7 +2240,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 40EFCC62215765DB9A9D539F84ECB66C.
+(rerunfilecheck)             Checksum: 792B3762C1A58A10214FAC8A5CF04080.
 
 
 LaTeX Warning: There were undefined references.
@@ -2259,7 +2261,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
 Here is how much of TeX's memory you used:
  51117 strings out of 492933
  984596 string characters out of 6133145
- 1824275 words of memory out of 5000000
+ 1825355 words of memory out of 5000000
  54355 multiletter control sequences out of 15000+600000
  554132 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
