@@ -20,8 +20,8 @@ total_cons <- sum(day.avg$Volume*day.avg$CoolingDegree)
 
 weathertmp <- day.weather[day.weather$Date >= tail(day.avg$Date,1),]
 weathertmp <- weathertmp[weathertmp$Date <= head(day.avg$Date,1),]
-plot(day.avg$Volume*day.avg$CoolingDegree, col = 1+c(weathertmp$Temperature>=15)+2*c(weathertmp$Temperature<12))
-abline(h=c(summeravg,winteravg,total_cons/356))
+plot(day.avg$Volume*day.avg$CoolingDegree*cc, col = 1+c(weathertmp$Temperature>=15)+2*c(weathertmp$Temperature<12)
+     )
 
 tapwater_ratio <-tapwater/total_cons
 tapwater_ratio_winter <- summeravg/winteravg

@@ -248,8 +248,19 @@ Now the model found above will be used for predictions. The test data used is tw
 \subsection{Visualization of the results}
 For the houses that only had data between something and something \textcolor{red}{mangler short period}, it turned out that there were no anomalities of the type described earlier in this section. This could mean that the data from these houses is collected in a more reliant way. Therefore predictions for one of these houses will also be included. The predictions for one of these houses is illustrated in figure \textcolor{red}{ref til short}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/AppHour6.pdf}
+    \caption{}
+    \label{fig:app6}
+\end{figure}
+
 
 \noindent The results recieved from the time series models so far have not been very reliant, and in general the model should not be used for predictions at this stage. But if one were to visualize the predictions found in for example \textcolor{red}{short}, it could be done by making a colouring similar to that of the regression model.
+
+
+
+
 
 
 \subsection{Modelling with the MARIMA Function}
@@ -266,8 +277,6 @@ where $Y_t$ is the consumption at time $t$, $T'_t$ is the modified temperature (
     \label{eq:MARIMA2}
 \end{align}
 where $\omega^{sin}_i$ and $\omega^{cos}_i$ are the parameters for the sine and cosine function of the $i'th$ term of the Fourier series. To limit the number of variables in the model, a Fourier series with $n=2$ is used for modelling.
-
-teori (skriv modellen op) \\
 
 \noindent For model selection the Bayesian information criterion (BIC) is used where the model with the lowest BIC is preferred \cite{BIC}. This criterion is chosen, as the penalty term for resolving overfitting problems is larger for BIC than AIC. The criterion is formulated as
 \begin{equation}
