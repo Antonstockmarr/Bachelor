@@ -41,7 +41,7 @@ plotpoints<-matrix(rep(0,15),nrow = 3)
 ## Do daily values
 Xday <- resample(Xor, 24*3600, tstart=trunc(Xor$t[1],"days"))
 (pd<-summary(lm(Qi ~ Te + G, Xday)))
-plotpoints[,1]<-(pd$coefficients[2,1]+1.96*c(0,pd$coefficients[2,2],-pd$coefficients[2,2]))
+plotpoints[,1]<-(pd$coefficients[2,1]+1.96*c(0,-pd$coefficients[2,2],+pd$coefficients[2,2]))
 
 ## Maybe take only a period and resample
 ## X <- Xor[period("2019-01-01",Xor$t,"2019-01-31"), ]
@@ -98,6 +98,7 @@ plotpoints[,4]<--1*(h3$HLC.Ta+1.96*c(0,sqrt(h3$VarHLC.Ta),-sqrt(h3$VarHLC.Ta)))
 plotpoints[,5]<--1*(h4$HLC.Ta+1.96*c(0,sqrt(h4$VarHLC.Ta),-sqrt(h4$VarHLC.Ta)))
 
 plot(plotpoints[1,],ylim=range(plotpoints))
+plotpoints[2,]-plotpoints[3,]
 for(i in 1:5){
   lines(c(i,i),c(plotpoints[2,i],plotpoints[3,i]),col=2)
 }
