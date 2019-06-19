@@ -11,7 +11,6 @@ In this section, a more detailed look at the hourly consumption will be provided
     \label{fig: Hourcons_winter}}
 }
 
-%
 \section{Description of the Hourly Consumption}
 \noindent \cref{fig: Hourcons_summer} and \cref{fig: Hourcons_winter} show the average consumption of each house during the day for the summer period and the winter period respectively. The different hours can be seen on the y-axis, and the colour coding show the fraction of that house's consumption in that hour interval. Each vertical strip of colours is a single house. Each strip sum up to $1$. Looking at the summer period in \cref{fig: Hourcons_summer}, a generel trend is apparent: the consumption is usually larger around $7$ AM and to some degree around $7$ PM. Almost every house peaks in one of these periods, and some peaks go up to $12\%$ of the daily consumption. On the other hand, there is almost no consumption between $11$ PM and $5$ AM. The same goes for the afternoon between $1$ PM and $4$ PM. \cref{fig:HourDistribution} shows the average distribution of all houses together with lines indicating the quantiles. On the figure it can be seen that the intervals $06-11$ and $18-19$ are in the top quantile. $00-05$ and $15-16$ is where the consumption is lowest.
 
@@ -241,8 +240,6 @@ Now the model found above will be used for predictions. The test data used is tw
     \label{fig:arima1_pred_18}
 \end{figure}
 
-
-\subsection{Modelling with the MARIMA Function}
 
 \subsection{Visualization of the results}
 For the houses that only had data between something and something \textcolor{red}{mangler short period}, it turned out that there were no anomalities of the type described earlier in this section. This could mean that the data from these houses is collected in a more reliant way. Therefore predictions for one of these houses will also be included. The predictions for one of these houses is illustrated in figure \textcolor{red}{ref til short}
