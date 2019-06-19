@@ -204,7 +204,7 @@ Now the model found above will be used for predictions. The test data used is tw
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/TestWeatherHour.pdf}
-    \caption{The input series of the temperature used for predictions made with the arima model.}
+    \caption{The input series of the temperature used for predictions made with the arima model}
     \label{fig:weather_pred_hour}
 \end{figure}
 
@@ -225,7 +225,7 @@ Now the model found above will be used for predictions. The test data used is tw
 
 
 
-\noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data. The results are shown in \cref{fig:arima1_pred_55} and \cref{fig:arima1_pred_18}. For house 55 the data still have some significant spikes in the first part, but it is more well-behaved in the rest of the test period. Here it is mostly within the prediction interval, but the prediction interval is rather wide. In generel the model shows that there is a lot of variance in the data that is not captured by the model. The model could be applied, but it will not perform very well. As for house 18, the data is still way off compared to the predictions. The smoothing did not change the way the data behaved, and there are still a lot of spikes that are so far from the prediction interval, that the model does not say anything useful about this house.
+\noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data. The results are shown in \cref{fig:arima1_pred_55} and \cref{fig:arima1_pred_18}. For house 55 the data still have some significant spikes in the first part, but it is more well-behaved in the rest of the test period. Here it is mostly within the prediction interval, but the prediction interval is rather wide. In general the model shows that there is a lot of variance in the data that is not captured by the model. The model could be applied, but it will not perform very well. As for house 18, the data is still way off compared to the predictions. The smoothing did not change the way the data behaved, and there are still a lot of spikes that are so far from the prediction interval, that the model does not say anything useful about this house.
 
 
 \begin{figure}
@@ -243,16 +243,19 @@ Now the model found above will be used for predictions. The test data used is tw
 \end{figure}
 
 
+\noindent For the houses that only had data between September 2018 and January 2019, it turned out that there were no anomalities of the type described earlier in this section. This could mean that the data from these houses is collected in a more reliant way. Therefore predictions for one of these houses will also be included. The predictions are illustrated in figure \cref{fig:arima1_pred_6}. The figure shows clearly that the hourly data is still much to unstable to apply the models. There is a lot of variance that is not captured at all in the predictions, and the prediction interval is pretty wide.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/Pred14days6.pdf}
+    \caption{Predictions of the arima model for house 6, which is one of the houses with data for a shorter period}
+    \label{fig:arima1_pred_6}
+\end{figure}
+
+
 
 \subsection{Visualization of the results}
-For the houses that only had data between September 2018 and January 2019, it turned out that there were no anomalities of the type described earlier in this section. This could mean that the data from these houses is collected in a more reliant way. Therefore predictions for one of these houses will also be included. The predictions for one of these houses is illustrated in figure \textcolor{red}{ref til short}
-
-
-
-
-
-
-
 
 \noindent The results recieved from the time series models so far have not been very reliant, and in general the model should not be used for predictions at this stage. But if one were to visualize the predictions found, it could be done by making a colouring similar to that of the regression model. An example is shown in \cref{fig:app6} with predictions for just two days. The colouring is made in the same way as for the predictions made by the regression model in \cref{fig: lmpred_col_55L}, where there according to the model there should be an equal amount of each colour.
 
