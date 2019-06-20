@@ -16,9 +16,9 @@ k<-dim(weather)[1]
 weather <- weather[k:1,]
 ## Read the data
 
-par(mfrow=c(1,4))
+par(mfrow=c(1,3))
 
-for(i in c(55,18,6,20)){
+for(i in c(55,18,6)){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
@@ -115,7 +115,7 @@ for(i in c(55,18,6,20)){
 
 
 # Med Fourier
-for(i in c(55,18,6,20)){
+for(i in c(55,18,6)){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
@@ -248,6 +248,7 @@ axis.POSIXct(1,Xp$t,xaxt="s")
 ##----------------------------------------------------------------
 ## The step response for each of the inputs
 ## Use your best fit
+par(mar=c(1,3,1,2), mgp=c(2,0.7,0),mfrow=c(1,1),xpd=FALSE)
 stepResponseARX(fit2,X,"Te")
 stepResponseARX(fit2,X,"G")
 
