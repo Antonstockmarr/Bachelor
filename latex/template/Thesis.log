@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  20 JUN 2019 11:54
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  20 JUN 2019 13:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1898,7 +1898,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--88
  []
 
 [11]
-Overfull \hbox (32.79005pt too wide) in paragraph at lines 92--109
+Overfull \hbox (37.79005pt too wide) in paragraph at lines 92--109
  [][] 
  []
 
@@ -2027,11 +2027,11 @@ File: graphics/../../../figures/Heatmap_summer.eps Graphic file (type eps)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 7.
+(caption)                particular \caption on input line 11.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (36.76266pt too wide) in paragraph at lines 6--7
+Overfull \hbox (36.76266pt too wide) in paragraph at lines 10--11
 [][] 
  []
 
@@ -2044,11 +2044,11 @@ File: graphics/../../../figures/Heatmap_winter.eps Graphic file (type eps)
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 12.
+(caption)                particular \caption on input line 16.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (21.76266pt too wide) in paragraph at lines 10--12
+Overfull \hbox (21.76266pt too wide) in paragraph at lines 14--16
  [][] 
  []
 
@@ -2063,44 +2063,45 @@ File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50] [51] [52] [53]
+ [50] [51] [52] [53] [54]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
- [54] [55]
+File: graphics/../../../figures/arimax/Stationarity_model1_18.pdf Graphic file (type pdf)
+<use graphics/../../../figures/arimax/Stationarity_model1_18.pdf>
 File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_55.pdf>
 File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_18.pdf>
- [56] [57] [58]
+ [55] [56] [57] [58] [59]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 142.
+               Default added (so using `tbp') on input line 156.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 154.
+               Default added (so using `tbp') on input line 168.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
 
-Overfull \hbox (1.56888pt too wide) detected at line 177
+Overfull \hbox (1.56888pt too wide) detected at line 191
 []
  []
 
-[59] [60]
+[60] [61]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 180.
+               Default added (so using `tbp') on input line 194.
 
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
+[62] [63]
 File: graphics/../../../figures/TestWeatherHour.pdf Graphic file (type pdf)
 <use graphics/../../../figures/TestWeatherHour.pdf>
 File: graphics/../../../figures/arimax/arima1_pred_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima1_pred_55.pdf>
 File: graphics/../../../figures/arimax/arima1_pred_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima1_pred_18.pdf>
-[61] [62] [63] [64] [65]
 File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/arima2_pred_55.pdf>
 File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
@@ -2109,15 +2110,24 @@ File: graphics/../../../figures/Pred14days6.pdf Graphic file (type pdf)
 <use graphics/../../../figures/Pred14days6.pdf>
 File: graphics/../../../figures/AppHour6.pdf Graphic file (type pdf)
 <use graphics/../../../figures/AppHour6.pdf>
- [66] [67] [68] [69] [70]
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
+ [64] [65] [66] [67] [68] [69] [70] [71]
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
 
  []
 
-[71]) [72]
+[72]
+Overfull \hbox (48.71652pt too wide) in paragraph at lines 311--325
+\TU/lmr/m/n/10 earlier, the orders of the models tested are MARIMA$\OT1/lmr/m/n/10 (1\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1)$\TU/lmr/m/n/10 , MARIMA$\OT1/lmr/m/n/10 (2\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1)$\TU/lmr/m/n/10 , MARIMA$\OT1/lmr/m/n/10 (3\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1)$
+ []
+
+) [73]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [74
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -2142,26 +2152,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
 Underfull \vbox (badness 2237) has occurred while \output is active []
 
- [73
-
-
-
-]
+ [75]
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-) [74]
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+[76]) [77]
 \openout2 = `chapters/Conclusion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex) [75
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex [78
 
 
 
-]
+]) [79]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [76
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [80
 
 
 
@@ -2186,24 +2197,45 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77] [78] [79] [80]
+ [81] [82] [83] [84]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81] [82] [83]
+ [85] [86] [87]
 Overfull \vbox (69.51717pt too high) has occurred while \output is active []
 
- [84]
+ [88]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 338.
+
+
+Overfull \hbox (15.29007pt too wide) in paragraph at lines 339--345
+[][] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 349.
+
+
+Overfull \hbox (11.96007pt too wide) in paragraph at lines 350--356
+[][] 
+ []
+
+[89] [90
+
+]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 342--343
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 364--365
  [][] 
  []
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 349--350
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 371--372
  [][] 
  []
 
@@ -2211,9 +2243,7 @@ File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [85
-
-] [86] [87] [88] [89] [90
+) [91] [92] [93] [94] [95] [96
 
 
 ]
@@ -2268,7 +2298,7 @@ Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
 []\TU/lmr/m/n/10 Wikipedia. \TU/lmr/m/it/10 Multicollinearity\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][][][][][][][]$[]. 
  []
 
-[91
+[97
 
 ]
 
@@ -2287,8 +2317,53 @@ Package biblatex Warning: No driver for entry type 'package'.
 Package biblatex Warning: No driver for entry type 'package'.
 (biblatex)                Using fallback driver on input line 45.
 
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:45: Missing $ inserted.
+<inserted text> 
+                $
+l.45 ...bbibintoc,type=package,title={R-packages}]
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:45: Extra }, or forgotten $.
+<argument> {ARMAX_model.R}
+                          
+l.45 ...bbibintoc,type=package,title={R-packages}]
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:45: Missing $ inserted.
+<inserted text> 
+                $
+l.45 ...bbibintoc,type=package,title={R-packages}]
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.tex:45: Missing } inserted.
+<inserted text> 
+                }
+l.45 ...bbibintoc,type=package,title={R-packages}]
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 No complaints by nag.
-[92]
+[98]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
@@ -2299,11 +2374,23 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
-Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6F37590735BF8021C0ABCD273DB6AE8D.
+
+
+Package rerunfilecheck Warning: File `Thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Thesis.out':
+(rerunfilecheck)             Before: B18621062D7239C2657C79E93F5D4C00
+(rerunfilecheck)             After:  8E4F9D2C9D57A4E1B8D878DCF362D54B.
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please rerun LaTeX.
 
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
@@ -2311,12 +2398,12 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51304 strings out of 492933
- 988023 string characters out of 6133145
- 1832343 words of memory out of 5000000
- 54519 multiletter control sequences out of 15000+600000
+ 51315 strings out of 492933
+ 988465 string characters out of 6133145
+ 1833707 words of memory out of 5000000
+ 54529 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2745b,7953s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (102 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (108 pages).

@@ -137,6 +137,27 @@
       \verb https://www.iea.org/renewables2018/heat/
       \endverb
     \endentry
+    \entry{peder}{package}{}
+      \name{author}{1}{}{%
+        {{hash=3f113841aa42c127460b1624db54ff41}{%
+           family={Bacher},
+           familyi={B\bibinitperiod},
+           given={Peder},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f113841aa42c127460b1624db54ff41}
+      \strng{fullhash}{3f113841aa42c127460b1624db54ff41}
+      \strng{bibnamehash}{3f113841aa42c127460b1624db54ff41}
+      \strng{authorbibnamehash}{3f113841aa42c127460b1624db54ff41}
+      \strng{authornamehash}{3f113841aa42c127460b1624db54ff41}
+      \strng{authorfullhash}{3f113841aa42c127460b1624db54ff41}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{ARMAX_model.R}}
+      \true{nocite}
+    \endentry
     \entry{Stat_bog}{book}{}
       \name{author}{1}{}{%
         {{hash=2a8833cfe0113cda18436074ded03d1a}{%
