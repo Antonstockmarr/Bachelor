@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  20 JUN 2019 15:23
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  20 JUN 2019 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2195,76 +2195,79 @@ Overfull \hbox (30.64294pt too wide) in paragraph at lines 103--152
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [83]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85]
 Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
  [][] 
  []
-
-
-LaTeX Warning: Float too large for page by 49.19998pt on input line 298.
 
 
 Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
  [][] 
  []
 
+[86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87]
+Overfull \vbox (79.13501pt too high) has occurred while \output is active []
+
+ [88]
+Overfull \hbox (15.29007pt too wide) in paragraph at lines 340--346
+[][] 
+ []
+
+
+Overfull \hbox (11.96007pt too wide) in paragraph at lines 351--357
+[][] 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [84] [85]
-Overfull \vbox (317.78473pt too high) has occurred while \output is active []
-
- [86] [87] [88]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 338.
-
-
-Overfull \hbox (15.29007pt too wide) in paragraph at lines 339--345
-[][] 
- []
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 349.
-
-
-Overfull \hbox (11.96007pt too wide) in paragraph at lines 350--356
-[][] 
- []
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 360.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 377.
-
-[89] [90
-
-]
+ [89] [90]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 405--406
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 407--408
  [][] 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [91
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [92]
+Overfull \vbox (9.65367pt too high) has occurred while \output is active []
+
+ [93]
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 412--413
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 414--415
  [][] 
  []
 
 File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [94]
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [91] [92] [93] [94] [95] [96
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-]
+ [95] [96]
 
 Package biblatex Warning: 'sorting' option to '\printbibliography' is no longer supported.
 (biblatex)                Please use 'sorting' option to '\newrefcontext'.
@@ -2318,6 +2321,8 @@ Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
 
 [97
 
+
+
 ]
 
 Package biblatex Warning: No driver for entry type 'package'.
@@ -2352,7 +2357,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: D8846DBF0F72F33B36A4F1213747EB4A.
+(rerunfilecheck)             Checksum: CD52B0805EB13A837F32968D02874DD7.
 
 
 LaTeX Warning: There were undefined references.
@@ -2366,10 +2371,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51317 strings out of 492933
- 987973 string characters out of 6133145
- 1815359 words of memory out of 5000000
- 54529 multiletter control sequences out of 15000+600000
+ 51319 strings out of 492933
+ 987995 string characters out of 6133145
+ 1776684 words of memory out of 5000000
+ 54531 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2745b,7953s stack positions out of 5000i,500n,10000p,200000b,80000s
