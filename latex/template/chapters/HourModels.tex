@@ -325,19 +325,36 @@ where $\Hat{L}$ is the maximized value of the likelihood function, $n$ is the nu
       \label{tab: BIC}
 \end{table}
 
-\noindent The parameters for the optimal BIC model for house 55 are listed in \cref{tab: MARIMAparam55} in the appendix. For that house every parameter is significant, but for the other houses some of the parameters are not significant. It is hard to interpret the parameters of the model in a physical way. There is no obvious connecting between for example the temperature parameter $\omega_T$ and the estimate for the temperature in the models for the daily data. But one way to relate the time series models to the daily estimates is to calculate the step response. The step response is defined as the total change in the consumption over time when one of the inputs is changed by one. \textcolor{red}{step respones} shows an example for house 55. The temperature is increased by one and the rest of the parameters are kept constant. THe consumption converges towards a new level as time passes. When the consumption has reached its new level, the difference between the initial consumption and the new consumption is a measure of the step response of the temperature.
+\noindent The parameters for the optimal BIC model for house 55 are listed in \cref{tab: MARIMAparam55} without the Fourier series and in \cref{tab: MARIMAparam55_fourier} with the Fourier series in the appendix. For that house every parameter is more or less significant, but for the other houses some of the parameters are not significant. The solar radiation is mostly not significant. It is hard to interpret the parameters of the model in a physical way. There is no obvious connecting between for example the temperature parameter $\omega_T$ and the estimate for the temperature in the models for the daily data. But one way to relate the time series models to the daily estimates is to calculate the step response. The step response is defined as the total change in the consumption over time when one of the inputs is changed by one. \cref{fig:StepResponse55} shows an example for house 55. The temperature is increased by one and the rest of the parameters are kept constant. The consumption converges towards a new level as time passes. When the consumption has reached its new level, the difference between the initial consumption and the new consumption is a measure of the step response of the temperature.
 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/StepResponse.eps}
+    \caption{The step response for the temperature input for house 55. The red line converges towards a new constant level, which is the step response}
+    \label{fig:StepResponse55}
+\end{figure}
 
+
+\noindent The different step responses for the houses are illustrated in 
 
 
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{../../../figures/StepResponse.pdf}
-    \caption{}
-    \label{fig:StepResponse55}
+    \includegraphics[width=0.8\textwidth]{../../../figures/MarimaHCL.eps}
+    \caption{The temperature estimates from the regression models compared to the temperature step response for the Marima models without Fourier series. The regression model on the daily data is far superior}
+    \label{fig:HCL}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/MarimaHCLF.eps}
+    \caption{The temperature estimates from the regression models compared to the temperature step response for the Marima models with Fourier series. There Fourier series does not improve the step response}
+    \label{fig:HCLF}
+\end{figure}
+
+
 
 
 
