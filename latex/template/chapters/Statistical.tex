@@ -52,13 +52,13 @@ To validate the model, different methods are used. The abovementioned model assu
 \noindent \cref{fig: simple_lm_18} and \cref{fig: simple_lm_55} shows examples of the model applied on two of the houses, where one does not fulfill the assumptions and another model that overall can be said to fulfill the assumptions. The Residuals vs. Fitted plot in \cref{fig: simple_lm_18} clearly shows that the residuals are not randomly scattered around mean 0 indicating that the variance are not constant and an odd behaviour appears in the bottom left corner. The QQ-plot shows tails and the residuals do not follow a straight line. The Scale-Location and Residuals vs. Leverage plots also show that the residuals can not be said to be i.i.d. In contrast to the model of house 18, the behavior of the residuals in \cref{fig: simple_lm_55} seems more normally distributed. Overall, they are randomly scattered around mean 0 and the QQ-plot shows that the majority  of the residuals lie on a straight line. However, the majority of the models do not fulfill the assumptions.
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/simple_lm18.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/simple_lm18.eps}
     \caption{Residual plots of house 18 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are not fulfilled for this specific house}
     \label{fig: simple_lm_18}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/simple_lm55.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/simple_lm55.eps}
     \caption{Residual plots of house 55 based on the simple linear regression model given in \cref{eq: simple}. The model assumptions of a linear regression model are overall fulfilled}
     \label{fig: simple_lm_55}
 \end{figure}
