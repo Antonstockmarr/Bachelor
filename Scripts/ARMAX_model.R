@@ -73,10 +73,10 @@ for(i in c(55)){
   #X$G <- lagVec(X$G, -1)
   
   ## Try increasing the order
-  fit1 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=1, pMA=1, noLagPattern="One", pNoLag=1,printit = FALSE)
-  fit2 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=2, pMA=1, noLagPattern="One", pNoLag=1,printit = FALSE)
-  fit3 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=3, pMA=1, noLagPattern="One", pNoLag=1,printit = FALSE)
-  fit4 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=4, pMA=1, noLagPattern="One", pNoLag=1,printit = FALSE)
+  fit1 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=1, pMA=1, noLagPattern="One|Te|G", pNoLag=1,printit = FALSE)
+  fit2 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=2, pMA=1, noLagPattern="One|Te|G", pNoLag=1,printit = FALSE)
+  fit3 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=3, pMA=1, noLagPattern="One|Te|G", pNoLag=1,printit = FALSE)
+  fit4 <- estimateARMAX(outName='Qi', inNames=c('One','Te','G'), pAR=4, pMA=1, noLagPattern="One|Te|G", pNoLag=1,printit = FALSE)
   
   bics<-rep(0,5)
   
@@ -85,10 +85,10 @@ for(i in c(55)){
   bics[4]<-BIC(fit3)
   bics[5]<-BIC(fit4)
   
-  # summary(fit1)
-  # summary(fit2)
+  summary(fit1)
+  summary(fit2)
   summary(fit3)
-  # summary(fit4)
+  summary(fit4)
   
   h1<-HLC.Qi.ARX(fit1)
   h2<-HLC.Qi.ARX(fit2)
@@ -176,7 +176,7 @@ for(i in c(55,18,6)){
   ## Try increasing the order
   outName <- 'Qi'
   inNames <- c('One','Te','G',pst('sin_',1:3),pst('cos_',1:3))
-  noLagPattern <- "One|sin|cos"
+  noLagPattern <- "One|sin|cos|Te|G"
   pNoLag <- 1
   fit1 <- estimateARMAX(outName, inNames, pAR=1, pMA=1, noLagPattern, pNoLag)
   fit2 <- estimateARMAX(outName, inNames, pAR=2, pMA=1, noLagPattern, pNoLag)
@@ -249,7 +249,7 @@ axis.POSIXct(1,Xp$t,xaxt="s")
 ## The step response for each of the inputs
 ## Use your best fit
 par(mar=c(1,3,1,2), mgp=c(2,0.7,0),mfrow=c(1,1),xpd=FALSE)
-stepResponseARX(fit3,X,"Te")
+stepResponseARX(fit2,X,"Te")
 stepResponseARX(fit2,X,"G")
 
 ##----------------------------------------------------------------
