@@ -180,6 +180,8 @@ for (i in 1:n) {
   t[1,i]<-(sMultiple.test[[i]]$p.value)
   sign.testM[[i]] <- binom.test(x = sum(sign(lmMultipleNoP[[i]]$residuals) == 1), n = length(lmMultipleNoP[[i]]$residuals))
   t[2,i]<-(sign.testM[[i]]$p.value)
+  
+  #print(t[,i])
 
   lmSummary_est[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,1]
   lmSummary_p[i,] <- summary(lmMultipleNoP[[i]])$coefficients[,4]

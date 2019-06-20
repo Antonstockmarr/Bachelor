@@ -33,7 +33,7 @@ for (i in c(1:n)) {
   ts[2,i]<-(sign.test[[i]]$p.value)
   # 95% confidence interval
   
-  print(ts[,i])
+  #print(ts[,i])
   
 }
 par(mfrow=c(1,1))

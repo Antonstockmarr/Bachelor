@@ -102,15 +102,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{82}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{86}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{84}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{86}{subsection.A.2.1}% 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{84}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{86}{section.A.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{86}{subsection.A.3.1}% 
+\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{88}{subsection.A.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{91}{appendix.B}% 
+\contentsline {section}{\numberline {A.4}Parameters from hourly consumption models}{89}{section.A.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {appendix}{\chapternumberline {B}Figures}{92}{appendix.B}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.1}Scatterplots of data}{93}{section.B.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.2}ACF and PACF of time series models}{95}{section.B.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Bibliography}{97}{appendix*.79}% 
 \defcounter {refsection}{0}\relax 
