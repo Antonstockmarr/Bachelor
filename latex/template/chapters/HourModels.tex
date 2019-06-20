@@ -74,16 +74,15 @@ This is a seasonal $ARIMA(p,d,q)\times (P,D,Q)_s$. $\phi$, $B$, $\Delta$ and $\t
 where $X_t$ is the exogenous variable and $\omega(B)$ is a polynomial in $B$. The exogenous part can also be differenced or have seasonal components, but in this project those extensions will not be explored. In fact only $\omega(B)=\omega_0$ will be used in the modelling process. The software used for the arima processes is of course $R$, but in particular the $arima$ function. This function does not estimate the exogenous parameters according to \cref{eq:ARIMAX}. It actually starts out by making a regression of the series $\{Y_t\}$ on the exogenous variable $\{X_t\}$. Then this fit is substituted for $Y_t$ in \cref{eq:ARIMA}. This approach is less precise, since it executes the parameter estimation in two steps, first for the exogenuous variable, then for the rest of the variables. An alternative method is to use the \texttt{MARIMA} package in \texttt{R}. This package computes the estimates in \cref{eq:ARIMAX} by using different approximation methods than the \texttt{arima} function. Neither methods should be considered "correct", but they produce different results.
 
 \section{Applying the models}
-In this section, different ARIMAX models will be applied to the data. First the \texttt{arima} function in \texttt{R} will be used to test different models. The models will include a season of 24 hours. The \texttt{arima} models will then be used to make predictions on data not used for training, to see how well the ARIMAX model performs in general on the data set. Examples will be given on how such predictions could be visualized in WATTS. After that, new models will be generated using the \texttt{marima} package in \texttt{R}. These models will be used to calculate the impulse response of the temperature, which can be compared to the temperature estimates in the linear regression models. To apply time series models, the data has to be complete without gaps. For this reason the entire data set is used, not only the winter period. Two weeks in january 2019 are left out for testing. But the temperature $T$ used as regression variable in the model is altered to $T'$, such that
+In this section, different ARIMAX models will be applied to the data. First the \texttt{arima} function in \texttt{R} will be used to test different models. The models will include a season of 24 hours. The \texttt{arima} models will then be used to make predictions on data not used for training, to see how well the ARIMAX model performs in general on the data set. Examples will be given on how such predictions could be visualized in WATTS. After that, new models will be generated using the \texttt{marima} package in \texttt{R}. These models will be used to calculate the impulse response of the temperature, which can be compared to the temperature estimates in the linear regression models. To apply time series models, the data has to be complete without gaps. For this reason the entire data set is used, not only the winter period. Two weeks in january 2019 are left out for testing. The temperature used in the models will be the altered temperature defined by
 \begin{equation}
     T' = \begin{cases}
         \alpha - T & \text{if } T\leq \alpha\\
         0 & \text{Otherwise}
     \end{cases},
-    \label{eq:Ttilde}
+    \label{eq:Ttilde_hour}
 \end{equation}
-where $\alpha$ is the threshold of 12 degrees found in the exploratory analysis.
-
+just as in the models on the daily data.
 
 \subsection{Modelling with the ARIMA Function}
 To generate a model, one must decide a model order. It is important that the model is not too complex. With the amount of data available for each house, too many parameters in the model causes the running time to increase drastically. More importantly, sometimes the optimization method used in the $arima$ function does not converge. This happens more often when there are more parameters, and the model should be applicaple to as many different houses as possible. As mentioned in the section above, stationarity is an important property. If the order of the autoregressive part (both non-seasonal and seasonal) is too high, the model will not be stationary unless differencing is used. Differencing on the other hand makes the model more obscure and harder to interpret. If the model is only differenced once, it means that it models the difference between one hour and the one before that. If the seasonal part is differenced, it models the difference between an hour and the same hour the day before.
@@ -200,12 +199,12 @@ Where $X_t = Y_t - 8.15 T'_t$. Looking at the acf and pacf of this house on \cre
 
 
 \subsection{Predicting with the ARIMA model}
-Now the model found above will be used for predictions. The test data used is two weeks in January 2019. The predictions are made using the \texttt{R} function \texttt{predict}. The  weather data used as input can be seen in \cref{fig:weather_pred_hour}. Just as in the linear regression model, the input series is assumed to be a perfect prediction without measuring errors. The predictions are not one-step predictions, but 14 step predictions. The results of applying the predictions to house 55 can be seen in figure \cref{fig:arima1_pred_55}. It very quickly becomes clear that the data behaves very differently than the model predicts. There are a lot of very high spikes, each followed by an hour with zero consumption. This tendency is not captured at all in the model, and it is clear that the time series models cannot be used for anything useful for this house unless the data is altered in some way. House 18 in figure \cref{fig:arima1_pred_18} shows the same unexpected behavior. There seems to be no connection between the time of day and the massive spikes for either of the houses. And since the spikes are usually followed by a consumption of precisely zero, the behavior seems to be linked to how the data is collected and pre-processed by Aalborg Forsyning. Given that the anomalities come in pairs of measurements that are two or three times higher than the neighbours and than measurements of zero, the most plausible explanation is that several measurements are accidentially grouped into a single hour interval, leaving the next interval with no consumption. The phenomenon with a high spike followed by a zero happens in almost every \textcolor{red}{snak med Finn om hvor tit det sker}
+Now the model found above will be used for predictions. The test data used is two weeks in January 2019. The predictions are made using the \texttt{R} function \texttt{predict}. The  weather data used as input can be seen in \cref{fig:weather_pred_hour}. Just as in the linear regression model, the input series is assumed to be a perfect prediction without measuring errors. The predictions are not one-step predictions, but 14 step predictions. The results of applying the predictions to house 55 can be seen in figure \cref{fig:arima1_pred_55}. It very quickly becomes clear that the data behaves very differently than the model predicts. There are a lot of very high spikes, each followed by an hour with zero consumption. This tendency is not captured at all in the model, and it is clear that the time series models cannot be used for anything useful for this house unless the data is altered in some way. House 18 in figure \cref{fig:arima1_pred_18} shows the same unexpected behavior. There seems to be no connection between the time of day and the massive spikes for either of the houses. And since the spikes are usually followed by a consumption of precisely zero, the behavior seems to be linked to how the data is collected and pre-processed by Aalborg Forsyning. Given that the anomalities come in pairs of measurements that are two or three times higher than the neighbours and than measurements of zero, the most plausible explanation is that several measurements are accidentially grouped into a single hour interval, leaving the next interval with no consumption. The phenomenon with a high spike followed by a zero happens almost every day for most houses, and sometimes \textcolor{red}{,kdcoijfce}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{../../../figures/TestWeatherDay.eps}
-    \caption{The input series of the temperature used for predictions made with the arima model.}
+    \includegraphics[width=0.8\textwidth]{../../../figures/TestWeatherHour.pdf}
+    \caption{The input series of the temperature used for predictions made with the arima model}
     \label{fig:weather_pred_hour}
 \end{figure}
 
@@ -226,7 +225,7 @@ Now the model found above will be used for predictions. The test data used is tw
 
 
 
-\noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data. The results are shown in \cref{fig:arima1_pred_55} and \cref{fig:arima1_pred_18}. For house 55 the data still have some significant spikes in the first part, but it is more well-behaved in the rest of the test period. Here it is mostly within the prediction interval, but the prediction interval is rather wide. In generel the model shows that there is a lot of variance in the data that is not captured by the model. The model could be applied, but it will not perform very well. As for house 18, the data is still way off compared to the predictions. The smoothing did not change the way the data behaved, and there are still a lot of spikes that are so far from the prediction interval, that the model does not say anything useful about this house.
+\noindent To come up with a more fair evaluation of the model, the data is changed slightly to compensate for the random spikes. Every time there is a consumption of precisely zero, that data point and the one before are both changed to the average of the two. This smoothes out the outliers that seem to be caused by erroneous data collection, without changing the rest of the data too much. The model is now trained and tested on the changed data. The results are shown in \cref{fig:arima1_pred_55} and \cref{fig:arima1_pred_18}. For house 55 the data still have some significant spikes in the first part, but it is more well-behaved in the rest of the test period. Here it is mostly within the prediction interval, but the prediction interval is rather wide. In general the model shows that there is a lot of variance in the data that is not captured by the model. The model could be applied, but it will not perform very well. As for house 18, the data is still way off compared to the predictions. The smoothing did not change the way the data behaved, and there are still a lot of spikes that are so far from the prediction interval, that the model does not say anything useful about this house.
 
 
 \begin{figure}
@@ -244,19 +243,28 @@ Now the model found above will be used for predictions. The test data used is tw
 \end{figure}
 
 
+\noindent For the houses that only had data between September 2018 and January 2019, it turned out that there were no anomalities of the type described earlier in this section. This could mean that the data from these houses is collected in a more reliant way. Therefore predictions for one of these houses will also be included. The predictions are illustrated in figure \cref{fig:arima1_pred_6}. The figure shows clearly that the hourly data is still much to unstable to apply the models. There is a lot of variance that is not captured at all in the predictions, and the prediction interval is pretty wide.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/Pred14days6.pdf}
+    \caption{Predictions of the arima model for house 6, which is one of the houses with data for a shorter period}
+    \label{fig:arima1_pred_6}
+\end{figure}
+
+
 
 \subsection{Visualization of the results}
-For the houses that only had data between something and something \textcolor{red}{mangler short period}, it turned out that there were no anomalities of the type described earlier in this section. This could mean that the data from these houses is collected in a more reliant way. Therefore predictions for one of these houses will also be included. The predictions for one of these houses is illustrated in figure \textcolor{red}{ref til short}
+
+\noindent The results recieved from the time series models so far have not been very reliant, and in general the model should not be used for predictions at this stage. But if one were to visualize the predictions found, it could be done by making a colouring similar to that of the regression model. An example is shown in \cref{fig:app6} with predictions for just two days. The colouring is made in the same way as for the predictions made by the regression model in \cref{fig: lmpred_col_55L}, where there according to the model there should be an equal amount of each colour.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/AppHour6.pdf}
-    \caption{}
+    \caption{Visualization of the results of the arima model applied to house 6 for two days in January 2019. The exact period is from $00:00$ on the 18th of January to $23:00$ on the 19th of January}
     \label{fig:app6}
 \end{figure}
-
-
-\noindent The results recieved from the time series models so far have not been very reliant, and in general the model should not be used for predictions at this stage. But if one were to visualize the predictions found in for example \textcolor{red}{short}, it could be done by making a colouring similar to that of the regression model.
 
 
 
@@ -276,7 +284,9 @@ where $Y_t$ is the consumption at time $t$, $T'_t$ is the modified temperature (
     \phi (B) Y_t = &\sum_{i=1}^n \left(\omega^{sin}_i sin\left(2\pi\cdot t \cdot \frac{24}{i}\right) + \omega^{cos}_i cos\left(2\pi\cdot t \cdot \frac{24}{i}\right)\right) \nonumber\\ & + \omega_{T'}(B)T'_t + \omega_{SR}(B)SR_t + \theta (B) \epsilon_t ,
     \label{eq:MARIMA2}
 \end{align}
-where $\omega^{sin}_i$ and $\omega^{cos}_i$ are the parameters for the sine and cosine function of the $i'th$ term of the Fourier series. To limit the number of variables in the model, a Fourier series with $n=2$ is used for modelling.
+where $\omega^{sin}_i$ and $\omega^{cos}_i$ are the parameters for the sine and cosine function of the $i'th$ term of the Fourier series. To limit the number of variables in the model, a Fourier series with $n=2$ is used for modelling. This gives a model with seven parameters other than the ones from $\phi(B)$.
+
+
 
 \noindent For model selection the Bayesian information criterion (BIC) is used where the model with the lowest BIC is preferred \cite{BIC}. This criterion is chosen, as the penalty term for resolving overfitting problems is larger for BIC than AIC. The criterion is formulated as
 \begin{equation}
@@ -287,13 +297,13 @@ where $\Hat{L}$ is the maximized value of the likelihood function \textcolor{red
 \noindent The following models are investigated and computed for house 55, 18, 6 and 20: MARIMA$(1,0,1)$, MARIMA$(2,0,1)$, MARIMA$(3,0,1)$ and MARIMA$(4,0,1)$. The BIC values for each of the models can be seen in \cref{tab: BIC}.
 \begin{table}[H]
     \centering
-    \begin{tabular}{l|cccc}
+    \begin{tabular}{l|ccc}
     \hline
-    \textbf{BIC} & House 55 & House 18 & House 6 & House 20 \\ \hline \hline
-    MARIMA($1,0,1$) & 19431.2 & 31088.3 & 7272.7 & 7686.8 \\
-    MARIMA($2,0,1$) & 17934.9 & 31108.9 & 7164.1 & 7660.9 \\
-    MARIMA($3,0,1$) & 17958.9 & 31082.6 & 7177.5 & 7582.5 \\
-    MARIMA($4,0,1$) & 17990.0 & 31034.6 & 7201.9 & 7592.4 \\
+    \textbf{BIC} & House 55 & House 18 & House 6 \\ \hline \hline
+    MARIMA($1,0,1$) & 19431.2 & 31088.3 & 7272.7  \\
+    MARIMA($2,0,1$) & 17934.9 & 31108.9 & 7164.1  \\
+    MARIMA($3,0,1$) & 17958.9 & 31082.6 & 7177.5  \\
+    MARIMA($4,0,1$) & 17990.0 & 31034.6 & 7201.9  \\
     \hline
     \end{tabular}
     \caption{}
@@ -309,7 +319,6 @@ where $\Hat{L}$ is the maximized value of the likelihood function \textcolor{red
     House 55 & & & & \\
     House 18 & & & & \\
     House 6 & & & & \\
-    House 20 & & & & \\
     \hline
     \end{tabular}
     \caption{}
@@ -324,7 +333,6 @@ where $\Hat{L}$ is the maximized value of the likelihood function \textcolor{red
     House 55 & & & & \\
     House 18 & & & & \\
     House 6 & & & & \\
-    House 20 & & & & \\
     \hline
     \end{tabular}
     \caption{}

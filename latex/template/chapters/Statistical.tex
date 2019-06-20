@@ -30,13 +30,21 @@ Chapter 7 in \cite{Stat_bog} explains the model assupmtions listed above. To su
 \noindent Both a simple linear and a multiple linear regression model will be implemented in order to detect which attributes affect the performance of a specific house. This will be done by interpreting the estimates of the relation between the different explanatory attributes and \texttt{Consumption}. As mentioned, the p-value of the estimates of the explanatory variables will be the main focus when investigating which attributes influence the performance. Moreover, transformation of data is not considered since the purpose is to interpret the results and a transformation would make this less intuitive.
 
 \section{Simple linear regression model}
-A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature}. Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. Hence, the simple linear regression model applied to each house is
+A simple linear regression model is fitted to each house with \texttt{Consumption} as a function of \texttt{Temperature}. Since it is expected that the temperature is the physical phenomenon with the greatest influence on the heat consumption, it is chosen as the independent variable. The temperature is altered based on the threshold for the winter period, which was found to be 12 degrees. The new temperature $T_{winter}$ is defined as
+\begin{equation}
+    T_{winter} = \begin{cases}
+        \alpha - T & \text{if } T\leq \alpha\\
+        0 & \text{Otherwise}
+    \end{cases}.
+    \label{eq:Ttilde}
+\end{equation}
+This way the temperature input is zero for the data that is not in the winter period. In all models from now on the temperature will be defined by this altered temperature. The simple linear regression model applied to each house is
 \begin{equation}
     Y_{\text{Q}} = \mu + \beta_{\text{T}} \cdot x_{\text{T}} + \varepsilon
     \label{eq: simple}
 \end{equation}
 
-\noindent The models are performed by using the \texttt{lm()} function in \texttt{R}. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met and different tests on normality of residuals are perfomed. The simple model only includes one explanatory variable, thus a variable selection is not performed. \textcolor{red}{Synes altså det her afsnit er lidt for kort.}
+\noindent The models are performed by using the \texttt{lm()} function in \texttt{R}. The models will then be validated by examining whether the model assumptions in Chapter 4.1.1 are met and different tests on normality of residuals are perfomed. The simple model only includes one explanatory variable, thus a variable selection is not performed. 
 
 \subsection{Validation}
 To validate the model, different methods are used. The abovementioned model assumptions are checked and futhermore tests of normally distributed residuals is performed. If the model assumptions are fulfilled and the residuals are i.i.d with $\mathcal{N}(0,\sigma^2)$, the model is said to be valid. \\
@@ -208,8 +216,8 @@ The results of the general regression model performed on each house, are illustr
 \noindent To see how well the model captures the overall behaviour of the data, it is used to make predictions for unknown data. This is done by dividing the data into a training set and a test set. Here a test set will be used containing January 2019 (31 days). The available weather data for that period is used to make predictions, which are then compared to the actual consumption. These are not one-step predictions, but 31 step predictions. This means that the model for time $t$ updates based on the prediction at time $t-1$, not the actual data. In other words, one-step predictions would be the same as predicting one step ahead 31 times and updating the available observations. The predictions are made using the function \texttt{predict} in \texttt{R} and \cref{fig: weather_pred} shows the input values used for the predictions.
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/weather_pred.pdf}
-    \caption{The input values used for predictions of the general linear regression model}
+    \includegraphics[width=1.\textwidth]{../../../figures/TestWeatherDays.pdf}
+    \caption{The input values used for predictions of the general linear regression model. For the entire last half of January it was never sunny}
     \label{fig: weather_pred}
 \end{figure}
 \noindent In consistency with the other results, house 18 and 55 are used for predictions. They are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}.
@@ -226,7 +234,7 @@ The results of the general regression model performed on each house, are illustr
     \label{fig: lmpred_18L}
 \end{figure}
 
-\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour.  The 95\% prediction interval is narrow, which indicates that the standard deviations of this model are fairly small. Comparing the predictions to the actual consumption, the actual data is mostly inside the prediction interval. In the last couple of days the model predict spikes in the temperature that are not reflected in the observations. \cref{fig: weather_pred} indicate why the spikes occour. It seems that there are two days with particularily low temperatures coinciding with the spikes in the predictions. Low temperatures causes the model to expect higher consumption. There can be many reasons why the consumption did not spike as expected, for example the inhabitants of the house might not have been home that day to notice the temperature difference. Such things can be very hard to predict. In general, the model performs well on this house. 
+\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour.  The 95\% prediction interval is narrow, which indicates that the standard deviations of this model are fairly small. Comparing the predictions to the actual consumption, the actual data is mostly inside the prediction interval. In the last couple of days the model predict spikes in the temperature that are not reflected in the observations. \cref{fig: weather_pred} indicate why the spikes occour. It seems that there are two days with particularily low temperatures coinciding with the spikes in the predictions. Low temperatures causes the model to expect higher consumption. There can be many reasons why the consumption did not spike as expected, for example the inhabitants of the house might not have been home that day to notice the temperature difference. Such things can be very hard to predict. In general, the model performs well on this house. It should be noted that there is no sun input in the input weather data for the last half of January. This makes it hard to evaluate how the sun affects the predictions.
 
 \noindent House 18, on the other hand, does not behave quite as expected. The model has problems capturing the and the 95\% prediction interval much wider than for house 55. There is more unexplained variation in this model. The deviations in the observations cannot be explained by the input from the weather data. So even though all the observations are within the prediction interval, the model is not of much use on this house. There are other factors affecting the consumption that are not captured in the model, which is reflected in the high uncertainty.\\
 
