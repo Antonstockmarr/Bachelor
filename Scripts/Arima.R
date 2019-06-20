@@ -114,7 +114,7 @@ ARIMAX_model <- function(two_sd,three_sd,nonseas,seas,houses,xreg)
 # The first model
 two_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'intercept'=0, "Temperature"=0)
 three_sd <- data.frame("ar1"=0,"ma1"=0,'sma1'=0,'sar1'=0,'intercept'=0,"Temperature"=0)
-model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,0,1),c(1:n),T)
+model1 <- ARIMAX_model(two_sd,three_sd,c(1,0,1),c(1,0,1),c(10:n),T)
 
 
 

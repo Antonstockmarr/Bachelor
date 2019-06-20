@@ -8,16 +8,14 @@ Now two different types of models have been developed - a linear regression mode
 
 \noindent As mentioned in Chapter \ref{chap: data} a \textcolor{magenta}{Mickey Mouse} data-checking function has been proposed. The function checks if there is a certain number of observations for each house. One can discuss whether the function could also be used after the model development. Based on the results given in \textcolor{red}{blabla} there are several houses that could probably be omitted because they have too few observations or there are too many interpolations of missing observations in the house measurements. It can be problematic to predict a certian number of days ahead, e.g. 60 days, if there only exists observations for half a year. Furthermore, if there are too many missing values ​​that have been interpolated with the method mentioned in Chapter \ref{chap: data},then a data-checking function should discard the house, as it will have a negative impact on the further modelling of the heat consumption for that specific house. \\
 
-\noindent The lack of information on e.g the number of residents in the house, the house's location, \textcolor{red}{etc.} affects the uncertainties of the models.
+\noindent The lack of information on e.g the number of residents in the house, the house's location, etc. affects the uncertainties of the models. The tap water consumption can depend on how many people live in the household, and there is therefore a high probability that the hot water consumption is higher than the heat consumption. This creates greater uncertainty as the models do not take the tap water consumption into account. The location of the house affects the estimates of the four different wind directions. If the location of each house was known, it would be easier to interpret the estimates. For example, if a terrace house is located between two other houses, it would make sense that the heat consumption would be less affected when the wind came from the directions where the house adjoins the other two houses. \\
+
+\noindent Overall, there is a major problem with the way data is collected. It is clearly seen on an hourly basis, since data is measured per hour. By converting the measurements into daily values, the strange behavior of the measurements becomes less evident, which results in the regression models being used to describe the daily heat consumption. The biggest challenge then arises when the time series models are used to describe the hourly consumption.
+
 
 
 \begin{itemize}
     \item Nogle huse opfører sig yderst mærkværdigt, hvad kan dette skyldes? Hvad foregår der fx i hus 18?
-    \item Mangel på informationer om fx hvor mange der bor i husstanden, husets placering \begin{itemize}
-        \item[-] tap water, påvirke usikkerhederne for modellerne
-        \item[-] vindens påvirkning
-        \item[-] husets placering påvirker estimaterne for vinden  
-    \end{itemize}
     \item Timeværdierne opfører sig underligt, hvilket formentlig skyldes den måde de er målt på. 
 \end{itemize}
 
