@@ -40,7 +40,7 @@ lmFull_est_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
 lmFull_p_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
 
 # Full regression model for "long" houses
-for (i in c(55,18)) {
+for (i in Long) {
   print(paste('Full Model of long house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -155,7 +155,7 @@ sMultiple.test <- vector(mode = "list", length = n)
 sign.testM <- vector(mode = "list", length = n)
 t<-matrix(rep(0,n*2),ncol=n)
 par(mfrow = c(1,1))
-for (i in c(55,18)) {
+for (i in 1:n) {
   print(paste('Modelling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]

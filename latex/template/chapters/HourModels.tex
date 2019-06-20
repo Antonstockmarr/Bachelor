@@ -309,25 +309,50 @@ where $\omega^{sin}_i$ and $\omega^{cos}_i$ are the parameters for the sine and 
 where $\Hat{L}$ is the maximized value of the likelihood function, $n$ is the number of observations and $k$ is the number of parameters estimated by the model. \\
 
 \noindent The models will be tested for house 55 and 18, and for house 6 as well. As described earlier, the orders of the models tested are MARIMA$(1,0,1)$, MARIMA$(2,0,1)$, MARIMA$(3,0,1)$ and MARIMA$(4,0,1)$. The BIC values for each of the models can be seen in \cref{tab: BIC}. These are the models where the Fourier series is not included, i.e. the model described in \cref{eq:MARIMA1}. Based on the BIC, the AR orders should be 2, 4 and 2 for house 55, 18 and 6 respectively.
+
 \begin{table}[H]
     \centering
     \begin{tabular}{l|ccc}
     \hline
     \textbf{BIC} & House 55 & House 18 & House 6 \\ \hline \hline
-    MARIMA($1,0,1$) & 19431.2 & 31088.3 & 7272.7  \\
-    MARIMA($2,0,1$) & 17934.9 & 31108.9 & 7164.1  \\
-    MARIMA($3,0,1$) & 17958.9 & 31082.6 & 7177.5  \\
-    MARIMA($4,0,1$) & 17990.0 & 31034.6 & 7201.9  \\
+    MARIMA($1,0,1$) & 19431.2 & 31088.3 & 7272.7 \\
+    MARIMA($2,0,1$) & 17907.1 & 31093.4 & 7145.1 \\
+    MARIMA($3,0,1$) & 17928.6 & 31049.6 & 7147.1 \\
+    MARIMA($4,0,1$) & 17939.1 & 30985.2 & 7156.8 \\
     \hline
     \end{tabular}
     \caption{The BIC of the different models without Fourier series. The lowest BIC is chosen as the best order for each house. This gives an AR degree of 2, 4 and 2 for house 55, 18 and 6 respectively.}
-    \label{tab: BIC}
- \end{table}
+      \label{tab: BIC}
+\end{table}
 
-\noindent The parameters for the optimal BIC model for house 6 are listed in \textcolor{red}{ref}. It is hard to interpret the parameters of the model in a physical way. There is no obvious connecting between for example the temperature parameter $\omega_T$ and the estimate for the temperature in the models for the daily data. But one way to relate the time series models to the daily estimates is to calculate the step response. The step response is defined as the total change in the consumption over time when one of the inputs is changed by one. \textcolor{red}{step respones} shows an example for house 
+\noindent The parameters for the optimal BIC model for house 55 are listed in \cref{tab: MARIMAparam55} without the Fourier series and in \cref{tab: MARIMAparam55_fourier} with the Fourier series in the appendix. For that house every parameter is more or less significant, but for the other houses some of the parameters are not significant. The solar radiation is mostly not significant. It is hard to interpret the parameters of the model in a physical way. There is no obvious connecting between for example the temperature parameter $\omega_T$ and the estimate for the temperature in the models for the daily data. But one way to relate the time series models to the daily estimates is to calculate the step response. The step response is defined as the total change in the consumption over time when one of the inputs is changed by one. \cref{fig:StepResponse55} shows an example for house 55. The temperature is increased by one and the rest of the parameters are kept constant. The consumption converges towards a new level as time passes. When the consumption has reached its new level, the difference between the initial consumption and the new consumption is a measure of the step response of the temperature.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/StepResponse.eps}
+    \caption{The step response for the temperature input for house 55. The red line converges towards a new constant level, which is the step response}
+    \label{fig:StepResponse55}
+\end{figure}
+
+
+\noindent The different step responses for the houses are illustrated in 
 
 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/MarimaHCL.eps}
+    \caption{The temperature estimates from the regression models compared to the temperature step response for the Marima models without Fourier series. The regression model on the daily data is far superior}
+    \label{fig:HCL}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/MariamaHCLF.eps}
+    \caption{The temperature estimates from the regression models compared to the temperature step response for the Marima models with Fourier series. There Fourier series does not improve the step response}
+    \label{fig:HCLF}
+\end{figure}
 
 
 
