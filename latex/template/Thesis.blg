@@ -1,0 +1,17 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is '/Users/anton/Google Drev/Skolerelateret/DTU/Bachelor Project/Bachelor-F19/latex/template/Thesis.blg'
+[59] biber-darwin:313> INFO - === Thu Jun 20, 2019, 21:47:50
+[108] Biber.pm:371> INFO - Reading '/Users/anton/Google Drev/Skolerelateret/DTU/Bachelor Project/Bachelor-F19/latex/template/Thesis.bcf'
+[219] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[236] Biber.pm:3976> INFO - Processing section 0
+[256] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography/Bibliography.bib' for section 0
+[261] bibtex.pm:1500> INFO - LaTeX decoding ...
+[277] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/anton/Google Drev/Skolerelateret/DTU/Bachelor Project/Bachelor-F19/latex/template/bibliography/Bibliography.bib'
+[279] Utils.pm:193> WARN - Duplicate entry key: 'marima' in file '/Users/anton/Google Drev/Skolerelateret/DTU/Bachelor Project/Bachelor-F19/latex/template/bibliography/Bibliography.bib', skipping ...
+[405] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[406] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[406] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[406] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[444] bbl.pm:617> INFO - Writing '/Users/anton/Google Drev/Skolerelateret/DTU/Bachelor Project/Bachelor-F19/latex/template/Thesis.bbl' with encoding 'UTF-8'
+[451] bbl.pm:720> INFO - Output to /Users/anton/Google Drev/Skolerelateret/DTU/Bachelor Project/Bachelor-F19/latex/template/Thesis.bbl
+[451] Biber.pm:110> INFO - WARNINGS: 1
