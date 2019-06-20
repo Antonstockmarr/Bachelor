@@ -13,17 +13,22 @@ Now two different types of models have been developed - a linear regression mode
 \noindent Overall, there is a major problem with the way data is collected. It is clearly seen on an hourly basis, since data is measured per hour. By converting the measurements into daily values, the strange behavior of the measurements becomes less evident, which results in the regression models being used to describe the daily heat consumption. The biggest challenge then arises when the time series models are used to describe the hourly consumption.
 
 
-
 \begin{itemize}
     \item Nogle huse opfører sig yderst mærkværdigt, hvad kan dette skyldes? Hvad foregår der fx i hus 18?
     \item Timeværdierne opfører sig underligt, hvilket formentlig skyldes den måde de er målt på. 
 \end{itemize}
 
 \section{Future work}
-\begin{itemize}
-    \item Google earth og så placere vindafhængighedsplots udenom for at kunne vægte retningerne ordentligt. 
-    \item Clustering og se på outliers
-    \item Fysisk timemodel 
-    \item Kun lave tidsrækkemodeller over vinterperioden uden huller
-    \item Udvidelse af data-checking function
-\end{itemize}
+Although the quality of data on an hourly basis has not been good enough to construct time series models, there is still something to work on in the project. At the same time, there is also a part that can be improved in relation to data and the way data is measured. \\
+
+\noindent As mentioned, the models for the hourly values do not ​​work particularly well, so one of the things one could primarily work on, is to achieve more stable data. It does not make much sense to continue working on the models, as they cannot produce any useful results at this time. Another way of working on the time series models in the future, could be to investigate the winter period. The heat consumption is low during the summer, so it is the winter period that is of interest, and the models could possibly be improved by this action.
+
+I forhold til daglig data, det mest umiddelbare ville være at tage windplots og sammenholde dem med deres placering og så bruge google earth til visualiering for kundefuck. 
+
+Man kunne også lave clustering, som siger noget om hvor godt et hus klarer sig i forhold til lignende huse. Man kunne lave det efter, hvordan de er varmet op, hvor stort huset er,hvornår huse er bygget. 
+
+Man kunne lave en bedre måde at lave breakpointet på. Hinte til hvordan Grønning og Maika har gjort. De har lavet en udvidelsesalgoritme, hvor de fitter nogle fordelinger. Hvis nogen havde en større viden om det, ville det være en god idé at gøre det.
+
+Data-checking function: arbejde videre med hvor meget data der skal være for ét hus for at modellerne kan blive mere robuste. Man kunne fx overveje at fjerne huse hvor forbruget er 0 over en længere periode. 
+
+Man kunne forsøge at få en bedre idé om hvilken del af forbruget der er tap water. Hvis man kunne identificere hvornår nogle huse har en type forbrug, brændeovn, vandpumpe osv, så kunne man fjerne forbrugsvandet, og så ville modellerne højst sandsynligt performe bedre, da man adskiller tap water fra data. Hvis man inkludere noget viden om de forskellige mønstre i husene, så kunne man classificere husene, og så lave specifikke modeller for hver klasse. 
