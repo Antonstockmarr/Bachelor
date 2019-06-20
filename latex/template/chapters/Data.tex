@@ -14,7 +14,7 @@ The original house and weather data include hourly observations from the period 
     Q = c\cdot m \cdot \Delta T,
     \label{eq: Q_heat}
 \end{equation}
-where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^{\circ}C$, $m$ is the water density in $kg$ and is calculated from the volume as $1m^3 = 1000 \ kg$ and $\Delta T$ is the cooling degree in $^{\circ}C$. In this way, the heat consumption is converted from $kJ$ to $kWh$ (since $1 \ kWh = 3600 \ kJ$) which is the desired unit for the heat consumption. \textcolor{red}{Synes der mangler lidt her.}
+where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^{\circ}C$, $m$ is the water density in $kg$ and is calculated from the volume as $1m^3 = 1000 \ kg$ and $\Delta T$ is the cooling degree in $^{\circ}C$. In this way, the heat consumption is converted from $kJ$ to $kWh$ (since $1 \ kWh = 3600 \ kJ$) which is the desired unit for the heat consumption. 
 \begin{table}[H]
     \centering
     \begin{tabular}{ll}
@@ -94,7 +94,7 @@ In this section, it is described how the raw data is cleaned and prepared for th
 
 \noindent Due to the fact, that \texttt{StartDateTime} and \texttt{EndDateTime} is always one hour apart, it is redundant to use both of the attributes. The obervations of most of the attributes are made at time \texttt{EndDateTime}, and for that reason it is used as \texttt{ObsTime} for the observations. For the weather data set, the observations is made at time \texttt{StartDateTime}, and there is no \texttt{EndDateTime} for this data set. When merging these data sets, \texttt{ObsTime} is alligned with \texttt{StartDateTime}. The format of these attributes is changed to a \texttt{Posixct} value with d-m-Y H:min:sec as the structure.
 
-\noindent Every now and then, one or more data points in a row are missing. When this happen, a data point with NA-values for all of the attributes except \texttt{ObsTime}, is placed in the data set, which makes the data set easier to use in the modelling process. In some cases, the models that the data set is "complete", i.e. that there are no missing values. This is true for the time series models that will be described in section \textcolor{red}{citer section} In the data sets there are no indication of whether or not it is weekend. This attribute is added as well as the school holidays.
+\noindent Every now and then, one or more data points in a row are missing. When this happen, a data point with NA-values for all of the attributes except \texttt{ObsTime}, is placed in the data set, which makes the data set easier to use in the modelling process. In some cases, the models that the data set is "complete", i.e. that there are no missing values. This is true for the time series models that will be described in Chapter \ref{chap: hourly} In the data sets there are no indication of whether or not it is weekend. This attribute is added as well as the school holidays.
 
 \noindent Both weather data and the house data are aggregated with mean values for each day in order to convert hourly values into daily values since there are of interest when modelling in chapter 3, two of the attributes is aggregated in a different way, which is explained later.
 
