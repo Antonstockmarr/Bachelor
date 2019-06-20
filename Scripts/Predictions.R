@@ -154,7 +154,7 @@ mm<-paste("House: ",i)
 par(mfrow=c(1,1))
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP,interval="prediction")
 
-plot(1:length(p$pred),p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("Long house: ",i),type="l")
+plot(1:length(p$pred),p$pred,ylim=c(min(p$pred-2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc),max(p$pred+2*p$se,tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc)),xaxt='n',xlab="January 2019",ylab="Consumption",main=paste("House: ",i),type="l")
 axis(1, at=c(12,156,320), labels=c("18th","24th","31st"))
 lines(1:length(p$pred),p$pred+2*p$se,lty=2)
 lines(1:length(p$pred),p$pred-2*p$se,lty=2)
