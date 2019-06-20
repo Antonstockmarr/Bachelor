@@ -115,7 +115,7 @@ for(i in c(55,18,6)){
 
 
 # Med Fourier
-for(i in c(55,18,6)){
+for(i in c(18)){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
@@ -217,7 +217,9 @@ for(i in c(55,18,6)){
   axis(1, at=c(.5,2,3.5), labels=c("Day","BIC","CI"))
   
 }
+(h4<-HLC.Qi.ARX(fit1))
 
+print(paste(h4$gA,'&',h4$sd.gA,'&',h4$gA-1.96*h4$sd.gA,'&',h4$HLC.Ta+1.96*h4$sd.gA))
 
 acfccfPlot(fit2, X)
 val <- HLC.Qi.ARX(fit2)
