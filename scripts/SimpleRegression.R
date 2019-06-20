@@ -11,13 +11,13 @@ lm.simple <- vector(mode = "list", length = n)
 model.data <- weatherCons
 plotpoints<-matrix(rep(0,3*n),ncol=n)
 ts<-matrix(rep(0,n*2),ncol=n)
-for (i in c(18,55)) {
+for (i in c(1:n)) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
   
   lm.simple[[i]] <- lm(Consumption ~ Temperature, data = model.tmp)
-  #print(summary(lm.simple[[i]]))
+  #print(lm.simple[[i]]$coefficients[1:2])
   f<-summary(lm.simple[[i]])
   f<-f$coefficients[2,1:2]
   plotpoints[,i]<-c(f[1]-2*f[2],f[1],f[1]+2*f[2])
@@ -32,6 +32,8 @@ for (i in c(18,55)) {
   sign.test[[i]] <- binom.test(x = sum(sign(lm.simple[[i]]$residuals) == 1), n = length(lm.simple[[i]]$residuals))
   ts[2,i]<-(sign.test[[i]]$p.value)
   # 95% confidence interval
+  
+  print(ts[,i])
   
 }
 par(mfrow=c(1,1))
