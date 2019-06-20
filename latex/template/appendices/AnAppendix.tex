@@ -353,7 +353,7 @@
     Estimate           & 0.3782 & 0.2647 & 0.9702 & -0.9326 & 0.4947    & 0.1103      \\ \hline
     Standard deviation & 0.0170 & 0.0175 & 0.053  & 0.0072  & 0.0652    & 0.008       \\ \hline
     \end{tabular}
-    \caption{Estimates for the $(1,0,1)\times(1,0,1)$ arima model for house 18}
+    \caption{Estimates for the $(1,0,1)\times(1,0,1)$ arima model for house 18 without the Fourier series}
     \label{tab:model1_param18}
     \end{table}
 
@@ -372,6 +372,30 @@
         \end{tabular}
         \caption{MARIMA($3,0,1$) parameters for house 55.}
         \label{tab: MARIMAparam55}
+     \end{table}
+    
+     \begin{table}[]
+        \centering
+        \begin{tabular}{l|ccc}
+        \hline
+        Coefficient & Estimate & Significance\\ \hline \hline
+        $\phi_1$ & 6.386e-01 & *** \\
+        $\mu$ & 1.503e-01 & ** \\
+        $\omega_{T}$ & -6.535e-03 & * \\
+        $\omega_{SR}$ & -4.165e-05 &  \\
+        $\omega^{sin}_1$ & 1.566e-02 & . \\
+        $\omega^{sin}_2$ & 1.039e-02 & \\
+        $\omega^{sin}_3$ & -2.904e-02 & **\\
+        $\omega^{cos}_1$ & 3.206e-02 & ** \\
+        $\omega^{cos}_2$ & -7.725e-02 & *** \\
+        $\omega^{cos}_3$ & 1.715e-02 & . \\
+        $\phi_2$ & 2.285e-01 & *** \\
+        $\phi_3$ & 8.284e-02 & *** \\
+        $\theta_1$ & -8.233e-01 & *** \\
+        \hline
+        \end{tabular}
+        \caption{MARIMA($3,0,1$) parameters for house 55 with a Fourier series of degree 2.}
+        \label{tab: MARIMAparam55_fourier}
      \end{table}
     
 
