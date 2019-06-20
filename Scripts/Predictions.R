@@ -82,6 +82,7 @@ for (i in c(18,55)) {
   mm<-paste("House: ",i)
 
   # Statistisk plot
+  par(mfrow=c(1,1))
   plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm,ylab="Consumption [kWh]",xlab="January 2019 [days]",xaxt='n')
   axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
   lines(Pred$upr,lty=2)
