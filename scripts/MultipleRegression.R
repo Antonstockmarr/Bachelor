@@ -40,7 +40,7 @@ lmFull_est_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
 lmFull_p_S <- matrix(rep(0,15*length(Short)),nrow = length(Short))
 
 # Full regression model for "long" houses
-for (i in Long) {
+for (i in c(55,18)) {
   print(paste('Full Model of long house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -155,7 +155,7 @@ sMultiple.test <- vector(mode = "list", length = n)
 sign.testM <- vector(mode = "list", length = n)
 t<-matrix(rep(0,n*2),ncol=n)
 par(mfrow = c(1,1))
-for (i in c(18,55)) {
+for (i in c(55,18)) {
   print(paste('Modelling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
@@ -174,7 +174,7 @@ for (i in c(18,55)) {
   # Checking model assumptions 
   par(mfrow = c(2,2), mar = c(3,3,3,1) + 0.1)
   plot(lmMultipleNoP[[i]])
-  title(paste("Daily consumption for house ", i), outer=TRUE, adj = 0.5, line = -1.25)
+  title(paste("Daily consumption for house", i), outer=TRUE, adj = 0.5, line = -1.25)
   # Testing for normality
   sMultiple.test[[i]] <- shapiro.test(lmMultipleNoP[[i]]$residuals)
   t[1,i]<-(sMultiple.test[[i]]$p.value)

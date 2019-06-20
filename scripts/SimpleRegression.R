@@ -11,7 +11,7 @@ lm.simple <- vector(mode = "list", length = n)
 model.data <- weatherCons
 plotpoints<-matrix(rep(0,3*n),ncol=n)
 ts<-matrix(rep(0,n*2),ncol=n)
-for (i in 1:n) {
+for (i in c(18,55)) {
   print(paste('Modeling house ',i))
   model.tmp <- model.data[[i]]
   model.tmp <- model.tmp[model.tmp$Temperature <= 12,]
