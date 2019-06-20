@@ -18,7 +18,7 @@ weather <- weather[k:1,]
 
 par(mfrow=c(1,3))
 
-for(i in c(55)){
+for(i in c(55,18,6)){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
@@ -115,7 +115,7 @@ for(i in c(55)){
 
 
 # Med Fourier
-for(i in c(55)){
+for(i in c(55,18,6)){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]

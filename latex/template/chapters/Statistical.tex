@@ -183,13 +183,13 @@ Likewise, the models are validated and if the assumptions are fulfilled the mode
 In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. More precisely, some of the residuals lie on a straight line, as seen in the residuals vs fitted plot. The reason for this is that the heat consumption for the house is 0 at the end of autumn, as seen in \cref{fig: daily_cons}. This results in that the estimates of the consumption for these specific points are equal to the corresponding residuals with reversed sign. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \ref{chap: discussion}. On the other hand, the diagnostic plots of the residuals from house 55 are definitely improved compared to the simple model and the residuals show a randomly behavior. Overall, the diagnostic plots for the general models can be said to be fulfilled. They are not perfect but that is not expected either. There are some houses whose residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.eps}
     \caption{Diagnostic plot of the general multiple linear regression model for long house 18. }
     \label{fig: general_lm18L}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/general_lm55L.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/general_lm55L.eps}
     \caption{Diagnostic plot of the general multiple linear regression model for long house 55}
     \label{fig: general_lm55L}
 \end{figure}
@@ -199,13 +199,13 @@ In order to determine whether the general model is valid, the diagnostic plots i
 The results of the general regression model performed on each house, are illustrated in \cref{tab: lmMult_gen_L} and \cref{tab: lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative since the increase in the temperature will result in a decrease in the heat consumption. The attribute \texttt{SolarRadiation} effects the majority of the houses as well. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is. In order to compare the houses, the temperature coefficients as well as the solar radiation coefficients are illustrated in \cref{fig: Temp_coef} and \cref{fig: Solar_coef} including a 95\% confidence interval. The influence of the temperature on house 18 is minimal but the confidence interval is quite wide compared to the houses lying close to 18. Thus, there is a large uncertainty for this specific model. Likewise, house 55 is not particularily effected by the outdoor temperature. The step response is approximately $-0.023 \ kWh/m^2$. The confidence interval is narrow, so the uncertainty for this model is quite small compared to the model for house 18. The model with the largest temperature coeffient is the one for house 63. The step response is around $-0.273 \ kWh/m^2$. This might be explained by the construction year of the house - it was build in 1920 and according to \cref{fig: bbr_hist}, it is one of the older houses. Contrary, the influence of the temperature is the lowest for house 9. The house was build in 2009, so the expectation that the house performs quite well is somewhat true \textcolor{red}{Skal det her omskrives?} When examining the coefficients in \cref{fig: Solar_coef}, the model for house 18 shows an odd behavior. The step response is positive ($0.002 \ kWh/m^2$), i.e. the heat consumption increases when the solar radiation is increased. House 55's influence from the sun is small and again the 95\% confidence interval is quite narrow. Based on this and the confidence interval showed in \cref{fig: Temp_coef}, the model for house 55 performs well and it can describe the behavior for the specific house. House 10 the most influential in terms of solar radiation. The step response is at $-0.039 \ kWh$. However, there does not exist any BBR data on this house apart from the fact that it is a commercial building so whether this behaviour is expected or not is not known.\\ 
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/Temp_coef.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/Temp_coef.eps}
     \caption{The temperature coeffients from the general regression model. The consumption in house 63 is influenced by the temperature in a higher degree than the other houses, since the consumption decreases with 0.27 $kWh/m^2$ when the temperature increases with 1 $^{\circ}$C}
     \label{fig: Temp_coef}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/Solar_coef.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/Solar_coef.eps}
     \caption{The coeffients of the solar radiation from the general regression model. Some of the houses has a step response that increases which is not expected}
     \label{fig: Solar_coef}
 \end{figure}
@@ -216,20 +216,20 @@ The results of the general regression model performed on each house, are illustr
 \noindent To see how well the model captures the overall behaviour of the data, it is used to make predictions for unknown data. This is done by dividing the data into a training set and a test set. Here a test set will be used containing January 2019 (31 days). The available weather data for that period is used to make predictions, which are then compared to the actual consumption. These are not one-step predictions, but 31 step predictions. This means that the model for time $t$ updates based on the prediction at time $t-1$, not the actual data. In other words, one-step predictions would be the same as predicting one step ahead 31 times and updating the available observations. The predictions are made using the function \texttt{predict} in \texttt{R} and \cref{fig: weather_pred} shows the input values used for the predictions.
 \begin{figure}
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/TestWeatherDays.pdf}
+    \includegraphics[width=1.\textwidth]{../../../figures/TestWeatherDays.eps}
     \caption{The input values used for predictions of the general linear regression model. For the entire last half of January it was never sunny}
     \label{fig: weather_pred}
 \end{figure}
 \noindent In consistency with the other results, house 18 and 55 are used for predictions. They are illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}.
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.pdf}
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.eps}
     \caption{Predictions of the last 31 days of the model data for house 55 including a 95\% prediction interval. The model captures the behavior of this house quite well}
     \label{fig: lmpred_55L}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.pdf}
+    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.eps}
     \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model captures the behavior of this house, but the prediction interval is quite wide which indicates a large uncertainty about this model}
     \label{fig: lmpred_18L}
 \end{figure}
@@ -277,21 +277,15 @@ The red colour indicates where the house is most influential where the consumer 
 \noindent \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L} are also colorized with red, yellow and green. This coloring is distributed so that there is an equal probability that the heat consumption lies in one of the three areas, ie. the areas are weighted $\frac{1}{3}$ each. The red area indicates that the heat consumption exceeds the expected consumption which will result in the consumer having to pay more. If, on the other hand, the consumption is in the green area, the customer consumes less than expected and thus has to pay less than the budget. As can be seen in \cref{fig: lmpred_col_55L} for house 55, it is only in early January that the consumption exceeds the expected. Otherwise, the consumption is around the expected and for most days it is below. To be able to clarify the daily consumption even more,every day in January 2019 can be represented as a pillar, resulting in \cref{fig: lmpred_hist_55L}. As mentioned, the consumption for house 55 is most often below the expected consumption, as the bar graph clearly shows with the majority of the pillars colored green. These two suggestions for the WATTS app have also been tried on house 18. The previously mentioned oscillating behavior is clearly seen in \cref{fig: lmpred_col_18L}. This shows the consumer that they should probably have an expert investigating the house further. The bar graph in \cref{fig: lmpred_hist_18L} shows that the pillars changes colors almost every day. Once again,it can be seen that the heat consumption in house 18 has a very strange behavior.
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_55L.eps}
-    \caption{This is another way of visualizing \cref{fig: lmpred_55L}. The data is the black line, and the colours show how the house performs compared to the predictions}
+    \includegraphics[width=.8\textwidth]{../../../figures/Kplot55.eps}
+    \caption{This is two another ways of visualizing \cref{fig: lmpred_55L}. In the first plot, the data is the black line, and the colours show how the house performs compared to the predictionsThis plot visualizes the consumption of house 55. Each bar is coloured based on where the observation is on \textcolor{red}{"den lige ovenover"}}
     \label{fig: lmpred_col_55L}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_hist_55L.pdf}
-    \caption{This plot visualizes the consumption of house 55. Each bar is coloured based on where the observation is on \cref{fig: lmpred_col_55L}}
-    \label{fig: lmpred_hist_55L}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_col_18L.pdf}
-    \caption{This is another way of visualizing \cref{fig: lmpred_18L}. The data is the black line, and the colours show how the house performs compared to the predictions}
+    \includegraphics[width=.8\textwidth]{../../../figures/Kplot18.eps}
+    \caption{\textcolor{red}{OBS! FIKS! og slet næste plot bagefter}This is another way of visualizing \cref{fig: lmpred_18L}. The data is the black line, and the colours show how the house performs compared to the predictions}
     \label{fig: lmpred_col_18L}
 \end{figure}
 \begin{figure}
