@@ -115,7 +115,7 @@ for(i in c(55,18,6)){
 
 
 # Med Fourier
-for(i in c(18)){
+for(i in c(55)){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
