@@ -56,7 +56,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Multiple linear regression model}{26}{section.4.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Splines}{28}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.1}Splines}{27}{subsection.4.3.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3.2}Multiple linear regression models}{29}{subsection.4.3.2}% 
 \defcounter {refsection}{0}\relax 
@@ -78,7 +78,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.1}Description of the Hourly Consumption}{47}{section.5.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}The ARMA Models and Their Extensions}{49}{section.5.2}% 
+\contentsline {section}{\numberline {5.2}The ARMA Models and Their Extensions}{48}{section.5.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.3}Applying the models}{51}{section.5.3}% 
 \defcounter {refsection}{0}\relax 
@@ -86,7 +86,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3.2}Predicting with the ARIMA model}{60}{subsection.5.3.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.3}Visualization of the results}{65}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.3}Visualization of the results}{63}{subsection.5.3.3}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.3.4}Modelling with the MARIMA Function}{65}{subsection.5.3.4}% 
 \defcounter {refsection}{0}\relax 
@@ -100,26 +100,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{80}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{82}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{84}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{82}{subsection.A.2.1}% 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{84}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{84}{section.A.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{86}{subsection.A.3.1}% 
+\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{84}{subsection.A.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Parameters from hourly consumption models}{87}{section.A.4}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{90}{appendix.B}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}Scatterplots of data}{91}{section.B.1}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.2}ACF and PACF of time series models}{93}{section.B.2}% 
+\contentsline {appendix}{\chapternumberline {B}Figures}{89}{appendix.B}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Bibliography}{95}{appendix*.80}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Books and papers}{95}{section*.82}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Websites}{95}{section*.84}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{R-packages}{96}{section*.86}% 
