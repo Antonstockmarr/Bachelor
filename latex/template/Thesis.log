@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  20 JUN 2019 16:44
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  20 JUN 2019 16:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1839,95 +1839,111 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
 
 ]
-Overfull \hbox (52.79005pt too wide) in paragraph at lines 42--61
- [][] 
- []
-
-
-Overfull \hbox (9.66005pt too wide) in paragraph at lines 66--83
+Overfull \hbox (21.45657pt too wide) in paragraph at lines 41--60
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4] [5]) [6]
+ [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]) [6] [7]
 \openout2 = `chapters/Exploratory.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-File: graphics/../../../figures/daily_cons.pdf Graphic file (type pdf)
-<use graphics/../../../figures/daily_cons.pdf>
-File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
-<use graphics/../../../figures/housepairs.pdf>
-File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
-<use graphics/../../../figures/weatherpairs.pdf>
-[7
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex [8
 
 
 
 ]
+File: graphics/../../../figures/daily_cons.pdf Graphic file (type pdf)
+<use graphics/../../../figures/daily_cons.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9]
+File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
+<use graphics/../../../figures/housepairs.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weatherpairs.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 File: graphics/../../../figures/byggeaar.eps Graphic file (type eps)
 <graphics/../../../figures/byggeaar.eps>
-
-Underfull \vbox (badness 1087) has occurred while \output is active []
-
- [10]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
+[14]
 File: graphics/../../../figures/gg_cor.pdf Graphic file (type pdf)
 <use graphics/../../../figures/gg_cor.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--88
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
-[11]
-Overfull \hbox (37.79005pt too wide) in paragraph at lines 92--109
+
+Overfull \hbox (37.79005pt too wide) in paragraph at lines 88--105
  [][] 
  []
 
-[12] [13]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15] [16]
 File: graphics/../../../figures/Consumption_PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption_PW.eps>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14] [15]
+ [17] [18]
 File: graphics/../../../figures/Breakpoint_55.eps Graphic file (type eps)
 <graphics/../../../figures/Breakpoint_55.eps>
 File: graphics/../../../figures/Breakpoint_18.eps Graphic file (type eps)
 <graphics/../../../figures/Breakpoint_18.eps>
 File: graphics/../../../figures/AlphaHist.eps Graphic file (type eps)
 <graphics/../../../figures/AlphaHist.eps>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Overfull \vbox (18.23863pt too high) has occurred while \output is active []
+
+ [20]
 File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
 <graphics/../../../figures/class_breakpoint.eps>
-) [16] [17] [18] [19]
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21] [22]
 \openout2 = `chapters/Statistical.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [20
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+ [23
 
 
 
 ]
-Underfull \vbox (badness 1496) has occurred while \output is active []
-
- [21]
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
@@ -1937,7 +1953,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-[22]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
@@ -1946,35 +1962,35 @@ File: graphics/../../../figures/simple_lm18.eps Graphic file (type eps)
 <graphics/../../../figures/simple_lm18.eps>
 File: graphics/../../../figures/simple_lm55.eps Graphic file (type eps)
 <graphics/../../../figures/simple_lm55.eps>
-[23]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
-[24] [25]
+[26] [27]
 File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
 <graphics/../../../figures/SplineBasis.jpeg>
- [26]
+ [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27] [28]
+ [29] [30]
 File: graphics/../../../figures/general_lm18L.eps Graphic file (type eps)
 <graphics/../../../figures/general_lm18L.eps>
 File: graphics/../../../figures/general_lm55L.eps Graphic file (type eps)
 <graphics/../../../figures/general_lm55L.eps>
- [29]
+ [31]
 File: graphics/../../../figures/Temp_coef.eps Graphic file (type eps)
 <graphics/../../../figures/Temp_coef.eps>
 File: graphics/../../../figures/Solar_coef.eps Graphic file (type eps)
 <graphics/../../../figures/Solar_coef.eps>
- [30]
+ [32]
 File: graphics/../../../figures/TestWeatherDays.eps Graphic file (type eps)
 <graphics/../../../figures/TestWeatherDays.eps>
 File: graphics/../../../figures/lmpred_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_55L.eps>
 File: graphics/../../../figures/lmpred_18L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_18L.eps>
- [31] [32]
+ [33] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
@@ -1983,7 +1999,7 @@ File: graphics/../../../figures/Wplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot55.jpeg>
 File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot18.jpeg>
-[33] [34]
+[35] [36]
 Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
@@ -2000,10 +2016,10 @@ LaTeX Warning: Reference `fig: lmpred_hist_18L' on page 1 undefined on input lin
 
 File: graphics/../../../figures/Kplot55.eps Graphic file (type eps)
 <graphics/../../../figures/Kplot55.eps>
-[35] [36]
+[37] [38]
 File: graphics/../../../figures/Kplot18.eps Graphic file (type eps)
 <graphics/../../../figures/Kplot18.eps>
-) [37] [38] [39] [40] [41] [42]
+) [39] [40] [41] [42] [43] [44]
 \openout2 = `chapters/HourModels.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex
@@ -2014,22 +2030,19 @@ File: graphics/../../../figures/Heatmap_winter.eps Graphic file (type eps)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43
+ [45
 
 
 
-]
-Overfull \vbox (157.10373pt too high) has occurred while \output is active []
-
- [44] [45]
+] [46] [47]
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
 File: graphics/../../../figures/HourDistribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/HourDistribution.jpeg>
- [46] [47]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48] [49]
+ [48] [49] [50] [51] [52]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
 File: graphics/../../../figures/arimax/Stationarity_model1_18.pdf Graphic file (type pdf)
@@ -2038,7 +2051,7 @@ File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_55.pdf>
 File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_18.pdf>
- [50] [51] [52] [53] [54]
+ [53] [54] [55] [56] [57]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 154.
@@ -2049,33 +2062,35 @@ LaTeX Warning: No positions in optional float specifier.
 
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
-[55] [56]
+
 Overfull \hbox (1.56888pt too wide) detected at line 189
 []
  []
 
+[58] [59]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 192.
 
 File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_short.pdf>
-[57] [58]
-File: graphics/../../../figures/TestWeatherHour.pdf Graphic file (type pdf)
-<use graphics/../../../figures/TestWeatherHour.pdf>
-File: graphics/../../../figures/arimax/arima1_pred_55.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/arima1_pred_55.pdf>
-File: graphics/../../../figures/arimax/arima1_pred_18.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/arima1_pred_18.pdf>
-File: graphics/../../../figures/arimax/arima2_pred_55.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/arima2_pred_55.pdf>
-File: graphics/../../../figures/arimax/arima2_pred_18.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/arima2_pred_18.pdf>
-File: graphics/../../../figures/Pred14days6.pdf Graphic file (type pdf)
-<use graphics/../../../figures/Pred14days6.pdf>
-File: graphics/../../../figures/AppHour6.pdf Graphic file (type pdf)
-<use graphics/../../../figures/AppHour6.pdf>
- [59] [60] [61] [62] [63] [64] [65] [66] [67]
+[60] [61]
+File: graphics/../../../figures/TestWeatherHour.eps Graphic file (type eps)
+<graphics/../../../figures/TestWeatherHour.eps>
+File: graphics/../../../figures/arimax/arima1_pred_55.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/arima1_pred_55.eps>
+File: graphics/../../../figures/arimax/arima1_pred_18.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/arima1_pred_18.eps>
+File: graphics/../../../figures/arimax/arima2_pred_55.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/arima2_pred_55.eps>
+File: graphics/../../../figures/arimax/arima2_pred_18.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/arima2_pred_18.eps>
+File: graphics/../../../figures/Pred14days6.eps Graphic file (type eps)
+<graphics/../../../figures/Pred14days6.eps>
+ [62] [63] [64]
+File: graphics/../../../figures/AppHour6.eps Graphic file (type eps)
+<graphics/../../../figures/AppHour6.eps>
+ [65] [66]
 Underfull \hbox (badness 10000) in paragraph at lines 306--308
 
  []
@@ -2085,17 +2100,22 @@ Overfull \hbox (16.21452pt too wide) in paragraph at lines 309--310
 \TU/lmr/m/n/10 the orders of the models tested are MARIMA$\OT1/lmr/m/n/10 (1\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1)$\TU/lmr/m/n/10 , MARIMA$\OT1/lmr/m/n/10 (2\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1)$\TU/lmr/m/n/10 , MARIMA$\OT1/lmr/m/n/10 (3\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1)$
  []
 
+[67]
 File: graphics/../../../figures/StepResponse.eps Graphic file (type eps)
 <graphics/../../../figures/StepResponse.eps>
-[68] [69]
+ [68]
 File: graphics/../../../figures/MarimaHCL.eps Graphic file (type eps)
 <graphics/../../../figures/MarimaHCL.eps>
 File: graphics/../../../figures/MarimaHCLF.eps Graphic file (type eps)
 <graphics/../../../figures/MarimaHCLF.eps>
-) [70] [71] [72]
+) [69] [70] [71]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [72
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -2108,11 +2128,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
 Underfull \vbox (badness 5302) has occurred while \output is active []
 
- [73
-
-
-
-]
+ [73]
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
@@ -2343,10 +2359,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51314 strings out of 492933
- 987790 string characters out of 6133145
- 1776902 words of memory out of 5000000
- 54527 multiletter control sequences out of 15000+600000
+ 51307 strings out of 492933
+ 987350 string characters out of 6133145
+ 1776909 words of memory out of 5000000
+ 54520 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2705b,7953s stack positions out of 5000i,500n,10000p,200000b,80000s

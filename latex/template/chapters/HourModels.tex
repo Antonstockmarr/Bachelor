@@ -3,13 +3,13 @@
 In this section a more detailed look at the hourly consumption will be provided. It will be investigated how the consumption is distributed over the course of the day, and what the main differences are between the winter and the summer periods. The main goal is to get an alternative estimate of the effect of the temperature on a house. A model based on hourly data might be able to catch variations that are not present in the hourly data. The type of model that will be applied is an ARIMAX model, that analyzes the data as a time series. Different ARIMAX models will be investigated, it will be tested if the models can make reasonable predictions of a short period with unknown data, and in the step response of the models will be calculated. This step response can be related to the temperature coefficients in the daily models, and the uncertainty of the two will be compared.
 \begin{figure}
     \centering
-    \includegraphics[scale=0.75]{../../../figures/Heatmap_summer.eps}
+    \includegraphics[scale=0.80]{../../../figures/Heatmap_summer.eps}
     \captionof{figure}{The normalized average consumption of every house during the day in the summer period. This is characterized by the days where the average outside temperature is above 15 degrees. The horizontal lines indicate the hours and each vertical strip is a house. The scale indicates the fraction of the total consumption during the day \label{fig: Hourcons_summer}}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.75]{../../../figures/Heatmap_winter.eps}
+    \includegraphics[scale=0.80]{../../../figures/Heatmap_winter.eps}
     \captionof{figure}{This figure shows the same as \cref{fig: daily_cons}, but only in the winter period, characterized by an outside temperature below 12 degrees
     \label{fig: Hourcons_winter}}
 \end{figure}
