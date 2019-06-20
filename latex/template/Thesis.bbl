@@ -154,8 +154,7 @@
       \field{sortinit}{B}
       \field{sortinithash}{276475738cc058478c1677046f857703}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{ARMAX}}
+      \field{note}{{Code developed to building time series models and the corrresponding step respones}}
       \true{nocite}
     \endentry
     \entry{Stat_bog}{book}{}
