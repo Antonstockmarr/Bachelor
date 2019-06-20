@@ -134,7 +134,7 @@ weather <- weather[k:1,]
 
 tth<-TrainTest(data,14*24)
 
-for(i in c(6,20)){
+for(i in c(55,18,6)){
 midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)
 
 a <- 12
@@ -183,7 +183,6 @@ cols[cc*tth[[2]][[i]]$CoolingDegree[ShowIndex]*tth[[2]][[i]]$Volume[ShowIndex]>p
 
 barplot(cc*tth[[2]][[i]]$CoolingDegree[ShowIndex]*tth[[2]][[i]]$Volume[ShowIndex],col=cols, ylab="Consumption [kWh]",xlab="January 2019 [hours]")
 
-
 # Smoothing experiment
 Scons1<-tth[[1]][[i]]$CoolingDegree*tth[[1]][[i]]$Volume*cc
 Scons2<-tth[[2]][[i]]$CoolingDegree*tth[[2]][[i]]$Volume*cc
@@ -209,11 +208,12 @@ A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1
 
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP)
 
-plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Hourly consumption, [kWh]",main=paste("Predictions for house ",i))
+par(mfrow=c(1,1))
+plot(1:length(p$pred),p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Hourly consumption, [kWh]",main=paste("Predictions for house ",i),type='l')
 axis(1, at=c(length(tth[[1]][[i]]$Obstime),length(tth[[1]][[i]]$Obstime)+170,length(tth[[1]][[i]]$Obstime)+340), labels=c("17th","24th","31st"))
-lines(p$pred+2*p$se,lty=2)
-lines(p$pred-2*p$se,lty=2)
-lines(length(tth[[1]][[i]]$ObsTime)+(1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
+lines(1:length(p$pred),p$pred+2*p$se,lty=2)
+lines(1:length(p$pred),p$pred-2*p$se,lty=2)
+lines((1:length(tth[[2]][[i]]$ObsTime)),Scons2,col=2)
 abline(v=midnight,lty=3,lwd=2,col=Wcol[3])
 legend(x = "topright", legend = c("Prediction", "95% PI", "Data","Midnight"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
 }
