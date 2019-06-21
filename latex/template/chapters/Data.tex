@@ -1,12 +1,18 @@
 \chapter{Data}
+<<<<<<< HEAD
 %\label{chap: data}
  The data is provided by SEAS-NVE with measurements from Aalborg Forsyning. The measurements are made with a smart meter from Kamstrup (\cite{Kamstrup}). The smart meter measures the flow temperature of the water and the return temperature and the total flow in $m^3/hour$. The process for the supply of heat from Aalborg Forsyning to houses is described in more detail in \cite{Aalborg}.
  Data are given in three data sets. The house data consists of 71 \texttt{.csv}-files containing 8 attributes for each house which is 513877 data points in all. The second data set includes weather data containing 10,140 observations and predictions of the next 2283 data points, all with 11 attributes. Furthermore, the third data set is from Bygnings- og Boligregistret (BBR) and contain details for each of the houses e.g. total area, year of construction and type of house.
+=======
+\label{chap: data}
+ The data is provided by SEAS-NVE with measurements from Aalborg Forsyning. The measurements are made with smart meters from Kamstrup (\cite{Kamstrup}). The smart meters measure the flow temperature of the water, the return temperature and the total flow in $m^3/hour$ for each hour. The process for the supply of heat from Aalborg Forsyning to houses is described in more detail in \cite{Aalborg}.
+ Data are given in three data sets. The house data consists of 71 \texttt{.csv}-files containing 8 attributes for each house which is 513877 data points in total. The second data set includes weather data containing 10140 observations and predictions of the next 2283 data points, all with 11 attributes. Furthermore, the third data set is from Bygnings- og Boligregistret (BBR) and contain details for each of the houses, e.g. total area, year of construction and type of house.
+>>>>>>> cc85bd3747018a76ceff83c8fa40c4e63b70332f
 The main focus of this section will be how this data is cleaned and prepared for the further analysis.
 
-\section{Original data}
-The original house and weather data include hourly observations from the period 31-12-2017 23:00 to 7-02-2019 10:00. The time period varies in the house data, i.e there exists data for houses containing observations for approximately six months and there are also houses that contain observations for about 13 months. This will be taken into account when cleaning the data and in the analysis the two groups of houses will be refered to as the long and short houses.
-\noindent Before the data was provided to this project, it had already been slightly altered. When Aalborg Forsyning, who provided the data, recieve the observations from the hardware installed in the houses of their clients, it is generally not divided into precise one hour intervals. Aalborg Forsyning interprets the time stamps on the observations and changes them to one hour intervals. If observations are missing, an interpolation method is used to simulate the data. The exact procedure is described in \cite{interpolation}. \\
+\section{Original Data}
+The original house and weather data include hourly observations from the period 31-12-2017 23:00 to 7-02-2019 10:00. The time period varies in the house data. There exists data for houses containing observations for approximately six months and there are also houses that contain observations for about 13 months. This will be taken into account when cleaning the data and in the analysis the two groups of houses will be referred to as the long and short houses.
+\noindent Before the data was provided to this project, it had already been slightly altered. When Aalborg Forsyning, who provided the data, recieved the observations from the hardware installed in the houses of their clients, it was generally not divided into precise one hour intervals. Aalborg Forsyning interpreted the time stamps on the observations and changed them to one hour intervals. If observations were missing, an interpolation method was used to simulate the data. The exact procedure is described in \cite{interpolation}. \\
 
 
 \noindent \cref{tab: housedata} below shows the attributes from the house data set which is used to define the Heat Consumption as
@@ -25,7 +31,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     StartDateTime  &  Start time and date for measurements.\\
     EndDateTime  &  End time and date for measurements.\\
     Energy  &  Consumption in \textit{kWh}.\\
-    Flow  &  Amount of water passed through meter in \textit{$m^3/$hour}.\\
+    Flow  &  Speed of the water passing through meter in \textit{$m^3/$hour}.\\
     Volume & in $m^3$.\\
     TemperatureIn  &  Temp. of the water flowing into a house in Degrees/C. \\
     TemperatureOut  & Temp. of the water flowing out of a house in Degrees/C.\\
@@ -47,13 +53,13 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     Temperature  &  Temperature outside in Degrees/C. \\
     WindSpeed  & Wind speed in $m/s$\\
     WindDirection  & Wind direction in degrees from 0 to 360, 0 being North \\
-    SunHour  & The level of sunshine in the hour in a scale from 0 to 1 \\
+    SunHour  & The level of sunshine in an hour in a scale from 0 to 1 \\
     Condition  & The weather condition given in numbers described in \cite{condition} \\
     UltravioletIndex  & The UV index level \\
     MeanSeaLevelPressure  & The average atmospheric pressure at mean sea level in $hPa$ \\
     DewPoint  &  The temperature to which air must be cooled to become \\ & saturated with water steam (Degrees/C)\\
-    Humidity  & The amount of water steam present in the air \\
-    PrecipitationProbability & The probability that some quantify precipitation will occur \\ & (logical factor)\\
+    Humidity  & The amount of water steam present in the air in percent\\
+    PrecipitationProbability & The probability that some quantify precipitation will occur\\
     IsHistoricalEstimated & Binary variable, true if the datapoint is a prediction \\
     \hline
     \end{tabular}
@@ -84,31 +90,31 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     \label{tab: BBR}
 \end{table}
 
-\section{Cleaning and preparation}
+\section{Cleaning and Preparation}
 In this section, it is described how the raw data is cleaned and prepared for the statistical analysis.
 
-\noindent Due to the fact, that \texttt{StartDateTime} and \texttt{EndDateTime} is always one hour apart, it is redundant to use both of the attributes. The obervations of most of the attributes are made at time \texttt{EndDateTime}, and for that reason it is used as \texttt{ObsTime} for the observations. For the weather data set, the observations is made at time \texttt{StartDateTime}, and there is no \texttt{EndDateTime} for this data set. When merging these data sets, \texttt{ObsTime} is alligned with \texttt{StartDateTime}. The format of these attributes is changed to a \texttt{Posixct} value with d-m-Y H:min:sec as the structure.
+\noindent Due to the fact that \texttt{StartDateTime} and \texttt{EndDateTime} is always one hour apart, it is redundant to use both of the attributes. The obervations of most of the attributes are made at time \texttt{EndDateTime}, and for that reason it is used as \texttt{ObsTime} for the observations. For the weather data set, the observations are made at time \texttt{StartDateTime}, and there is no \texttt{EndDateTime} for this data set. When merging these data sets, \texttt{ObsTime} is alligned with \texttt{StartDateTime}. 
 
-\noindent Every now and then, one or more data points in a row are missing. When this happen, a data point with NA-values for all of the attributes except \texttt{ObsTime}, is placed in the data set, which makes the data set easier to use in the modelling process. In some cases, the models that the data set is "complete", i.e. that there are no missing values. This is true for the time series models that will be described in Chapter \ref{chap: hourly} In the data sets there are no indication of whether or not it is weekend. This attribute is added as well as the school holidays.
+\noindent Every now and then, one or more data points in a row are missing. When this happens, a data point with NA-values for all of the attributes except \texttt{ObsTime}, is placed in the data set, which makes the data set easier to use in the modelling process. In some cases, the models require that the data set is "complete", i.e. that there are no missing values. This is true for the time series models that will be described in Chapter \ref{chap: hourly}. In the data sets there are no indication of whether or not it is weekend. This attribute is added as well as the school holidays.
 
-\noindent Both weather data and the house data are aggregated with mean values for each day in order to convert hourly values into daily values since there are of interest when modelling in chapter 3, two of the attributes is aggregated in a different way, which is explained later.
+\noindent Both weather data and the house data are aggregated with mean values for each day in order to convert hourly values into daily values, since they are of interest when modelling in Chapter \ref{chap: exploratory}. Two of the attributes is aggregated in a different way, which is explained later.
 %\textcolor{red}{Loader en temporary data ind, som vi modificerer indtil vi putter den ind i vores endelige data.}
 
 %enddays og startdays sættes for hvert hus - hvornår starter målingerne og hvornår slutter målinger. Tidspunkterne for aller første og aller sidste måling.
 
 %Vi laver så temp. weather data så vi kan merge det med house data.
 %Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weather data på house data i model processen. \textcolor{blue}{Gør vi? Vi laver weatherCons i data.R, så det for daily data er dette i hvert fald ikke sandt :)}
-\subsection{Missing values}
-In the vast majority of our houses, the data is consistent with data every hour from a given starttime until the end of January 2019. Then for many of the houses, there is a gap of 6 whole days in the start of February, and then 2 more days of data. For this reason, the February data is cut out completely. The rest of the missing readings are handled so that they are based on the values of readings around the gap, i.e. they are interpolated by calculating the average of the readings around the missing reading.
-The purpose of filling out the missing values with interpolation of data, is to ensure that there exist observations for every hour. This makes it possible to develop time series models to describe data and also predict customers' consumption on an hourly basis.
+\subsection{Missing Values}
+In the vast majority of the houses the data is consistent with data every hour from a given start time until the end of January 2019. But for many of the houses, there is a gap of 6 whole days in the start of February, and then 2 more days of data. For this reason, February is cut out completely. The rest of the missing readings are handled so that they are based on the values of readings around the gap, i.e. they are interpolated by calculating the average of the readings around the missing reading.
+The purpose of filling out the missing values with interpolation, is to ensure that there exist observations for every hour.
 
 %\noindent \textcolor{red}{Vi tilføjer en binær attribute for hver ferie, og endnu en for weekender. De forskellige ferier vi tager med er christmas break, winter break, spring break, autumn break} \\
 
-\subsection{The sun and the wind}
-\noindent A physical factor that could possibly affect the heat consumption is the sun. In raw data, the attributes \texttt{Condition}, \texttt{SunHour},  and \texttt{UltraVioletIndex} can be seen as explanatory variables for the sun. Instead, an attribute, \texttt{Radiation}, is added to calculate the solar radiation for a given day. This attribute is determined with use of the \texttt{R} function \texttt{calcSol} from the library \texttt{solaR}. This value is the radiation of the sun if there is no cloud coverage. That is multiplied by the \texttt{SunHour} to weight the radiation with the amount of sun actually penetrating the clouds. The ultraviolet index is a measurement of the strength of ultraviolet radiation and since the attribute \texttt{SolarRadiation} is more exact, \texttt{UltravioletIndex} is removed from the weather data set. \texttt{SunHour} is also removed, since it is now included in \texttt{SolarRadiation}.
+\subsection{The Sun and the Wind}
+\noindent A physical factor that could possibly affect the heat consumption is the sun. In raw data, the attributes \texttt{Condition}, \texttt{SunHour},  and \texttt{UltraVioletIndex} can be seen as explanatory variables for the sun. Instead, an attribute, \texttt{Radiation}, is added to calculate the solar radiation for a given day. This attribute is determined with use of the \texttt{R} function \texttt{calcSol} from the library \texttt{solaR} (\cite{solaR}). This value is the radiation of the sun if there is no cloud coverage. This is multiplied by the \texttt{SunHour} attribute to weight the radiation with the amount of sun actually penetrating the clouds. The ultraviolet index is a measurement of the strength of ultraviolet radiation and since the attribute \texttt{SolarRadiation} is closer related to the total energy transfered by the sun, \texttt{UltravioletIndex} is removed from the weather data set. The attribute \texttt{SunHour} is also removed, since it is now included in \texttt{SolarRadiation}.
 
-\noindent Another physical factor that might be of importance is the wind. There are data available for both the wind direction in degrees and the wind speed. When the data is aggregated into daily values, it is important to pay special attention to the wind attributes, since it is not logical to take the average of degree values. For example, the average wind direction of $359$ degrees and $0$ degrees is not $179.5$ degrees. Instead the wind direction and wind speed are interpreted as polar coordinates in a coordinate system. They are converted to rectangular coordinates. Then they are aggregated from hourly values into daily values, and returned to polar coordinates.  When the wind is aggregated this way, wind directions with high wind speeds are weighted higher than wind directions with low wind speeds. Also the problem with the periodicity of the wind direction is solved.
+\noindent Another physical factor that might be of importance is the wind. There are data available for both the wind direction in degrees and the wind speed in $m/s$. When the data is aggregated into daily values, it is important to pay special attention to the wind attributes, since it is not logical to take the average of degree values. For example, the average wind direction of $359$ degrees and $0$ degrees is not $179.5$ degrees. Instead the wind direction and wind speed are interpreted as polar coordinates in a coordinate system. They are converted to rectangular coordinates and then they are aggregated from hourly values into daily values, and returned to polar coordinates.  When the wind is aggregated this way, wind directions with high wind speeds are weighted higher than wind directions with low wind speeds. Also the problem with the periodicity of the wind direction is solved.
 
 
-\subsection{Data checking}
-As mentioned, there are some measurements missing in the house data and it can therefore be difficult to do modelling for the houses in question. To avoid these difficulties, a so called "Data Checking" function has been made in order to check whether several constraints for the data are fulfilled. There must be a certain number of observations and the amount of missing data should not exceed a certain fraction of the data observation period.
+\subsection{Data Checking}
+As mentioned, there are some measurements missing in the house data and it can lead to higher uncertainties when modelling of the houses in question. To avoid these difficulties, a so called "Data Checking" function has been made in order to check whether several constraints for the data are fulfilled. There must be a certain number of observations and the amount of missing data should not exceed a certain fraction of the data observation period.
