@@ -1,17 +1,17 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.blg'
-[83] biber-darwin:315> INFO - === Fri Jun 21, 2019, 14:59:40
-[154] Biber.pm:371> INFO - Reading '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bcf'
-[410] Biber.pm:886> INFO - Using all citekeys in bib section 0
-[434] Biber.pm:4093> INFO - Processing section 0
-[464] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography/Bibliography.bib' for section 0
-[467] bibtex.pm:1523> INFO - LaTeX decoding ...
-[502] bibtex.pm:1340> INFO - Found BibTeX data source '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/bibliography/Bibliography.bib'
-[509] Utils.pm:193> WARN - Duplicate entry key: 'marima' in file '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/bibliography/Bibliography.bib', skipping ...
-[647] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[647] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[647] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[647] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[703] bbl.pm:636> INFO - Writing '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl' with encoding 'UTF-8'
-[713] bbl.pm:739> INFO - Output to /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
-[714] Biber.pm:110> INFO - WARNINGS: 1
+[91] biber-darwin:315> INFO - === Fri Jun 21, 2019, 16:17:16
+[166] Biber.pm:371> INFO - Reading '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bcf'
+[442] Biber.pm:886> INFO - Using all citekeys in bib section 0
+[467] Biber.pm:4093> INFO - Processing section 0
+[503] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography/Bibliography.bib' for section 0
+[505] bibtex.pm:1523> INFO - LaTeX decoding ...
+[533] bibtex.pm:1340> INFO - Found BibTeX data source '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/bibliography/Bibliography.bib'
+[537] Utils.pm:193> WARN - Duplicate entry key: 'marima' in file '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/bibliography/Bibliography.bib', skipping ...
+[653] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[653] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[653] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[653] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[715] bbl.pm:636> INFO - Writing '/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl' with encoding 'UTF-8'
+[723] bbl.pm:739> INFO - Output to /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.bbl
+[723] Biber.pm:110> INFO - WARNINGS: 1
