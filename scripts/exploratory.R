@@ -101,7 +101,7 @@ plot13 <- ggplot(data = BBR, aes(x = ConstructionYear)) + geom_histogram(bins = 
 plot14 <- ggplot(data = BBR, aes(x = ReconstructionYear)) + geom_histogram(bins = 15)
 grid.arrange(plot11, plot12, plot13, plot14, nrow = 2, ncol = 2)
 
-par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
+par(mar=c(3,4,2,1), mgp=c(2,0.7,0),mfrow=c(1,1))
 plot(Construction.Year,cons.areal,col="hotpink",pch = 19,xlab='Year of Construction',ylab = expression(paste("Consumption [",kWh/m^2,"]", sep = "")))
 points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col="hotpink", pch = 19)
 points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break.points[2]],col="hotpink", pch = 19)
@@ -111,7 +111,7 @@ points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break
 weathertmp <- day.weather[day.weather$Date >= tail(day.avg$Date,1),]
 weathertmp <- weathertmp[weathertmp$Date <= head(day.avg$Date,1),]
 plot(day.avg$Volume*day.avg$CoolingDegree*cc, col = 1+c(weathertmp$Temperature>=15)+2*c(weathertmp$Temperature<12))
-weathertmp$col <- cut(weathertmp$Temperature, breaks = c(-Inf, 12, 15, Inf), labels = c("Summer period","]12;15] in Degrees/C", "Winter period"))
+weathertmp$col <- cut(weathertmp$Temperature, breaks = c(-Inf, 12, 15, Inf), labels = c("Winter period","]12;15] in Degrees/C","Summer period" ))
 legend_title <- "Classification"
 
 break.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Volume*CoolingDegree*cc, color = weathertmp$col)) +
