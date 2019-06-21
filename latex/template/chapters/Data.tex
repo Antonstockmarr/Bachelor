@@ -35,8 +35,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     \caption{Attributes from the original house data.}
     \label{tab: housedata}
 \end{table}
-
-\noindent \cref{tab: weatherdata} shows the attributes in the weather data and \cref{tab: BBR} shows which attributes the BBR data consists of.
+\noindent \cref{tab: weatherdata} shows the attributes in the weather data.
 \begin{table}[H]
     \centering
     \begin{tabular}{ll}
@@ -52,7 +51,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     Condition  & The weather condition given in numbers described in \cite{condition} \\
     UltravioletIndex  & The UV index level \\
     MeanSeaLevelPressure  & The average atmospheric pressure at mean sea level in $hPa$ \\
-    DewPoint  &  The temperature to which air must be cooled to become saturated \\ & with water steam (Degrees/C)\\
+    DewPoint  &  The temperature to which air must be cooled to become \\ & saturated with water steam (Degrees/C)\\
     Humidity  & The amount of water steam present in the air \\
     PrecipitationProbability & The probability that some quantify precipitation will occur \\ & (logical factor)\\
     IsHistoricalEstimated & Binary variable, true if the datapoint is a prediction \\
@@ -61,7 +60,8 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     \caption{Attributes from the original weather data.}
     \label{tab: weatherdata}
 \end{table}
-\begin{table}[H]
+\noindent And at last \cref{tab: BBR} shows which attributes the BBR data consists of.
+\begin{table}[h]
     \centering
     \begin{tabular}{ll}
      \hline
@@ -75,7 +75,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     Basement  & How many $m^2$ basement there is in the house \\
     Attic  & How many $m^2$ attic there is in the house \\
     ConstructionYear  & The year of construction for the house  \\
-    Surfaces  & The material on the surface of the outdoor walls of the house \\
+    Surfaces  & The material on the surface of the outdoor walls of \\ & the house \\
     ReconstructionYear  & The year of the latest reconstruction of the house \\
     AdditionalHeating  & If there are any additional heating installed in the house. \\ & Fireplace etc. \\
     \hline
@@ -83,11 +83,6 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     \caption{Attributes from the BBR data.}
     \label{tab: BBR}
 \end{table}
-
-
-%\textcolor{blue}{StartDateTime and EndDateTime are always one hour apart. When there are missing observations the following the next StartDateTime is simply delayed. Energy is the measured energy consumption on the meter in the houses.}
-
-%\noindent \textcolor{red}{Noget med at vi også har BBR data.}
 
 \section{Cleaning and preparation}
 In this section, it is described how the raw data is cleaned and prepared for the statistical analysis.
@@ -97,22 +92,17 @@ In this section, it is described how the raw data is cleaned and prepared for th
 \noindent Every now and then, one or more data points in a row are missing. When this happen, a data point with NA-values for all of the attributes except \texttt{ObsTime}, is placed in the data set, which makes the data set easier to use in the modelling process. In some cases, the models that the data set is "complete", i.e. that there are no missing values. This is true for the time series models that will be described in Chapter \ref{chap: hourly} In the data sets there are no indication of whether or not it is weekend. This attribute is added as well as the school holidays.
 
 \noindent Both weather data and the house data are aggregated with mean values for each day in order to convert hourly values into daily values since there are of interest when modelling in chapter 3, two of the attributes is aggregated in a different way, which is explained later.
-
 %\textcolor{red}{Loader en temporary data ind, som vi modificerer indtil vi putter den ind i vores endelige data.}
 
 %enddays og startdays sættes for hvert hus - hvornår starter målingerne og hvornår slutter målinger. Tidspunkterne for aller første og aller sidste måling.
 
 %Vi laver så temp. weather data så vi kan merge det med house data.
 %Vi merger ikke al data, da mængden vil være en del større. Vi merger tmp weather data på house data i model processen. \textcolor{blue}{Gør vi? Vi laver weatherCons i data.R, så det for daily data er dette i hvert fald ikke sandt :)}
-
-
 \subsection{Missing values}
 In the vast majority of our houses, the data is consistent with data every hour from a given starttime until the end of January 2019. Then for many of the houses, there is a gap of 6 whole days in the start of February, and then 2 more days of data. For this reason, the February data is cut out completely. The rest of the missing readings are handled so that they are based on the values of readings around the gap, i.e. they are interpolated by calculating the average of the readings around the missing reading.
 The purpose of filling out the missing values with interpolation of data, is to ensure that there exist observations for every hour. This makes it possible to develop time series models to describe data and also predict customers' consumption on an hourly basis.
 
 %\noindent \textcolor{red}{Vi tilføjer en binær attribute for hver ferie, og endnu en for weekender. De forskellige ferier vi tager med er christmas break, winter break, spring break, autumn break} \\
-
-
 
 \subsection{The sun and the wind}
 \noindent A physical factor that could possibly affect the heat consumption is the sun. In raw data, the attributes \texttt{Condition}, \texttt{SunHour},  and \texttt{UltraVioletIndex} can be seen as explanatory variables for the sun. Instead, an attribute, \texttt{Radiation}, is added to calculate the solar radiation for a given day. This attribute is determined with use of the \texttt{R} function \texttt{calcSol} from the library \texttt{solaR}. This value is the radiation of the sun if there is no cloud coverage. That is multiplied by the \texttt{SunHour} to weight the radiation with the amount of sun actually penetrating the clouds. The ultraviolet index is a measurement of the strength of ultraviolet radiation and since the attribute \texttt{SolarRadiation} is more exact, \texttt{UltravioletIndex} is removed from the weather data set. \texttt{SunHour} is also removed, since it is now included in \texttt{SolarRadiation}.
