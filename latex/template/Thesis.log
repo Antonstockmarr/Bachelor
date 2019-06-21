@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 21:32
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 21:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1723,6 +1723,16 @@ LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 43.20016pt on input line 2.
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 33.60013pt on input line 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
 ) [1
 
 
@@ -1736,7 +1746,17 @@ LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 
 
 
-]) [3]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+) [3]
 \openout2 = `frontmatter/Preface.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.tex [4
@@ -1884,6 +1904,11 @@ File: graphics/../../../figures/AlphaHist.eps Graphic file (type eps)
 <graphics/../../../figures/AlphaHist.eps>
 File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
 <graphics/../../../figures/class_breakpoint.eps>
+
+Overfull \hbox (37.87231pt too wide) in paragraph at lines 155--156
+ [][] 
+ []
+
 ) [15] [16] [17] [18]
 \openout2 = `chapters/Statistical.aux'.
 
