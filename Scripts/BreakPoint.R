@@ -1,25 +1,25 @@
-# Dette script kan kun k?res efter "source("data.R")"
+# This script is only runable after running "source("data.R")"
 
-# Initialisere et alpha for hvert hus.
+# Initialize alpha for every house.
 alpha <- rep(0,n)
 j=1
 
-# Hvis der er mindst 1 ?rs data, kigger vi p? det hus.
+# The data is used for the houses with at least a year of data.
 for(k in 1:n){
   if (length(day.data[[k]]$Flow)>=365){
     t <- weatherCons[[k]]$Temperature
     q <- weatherCons[[k]]$Consumption  
-    #Vi antager normalfordeling i consumption p? dage over 20 grader, og ser p? resten af data i forhold til denne normalfordeling.
+    # We assume that the consumption data for the days with 20+ degrees follows a normal destribution. We compare the rest of the data to this destribution.
     tmp.mu <- mean(q[t>=20])
     tmp.sd <- sd(q[t>=20])
     
-    # Hvis der ikke er en standard deviation bruges data ikke.
+    # If the standard deviation id 0, the data is not used.
     if(tmp.sd!=0){
       
 
       pct.in.sd <- rep(0,length(min(t):(max(t)-1)))
       
-      # For hver grad tjekkes hvilken andel af datapunkterne der ligger indenfor 2 sd fra mean i normalfordelingen.
+      # For every degree, the fraction of datapoints laying inside the 95% CI of the normal destribution is calculated.
       for (i in floor(min(t):(max(t)-1))){
         tmp.q <- q[t<=(i+1)]
         tmp.t <- t[t<=(i+1)]
@@ -56,7 +56,7 @@ par(mfrow=c(1,1))
 hist(alpha,main = 'Histogram of the threshold values',xlab = expression(paste('Temperature [',degree, 'C]')))
 
 break.point<-round(as.numeric(quantile(alpha, .25)))
-# Breakpointet bestemmes som 25% kvartilet af alphaerne.
+# The break point i set to the 25% quantile of the alphas.
 
 abline(v=break.point,col=Wcol[2],lwd=2)
 
