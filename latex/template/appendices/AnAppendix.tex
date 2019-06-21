@@ -1,8 +1,6 @@
 \chapter{Tables}
-
 \section{Estimates and test of the simple linear regression model}
-
-\begin{table}[H]
+\begin{table}[ht]
     \centering
     \begin{tabular}{c:ll|c:ll}
         \hline
@@ -49,7 +47,7 @@
     \label{tab: est_simple_lm}
 \end{table}
 
-\begin{table}[H]
+\begin{table}[ht]
     \centering
     \begin{tabular}{c:ll|c:ll}
         \hline
@@ -85,7 +83,7 @@
         28 & 0.5752663 & 0.3006793 & 63 & 0.5771746 & 0.853408\\ 
         29 & 0.1056845 & 0.3651867 & 64 & 0.006368894 & 0.517817\\ 
         30 & 0.4512082 & 0.8971008 & 65 & 0.01968257 & 0.195667\\ 
-        31 & 0.4481276 & 1.0000000 & 0.0006757623 & 0.604916\\ 
+        31 & 0.4481276 & 1.0000000 & 66 & 0.0006757623 & 0.604916\\ 
         32 & 4.134475e-08 & 1.380207e-02 & 67 & 0.1761617 & 1\\ 
         33 & 0.4464175 & 0.5178173 & 68 & 0.2359113 & 0.579290\\ 
         34 & 5.011367e-06 & 5.178173e-01 & 69 & 0.008934653 &0.579290 \\ 
@@ -98,7 +96,7 @@
 
 \section{Estimates and test of the multiple linear regression model}
 \subsection{Significance of parameters for full model}
-\begin{table}
+\begin{table}[ht]
     \centering
     \resizebox{!}{0.48\textwidth}{\begin{tabular}{ccccccccccccccccccccc}
      \hline
@@ -335,7 +333,8 @@
     \label{tab: lmMult_gen_S}
 \end{table}
 
-\begin{table}[]
+\section{Results from models of hourly consumption}
+\begin{table}
     \begin{tabular}{|l|l|l|l|l|l|l|}
     \hline
     House 18           & AR1    & MA1     & SAR1   & SMA1    & Intercept & Temperature \\ \hline
@@ -345,8 +344,7 @@
     \caption{Estimates for the $(1,0,1)\times(1,0,1)$ arima model for house 55}
     \label{tab:model1_param55}
     \end{table}
-
-\begin{table}[]
+\begin{table}
     \begin{tabular}{|l|l|l|l|l|l|l|}
     \hline
     House 18           & AR1    & MA1    & SAR1   & SMA1    & Intercept & Temperature \\ \hline
@@ -356,8 +354,7 @@
     \caption{Estimates for the $(1,0,1)\times(1,0,1)$ arima model for house 18 without the Fourier series}
     \label{tab:model1_param18}
     \end{table}
-
-    \begin{table}[]
+    \begin{table}
         \centering
         \begin{tabular}{l|ccc}
         \hline
@@ -373,8 +370,7 @@
         \caption{MARIMA($3,0,1$) parameters for house 55.}
         \label{tab: MARIMAparam55}
      \end{table}
-    
-     \begin{table}[]
+     \begin{table}
         \centering
         \begin{tabular}{l|ccc}
         \hline
@@ -400,28 +396,24 @@
     
 
 \chapter{Figures}
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=1.3\textwidth, angle = 90 ]{../../../figures/house_attri.pdf}
     \caption{Scatterplot showing the average of relevant attributes from house data}
     \label{fig: house_attri}
 \end{figure}
-
 \begin{figure}
     \centering
     \includegraphics[width=1.3\textwidth, angle = 90]{../../../figures/weather_cons.pdf}
     \caption{Scatterplot showing the average of relevant attributes from weather data}
     \label{fig: weather_cons}
 \end{figure}
-
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/arimax/ACF_55_long.eps}
     \caption{The acf and pacf of the second model when applied to house 55}
     \label{fig:Model2_acf_55_long}
 \end{figure}    
-
-
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/arimax/ACF_18_long.eps}
