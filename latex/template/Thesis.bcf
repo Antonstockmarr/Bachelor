@@ -1998,22 +1998,20 @@
     <bcf:citekey order="1">iea</bcf:citekey>
     <bcf:citekey order="2">Kamstrup</bcf:citekey>
     <bcf:citekey order="3">Aalborg</bcf:citekey>
-    <bcf:citekey order="4">Kamstrup</bcf:citekey>
-    <bcf:citekey order="5">Aalborg</bcf:citekey>
-    <bcf:citekey order="6">interpolation</bcf:citekey>
-    <bcf:citekey order="7">condition</bcf:citekey>
-    <bcf:citekey order="8">solaR</bcf:citekey>
-    <bcf:citekey order="9">vejr2018</bcf:citekey>
-    <bcf:citekey order="10">Multicollinearity</bcf:citekey>
-    <bcf:citekey order="11">condition</bcf:citekey>
-    <bcf:citekey order="12">Stat_bog</bcf:citekey>
-    <bcf:citekey order="13">Stat_bog2</bcf:citekey>
-    <bcf:citekey order="14">Splines</bcf:citekey>
-    <bcf:citekey order="15">Time_Series_Analysis</bcf:citekey>
-    <bcf:citekey order="16">Time_Series_Analysis</bcf:citekey>
-    <bcf:citekey order="17">marima</bcf:citekey>
-    <bcf:citekey order="18">peder</bcf:citekey>
-    <bcf:citekey order="19">BIC</bcf:citekey>
+    <bcf:citekey order="4">interpolation</bcf:citekey>
+    <bcf:citekey order="5">condition</bcf:citekey>
+    <bcf:citekey order="6">solaR</bcf:citekey>
+    <bcf:citekey order="7">vejr2018</bcf:citekey>
+    <bcf:citekey order="8">Multicollinearity</bcf:citekey>
+    <bcf:citekey order="9">condition</bcf:citekey>
+    <bcf:citekey order="10">Stat_bog</bcf:citekey>
+    <bcf:citekey order="11">Stat_bog2</bcf:citekey>
+    <bcf:citekey order="12">Splines</bcf:citekey>
+    <bcf:citekey order="13">Time_Series_Analysis</bcf:citekey>
+    <bcf:citekey order="14">Time_Series_Analysis</bcf:citekey>
+    <bcf:citekey order="15">marima</bcf:citekey>
+    <bcf:citekey order="16">peder</bcf:citekey>
+    <bcf:citekey order="17">BIC</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
