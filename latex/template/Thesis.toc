@@ -96,19 +96,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {7}Conclusion}{69}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {A}Tables}{73}{appendix.A}% 
+\contentsline {appendix}{\chapternumberline {A}Tables}{71}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{74}{section.A.1}% 
+\contentsline {section}{\numberline {A.1}Simple linear regression model}{71}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{74}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Results from full multiple linear regression model}{73}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{74}{subsection.A.2.1}% 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters}{73}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{74}{section.A.3}% 
+\contentsline {section}{\numberline {A.3}Results from general regression model}{73}{section.A.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{74}{subsection.A.3.1}% 
+\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{73}{subsection.A.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Results from models of hourly consumption}{75}{section.A.4}% 
+\contentsline {section}{\numberline {A.4}Results from models of hourly consumption}{74}{section.A.4}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {appendix}{\chapternumberline {B}Figures}{83}{appendix.B}% 
 \defcounter {refsection}{0}\relax 

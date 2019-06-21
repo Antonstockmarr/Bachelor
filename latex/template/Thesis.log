@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 20:30
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 20:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2133,56 +2133,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
 
 ]
-Overfull \hbox (30.64294pt too wide) in paragraph at lines 101--150
- [][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (11.04pt too wide) in paragraph at lines 245--294
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 49.19998pt on input line 296.
-
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 299--332
+ [71]
+Overfull \hbox (30.64294pt too wide) in paragraph at lines 104--153
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71] [72]
+ [72]
+Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 49.19998pt on input line 298.
+
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 302--335
+ [][] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [73]
-Overfull \vbox (69.51717pt too high) has occurred while \output is active []
-
- [74]
-Overfull \hbox (15.29007pt too wide) in paragraph at lines 338--344
+Overfull \hbox (12.49002pt too wide) in paragraph at lines 343--349
 [][] 
  []
 
 
-Overfull \hbox (11.96007pt too wide) in paragraph at lines 348--354
+Overfull \hbox (12.49002pt too wide) in paragraph at lines 353--359
 [][] 
  []
 
-[75] [76] [77] [78] [79] [80] [81] [82
+[74] [75] [76] [77] [78] [79] [80] [81] [82
 
 ]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 401--402
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 406--407
  [][] 
  []
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 407--408
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 412--413
  [][] 
  []
 
@@ -2281,19 +2281,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CFAA14062A842C06116FAC9673761F7A.
+(rerunfilecheck)             Checksum: 0C8F7EECEA36119622C853EAAE13D338.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51302 strings out of 492933
- 986951 string characters out of 6133145
- 1839469 words of memory out of 5000000
- 54515 multiletter control sequences out of 15000+600000
+ 51301 strings out of 492933
+ 986942 string characters out of 6133145
+ 1835362 words of memory out of 5000000
+ 54514 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,16n,81p,2750b,8005s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,16n,81p,2750b,8007s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (100 pages).

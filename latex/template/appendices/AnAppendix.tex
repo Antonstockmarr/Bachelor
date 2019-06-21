@@ -1,6 +1,7 @@
 \chapter{Tables}
-\section{Estimates and test of the simple linear regression model}
-\begin{table}
+\section{Simple linear regression model}
+
+\begin{table}[!htb]
     \centering
     \begin{tabular}{c:ll|c:ll}
         \hline
@@ -94,8 +95,10 @@
     \label{tab: shapiro_simple_lm}
 \end{table}
 
-\section{Estimates and test of the multiple linear regression model}
-\subsection{Significance of parameters for full model}
+\pagebreak
+
+\section{Results from full multiple linear regression model}
+\subsection{Significance of parameters}
 \begin{table}[ht]
     \centering
     \resizebox{!}{0.48\textwidth}{\begin{tabular}{ccccccccccccccccccccc}
@@ -151,7 +154,7 @@
     \label{tab: lmMult_full_L}
 \end{table}
 
-\begin{table}
+\begin{table}[ht]
     \centering
     \resizebox{!}{0.33\textwidth}{\begin{tabular}{ccccccccccccccccccc}
      \hline
@@ -184,15 +187,14 @@
 68&   & \Minus *** &   &   &   & \Plus * &   & \Minus *** &   & \Plus * & \Minus ** &   &   & \Plus * & \Minus * \\
 69&   & \Minus *** &   &   & \Plus . & \Plus ** &   & \Minus .  & \Minus *** &   &   &   & \Plus . &   & \\
 70&   & \Minus *** &   & \Plus . & \Plus . & \Plus *** & \Plus ** & \Minus *** &   &   &   &   &   &   & \Minus * \\
-
     \hline
     \end{tabular}}
     \caption{Significance of parameters from the full multiple linear regression model performed on 'short' houses. The meaning of the stars is as follows: $^{\star}$ = significant, $^{\star\star}$ = more significant and $^{\star\star\star}$ = highly significant.}
     \label{tab: lmMult_full_S}
 \end{table}
 
-\section{Tests of residuals from multiple linear regression model}
-\begin{table}
+\section{Results from general regression model}
+\begin{table}[ht]
     \centering
     \begin{tabular}{c:ll|c:ll}
         \hline
@@ -240,7 +242,7 @@
 \end{table}
 
 \subsection{Significance of parameters for general regression model}
-\begin{table}
+\begin{table}[ht]
     \centering
     \begin{tabular}{cccccccccccc}
      \hline
@@ -294,7 +296,8 @@
     \caption{Significance of parameters for 'long' houses from the general regression model. The meaning of the stars is as follows: $^{\star}$ = significant, $^{\star\star}$ = more significant and $^{\star\star\star}$ = highly significant.}
     \label{tab: lmMult_gen_L}
 \end{table}
-\begin{table}[H]
+
+\begin{table}[ht]
     \centering
     \begin{tabular}{cccccccccccc}
      \hline
@@ -333,25 +336,27 @@
     \label{tab: lmMult_gen_S}
 \end{table}
 
+\pagebreak
+
 \section{Results from models of hourly consumption}
 \begin{table}[ht]
-    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \begin{tabular}{l|cccccc}
     \hline
-    House 18           & AR1    & MA1     & SAR1   & SMA1    & Intercept & Temperature \\ \hline
-    Estimate           & 0.9945 & -0.9117 & 0.9924 & -0.9497 & 1.5178    & 0.0327      \\ \hline
+    House 18           & AR1    & MA1     & SAR1   & SMA1    & Intercept & Temperature \\ \hline\hline
+    Estimate           & 0.9945 & -0.9117 & 0.9924 & -0.9497 & 1.5178    & 0.0327      \\ 
     Standard deviation & 0.0014 & 0.0048  & 0.0019 & 0.0052  & 0.4818    & 0.0053      \\ \hline
     \end{tabular}
-    \caption{Estimates for the $(1,0,1)\times(1,0,1)$ arima model for house 55}
+    \caption{Estimates for the $(1,0,1)\times(1,0,1)$ ARIMA model for house 55}
     \label{tab:model1_param55}
     \end{table}
 \begin{table}
-    \begin{tabular}{|l|l|l|l|l|l|l|}
+    \begin{tabular}{l|ccccccc}
     \hline
-    House 18           & AR1    & MA1    & SAR1   & SMA1    & Intercept & Temperature \\ \hline
-    Estimate           & 0.3782 & 0.2647 & 0.9702 & -0.9326 & 0.4947    & 0.1103      \\ \hline
+    House 18           & AR1    & MA1    & SAR1   & SMA1    & Intercept & Temperature \\ \hline \hline
+    Estimate           & 0.3782 & 0.2647 & 0.9702 & -0.9326 & 0.4947    & 0.1103      \\ \
     Standard deviation & 0.0170 & 0.0175 & 0.053  & 0.0072  & 0.0652    & 0.008       \\ \hline
     \end{tabular}
-    \caption{Estimates for the $(1,0,1)\times(1,0,1)$ arima model for house 18 without the Fourier series}
+    \caption{Estimates for the $(1,0,1)\times(1,0,1)$ ARIMA model for house 18 without the Fourier series}
     \label{tab:model1_param18}
     \end{table}
     \begin{table}
