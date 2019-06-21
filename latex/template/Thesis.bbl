@@ -19,77 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{xts}{package}{}
-      \field{sortinit}{}
-      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
-      \endverb
-      \verb{url}
-      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
-      \endverb
-    \endentry
-    \entry{solaR}{package}{}
-      \field{sortinit}{}
-      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
-      \endverb
-      \verb{url}
-      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
-      \endverb
-    \endentry
-    \entry{forecast}{package}{}
-      \field{sortinit}{}
-      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
-      \endverb
-      \verb{url}
-      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
-      \endverb
-    \endentry
-    \entry{fields}{package}{}
-      \field{sortinit}{}
-      \field{sortinithash}{495dc9894017a8b12cafa9c619d10c0c}
-      \true{nocite}
-      \verb{urlraw}
-      \verb https://cran.r-project.org/web/packages/fields/index.html
-      \endverb
-      \verb{url}
-      \verb https://cran.r-project.org/web/packages/fields/index.html
-      \endverb
-    \endentry
-    \entry{vejr2018}{url}{}
-      \name{author}{1}{}{%
-        {{hash=a369368e07f40aa8fc35de01b87fa9c5}{%
-           family={2},
-           familyi={2\bibinitperiod},
-           given={TV},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{a369368e07f40aa8fc35de01b87fa9c5}
-      \strng{fullhash}{a369368e07f40aa8fc35de01b87fa9c5}
-      \strng{bibnamehash}{a369368e07f40aa8fc35de01b87fa9c5}
-      \strng{authorbibnamehash}{a369368e07f40aa8fc35de01b87fa9c5}
-      \strng{authornamehash}{a369368e07f40aa8fc35de01b87fa9c5}
-      \strng{authorfullhash}{a369368e07f40aa8fc35de01b87fa9c5}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Se billederne - Danmark igen ramt af vintervejr}}
-      \true{nocite}
-      \verb{urlraw}
-      \verb http://vejr.tv2.dk/2018-04-03-se-billederne-danmark-igen-ramt-af-vintervejr
-      \endverb
-      \verb{url}
-      \verb http://vejr.tv2.dk/2018-04-03-se-billederne-danmark-igen-ramt-af-vintervejr
-      \endverb
-    \endentry
     \entry{interpolation}{book}{}
       \name{author}{1}{}{%
         {{hash=d8de92f26ebd856f8e8906ccf6b7552f}{%
@@ -135,6 +64,93 @@
       \endverb
       \verb{url}
       \verb https://www.iea.org/renewables2018/heat/
+      \endverb
+    \endentry
+    \entry{fields}{package}{}
+      \name{author}{1}{}{%
+        {{hash=535aa1966a1cd0172127210dcca31b1a}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={Douglas\bibnamedelima Nychka},
+           giveni={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{535aa1966a1cd0172127210dcca31b1a}
+      \strng{fullhash}{535aa1966a1cd0172127210dcca31b1a}
+      \strng{bibnamehash}{535aa1966a1cd0172127210dcca31b1a}
+      \strng{authorbibnamehash}{535aa1966a1cd0172127210dcca31b1a}
+      \strng{authornamehash}{535aa1966a1cd0172127210dcca31b1a}
+      \strng{authorfullhash}{535aa1966a1cd0172127210dcca31b1a}
+      \field{extraname}{1}
+      \field{sortinit}{a}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Tools for Spatial Data}}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/fields/index.html
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/fields/index.html
+      \endverb
+    \endentry
+    \entry{xts}{package}{}
+      \name{author}{1}{}{%
+        {{hash=c180274bf26e85902b1c1435adcea4b4}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={Jeffrey\bibnamedelimb A.\bibnamedelimi Ryan},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim R\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \strng{namehash}{c180274bf26e85902b1c1435adcea4b4}
+      \strng{fullhash}{c180274bf26e85902b1c1435adcea4b4}
+      \strng{bibnamehash}{c180274bf26e85902b1c1435adcea4b4}
+      \strng{authorbibnamehash}{c180274bf26e85902b1c1435adcea4b4}
+      \strng{authornamehash}{c180274bf26e85902b1c1435adcea4b4}
+      \strng{authorfullhash}{c180274bf26e85902b1c1435adcea4b4}
+      \field{extraname}{2}
+      \field{sortinit}{a}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{eXtensible Time Series}}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/xts/xts.pdf
+      \endverb
+    \endentry
+    \entry{vejr2018}{url}{}
+      \name{author}{1}{}{%
+        {{hash=b78f1fd52ce6e0bb01966334433bfc98}{%
+           family={Anders\bibnamedelimb Brandt\bibnamedelima (Meteorolog},
+           familyi={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim (\bibinitperiod},
+           given={TV\bibnamedelima 2)},
+           giveni={T\bibinitperiod\bibinitdelim 2\bibinitperiod}}}%
+      }
+      \strng{namehash}{b78f1fd52ce6e0bb01966334433bfc98}
+      \strng{fullhash}{b78f1fd52ce6e0bb01966334433bfc98}
+      \strng{bibnamehash}{b78f1fd52ce6e0bb01966334433bfc98}
+      \strng{authorbibnamehash}{b78f1fd52ce6e0bb01966334433bfc98}
+      \strng{authornamehash}{b78f1fd52ce6e0bb01966334433bfc98}
+      \strng{authorfullhash}{b78f1fd52ce6e0bb01966334433bfc98}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Se billederne - Danmark igen ramt af vintervejr}}
+      \true{nocite}
+      \verb{urlraw}
+      \verb http://vejr.tv2.dk/2018-04-03-se-billederne-danmark-igen-ramt-af-vintervejr
+      \endverb
+      \verb{url}
+      \verb http://vejr.tv2.dk/2018-04-03-se-billederne-danmark-igen-ramt-af-vintervejr
       \endverb
     \endentry
     \entry{peder}{package}{}
@@ -264,6 +280,33 @@
       \verb https://www.kamstrup.com/da-dk
       \endverb
     \endentry
+    \entry{solaR}{package}{}
+      \name{author}{1}{}{%
+        {{hash=c7a05197bda5baae94883e6e36b4c3d4}{%
+           family={Lamigueiro},
+           familyi={L\bibinitperiod},
+           given={Oscar\bibnamedelima Perpiñán},
+           giveni={O\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7a05197bda5baae94883e6e36b4c3d4}
+      \strng{fullhash}{c7a05197bda5baae94883e6e36b4c3d4}
+      \strng{bibnamehash}{c7a05197bda5baae94883e6e36b4c3d4}
+      \strng{authorbibnamehash}{c7a05197bda5baae94883e6e36b4c3d4}
+      \strng{authornamehash}{c7a05197bda5baae94883e6e36b4c3d4}
+      \strng{authorfullhash}{c7a05197bda5baae94883e6e36b4c3d4}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Radiation and Photovoltaic Systems}}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/solaR/solaR.pdf
+      \endverb
+    \endentry
     \entry{Time_Series_Analysis}{book}{}
       \name{author}{1}{}{%
         {{hash=ac5d1263fca18a1f2d85317607e7d734}{%
@@ -329,6 +372,34 @@
       \field{title}{{A Modern Approach to Regression with R}}
       \true{nocite}
     \endentry
+    \entry{forecast}{package}{}
+      \name{author}{1}{}{%
+        {{hash=916b60720e2c67ea7671a45e4537eb0c}{%
+           family={Spliid},
+           familyi={S\bibinitperiod},
+           given={Henrik},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{fullhash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{bibnamehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{authorbibnamehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{authornamehash}{916b60720e2c67ea7671a45e4537eb0c}
+      \strng{authorfullhash}{916b60720e2c67ea7671a45e4537eb0c}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Multivariate ARIMA and ARIMA-X Analysis}}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
+      \endverb
+      \verb{url}
+      \verb https://cran.r-project.org/web/packages/marima/marima.pdf
+      \endverb
+    \endentry
     \entry{marima}{book}{}
       \name{author}{1}{}{%
         {{hash=916b60720e2c67ea7671a45e4537eb0c}{%
@@ -343,6 +414,7 @@
       \strng{authorbibnamehash}{916b60720e2c67ea7671a45e4537eb0c}
       \strng{authornamehash}{916b60720e2c67ea7671a45e4537eb0c}
       \strng{authorfullhash}{916b60720e2c67ea7671a45e4537eb0c}
+      \field{extraname}{2}
       \field{sortinit}{S}
       \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
       \field{labelnamesource}{author}

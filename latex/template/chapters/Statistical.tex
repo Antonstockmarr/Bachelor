@@ -87,9 +87,9 @@ for the splines of degree $0$, and for higher degrees
         \mathcal{N}_{\Xi,i}^j(\xi) = \frac{\xi-\xi_i}{\xi_{i+j}-\xi_i}\mathcal{N}_{\Xi,i}^{j-1}(\xi) + \frac{\xi_{i+j+1}-\xi}{\xi_{i+j+1}-\xi_{i+1}} \mathcal{N}_{\Xi, i + 1}^{j-1}(\xi),
     \end{equation}
 for degree $j=1,2,..,q$ and $i=1,2,...,n+q-j$. When the splines are uniform, the continuity of the basis splines across a knot is $q-1$. This means that the $q-1$'th derivative exists and is continuous. In this project splines of degree $2$ is used, i.e.  the first derivative is continuous at every point on the spline. The splines used here are periodic, such that after the first $n$ knots, the knot sequence starts over. For modelling the wind direction, four knots are used for the knot vector, each associated with a wind direction category.  Here they are defined as northeast, southeast, southwest and northwest. The reason for this will be explained later in this section. For each of these knots there is a basis spline. When the degree of the spline basis is $2$, it means that the spline for a given knot is zero at the opposite knot. For example, when using four knots the spline peaking in the north would always be zero in the south. Higher degrees would not maintain this property. The spline basis can be seen on \cref{fig:spline_basis}. Notice that the sum of the entire spline basis at a given point always adds up to one. The figure shows how the $i$'th spline, associated with the $i$'th knot, does not peak at that knot but in the following interval. This is the reason why the knots are chosen in this way. By choosing the knots to be between the main directions north, east, south and west, this is where the basic splines peek.
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/SplineBasis.jpeg}
+    \includegraphics[scale=.5]{../../../figures/SplineBasis.jpeg}
     \caption{The spline basis used to model the wind direction. Each colour is a different basis spline, and the vertical lines mark the knots.}
     \label{fig:spline_basis}
 \end{figure}
@@ -179,7 +179,7 @@ The models are validated and if the assumptions are fulfilled the models can be 
 
 \subsection{Validation}
 In order to determine whether the general model is valid, the diagnostic plots in \cref{fig: general_lm18L} and \cref{fig: general_lm55L} are investigated. The residuals from the model for house 18 behave quite odd and are not randomly scattered. More precisely, some of the residuals lie on a straight line, as seen in the residuals vs fitted plot. The reason for this is that the heat consumption for the house is 0 at the end of autumn, as seen in \cref{fig: daily_cons}. This results in that the estimates of the consumption for these specific points are equal to the corresponding residuals with reversed sign. It seems like this specific house can not be described by a linear regression model, which will be discussed further in Chapter \ref{chap: discussion}. On the other hand, the diagnostic plots of the residuals for house 55 are definitely improved compared to the simple model and the residuals show a random behavior. Overall, the diagnostic plots show that the model assumptions for the general models can be said to be fulfilled. They are not perfect but that is not expected. There are some houses whose residuals have strange patterns, but the majority of the models can be said to be valid. Furthermore, the Shapiro-Wilk tests and the sign tests in \cref{tab: shapiro_multiple_lm} are used to determine if the residuals are normally distributed. The Shapiro-Wilk test shows that the hypothesis of normally distributed residuals for most of the models cannot be accepted. Similarly, the results of the sign tests do not indicate that the residuals can be concluded to be normally distributed. However, this can be said to be contrary to the diagnostic plots, which is quite remarkable. Therefore, this will be discussed in more detail in the comparison of the two regression models.
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/general_lm18L.eps}
     \caption{Diagnostic plot of the general multiple linear regression model for house 18. }
@@ -195,7 +195,7 @@ In order to determine whether the general model is valid, the diagnostic plots i
 
 \subsection{Results}
 The results of the general regression model performed on each house are illustrated in \cref{tab: lmMult_gen_L} and \cref{tab: lmMult_gen_S} with the significance of each parameter. As expected, the intercept and the temperature are highly significant in all models and with the "correct" sign. That is to say, the expected sign of the temperature is negative, since the increase in the temperature will result in a decrease in the heat consumption. The attribute \texttt{SolarRadiation} affects the majority of the houses as well. The solar radiation warms the house up through the windows, so it makes sense that this has significance for how large the heat consumption is. In order to compare the houses, the temperature coefficients as well as the solar radiation coefficients are illustrated in \cref{fig: Temp_coef} and \cref{fig: Solar_coef}, including a 95\% confidence interval. The influence of the temperature on house 18 is minimal, but the confidence interval is quite wide compared to the houses with temperature estimates similar to 18. Thus, there is a large uncertainty for this specific model. Likewise, house 55 is not particularily effected by the outside temperature. The step response is approximately $-0.023 \ kWh/m^2$. The confidence interval is narrow, so the uncertainty for this model is quite small compared to the model for house 18. The model with the largest temperature coeffient is the one for house 63. The step response is around $-0.273 \ kWh/m^2$. This might be explained by the construction year of the house - it was build in 1920 and according to \cref{fig: bbr_hist}, it is one of the older houses. On the other hand, the influence of the temperature is the lowest for house 9. The house was build in 2009, so the expectation that the house performs quite well is somewhat true. When examining the coefficients in \cref{fig: Solar_coef}, the model for house 18 shows an odd behavior. The step response is positive ($0.002 \ kWh/m^2$), i.e. the heat consumption increases when the solar radiation is increased. House 55's influence from the sun is small and again the 95\% confidence interval is quite narrow. Based on this and the confidence interval showed in \cref{fig: Temp_coef}, the model for house 55 performs well and it can describe the behavior for the specific house. House 10 the one that is influenced the most by the solar radiation. The step response is at $-0.039 \ kWh$. However, there does not exist any BBR data on this house apart from the fact that it is a commercial building, so whether this behaviour is expected or not is not known.\\ 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/Temp_coef.eps}
     \caption{The temperature coeffients from the general regression model. The consumption in house 63 is influenced by the temperature in a higher degree than the other houses, since the consumption decreases with 0.27 $kWh/m^2$ when the temperature increases with 1 $^{\circ}$C.}
@@ -221,35 +221,34 @@ The results of the general regression model performed on each house are illustra
 \noindent House 18 and 55 are used for predictions, which is illustrated in \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L}.
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_55L.eps}
+    \includegraphics[scale=0.55]{../../../figures/lmpred_55L.eps}
     \caption{Predictions of the last 31 days of the model data for house 55 including a 95\% prediction interval. The model captures the behavior of this house quite well.}
     \label{fig: lmpred_55L}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/lmpred_18L.eps}
+    \includegraphics[scale=0.55]{../../../figures/lmpred_18L.eps}
     \caption{Predictions of the last 31 days of the model data for house 18 including a 95\% prediction interval. The model captures the behavior of this house, but the prediction interval is quite wide, which indicates a large uncertainty about this model.}
     \label{fig: lmpred_18L}
 \end{figure}
 
-\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour.  The 95\% prediction interval is narrow, which indicates that the standard deviations of this model are fairly small. Comparing the predictions to the actual consumption, the data is mostly inside the prediction interval. In the last couple of days the model predict spikes in the temperature that are not reflected in the observations. \cref{fig: weather_pred} indicate why the spikes occour. It seems that there are two days with particularily low temperatures coinciding with the spikes in the predictions. Low temperatures causes the model to expect higher consumption. There can be many reasons why the consumption did not spike as expected, for example the that inhabitants of the house might not have been home that day to notice the temperature difference. Such things can be very hard to predict. In general, the model performs well on this house. It should be noted that there is no sun input in the weather data for the last half of January. This makes it hard to evaluate how the sun affects the predictions.
-
-\noindent House 18, on the other hand, does not behave quite as expected. The model has problems capturing the trend and the 95\% prediction interval much wider than for house 55. There is more unexplained variation in this model. The deviations in the observations cannot be explained by the input from the weather data. So even though all the observations are within the prediction interval, the model is not of much use on this house. There are other factors affecting the consumption that are not captured in the model, which is reflected in the high uncertainty.\\
-
-\noindent The effect of the wind direction on the consumption is investigated by estimating the daily consumption for the house for a fixed setting, where only the wind direction is changed. \cref{fig: Wplot55} shows the wind dependency for house 55. The setting used is a day with a temperature of $0 \degree$C, without any solar radiation, and with a wind speed of $4.27 m/s$, which is the average wind speed throughout the year. A prediction of the daily consumption is made for each wind direction and plotted with a 95\% prediction interval.  The consumption of house 55 is by far the most affected by wind from the west.
-\begin{figure}
+\noindent It can be seen that the predictions for house 55 lie close to the actual data and captures the overall behaviour.  The 95\% prediction interval is narrow, which indicates that the standard deviations of this model are fairly small. Comparing the predictions to the actual consumption, the data is mostly inside the prediction interval. In the last couple of days the model predict spikes in the temperature that are not reflected in the observations. \cref{fig: weather_pred} indicate why the spikes occour. It seems that there are two days with particularily low temperatures coinciding with the spikes in the predictions. Low temperatures causes the model to expect higher consumption. There can be many reasons why the consumption did not spike as expected, for example the that inhabitants of the house might not have been home that day to notice the temperature difference. Such things can be very hard to predict. In general, the model performs well on this house. It should be noted that there is no sun input in the weather data for the last half of January. This makes it hard to evaluate how the sun affects the predictions. House 18, on the other hand, does not behave quite as expected. The model has problems capturing the trend and the 95\% prediction interval much wider than for house 55. There is more unexplained variation in this model. The deviations in the observations cannot be explained by the input from the weather data. So even though all the observations are within the prediction interval, the model is not of much use on this house. There are other factors affecting the consumption that are not captured in the model, which is reflected in the high uncertainty.\\
+\begin{figure}[!htb]
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/Wplot55.jpeg}
-    \caption{Wind direction dependency for the consumption for house 55.}
-    \label{fig: Wplot55}
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{../../../figures/Wplot55.jpeg}
+        \caption{Wind direction dependency for the consumption for house 55.}
+        \label{fig: Wplot55}
+    \end{minipage}
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{../../../figures/Wplot18.jpeg}
+        \caption{Wind direction dependency for the consumption for house 18.}
+        \label{fig: Wplot18}
+    \end{minipage}
 \end{figure}
-As well as for house 55, the wind dependency is also illustrated for house 18 in \cref{fig: Wplot18}, with the same settings as in \cref{fig: Wplot55}. It shows that the consumption is high when the wind comes from the west and the east, and low from the north and the south.
-\begin{figure}
-    \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/Wplot18.jpeg}
-    \caption{Wind direction dependency for the consumption for house 18.}
-    \label{fig: Wplot18}
-\end{figure}
+\noindent The effect of the wind direction on the consumption is investigated by estimating the daily consumption for the house for a fixed setting, where only the wind direction is changed. \cref{fig: Wplot55} shows the wind dependency for house 55. The setting used is a day with a temperature of $0 \degree$C, without any solar radiation, and with a wind speed of $4.27 m/s$, which is the average wind speed throughout the year. A prediction of the daily consumption is made for each wind direction and plotted with a 95\% prediction interval.  The consumption of house 55 is by far the most affected by wind from the west. As well as for house 55, the wind dependency is also illustrated for house 18 in \cref{fig: Wplot18}, with the same settings as in \cref{fig: Wplot55}. It shows that the consumption is high when the wind comes from the west and the east, and low from the north and the south.
 
 \section{Comparison}
 When looking at the results of the different tests in \cref{tab: shapiro_simple_lm}-\ref{tab: shapiro_multiple_lm}, the simple model passes the tests in more cases than the multiple model. This might be explained by the inclusion of the wind in the multiple regression model. The so-called directions are not all significant for all houses. This can affect the behavior of the residuals. On the other hand, the interpretation of the simple model shows that the temperature has a great influence on the consumption. But from a physical perspective it is known that the heat consumption is influenced by other physical phenomena as well. Hence, the simple regression model is indeed too simple. The general regression model performs as expected. It can say something about which physical phenomena affect the heat consumption of each house. The model can also predict how the expected consumption will look a month ahead. However, this is under the assumption that the weather forecasts are exact. 
@@ -258,31 +257,30 @@ When looking at the results of the different tests in \cref{tab: shapiro_simple_
 Part of this project is also to give suggestions on how the results of the analyses can be illustrated to the users of the WATTS app. \\
 
 \noindent The wind dependency showed in \cref{fig: Wplot55} and \cref{fig: Wplot18} can be converted to understandable plots in the following way: Each degree get one of the 3 colours, green, yellow and red, based on a 33.3\% prediction interval.  After subtracting the mean of the fit, if 0 is contained in this interval, the degree is coloured yellow.  If the entire interval is positive, the degree is coloured red.  Likewise, if the entire interval is negative, the colour is green. Thus, the colouring is scaled according to the estimate of the wind, which is relative to the user's own house's performance. For the users of the app, the wind direction is more intuitive as a compas on their phone.  Therefore, the minimum of the lower bound of the 33.3\% prediction interval is subtracted from the fit, and then visualised as a coloured shape. The graph for the wind dependency on the consumption of house 55 and house 18 will look as follows: 
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/WKplot55.jpeg}
+    \includegraphics[scale=0.65]{../../../figures/WKplot55.jpeg}
     \caption{Relative wind direction dependency for the consumption for house 55.}
     \label{fig: WKplot55}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/WKplot18.jpeg}
+    \includegraphics[scale=0.65]{../../../figures/WKplot18.jpeg}
     \caption{Relative wind direction dependency for the consumption for house 18.}
     \label{fig: WKplot18}
 \end{figure}
 The red colour indicates where the house is most influenced by the wind and this is where the consumer must be most attentive in relation to e.g. replacement of windows or better insulation. \cref{fig: WKplot55} shows that the heat consumption in house 55 increases when the wind is coming from the west. Likewise, \cref{fig: WKplot18} shows that the heat consumption increases when the wind is blowing from the west and also the east. These illustrations are relative to the performance of each house. It is difficult to weigh the wind directions precisely when the data does not contain information about the location of the houses which is discussed in Chapter \ref{chap: discussion}. 
-%The coloring is scaled according to the estimate of the wind, and that is relative to the user's own house's performance. \textcolor{red}{ref} shows that the heat consumption for house 55 is most affected when the wind comes from west. \textcolor{red}{Kan godt være boys lige skal kommentere lidt på det her.}
+
 \noindent \cref{fig: lmpred_55L} and \cref{fig: lmpred_18L} are also colourised with red, yellow and green. This colouring is distributed so that there is an equal probability that the heat consumption lies in each of the three areas, i.e. the three areas are weighted $\frac{1}{3}$ each. The red area indicates that the heat consumption exceeds the expected consumption which will result in the consumer having to pay more. If, on the other hand, the consumption is in the green area, the customer consumes less than expected and thus has to pay less than the budget. As can be seen in \cref{fig: lmpred_col_55L} for house 55, it is only in early January that the consumption exceeds the expected. Otherwise, the consumption is around the expected and for most days it is below. To be able to clarify the daily consumption even more, every day in January 2019 can be represented as a pillar, resulting in the lower plot in \cref{fig: lmpred_col_55L}. As mentioned, the consumption for house 55 is most often below the expected consumption, as the bar graph clearly shows with the majority of the pillars colored green. These two suggestions for the WATTS app have also been tried on house 18. The previously mentioned oscillating behavior is clearly seen in \cref{fig: lmpred_col_18L}. This shows the consumer that they should probably have an expert investigating the house further. The bar graph in \cref{fig: lmpred_col_18L} shows that the pillars changes colors almost every day. Once again it can be seen that the heat consumption in house 18 has a very strange behavior.
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/Kplot55.eps}
+    \includegraphics[scale=0.6]{../../../figures/Kplot55.eps}
     \caption{This is two other ways of visualising \cref{fig: lmpred_55L}. In the first plot, the data is the black line, and the colours show how the house performs compared to the predictions. The lower plot visualizes the consumption of house 55 a bar graph where each day is represented by a pillar.}
     \label{fig: lmpred_col_55L}
 \end{figure}
-
-\begin{figure}
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/Kplot18.eps}
+    \includegraphics[scale=0.6]{../../../figures/Kplot18.eps}
     \caption{This is the same as \cref{fig: lmpred_col_55L}, but for house 55.}
     \label{fig: lmpred_col_18L}
 \end{figure}
