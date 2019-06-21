@@ -37,3 +37,4 @@ cold <-weatherCons[[55]]$Consumption[weatherCons[[55]]$Temperature<12]
 plot(coldt,cold,xlab='Temperature',ylab='Consumption', main='Consumption vs. Temperature (house 55)',ylim=c(0,90),xlim=c(-10,27),col=Wcol[2])
 points(warmt,warm,col=Wcol[4])
 abline(v=c(12),col=Wcol[3])
+

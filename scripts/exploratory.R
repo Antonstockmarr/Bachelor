@@ -8,7 +8,7 @@ library(ggplot2)
 library(gridExtra)
 library(tidyverse)
 library(grid)
-
+library(GGally)
 
 # Watts colors
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
@@ -34,13 +34,13 @@ day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegre
 grid.arrange(avg.plot1, day.plot.gak, day.plot.flot, nrow = 3)
 
 # Daily consumption for the n houses
-for (i in 1:n) {
-  if (length(day.data[[i]]$Flow) > 365) {
-    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
-            ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [days]") + 
-            ylab("Average consumption [kWh]"))
-  }
-}
+# for (i in 1:n) {
+#   if (length(day.data[[i]]$Flow) > 365) {
+#     print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+#             ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [days]") + 
+#             ylab("Average consumption [kWh]"))
+#   }
+# }
 
 
 # Pairs plots -------------------------------------------------------------
@@ -101,7 +101,7 @@ plot13 <- ggplot(data = BBR, aes(x = ConstructionYear)) + geom_histogram(bins = 
 plot14 <- ggplot(data = BBR, aes(x = ReconstructionYear)) + geom_histogram(bins = 15)
 grid.arrange(plot11, plot12, plot13, plot14, nrow = 2, ncol = 2)
 
-par(mar=c(3,4,2,1), mgp=c(2,0.7,0))
+par(mar=c(3,4,2,1), mgp=c(2,0.7,0),mfrow=c(1,1))
 plot(Construction.Year,cons.areal,col="hotpink",pch = 19,xlab='Year of Construction',ylab = expression(paste("Consumption [",kWh/m^2,"]", sep = "")))
 points(Construction.Year[cons.areal>break.points[1]],cons.areal[cons.areal>break.points[1]],col="hotpink", pch = 19)
 points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break.points[2]],col="hotpink", pch = 19)
@@ -111,7 +111,7 @@ points(Construction.Year[cons.areal>break.points[2]],cons.areal[cons.areal>break
 weathertmp <- day.weather[day.weather$Date >= tail(day.avg$Date,1),]
 weathertmp <- weathertmp[weathertmp$Date <= head(day.avg$Date,1),]
 plot(day.avg$Volume*day.avg$CoolingDegree*cc, col = 1+c(weathertmp$Temperature>=15)+2*c(weathertmp$Temperature<12))
-weathertmp$col <- cut(weathertmp$Temperature, breaks = c(-Inf, 12, 15, Inf), labels = c("Summer period","]12;15] in Degrees/C", "Winter period"))
+weathertmp$col <- cut(weathertmp$Temperature, breaks = c(-Inf, 12, 15, Inf), labels = c("Winter period","]12;15] in Degrees/C","Summer period" ))
 legend_title <- "Classification"
 
 break.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Volume*CoolingDegree*cc, color = weathertmp$col)) +

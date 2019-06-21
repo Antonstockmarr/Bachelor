@@ -18,8 +18,10 @@ weather <- weather[k:1,]
 
 par(mfrow=c(1,3))
 
-for(i in c(55,18,6)){
-  
+Houses<-c(55,18,6) #Houses of interest
+
+for(i in Houses){
+  # Get the appropiate weather data.
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
   tmp <- tmp.dat$Temperature
@@ -30,8 +32,6 @@ for(i in c(55,18,6)){
   Hus$TemperatureOut<-NULL
   Hus$Temperature<-tmp
   Hus$Radiation<-slr
-  
-  #names(Hus)
   
   Xor <- Hus[ ,c("ObsTime","Energy","Temperature","Radiation")]
   names(Xor) <- c("t","Qi","Te","G")
@@ -114,8 +114,8 @@ for(i in c(55,18,6)){
 }
 
 
-# Med Fourier
-for(i in c(18)){
+# With Fourier
+for(i in Houses){
   
   tmp.dat <- weather[(weather$ObsTime >= head(data[[i]]$ObsTime,1)),]
   tmp.dat <- tmp.dat[tmp.dat$ObsTime <= tail(data[[i]]$ObsTime,1),]
@@ -217,33 +217,6 @@ for(i in c(18)){
   axis(1, at=c(.5,2,3.5), labels=c("Day","BIC","CI"))
   
 }
-(h4<-HLC.Qi.ARX(fit1))
-
-print(paste(h4$gA,'&',h4$sd.gA,'&',h4$gA-1.96*h4$sd.gA,'&',h4$HLC.Ta+1.96*h4$sd.gA))
-
-acfccfPlot(fit2, X)
-val <- HLC.Qi.ARX(fit2)
-## Standard error
-sqrt(val$VarHLC.Ta)
-val$HLC.Ta + c(-1,1) * 1.96 * sqrt(val$VarHLC.Ta)
-
-
-## Plot the series of interest
-plot(fit2$residuals)
-tmp <- X
-tmp$residuals <- NA
-tmp[(nrow(tmp) - length(fit2$residuals) + 1):nrow(tmp), "residuals"] <- fit2$residuals
-Xp <- tmp[period("2019-01-01",tmp$t,"2019-01-31"), ]
-setpar("ts", mfrow=c(4,1))
-plot(Xp$t,Xp$residuals,type="l")
-abline(h=0)
-plot(Xp$t,Xp$Qi,type="l")
-abline(h=mean(Xp$Qi))
-plot(Xp$t,Xp$Te,type="l")
-plot(Xp$t,Xp$G,type="l")
-axis.POSIXct(1,Xp$t,xaxt="s")
-
-
 
 ##----------------------------------------------------------------
 ## 3.4 HLC and step response
@@ -253,59 +226,3 @@ axis.POSIXct(1,Xp$t,xaxt="s")
 par(mar=c(1,3,1,2), mgp=c(2,0.7,0),mfrow=c(1,1),xpd=FALSE)
 stepResponseARX(fit2,X,"Te")
 stepResponseARX(fit2,X,"G")
-
-##----------------------------------------------------------------
-## Calculate the estimated HLC-value and gA-value for the box based on the estimated steady-state reponse for Ti and Te, for G.
-## Use your best fit. See the function in the file "r/functions/HLC.Qi.ARX.R"
-HLC.Qi.ARX(fit2)
-
-
-
-##----------------------------------------------------------------
-## Use fourier series as input
-
-## Calculate the fourier series
-X$tod <- as.POSIXlt(X$t)$hour
-X <- cbind(X, fs(X$tod/24, nharmonics=3))
-
-names(X)
-
-## Plot the series of interest
-Xp <- X[period("2019-01-01",X$t,"2019-01-31"), ]
-setpar("ts", mfrow=c(5,1))
-plot(Xp$t,Xp$Qi,type="l")
-plot(Xp$t,Xp$Te,type="l")
-plot(Xp$t,Xp$G,type="l")
-plot(Xp$t,Xp$sin_1,type="l")
-lines(Xp$t,Xp$cos_1)
-plot(Xp$t,Xp$sin_2,type="l")
-lines(Xp$t,Xp$cos_2)
-axis.POSIXct(1,Xp$t,xaxt="s")
-
-
-## Try increasing the order
-outName <- 'Qi'
-inNames <- c('One','Te','G',pst('sin_',1:2),pst('cos_',1:2))
-noLagPattern <- "One|sin|cos"
-pNoLag <- 1
-fit1 <- estimateARMAX(outName, inNames, pAR=1, pMA=1, noLagPattern, pNoLag)
-fit2 <- estimateARMAX(outName, inNames, pAR=2, pMA=1, noLagPattern, pNoLag)
-fit3 <- estimateARMAX(outName, inNames, pAR=3, pMA=1, noLagPattern, pNoLag)
-fit4 <- estimateARMAX(outName, inNames, pAR=4, pMA=1, noLagPattern, pNoLag)
-
-BIC(fit1)
-BIC(fit2)
-BIC(fit3)
-BIC(fit4)
-
-summary(fit1)
-summary(fit2)
-summary(fit3)
-summary(fit4)
-
-HLC.Qi.ARX(fit1)
-HLC.Qi.ARX(fit2)
-HLC.Qi.ARX(fit3)
-HLC.Qi.ARX(fit4)
-
-acfccfPlot(fit2, X)

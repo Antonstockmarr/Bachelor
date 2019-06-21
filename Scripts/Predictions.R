@@ -134,7 +134,7 @@ weather <- weather[k:1,]
 
 tth<-TrainTest(data,14*24)
 
-for(i in c(6,20)){
+for(i in c(55)){
 midnight<-which(hour(tth[[2]][[i]]$ObsTime)==0)
 
 a <- 12

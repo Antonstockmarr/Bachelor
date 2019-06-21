@@ -54,8 +54,3 @@ for (i in 1:n) {
     Sum_sign <- Sum_sign+1
   }
 }
-
-plot(Consumption ~ Temperature, data = model.tmp)
-abline(lm.simple)
-
-acf(lm.simple$residuals)

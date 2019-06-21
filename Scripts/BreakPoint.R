@@ -35,9 +35,9 @@ for(k in 1:n){
       par(mfrow=c(1,2),oma = c(0, 0, 2, 0))
       colour <- rep(Wcol[2],length(t))
       colour[t>=alpha[j]]<-Wcol[4]
-      plot(t,q,xlab=expression(paste('Temperature [',degree, 'C]')),ylab='Consumption [kWh]',col=colour)#,xlim=c(5,25))
+      plot(t,q,xlab=expression(paste('Temperature [',degree, 'C]')),ylab='Daily consumption [kWh]',col=colour)#,xlim=c(5,25))
       abline(h=tmp.mu+tmp.sd*1.96,col=Wcol[1])
-      mtext(paste("Breakpoint for house ",k), outer = TRUE, cex = 1.5)
+      mtext(paste("Threshold for house ",k), outer = TRUE, cex = 1.5)
       abline(v=alpha[j],col=Wcol[3])
       colour <- rep(Wcol[2],length(pct.in.sd))
       colour[pct.in.sd <= 0.8] <- Wcol[4]
@@ -53,7 +53,7 @@ for(k in 1:n){
 alpha<-alpha[alpha>0]
 
 par(mfrow=c(1,1))
-hist(alpha,main = 'Histogram of the breakpoint values',xlab = 'Temperature')
+hist(alpha,main = 'Histogram of the threshold values',xlab = expression(paste('Temperature [',degree, 'C]')))
 
 break.point<-round(as.numeric(quantile(alpha, .25)))
 # Breakpointet bestemmes som 25% kvartilet af alphaerne.
