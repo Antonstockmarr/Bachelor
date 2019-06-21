@@ -72,16 +72,15 @@ Presumably, the BBR data has influence on the heat consumption, in particular th
 \noindent A single house stands out with a consumption that is remarkably higher than the rest. The house is a simple appartment of $61 m^2$ build in 1920. Other than that, there seems to be a vague tendency that older buildings have a higher consumption. The buildings from after $1990$ all have relatively low consumption, while the older buildings have a higher spread. For houses that have been reconstructed, the reconstruction year has been used instead of the construction year. So some houses in the plot might in fact be older than it is shown here. The nature of the reconstructions is not known, but since they are extensive enough to be registered in BBR, it is assumed to have an effect on the consumption of that house.
 
 \section{Multicollinearity}
-Multicollinearity occurs when two or more explanatory variables are highly correlated. Multicollinearity can be investigated by calculating the correlation.\\
+Multicollinearity occurs when two or more explanatory variables are highly correlated. Multicollinearity can be investigated by calculating the correlation between two attributes (\cite{Multicollinearity}).\\
 
-\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936, hence it is decided to remove \texttt{Dewpoint}. Furthermore, it is assumed that \texttt{Radiation} is a replacement for the attributes describing the sun, namely \texttt{Condition} and \texttt{SunHour}. This is the basis for expecting a correlation between the radiation and the sun attributes. Figure \ref{fig: gg_cor} shows a plot of the correlation matrix between the abovementioned attributes.
+\noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936 which also can be seen in \cref{fig: gg_cor}, hence it is decided to remove \texttt{Dewpoint}. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/gg_cor.pdf}
     \caption{Scatterplot showing the correlations between the thwo attributes \texttt{Temperature}, \texttt{DewPoint}. It is clearly seen that the temperature and dew point are highly correlated}
     \label{fig: gg_cor}
 \end{figure}
-\noindent There is a high correlation between \texttt{Radiation} and \texttt{SunHour} at 0.955, thus \texttt{SunHour} is removed from the weather data set. \\
  
 \noindent The complete data set used for modelling in Chapter \ref{chap: daily} can be seen in \cref{tab: modeldata}.
 \begin{table}[H]
