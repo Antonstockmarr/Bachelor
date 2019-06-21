@@ -14,7 +14,6 @@ AnalyzeConsumption(houselist=1:n,makeplot=TRUE)
 # Getting data from all houses without plotting
 result <- AnalyzeConsumption(houselist=1:n,makeplot=FALSE)
 
-
 # Plotting min inactive consumption
 minQ = which(result[,3]==min(result[,3]))
 AnalyzeConsumption(houselist = minQ,makeplot = TRUE)
@@ -23,19 +22,15 @@ AnalyzeConsumption(houselist = minQ,makeplot = TRUE)
 maxQ = which(result[,3]==max(result[,3]))
 AnalyzeConsumption(houselist = maxQ,makeplot = TRUE)
 
-
 # Plotting flow for the minQ house
 plot(data[[minQ]]$Volume)
 
-
 plot(data[[1]]$Flow, data[[1]]$Volume)
-
 
 # 15 and 36  have periods with 0 volume
 plot(data[[15]]$Volume)
 plot(data[[36]]$Volume)
 plot(data[[42]]$Volume)
-
 
 k=20
 plot(data[[k]]$Energy-(4.186/3.6)*data[[k]]$Volume*(data[[k]]$CoolingDegree))

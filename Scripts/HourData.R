@@ -4,6 +4,7 @@ HourData <- vector("list",length=n)
 rotate <- function(x) t(apply(x, 2, rev))
 
 if(FALSE){
+# This should only be run once, then saved into a file.
 for (i in 1:n)
 {
   print(i)
@@ -94,7 +95,7 @@ abline(h=c(seq(1,0, length=24)+1/48),lwd=0.75)
 
 mcons_summer <-apply(Houravg,1,mean)
 
-#Finns plot
+# Finns plot
 ttavg<-tt[,1]
 for(i in 2:n){
   ttavg<-ttavg+tt[,i]

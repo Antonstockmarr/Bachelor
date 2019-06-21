@@ -3,7 +3,6 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 par(mar=c(3,3,2,1), mgp=c(2,0.7,0),mfrow=c(1,1),xpd=FALSE)
 
 source("data.R")
-source("stepP.R")
 source("BSplines.R")
 source("CirclePlot.R")
 

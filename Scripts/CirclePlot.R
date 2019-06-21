@@ -1,4 +1,6 @@
 CirclePlot <- function(WindPred){
+  # Making the costumer wind dependency plot.
+  # Input: Prediction for each degree, with 33,3% prediction interval
   WindPred<-WindPred-min(WindPred)
   x<- -cos((1:360)/180*pi+pi/2)*WindPred$fit
   y<- sin((1:360)/180*pi+pi/2)*WindPred$fit

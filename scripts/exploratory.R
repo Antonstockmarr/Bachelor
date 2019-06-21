@@ -8,7 +8,7 @@ library(ggplot2)
 library(gridExtra)
 library(tidyverse)
 library(grid)
-
+library(GGally)
 
 # Watts colors
 Wcol=c(1,rgb(132,202,41,maxColorValue = 255),rgb(231,176,59,maxColorValue = 255),rgb(229,56,50,maxColorValue = 255))
@@ -34,13 +34,13 @@ day.plot.flot <- ggplot(data = day.data[[55]], mapping = aes(Date, (CoolingDegre
 grid.arrange(avg.plot1, day.plot.gak, day.plot.flot, nrow = 3)
 
 # Daily consumption for the n houses
-for (i in 1:n) {
-  if (length(day.data[[i]]$Flow) > 365) {
-    print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume),color=Holiday)) + geom_point() +
-            ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [days]") + 
-            ylab("Average consumption [kWh]"))
-  }
-}
+# for (i in 1:n) {
+#   if (length(day.data[[i]]$Flow) > 365) {
+#     print(ggplot(data = day.data[[i]], mapping = aes(Date, (CoolingDegree*Volume))) + geom_point() +
+#             ggtitle(paste("Daily consumption for house ", i)) + xlab("Time [days]") + 
+#             ylab("Average consumption [kWh]"))
+#   }
+# }
 
 
 # Pairs plots -------------------------------------------------------------
