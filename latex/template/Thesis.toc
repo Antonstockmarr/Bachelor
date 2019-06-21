@@ -92,28 +92,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {6}Discussion}{67}{chapter.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Future work}{68}{section.6.1}% 
+\contentsline {section}{\numberline {6.1}Future work}{69}{section.6.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {7}Conclusion}{71}{chapter.7}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {appendix}{\chapternumberline {A}Tables}{74}{appendix.A}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{74}{section.A.1}% 
+\contentsline {section}{\numberline {A.1}Estimates and test of the simple linear regression model}{75}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{78}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Estimates and test of the multiple linear regression model}{75}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{78}{subsection.A.2.1}% 
+\contentsline {subsection}{\numberline {A.2.1}Significance of parameters for full model}{75}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{78}{section.A.3}% 
+\contentsline {section}{\numberline {A.3}Tests of residuals from multiple linear regression model}{75}{section.A.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{78}{subsection.A.3.1}% 
+\contentsline {subsection}{\numberline {A.3.1}Significance of parameters for general regression model}{75}{subsection.A.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {appendix}{\chapternumberline {B}Figures}{83}{appendix.B}% 
+\contentsline {section}{\numberline {A.4}Results from models of hourly consumption}{76}{section.A.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliography}{89}{appendix*.79}% 
+\contentsline {appendix}{\chapternumberline {B}Figures}{85}{appendix.B}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Books and papers}{89}{section*.81}% 
+\contentsline {chapter}{Bibliography}{91}{appendix*.79}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Websites}{89}{section*.83}% 
+\contentsline {section}{Books and papers}{91}{section*.81}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{R-packages}{90}{section*.85}% 
+\contentsline {section}{Websites}{91}{section*.83}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{R-packages}{92}{section*.85}% 

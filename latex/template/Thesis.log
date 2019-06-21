@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 19:42
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 19:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2086,27 +2086,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
-
-
-Underfull \vbox (badness 5302) has occurred while \output is active []
-
- [67
-
-
-
-]
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \vbox (badness 2237) has occurred while \output is active []
+
+ [67
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
@@ -2123,14 +2125,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-) [69]
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+[69]) [70]
 \openout2 = `chapters/Conclusion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex [70
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex) [71
 
 
 
-]) [71]
+]
 \openout2 = `appendices/AnAppendix.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [72
@@ -2138,79 +2152,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
 
 ]
+Overfull \hbox (30.64294pt too wide) in paragraph at lines 101--150
+ [][] 
+ []
+
+
+Overfull \hbox (11.04pt too wide) in paragraph at lines 245--294
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 49.19998pt on input line 296.
+
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 299--332
+ [][] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [73]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [74]
-Overfull \hbox (30.64294pt too wide) in paragraph at lines 103--152
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (69.51717pt too high) has occurred while \output is active []
 
  [75]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 49.19998pt on input line 298.
-
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
- [][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [76] [77]
-Overfull \vbox (317.78473pt too high) has occurred while \output is active []
-
- [78] [79] [80]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 338.
-
-
-Overfull \hbox (15.29007pt too wide) in paragraph at lines 339--345
+Overfull \hbox (15.29007pt too wide) in paragraph at lines 338--344
 [][] 
  []
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 349.
-
-
-Overfull \hbox (11.96007pt too wide) in paragraph at lines 350--356
+Overfull \hbox (11.96007pt too wide) in paragraph at lines 348--354
 [][] 
  []
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 360.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 377.
-
-[81] [82
+[76] [77] [78] [79] [80] [81] [82] [83] [84
 
 ]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 405--406
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 401--402
  [][] 
  []
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 412--413
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 407--408
  [][] 
  []
 
@@ -2218,7 +2209,7 @@ File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [83] [84] [85] [86] [87] [88
+) [85] [86] [87] [88] [89] [90
 
 
 ]
@@ -2264,7 +2255,7 @@ Package biblatex Warning: No driver for entry type 'url'.
 Package biblatex Warning: No driver for entry type 'url'.
 (biblatex)                Using fallback driver on input line 44.
 
-[89
+[91
 
 ]
 
@@ -2297,7 +2288,7 @@ Package biblatex Warning: No driver for entry type 'package'.
 (biblatex)                Using fallback driver on input line 45.
 
 No complaints by nag.
-[90]
+[92]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
@@ -2309,7 +2300,7 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: DCB51878B3A3CE18A4CDC39974F3FC37.
+(rerunfilecheck)             Checksum: 4DAD7180B07C5D358B133F3B45C7B340.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2322,10 +2313,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
 Here is how much of TeX's memory you used:
  51304 strings out of 492933
  987260 string characters out of 6133145
- 1815774 words of memory out of 5000000
+ 1837895 words of memory out of 5000000
  54517 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2750b,8005s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (100 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (102 pages).
