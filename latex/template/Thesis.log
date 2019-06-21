@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 16:17
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 16:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -388,22 +388,22 @@ Package verse [2008/07/23] emulated by memoir.
 )
 
 ******************************************************
-Stock height and width: 845.04684pt by 597.50787pt
+Stock height and width: 711.3189pt by 500.7685pt
 Top and edge trims: 0pt and 0pt
-Page height and width: 845.04684pt by 597.50787pt
-Text height and width: 634pt by 448pt
-Spine and edge margins: 89.98108pt and 59.39679pt
-Upper and lower margins: 113.81102pt and 97.23582pt
-Headheight and headsep: 12pt and 24pt
-Footskip: 24pt
+Page height and width: 711.3189pt by 500.7685pt
+Text height and width: 526pt by 369pt
+Spine and edge margins: 73.97716pt and 56.9055pt
+Upper and lower margins: 99.58464pt and 85.73425pt
+Headheight and headsep: 22.76219pt and 19.91692pt
+Footskip: 28.45274pt
 Columnsep and columnseprule: 10pt and 0pt
-Marginparsep and marginparwidth: 17pt and 51pt
-Sidecapsep and sidecapwidth: 7pt and 117pt
-Sidebarhsep and sidebarwidth: 7pt and 117pt
+Marginparsep and marginparwidth: 5.69054pt and 45.52443pt
+Sidecapsep and sidecapwidth: 7pt and 59pt
+Sidebarhsep and sidebarwidth: 7pt and 59pt
 Sidebarvsep and sidebartopsep: 12pt and 0pt
-Sidebarheight: 596.39996pt
-Sidefoothsep and sidefootwidth: 7pt and 117pt
-Sidefootvsep and sidefootheight: 12pt and 596.39996pt
+Sidebarheight: 464.39996pt
+Sidefoothsep and sidefootwidth: 7pt and 59pt
+Sidefootvsep and sidefootheight: 12pt and 464.39996pt
 ******************************************************
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
@@ -1697,15 +1697,15 @@ LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 11.52003pt on input line 22.
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 9.60004pt on input line 22.
-
-Underfull \hbox (badness 1845) in paragraph at lines 22--22
-\TU/texgyreadventor(0)/m/n/14.4 Advisors: Lasse Engbo Christiansen and
- []
-
 File: graphics/DTU-logo-CMYK.pdf Graphic file (type pdf)
 <use graphics/DTU-logo-CMYK.pdf>
 File: graphics/SEAS-logo-square-1.png Graphic file (type bmp)
 <graphics/SEAS-logo-square-1.png>
+
+Overfull \hbox (5.57422pt too wide) in paragraph at lines 12--26
+\TU/texgyreadventor(0)/m/n/24.88 readings of electricity, water and heat con-
+ []
+
 ) [1
 
 
@@ -1811,17 +1811,17 @@ LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 13.82405pt on input line 8.
 File: graphics/../../../figures/Watts.png Graphic file (type bmp)
 <graphics/../../../figures/Watts.png>
+[1
 
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
 
-) [1
-
-
-
-
-] [2]
+) [2]
 \openout2 = `chapters/Data.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.tex
@@ -1830,7 +1830,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--16
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
@@ -1839,17 +1839,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--16
 
 
 ]
-Underfull \vbox (badness 3657) has occurred while \output is active []
+Overfull \hbox (21.45657pt too wide) in paragraph at lines 41--60
+ [][] 
+ []
 
- [4])
-Underfull \vbox (badness 3601) has occurred while \output is active []
 
- [5] [6]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
+Underfull \vbox (badness 1303) has occurred while \output is active []
+
+ [5]) [6]
 \openout2 = `chapters/Exploratory.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex
 File: graphics/../../../figures/daily_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/daily_cons.pdf>
+File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
+<use graphics/../../../figures/housepairs.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1858,24 +1865,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
-<use graphics/../../../figures/housepairs.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (123.76228pt too high) has occurred while \output is active []
 
  [8]
 File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weatherpairs.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
+ [9] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
@@ -1890,7 +1890,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--76
 File: graphics/../../../figures/gg_cor.pdf Graphic file (type pdf)
 <use graphics/../../../figures/gg_cor.pdf>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (37.79005pt too wide) in paragraph at lines 88--105
+ [][] 
+ []
+
+
+Underfull \vbox (badness 2521) has occurred while \output is active []
 
  [12] [13]
 File: graphics/../../../figures/Consumption_PW.eps Graphic file (type eps)
@@ -1898,94 +1903,89 @@ File: graphics/../../../figures/Consumption_PW.eps Graphic file (type eps)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
+ [14] [15]
 File: graphics/../../../figures/breakpoint_55.eps Graphic file (type eps)
 <graphics/../../../figures/breakpoint_55.eps>
 File: graphics/../../../figures/breakpoint_18.eps Graphic file (type eps)
 <graphics/../../../figures/breakpoint_18.eps>
- [15]
 File: graphics/../../../figures/AlphaHist.eps Graphic file (type eps)
 <graphics/../../../figures/AlphaHist.eps>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
-<graphics/../../../figures/class_breakpoint.eps>
-)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17] [18]
+ [17]
+File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
+<graphics/../../../figures/class_breakpoint.eps>
+) [18]
 \openout2 = `chapters/Statistical.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
-
- []
-
-[19
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [19
 
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-[20]
 File: graphics/../../../figures/simple_lm18.eps Graphic file (type eps)
 <graphics/../../../figures/simple_lm18.eps>
 File: graphics/../../../figures/simple_lm55.eps Graphic file (type eps)
 <graphics/../../../figures/simple_lm55.eps>
+[21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [22]
 Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
+[23]
 File: graphics/../../../figures/SplineBasis.jpeg Graphic file (type bmp)
 <graphics/../../../figures/SplineBasis.jpeg>
- [22]
+ [24] [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23] [24]
+ [26]
 File: graphics/../../../figures/general_lm18L.eps Graphic file (type eps)
 <graphics/../../../figures/general_lm18L.eps>
 File: graphics/../../../figures/general_lm55L.eps Graphic file (type eps)
 <graphics/../../../figures/general_lm55L.eps>
-
-Underfull \vbox (badness 2671) has occurred while \output is active []
-
- [25]
+ [27]
 File: graphics/../../../figures/Temp_coef.eps Graphic file (type eps)
 <graphics/../../../figures/Temp_coef.eps>
 File: graphics/../../../figures/Solar_coef.eps Graphic file (type eps)
 <graphics/../../../figures/Solar_coef.eps>
+ [28]
 File: graphics/../../../figures/TestWeatherDays.eps Graphic file (type eps)
 <graphics/../../../figures/TestWeatherDays.eps>
 File: graphics/../../../figures/lmpred_55L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_55L.eps>
 File: graphics/../../../figures/lmpred_18L.eps Graphic file (type eps)
 <graphics/../../../figures/lmpred_18L.eps>
- [26]
+ [29] [30]
 Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
-[27]
 File: graphics/../../../figures/Wplot55.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot55.jpeg>
 File: graphics/../../../figures/Wplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Wplot18.jpeg>
- [28]
+[31] [32]
 Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
@@ -1996,13 +1996,13 @@ File: graphics/../../../figures/WKplot18.jpeg Graphic file (type bmp)
 <graphics/../../../figures/WKplot18.jpeg>
 File: graphics/../../../figures/Kplot55.eps Graphic file (type eps)
 <graphics/../../../figures/Kplot55.eps>
-[29]
+[33] [34] [35] [36]
 File: graphics/../../../figures/Kplot18.eps Graphic file (type eps)
 <graphics/../../../figures/Kplot18.eps>
-) [30] [31] [32] [33] [34] [35] [36] [37]
+) [37] [38] [39]
 \openout2 = `chapters/HourModels.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex [38
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.tex [40
 
 
 
@@ -2014,21 +2014,22 @@ File: graphics/../../../figures/Heatmap_winter.eps Graphic file (type eps)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39] [40]
+ [41] [42] [43]
 File: graphics/../../../figures/HourDistribution.eps Graphic file (type eps)
 <graphics/../../../figures/HourDistribution.eps>
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
- [41] [42] [43]
+ [44] [45] [46] [47]
 File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1.pdf>
 File: graphics/../../../figures/arimax/Stationarity_model1_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Stationarity_model1_18.pdf>
+ [48] [49] [50]
 File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_55.pdf>
 File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/Roots_18.pdf>
- [44] [45] [46] [47] [48]
+ [51] [52] [53]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 145.
@@ -2040,9 +2041,11 @@ LaTeX Warning: No positions in optional float specifier.
 File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_short.pdf>
 
-Underfull \vbox (badness 4805) has occurred while \output is active []
+Overfull \hbox (1.56888pt too wide) detected at line 180
+[]
+ []
 
- [49] [50]
+[54] [55]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 183.
@@ -2055,41 +2058,42 @@ File: graphics/../../../figures/arimax/arima1_pred_55.eps Graphic file (type eps
 <graphics/../../../figures/arimax/arima1_pred_55.eps>
 File: graphics/../../../figures/arimax/arima1_pred_18.eps Graphic file (type eps)
 <graphics/../../../figures/arimax/arima1_pred_18.eps>
-[51] [52] [53]
+[56] [57] [58]
 File: graphics/../../../figures/arimax/arima2_pred_55.eps Graphic file (type eps)
 <graphics/../../../figures/arimax/arima2_pred_55.eps>
 File: graphics/../../../figures/arimax/arima2_pred_18.eps Graphic file (type eps)
 <graphics/../../../figures/arimax/arima2_pred_18.eps>
-
-Underfull \vbox (badness 3078) has occurred while \output is active []
-
- [54]
 File: graphics/../../../figures/Pred14days6.eps Graphic file (type eps)
 <graphics/../../../figures/Pred14days6.eps>
+ [59] [60]
 File: graphics/../../../figures/AppHour6.eps Graphic file (type eps)
 <graphics/../../../figures/AppHour6.eps>
- [55] [56]
+ [61]
 Underfull \hbox (badness 10000) in paragraph at lines 286--288
 
  []
 
-
+[62]
 Underfull \hbox (badness 10000) in paragraph at lines 294--296
 
  []
 
-[57]
+[63]
 File: graphics/../../../figures/StepResponse.eps Graphic file (type eps)
 <graphics/../../../figures/StepResponse.eps>
- [58]
+ [64]
 File: graphics/../../../figures/MarimaHCL.eps Graphic file (type eps)
 <graphics/../../../figures/MarimaHCL.eps>
 File: graphics/../../../figures/MarimaHCLF.eps Graphic file (type eps)
 <graphics/../../../figures/MarimaHCLF.eps>
-) [59] [60]
+) [65] [66] [67]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [68
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -2099,6 +2103,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
+
+Underfull \vbox (badness 5302) has occurred while \output is active []
+
+ [69]
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
@@ -2107,13 +2115,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [61
-
-
-
-]
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
@@ -2123,6 +2124,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
+[70]
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
@@ -2130,42 +2132,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-) [62]
+) [71]
 \openout2 = `chapters/Conclusion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex) [63
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex [72
 
 
 
-]
+]) [73]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [64
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [74
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
-Overfull \hbox (37.20123pt too wide) in paragraph at lines 103--152
+ [75]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76]
+Overfull \hbox (30.64294pt too wide) in paragraph at lines 103--152
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [66] [67]
+ [77]
+Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 49.19998pt on input line 298.
+
+
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 301--334
+ [][] 
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68] [69] [70]
+ [78] [79]
+Overfull \vbox (317.78473pt too high) has occurred while \output is active []
+
+ [80] [81] [82]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 338.
 
 
+Overfull \hbox (15.29007pt too wide) in paragraph at lines 339--345
+[][] 
+ []
+
+
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 349.
+
+
+Overfull \hbox (11.96007pt too wide) in paragraph at lines 350--356
+[][] 
+ []
 
 
 LaTeX Warning: No positions in optional float specifier.
@@ -2175,18 +2206,20 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 377.
 
-[71] [72]
+[83] [84
+
+]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Overfull \hbox (2.05319pt too wide) in paragraph at lines 405--406
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 405--406
  [][] 
  []
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
-Overfull \hbox (2.05319pt too wide) in paragraph at lines 412--413
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 412--413
  [][] 
  []
 
@@ -2194,9 +2227,7 @@ File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [73
-
-] [74] [75] [76] [77] [78
+) [85] [86] [87] [88] [89] [90
 
 
 ]
@@ -2217,6 +2248,20 @@ Package biblatex Warning: No driver for entry type 'url'.
 (biblatex)                Using fallback driver on input line 44.
 
 
+Overfull \hbox (50.28pt too wide) in paragraph at lines 44--44
+[][][][][][][][] [] [][][][][][][][][][] [][] [][][][][][][][][] [] [][][][][][][][][][] [] [][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][] []
+ []
+
+
+Package biblatex Warning: No driver for entry type 'url'.
+(biblatex)                Using fallback driver on input line 44.
+
+
+Overfull \hbox (51.95215pt too wide) in paragraph at lines 44--44
+[]\TU/lmr/m/n/10 Aalborg Forsyning. \TU/lmr/m/it/10 Aalborg Forsynings hjemmeside\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][][][][][] []
+ []
+
+
 Package biblatex Warning: No driver for entry type 'url'.
 (biblatex)                Using fallback driver on input line 44.
 
@@ -2233,34 +2278,35 @@ Package biblatex Warning: No driver for entry type 'url'.
 (biblatex)                Using fallback driver on input line 44.
 
 
-Package biblatex Warning: No driver for entry type 'url'.
-(biblatex)                Using fallback driver on input line 44.
+Overfull \hbox (52.91878pt too wide) in paragraph at lines 44--44
+[]\TU/lmr/m/n/10 Wikipedia. \TU/lmr/m/it/10 Multicollinearity\TU/lmr/m/n/10 . \TU/lmr/m/sc/10 url\TU/lmr/m/n/10 : []$[][][][][] [] [] [] [][] [] [][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][][][][][][][]$[]. 
+ []
 
-
-Package biblatex Warning: No driver for entry type 'package'.
-(biblatex)                Using fallback driver on input line 45.
-
-
-Package biblatex Warning: No driver for entry type 'package'.
-(biblatex)                Using fallback driver on input line 45.
-
-
-Package biblatex Warning: No driver for entry type 'package'.
-(biblatex)                Using fallback driver on input line 45.
-
-
-Package biblatex Warning: No driver for entry type 'package'.
-(biblatex)                Using fallback driver on input line 45.
-
-
-Package biblatex Warning: No driver for entry type 'package'.
-(biblatex)                Using fallback driver on input line 45.
-
-[79
+[91
 
 ]
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
+
+Package biblatex Warning: No driver for entry type 'package'.
+(biblatex)                Using fallback driver on input line 45.
+
 No complaints by nag.
-[80]
+[92]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
@@ -2285,10 +2331,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
 Here is how much of TeX's memory you used:
  51305 strings out of 492933
  987270 string characters out of 6133145
- 1826780 words of memory out of 5000000
+ 1815773 words of memory out of 5000000
  54518 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2750b,7953s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (90 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (102 pages).

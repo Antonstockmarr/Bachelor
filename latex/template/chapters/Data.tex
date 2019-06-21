@@ -9,12 +9,12 @@ The original house and weather data include hourly observations from the period 
 \noindent Before the data was provided to this project, it had already been slightly altered. When Aalborg Forsyning, who provided the data, recieved the observations from the hardware installed in the houses of their clients, it was generally not divided into precise one hour intervals. Aalborg Forsyning interpreted the time stamps on the observations and changed them to one hour intervals. If observations were missing, an interpolation method was used to simulate the data. The exact procedure is described in \cite{interpolation}. \\
 
 
-\noindent \cref{tab: housedata} below shows the attributes from the house data set which is used to define the Heat Consumption as
+\noindent \cref{tab: housedata} below shows the attributes from the house data set. Many of the attributes are related to the energy consumption of the house. In this project the  Heat Consumption will be calculated as
 \begin{equation}
     Q = c\cdot m \cdot \Delta T,
     \label{eq: Q_heat}
 \end{equation}
-where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^{\circ}C$, $m$ is the water density in $kg$ and is calculated from the volume as $1m^3 = 1000 \ kg$ and $\Delta T$ is the cooling degree in $^{\circ}C$. In this way, the heat consumption is converted from $kJ$ to $kWh$ (since $1 \ kWh = 3600 \ kJ$) which is the desired unit for the heat consumption. 
+where $c$ is the specific heat capacity for water, which is $4.186 \ kJ/kg\cdot ^{\circ}C$, $m$ is the water density in $kg/m^3$ and is calculated from the volume as $1m^3 = 1000 \ kg$ and $\Delta T$ is the cooling degree in $^{\circ}C$. In this way, the heat consumption is converted from $kJ$ to $kWh$ (since $1 \ kWh = 3600 \ kJ$) which is the desired unit for the heat consumption. Alternatively the energy attribute could be used as the heat consumption, but since the energy attribute was not equal to the consumption calculated in Equation \ref{eq: Q_heat}, $Q$ is used to represent the consumption.
 \begin{table}[H]
     \centering
     \begin{tabular}{ll}
@@ -26,7 +26,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     EndDateTime  &  End time and date for measurements.\\
     Energy  &  Consumption in \textit{kWh}.\\
     Flow  &  Speed of the water passing through meter in \textit{$m^3/$hour}.\\
-    Volume & in $m^3$.\\
+    Volume & The total amount of water that passed through\\ &in the last hour in $m^3$.\\
     TemperatureIn  &  Temp. of the water flowing into a house in Degrees/C. \\
     TemperatureOut  & Temp. of the water flowing out of a house in Degrees/C.\\
     CoolingDegree  &  Difference between Temp.In and Temp.Out in Degrees/C. \\
@@ -53,7 +53,7 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     MeanSeaLevelPressure  & The average atmospheric pressure at mean sea level in $hPa$ \\
     DewPoint  &  The temperature to which air must be cooled to become \\ & saturated with water steam (Degrees/C)\\
     Humidity  & The amount of water steam present in the air in percent\\
-    PrecipitationProbability & The probability that some quantify precipitation will occur\\
+    PrecipitationProbability & The probability that precipitation will occur\\
     IsHistoricalEstimated & Binary variable, true if the datapoint is a prediction \\
     \hline
     \end{tabular}
@@ -72,8 +72,8 @@ where $c$ is the specific heat capacity for water which is $4.186 \ kJ/kg\cdot ^
     HouseType  &  Type of house: Apartment, house, industrial etc. \\
     TotalArea  & The total area of the house in $m^2$ \\
     Floors  & The number of floors in the house \\
-    Basement  & How many $m^2$ basement there is in the house \\
-    Attic  & How many $m^2$ attic there is in the house \\
+    Basement  & How many $m^2$ of basement there is in the house \\
+    Attic  & How many $m^2$ of attic there is in the house \\
     ConstructionYear  & The year of construction for the house  \\
     Surfaces  & The material on the surface of the outdoor walls of \\ & the house \\
     ReconstructionYear  & The year of the latest reconstruction of the house \\
