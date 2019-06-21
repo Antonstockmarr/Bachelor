@@ -20,7 +20,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Original Data}{3}{section.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Cleaning and Preparation}{4}{section.2.2}% 
+\contentsline {section}{\numberline {2.2}Cleaning and Preparation}{5}{section.2.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Missing Values}{5}{subsection.2.2.1}% 
 \defcounter {refsection}{0}\relax 
@@ -32,11 +32,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Examination of the Heat Consumption}{7}{section.3.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Weather Data}{9}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Weather Data}{8}{subsection.3.1.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}BBR Data}{10}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.2}BBR Data}{8}{subsection.3.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Multicollinearity}{12}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Multicollinearity}{11}{section.3.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Data Segmentation}{13}{section.3.3}% 
 \defcounter {refsection}{0}\relax 

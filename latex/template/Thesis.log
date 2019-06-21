@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 16:39
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 17:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1834,22 +1834,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
 
+
+Overfull \hbox (21.45657pt too wide) in paragraph at lines 41--60
+ [][] 
+ []
+
 [3
 
 
 
 ]
-Overfull \hbox (21.45657pt too wide) in paragraph at lines 41--60
- [][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4]
-Underfull \vbox (badness 1303) has occurred while \output is active []
-
- [5]) [6]
+ [4] [5]) [6]
 \openout2 = `chapters/Exploratory.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.tex
@@ -1857,6 +1854,8 @@ File: graphics/../../../figures/daily_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/daily_cons.pdf>
 File: graphics/../../../figures/housepairs.pdf Graphic file (type pdf)
 <use graphics/../../../figures/housepairs.pdf>
+File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
+<use graphics/../../../figures/weatherpairs.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1865,61 +1864,45 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Overfull \vbox (123.76228pt too high) has occurred while \output is active []
-
- [8]
-File: graphics/../../../figures/weatherpairs.pdf Graphic file (type pdf)
-<use graphics/../../../figures/weatherpairs.pdf>
 File: graphics/../../../figures/bbr_hist.pdf Graphic file (type pdf)
 <use graphics/../../../figures/bbr_hist.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+ [8]
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
+[9]
 File: graphics/../../../figures/byggeaar.eps Graphic file (type eps)
 <graphics/../../../figures/byggeaar.eps>
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
- []
+Underfull \vbox (badness 2573) has occurred while \output is active []
 
+ [10]
 File: graphics/../../../figures/gg_cor.pdf Graphic file (type pdf)
 <use graphics/../../../figures/gg_cor.pdf>
 
-Overfull \hbox (37.79005pt too wide) in paragraph at lines 88--105
+Overfull \hbox (8.14005pt too wide) in paragraph at lines 84--101
  [][] 
  []
 
-
-Underfull \vbox (badness 2521) has occurred while \output is active []
-
- [12] [13]
+[11] [12]
 File: graphics/../../../figures/Consumption_PW.eps Graphic file (type eps)
 <graphics/../../../figures/Consumption_PW.eps>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14] [15]
+ [13] [14]
 File: graphics/../../../figures/breakpoint_55.eps Graphic file (type eps)
 <graphics/../../../figures/breakpoint_55.eps>
 File: graphics/../../../figures/breakpoint_18.eps Graphic file (type eps)
 <graphics/../../../figures/breakpoint_18.eps>
 File: graphics/../../../figures/AlphaHist.eps Graphic file (type eps)
 <graphics/../../../figures/AlphaHist.eps>
+File: graphics/../../../figures/class_breakpoint.pdf Graphic file (type pdf)
+<use graphics/../../../figures/class_breakpoint.pdf>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (12.58125pt too wide) in paragraph at lines 155--156
+ [][] 
+ []
 
- [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
-<graphics/../../../figures/class_breakpoint.eps>
-) [18]
+) [15] [16] [17] [18]
 \openout2 = `chapters/Statistical.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.tex [19
@@ -2329,10 +2312,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51305 strings out of 492933
- 987270 string characters out of 6133145
- 1815773 words of memory out of 5000000
- 54518 multiletter control sequences out of 15000+600000
+ 51306 strings out of 492933
+ 987332 string characters out of 6133145
+ 1815775 words of memory out of 5000000
+ 54519 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2750b,7953s stack positions out of 5000i,500n,10000p,200000b,80000s
