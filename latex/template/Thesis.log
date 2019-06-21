@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 19:50
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 20:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1574,20 +1574,7 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux
-
-LaTeX Warning: Label `fig:arima1_pred_55' multiply defined.
-
-
-LaTeX Warning: Label `fig:arima1_pred_55@cref' multiply defined.
-
-
-LaTeX Warning: Label `fig:arima1_pred_18' multiply defined.
-
-
-LaTeX Warning: Label `fig:arima1_pred_18@cref' multiply defined.
-
-) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
+) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.aux (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/titlepage.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/prefrontmatter/colophon.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Summary.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Resumé.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Introduction.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Data.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Exploratory.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Statistical.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/HourModels.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.aux) (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -2008,39 +1995,32 @@ File: graphics/../../../figures/HourDistribution.eps Graphic file (type eps)
 File: graphics/../../../figures/Season_distribution.jpeg Graphic file (type bmp)
 <graphics/../../../figures/Season_distribution.jpeg>
  [44] [45] [46]
-File: graphics/../../../figures/arimax/Stationarity_model1.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/Stationarity_model1.pdf>
-File: graphics/../../../figures/arimax/Stationarity_model1_18.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/Stationarity_model1_18.pdf>
+File: graphics/../../../figures/arimax/Stationarity_model1.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/Stationarity_model1.eps>
+File: graphics/../../../figures/arimax/Stationarity_model1_18.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/Stationarity_model1_18.eps>
  [47]
-File: graphics/../../../figures/arimax/Roots_55.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/Roots_55.pdf>
-File: graphics/../../../figures/arimax/Roots_18.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/Roots_18.pdf>
- [48] [49] [50] [51] [52]
+Underfull \vbox (badness 2134) has occurred while \output is active []
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 139.
+ [48]
+File: graphics/../../../figures/arimax/Roots_55.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/Roots_55.eps>
+File: graphics/../../../figures/arimax/Roots_18.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/Roots_18.eps>
+ [49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 151.
-
-File: graphics/../../../figures/arimax/ACF_55_short.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/ACF_55_short.pdf>
-
-Overfull \hbox (1.56888pt too wide) detected at line 174
+ [50]
+File: graphics/../../../figures/arimax/ACF_55_short.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/ACF_55_short.eps>
+ [51]
+Overfull \hbox (1.56888pt too wide) detected at line 176
 []
  []
 
-[53] [54]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 177.
-
-File: graphics/../../../figures/arimax/ACF_18_short.pdf Graphic file (type pdf)
-<use graphics/../../../figures/arimax/ACF_18_short.pdf>
-[55] [56]
+[52]
+File: graphics/../../../figures/arimax/ACF_18_short.eps Graphic file (type eps)
+<graphics/../../../figures/arimax/ACF_18_short.eps>
 File: graphics/../../../figures/TestWeatherHour.eps Graphic file (type eps)
 <graphics/../../../figures/TestWeatherHour.eps>
 File: graphics/../../../figures/arimax/arima1_pred_55.eps Graphic file (type eps)
@@ -2051,37 +2031,47 @@ File: graphics/../../../figures/arimax/arima2_pred_55.eps Graphic file (type eps
 <graphics/../../../figures/arimax/arima2_pred_55.eps>
 File: graphics/../../../figures/arimax/arima2_pred_18.eps Graphic file (type eps)
 <graphics/../../../figures/arimax/arima2_pred_18.eps>
+ [53]
 File: graphics/../../../figures/Pred14days6.eps Graphic file (type eps)
 <graphics/../../../figures/Pred14days6.eps>
 
-Underfull \vbox (badness 6725) has occurred while \output is active []
+Underfull \vbox (badness 5908) has occurred while \output is active []
 
- [57] [58] [59]
+ [54]
 File: graphics/../../../figures/AppHour6.eps Graphic file (type eps)
 <graphics/../../../figures/AppHour6.eps>
- [60] [61]
-Underfull \hbox (badness 10000) in paragraph at lines 280--282
+ [55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--290
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
 
  []
 
-[62]
+[57]
 File: graphics/../../../figures/StepResponse.eps Graphic file (type eps)
 <graphics/../../../figures/StepResponse.eps>
+ [58] [59]
 File: graphics/../../../figures/MarimaHCL.eps Graphic file (type eps)
 <graphics/../../../figures/MarimaHCL.eps>
- [63]
 File: graphics/../../../figures/MarimaHCLF.eps Graphic file (type eps)
 <graphics/../../../figures/MarimaHCLF.eps>
-) [64] [65] [66]
+) [60] [61] [62] [63]
 \openout2 = `chapters/Discussion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Discussion.tex [64
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
@@ -2091,18 +2081,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 
+Underfull \vbox (badness 2237) has occurred while \output is active []
+
+ [65]
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
 
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [67
-
-
-
-]
 Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
@@ -2112,42 +2098,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
+[66]
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-[68]
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
-
- []
-
-[69]) [70]
+[67]) [68]
 \openout2 = `chapters/Conclusion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex) [71
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex) [69
 
 
 
 ]
 \openout2 = `appendices/AnAppendix.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [72
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/appendices/AnAppendix.tex [70
 
 
 
@@ -2172,13 +2153,13 @@ Overfull \hbox (1.34999pt too wide) in paragraph at lines 299--332
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
+ [71] [72]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [74]
+ [73]
 Overfull \vbox (69.51717pt too high) has occurred while \output is active []
 
- [75]
+ [74]
 Overfull \hbox (15.29007pt too wide) in paragraph at lines 338--344
 [][] 
  []
@@ -2188,7 +2169,7 @@ Overfull \hbox (11.96007pt too wide) in paragraph at lines 348--354
 [][] 
  []
 
-[76] [77] [78] [79] [80] [81] [82] [83] [84
+[75] [76] [77] [78] [79] [80] [81] [82
 
 ]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
@@ -2209,7 +2190,7 @@ File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [85] [86] [87] [88] [89] [90
+) [83] [84] [85] [86] [87] [88
 
 
 ]
@@ -2255,7 +2236,7 @@ Package biblatex Warning: No driver for entry type 'url'.
 Package biblatex Warning: No driver for entry type 'url'.
 (biblatex)                Using fallback driver on input line 44.
 
-[91
+[89
 
 ]
 
@@ -2288,7 +2269,7 @@ Package biblatex Warning: No driver for entry type 'package'.
 (biblatex)                Using fallback driver on input line 45.
 
 No complaints by nag.
-[92]
+[90]
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
@@ -2300,23 +2281,19 @@ Package cleveref Info: loaded `english' language definitions on input line 25.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4DAD7180B07C5D358B133F3B45C7B340.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: CFAA14062A842C06116FAC9673761F7A.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51304 strings out of 492933
- 987260 string characters out of 6133145
- 1837895 words of memory out of 5000000
- 54517 multiletter control sequences out of 15000+600000
+ 51302 strings out of 492933
+ 986951 string characters out of 6133145
+ 1839469 words of memory out of 5000000
+ 54515 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2750b,8005s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (102 pages).
+Output written on /Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/Thesis.pdf (100 pages).
