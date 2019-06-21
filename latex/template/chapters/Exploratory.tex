@@ -10,23 +10,19 @@ To get an overview of the heat consumption for each house the daily average heat
     \caption{Daily consumption during a year (2018). The top plot shows the average consumption for all the houses. The plot in the middle shows an example of a house that deviates from the trend and the last plot shows a house that follows the trend.}
     \label{fig: daily_cons}
 \end{figure}
+
 \noindent The remaining attributes from the house data is examined through a scatterplot shown in \cref{fig: housepairs} and \cref{fig: house_attri} in order to find possible linear relationships with the consumption. There are clear linear relationships between the consumption and the flow, the volume, the cooling degree and the temperature going in. It is expected that the consumption depends linearly on the volume and cooling degree, cf. the main equation given in \cref{eq: Q_heat}. The relationships between consumption and the flow and volume are quite similar which is in line with the description of the two attributes given in \cref{tab: housedata}. It is also seen that the temperature of the water coming out of the system depends on how much is used. So if the return water is quite hot, 
 the house has not fully utilized the heat for the heat consumption. 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/housepairs.pdf}
     \caption{Scatterplots of the average consumption for all houses and relevant house attributes. Each point represents a day. There are clear linearly dependencies between \texttt{Consumption} and e.g. \texttt{Flow}.} 
     \label{fig: housepairs}
 \end{figure}
 
-%\noindent Figure \ref{fig: house_attri} clearly shows that the consumption is close to 0 in the summer period.  
-%\textcolor{red}{Pairs af gennemsnitlig house data - vi ser en masse sammenhænge mellem de forskellige attributer. Vi kan se at CoolingDegree skal være over 25, før at varmeforbruget stiger.}
-%\textcolor{red}{CoolingDegree begynder at stige et stykke tid før flowet stiger, hvilket hænger godt sammen med at når man fx tænder en radiator så stiger CoolingDegree. De efterfølgende radiatorer man tænder øger volumnet.} \\
-
-%\textcolor{blue}{\noindent It is already known that there is a dependency between the heat consumption and the time of the year. During the summer period there is almost no consumption. The consumption in this period is probably mostly tap water. The next important thing is the relation between temperature and consumption. High temperatures tend to imply a higher consumption. And the reason why the consumption depends so clearly on the time of year can be assumed to that certain periods have similar temperature levels. It can also be seen that there is a correlation between dewpoint and consumption. This can be due to the correlation between dewpoint and temperature.}
 \subsection{Weather Data}
 The weather data is also examined through scatterplots given in \cref{fig: weatherpairs} and \cref{fig: weather_cons} to detect dependencies between the average consumption of the houses and the weather attributes. It is already known that the outside temperature has a significant influence on the consumption which is in line with the linearly relationship between the temperature and the consumption in \cref{fig: weatherpairs}. Furthermore, consumption is influenced by the dew point which is probably explained by the linear relationship between \texttt{Temperature} and \texttt{DewPoint} illustrated in \cref{fig: weather_cons}. The scatterplots show that the consumption overall is independent of the attributes \texttt{WindSpeed}, \texttt{WindDirection} and \texttt{MeanSeaLevelPressure}. 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/weatherpairs.pdf}
     \caption{Scatterplots of the average consumption for all houses and relevant weather attributes. Each point represents a day. There are clear linearly dependencies between \texttt{Consumption} and \texttt{Temperature}, as was expected.}
@@ -35,7 +31,7 @@ The weather data is also examined through scatterplots given in \cref{fig: weath
 
 \subsection{BBR Data}
 Presumably, the BBR data has influence on the heat consumption, in particular the total area and the year of construction. \cref{fig: bbr_hist} illustrates the house specifications of all houses focusing on the type of house, the total area, the year of construction and reconstruction. 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=1.\textwidth]{../../../figures/bbr_hist.pdf}
     \caption{Details of the houses from BBR data focusing on the type of house, the total area in $m^2$, the year of construction and reconstruction respectively.}
@@ -63,19 +59,19 @@ Presumably, the BBR data has influence on the heat consumption, in particular th
 \noindent The areas of the houses are somewhat similar, they are of the same house type and their ages are close to each other. However, house 18 has an odd behaviour, which will be evident in the later results. \\
 
 \noindent The average of the heat consumption for each house is found for the winter period, which is defined as the days with temperatures below 12 degrees. How this threshold was determined is described in the segmentation section below. By dividing the average consumption with the total area of the house the consumption pr. $m^2$ is calculated. Figure \ref{fig: byggeaar} shows the year of construction and the consumption for each of the houses. The year of construction is here determined by either the year of construction or the year of the latest reconstruction of a house. 
-\begin{figure}[H]
+\begin{figure}
     \centering
-    \includegraphics[width=.8\textwidth]{../../../figures/byggeaar.eps}
+    \includegraphics[width=.75\textwidth]{../../../figures/byggeaar.eps}
     \caption{Plot showing the year of construction and the average consumption pr. $m^2$ for each house. It is seen that there is a tendency that the later a house is built or reconstructed, the lower is the consumption.}
     \label{fig: byggeaar}
 \end{figure}
 \noindent A single house stands out with a consumption that is remarkably higher than the rest. The house is a simple appartment of $61 m^2$ build in 1920. Other than that, there seems to be a vague tendency that older buildings have a higher consumption. The buildings from after $1990$ all have relatively low consumption, while the older buildings have a higher spread. For houses that have been reconstructed, the reconstruction year has been used instead of the construction year. So some houses in the plot might in fact be older than it is shown here. The nature of the reconstructions is not known, but since they are extensive enough to be registered in BBR, it is assumed to have an effect on the consumption of that house.
 
 \section{Multicollinearity}
-Multicollinearity occurs when two or more explanatory variables are highly correlated. Multicollinearity can be investigated by calculating the correlation between two attributes (\cite{Multicollinearity}).\\
+Multicollinearity occurs when two or more explanatory variables are highly correlated. Multicollinearity can be investigated by calculating the correlation between two attributes (\cite{Multicollinearity}).
 
 \noindent Figure \ref{fig: weather_cons} clearly shows that there is a high correlation between \texttt{Temperature} and \texttt{Dewpoint}. The exact correlation between the two attributes is calculated at 0.936 which also can be seen in \cref{fig: gg_cor}, hence it is decided to remove \texttt{Dewpoint}. 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/gg_cor.pdf}
     \caption{Scatterplot showing the correlations between the thwo attributes \texttt{Temperature}, \texttt{DewPoint}. It is clearly seen that the temperature and dew point are highly correlated}
@@ -83,7 +79,7 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
 \end{figure}
  
 \noindent The complete data set used for modelling in Chapter \ref{chap: daily} can be seen in \cref{tab: modeldata}.
-\begin{table}[H]
+\begin{table}[ht]
     \centering
     \begin{tabular}{ll}
      \hline
@@ -94,7 +90,7 @@ Multicollinearity occurs when two or more explanatory variables are highly corre
     Temperature  &  Temperature outside in Degrees/C \\
     WindSpeed  &  In $m/s$\\ 
     WindDirection  &  In degrees\\
-    Condition  & The condition of the weather given in integers described in \cite{condition}\\
+    Condition  & The condition of the weather given in integers described \\ & in \cite{condition}\\
     MeanSeaLevelPressure & Avg. atmospheric pressure at mean sea level in $hPa$.\\
     PrecipitationProbability & Measure of the probability that precipitation will occur. \\
     Observation & The number of observations for each day for each house.\\
@@ -111,6 +107,12 @@ All the models used in this project assume that there is a linear relationship b
 there is consumption in warm periods, it is likely to be tap water consumption and not heating.
 
 \noindent To minimize the effect of tap water consumption this section will explore different ways of extracting the period where the consumption is dominated by heating, and not by tap water. This period will be denoted the winter period for obvious reasons. By only applying the regression models described in Chapter \ref{chap: daily} to the period dominated by heating, deviations caused by tap water consumption will hopefully be less significant. If a linear model was used on the entire data the relation between temperature and consumption would have a variation that is far from constant during the year, violating a key assumption of the model. The approach used in this section is to search for a temperature that can be used as a threshold. All days with average temperatures below the threshold will be classified as belonging to the winter period. Two ways of finding this threshold will be described below. Other more sophisticated ways to make the classification of the winter period might be applied, but they will not be considered in this project (see Section 6.1 for Future Work).
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{../../../figures/Consumption_PW.eps}
+    \caption{Piece-wise optimization of the consumption. The red line is the regression line and the green line is the confidence interval.}
+    \label{fig: Consumption-PW}
+\end{figure}
 
 \subsection{Segmentation by Piece-wise Optimization}
 The first approach is to make a linear regression on the data with two connected segments. A break point
@@ -121,45 +123,36 @@ house, where a new break point was found for each house.
 \noindent Figure \ref{fig: Consumption-PW} shows the regression for two different houses. On house 55 the
 line fits rather well with the low-temperature data points, but house 18 behaves differently. Neither break points act as a very good threshold. Both houses show very clearly that the assumption that all points below the break point belong to the period without heating is not accurate. Even though this approach can easily take out a lot of data
 where there is clearly no heating, it will in many cases set the break point too high. The "tail" of the period without heating might still be included, causing a bias in the model, and some variation that is not accounted for. The method is also not very robust. Depending on how the points are spread out, the break point is sometimes as high as 20 degrees, which is not desirable.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../../../figures/Consumption_PW.eps}
-    \caption{Piece-wise optimization of the consumption. The red line is the regression line and the green line is the confidence interval.}
-    \label{fig: Consumption-PW}
-\end{figure}
-
 
 \subsection{Segmentation by Significant Deviations}
 In the second approach, all data points with a temperature
 above 20 degrees are assumed to belong to the period without heating. Then the mean and standard deviation of a normal distribution containing those points is calculated.
 For each degree interval below 20 degrees, if 80\% of the points in that interval are above the confidence interval of the normal distribution, then that degree interval should be included in the winter period. The threshold is set accordingly. \cref{fig: break_point55} shows an example of the procedure on house 55. The left plot shows the confidence interval as a black line. The proportion of the data points above that line is illustrated on the plot on the right. Here the interval between 14 and 15 degrees is the highest where more than 80\% is outside the confidence interval. Thus, 15 degrees is chosen as the threshold. The vertical orange line on the left plot shows this threshold at 15 degrees. This threshold captures almost every point in the beforementioned "tail" with low consumption. A few outliers with very low consumption are still included in the winter period. But overall the classification of the winter period seems to work well for this house. \cref{fig: break_point18} shows the same procedure for house 18. Here the linear dependency between temperature and consumption is not fulfilled very well for any part of the data, but the threshold cuts out the data where there is clearly no consumption at all.
-
-\noindent In general, this model is more robust than the first. It is more selective, and provides a good way to set the threshold on the correct side of the mentioned "tail" that may occur at temperatures both with and without heating.
-When comparing \cref{fig: break_point55} and \cref{fig: break_point18} to \cref{fig: Consumption-PW}, one can see that this method sets the break point a bit lower, removing more points without heating. If the consumption data behaves badly, and chunks of data points are low enough to be within the confidence interval, then a lot of data can potentially be removed, and there might be too little data left.
-
-\noindent Until now the focus has been to find a threshold for every individual house. But the goal is to have a general classification of the winter period. Figure \ref{fig: AlphaHist} shows a histogram of the threshold values for every house in the data set. The global threshold should be in the low end of the scale. It is better to remove data points that could have been used, than to include too many points that belong to a different distribution with a different variation, which could make the assumptions of the model worse. It would not be good to choose the minimum threshold, since that would be very vulnerable. A single house with a very low threshold might make the model bad for all the other houses. So the threshold that is chosen is the first quantile. As it is shown on the figure, this is 12 degrees. All models in the following sections will use an altered temperature, where the input is zero if the temperature is above 12 degrees. At some point it will also be of interest to look at the summer period. This will be defined as the data with temperatures above 15, as that is the third quantile in \cref{fig: AlphaHist}. This way there is a temperature gap between the summer and winter period, that is not included in any of them. Out of the total 396 days covered by the house data, 239 are classified as winter days, 126 as summer days, and 31 days are neither summer nor winter days. \cref{fig: class_break_point} shows how the days are distributed. It can be seen that the winter days are a continuous period from January to August 2018 and again from November 2019.
-\begin{figure}]H]
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/breakpoint_55.eps}
     \caption{An illustration of how the threshold is found using segmentation by significant deviations. On the left figure the black line illustrates the confidence interval of the normal distribution containing points above 20 degrees. The right figure shows for each degree interval, the proportion of data points that are outside the confidence interval. The last point below 80\% is the chosen threshold.}
     \label{fig: break_point55}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{../../../figures/breakpoint_18.eps}
     \caption{This figure shows the same as \cref{fig: break_point55}, but for house 18 instead. The assumption of a linear relationship between temperature and consumption is worse for this house.}
     \label{fig: break_point18}
 \end{figure}
-\begin{figure}[H]
+\noindent In general, this model is more robust than the first. It is more selective, and provides a good way to set the threshold on the correct side of the mentioned "tail" that may occur at temperatures both with and without heating.
+When comparing \cref{fig: break_point55} and \cref{fig: break_point18} to \cref{fig: Consumption-PW}, one can see that this method sets the break point a bit lower, removing more points without heating. If the consumption data behaves badly, and chunks of data points are low enough to be within the confidence interval, then a lot of data can potentially be removed, and there might be too little data left.
+
+\noindent Until now the focus has been to find a threshold for every individual house. But the goal is to have a general classification of the winter period. Figure \ref{fig: AlphaHist} shows a histogram of the threshold values for every house in the data set. The global threshold should be in the low end of the scale. It is better to remove data points that could have been used, than to include too many points that belong to a different distribution with a different variation, which could make the assumptions of the model worse. It would not be good to choose the minimum threshold, since that would be very vulnerable. A single house with a very low threshold might make the model bad for all the other houses. So the threshold that is chosen is the first quantile. As it is shown on the figure, this is 12 degrees. All models in the following sections will use an altered temperature, where the input is zero if the temperature is above 12 degrees. At some point it will also be of interest to look at the summer period. This will be defined as the data with temperatures above 15, as that is the third quantile in \cref{fig: AlphaHist}. This way there is a temperature gap between the summer and winter period, that is not included in any of them. Out of the total 396 days covered by the house data, 239 are classified as winter days, 126 as summer days, and 31 days are neither summer nor winter days. \cref{fig: class_break_point} shows how the days are distributed. It can be seen that the winter days are a continuous period from January to August 2018 and again from November 2019.
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{../../../figures/AlphaHist.eps}
+    \includegraphics[width=0.9\textwidth]{../../../figures/AlphaHist.eps}
     \caption{A histogram of the threshold values for every house in the second segmentation method. The first quantile is chosen as the overall threshold. It is 12 degrees, illustrated by the green line.}
     \label{fig: AlphaHist}
 \end{figure}
-
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
-    \includegraphics[width=1.\textwidth]{../../../figures/class_breakpoint.eps}
+    \includegraphics[scale=0.48]{../../../figures/class_breakpoint.pdf}
     \caption{The average consumption of all houses, where each day is coloured by the period that the day is included in.}
     \label{fig: class_break_point}
 \end{figure}
