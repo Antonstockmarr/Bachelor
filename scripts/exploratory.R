@@ -125,3 +125,4 @@ break.plot1 <- ggplot(data = day.avg, mapping = aes(Date, Volume*CoolingDegree*c
   grid.arrange(avg.plot1, day.plot.gak, day.plot.flot, nrow = 3)
   dev.off()
   }
+
