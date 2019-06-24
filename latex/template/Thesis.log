@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 20:48
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.4.26)  21 JUN 2019 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1723,6 +1723,16 @@ LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 43.20016pt on input line 2.
 LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 (Font)              scaled to size 33.60013pt on input line 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
 ) [1
 
 
@@ -1736,7 +1746,17 @@ LaTeX Font Info:    Font shape `TU/texgyreadventor(0)/m/n' will be
 
 
 
-]) [3]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+) [3]
 \openout2 = `frontmatter/Preface.aux'.
 
  (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/frontmatter/Preface.tex [4
@@ -1884,6 +1904,11 @@ File: graphics/../../../figures/AlphaHist.eps Graphic file (type eps)
 <graphics/../../../figures/AlphaHist.eps>
 File: graphics/../../../figures/class_breakpoint.eps Graphic file (type eps)
 <graphics/../../../figures/class_breakpoint.eps>
+
+Overfull \hbox (37.87231pt too wide) in paragraph at lines 155--156
+ [][] 
+ []
+
 ) [15] [16] [17] [18]
 \openout2 = `chapters/Statistical.aux'.
 
@@ -1960,7 +1985,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 257--258
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1342) has occurred while \output is active []
 
  [34]
 
@@ -2076,7 +2101,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
@@ -2084,17 +2109,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 Underfull \vbox (badness 2237) has occurred while \output is active []
 
  [65]
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
@@ -2102,26 +2127,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
 [67]) [68]
 \openout2 = `chapters/Conclusion.aux'.
 
- (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex) [69
+ (/Users/IdaRiis/Dropbox/DTU/6. semester/Bachelorprojekt F19/Bachelor/latex/template/chapters/Conclusion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+) [69
 
 
 
@@ -2136,61 +2171,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [71]
-Overfull \hbox (30.64294pt too wide) in paragraph at lines 104--153
- [][] 
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [72]
-Overfull \hbox (11.04pt too wide) in paragraph at lines 247--296
- [][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: Float too large for page by 49.19998pt on input line 298.
-
-
-Overfull \hbox (1.34999pt too wide) in paragraph at lines 302--335
+ [73]
+Overfull \hbox (30.64294pt too wide) in paragraph at lines 105--154
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
-Overfull \hbox (12.49002pt too wide) in paragraph at lines 343--349
+ [74]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75]
+Overfull \hbox (11.04pt too wide) in paragraph at lines 248--297
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [76]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77]
+Overfull \vbox (79.13501pt too high) has occurred while \output is active []
+
+ [78]
+Overfull \hbox (1.34999pt too wide) in paragraph at lines 303--336
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [79]
+Overfull \hbox (12.49002pt too wide) in paragraph at lines 344--350
 [][] 
  []
 
 
-Overfull \hbox (12.49002pt too wide) in paragraph at lines 353--359
+Overfull \hbox (12.49002pt too wide) in paragraph at lines 354--360
 [][] 
  []
 
-[74] [75] [76] [77] [78] [79] [80] [81] [82
+[80] [81] [82
 
 ]
 File: graphics/../../../figures/house_attri.pdf Graphic file (type pdf)
 <use graphics/../../../figures/house_attri.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 406--407
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 407--408
  [][] 
  []
 
 File: graphics/../../../figures/weather_cons.pdf Graphic file (type pdf)
 <use graphics/../../../figures/weather_cons.pdf>
 
-Overfull \hbox (1.68883pt too wide) in paragraph at lines 412--413
+Overfull \hbox (1.68883pt too wide) in paragraph at lines 413--414
  [][] 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [83]
 File: graphics/../../../figures/arimax/ACF_55_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_55_long.pdf>
 File: graphics/../../../figures/arimax/ACF_18_long.pdf Graphic file (type pdf)
 <use graphics/../../../figures/arimax/ACF_18_long.pdf>
-) [83] [84] [85] [86] [87] [88
+) [84] [85] [86] [87] [88
 
 
 ]
@@ -2288,10 +2342,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 51301 strings out of 492933
- 986942 string characters out of 6133145
- 1835362 words of memory out of 5000000
- 54514 multiletter control sequences out of 15000+600000
+ 51303 strings out of 492933
+ 986961 string characters out of 6133145
+ 1777364 words of memory out of 5000000
+ 54516 multiletter control sequences out of 15000+600000
  564913 words of font info for 77 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  62i,16n,81p,2750b,8007s stack positions out of 5000i,500n,10000p,200000b,80000s
