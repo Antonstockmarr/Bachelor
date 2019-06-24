@@ -82,14 +82,14 @@ for (i in c(18,55)) {
   mm<-paste("House: ",i)
 
   # Statistisk plot
-  par(mfrow=c(1,1))
+  # par(mfrow=c(1,1))
   plot(Pred$fit,type='l',ylim=range(Pred$lwr,Pred$upr),main=mm,ylab="Consumption [kWh]",xlab="January 2019 [days]",xaxt='n')
   axis(1, at=c(1,15,31), labels=c("1st","15th","31st"))
   lines(Pred$upr,lty=2)
   lines(Pred$lwr,lty=2)
   lines(ttd[[2]][[i]]$Consumption,lty=1,col=2)
   abline(v=mondays,lty=3,lwd=2,col=Wcol[3])
-  legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Monday"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2))
+  legend(x = "topleft", legend = c("Prediction", "95% PI", "Data","Monday"), lty = c(1,2,1,3), col = c(1,1,2,Wcol[3]),lwd=c(1,1,1,2),cex=0.75)
 
   # Kundeplot(s)
   par(mfrow=c(2,1))
@@ -208,7 +208,7 @@ arima.dat <- data.frame(Temperature = Temperature, Consumption = Scons1)
 A <- arima(arima.dat$Consumption, order =c(1,0,1), seasonal = list(order = c(1,1,1), period = 24),xreg=arima.dat$Temperature)
 
 p<-predict(A,n.ahead=length(TemperatureP),se.fit=TRUE,newxreg = TemperatureP)
-
+par(mfrow=c(1,1))
 plot(p$pred,ylim=c(min(p$pred-2*p$se,Scons2),max(p$pred+2*p$se,Scons2)),xaxt='n',xlab="January 2019",ylab="Hourly consumption, [kWh]",main=paste("Predictions for house ",i))
 axis(1, at=c(length(tth[[1]][[i]]$Obstime),length(tth[[1]][[i]]$Obstime)+170,length(tth[[1]][[i]]$Obstime)+340), labels=c("17th","24th","31st"))
 lines(p$pred+2*p$se,lty=2)
